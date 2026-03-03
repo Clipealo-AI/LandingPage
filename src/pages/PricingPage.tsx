@@ -92,9 +92,9 @@ const plans = [
     platforms: ['YouTube', 'Twitch'],
     hoursLabel: 'CRÉDITOS POR MES',
     hours: [
-      { label: '480 créditos', value: '≈ 8h' },
+      { label: '420 créditos', value: '≈ 7h' },
     ],
-    hoursTotal: '480 créditos/mes',
+    hoursTotal: '420 créditos/mes',
     includesCopy: 'Todo para empezar a crear clips profesionales.',
     features: [
       { text: 'Subida manual' },

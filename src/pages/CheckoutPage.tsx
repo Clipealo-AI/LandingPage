@@ -30,8 +30,8 @@ const plansData: Record<string, PlanInfo> = {
     annualPrice: 32,
     annualBilled: 'S/.384/año',
     savings: 'S/.96',
-    credits: 480,
-    hours: 8,
+    credits: 420,
+    hours: 7,
   },
   estandar: {
     icon: '🚀',
