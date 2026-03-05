@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Check, Coins, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import CountdownTimer from '@/components/CountdownTimer';
 import platformYoutube from '@/assets/platform-youtube.png';
 import platformTwitch from '@/assets/platform-twitch.png';
@@ -223,6 +224,11 @@ const PricingPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="Precios - Planes de Clipealo para Streamers y Cliperos"
+        description="Planes desde gratis hasta premium para crear clips virales con IA. YouTube, Twitch y Kick. Desde S/.0/mes con 60 minutos incluidos. Sin tarjeta de crédito."
+        canonicalPath="/precios"
+      />
       <Header />
       <main className="pt-28 pb-20 px-4">
         <div className="max-w-7xl mx-auto">

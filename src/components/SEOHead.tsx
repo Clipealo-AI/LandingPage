@@ -6,12 +6,13 @@ interface SEOHeadProps {
   ogImage?: string;
   canonicalPath?: string;
   type?: 'website' | 'article';
+  jsonLd?: Record<string, unknown>;
 }
 
 const BASE_URL = 'https://www.clipealo-ai.com';
 const DEFAULT_OG_IMAGE = 'https://storage.googleapis.com/gpt-engineer-file-uploads/uUehV3bYuzgNzbsXMdDHUepZq4z2/social-images/social-1770175321286-file (2).jpg';
 
-const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website' }: SEOHeadProps) => {
+const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website', jsonLd }: SEOHeadProps) => {
   useEffect(() => {
     const fullTitle = title.includes('Clipealo') ? title : `${title} | Clipealo`;
     document.title = fullTitle;
@@ -49,11 +50,39 @@ const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website' 
       link.setAttribute('href', url);
     }
 
-    return () => {
-      // Reset to defaults on unmount
-      document.title = 'Clipealo - Clips Virales Automáticos con IA para Streamers';
+    // JSON-LD structured data
+    const jsonLdId = 'seo-json-ld';
+    let scriptEl = document.getElementById(jsonLdId) as HTMLScriptElement | null;
+
+    const structuredData = jsonLd || {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Clipealo',
+      url: BASE_URL,
+      description: 'Herramienta de IA #1 en LATAM para crear clips virales de YouTube, Twitch y Kick.',
+      inLanguage: 'es',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Clipealo',
+        url: BASE_URL,
+        logo: `${BASE_URL}/favicon.png`,
+      },
     };
-  }, [title, description, ogImage, canonicalPath, type]);
+
+    if (!scriptEl) {
+      scriptEl = document.createElement('script');
+      scriptEl.id = jsonLdId;
+      scriptEl.type = 'application/ld+json';
+      document.head.appendChild(scriptEl);
+    }
+    scriptEl.textContent = JSON.stringify(structuredData);
+
+    return () => {
+      document.title = 'Clipealo - Clips Virales Automáticos con IA para Streamers y Cliperos LATAM';
+      const el = document.getElementById(jsonLdId);
+      if (el) el.remove();
+    };
+  }, [title, description, ogImage, canonicalPath, type, jsonLd]);
 
   return null;
 };

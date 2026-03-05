@@ -60,6 +60,19 @@ const BlogArticlePage = () => {
 
   if (!article) return <Navigate to="/blog" replace />;
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.metaDescription,
+    image: typeof article.cover === 'string' ? article.cover : undefined,
+    author: { '@type': 'Person', name: article.author.name },
+    publisher: { '@type': 'Organization', name: 'Clipealo', logo: { '@type': 'ImageObject', url: 'https://www.clipealo-ai.com/favicon.png' } },
+    datePublished: article.date,
+    mainEntityOfPage: `https://www.clipealo-ai.com/blog/${article.id}`,
+    inLanguage: 'es',
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
@@ -67,6 +80,7 @@ const BlogArticlePage = () => {
         description={article.metaDescription}
         canonicalPath={`/blog/${article.id}`}
         type="article"
+        jsonLd={articleJsonLd}
       />
       <Header />
 
