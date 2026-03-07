@@ -90,7 +90,7 @@ const FAQSection = () => {
 
         {/* Contact message */}
         <motion.p
-          initial={{ opacity: 0 }}
+          initial={false}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center text-sm text-muted-foreground mt-10"

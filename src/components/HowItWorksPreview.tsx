@@ -44,7 +44,7 @@ const HowItWorksPreview = () => {
 
         {/* Card with gradient background */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="rounded-3xl p-8 sm:p-12"
