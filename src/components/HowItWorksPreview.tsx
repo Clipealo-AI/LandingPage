@@ -34,7 +34,7 @@ const HowItWorksPreview = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground mb-10"
