@@ -19,7 +19,7 @@ const DemoSection = () => {
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* GIF Preview */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
