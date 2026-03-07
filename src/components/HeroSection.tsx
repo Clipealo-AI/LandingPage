@@ -61,7 +61,7 @@ const HeroSection = ({ onFreeClick }: HeroSectionProps) => {
 
         {/* URL Input Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 max-w-2xl mx-auto"
