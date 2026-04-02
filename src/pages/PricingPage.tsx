@@ -346,7 +346,7 @@ const PricingPage = () => {
                       contentName: `Plan ${plan.name}`,
                       contentId: planKeyMap[plan.name],
                     });
-                    navigate(`/checkout?type=plan&plan=${planKeyMap[plan.name]}&billing=${isAnnual ? 'annual' : 'monthly'}`);
+                    window.location.href = 'https://app.clipealo-ai.com/plan';
                   }}
                   className={`w-full py-3 rounded-xl font-semibold text-sm transition-all mb-6 ${
                     plan.highlighted
@@ -664,7 +664,7 @@ const PricingPage = () => {
                         contentName: `${pack.credits} créditos`,
                         contentId: `credits_${pack.credits}`,
                       });
-                      navigate(`/checkout?type=credits&credits=${pack.credits}`);
+                      window.location.href = 'https://app.clipealo-ai.com/plan';
                     }}
                     className={`w-full py-3 rounded-xl font-semibold text-sm transition-all ${
                     pack.popular
