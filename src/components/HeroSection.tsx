@@ -73,7 +73,7 @@ const HeroSection = ({ onFreeClick }: HeroSectionProps) => {
               <span className="text-sm truncate">Colocar un enlace de tu stream...</span>
             </div>
             <a
-              href="https://app.clipealo-ai.com/"
+              href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"
               onClick={() => trackLead('Hero - Prueba Clipealo')}
               className="px-5 py-2.5 bg-foreground text-background rounded-full font-semibold text-sm whitespace-nowrap hover:bg-foreground/90 transition-colors"
             >
