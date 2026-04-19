@@ -607,7 +607,7 @@ const PricingPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="rounded-2xl border border-border bg-card p-8 md:p-10 flex flex-col justify-between"
+                  className="rounded-2xl border border-border bg-background p-8 md:p-10 flex flex-col justify-between"
                 >
                   <div>
                     <span className="text-2xl">{plan.icon}</span>
@@ -637,7 +637,7 @@ const PricingPage = () => {
                     </p>
 
                   <a
-                    href="https://app.clipealo-ai.com/"
+                    href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"
                     className="w-full py-3 rounded-xl font-semibold text-sm border border-border bg-background hover:bg-muted text-foreground transition-all text-center block"
                   >
                     Prueba Clipealo
