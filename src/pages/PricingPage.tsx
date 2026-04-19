@@ -145,7 +145,6 @@ const plans = [
       { text: 'Editor de subtítulos animados', soon: true },
       { text: 'Reframing automático vertical/horizontal', soon: true },
       { text: 'Sin marca de agua' },
-      { text: 'Marca de agua personalizada con @handle' },
       { text: '25 GB · 90 días almacenamiento' },
       { text: 'Publicar desde Clipealo a TikTok + YouTube Shorts + Instagram', soon: true, icon: 'social' },
       { text: 'Analytics de clips', soon: true },
@@ -228,7 +227,40 @@ const platformIcons: Record<string, React.ReactNode> = {
 
 const PricingPage = () => {
   const [isAnnual, setIsAnnual] = useState(true);
+  const [currency, setCurrency] = useState<'PEN' | 'USD'>('PEN');
   const navigate = useNavigate();
+
+  const USD_RATE = 3.75;
+  const symbol = currency === 'PEN' ? 'S/.' : '$';
+  const convert = (pen: number) => currency === 'PEN' ? pen : Math.round((pen / USD_RATE) * 100) / 100;
+  const formatPrice = (pen: number) => {
+    const v = convert(pen);
+    return Number.isInteger(v) ? v.toString() : v.toFixed(2);
+  };
+  const convertBilledLabel = (label: string | null) => {
+    if (!label) return label;
+    if (currency === 'PEN') return label;
+    return label.replace(/S\/\.([\d,]+)/g, (_, num: string) => {
+      const n = parseFloat(num.replace(/,/g, ''));
+      const usd = Math.round(n / USD_RATE);
+      return `$${usd.toLocaleString('en-US')}`;
+    });
+  };
+  const convertSavings = (s: string | null) => {
+    if (!s) return s;
+    if (currency === 'PEN') return s;
+    return s.replace(/S\/\.([\d,]+)/g, (_, num: string) => {
+      const n = parseFloat(num.replace(/,/g, ''));
+      return `$${Math.round(n / USD_RATE).toLocaleString('en-US')}`;
+    });
+  };
+  const convertAddonValue = (v: string) => {
+    if (currency === 'PEN') return v;
+    return v.replace(/S\/\.([\d.]+)/g, (_, num: string) => {
+      const n = parseFloat(num);
+      return `$${(n / USD_RATE).toFixed(2)}`;
+    });
+  };
 
   const planKeyMap: Record<string, string> = {
     'Básico': 'basico',
@@ -266,25 +298,43 @@ const PricingPage = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="flex items-center justify-center gap-4 mb-12"
+            className="flex flex-col items-center justify-center gap-4 mb-12"
           >
-            <button
-              onClick={() => setIsAnnual(false)}
-              className={`text-sm font-semibold px-4 py-2 rounded-full transition-colors ${!isAnnual ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
-            >
-              Mensual
-            </button>
-            <button
-              onClick={() => setIsAnnual(true)}
-              className={`text-sm font-semibold px-4 py-2 rounded-full transition-colors ${isAnnual ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
-            >
-              Anual
-            </button>
-            {isAnnual && (
-              <span className="text-xs font-bold px-3 py-1 rounded-full bg-secondary/20 text-secondary border border-secondary/30">
-                Ahorra hasta 20%
-              </span>
-            )}
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={() => setIsAnnual(false)}
+                className={`text-sm font-semibold px-4 py-2 rounded-full transition-colors ${!isAnnual ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                Mensual
+              </button>
+              <button
+                onClick={() => setIsAnnual(true)}
+                className={`text-sm font-semibold px-4 py-2 rounded-full transition-colors ${isAnnual ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                Anual
+              </button>
+              {isAnnual && (
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-secondary/20 text-secondary border border-secondary/30">
+                  Ahorra hasta 20%
+                </span>
+              )}
+            </div>
+
+            {/* Currency switch */}
+            <div className="inline-flex items-center bg-card border border-border rounded-full p-1">
+              <button
+                onClick={() => setCurrency('PEN')}
+                className={`text-xs font-semibold px-4 py-1.5 rounded-full transition-colors ${currency === 'PEN' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                🇵🇪 Soles (S/.)
+              </button>
+              <button
+                onClick={() => setCurrency('USD')}
+                className={`text-xs font-semibold px-4 py-1.5 rounded-full transition-colors ${currency === 'USD' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                🇺🇸 Dólares ($)
+              </button>
+            </div>
           </motion.div>
 
           {/* Plan Cards - Básico, Estándar, Premium + Enterprise */}
@@ -318,20 +368,20 @@ const PricingPage = () => {
 
                 {/* Price */}
                 <div className="mb-5 min-h-[100px]">
-                  <div className="flex items-baseline gap-1" data-product-price={isAnnual ? plan.annualPrice : plan.monthlyPrice} data-currency="PEN">
-                    <span className="text-sm text-muted-foreground">S/.</span>
-                    <span className="text-5xl font-extrabold" data-price-value={isAnnual ? plan.annualPrice : plan.monthlyPrice}>
-                      {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                  <div className="flex items-baseline gap-1" data-product-price={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)} data-currency={currency}>
+                    <span className="text-sm text-muted-foreground">{symbol}</span>
+                    <span className="text-5xl font-extrabold" data-price-value={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)}>
+                      {formatPrice(isAnnual ? plan.annualPrice : plan.monthlyPrice)}
                     </span>
                     <span className="text-sm text-muted-foreground">/mes</span>
                   </div>
                   {isAnnual && plan.annualBilled && (
                     <>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Facturado {plan.annualBilled}
+                        Facturado {convertBilledLabel(plan.annualBilled)}
                       </p>
                       <span className="inline-block text-xs font-semibold mt-1 px-2 py-0.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30">
-                        + Ahorras {plan.savings} al año
+                        + Ahorras {convertSavings(plan.savings)} al año
                       </span>
                     </>
                   )}
@@ -395,20 +445,15 @@ const PricingPage = () => {
                   </div>
 
                   <ul className="space-y-2">
-                    {plan.features.map((f, i) => (
+                    {plan.features.filter((f: any) => !f.soon).map((f, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm">
                         <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" />
-                        <span className={f.highlight ? 'text-secondary font-semibold' : ''}>
+                        <span className={(f as any).highlight ? 'text-secondary font-semibold' : ''}>
                           {f.text}
-                          {f.icon === 'tiktok' && <span className="ml-1"><TikTokSvg /></span>}
-                          {f.icon === 'social' && (
+                          {(f as any).icon === 'tiktok' && <span className="ml-1"><TikTokSvg /></span>}
+                          {(f as any).icon === 'social' && (
                             <span className="ml-1 inline-flex gap-1 align-middle">
                               <TikTokSvg /><YTShortsSvg /><InstagramSvg />
-                            </span>
-                          )}
-                          {f.soon && (
-                            <span className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-medium">
-                              pronto
                             </span>
                           )}
                         </span>
@@ -422,10 +467,10 @@ const PricingPage = () => {
                   <p className="text-[10px] font-bold tracking-widest text-muted-foreground mb-2 uppercase">
                     Add-ons
                   </p>
-                  {plan.addons.map((a) => (
+                  {plan.addons.filter((a) => a.value !== 'Próximamente').map((a) => (
                     <div key={a.label} className="flex justify-between text-sm">
                       <span className="text-muted-foreground">{a.label}</span>
-                      <span className="font-semibold text-primary">{a.value}</span>
+                      <span className="font-semibold text-primary">{convertAddonValue(a.value)}</span>
                     </div>
                   ))}
                 </div>
@@ -489,17 +534,11 @@ const PricingPage = () => {
                     { text: 'Multi-usuario custom' },
                     { text: 'Branding completo multi-canal' },
                     { text: 'SLA de procesamiento garantizado' },
-                    { text: 'Analytics avanzado + exportable', soon: true },
                   ].map((f, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" />
-                      <span className={f.highlight ? 'text-secondary font-semibold' : ''}>
+                      <span className={(f as any).highlight ? 'text-secondary font-semibold' : ''}>
                         {f.text}
-                        {f.soon && (
-                          <span className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-medium">
-                            pronto
-                          </span>
-                        )}
                       </span>
                     </li>
                   ))}
@@ -559,7 +598,7 @@ const PricingPage = () => {
                     <p className="text-sm text-muted-foreground mb-4">{plan.tagline}</p>
 
                     <div className="flex items-baseline gap-1 mb-4">
-                      <span className="text-sm text-muted-foreground">S/.</span>
+                      <span className="text-sm text-muted-foreground">{symbol}</span>
                       <span className="text-5xl font-extrabold">0</span>
                       <span className="text-sm text-muted-foreground">/mes</span>
                     </div>
@@ -567,17 +606,10 @@ const PricingPage = () => {
                     <p className="text-xs text-muted-foreground mb-4">{plan.includesCopy}</p>
 
                     <ul className="space-y-2 mb-4">
-                      {plan.features.map((f, i) => (
+                      {plan.features.filter((f: any) => !f.soon).map((f, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm">
                           <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" />
-                          <span>
-                            {f.text}
-                            {f.soon && (
-                              <span className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-medium">
-                                pronto
-                              </span>
-                            )}
-                          </span>
+                          <span>{f.text}</span>
                         </li>
                       ))}
                     </ul>
@@ -651,11 +683,11 @@ const PricingPage = () => {
                     <span>≈ {pack.hours} {pack.hours === 1 ? 'hora' : 'horas'}</span>
                   </div>
 
-                  <div className="mb-1" data-product-price={pack.price} data-currency="PEN">
-                    <span className="text-sm text-muted-foreground">S/.</span>
-                    <span className="text-3xl font-extrabold ml-0.5" data-price-value={pack.price}>{pack.price.toFixed(2)}</span>
+                  <div className="mb-1" data-product-price={convert(pack.price)} data-currency={currency}>
+                    <span className="text-sm text-muted-foreground">{symbol}</span>
+                    <span className="text-3xl font-extrabold ml-0.5" data-price-value={convert(pack.price)}>{formatPrice(pack.price)}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground mb-5">S/.{pack.perCredit} por crédito</p>
+                  <p className="text-xs text-muted-foreground mb-5">{symbol}{currency === 'PEN' ? pack.perCredit : (parseFloat(pack.perCredit) / USD_RATE).toFixed(3)} por crédito</p>
 
                   <button
                     onClick={() => {
@@ -698,7 +730,7 @@ const PricingPage = () => {
               <span className="text-primary">Disponible solo por tiempo limitado antes del precio oficial.</span>
             </p>
             <p className="text-xs text-muted-foreground">
-              Todos los planes incluyen cancelación en cualquier momento · Pago seguro · Facturación en soles peruanos
+              Todos los planes incluyen cancelación en cualquier momento · Pago seguro · Facturación en {currency === 'PEN' ? 'soles peruanos' : 'dólares estadounidenses'}
             </p>
           </div>
         </div>
