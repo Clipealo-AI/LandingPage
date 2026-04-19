@@ -6,6 +6,7 @@ import HowItWorksPreview from '@/components/HowItWorksPreview';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
+import StickyBottomBar from '@/components/StickyBottomBar';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <HowItWorksPreview />
       <FAQSection />
       <Footer />
+      <StickyBottomBar />
     </main>
   );
 };
