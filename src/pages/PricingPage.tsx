@@ -637,7 +637,7 @@ const PricingPage = () => {
                     </p>
 
                   <a
-                    href="https://app.clipealo-ai.com/"
+                    href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"
                     className="w-full py-3 rounded-xl font-semibold text-sm border border-border bg-background hover:bg-muted text-foreground transition-all text-center block"
                   >
                     Prueba Clipealo
