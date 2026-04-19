@@ -732,10 +732,14 @@ const PricingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-border bg-card p-6 text-center mb-10"
+            className="rounded-2xl border border-primary/30 bg-card p-6 text-center mb-10 shadow-[0_0_30px_hsla(350,95%,62%,0.12)]"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
-              <span>🕐 <strong>Precio de salida de mercado.</strong> Solo disponible por</span>
+            <div className="flex flex-col items-center justify-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-2">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30">-25%</span>
+                <strong>Descuento de lanzamiento aplicado.</strong>
+                <span className="text-muted-foreground">Solo por 1 mes — termina en:</span>
+              </span>
               <CountdownTimer />
             </div>
           </motion.div>
@@ -743,8 +747,8 @@ const PricingPage = () => {
           {/* Footer note */}
           <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground">
-              💡 <strong className="text-foreground">Precio de salida de mercado.</strong>{' '}
-              <span className="text-primary">Disponible solo por tiempo limitado antes del precio oficial.</span>
+              💡 <strong className="text-foreground">25% de descuento aplicado al precio oficial.</strong>{' '}
+              <span className="text-primary">Disponible solo durante el primer mes de lanzamiento.</span>
             </p>
             <p className="text-xs text-muted-foreground">
               Todos los planes incluyen cancelación en cualquier momento · Pago seguro · Facturación en {currency === 'PEN' ? 'soles peruanos' : 'dólares estadounidenses'}
