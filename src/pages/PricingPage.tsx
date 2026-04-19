@@ -227,7 +227,40 @@ const platformIcons: Record<string, React.ReactNode> = {
 
 const PricingPage = () => {
   const [isAnnual, setIsAnnual] = useState(true);
+  const [currency, setCurrency] = useState<'PEN' | 'USD'>('PEN');
   const navigate = useNavigate();
+
+  const USD_RATE = 3.75;
+  const symbol = currency === 'PEN' ? 'S/.' : '$';
+  const convert = (pen: number) => currency === 'PEN' ? pen : Math.round((pen / USD_RATE) * 100) / 100;
+  const formatPrice = (pen: number) => {
+    const v = convert(pen);
+    return Number.isInteger(v) ? v.toString() : v.toFixed(2);
+  };
+  const convertBilledLabel = (label: string | null) => {
+    if (!label) return label;
+    if (currency === 'PEN') return label;
+    return label.replace(/S\/\.([\d,]+)/g, (_, num: string) => {
+      const n = parseFloat(num.replace(/,/g, ''));
+      const usd = Math.round(n / USD_RATE);
+      return `$${usd.toLocaleString('en-US')}`;
+    });
+  };
+  const convertSavings = (s: string | null) => {
+    if (!s) return s;
+    if (currency === 'PEN') return s;
+    return s.replace(/S\/\.([\d,]+)/g, (_, num: string) => {
+      const n = parseFloat(num.replace(/,/g, ''));
+      return `$${Math.round(n / USD_RATE).toLocaleString('en-US')}`;
+    });
+  };
+  const convertAddonValue = (v: string) => {
+    if (currency === 'PEN') return v;
+    return v.replace(/S\/\.([\d.]+)/g, (_, num: string) => {
+      const n = parseFloat(num);
+      return `$${(n / USD_RATE).toFixed(2)}`;
+    });
+  };
 
   const planKeyMap: Record<string, string> = {
     'Básico': 'basico',
