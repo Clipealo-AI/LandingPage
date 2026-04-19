@@ -445,20 +445,15 @@ const PricingPage = () => {
                   </div>
 
                   <ul className="space-y-2">
-                    {plan.features.map((f, i) => (
+                    {plan.features.filter((f: any) => !f.soon).map((f, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm">
                         <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" />
-                        <span className={f.highlight ? 'text-secondary font-semibold' : ''}>
+                        <span className={(f as any).highlight ? 'text-secondary font-semibold' : ''}>
                           {f.text}
-                          {f.icon === 'tiktok' && <span className="ml-1"><TikTokSvg /></span>}
-                          {f.icon === 'social' && (
+                          {(f as any).icon === 'tiktok' && <span className="ml-1"><TikTokSvg /></span>}
+                          {(f as any).icon === 'social' && (
                             <span className="ml-1 inline-flex gap-1 align-middle">
                               <TikTokSvg /><YTShortsSvg /><InstagramSvg />
-                            </span>
-                          )}
-                          {f.soon && (
-                            <span className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-medium">
-                              pronto
                             </span>
                           )}
                         </span>
@@ -472,10 +467,10 @@ const PricingPage = () => {
                   <p className="text-[10px] font-bold tracking-widest text-muted-foreground mb-2 uppercase">
                     Add-ons
                   </p>
-                  {plan.addons.map((a) => (
+                  {plan.addons.filter((a) => a.value !== 'Próximamente').map((a) => (
                     <div key={a.label} className="flex justify-between text-sm">
                       <span className="text-muted-foreground">{a.label}</span>
-                      <span className="font-semibold text-primary">{a.value}</span>
+                      <span className="font-semibold text-primary">{convertAddonValue(a.value)}</span>
                     </div>
                   ))}
                 </div>
