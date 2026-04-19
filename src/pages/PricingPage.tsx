@@ -534,17 +534,11 @@ const PricingPage = () => {
                     { text: 'Multi-usuario custom' },
                     { text: 'Branding completo multi-canal' },
                     { text: 'SLA de procesamiento garantizado' },
-                    { text: 'Analytics avanzado + exportable', soon: true },
                   ].map((f, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" />
-                      <span className={f.highlight ? 'text-secondary font-semibold' : ''}>
+                      <span className={(f as any).highlight ? 'text-secondary font-semibold' : ''}>
                         {f.text}
-                        {f.soon && (
-                          <span className="ml-1.5 text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-medium">
-                            pronto
-                          </span>
-                        )}
                       </span>
                     </li>
                   ))}
