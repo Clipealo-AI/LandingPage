@@ -84,8 +84,11 @@ const plans = [
     name: 'Básico',
     tagline: 'Para el creador que arranca',
     monthlyPrice: 35,
+    monthlyOriginal: 46,
     annualPrice: 28,
+    annualOriginal: 37,
     annualBilled: 'S/.336/año',
+    annualBilledOriginal: 'S/.448/año',
     savings: 'S/.84',
     cta: 'Comenzar',
     popular: false,
@@ -121,9 +124,12 @@ const plans = [
     icon: '🚀',
     name: 'Estándar',
     tagline: 'Para el streamer activo',
-    monthlyPrice: 72,
+    monthlyPrice: 74,
+    monthlyOriginal: 99,
     annualPrice: 58,
+    annualOriginal: 77,
     annualBilled: 'S/.696/año',
+    annualBilledOriginal: 'S/.924/año',
     savings: 'S/.168',
     cta: 'Comenzar',
     popular: true,
@@ -163,9 +169,12 @@ const plans = [
     icon: '💎',
     name: 'Premium',
     tagline: 'Para alto volumen',
-    monthlyPrice: 126,
+    monthlyPrice: 149,
+    monthlyOriginal: 198,
     annualPrice: 101,
+    annualOriginal: 135,
     annualBilled: 'S/.1,212/año',
+    annualBilledOriginal: 'S/.1,620/año',
     savings: 'S/.300',
     cta: 'Comenzar',
     popular: false,
@@ -367,7 +376,15 @@ const PricingPage = () => {
                 </div>
 
                 {/* Price */}
-                <div className="mb-5 min-h-[100px]">
+                <div className="mb-5 min-h-[120px]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm text-muted-foreground line-through">
+                      {symbol}{formatPrice(isAnnual ? (plan as any).annualOriginal : (plan as any).monthlyOriginal)}
+                    </span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30">
+                      -25%
+                    </span>
+                  </div>
                   <div className="flex items-baseline gap-1" data-product-price={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)} data-currency={currency}>
                     <span className="text-sm text-muted-foreground">{symbol}</span>
                     <span className="text-5xl font-extrabold" data-price-value={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)}>
@@ -715,10 +732,14 @@ const PricingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-border bg-card p-6 text-center mb-10"
+            className="rounded-2xl border border-primary/30 bg-card p-6 text-center mb-10 shadow-[0_0_30px_hsla(350,95%,62%,0.12)]"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
-              <span>🕐 <strong>Precio de salida de mercado.</strong> Solo disponible por</span>
+            <div className="flex flex-col items-center justify-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-2">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30">-25%</span>
+                <strong>Descuento de lanzamiento aplicado.</strong>
+                <span className="text-muted-foreground">Solo por 1 mes — termina en:</span>
+              </span>
               <CountdownTimer />
             </div>
           </motion.div>
@@ -726,8 +747,8 @@ const PricingPage = () => {
           {/* Footer note */}
           <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground">
-              💡 <strong className="text-foreground">Precio de salida de mercado.</strong>{' '}
-              <span className="text-primary">Disponible solo por tiempo limitado antes del precio oficial.</span>
+              💡 <strong className="text-foreground">25% de descuento aplicado al precio oficial.</strong>{' '}
+              <span className="text-primary">Disponible solo durante el primer mes de lanzamiento.</span>
             </p>
             <p className="text-xs text-muted-foreground">
               Todos los planes incluyen cancelación en cualquier momento · Pago seguro · Facturación en {currency === 'PEN' ? 'soles peruanos' : 'dólares estadounidenses'}

@@ -12,8 +12,23 @@ const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // 60 days from now (calculated once on mount)
-    const launchDate = Date.now() + 60 * 24 * 60 * 60 * 1000;
+    // 30-day launch deadline, persisted in localStorage so the countdown
+    // is real and consistent across reloads/sessions.
+    const STORAGE_KEY = 'clipealo_launch_deadline';
+    const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
+    let launchDate: number;
+    const stored = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    const parsed = stored ? parseInt(stored, 10) : NaN;
+
+    if (!isNaN(parsed) && parsed > Date.now()) {
+      launchDate = parsed;
+    } else {
+      launchDate = Date.now() + THIRTY_DAYS_MS;
+      try {
+        localStorage.setItem(STORAGE_KEY, String(launchDate));
+      } catch {}
+    }
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
