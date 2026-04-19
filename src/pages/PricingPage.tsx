@@ -376,7 +376,15 @@ const PricingPage = () => {
                 </div>
 
                 {/* Price */}
-                <div className="mb-5 min-h-[100px]">
+                <div className="mb-5 min-h-[120px]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm text-muted-foreground line-through">
+                      {symbol}{formatPrice(isAnnual ? (plan as any).annualOriginal : (plan as any).monthlyOriginal)}
+                    </span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30">
+                      -25%
+                    </span>
+                  </div>
                   <div className="flex items-baseline gap-1" data-product-price={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)} data-currency={currency}>
                     <span className="text-sm text-muted-foreground">{symbol}</span>
                     <span className="text-5xl font-extrabold" data-price-value={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)}>
