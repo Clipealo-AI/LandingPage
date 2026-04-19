@@ -368,20 +368,20 @@ const PricingPage = () => {
 
                 {/* Price */}
                 <div className="mb-5 min-h-[100px]">
-                  <div className="flex items-baseline gap-1" data-product-price={isAnnual ? plan.annualPrice : plan.monthlyPrice} data-currency="PEN">
-                    <span className="text-sm text-muted-foreground">S/.</span>
-                    <span className="text-5xl font-extrabold" data-price-value={isAnnual ? plan.annualPrice : plan.monthlyPrice}>
-                      {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                  <div className="flex items-baseline gap-1" data-product-price={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)} data-currency={currency}>
+                    <span className="text-sm text-muted-foreground">{symbol}</span>
+                    <span className="text-5xl font-extrabold" data-price-value={convert(isAnnual ? plan.annualPrice : plan.monthlyPrice)}>
+                      {formatPrice(isAnnual ? plan.annualPrice : plan.monthlyPrice)}
                     </span>
                     <span className="text-sm text-muted-foreground">/mes</span>
                   </div>
                   {isAnnual && plan.annualBilled && (
                     <>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Facturado {plan.annualBilled}
+                        Facturado {convertBilledLabel(plan.annualBilled)}
                       </p>
                       <span className="inline-block text-xs font-semibold mt-1 px-2 py-0.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30">
-                        + Ahorras {plan.savings} al año
+                        + Ahorras {convertSavings(plan.savings)} al año
                       </span>
                     </>
                   )}
