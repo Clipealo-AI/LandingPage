@@ -1,32 +1,13 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import DemoSection from '@/components/DemoSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HowItWorksPreview from '@/components/HowItWorksPreview';
 import FAQSection from '@/components/FAQSection';
-import WaitlistFormSection from '@/components/WaitlistFormSection';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 
 const Index = () => {
-  const [searchParams] = useSearchParams();
-  const [showWaitlist, setShowWaitlist] = useState(false);
-
-  const revealWaitlist = () => {
-    setShowWaitlist(true);
-    setTimeout(() => {
-      document.querySelector('#aplicar-beta')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
-
-  useEffect(() => {
-    if (searchParams.get('free') === '1') {
-      revealWaitlist();
-    }
-  }, [searchParams]);
-
   return (
     <main className="min-h-screen bg-background text-foreground">
       <SEOHead
@@ -35,12 +16,11 @@ const Index = () => {
         canonicalPath="/"
       />
       <Header />
-      <HeroSection onFreeClick={revealWaitlist} />
+      <HeroSection />
       <DemoSection />
       <TestimonialsSection />
       <HowItWorksPreview />
       <FAQSection />
-      {showWaitlist && <WaitlistFormSection />}
       <Footer />
     </main>
   );

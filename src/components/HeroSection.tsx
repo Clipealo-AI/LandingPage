@@ -2,11 +2,7 @@ import { motion } from 'framer-motion';
 import { Link2, Upload } from 'lucide-react';
 import { trackLead } from '@/lib/tracking';
 
-interface HeroSectionProps {
-  onFreeClick?: () => void;
-}
-
-const HeroSection = ({ onFreeClick }: HeroSectionProps) => {
+const HeroSection = () => {
 
   return (
     <section className="relative min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-28 pb-16 overflow-hidden">
@@ -83,18 +79,16 @@ const HeroSection = ({ onFreeClick }: HeroSectionProps) => {
 
           <span className="text-muted-foreground text-sm mx-3 hidden sm:inline">o</span>
 
-          <button
-            onClick={() => {
-              trackLead('Hero - Cargar archivos');
-              onFreeClick?.();
-            }}
+          <a
+            href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"
+            onClick={() => trackLead('Hero - Cargar archivos')}
             className="px-5 py-2.5 border border-border rounded-full font-semibold text-sm text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap"
           >
             <span className="flex items-center gap-2">
               <Upload className="w-4 h-4" />
               Cargar archivos
             </span>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
