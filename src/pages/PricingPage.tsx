@@ -607,7 +607,7 @@ const PricingPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="rounded-2xl border border-border bg-card p-8 md:p-10 flex flex-col justify-between"
+                  className="rounded-2xl border border-border bg-background p-8 md:p-10 flex flex-col justify-between"
                 >
                   <div>
                     <span className="text-2xl">{plan.icon}</span>
