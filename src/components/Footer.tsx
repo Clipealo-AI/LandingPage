@@ -53,7 +53,7 @@ const footerColumns = [
     links: [
       { label: 'Blog', href: '/blog' },
       { label: 'Precios', href: '/precios' },
-      { label: 'Política de Privacidad', href: '#' },
+      { label: 'Política de Privacidad', href: '/politica-de-privacidad' },
       { label: 'Términos y Condiciones', href: '#' },
       { label: 'Contacto', href: '#' },
     ],
