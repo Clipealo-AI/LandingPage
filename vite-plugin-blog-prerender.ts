@@ -19,7 +19,8 @@ export function blogPrerender(): Plugin {
         const slug = article.id;
         const title = `${article.title} | Clipealo`;
         const desc = article.metaDescription;
-        const url = `${BASE_URL}/blog/${slug}`;
+        // Always include trailing slash so canonical & hreflang match the audit invariant.
+        const url = `${BASE_URL}/blog/${slug}/`;
         const dateISO = article.isoDate;
         const modifiedISO = article.modifiedDate;
 
@@ -70,6 +71,16 @@ export function blogPrerender(): Plugin {
         html = html.replace(
           /<link rel="canonical" href="[^"]*"/,
           `<link rel="canonical" href="${url}"`
+        );
+
+        // Replace hreflang self-references so they match canonical exactly.
+        html = html.replace(
+          /<link rel="alternate" hreflang="es" href="[^"]*"\s*\/>/,
+          `<link rel="alternate" hreflang="es" href="${url}" />`
+        );
+        html = html.replace(
+          /<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/>/,
+          `<link rel="alternate" hreflang="x-default" href="${url}" />`
         );
 
         // Add article meta tags before </head>
