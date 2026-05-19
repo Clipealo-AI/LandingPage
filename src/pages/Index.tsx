@@ -13,7 +13,7 @@ const Index = () => {
     <main className="min-h-screen bg-background text-foreground">
       <SEOHead
         title="Clipealo — Clips con IA para Agencias, Editores y Cliperos"
-        description="Clipealo detecta automáticamente los mejores momentos de tus videos y genera clips listos para TikTok, Reels y Shorts. Para agencias, editores y cliperos en LATAM. Desde S/.35/mes."
+        description="Clipealo detecta los mejores momentos de tus videos y genera clips listos para TikTok, Reels y Shorts. Para agencias y cliperos en LATAM. Desde S/.35/mes."
         canonicalPath="/"
       />
       <Header />
