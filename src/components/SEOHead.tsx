@@ -16,7 +16,14 @@ const DEFAULT_OG_IMAGE = 'https://storage.googleapis.com/gpt-engineer-file-uploa
 
 const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website', jsonLd, publishedTime, modifiedTime }: SEOHeadProps) => {
   useEffect(() => {
-    const fullTitle = title.includes('Clipealo') ? title : `${title} | Clipealo`;
+    // Only append the brand suffix when the resulting title still fits under the
+    // 60-character SEO recommendation. Skip the suffix when the title already
+    // contains "Clipealo" or when appending would exceed the limit.
+    const SUFFIX = ' | Clipealo';
+    const fullTitle =
+      title.includes('Clipealo') || title.length + SUFFIX.length > 60
+        ? title
+        : `${title}${SUFFIX}`;
     document.title = fullTitle;
 
     const setMeta = (attr: string, key: string, content: string) => {
