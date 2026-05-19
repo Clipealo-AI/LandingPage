@@ -314,8 +314,8 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
-        title="Precios - Planes de Clipealo para Streamers y Cliperos"
-        description="Planes desde gratis hasta premium para crear clips virales con IA. YouTube, Twitch y Kick. Desde S/.0/mes con 60 minutos incluidos. Sin tarjeta de crédito."
+        title="Precios — Planes de Clipealo para Cliperos y Agencias"
+        description="Planes de Clipealo con clips automáticos en IA. YouTube, Twitch y Kick. Gratis con 60 minutos incluidos. Desde S/.35/mes. Sin tarjeta de crédito."
         canonicalPath="/precios"
       />
       <Header />
