@@ -62,7 +62,7 @@ const FeaturesIndexPage = () => {
     <main className="min-h-screen bg-background text-foreground">
       <SEOHead
         title="Funciones — Clipealo"
-        description="Conoce todas las funciones de Clipealo: clips automáticos con IA, editor de subtítulos, plantillas de marca, exportación en masa y más. Para agencias, cliperos y equipos en LATAM."
+        description="Funciones de Clipealo: clips con IA, editor de subtítulos, plantillas de marca, exportación en masa y más. Para agencias y cliperos en LATAM."
         canonicalPath="/funciones"
       />
       <Header />

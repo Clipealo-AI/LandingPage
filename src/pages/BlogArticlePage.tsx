@@ -89,6 +89,7 @@ const BlogArticlePage = () => {
       <SEOHead
         title={article.title}
         description={article.metaDescription}
+        ogImage={typeof article.cover === 'string' ? article.cover : undefined}
         canonicalPath={`/blog/${article.id}`}
         type="article"
         jsonLd={articleJsonLd}

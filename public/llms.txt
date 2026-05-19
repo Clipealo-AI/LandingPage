@@ -1,0 +1,46 @@
+# Clipealo
+
+> Clipealo es la herramienta #1 en LATAM para convertir streams, podcasts, webinars y entrevistas en clips cortos para TikTok, Reels y YouTube Shorts automáticamente con IA. Diseñada para agencias, editores, cliperos y equipos de marketing en Latinoamérica.
+
+Clipealo analiza tus videos en 5 minutos y genera hasta 10 clips listos para publicar, con subtítulos automáticos, reencuadre vertical, plantillas de marca por cliente y exportación en masa. Entrenada en contenido LATAM (jerga local, contexto cultural, ritmo del español latino).
+
+## Páginas principales
+
+- [Inicio](/): Qué hace Clipealo y para quién es.
+- [Precios](/precios): Planes Free, Básico (S/.35), Estándar (S/.74) y Premium (S/.149) con créditos mensuales para procesar videos.
+- [Funciones](/funciones): Índice de todas las capacidades del producto.
+- [Blog](/blog): Guías, estrategias y casos reales para cliperos, streamers y creadores LATAM.
+
+## Funciones del producto
+
+- [Clips automáticos con IA](/funciones/clips-automaticos-con-ia): Detección automática de los mejores momentos de cualquier video.
+- [Editor de subtítulos y estilos](/funciones/editor-subtitulos-estilos): Subtítulos animados sincronizados, fuentes y colores personalizables.
+- [Exportación en masa](/funciones/exportacion-en-masa): Descarga todos los clips de un proyecto en un clic.
+- [Plantillas de marca](/funciones/plantillas-de-marca): Branding por cliente para agencias.
+- [Gestión de proyectos y carpetas](/funciones/gestion-proyectos-carpetas): Organización por cliente o campaña.
+- [Exporta en 2 formatos](/funciones/exporta-dos-formatos): 16:9 para YouTube/Twitch y 9:16 para TikTok/Reels/Shorts con reencuadre automático.
+- [IA entrenada en contenido LATAM](/funciones/ia-entrenada-contenido-latam): Detección nativa de jerga y contexto cultural latinoamericano.
+
+## Casos de uso por segmento
+
+- [Agencias](/casos/agencias): Cómo gestionar clips de múltiples clientes sin editar manualmente.
+- [Cliperos](/casos/cliperos): Escala de 2 a 10 streamers atendidos con el mismo equipo.
+- [Streamers](/casos/streamers): Publica más clips, crece 5x más rápido.
+- [Podcasters](/casos/podcasters): Convierte episodios largos en clips para redes.
+- [Coaches](/casos/coaches): Reutiliza webinars y charlas como contenido constante.
+- [Creadores](/casos/creadores): Pipeline de clips para creadores LATAM.
+- [Comunidades](/casos/comunidades): Contenido viral para comunidades en crecimiento.
+- [Marcas](/casos/marcas): Reutilización de eventos, lives y campañas.
+
+## Artículos destacados del blog
+
+- [La regla de los 3 segundos en TikTok](/blog/regla-3-segundos): Por qué los primeros fotogramas deciden el alcance.
+- [Cómo convertir 4 horas de stream en 10 clips virales](/blog/convertir-4h-stream-clips): Flujo práctico para cliperos.
+- [Clip economy en LATAM](/blog/clip-economy-latam): El fenómeno económico de los cliperos en la región.
+- [Cómo reducir el tiempo de edición de tu equipo](/blog/como-reducir-tiempo-edicion-clips-equipo): De 3 horas a 20 minutos por semana.
+- [Herramienta de clips automáticos para agencias](/blog/herramienta-clips-automaticos-para-agencias): Gestión multi-cliente.
+
+## Optional
+
+- [Política de privacidad](/politica-de-privacidad)
+- [Términos y condiciones](/terminos-y-condiciones)
