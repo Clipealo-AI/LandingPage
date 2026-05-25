@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Coins, Clock } from 'lucide-react';
+import { Check, X as XIcon, Coins, Clock, Minus, Plus } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
@@ -18,7 +18,8 @@ interface Plan {
   monthlyUSD: number;   // USD per month
   annualPEN: number;    // Soles per month when billed annually
   annualUSD: number;    // USD per month when billed annually
-  credits: string;
+  baseCredits: number;  // Base credits per month included
+  configurable?: boolean; // Allow user to add extra credits
   cta: string;
   ctaHref: string;
   popular?: boolean;
