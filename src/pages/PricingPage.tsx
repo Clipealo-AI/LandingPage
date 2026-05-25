@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X as XIcon, Coins, Clock, ChevronDown, Hand } from 'lucide-react';
+import { Check, Coins, Clock, ChevronDown, Upload } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
@@ -28,7 +28,7 @@ interface Plan {
   groups: FeatureGroup[];
 }
 
-type PlatformKey = 'youtube' | 'twitch' | 'kick' | 'manual' | 'facebook' | 'drive';
+type PlatformKey = 'youtube' | 'twitch' | 'kick' | 'facebook' | 'drive';
 
 const PLATFORM_META: Record<PlatformKey, { label: string; color: string; render: () => JSX.Element }> = {
   youtube: {
@@ -76,11 +76,6 @@ const PLATFORM_META: Record<PlatformKey, { label: string; color: string; render:
       </svg>
     ),
   },
-  manual: {
-    label: 'Subida manual',
-    color: 'hsl(var(--foreground))',
-    render: () => <Hand className="w-full h-full" strokeWidth={2} />,
-  },
 };
 
 const plans: Plan[] = [
@@ -114,7 +109,6 @@ const plans: Plan[] = [
         title: 'SOCIAL POSTING',
         items: [
           { text: '3 posts/mes · YT, FB, Kick…', included: true },
-          { text: 'Sin scheduling', included: false },
         ],
       },
     ],
@@ -129,7 +123,7 @@ const plans: Plan[] = [
     baseCredits: 300, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
-    platforms: ['youtube', 'kick', 'twitch', 'manual'],
+    platforms: ['youtube', 'kick', 'twitch'],
     groups: [
       {
         title: 'VOD',
@@ -149,7 +143,6 @@ const plans: Plan[] = [
         title: 'SOCIAL POSTING',
         items: [
           { text: '15 posts/mes · YT, FB, Kick…', included: true },
-          { text: 'Sin scheduling', included: false },
         ],
       },
     ],
@@ -166,7 +159,7 @@ const plans: Plan[] = [
     ctaHref: 'https://app.clipealo-ai.com/plan',
     popular: true,
     featured: true,
-    platforms: ['youtube', 'kick', 'twitch', 'manual', 'facebook'],
+    platforms: ['youtube', 'kick', 'twitch', 'facebook'],
     groups: [
       {
         title: 'VOD',
@@ -205,7 +198,7 @@ const plans: Plan[] = [
     baseCredits: 1200, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
-    platforms: ['youtube', 'kick', 'twitch', 'manual', 'facebook', 'drive'],
+    platforms: ['youtube', 'kick', 'twitch', 'facebook', 'drive'],
     groups: [
       {
         title: 'VOD',
@@ -272,7 +265,18 @@ const PricingPage = () => {
   // Per-credit rate (matches credit pack pricing)
   const PER_CREDIT_PEN = 0.092;
   const PER_CREDIT_USD = 0.025;
-  const EXTRA_STEPS = [0, 60, 180, 300, 600];
+  const MAX_CREDITS = 6200;
+  const STEP_SIZE = 400;
+  const buildSteps = (base: number) => {
+    const steps: number[] = [0];
+    let next = Math.ceil(base / STEP_SIZE) * STEP_SIZE - base;
+    if (next <= 0) next = STEP_SIZE;
+    while (base + next <= MAX_CREDITS) {
+      steps.push(next);
+      next += STEP_SIZE;
+    }
+    return steps;
+  };
 
   const formatHours = (credits: number) => {
     const h = credits / 60;
@@ -420,7 +424,7 @@ const PricingPage = () => {
                           onChange={(e) => setExtraCredits((s) => ({ ...s, [plan.name]: Number(e.target.value) }))}
                           className="w-full appearance-none bg-background border border-border rounded-lg px-3 py-2.5 pr-9 text-sm font-medium text-foreground hover:border-border-hover focus:outline-none focus:border-primary cursor-pointer"
                         >
-                          {EXTRA_STEPS.map((step) => {
+                          {buildSteps(plan.baseCredits).map((step) => {
                             const total = plan.baseCredits + step;
                             return (
                               <option key={step} value={step}>
@@ -466,39 +470,39 @@ const PricingPage = () => {
                           {group.title}
                         </p>
                         <ul className="space-y-2">
-                          {group.items.map((item, i) => (
+                          {group.items.filter((it) => it.included !== false).map((item, i) => (
                             <li key={i} className="flex items-start gap-2.5">
-                              {item.included !== false ? (
-                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-secondary/15 inline-flex items-center justify-center">
-                                  <Check className="w-3 h-3 text-secondary" strokeWidth={3} />
-                                </span>
-                              ) : (
-                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-muted/40 inline-flex items-center justify-center">
-                                  <XIcon className="w-3 h-3 text-muted-foreground/60" strokeWidth={3} />
-                                </span>
-                              )}
-                              <span className={item.included === false ? 'text-muted-foreground/60 line-through decoration-muted-foreground/40' : 'text-foreground/90'}>
-                                {item.text}
+                              <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-secondary/15 inline-flex items-center justify-center">
+                                <Check className="w-3 h-3 text-secondary" strokeWidth={3} />
                               </span>
+                              <span className="text-foreground/90">{item.text}</span>
                             </li>
                           ))}
                         </ul>
                         {group.title === 'VOD' && plan.platforms.length > 0 && (
-                          <div className="mt-3 flex flex-wrap items-center gap-2">
-                            {plan.platforms.map((p) => {
-                              const meta = PLATFORM_META[p];
-                              return (
-                                <span
-                                  key={p}
-                                  title={meta.label}
-                                  aria-label={meta.label}
-                                  className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
-                                  style={{ color: meta.color }}
-                                >
-                                  {meta.render()}
-                                </span>
-                              );
-                            })}
+                          <div className="mt-3 space-y-2">
+                            <div className="flex flex-wrap items-center gap-2">
+                              {plan.platforms.map((p) => {
+                                const meta = PLATFORM_META[p];
+                                return (
+                                  <span
+                                    key={p}
+                                    title={meta.label}
+                                    aria-label={meta.label}
+                                    className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
+                                    style={{ color: meta.color }}
+                                  >
+                                    {meta.render()}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                            {plan.name !== 'Free' && (
+                              <div className="flex items-center gap-2 text-xs text-foreground/80">
+                                <Upload className="w-3.5 h-3.5 text-secondary" strokeWidth={2.5} />
+                                <span>+ Subida manual de video</span>
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
