@@ -459,39 +459,39 @@ const PricingPage = () => {
                           {group.title}
                         </p>
                         <ul className="space-y-2">
-                          {group.items.map((item, i) => (
+                          {group.items.filter((it) => it.included !== false).map((item, i) => (
                             <li key={i} className="flex items-start gap-2.5">
-                              {item.included !== false ? (
-                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-secondary/15 inline-flex items-center justify-center">
-                                  <Check className="w-3 h-3 text-secondary" strokeWidth={3} />
-                                </span>
-                              ) : (
-                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-muted/40 inline-flex items-center justify-center">
-                                  <XIcon className="w-3 h-3 text-muted-foreground/60" strokeWidth={3} />
-                                </span>
-                              )}
-                              <span className={item.included === false ? 'text-muted-foreground/60 line-through decoration-muted-foreground/40' : 'text-foreground/90'}>
-                                {item.text}
+                              <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-secondary/15 inline-flex items-center justify-center">
+                                <Check className="w-3 h-3 text-secondary" strokeWidth={3} />
                               </span>
+                              <span className="text-foreground/90">{item.text}</span>
                             </li>
                           ))}
                         </ul>
                         {group.title === 'VOD' && plan.platforms.length > 0 && (
-                          <div className="mt-3 flex flex-wrap items-center gap-2">
-                            {plan.platforms.map((p) => {
-                              const meta = PLATFORM_META[p];
-                              return (
-                                <span
-                                  key={p}
-                                  title={meta.label}
-                                  aria-label={meta.label}
-                                  className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
-                                  style={{ color: meta.color }}
-                                >
-                                  {meta.render()}
-                                </span>
-                              );
-                            })}
+                          <div className="mt-3 space-y-2">
+                            <div className="flex flex-wrap items-center gap-2">
+                              {plan.platforms.map((p) => {
+                                const meta = PLATFORM_META[p];
+                                return (
+                                  <span
+                                    key={p}
+                                    title={meta.label}
+                                    aria-label={meta.label}
+                                    className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
+                                    style={{ color: meta.color }}
+                                  >
+                                    {meta.render()}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                            {plan.name !== 'Free' && (
+                              <div className="flex items-center gap-2 text-xs text-foreground/80">
+                                <Upload className="w-3.5 h-3.5 text-secondary" strokeWidth={2.5} />
+                                <span>+ Subida manual de video</span>
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
