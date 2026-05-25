@@ -483,6 +483,24 @@ const PricingPage = () => {
                             </li>
                           ))}
                         </ul>
+                        {group.title === 'VOD' && plan.platforms.length > 0 && (
+                          <div className="mt-3 flex flex-wrap items-center gap-2">
+                            {plan.platforms.map((p) => {
+                              const meta = PLATFORM_META[p];
+                              return (
+                                <span
+                                  key={p}
+                                  title={meta.label}
+                                  aria-label={meta.label}
+                                  className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
+                                  style={{ color: meta.color }}
+                                >
+                                  {meta.render()}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
