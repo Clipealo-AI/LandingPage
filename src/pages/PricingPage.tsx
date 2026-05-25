@@ -226,10 +226,6 @@ const PricingPage = () => {
   const fmt = (v: number) => (Number.isInteger(v) ? v.toString() : v.toFixed(2));
 
   const symbol = currency === 'PEN' ? 'S/' : '$';
-  const formatPrice = (pen: number, usd: number) => {
-    const v = currency === 'PEN' ? pen : usd;
-    return Number.isInteger(v) ? v.toString() : v.toFixed(2);
-  };
 
   const planKeyMap: Record<string, string> = {
     'Básico': 'basico',
