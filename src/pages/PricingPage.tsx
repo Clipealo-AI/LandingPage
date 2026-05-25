@@ -42,7 +42,7 @@ const plans: Plan[] = [
       {
         title: 'VOD',
         items: [
-          { text: '30 min · 2 proyectos/mes', included: true },
+          { text: '30 min de procesamiento', included: true },
           { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
@@ -77,7 +77,7 @@ const plans: Plan[] = [
       {
         title: 'VOD',
         items: [
-          { text: '5h · 10 proyectos/mes', included: true },
+          { text: '5h de procesamiento', included: true },
           { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
@@ -114,7 +114,7 @@ const plans: Plan[] = [
       {
         title: 'VOD',
         items: [
-          { text: '10h · 20 proyectos/mes', included: true },
+          { text: '10h de procesamiento', included: true },
           { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
@@ -153,7 +153,7 @@ const plans: Plan[] = [
       {
         title: 'VOD',
         items: [
-          { text: '20h · ilimitado proyectos', included: true },
+          { text: '20h de procesamiento', included: true },
           { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
