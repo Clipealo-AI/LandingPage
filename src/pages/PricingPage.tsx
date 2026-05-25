@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X as XIcon, Coins, Clock, ChevronDown } from 'lucide-react';
+import { Check, X as XIcon, Coins, Clock, ChevronDown, Hand } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
@@ -24,8 +24,64 @@ interface Plan {
   ctaHref: string;
   popular?: boolean;
   featured?: boolean;
+  platforms: PlatformKey[];
   groups: FeatureGroup[];
 }
+
+type PlatformKey = 'youtube' | 'twitch' | 'kick' | 'manual' | 'facebook' | 'drive';
+
+const PLATFORM_META: Record<PlatformKey, { label: string; color: string; render: () => JSX.Element }> = {
+  youtube: {
+    label: 'YouTube',
+    color: '#FF0033',
+    render: () => (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+  twitch: {
+    label: 'Twitch',
+    color: '#9146FF',
+    render: () => (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+      </svg>
+    ),
+  },
+  kick: {
+    label: 'Kick',
+    color: '#53FC18',
+    render: () => (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M0 0v24h7.06v-4.953h2.353v2.353h2.353V24h7.058v-4.953h-2.353v-2.353h-2.353v-2.353h-2.353v-2.353h2.353V9.589h2.353V7.236h2.353V2.353h-2.353V0h-7.058v2.353H9.413v2.353H7.06V7.06H4.706V0Z" />
+      </svg>
+    ),
+  },
+  facebook: {
+    label: 'Facebook',
+    color: '#1877F2',
+    render: () => (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    ),
+  },
+  drive: {
+    label: 'Google Drive',
+    color: '#1FA463',
+    render: () => (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167z" />
+      </svg>
+    ),
+  },
+  manual: {
+    label: 'Subida manual',
+    color: 'hsl(var(--foreground))',
+    render: () => <Hand className="w-full h-full" strokeWidth={2} />,
+  },
+};
 
 const plans: Plan[] = [
   {
@@ -38,12 +94,12 @@ const plans: Plan[] = [
     baseCredits: 30,
     cta: 'Comenzar gratis',
     ctaHref: 'https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton',
+    platforms: ['youtube'],
     groups: [
       {
         title: 'VOD',
         items: [
           { text: '30 min de procesamiento', included: true },
-          { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
       {
@@ -73,12 +129,12 @@ const plans: Plan[] = [
     baseCredits: 300, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
+    platforms: ['youtube', 'kick', 'twitch', 'manual'],
     groups: [
       {
         title: 'VOD',
         items: [
           { text: '5h de procesamiento', included: true },
-          { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
       {
@@ -110,12 +166,12 @@ const plans: Plan[] = [
     ctaHref: 'https://app.clipealo-ai.com/plan',
     popular: true,
     featured: true,
+    platforms: ['youtube', 'kick', 'twitch', 'manual', 'facebook'],
     groups: [
       {
         title: 'VOD',
         items: [
           { text: '10h de procesamiento', included: true },
-          { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
       {
@@ -149,12 +205,12 @@ const plans: Plan[] = [
     baseCredits: 1200, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
+    platforms: ['youtube', 'kick', 'twitch', 'manual', 'facebook', 'drive'],
     groups: [
       {
         title: 'VOD',
         items: [
           { text: '20h de procesamiento', included: true },
-          { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
       {
