@@ -42,7 +42,7 @@ const plans: Plan[] = [
       {
         title: 'VOD',
         items: [
-          { text: '30 min · 2 proyectos/mes', included: true },
+          { text: '30 min de procesamiento', included: true },
           { text: 'YouTube / Kick / Twitch / Manual', included: true },
         ],
       },
