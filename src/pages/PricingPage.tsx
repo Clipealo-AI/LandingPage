@@ -35,7 +35,7 @@ const plans: Plan[] = [
     monthlyUSD: 0,
     annualPEN: 0,
     annualUSD: 0,
-    credits: '30 créditos / mes',
+    baseCredits: 30,
     cta: 'Comenzar gratis',
     ctaHref: 'https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton',
     groups: [
@@ -70,7 +70,7 @@ const plans: Plan[] = [
     monthlyUSD: 12.5,
     annualPEN: 36,
     annualUSD: 10,
-    credits: '300 créditos / mes',
+    baseCredits: 300, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
     groups: [
@@ -105,7 +105,7 @@ const plans: Plan[] = [
     monthlyUSD: 25,
     annualPEN: 72,
     annualUSD: 20,
-    credits: '600 créditos / mes',
+    baseCredits: 600, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
     popular: true,
@@ -146,7 +146,7 @@ const plans: Plan[] = [
     monthlyUSD: 50,
     annualPEN: 144,
     annualUSD: 40,
-    credits: '1,200 créditos / mes',
+    baseCredits: 1200, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
     groups: [
