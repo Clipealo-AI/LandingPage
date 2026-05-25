@@ -42,6 +42,8 @@ export function seoAudit(): Plugin {
 
       for (const file of htmlFiles) {
         const rel = path.relative(distDir, file);
+        // Skip Google Search Console verification files and similar token files
+        if (/^google[0-9a-f]+\.html$/i.test(path.basename(file))) continue;
         const html = fs.readFileSync(file, 'utf-8');
 
         const canonicalMatches = [...html.matchAll(canonicalRe)].map((m) => m[1]);
