@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X as XIcon, Coins, Clock, Minus, Plus } from 'lucide-react';
+import { Check, X as XIcon, Coins, Clock, ChevronDown } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
