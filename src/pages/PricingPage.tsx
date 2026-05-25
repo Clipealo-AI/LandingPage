@@ -210,6 +210,20 @@ const enterprisePlan = {
 const PricingPage = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const [currency, setCurrency] = useState<'PEN' | 'USD'>('PEN');
+  // Extra credits per plan (added on top of baseCredits)
+  const [extraCredits, setExtraCredits] = useState<Record<string, number>>({});
+
+  // Per-credit rate (matches credit pack pricing)
+  const PER_CREDIT_PEN = 0.092;
+  const PER_CREDIT_USD = 0.025;
+  const EXTRA_STEPS = [0, 60, 180, 300, 600];
+
+  const formatHours = (credits: number) => {
+    const h = credits / 60;
+    if (h < 1) return `${Math.round(h * 60)} min`;
+    return Number.isInteger(h) ? `${h} h` : `${h.toFixed(1)} h`;
+  };
+  const fmt = (v: number) => (Number.isInteger(v) ? v.toString() : v.toFixed(2));
 
   const symbol = currency === 'PEN' ? 'S/' : '$';
   const formatPrice = (pen: number, usd: number) => {
@@ -296,8 +310,12 @@ const PricingPage = () => {
           {/* Plans grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
             {plans.map((plan, idx) => {
-              const pen = isAnnual ? plan.annualPEN : plan.monthlyPEN;
-              const usd = isAnnual ? plan.annualUSD : plan.monthlyUSD;
+              const basePen = isAnnual ? plan.annualPEN : plan.monthlyPEN;
+              const baseUsd = isAnnual ? plan.annualUSD : plan.monthlyUSD;
+              const extra = extraCredits[plan.name] ?? 0;
+              const pen = basePen + extra * PER_CREDIT_PEN;
+              const usd = baseUsd + extra * PER_CREDIT_USD;
+              const totalCredits = plan.baseCredits + extra;
               return (
                 <motion.div
                   key={plan.name}
@@ -328,23 +346,56 @@ const PricingPage = () => {
                   <div className="mb-5 min-h-[80px]">
                     <div className="flex items-baseline gap-1.5" data-product-price={currency === 'PEN' ? pen : usd} data-currency={currency}>
                       <span className="text-4xl font-bold tracking-tight" data-price-value={currency === 'PEN' ? pen : usd}>
-                        {symbol}{formatPrice(pen, usd)}
+                        {symbol}{fmt(currency === 'PEN' ? pen : usd)}
                       </span>
                       <span className="text-sm text-muted-foreground">/mes</span>
                     </div>
                     {plan.monthlyPEN > 0 && (
                       <p className="text-xs text-muted-foreground mt-1.5">
                         {isAnnual ? 'Facturado anualmente' : 'Facturado mensualmente'}
+                        {extra > 0 && ` · base ${symbol}${fmt(currency === 'PEN' ? basePen : baseUsd)} + ${extra} créd.`}
                       </p>
                     )}
                   </div>
 
-                  {/* Credits pill */}
-                  <div className="mb-4">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border border-border text-foreground/80">
-                      <Coins className="w-3.5 h-3.5 text-primary" />
-                      {plan.credits}
-                    </span>
+                  {/* Credits configurator */}
+                  <div className="mb-5 rounded-xl border border-border bg-background/40 p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground/90">
+                        <Coins className="w-3.5 h-3.5 text-primary" />
+                        {totalCredits.toLocaleString('es-PE')} créditos / mes
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+                        <Clock className="w-3 h-3" />
+                        ≈ {formatHours(totalCredits)} de video
+                      </span>
+                    </div>
+                    {plan.configurable ? (
+                      <>
+                        <div className="flex items-center gap-1 flex-wrap">
+                          {EXTRA_STEPS.map((step) => (
+                            <button
+                              key={step}
+                              onClick={() => setExtraCredits((s) => ({ ...s, [plan.name]: step }))}
+                              className={`text-[11px] font-medium px-2 py-1 rounded-md transition-colors ${
+                                extra === step
+                                  ? 'bg-foreground text-background'
+                                  : 'bg-card border border-border text-muted-foreground hover:text-foreground'
+                              }`}
+                            >
+                              {step === 0 ? 'Base' : `+${step}`}
+                            </button>
+                          ))}
+                        </div>
+                        <p className="text-[10px] text-muted-foreground/80 mt-2">
+                          1 crédito = 1 min · {symbol}{currency === 'PEN' ? PER_CREDIT_PEN.toFixed(3) : PER_CREDIT_USD.toFixed(3)} por crédito extra
+                        </p>
+                      </>
+                    ) : (
+                      <p className="text-[10px] text-muted-foreground/80">
+                        1 crédito = 1 minuto de video procesado
+                      </p>
+                    )}
                   </div>
 
                   {/* CTA */}
@@ -377,11 +428,15 @@ const PricingPage = () => {
                           {group.items.map((item, i) => (
                             <li key={i} className="flex items-start gap-2.5">
                               {item.included !== false ? (
-                                <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary" strokeWidth={2.5} />
+                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-secondary/15 inline-flex items-center justify-center">
+                                  <Check className="w-3 h-3 text-secondary" strokeWidth={3} />
+                                </span>
                               ) : (
-                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 text-muted-foreground/50 text-center leading-none">×</span>
+                                <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full bg-muted/40 inline-flex items-center justify-center">
+                                  <XIcon className="w-3 h-3 text-muted-foreground/60" strokeWidth={3} />
+                                </span>
                               )}
-                              <span className={item.included === false ? 'text-muted-foreground/70' : 'text-foreground/85'}>
+                              <span className={item.included === false ? 'text-muted-foreground/60 line-through decoration-muted-foreground/40' : 'text-foreground/90'}>
                                 {item.text}
                               </span>
                             </li>
