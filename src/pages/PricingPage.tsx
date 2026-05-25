@@ -265,7 +265,18 @@ const PricingPage = () => {
   // Per-credit rate (matches credit pack pricing)
   const PER_CREDIT_PEN = 0.092;
   const PER_CREDIT_USD = 0.025;
-  const EXTRA_STEPS = [0, 60, 180, 300, 600];
+  const MAX_CREDITS = 6200;
+  const STEP_SIZE = 400;
+  const buildSteps = (base: number) => {
+    const steps: number[] = [0];
+    let next = Math.ceil(base / STEP_SIZE) * STEP_SIZE - base;
+    if (next <= 0) next = STEP_SIZE;
+    while (base + next <= MAX_CREDITS) {
+      steps.push(next);
+      next += STEP_SIZE;
+    }
+    return steps;
+  };
 
   const formatHours = (credits: number) => {
     const h = credits / 60;
@@ -413,7 +424,7 @@ const PricingPage = () => {
                           onChange={(e) => setExtraCredits((s) => ({ ...s, [plan.name]: Number(e.target.value) }))}
                           className="w-full appearance-none bg-background border border-border rounded-lg px-3 py-2.5 pr-9 text-sm font-medium text-foreground hover:border-border-hover focus:outline-none focus:border-primary cursor-pointer"
                         >
-                          {EXTRA_STEPS.map((step) => {
+                          {buildSteps(plan.baseCredits).map((step) => {
                             const total = plan.baseCredits + step;
                             return (
                               <option key={step} value={step}>
