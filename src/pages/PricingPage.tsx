@@ -124,7 +124,7 @@ const plans: Plan[] = [
     baseCredits: 300, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
-    platforms: ['youtube', 'kick', 'twitch', 'manual'],
+    platforms: ['youtube', 'kick', 'twitch'],
     groups: [
       {
         title: 'VOD',
@@ -161,7 +161,7 @@ const plans: Plan[] = [
     ctaHref: 'https://app.clipealo-ai.com/plan',
     popular: true,
     featured: true,
-    platforms: ['youtube', 'kick', 'twitch', 'manual', 'facebook'],
+    platforms: ['youtube', 'kick', 'twitch', 'facebook'],
     groups: [
       {
         title: 'VOD',
@@ -200,7 +200,7 @@ const plans: Plan[] = [
     baseCredits: 1200, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
-    platforms: ['youtube', 'kick', 'twitch', 'manual', 'facebook', 'drive'],
+    platforms: ['youtube', 'kick', 'twitch', 'facebook', 'drive'],
     groups: [
       {
         title: 'VOD',
