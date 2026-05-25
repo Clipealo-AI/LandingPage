@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Coins, Clock, ChevronDown, Upload, X as XIcon } from 'lucide-react';
 import Header from '@/components/Header';
