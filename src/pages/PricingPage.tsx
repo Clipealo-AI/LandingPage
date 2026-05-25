@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Coins, Clock, ChevronDown, Upload } from 'lucide-react';
+import { Check, Coins, Clock, ChevronDown, Upload, X as XIcon } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
@@ -549,104 +549,22 @@ const PricingPage = () => {
             })}
           </div>
 
-          {/* Plataformas comparison table */}
+          {/* Compara tus planes — full comparison table */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16 rounded-2xl border border-border bg-card overflow-hidden"
+            className="mb-16"
           >
-            <div className="px-6 py-5 border-b border-border">
-              <h3 className="text-lg font-semibold">Plataformas soportadas</h3>
-              <p className="text-xs text-muted-foreground mt-1">
-                De dónde traes tus videos y a qué redes los publicas en cada plan.
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+                Compara tus planes
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+                Detalle completo de lo que incluye cada plan, lado a lado.
               </p>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm min-w-[640px]">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="text-left text-[10px] font-semibold tracking-[0.15em] text-muted-foreground/70 uppercase px-6 py-3 w-1/5">
-                      Categoría
-                    </th>
-                    {plans.map((p) => (
-                      <th
-                        key={p.name}
-                        className={`text-left text-xs font-semibold px-4 py-3 ${
-                          p.featured ? 'text-primary' : 'text-foreground'
-                        }`}
-                      >
-                        {p.name}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-border/60">
-                    <td className="px-6 py-4 align-top text-foreground/80 font-medium">
-                      Trae videos desde
-                    </td>
-                    {plans.map((p) => (
-                      <td key={p.name} className={`px-4 py-4 align-top ${p.featured ? 'bg-primary/5' : ''}`}>
-                        <div className="flex flex-wrap items-center gap-1.5">
-                          {p.platforms.map((k) => {
-                            const meta = PLATFORM_META[k];
-                            return (
-                              <span
-                                key={k}
-                                title={meta.label}
-                                aria-label={meta.label}
-                                className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
-                                style={{ color: meta.color }}
-                              >
-                                {meta.render()}
-                              </span>
-                            );
-                          })}
-                        </div>
-                        {p.name !== 'Free' && (
-                          <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mt-2">
-                            <Upload className="w-3 h-3" />
-                            <span>+ Subida manual</span>
-                          </div>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 align-top text-foreground/80 font-medium">
-                      Publica en redes
-                    </td>
-                    {plans.map((p) => {
-                      const postKeys: PlatformKey[] =
-                        p.name === 'Free'
-                          ? ['youtube', 'tiktok']
-                          : ['x', 'linkedin', 'facebook', 'instagram', 'tiktok', 'youtube'];
-                      return (
-                        <td key={p.name} className={`px-4 py-4 align-top ${p.featured ? 'bg-primary/5' : ''}`}>
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {postKeys.map((k) => {
-                              const meta = PLATFORM_META[k];
-                              return (
-                                <span
-                                  key={k}
-                                  title={meta.label}
-                                  aria-label={meta.label}
-                                  className="w-7 h-7 rounded-md bg-background border border-border inline-flex items-center justify-center p-1.5"
-                                  style={{ color: meta.color }}
-                                >
-                                  {meta.render()}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        </td>
-                      );
-                    })}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <ComparisonTable />
           </motion.div>
 
           {/* Enterprise */}
