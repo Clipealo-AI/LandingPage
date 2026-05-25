@@ -109,7 +109,6 @@ const plans: Plan[] = [
         title: 'SOCIAL POSTING',
         items: [
           { text: '3 posts/mes · YT, FB, Kick…', included: true },
-          { text: 'Sin scheduling', included: false },
         ],
       },
     ],
@@ -144,7 +143,6 @@ const plans: Plan[] = [
         title: 'SOCIAL POSTING',
         items: [
           { text: '15 posts/mes · YT, FB, Kick…', included: true },
-          { text: 'Sin scheduling', included: false },
         ],
       },
     ],
