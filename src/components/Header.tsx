@@ -40,14 +40,49 @@ const resourcesItems = [
 
 type DropdownKey = 'funcionalidades' | 'casos' | 'recursos' | null;
 
+const APP_URL = 'https://app.clipealo-ai.com';
+const API_URL = 'https://backend.clipealo-ai.com';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey>(null);
   const [mobileExpanded, setMobileExpanded] = useState<DropdownKey>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3000);
+
+    fetch(`${API_URL}/api/auth/check-session`, {
+      method: 'GET',
+      credentials: 'include',
+      signal: controller.signal,
+    })
+      .then((res) => res.json())
+      .then((data) => setIsAuthenticated(data.authenticated === true))
+      .catch(() => setIsAuthenticated(false))
+      .finally(() => clearTimeout(timeout));
+
+    return () => {
+      controller.abort();
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  const handleAuthCta = () => {
+    if (isAuthenticated) {
+      window.location.href = `${APP_URL}/dashboard`;
+    } else {
+      window.location.href = APP_URL;
+    }
+    setIsMenuOpen(false);
+  };
+
+  const authLabel = isAuthenticated ? 'Mi Panel' : 'Iniciar sesión';
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -204,12 +239,12 @@ const Header = () => {
               Discord
             </motion.a>
             <motion.button
-              onClick={goToPricing}
+              onClick={handleAuthCta}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="px-6 py-2.5 bg-foreground text-background rounded-full font-semibold hover:bg-foreground/90 transition-colors text-sm"
             >
-              Adquiere Clipealo
+              {authLabel}
             </motion.button>
           </div>
 
@@ -225,11 +260,11 @@ const Header = () => {
               <DiscordIcon />
             </motion.a>
             <motion.button
-              onClick={goToPricing}
+              onClick={handleAuthCta}
               whileTap={{ scale: 0.98 }}
               className="px-4 py-2 bg-foreground text-background rounded-full font-semibold text-xs"
             >
-              Adquirir
+              {isAuthenticated ? 'Mi Panel' : 'Acceder'}
             </motion.button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -304,11 +339,11 @@ const Header = () => {
                 </button>
 
                 <motion.button
-                  onClick={goToPricing}
+                  onClick={handleAuthCta}
                   whileTap={{ scale: 0.98 }}
                   className="mt-2 px-6 py-3 bg-foreground text-background rounded-full font-semibold"
                 >
-                  Adquiere Clipealo
+                  {authLabel}
                 </motion.button>
               </nav>
             </motion.div>
