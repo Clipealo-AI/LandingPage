@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "clipealo-ai-landing",
+    "site": "project-ce90d1de-36a6-4368-b37",
     "public": "dist",
     "ignore": [
       "firebase.json",
