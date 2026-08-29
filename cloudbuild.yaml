@@ -25,8 +25,8 @@ steps:
           --non-interactive
 
 substitutions:
-  _FIREBASE_SITE: "project-ce90d1de-36a6-4368-b37"
-  _SERVICE_ACCOUNT: "clipealo-prod-workloads@project-ce90d1de-36a6-4368-b37.iam.gserviceaccount.com"
+  _FIREBASE_SITE: "clipealo-gpt-amigos-prod"
+  _SERVICE_ACCOUNT: "clipealo-prod-workloads@clipealo-gpt-amigos-prod.iam.gserviceaccount.com"
 
 options:
   logging: CLOUD_LOGGING_ONLY
