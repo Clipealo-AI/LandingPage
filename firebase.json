@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "project-ce90d1de-36a6-4368-b37",
+    "site": "clipealo-gpt-amigos-prod",
     "public": "dist",
     "ignore": [
       "firebase.json",
