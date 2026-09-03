@@ -25,7 +25,7 @@ export const featurePages: FeaturePageData[] = [
     sections: [
       {
         heading: 'Cómo funciona el proceso de clipping automático',
-        content: 'El proceso es simple: pega el enlace de tu video de YouTube, Twitch o Kick, o sube el archivo directamente. La IA de Clipealo transcribe el audio completo, analiza la energía del contenido, detecta cambios de tema y momentos con alto potencial viral, y genera hasta 10 clips listos en 5 minutos.\n\nCada clip incluye subtítulos sincronizados, un título sugerido por IA y un score de viralidad que te ayuda a priorizar qué publicar primero. No necesitas ver el video original ni abrir un editor de video. El resultado son clips de 30 a 90 segundos ya formateados para cada plataforma.\n\nEl flujo completo toma menos de 10 minutos de trabajo activo: 2 minutos para subir el video, 5 minutos de procesamiento automático y 3 minutos para revisar y descargar tus clips.'
+        content: 'El proceso es simple: pega el enlace de tu video de YouTube, Twitch, Kick, Facebook, Google Drive o una grabación pública de Zoom sin contraseña, o sube el archivo directamente. La IA de Clipealo transcribe el audio completo, analiza la energía del contenido, detecta cambios de tema y momentos con alto potencial viral, y genera hasta 10 clips listos en 5 minutos.\n\nCada clip incluye subtítulos sincronizados, un título sugerido por IA y un score de viralidad que te ayuda a priorizar qué publicar primero. No necesitas ver el video original ni abrir un editor de video. El resultado son clips de 30 a 90 segundos ya formateados para cada plataforma.\n\nEl flujo completo toma menos de 10 minutos de trabajo activo: 2 minutos para subir el video, 5 minutos de procesamiento automático y 3 minutos para revisar y descargar tus clips.'
       },
       {
         heading: 'Qué detecta la IA: picos de energía, momentos virales y contexto',
@@ -50,7 +50,7 @@ export const featurePages: FeaturePageData[] = [
     ],
     faqs: [
       { question: '¿Cuánto tarda en procesar 1 hora de video?', answer: '5 minutos. Clipealo procesa cualquier video en 5 minutos y genera hasta 10 clips automáticamente.' },
-      { question: '¿Funciona con streams, podcasts, entrevistas y webinars?', answer: 'Sí. Funciona con cualquier tipo de video largo: streams de Twitch, Kick y YouTube, podcasts, entrevistas, webinars, presentaciones y más.' },
+      { question: '¿Funciona con streams, podcasts, entrevistas y webinars?', answer: 'Sí. Funciona con streams de Twitch, Kick y YouTube, archivos de video y grabaciones públicas de Zoom sin contraseña.' },
       { question: '¿La IA entiende contenido en español latino?', answer: 'Sí. Clipealo está entrenada específicamente en español latino. Entiende jerga peruana, mexicana, argentina y colombiana.' },
       { question: '¿Puedo editar los clips después de generarlos?', answer: 'Sí. Puedes personalizar subtítulos, ajustar el estilo y modificar los clips antes de descargarlos.' },
       { question: '¿Cuánto cuesta?', answer: 'Desde S/.48/mes. Visita la página de precios para ver todos los planes disponibles.' },
@@ -313,7 +313,7 @@ export const featurePages: FeaturePageData[] = [
       },
       {
         heading: 'Diferencias entre Clipealo y herramientas globales como Opus Clip o WayinVideo',
-        content: '**Clipealo:**\n- IA entrenada en español latino\n- Precios en soles peruanos (desde S/.48/mes)\n- 5 minutos de procesamiento, hasta 10 clips por video\n- Soporte en español\n- Plataformas: YouTube, Twitch, Kick\n- Funciones para agencias: plantillas de marca, exportación en masa\n\n**Opus Clip:**\n- IA entrenada principalmente en inglés\n- Precios en USD (desde $19/mes)\n- Sin especialización en español latino\n- Soporte en inglés\n- Sin plantillas de marca por cliente\n\n**WayinVideo:**\n- IA funcional pero genérica\n- Precios en USD\n- Sin optimización para contenido LATAM\n- Funcionalidades básicas\n- Sin exportación en masa\n\nPara creadores, cliperos y agencias en LATAM que trabajan con contenido en español, Clipealo ofrece mejor precisión de transcripción, mejor detección de momentos y funcionalidades diseñadas para la operación de agencias y cliperos profesionales.'
+        content: '**Clipealo:**\n- IA entrenada en español latino\n- Precios en soles peruanos (desde S/.48/mes)\n- 5 minutos de procesamiento, hasta 10 clips por video\n- Soporte en español\n- Fuentes: YouTube, Twitch, Kick, Facebook, Google Drive y Zoom público sin contraseña\n- Funciones para agencias: plantillas de marca, exportación en masa\n\n**Opus Clip:**\n- IA entrenada principalmente en inglés\n- Precios en USD (desde $19/mes)\n- Sin especialización en español latino\n- Soporte en inglés\n- Sin plantillas de marca por cliente\n\n**WayinVideo:**\n- IA funcional pero genérica\n- Precios en USD\n- Sin optimización para contenido LATAM\n- Funcionalidades básicas\n- Sin exportación en masa\n\nPara creadores, cliperos y agencias en LATAM que trabajan con contenido en español, Clipealo ofrece mejor precisión de transcripción, mejor detección de momentos y funcionalidades diseñadas para la operación de agencias y cliperos profesionales.'
       },
       {
         heading: 'Para qué países y acentos funciona mejor',

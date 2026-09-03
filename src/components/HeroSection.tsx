@@ -68,7 +68,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-base sm:text-lg text-muted-foreground max-w-xl mb-10"
           >
-            Clipealo convierte tus streams largos en clips cortos y los publica en todas las plataformas con un solo clic.
+            Clipealo convierte streams, podcasts, webinars y grabaciones públicas de Zoom en clips cortos listos para publicar.
           </motion.p>
 
           {/* URL Input Bar */}
@@ -82,7 +82,7 @@ const HeroSection = () => {
             <div className="flex items-center w-full sm:w-auto bg-muted/60 backdrop-blur-md border border-border rounded-full px-2 py-1.5 gap-2 shadow-[0_0_40px_rgba(255,45,120,0.15)]">
               <div className="flex items-center gap-2 px-3 text-muted-foreground flex-1 min-w-0">
                 <Link2 className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm truncate">Colocar un enlace de tu stream...</span>
+                <span className="text-sm truncate">Pega un enlace de video o Zoom público...</span>
               </div>
               <a
                 href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"

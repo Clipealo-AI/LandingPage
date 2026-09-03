@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link2, ArrowRight } from 'lucide-react';
+import zoomIcon from '@/assets/icons/zoom.svg';
 
 const APP_URL = 'https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton';
 
@@ -39,12 +40,17 @@ const TwitchIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const ZoomIcon = ({ className }: { className?: string }) => (
+  <img src={zoomIcon} alt="" aria-hidden="true" className={className} />
+);
+
 const platforms = [
   { name: 'YouTube', Icon: YouTubeIcon },
   { name: 'Kick', Icon: KickIcon },
   { name: 'Google Drive', Icon: DriveIcon },
   { name: 'Facebook', Icon: FacebookIcon },
   { name: 'Twitch', Icon: TwitchIcon },
+  { name: 'Zoom', Icon: ZoomIcon },
 ];
 
 const StickyBottomBar = () => {
@@ -111,7 +117,7 @@ const StickyBottomBar = () => {
           style={{ background: '#1a1a1a' }}
         >
           <Link2 className="w-4 h-4 shrink-0" />
-          <span className="truncate">Pega el link de tu transmisión...</span>
+          <span className="truncate">Pega un link de video o Zoom público...</span>
         </button>
 
         {/* CTA Button */}

@@ -8,7 +8,7 @@ const steps = [
     image: howStep1,
     number: '1',
     title: 'Pega el link de tu transmisión o sube tu video',
-    description: 'Coloca el enlace de tu stream de Kick, Twitch o YouTube. También puedes subir tu archivo directamente.',
+    description: 'Coloca un enlace de YouTube, Twitch, Kick, Facebook, Drive o una grabación pública de Zoom sin contraseña. También puedes subir tu archivo.',
   },
   {
     image: howStep2,

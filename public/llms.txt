@@ -2,7 +2,7 @@
 
 > Clipealo es la herramienta #1 en LATAM para convertir streams, podcasts, webinars y entrevistas en clips cortos para TikTok, Reels y YouTube Shorts automáticamente con IA. Diseñada para agencias, editores, cliperos y equipos de marketing en Latinoamérica.
 
-Clipealo analiza tus videos en 5 minutos y genera hasta 10 clips listos para publicar, con subtítulos automáticos, reencuadre vertical, plantillas de marca por cliente y exportación en masa. Entrenada en contenido LATAM (jerga local, contexto cultural, ritmo del español latino).
+Clipealo analiza videos de YouTube, Twitch, Kick, Facebook, Google Drive, archivos subidos y grabaciones públicas de Zoom sin contraseña. Genera hasta 10 clips listos para publicar, con subtítulos automáticos, reencuadre vertical, plantillas de marca por cliente y exportación en masa.
 
 ## Páginas principales
 

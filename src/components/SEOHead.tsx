@@ -94,7 +94,7 @@ const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website',
       '@type': 'WebSite',
       name: 'Clipealo',
       url: BASE_URL,
-      description: 'Herramienta de IA #1 en LATAM para crear clips virales de YouTube, Twitch y Kick.',
+      description: 'Herramienta de IA #1 en LATAM para crear clips virales desde YouTube, Twitch, Kick, Drive y grabaciones públicas de Zoom.',
       inLanguage: 'es',
       publisher: {
         '@type': 'Organization',

@@ -5,11 +5,11 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: '¿Cómo funciona Clipealo?',
-    answer: 'Pegas el link de tu stream (Kick, Twitch o YouTube) o subes tu archivo. Nuestra IA analiza el video completo, detecta los mejores momentos y genera clips listos para publicar con subtítulos, títulos y score de viralidad.',
+    answer: 'Pegas el link de tu stream o una grabación pública de Zoom sin contraseña, o subes tu archivo. Nuestra IA analiza el video completo, detecta los mejores momentos y genera clips listos para publicar con subtítulos, títulos y score de viralidad.',
   },
   {
     question: '¿Qué plataformas soporta?',
-    answer: 'Soportamos Kick, Twitch y YouTube. Puedes pegar el enlace de tu stream o subir un archivo de video directamente.',
+    answer: 'Soportamos YouTube, Twitch, Kick, Facebook, Google Drive y grabaciones públicas de Zoom sin contraseña. También puedes subir un archivo de video directamente.',
   },
   {
     question: '¿Cuánto tarda en generar los clips?',

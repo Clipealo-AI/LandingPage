@@ -25,7 +25,7 @@ const data: UseCasePageData = {
   solution: {
     title: 'Tu embudo de contenido con Clipealo',
     steps: [
-      { title: 'Sube tu webinar o masterclass', description: 'YouTube, archivo directo o cualquier video donde enseñas. Duración ilimitada según tu plan.' },
+      { title: 'Sube tu webinar o masterclass', description: 'Pega un enlace público de Zoom sin contraseña, usa YouTube o sube el archivo. Duración según tu plan.' },
       { title: 'La IA identifica tus momentos de mayor impacto', description: 'Consejos accionables, revelaciones, historias emotivas, contradicciones de la industria, cifras impactantes — los momentos que generan guardados, compartidos y conversiones.' },
       { title: 'Clips que construyen autoridad y generan leads', description: 'Cada clip lleva a tu audiencia a querer más. Son teasers naturales de tu conocimiento completo — el mejor anuncio que puedes tener es un contenido de valor genuino.' },
     ],
