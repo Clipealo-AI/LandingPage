@@ -26,7 +26,6 @@ steps:
 
 substitutions:
   _FIREBASE_SITE: "clipealo-gpt-amigos-prod"
-  _SERVICE_ACCOUNT: "clipealo-prod-workloads@clipealo-gpt-amigos-prod.iam.gserviceaccount.com"
 
 options:
   logging: CLOUD_LOGGING_ONLY
