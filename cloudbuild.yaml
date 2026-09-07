@@ -31,4 +31,10 @@ options:
   logging: CLOUD_LOGGING_ONLY
   dynamic_substitutions: true
 
+# La SA del build debe tener firebase.admin en el proyecto de destino para que
+# `firebase deploy` use el ADC sin token. Literal porque el campo serviceAccount
+# no admite sustituciones personalizadas (gcloud rechaza la key sin uso con
+# "not matched in the template").
+serviceAccount: 'projects/clipealo-gpt-amigos-prod/serviceAccounts/clipealo-prod-workloads@clipealo-gpt-amigos-prod.iam.gserviceaccount.com'
+
 timeout: "600s"
