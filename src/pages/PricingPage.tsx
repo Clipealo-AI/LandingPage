@@ -248,6 +248,7 @@ const plans: Plan[] = [
         title: 'VOD',
         items: [
           { text: '20h de procesamiento', included: true },
+          { text: 'Clips desde grabaciones de Zoom', included: true },
         ],
       },
       {
