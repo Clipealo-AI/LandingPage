@@ -80,7 +80,7 @@ const PLATFORM_META: Record<PlatformKey, { label: string; color: string; render:
   zoom: {
     label: 'Zoom (grabaciones públicas)',
     color: '#0B5CFF',
-    render: () => <img src={zoomIcon} alt="" aria-hidden="true" className="w-full h-full" />,
+    render: () => <img src={zoomIcon.url} alt="" aria-hidden="true" className="w-full h-full object-contain" />,
   },
   tiktok: {
     label: 'TikTok',
