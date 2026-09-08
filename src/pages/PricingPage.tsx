@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import { trackInitiateCheckout } from '@/lib/tracking';
-import zoomIcon from '@/assets/icons/zoom.svg';
+import zoomIcon from '@/assets/icons/zoom-app-icon.png.asset.json';
 
 interface FeatureGroup {
   title: string;
