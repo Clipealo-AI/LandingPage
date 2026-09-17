@@ -51,6 +51,8 @@ const DemoSection = () => {
   return (
     <section className="relative py-16 px-4 overflow-hidden">
       <div className="relative z-10 max-w-5xl mx-auto">
+        <h2 className="sr-only">Funciones para crear clips con IA</h2>
+
         {/* GIF Preview */}
         <motion.div
           initial={false}

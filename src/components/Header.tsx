@@ -254,6 +254,7 @@ const Header = () => {
               href="https://discord.com/invite/XjhXBtaK6A"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Únete al Discord"
               whileTap={{ scale: 0.95 }}
               className="flex items-center justify-center w-9 h-9 border border-border rounded-full text-muted-foreground"
             >
@@ -268,6 +269,9 @@ const Header = () => {
             </motion.button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
               className="p-2 text-foreground"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -279,6 +283,7 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}

@@ -125,7 +125,7 @@ const StickyBottomBar = () => {
           onClick={handleRedirect}
           className="flex-1 md:flex-none flex items-center justify-center gap-1.5 rounded-full px-4 md:px-5 py-2.5 text-xs md:text-sm font-bold text-white transition-all hover:scale-[1.02] whitespace-nowrap"
           style={{
-            background: 'hsl(var(--color-pink))',
+            background: 'hsl(350 95% 45%)',
             boxShadow: '0 0 16px rgba(255, 45, 135, 0.4)',
           }}
           data-event="sticky_cta_click"

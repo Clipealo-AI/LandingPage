@@ -107,9 +107,9 @@ const Footer = () => {
           {/* Link columns */}
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-foreground font-bold text-xs tracking-widest mb-4 uppercase">
+              <h2 className="text-foreground font-bold text-xs tracking-widest mb-4 uppercase">
                 {col.title}
-              </h4>
+              </h2>
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
