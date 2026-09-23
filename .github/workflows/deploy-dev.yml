@@ -41,14 +41,21 @@ jobs:
           node-version: 24
           package-manager-cache: false
 
+      - name: Firebase provisioning status
+        if: ${{ vars.GCP_FIREBASE_READY != 'true' }}
+        run: echo "Firebase deploy skipped until Firebase terms are accepted and Terraform finishes provisioning."
+
       - name: Authenticate to Google Cloud with Workload Identity Federation
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
         uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
         with:
           workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
           service_account: ${{ vars.GCP_DEPLOYER_SERVICE_ACCOUNT }}
 
       - name: Install Firebase CLI
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
         run: npm install --global firebase-tools@15.30.2
 
       - name: Deploy dev landing
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
         run: firebase deploy --only hosting --project clipealo-gpt-amigos-dev --config firebase.dev.json --non-interactive
