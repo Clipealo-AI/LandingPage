@@ -1,5 +1,4 @@
-import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
+import ReferenceLandingHome from '@/components/ReferenceLandingHome';
 import DemoSection from '@/components/DemoSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import HowItWorksPreview from '@/components/HowItWorksPreview';
@@ -15,16 +14,15 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <SEOHead
-        title="Clipealo — Clips con IA para Agencias, Editores y Cliperos"
-        description="Convierte streams, podcasts y videos en clips listos para TikTok, Reels y Shorts. Crea más contenido con la IA de Clipealo. Planes desde S/45 al mes."
+        title="Clipealo — De videos largos a grandes clips"
+        description="Sube el video completo. La IA encuentra los momentos que la gente ve hasta el final y te los devuelve en 9:16, con subtítulos."
         canonicalPath="/"
       />
-      <Header />
-      <HeroSection />
-      <PlatformStrip />
-      <DemoSection />
+      <ReferenceLandingHome />
       <TestimonialsSection />
+      <DemoSection />
       <HowItWorksPreview />
+      <PlatformStrip />
       <PricingPreview />
       <FAQSection />
       <ClosingCTA />
