@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
 import { Instagram, Facebook } from 'lucide-react';
-import Logo from '@/assets/clipealo-logo.svg';
+import BrandLogo from '@/components/BrandLogo';
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -70,20 +69,13 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border pt-12 pb-8 px-4">
+    <footer className="border-t border-border bg-background pt-12 pb-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <motion.img
-              src={Logo}
-              alt="Clipealo"
-              className="h-10 sm:h-12 mb-4 logo-glow"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            />
+            <BrandLogo className="mb-4" />
             <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
               Tu contenido, al toque.
             </p>

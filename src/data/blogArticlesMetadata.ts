@@ -149,7 +149,7 @@ export const blogArticlesData: BlogArticleMeta[] = [
     id: 'herramienta-clips-automaticos-para-agencias',
     title: '¿Qué herramienta produce clips para tus clientes sin editar manualmente?',
     category: 'Guía de Inicio',
-    metaDescription: 'Gestiona clips de todos tus clientes en una plataforma: plantillas por cliente, exportación en masa y subtítulos. Agencias LATAM desde S/.72/mes.',
+    metaDescription: 'Gestiona clips de todos tus clientes en una plataforma: plantillas por cliente, exportación en masa y subtítulos. Agencias LATAM desde S/45/mes.',
     isoDate: '2026-05-03T00:00:00-05:00',
     modifiedDate: '2026-05-03T00:00:00-05:00',
     displayDate: '3 de mayo de 2026',

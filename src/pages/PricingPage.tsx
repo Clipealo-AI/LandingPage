@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import { trackInitiateCheckout } from '@/lib/tracking';
 import zoomIcon from '@/assets/icons/zoom-app-icon.png.asset.json';
+import { creditPacks, extraCreditPrice, planCatalog } from '@/data/pricing';
 
 interface FeatureGroup {
   title: string;
@@ -126,11 +127,11 @@ const plans: Plan[] = [
   {
     name: 'Free',
     tagline: 'Para probar Clipealo',
-    monthlyPEN: 0,
-    monthlyUSD: 0,
-    annualPEN: 0,
-    annualUSD: 0,
-    baseCredits: 30,
+    monthlyPEN: planCatalog.free.monthlyPEN,
+    monthlyUSD: planCatalog.free.monthlyUSD,
+    annualPEN: planCatalog.free.annualPEN,
+    annualUSD: planCatalog.free.annualUSD,
+    baseCredits: planCatalog.free.credits,
     cta: 'Comenzar gratis',
     ctaHref: 'https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton',
     platforms: ['youtube'],
@@ -160,11 +161,11 @@ const plans: Plan[] = [
   {
     name: 'Básico',
     tagline: 'Creadores en crecimiento',
-    monthlyPEN: 45,
-    monthlyUSD: 12.5,
-    annualPEN: 36,
-    annualUSD: 10,
-    baseCredits: 300, configurable: true,
+    monthlyPEN: planCatalog.basico.monthlyPEN,
+    monthlyUSD: planCatalog.basico.monthlyUSD,
+    annualPEN: planCatalog.basico.annualPEN,
+    annualUSD: planCatalog.basico.annualUSD,
+    baseCredits: planCatalog.basico.credits, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
     platforms: ['youtube', 'kick', 'twitch'],
@@ -194,11 +195,11 @@ const plans: Plan[] = [
   {
     name: 'Estándar',
     tagline: 'Creadores profesionales',
-    monthlyPEN: 90,
-    monthlyUSD: 25,
-    annualPEN: 72,
-    annualUSD: 20,
-    baseCredits: 600, configurable: true,
+    monthlyPEN: planCatalog.estandar.monthlyPEN,
+    monthlyUSD: planCatalog.estandar.monthlyUSD,
+    annualPEN: planCatalog.estandar.annualPEN,
+    annualUSD: planCatalog.estandar.annualUSD,
+    baseCredits: planCatalog.estandar.credits, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
     popular: true,
@@ -235,11 +236,11 @@ const plans: Plan[] = [
   {
     name: 'Premium',
     tagline: 'Agencias y equipos',
-    monthlyPEN: 180,
-    monthlyUSD: 50,
-    annualPEN: 144,
-    annualUSD: 40,
-    baseCredits: 1200, configurable: true,
+    monthlyPEN: planCatalog.premium.monthlyPEN,
+    monthlyUSD: planCatalog.premium.monthlyUSD,
+    annualPEN: planCatalog.premium.annualPEN,
+    annualUSD: planCatalog.premium.annualUSD,
+    baseCredits: planCatalog.premium.credits, configurable: true,
     cta: 'Empezar',
     ctaHref: 'https://app.clipealo-ai.com/plan',
     platforms: ['youtube', 'kick', 'twitch', 'facebook', 'drive', 'zoom'],
@@ -477,8 +478,8 @@ const PricingPageInner = () => {
   const [extraCredits, setExtraCredits] = useState<Record<string, number>>({});
 
   // Per-credit rate (matches credit pack pricing)
-  const PER_CREDIT_PEN = 0.092;
-  const PER_CREDIT_USD = 0.025;
+  const PER_CREDIT_PEN = extraCreditPrice.penPerCredit;
+  const PER_CREDIT_USD = extraCreditPrice.usdPerCredit;
   const MAX_CREDITS = 6200;
   const STEP_SIZE = 400;
   const buildSteps = (base: number) => {
@@ -806,9 +807,9 @@ const PricingPageInner = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
               {[
-                { credits: 60, hours: 1, pen: 5.5, usd: 1.5 },
-                { credits: 180, hours: 3, pen: 16.5, usd: 4.6 },
-                { credits: 300, hours: 5, pen: 27.5, usd: 7.65, popular: true },
+              { ...creditPacks[0], popular: false },
+                { ...creditPacks[1], popular: false },
+                { ...creditPacks[2], popular: true },
               ].map((pack) => (
                 <div
                   key={pack.credits}

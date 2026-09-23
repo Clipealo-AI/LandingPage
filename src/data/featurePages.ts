@@ -45,7 +45,7 @@ export const featurePages: FeaturePageData[] = [
       },
       {
         heading: 'Quién usa esta función: agencias, cliperos y equipos de marketing',
-        content: '**Cliperos profesionales** que trabajan con múltiples streamers y necesitan producir alto volumen de clips semanalmente. Con Clipealo procesan un stream de 4 horas en 5 minutos y obtienen hasta 10 clips listos.\n\n**Agencias de contenido** que gestionan las redes de varios clientes. Cada cliente tiene su propia plantilla de marca, y los clips se generan con el branding correcto automáticamente.\n\n**Equipos de marketing** que producen webinars, demos y presentaciones y necesitan reutilizar ese contenido en redes sociales sin contratar editores adicionales.\n\n**Social media managers** que necesitan mantener un ritmo de publicación constante en TikTok, Reels y Shorts sin dedicar horas a la edición.\n\nClipealo tiene planes desde S/.48/mes, con precios en soles peruanos y soporte en español.'
+        content: '**Cliperos profesionales** que trabajan con múltiples streamers y necesitan producir alto volumen de clips semanalmente. Con Clipealo procesan un stream de 4 horas en 5 minutos y obtienen hasta 10 clips listos.\n\n**Agencias de contenido** que gestionan las redes de varios clientes. Cada cliente tiene su propia plantilla de marca, y los clips se generan con el branding correcto automáticamente.\n\n**Equipos de marketing** que producen webinars, demos y presentaciones y necesitan reutilizar ese contenido en redes sociales sin contratar editores adicionales.\n\n**Social media managers** que necesitan mantener un ritmo de publicación constante en TikTok, Reels y Shorts sin dedicar horas a la edición.\n\nClipealo tiene planes desde S/45/mes, con precios en soles peruanos y soporte en español.'
       },
     ],
     faqs: [
@@ -53,7 +53,7 @@ export const featurePages: FeaturePageData[] = [
       { question: '¿Funciona con streams, podcasts, entrevistas y webinars?', answer: 'Sí. Funciona con streams de Twitch, Kick y YouTube, archivos de video y grabaciones públicas de Zoom sin contraseña.' },
       { question: '¿La IA entiende contenido en español latino?', answer: 'Sí. Clipealo está entrenada específicamente en español latino. Entiende jerga peruana, mexicana, argentina y colombiana.' },
       { question: '¿Puedo editar los clips después de generarlos?', answer: 'Sí. Puedes personalizar subtítulos, ajustar el estilo y modificar los clips antes de descargarlos.' },
-      { question: '¿Cuánto cuesta?', answer: 'Desde S/.48/mes. Visita la página de precios para ver todos los planes disponibles.' },
+      { question: '¿Cuánto cuesta?', answer: 'Desde S/45/mes. Visita la página de precios para ver todos los planes disponibles.' },
     ],
     internalLinks: [
       { label: 'Ver precios de Clipealo', href: '/precios' },
@@ -91,7 +91,7 @@ export const featurePages: FeaturePageData[] = [
       },
       {
         heading: 'Para quién es ideal: cliperos, agencias y equipos de contenido',
-        content: '**Cliperos profesionales** que quieren diferenciarse entregando clips con estilo visual profesional sin invertir horas en edición de subtítulos.\n\n**Agencias de contenido** que necesitan mantener la identidad visual de cada cliente en todos los clips que producen. Cada cliente tiene su plantilla de estilo.\n\n**Social media managers** que publican contenido en múltiples plataformas y necesitan que los subtítulos se adapten automáticamente al formato (vertical u horizontal).\n\n**Creadores de contenido** que quieren que sus clips se vean profesionales sin aprender a usar software de edición complejo.\n\nTodos los planes de Clipealo incluyen el editor de subtítulos. Desde S/.48/mes.'
+        content: '**Cliperos profesionales** que quieren diferenciarse entregando clips con estilo visual profesional sin invertir horas en edición de subtítulos.\n\n**Agencias de contenido** que necesitan mantener la identidad visual de cada cliente en todos los clips que producen. Cada cliente tiene su plantilla de estilo.\n\n**Social media managers** que publican contenido en múltiples plataformas y necesitan que los subtítulos se adapten automáticamente al formato (vertical u horizontal).\n\n**Creadores de contenido** que quieren que sus clips se vean profesionales sin aprender a usar software de edición complejo.\n\nTodos los planes de Clipealo incluyen el editor de subtítulos. Desde S/45/mes.'
       },
     ],
     faqs: [
@@ -145,7 +145,7 @@ export const featurePages: FeaturePageData[] = [
       { question: '¿En qué formatos se exportan los clips?', answer: 'En MP4, disponible en formato 9:16 (vertical para TikTok/Reels) y 16:9 (horizontal para YouTube). Puedes elegir uno o ambos.' },
       { question: '¿Los subtítulos y estilos se mantienen en la exportación?', answer: 'Sí. Los subtítulos, estilos y plantillas de marca se integran directamente en el video exportado.' },
       { question: '¿Hay límite de clips por exportación?', answer: 'No. Puedes exportar todos los clips de un proyecto sin límite.' },
-      { question: '¿Cuánto cuesta el plan que incluye exportación en masa?', answer: 'La exportación en masa está disponible en todos los planes. Desde S/.48/mes.' },
+      { question: '¿Cuánto cuesta el plan que incluye exportación en masa?', answer: 'La exportación en masa está disponible en todos los planes. Desde S/45/mes.' },
     ],
     internalLinks: [
       { label: 'Ver precios de Clipealo', href: '/precios' },
@@ -191,7 +191,7 @@ export const featurePages: FeaturePageData[] = [
       { question: '¿Incluye logo y colores de marca?', answer: 'Incluye colores corporativos, tipografía y estilo de subtítulos personalizado.' },
       { question: '¿Se aplica automáticamente a clips nuevos del mismo proyecto?', answer: 'Sí. Todos los clips generados en un proyecto heredan la plantilla configurada automáticamente.' },
       { question: '¿Puedo modificar la plantilla después de aplicarla?', answer: 'Sí. Puedes actualizar la plantilla en cualquier momento y los clips futuros reflejarán los cambios.' },
-      { question: '¿En qué plan está disponible esta función?', answer: 'Las plantillas de marca están disponibles en todos los planes. Desde S/.48/mes.' },
+      { question: '¿En qué plan está disponible esta función?', answer: 'Las plantillas de marca están disponibles en todos los planes. Desde S/45/mes.' },
     ],
     internalLinks: [
       { label: 'Ver precios de Clipealo', href: '/precios' },
@@ -237,7 +237,7 @@ export const featurePages: FeaturePageData[] = [
       { question: '¿Puedo compartir proyectos con mi equipo o cliente?', answer: 'Actualmente los proyectos están ligados a tu cuenta. Puedes exportar y compartir los clips fácilmente.' },
       { question: '¿Los proyectos se eliminan automáticamente?', answer: 'No. Tus proyectos y clips se mantienen disponibles mientras tu cuenta esté activa.' },
       { question: '¿Puedo mover clips entre proyectos?', answer: 'Actualmente los clips permanecen en el proyecto donde fueron generados.' },
-      { question: '¿En qué plan está disponible la gestión avanzada de proyectos?', answer: 'La gestión de proyectos está disponible en todos los planes. Desde S/.48/mes.' },
+      { question: '¿En qué plan está disponible la gestión avanzada de proyectos?', answer: 'La gestión de proyectos está disponible en todos los planes. Desde S/45/mes.' },
     ],
     internalLinks: [
       { label: 'Ver precios de Clipealo', href: '/precios' },
@@ -275,7 +275,7 @@ export const featurePages: FeaturePageData[] = [
       },
       {
         heading: 'Para quién es ideal: cliperos, agencias y creadores multiplataforma',
-        content: '**Cliperos profesionales:** Publican clips de sus streamers en TikTok, Reels y Shorts simultáneamente. Necesitan las dos versiones de cada clip sin reencuadrar manualmente.\n\n**Agencias de contenido:** Entregan clips a sus clientes formateados para cada plataforma. La exportación dual ahorra el paso de post-producción que antes requería un editor.\n\n**Creadores multiplataforma:** Publican en 3-4 plataformas y necesitan que cada clip se vea nativo en cada una.\n\n**Equipos de marketing:** Producen contenido para redes sociales y YouTube simultáneamente a partir de webinars y presentaciones.\n\nClipealo procesa cada video en 5 minutos, genera hasta 10 clips y los entrega en ambos formatos. Desde S/.48/mes.'
+        content: '**Cliperos profesionales:** Publican clips de sus streamers en TikTok, Reels y Shorts simultáneamente. Necesitan las dos versiones de cada clip sin reencuadrar manualmente.\n\n**Agencias de contenido:** Entregan clips a sus clientes formateados para cada plataforma. La exportación dual ahorra el paso de post-producción que antes requería un editor.\n\n**Creadores multiplataforma:** Publican en 3-4 plataformas y necesitan que cada clip se vea nativo en cada una.\n\n**Equipos de marketing:** Producen contenido para redes sociales y YouTube simultáneamente a partir de webinars y presentaciones.\n\nClipealo procesa cada video en 5 minutos, genera hasta 10 clips y los entrega en ambos formatos. Desde S/45/mes.'
       },
     ],
     faqs: [
@@ -283,7 +283,7 @@ export const featurePages: FeaturePageData[] = [
       { question: '¿El reencuadre automático funciona bien con múltiples personas en pantalla?', answer: 'La IA detecta al hablante principal y centra el encuadre en él. Funciona mejor con 1-2 personas en pantalla.' },
       { question: '¿Puedo ajustar manualmente el encuadre si la IA no lo hace bien?', answer: 'Sí. Puedes modificar el punto de enfoque del reencuadre antes de exportar.' },
       { question: '¿Los subtítulos se adaptan al formato automáticamente?', answer: 'Sí. Los subtítulos se reposicionan automáticamente para cada formato, optimizados para la zona de lectura de cada plataforma.' },
-      { question: '¿En qué plan está disponible?', answer: 'La exportación en dos formatos está disponible en todos los planes. Desde S/.48/mes.' },
+      { question: '¿En qué plan está disponible?', answer: 'La exportación en dos formatos está disponible en todos los planes. Desde S/45/mes.' },
     ],
     internalLinks: [
       { label: 'Ver precios de Clipealo', href: '/precios' },
@@ -313,7 +313,7 @@ export const featurePages: FeaturePageData[] = [
       },
       {
         heading: 'Diferencias entre Clipealo y herramientas globales como Opus Clip o WayinVideo',
-        content: '**Clipealo:**\n- IA entrenada en español latino\n- Precios en soles peruanos (desde S/.48/mes)\n- 5 minutos de procesamiento, hasta 10 clips por video\n- Soporte en español\n- Fuentes: YouTube, Twitch, Kick, Facebook, Google Drive y Zoom público sin contraseña\n- Funciones para agencias: plantillas de marca, exportación en masa\n\n**Opus Clip:**\n- IA entrenada principalmente en inglés\n- Precios en USD (desde $19/mes)\n- Sin especialización en español latino\n- Soporte en inglés\n- Sin plantillas de marca por cliente\n\n**WayinVideo:**\n- IA funcional pero genérica\n- Precios en USD\n- Sin optimización para contenido LATAM\n- Funcionalidades básicas\n- Sin exportación en masa\n\nPara creadores, cliperos y agencias en LATAM que trabajan con contenido en español, Clipealo ofrece mejor precisión de transcripción, mejor detección de momentos y funcionalidades diseñadas para la operación de agencias y cliperos profesionales.'
+        content: '**Clipealo:**\n- IA entrenada en español latino\n- Precios en soles peruanos (desde S/45/mes)\n- 5 minutos de procesamiento, hasta 10 clips por video\n- Soporte en español\n- Fuentes: YouTube, Twitch, Kick, Facebook, Google Drive y Zoom público sin contraseña\n- Funciones para agencias: plantillas de marca, exportación en masa\n\n**Opus Clip:**\n- IA entrenada principalmente en inglés\n- Precios en USD (desde $19/mes)\n- Sin especialización en español latino\n- Soporte en inglés\n- Sin plantillas de marca por cliente\n\n**WayinVideo:**\n- IA funcional pero genérica\n- Precios en USD\n- Sin optimización para contenido LATAM\n- Funcionalidades básicas\n- Sin exportación en masa\n\nPara creadores, cliperos y agencias en LATAM que trabajan con contenido en español, Clipealo ofrece mejor precisión de transcripción, mejor detección de momentos y funcionalidades diseñadas para la operación de agencias y cliperos profesionales.'
       },
       {
         heading: 'Para qué países y acentos funciona mejor',
@@ -321,7 +321,7 @@ export const featurePages: FeaturePageData[] = [
       },
       {
         heading: 'Por qué esto importa para agencias y cliperos que trabajan con marcas locales',
-        content: 'Las agencias y cliperos que trabajan con marcas y creadores locales en LATAM necesitan una herramienta que entienda el contexto del mercado:\n\n**Precisión de subtítulos:** Los subtítulos con errores de transcripción se ven poco profesionales. Clipealo transcribe correctamente el español latino, incluyendo nombres propios, marcas locales y expresiones regionales.\n\n**Detección relevante:** Un momento que es viral para una audiencia peruana puede no serlo para una audiencia estadounidense, y viceversa. Clipealo detecta los momentos que funcionan para audiencias LATAM.\n\n**Títulos y descripciones naturales:** Los títulos generados por IA suenan como los escribiría un nativo, no como traducciones de inglés.\n\n**Precio accesible:** En soles peruanos, sin tipo de cambio. Desde S/.48/mes, accesible para agencias y cliperos independientes en la región.\n\nPara el mercado LATAM, Clipealo es la herramienta nativa. Las alternativas globales son herramientas de otro mercado adaptadas — no diseñadas — para la región.'
+        content: 'Las agencias y cliperos que trabajan con marcas y creadores locales en LATAM necesitan una herramienta que entienda el contexto del mercado:\n\n**Precisión de subtítulos:** Los subtítulos con errores de transcripción se ven poco profesionales. Clipealo transcribe correctamente el español latino, incluyendo nombres propios, marcas locales y expresiones regionales.\n\n**Detección relevante:** Un momento que es viral para una audiencia peruana puede no serlo para una audiencia estadounidense, y viceversa. Clipealo detecta los momentos que funcionan para audiencias LATAM.\n\n**Títulos y descripciones naturales:** Los títulos generados por IA suenan como los escribiría un nativo, no como traducciones de inglés.\n\n**Precio accesible:** En soles peruanos, sin tipo de cambio. Desde S/45/mes, accesible para agencias y cliperos independientes en la región.\n\nPara el mercado LATAM, Clipealo es la herramienta nativa. Las alternativas globales son herramientas de otro mercado adaptadas — no diseñadas — para la región.'
       },
     ],
     faqs: [
@@ -329,7 +329,7 @@ export const featurePages: FeaturePageData[] = [
       { question: '¿La IA entiende modismos y jerga local?', answer: 'Sí. Reconoce expresiones como "causa", "pata", "qué roche", "no manches" y cientos de modismos latinoamericanos.' },
       { question: '¿Funciona también con contenido en inglés?', answer: 'Sí. Clipealo procesa contenido en inglés y español. Pero su ventaja competitiva está en el español latino.' },
       { question: '¿Es mejor que Opus Clip para contenido en español?', answer: 'Sí. Clipealo está entrenada específicamente en español latino, lo que se traduce en mejor transcripción, mejor detección de momentos y subtítulos más precisos.' },
-      { question: '¿Cuánto cuesta?', answer: 'Desde S/.48/mes. Precios en soles peruanos, sin tipo de cambio. Planes para cliperos, agencias y equipos.' },
+      { question: '¿Cuánto cuesta?', answer: 'Desde S/45/mes. Precios en soles peruanos, sin tipo de cambio. Planes para cliperos, agencias y equipos.' },
     ],
     internalLinks: [
       { label: 'Ver precios de Clipealo', href: '/precios' },

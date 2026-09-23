@@ -16,6 +16,7 @@ const DEFAULT_OG_IMAGE = 'https://storage.googleapis.com/gpt-engineer-file-uploa
 
 const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website', jsonLd, publishedTime, modifiedTime }: SEOHeadProps) => {
   useEffect(() => {
+    const isDev = import.meta.env.VITE_DEPLOY_ENV === 'dev';
     // Only append the brand suffix when the resulting title still fits under the
     // 60-character SEO recommendation. Skip the suffix when the title already
     // contains "Clipealo" or when appending would exceed the limit.
@@ -45,6 +46,8 @@ const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website',
     setMeta('name', 'twitter:description', description);
     setMeta('name', 'twitter:image', ogImage || DEFAULT_OG_IMAGE);
     setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'robots', isDev ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large');
+    setMeta('name', 'googlebot', isDev ? 'noindex, nofollow' : 'index, follow');
 
     if (canonicalPath) {
       // Ensure trailing slash for consistency
@@ -100,7 +103,7 @@ const SEOHead = ({ title, description, ogImage, canonicalPath, type = 'website',
         '@type': 'Organization',
         name: 'Clipealo',
         url: BASE_URL,
-        logo: `${BASE_URL}/favicon.png`,
+      logo: `${BASE_URL}/clipealo-icon.svg`,
       },
     };
 

@@ -52,13 +52,13 @@ const data: UseCasePageData = {
     ],
   },
   metrics: [
-    { value: 'S/.48/mes', label: 'Plan Básico — si trae 1 venta de curso de S/.200, se paga 4x' },
+    { value: 'S/45/mes', label: 'Plan Básico — si trae 1 venta de curso de S/.200, se paga 4x' },
     { value: '20+', label: 'Clips por webinar de 2 horas' },
     { value: 'IG + TikTok', label: 'Los 2 canales principales para coaches en LATAM' },
   ],
   bottomCTA: {
     title: 'Tu conocimiento vale demasiado para quedarse en una grabación que nadie ve.',
-    subtitle: '60 minutos de análisis gratis. Sin tarjeta de crédito.',
+    subtitle: '30 minutos de análisis gratis. Sin tarjeta de crédito.',
     ctaText: 'Empezar a crear clips de mi contenido',
     ctaHref: '/precios',
   },

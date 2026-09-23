@@ -48,9 +48,9 @@ const data: UseCasePageData = {
   plans: {
     title: 'Planes para streamers',
     items: [
-      { name: 'Básico', price: 'S/.48/mes', description: 'Incluye Twitch y YouTube. 10h de análisis/mes.', highlighted: false },
-      { name: 'Estándar', price: 'S/.72/mes', description: 'Suma Kick. 15h de análisis/mes.', highlighted: true },
-      { name: 'Premium', price: 'S/.126/mes', description: 'Para streamers de alto volumen. Prioridad máxima.', highlighted: false },
+      { name: 'Básico', price: 'S/45/mes', description: 'Incluye Twitch y YouTube. 5h de análisis/mes.', highlighted: false },
+      { name: 'Estándar', price: 'S/90/mes', description: 'Suma Kick. 10h de análisis/mes.', highlighted: true },
+      { name: 'Premium', price: 'S/180/mes', description: 'Para streamers de alto volumen. Prioridad máxima.', highlighted: false },
     ],
   },
   bottomCTA: {

@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { MotionConfig } from "framer-motion";
+import { ThemeProvider } from "next-themes";
 import App from "./App.tsx";
 import "./index.css";
 
@@ -9,7 +10,9 @@ const isBot = /bot|crawl|spider|google|baidu|bing|msn|yandex|duckduck|facebookex
 );
 
 createRoot(document.getElementById("root")!).render(
-  <MotionConfig reducedMotion={isBot ? "always" : "never"}>
-    <App />
+  <MotionConfig reducedMotion={isBot ? "always" : "user"}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem storageKey="clipealo-theme" disableTransitionOnChange>
+      <App />
+    </ThemeProvider>
   </MotionConfig>
 );

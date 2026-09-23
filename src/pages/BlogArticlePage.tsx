@@ -8,7 +8,7 @@ import { blogArticles, categoryColors } from '@/data/blogArticles';
 
 const AuthorAvatar = ({ initial }: { initial: string }) => (
   <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-    style={{ background: 'linear-gradient(135deg, #FF2D78, #7C3AED)' }}>
+    style={{ background: 'linear-gradient(135deg, #1472fd, #fd5e1c)' }}>
     {initial}
   </div>
 );
@@ -67,7 +67,7 @@ const BlogArticlePage = () => {
     description: article.metaDescription,
     image: typeof article.cover === 'string' ? article.cover : undefined,
     author: { '@type': 'Person', name: article.author.name },
-    publisher: { '@type': 'Organization', name: 'Clipealo', logo: { '@type': 'ImageObject', url: 'https://www.clipealo-ai.com/favicon.png' } },
+    publisher: { '@type': 'Organization', name: 'Clipealo', logo: { '@type': 'ImageObject', url: 'https://www.clipealo-ai.com/clipealo-icon.svg' } },
     datePublished: article.isoDate,
     dateModified: article.modifiedDate,
     mainEntityOfPage: `https://www.clipealo-ai.com/blog/${article.id}`,
@@ -162,7 +162,7 @@ const BlogArticlePage = () => {
 
           {/* Internal links */}
           {article.internalLinks && article.internalLinks.length > 0 && (
-            <div className="mt-10 mb-6 rounded-xl border border-border p-6" style={{ background: 'rgba(255,255,255,0.03)' }}>
+            <div className="mt-10 mb-6 rounded-xl border border-border bg-card p-6">
               <p className="text-sm font-semibold text-foreground mb-3">Te puede interesar:</p>
               <ul className="space-y-2">
                 {article.internalLinks.map((link, i) => (
@@ -178,11 +178,11 @@ const BlogArticlePage = () => {
 
           {/* CTA */}
           <div className="mt-12 rounded-2xl p-8 text-center border" style={{
-            background: 'linear-gradient(135deg, rgba(255,45,120,0.12), rgba(124,58,237,0.10))',
-            borderColor: 'rgba(255,45,120,0.20)',
+            background: 'linear-gradient(135deg, rgba(20,114,253,0.08), rgba(253,94,28,0.08))',
+            borderColor: 'rgba(20,114,253,0.2)',
           }}>
             <p className="text-lg font-bold text-foreground mb-2">¿Listo para probarlo?</p>
-            <p className="text-sm text-muted-foreground mb-5">Clipealo detecta automáticamente los mejores momentos de tus VODs. 60 minutos gratis.</p>
+            <p className="text-sm text-muted-foreground mb-5">Clipealo detecta automáticamente los mejores momentos de tus VODs. 30 minutos gratis.</p>
             <a href="https://app.clipealo-ai.com/?utm_source=landing_blog_article&utm_medium=cta" className="btn-cta inline-block text-base">
               Empezar gratis →
             </a>

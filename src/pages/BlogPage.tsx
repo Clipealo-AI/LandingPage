@@ -11,7 +11,7 @@ const categories: Array<'Todos' | BlogCategory> = ['Todos', 'Buenas Prácticas',
 
 const AuthorAvatar = ({ initial }: { initial: string }) => (
   <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-    style={{ background: 'linear-gradient(135deg, #FF2D78, #7C3AED)' }}>
+    style={{ background: 'linear-gradient(135deg, #1472fd, #fd5e1c)' }}>
     {initial}
   </div>
 );
@@ -64,7 +64,7 @@ const BlogPage = () => {
               className="whitespace-nowrap rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 border shrink-0"
               style={
                 activeCategory === cat
-                  ? { background: '#FF2D78', borderColor: '#FF2D78', color: '#fff' }
+                  ? { background: '#1472fd', borderColor: '#1472fd', color: '#fff' }
                   : { background: 'transparent', borderColor: 'hsl(var(--border))', color: 'hsl(var(--muted-foreground))' }
               }
             >
@@ -83,8 +83,7 @@ const BlogPage = () => {
             {featured && (
               <Link to={`/blog/${featured.id}`} className="block mb-10">
                 <motion.article
-                  className="grid md:grid-cols-2 rounded-[14px] border overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                  style={{ borderColor: '#1a1a2e', background: '#111120', boxShadow: '0 4px 24px rgba(0,0,0,0.3)' }}
+                  className="brand-card grid overflow-hidden transition-all duration-300 hover:-translate-y-1"
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 >
                   <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
@@ -95,7 +94,7 @@ const BlogPage = () => {
                       <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: categoryColors[featured.category] + '22', color: categoryColors[featured.category] }}>
                         {featured.category}
                       </span>
-                      <span className="text-xs font-medium px-3 py-1 rounded-full" style={{ background: '#ffffff08', color: '#8888AA' }}>
+                      <span className="text-xs font-medium px-3 py-1 rounded-full bg-muted text-muted-foreground">
                         Destacado
                       </span>
                     </div>
@@ -120,8 +119,7 @@ const BlogPage = () => {
                 {grid.map((article, i) => (
                   <Link to={`/blog/${article.id}`} key={article.id}>
                     <motion.article
-                      className="rounded-xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
-                      style={{ borderColor: '#1a1a2e', background: '#111120' }}
+                      className="brand-card flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.05 * i }}
@@ -155,10 +153,7 @@ const BlogPage = () => {
         {/* CTA Banner */}
         <motion.div
           className="mt-16 rounded-2xl p-10 md:p-12 text-center border"
-          style={{
-            background: 'linear-gradient(135deg, rgba(255,45,120,0.12), rgba(124,58,237,0.10))',
-            borderColor: 'rgba(255,45,120,0.20)',
-          }}
+          style={{ background: 'linear-gradient(135deg, rgba(20,114,253,0.08), rgba(253,94,28,0.08))', borderColor: 'rgba(20,114,253,0.2)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

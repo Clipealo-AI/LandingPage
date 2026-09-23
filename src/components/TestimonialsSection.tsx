@@ -5,7 +5,6 @@ import avatarRin from '@/assets/testimonials/rinnakavt.png';
 import avatarEvolutive from '@/assets/testimonials/evolutive-playbook.jpg';
 import avatarJarod from '@/assets/testimonials/jarod-blade.jpeg';
 import avatarSirghostv from '@/assets/testimonials/sirghostv.jpg';
-
 import iconTiktok from '@/assets/icons/tiktok.png';
 import iconKick from '@/assets/icons/kick.png';
 import iconTwitch from '@/assets/icons/twitch.png';
@@ -13,84 +12,38 @@ import iconLinkedin from '@/assets/icons/linkedin.png';
 import iconYoutube from '@/assets/platform-youtube.png';
 
 const testimonials = [
-  {
-    name: 'EL CHUPAPI L4D',
-    avatar: avatarChupapi,
-    platforms: [iconKick, iconTiktok],
-    stat: '200 seguidores',
-  },
-  {
-    name: 'Gatimixx',
-    avatar: avatarGatimixx,
-    platforms: [iconTwitch],
-    stat: '150 seguidores',
-  },
-  {
-    name: 'Skilpe',
-    avatar: avatarSkilpe,
-    platforms: [iconTiktok],
-    stat: '+100K vistas',
-  },
-  {
-    name: 'RinNakaVT',
-    avatar: avatarRin,
-    platforms: [iconTwitch],
-    stat: '400 seguidores',
-  },
-  {
-    name: 'Evolutive Playbook',
-    avatar: avatarEvolutive,
-    platforms: [iconLinkedin, iconYoutube],
-    stat: 'Canal de gestión',
-  },
-  {
-    name: 'Jarod Blade',
-    avatar: avatarJarod,
-    platforms: [iconTiktok],
-    stat: '850 seguidores',
-  },
-  {
-    name: 'SirGhostv',
-    avatar: avatarSirghostv,
-    platforms: [iconYoutube],
-    stat: '1.85K seguidores',
-  },
+  { name: 'EL CHUPAPI L4D', avatar: avatarChupapi, platforms: [iconKick, iconTiktok], stat: '200 seguidores' },
+  { name: 'Gatimixx', avatar: avatarGatimixx, platforms: [iconTwitch], stat: '150 seguidores' },
+  { name: 'Skilpe', avatar: avatarSkilpe, platforms: [iconTiktok], stat: '+100K vistas' },
+  { name: 'RinNakaVT', avatar: avatarRin, platforms: [iconTwitch], stat: '400 seguidores' },
+  { name: 'Evolutive Playbook', avatar: avatarEvolutive, platforms: [iconLinkedin, iconYoutube], stat: 'Canal de gestión' },
+  { name: 'Jarod Blade', avatar: avatarJarod, platforms: [iconTiktok], stat: '850 seguidores' },
+  { name: 'SirGhostv', avatar: avatarSirghostv, platforms: [iconYoutube], stat: '1.85K seguidores' },
 ];
 
-const items = [...testimonials, ...testimonials];
-
-const TestimonialsSection = () => {
-  return (
-    <section className="relative py-12 overflow-hidden">
-      <p className="text-center text-sm text-muted-foreground mb-8 tracking-wide uppercase">
-        Quienes ya confían en Clipealo
-      </p>
-
-      <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent" />
-
-        <div className="flex animate-marquee gap-16 w-max">
-          {items.map((t, i) => (
-            <div key={i} className="flex flex-col items-center gap-2 min-w-[120px]">
-              <img
-                src={t.avatar}
-                alt={t.name}
-                className="w-14 h-14 rounded-full object-cover border border-border"
-              />
-              <span className="text-sm font-semibold text-foreground whitespace-nowrap">{t.name}</span>
-              <div className="flex items-center gap-1.5">
-                {t.platforms.map((icon, j) => (
-                  <img key={j} src={icon} alt="" className="w-4 h-4 rounded-sm object-contain" />
-                ))}
-              </div>
-              <span className="text-xs text-muted-foreground">{t.stat}</span>
+const TestimonialsSection = () => (
+  <section className="overflow-hidden border-y border-border bg-[#f0f5fc] py-14 dark:bg-[#101b34] sm:py-16" aria-label="Comunidad de Clipealo">
+    <div className="brand-container mb-8 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+      <div><p className="eyebrow">Comunidad Clipealo</p><h2 className="mt-2 text-2xl font-bold tracking-tight">Quienes ya confían en Clipealo</h2></div>
+      <p className="text-sm text-muted-foreground">Creadores que convierten sus transmisiones en nuevas oportunidades.</p>
+    </div>
+    <div className="relative">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#f0f5fc] to-transparent dark:from-[#101b34] sm:w-24" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#f0f5fc] to-transparent dark:from-[#101b34] sm:w-24" />
+      <div className="testimonials-track flex w-max gap-4" role="list">
+        {[...testimonials, ...testimonials].map((person, index) => (
+          <article key={`${person.name}-${index}`} role="listitem" aria-hidden={index >= testimonials.length} className="brand-card flex w-64 items-center gap-3 px-4 py-3">
+            <img src={person.avatar} alt={index >= testimonials.length ? '' : person.name} className="h-12 w-12 shrink-0 rounded-full border border-border object-cover" loading="lazy" />
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-sm font-bold">{person.name}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{person.stat}</p>
+              <div className="mt-1 flex gap-1">{person.platforms.map((icon, item) => <img key={item} src={icon} alt="" className="h-3.5 w-3.5 rounded-sm object-contain" />)}</div>
             </div>
-          ))}
-        </div>
+          </article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default TestimonialsSection;

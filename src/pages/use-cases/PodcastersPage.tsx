@@ -49,13 +49,13 @@ const data: UseCasePageData = {
   plans: {
     title: 'Planes recomendados',
     items: [
-      { name: 'Básico', price: 'S/.48/mes', description: '10h/mes de análisis. YouTube incluido.', highlighted: false },
-      { name: 'Estándar', price: 'S/.72/mes', description: '15h/mes. + Kick para video podcasts.', highlighted: true },
+      { name: 'Básico', price: 'S/45/mes', description: '5h/mes de análisis. YouTube incluido.', highlighted: false },
+      { name: 'Estándar', price: 'S/90/mes', description: '10h/mes. + Kick para video podcasts.', highlighted: true },
     ],
   },
   bottomCTA: {
     title: 'Tu próximo millón de views empieza con un clip de 45 segundos.',
-    subtitle: 'Empieza hoy. Tus primeros 60 minutos de análisis son completamente gratis.',
+    subtitle: 'Empieza hoy. Tus primeros 30 minutos de análisis son completamente gratis.',
     ctaText: 'Crear clips de mi podcast ahora',
     ctaHref: '/precios',
   },

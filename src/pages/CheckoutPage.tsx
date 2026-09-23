@@ -6,6 +6,7 @@ import yapeQr from '@/assets/yape-qr.png';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { trackInitiateCheckout } from '@/lib/tracking';
+import { creditPacks, extraCreditPrice, planCatalog } from '@/data/pricing';
 
 type CheckoutType = 'plan' | 'credits';
 
@@ -26,44 +27,38 @@ const plansData: Record<string, PlanInfo> = {
     icon: '⚡',
     name: 'Básico',
     tagline: 'Para el creador que arranca',
-    monthlyPrice: 35,
-    annualPrice: 28,
-    annualBilled: 'S/.336/año',
-    savings: 'S/.84',
-    credits: 420,
-    hours: 7,
+    monthlyPrice: planCatalog.basico.monthlyPEN,
+    annualPrice: planCatalog.basico.annualPEN,
+    annualBilled: `S/${planCatalog.basico.annualPEN * 12}/año`,
+    savings: `S/${(planCatalog.basico.monthlyPEN - planCatalog.basico.annualPEN) * 12}`,
+    credits: planCatalog.basico.credits,
+    hours: planCatalog.basico.credits / 60,
   },
   estandar: {
     icon: '🚀',
     name: 'Estándar',
-    tagline: 'Para el streamer activo',
-    monthlyPrice: 72,
-    annualPrice: 58,
-    annualBilled: 'S/.696/año',
-    savings: 'S/.168',
-    credits: 900,
-    hours: 15,
+    tagline: 'Creadores profesionales',
+    monthlyPrice: planCatalog.estandar.monthlyPEN,
+    annualPrice: planCatalog.estandar.annualPEN,
+    annualBilled: `S/${planCatalog.estandar.annualPEN * 12}/año`,
+    savings: `S/${(planCatalog.estandar.monthlyPEN - planCatalog.estandar.annualPEN) * 12}`,
+    credits: planCatalog.estandar.credits,
+    hours: planCatalog.estandar.credits / 60,
   },
   premium: {
     icon: '💎',
     name: 'Premium',
     tagline: 'Para alto volumen',
-    monthlyPrice: 126,
-    annualPrice: 101,
-    annualBilled: 'S/.1,212/año',
-    savings: 'S/.300',
-    credits: 1800,
-    hours: 30,
+    monthlyPrice: planCatalog.premium.monthlyPEN,
+    annualPrice: planCatalog.premium.annualPEN,
+    annualBilled: `S/${planCatalog.premium.annualPEN * 12}/año`,
+    savings: `S/${(planCatalog.premium.monthlyPEN - planCatalog.premium.annualPEN) * 12}`,
+    credits: planCatalog.premium.credits,
+    hours: planCatalog.premium.credits / 60,
   },
 };
 
-const creditPacks = [
-  { credits: 60, hours: 1, price: 5.50 },
-  { credits: 180, hours: 3, price: 16.50 },
-  { credits: 300, hours: 5, price: 27.50 },
-];
-
-const CREDIT_PRICE = 5.50; // price per 60 credits
+const CREDIT_PRICE = extraCreditPrice.penPerCredit * 60;
 
 
 const CheckoutPage = () => {
@@ -74,7 +69,7 @@ const CheckoutPage = () => {
   const packCredits = parseInt(searchParams.get('credits') || '0', 10);
 
   const plan = plansData[planKey];
-  const creditPack = creditPacks.find(p => p.credits === packCredits);
+  const creditPack = creditPacks.map(({ pen, ...pack }) => ({ ...pack, price: pen })).find(p => p.credits === packCredits);
 
   const [extraCredits, setExtraCredits] = useState(0);
   
@@ -147,7 +142,7 @@ const CheckoutPage = () => {
                       </div>
                       <div className="text-right">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-sm text-muted-foreground">S/.</span>
+                          <span className="text-sm text-muted-foreground">S/</span>
                           <span className="text-4xl font-extrabold">
                             {billing === 'annual' ? plan.annualPrice : plan.monthlyPrice}
                           </span>
@@ -172,7 +167,7 @@ const CheckoutPage = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Plan {plan.name}</span>
-                        <span className="font-semibold">{billing === 'annual' ? plan.annualBilled : `S/.${plan.monthlyPrice}/mes`}</span>
+                        <span className="font-semibold">{billing === 'annual' ? plan.annualBilled : `S/${plan.monthlyPrice}/mes`}</span>
                       </div>
                     </div>
 
@@ -200,7 +195,7 @@ const CheckoutPage = () => {
                       </div>
                       <div className="text-right">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-sm text-muted-foreground">S/.</span>
+                          <span className="text-sm text-muted-foreground">S/</span>
                           <span className="text-4xl font-extrabold">{creditPack.price.toFixed(2)}</span>
                         </div>
                       </div>
@@ -218,7 +213,7 @@ const CheckoutPage = () => {
               >
                 <h3 className="text-lg font-bold mb-1">¿Quieres más créditos?</h3>
                 <p className="text-sm text-muted-foreground mb-5">
-                  Añade créditos adicionales a <span className="text-primary font-semibold">S/.5.50</span> por cada 60 créditos (1 hora)
+                  Añade créditos adicionales a <span className="text-primary font-semibold">S/5.50</span> por cada 60 créditos (1 hora)
                 </p>
 
                 {/* Quick add buttons */}
@@ -260,7 +255,7 @@ const CheckoutPage = () => {
 
                 {extraCredits > 0 && (
                   <div className="mt-3 text-center text-sm text-muted-foreground">
-                    +S/.{extraCost.toFixed(2)} adicional
+                    +S/{extraCost.toFixed(2)} adicional
                   </div>
                 )}
               </motion.div>
@@ -322,12 +317,12 @@ const CheckoutPage = () => {
                 <div className="space-y-3 text-sm text-left mb-5">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">{baseName}</span>
-                    <span className="font-semibold">S/.{basePrice.toFixed(2)}</span>
+                    <span className="font-semibold">S/{basePrice.toFixed(2)}</span>
                   </div>
                   {extraCredits > 0 && (
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">+{extraCredits} créditos extra</span>
-                      <span className="font-semibold">S/.{extraCost.toFixed(2)}</span>
+                      <span className="font-semibold">S/{extraCost.toFixed(2)}</span>
                     </div>
                   )}
                 </div>
@@ -336,7 +331,7 @@ const CheckoutPage = () => {
                 <div className="border-t border-border pt-5">
                   <p className="text-sm text-muted-foreground mb-1">Total a pagar</p>
                   <p className="text-5xl font-extrabold text-foreground">
-                    S/.{totalPrice.toFixed(2)}
+                    S/{totalPrice.toFixed(2)}
                   </p>
                   <p className="text-sm text-muted-foreground mt-1">
                     {baseName} · {baseDescription}
@@ -358,7 +353,7 @@ const CheckoutPage = () => {
 
                 <div className="px-6 pb-6 space-y-4">
                   <p className="text-sm text-muted-foreground text-center">
-                    Escanea el QR con tu app de Yape por <span className="text-primary font-semibold">S/.{totalPrice.toFixed(2)}</span>
+                    Escanea el QR con tu app de Yape por <span className="text-primary font-semibold">S/{totalPrice.toFixed(2)}</span>
                   </p>
                   <div className="flex justify-center">
                     <img
@@ -369,7 +364,7 @@ const CheckoutPage = () => {
                   </div>
                   <a
                     href={`https://wa.me/51906160948?text=${encodeURIComponent(
-                      `¡Hola! Acabo de realizar el pago por Yape para:\n📦 ${baseName}${extraCredits > 0 ? ` + ${extraCredits} créditos extra` : ''}\n💰 Total: S/.${totalPrice.toFixed(2)}\nAdjunto mi comprobante.`
+                      `¡Hola! Acabo de realizar el pago por Yape para:\n📦 ${baseName}${extraCredits > 0 ? ` + ${extraCredits} créditos extra` : ''}\n💰 Total: S/${totalPrice.toFixed(2)}\nAdjunto mi comprobante.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -60,7 +60,7 @@ const data: UseCasePageData = {
   plans: {
     title: 'Plan recomendado',
     items: [
-      { name: 'Premium', price: 'S/.126-198/mes', description: 'Para marcas con 1-2 videos por semana.', highlighted: false },
+      { name: 'Premium', price: 'S/180/mes', description: 'Para marcas con 1-2 videos por semana.', highlighted: false },
       { name: 'Enterprise', price: 'Precio negociado', description: 'Producción continua, múltiples usuarios y Clipero dedicado que conoce tu voz de marca.', highlighted: true },
     ],
   },

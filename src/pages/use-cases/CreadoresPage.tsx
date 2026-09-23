@@ -57,7 +57,7 @@ const data: UseCasePageData = {
   ],
   bottomCTA: {
     title: 'Cada video que publicas sin clips es contenido que nadie más descubrirá.',
-    subtitle: 'Empieza hoy. Tus primeros 60 minutos de análisis son completamente gratis.',
+    subtitle: 'Empieza hoy. Tus primeros 30 minutos de análisis son completamente gratis.',
     ctaText: 'Crear mis primeros clips ahora',
     ctaHref: '/precios',
   },

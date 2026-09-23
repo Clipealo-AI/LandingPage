@@ -49,7 +49,7 @@ const data: UseCasePageData = {
   plans: {
     title: 'Plan recomendado',
     items: [
-      { name: 'Premium', price: 'S/.126/mes', description: 'Procesamiento prioritario + soporte WhatsApp.', highlighted: false },
+      { name: 'Premium', price: 'S/180/mes', description: 'Procesamiento prioritario + soporte WhatsApp.', highlighted: false },
       { name: 'Enterprise', price: 'Precio negociado', description: 'Clipero dedicado incluido. Ideal para organizaciones con múltiples jugadores y torneos.', highlighted: true },
     ],
   },

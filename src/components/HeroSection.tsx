@@ -1,124 +1,81 @@
-import { motion } from 'framer-motion';
-import { Link2, Upload } from 'lucide-react';
+import { useReducedMotion } from 'framer-motion';
+import { ArrowDown, ArrowRight, Check, Link2, Upload, WandSparkles } from 'lucide-react';
 import { trackLead } from '@/lib/tracking';
-import heroBg from '@/assets/hero-bg.jpg';
+import demoVideo from '@/assets/demo-preview.webm';
+import demoPoster from '@/assets/demo-preview-poster.webp';
+
+const APP_URL = 'https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton';
 
 const HeroSection = () => {
+  const prefersReducedMotion = useReducedMotion();
   return (
-    <section className="relative min-h-[90vh] flex items-center px-4 sm:px-6 pt-28 pb-16 overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 pointer-events-none">
-        <img
-          src={heroBg}
-          alt="Streamer creando clips virales con Clipealo"
-          className="w-full h-full object-cover object-right"
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-          decoding="async"
-        />
-        {/* Overlays for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
-        <div className="absolute inset-0 grid-pattern opacity-20" />
+  <section className="hero-stage px-5 pt-20 pb-24 sm:pt-24 sm:pb-28">
+    <div className="hero-glow" aria-hidden="true" />
+    <div className="pattern-corners absolute inset-0 -z-0 pointer-events-none" aria-hidden="true" />
+    <div className="relative z-10 max-w-6xl mx-auto text-center">
+      <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[.06] px-4 py-2 text-xs sm:text-sm text-white/80 mb-8">
+        <WandSparkles size={15} className="text-[#fd8854]" />
+        <span>Herramienta de clips con IA #1 para streamers LATAM</span>
       </div>
+      <div className="-mt-4 mb-7 flex items-center justify-center gap-1.5" aria-label="Disponible en Latinoamérica">
+        {['pe','mx','ar','co','ec','cl','br','ve','uy','bo'].map((country) => <img key={country} src={`https://flagcdn.com/w40/${country}.png`} alt="" title={country.toUpperCase()} className="h-3.5 w-5 rounded-[2px] object-cover" width="20" height="14" loading="lazy" />)}
+      </div>
+      <h1 className="display-font mx-auto max-w-5xl text-[clamp(2.3rem,7.2vw,6.4rem)] leading-[1.02] text-balance">
+        1 stream largo,<br />10 clips virales.<br /><span className="text-[#fd5e1c]">Tu contenido, al toque.</span>
+      </h1>
+      <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-[#c3cee0] sm:text-lg sm:leading-8">
+        Clipealo convierte streams, podcasts, webinars y grabaciones públicas de Zoom en clips cortos listos para publicar.
+      </p>
+      <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a href={APP_URL} onClick={() => trackLead('Hero - Prueba Clipealo')} className="brand-button min-h-12 px-6">
+          Prueba Clipealo <ArrowRight size={17} />
+        </a>
+        <a href={APP_URL} onClick={() => trackLead('Hero - Cargar archivos')} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/[.05] px-6 font-semibold text-white transition hover:bg-white/10">
+          <Upload size={17} /> Cargar archivos
+        </a>
+      </div>
+      <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-[#b5c1d5] sm:text-sm">
+        {['Sin tarjeta', 'Ahorra horas de edición', 'Publica más contenido'].map((text) => (
+          <li key={text} className="inline-flex items-center gap-1.5"><Check size={14} className="text-[#55d8c4]" />{text}</li>
+        ))}
+      </ul>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="max-w-2xl">
-          {/* Top badge */}
-          <motion.div
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 mb-6 flex-wrap"
-          >
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-secondary">
-              Herramienta de clips con IA #1 para streamers LATAM
-            </span>
-            <span className="flex items-center gap-1.5">
-              {['pe','mx','ar','co','ec','cl','br','ve','uy','bo'].map((code) => (
-                <img
-                  key={code}
-                  src={`https://flagcdn.com/w40/${code}.png`}
-                  alt={code.toUpperCase()}
-                  className="w-5 h-3.5 rounded-[2px] object-cover"
-                />
-              ))}
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-6"
-          >
-            <span className="text-foreground">1 stream largo,</span>
-            <br />
-            <span className="text-foreground">10 clips virales.</span>
-            <br />
-            <span className="gradient-text">Tu contenido, al toque.</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-xl mb-10"
-          >
-            Clipealo convierte streams, podcasts, webinars y grabaciones públicas de Zoom en clips cortos listos para publicar.
-          </motion.p>
-
-          {/* URL Input Bar */}
-          <motion.div
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-0"
-          >
-            {/* Input + Button group */}
-            <div className="flex items-center w-full sm:w-auto bg-muted/60 backdrop-blur-md border border-border rounded-full px-2 py-1.5 gap-2 shadow-[0_0_40px_rgba(255,45,120,0.15)]">
-              <div className="flex items-center gap-2 px-3 text-muted-foreground flex-1 min-w-0">
-                <Link2 className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm truncate">Pega un enlace de video o Zoom público...</span>
+      <div className="hero-frame mx-auto mt-14 max-w-5xl text-left">
+        <div className="hero-frame-bar">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#fd5e1c]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+          <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+          <span className="ml-2">cli pealo.ai / proyectos</span>
+          <span className="ml-auto inline-flex items-center gap-1.5 text-[#7de1d1]"><WandSparkles size={13} />Momentos encontrados</span>
+        </div>
+        <div className="demo-window">
+          <div className="demo-video overflow-hidden p-0">
+            <video className="h-full w-full object-cover" autoPlay={!prefersReducedMotion} controls muted loop playsInline preload="none" poster={demoPoster} aria-label="Vista previa de Clipealo detectando y editando clips de un video">
+              <source src={demoVideo} type="video/webm" />
+              <img src={demoPoster} alt="Vista previa de Clipealo detectando clips de un video" />
+            </video>
+          </div>
+          <div className="demo-clip-list">
+            {[
+              ['01', 'El momento más épico', '00:42 · 9:16'],
+              ['02', 'La reacción inesperada', '01:18 · 9:16'],
+              ['03', 'El cierre perfecto', '02:06 · 16:9'],
+            ].map(([number, title, info]) => (
+              <div className="demo-clip" key={number}>
+                <div className="demo-clip-thumb grid place-items-center text-xs font-bold">{number}</div>
+                <span className="min-w-0 flex-1"><strong className="block truncate text-white">{title}</strong><small className="text-white/55">{info}</small></span>
+                <Check size={16} className="text-[#7de1d1]" />
               </div>
-              <a
-                href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"
-                onClick={() => trackLead('Hero - Prueba Clipealo')}
-                className="px-5 py-2.5 bg-gradient-to-r from-pink to-purple text-white rounded-full font-semibold text-sm whitespace-nowrap hover:opacity-90 transition-opacity shadow-lg shadow-pink/30"
-              >
-                Prueba Clipealo
-              </a>
+            ))}
+            <div className="hidden sm:flex items-center gap-2 rounded-xl border border-white/10 bg-white/[.04] p-3 text-xs text-white/65">
+              <Link2 size={15} /> Video analizado · clips listos para revisar
             </div>
-
-            <span className="text-muted-foreground text-sm mx-3 hidden sm:inline">o</span>
-
-            <a
-              href="https://app.clipealo-ai.com/?utm_source=landing_organico&utm_medium=clic_boton"
-              onClick={() => trackLead('Hero - Cargar archivos')}
-              className="px-5 py-2.5 border border-border bg-background/40 backdrop-blur-md rounded-full font-semibold text-sm text-foreground hover:bg-muted/50 transition-colors whitespace-nowrap"
-            >
-              <span className="flex items-center gap-2">
-                <Upload className="w-4 h-4" />
-                Cargar archivos
-              </span>
-            </a>
-          </motion.div>
-
-          {/* Trust line */}
-          <motion.p
-            initial={false}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-xs text-muted-foreground mt-6"
-          >
-            Sin tarjeta · Ahorra horas de edición · Publica más contenido
-          </motion.p>
+          </div>
         </div>
       </div>
-    </section>
+      <a href="#funciones" className="mt-8 inline-flex items-center gap-2 text-sm text-white/55 hover:text-white/85">Conoce Clipealo <ArrowDown size={15} /></a>
+    </div>
+  </section>
   );
 };
 

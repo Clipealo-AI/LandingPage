@@ -20,7 +20,7 @@ const data: UseCasePageData = {
   problem: {
     title: 'El cuello de botella de toda agencia: la edición de clips',
     subtitle: '15 clientes × 4 clips/semana = 120h de trabajo manual por semana.',
-    description: 'Una agencia mediana con 10-15 clientes que pide 3-5 clips por semana por cliente, necesita 30-75 horas semanales dedicadas solo a clips cortos. Con 2 editores de video a S/.3,000-5,000/mes cada uno, estás invirtiendo S/.6,000-10,000/mes en solo esta tarea. Clipealo puede hacerlo por S/.126-200/mes.',
+    description: 'Una agencia mediana con 10-15 clientes que pide 3-5 clips por semana por cliente, necesita 30-75 horas semanales dedicadas solo a clips cortos. Con 2 editores de video a S/.3,000-5,000/mes cada uno, estás invirtiendo S/.6,000-10,000/mes en solo esta tarea. Clipealo puede hacerlo por S/180/mes.',
   },
   solution: {
     title: 'El modelo de agencia con Clipealo',
@@ -43,13 +43,13 @@ const data: UseCasePageData = {
   },
   metrics: [
     { value: '5x', label: 'Más clips producidos por el mismo equipo' },
-    { value: 'S/.126-200/mes', label: 'Costo de Clipealo vs S/.3,000-5,000/mes de un editor' },
+    { value: 'S/180/mes', label: 'Costo de Clipealo vs S/.3,000-5,000/mes de un editor' },
     { value: '80%', label: 'Reducción en tiempo de análisis y revisión de VODs' },
   ],
   plans: {
     title: 'Plan recomendado',
     items: [
-      { name: 'Premium', price: 'S/.126/mes', description: 'Para agencias con 5-10 clientes activos.', highlighted: false },
+      { name: 'Premium', price: 'S/180/mes', description: 'Para agencias con 5-10 clientes activos.', highlighted: false },
       { name: 'Enterprise', price: 'Precio negociado', description: '10+ clientes, múltiples usuarios y Clipero dedicado.', highlighted: true },
     ],
   },

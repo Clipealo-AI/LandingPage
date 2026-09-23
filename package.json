@@ -8,7 +8,7 @@
     "dev": "vite",
     "start": "bun run dev",
     "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "build:dev": "vite build --mode dev && node scripts/write-dev-robots.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "bun run build && bun run lint"

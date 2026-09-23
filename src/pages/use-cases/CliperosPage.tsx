@@ -8,7 +8,7 @@ const data: UseCasePageData = {
     tagline: 'LA HERRAMIENTA #1 PARA CLIPEROS EN LATAM',
     title: 'Trabaja 10x más rápido. Gana 10x más.',
     description: 'Clipealo detecta automáticamente los mejores momentos del stream. Tú haces la magia creativa. La IA hace el trabajo pesado.',
-    ctaText: 'Empieza gratis — 60 minutos incluidos',
+    ctaText: 'Empieza gratis — 30 minutos incluidos',
     ctaHref: '/precios',
     image: heroImage,
   },
@@ -48,10 +48,10 @@ const data: UseCasePageData = {
   metrics: [
     { value: '4h → 15min', label: 'Tiempo de análisis de un VOD de 2 horas' },
     { value: '5-10x', label: 'Más streamers que puedes atender en paralelo' },
-    { value: 'S/.4.00/hora', label: 'Costo de recarga de horas adicionales' },
+    { value: 'S/5.50/hora', label: 'Costo de recarga de horas adicionales' },
   ],
   bottomCTA: {
-    title: 'Empieza hoy. Tus primeros 60 minutos son gratis.',
+    title: 'Empieza hoy. Tus primeros 30 minutos son gratis.',
     subtitle: 'Sin tarjeta de crédito. Sin setup técnico. Solo pega el link y ve cómo funciona.',
     ctaText: 'Crear mi cuenta gratis',
     ctaHref: '/precios',
