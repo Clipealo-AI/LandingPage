@@ -22,8 +22,7 @@ export function formatPrecio(amount: number, currency: PricingCurrency, locale: 
 /** Descuento que aplica al precio base con facturación anual. */
 export const DESCUENTO_ANUAL_PCT = 20
 
-const PLAN_IDS = ["free", "basic", "standard", "premium"] as const
-export type PricingPlanId = (typeof PLAN_IDS)[number]
+export type PricingPlanId = "free" | "basic" | "standard" | "premium"
 type Prices = Record<PricingCurrency, number>
 
 export interface PricingPlan {
@@ -184,7 +183,7 @@ type FeatureValueTextId =
 
 export type FeatureValue = boolean | number | string | { text: FeatureValueTextId }
 
-export interface FeatureRow {
+interface FeatureRow {
   id: string
   values: Record<PricingPlanId, FeatureValue>
 }
@@ -317,9 +316,6 @@ export const FEATURE_GROUPS = [
   },
 ] as const satisfies readonly FeatureGroup[]
 
-type FeatureGroupId = (typeof FEATURE_GROUPS)[number]["id"]
-type FeatureRowId = (typeof FEATURE_GROUPS)[number]["rows"][number]["id"]
-
 export const ENTERPRISE_INCLUDED = [
   "everythingPremium",
   "creditsByVolume",
@@ -339,5 +335,3 @@ export const PRICING_FAQ = [
   "currencies",
   "creditPacks",
 ] as const
-
-type PricingFaqId = (typeof PRICING_FAQ)[number]

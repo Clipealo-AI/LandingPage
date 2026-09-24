@@ -1,8 +1,6 @@
 import {
   NETWORKS_BY_PLAN,
   PLANS,
-  type FeatureRow,
-  type FeatureValue,
   type PricingPlan,
   type PricingPlanId,
 } from "@/lib/pricing"
@@ -34,7 +32,3 @@ export const planesVisibles = (catalogo: readonly PlanCatalogo[]) => [...catalog
 
 export const redesDe = (plan: PlanCatalogo): readonly SocialId[] =>
   NETWORKS_BY_PLAN[plan.base]
-
-function valorCelda(row: FeatureRow, plan: PlanCatalogo): FeatureValue {
-  return row.values[plan.base]
-}

@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react"
-import { ArrowRight, Check, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
@@ -136,22 +136,6 @@ export function WorkflowGrid({
         </Card>
       ))}
     </div>
-  )
-}
-
-function CheckList({ items }: { items: string[] }) {
-  return (
-    <ul className="grid gap-3 sm:grid-cols-2">
-      {items.map((item) => (
-        <li
-          key={item}
-          className="flex items-start gap-3 rounded-xl border border-border/80 bg-card p-4"
-        >
-          <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-          <span className="text-sm leading-relaxed text-muted-foreground">{item}</span>
-        </li>
-      ))}
-    </ul>
   )
 }
 

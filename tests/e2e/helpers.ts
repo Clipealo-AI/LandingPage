@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from "@playwright/test"
+import { type Page } from "@playwright/test"
 
 /**
  * Espera a que React haya hidratado.
@@ -18,30 +18,6 @@ export async function irA(page: Page, ruta: string) {
   const respuesta = await page.goto(ruta, { waitUntil: "load" })
   await esperarHidratacion(page)
   return respuesta
-}
-
-/**
- * Espera a que el elemento sea de verdad lo que hay bajo su propio centro.
- *
- * `click()` comprueba que nadie tape el punto donde va a pulsar, pero lo hace
- * una vez. Esto espera al fotograma en que el elemento ya se pulsa solo.
- */
-async function esperarClicable(locator: Locator) {
-  await expect
-    .poll(
-      () =>
-        locator.evaluate((el) => {
-          const r = el.getBoundingClientRect()
-          if (!r.width || !r.height) return false
-          const bajoElCentro = document.elementFromPoint(
-            r.left + r.width / 2,
-            r.top + r.height / 2
-          )
-          return el.contains(bajoElCentro)
-        }),
-      { timeout: 10_000 }
-    )
-    .toBe(true)
 }
 
 /**
@@ -156,21 +132,4 @@ export async function modoMovimiento(page: Page, modo: "reduce" | "no-preference
     .catch(() => {
       // Aún no hay documento (se llamó antes del primer goto): basta con initScript
     })
-}
-
-/**
- * Pone un plan en la demo antes del primer pintado, como hace la app con su
- * script de arranque. Tiene que ser `addInitScript` y antes del primer `goto`:
- * escribir en `localStorage` después ya llega tarde —el estado se leyó al
- * hidratar y nadie dispara el evento— y `storageState` pisaría el del proyecto
- * «oscuro», que siembra el tema.
- */
-async function planDemo(page: Page, plan: "free" | "creator" | "business") {
-  await page.addInitScript((valor) => {
-    try {
-      window.localStorage.setItem("clipealo-plan-v1", valor)
-    } catch {
-      // Sin almacenamiento manda el plan de la demo; el test que lo necesite falla claro
-    }
-  }, plan)
 }

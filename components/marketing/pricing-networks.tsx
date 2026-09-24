@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { formatDuration } from "@/lib/format"
 import { PLANES_SEMILLA, planesVisibles, redesDe } from "@/lib/planes"
 import { socialList } from "@/lib/social"
+import { FORMATOS_PUBLICACION } from "@/lib/video-formats"
 import { useNombrePlan } from "@/components/planes/nombre-plan"
 import { SocialBadge } from "@/components/brand/social"
 import { Badge } from "@/components/ui/badge"
@@ -53,7 +54,7 @@ export function PricingNetworks() {
 
             <dl className="grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
               <dt className="text-xs text-muted-foreground">{t("formats")}</dt>
-              <dd className="tabular-nums">{red.aspects.join(" · ")}</dd>
+              <dd className="tabular-nums">{FORMATOS_PUBLICACION.join(" · ")}</dd>
               <dt className="text-xs text-muted-foreground">{t("maxDuration")}</dt>
               <dd className="tabular-nums">{formatDuration(red.maxSeconds)}</dd>
               <dt className="text-xs text-muted-foreground">{t("bestRetention")}</dt>

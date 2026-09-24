@@ -5,3 +5,6 @@ export const ASPECT_RATIOS = {
 } as const
 
 export type AspectRatioKey = keyof typeof ASPECT_RATIOS
+
+/** Publicar clips está disponible actualmente en formato vertical. */
+export const FORMATOS_PUBLICACION = ["9:16"] as const

@@ -1,30 +1,25 @@
 import { defineRouting } from "next-intl/routing"
 
-/** Cookie con el idioma elegido para el sitio. */
-const LOCALE_COOKIE = "clipealo-locale"
-
 /** La landing está disponible en español, inglés y portugués de Brasil. */
 export const routing = defineRouting({
   locales: ["es", "en", "pt"],
   defaultLocale: "es",
-  localePrefix: "as-needed",
-  localeCookie: { name: LOCALE_COOKIE, maxAge: 60 * 60 * 24 * 365 },
+  // Cada idioma tiene una URL propia para que funcione sin middleware ni cookies.
+  localePrefix: "always",
   alternateLinks: false,
   pathnames: {
     "/": "/",
-    "/precios": { es: "/precios", en: "/pricing", pt: "/precos" },
+    // Las rutas se conservan iguales para que los documentos estáticos existan
+    // con la misma dirección en Firebase y la navegación no dependa del proxy.
+    "/precios": "/precios",
     "/funciones": "/funciones",
     "/funciones/[slug]": "/funciones/[slug]",
     "/casos": "/casos",
     "/casos/[slug]": "/casos/[slug]",
     "/blog": "/blog",
     "/blog/[slug]": "/blog/[slug]",
-    "/legal/privacidad": {
-      es: "/legal/privacidad",
-      en: "/legal/privacy",
-      pt: "/legal/privacidade",
-    },
-    "/legal/terminos": { es: "/legal/terminos", en: "/legal/terms", pt: "/legal/termos" },
+    "/legal/privacidad": "/legal/privacidad",
+    "/legal/terminos": "/legal/terminos",
   } as Record<string, string | Record<"es" | "en" | "pt", string>>,
 })
 

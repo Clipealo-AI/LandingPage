@@ -3,8 +3,7 @@
 import "./globals.css"
 
 /**
- * 404 fuera de cualquier idioma: solo llega aquí lo que el proxy no enruta
- * (una dirección con extensión que no existe). Sin layout ni textos traducidos:
+ * 404 fuera de cualquier idioma. Sin layout ni textos traducidos:
  * se ofrece la portada en los tres idiomas, cada enlace con su `lang` para que el
  * lector de pantalla lo pronuncie bien.
  */

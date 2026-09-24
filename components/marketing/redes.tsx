@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl"
 import { cn } from "@/lib/utils"
 import { formatDuration } from "@/lib/format"
 import { EASE_BRAND, prefiereMenosMovimiento } from "@/lib/motion"
-import { ASPECT_RATIOS } from "@/lib/video-formats"
+import { ASPECT_RATIOS, FORMATOS_PUBLICACION } from "@/lib/video-formats"
 import { socialList, type SocialId } from "@/lib/social"
 import { useMotionGroup } from "@/hooks/use-motion-group"
 import { Badge } from "@/components/ui/badge"
@@ -117,7 +117,7 @@ export function Redes() {
   const tc = useTranslations("common")
   const [activa, setActiva] = React.useState<SocialId>("tiktok")
   const red = socialList.find((r) => r.id === activa) ?? socialList[0]
-  const aspecto = "9:16" as const
+  const aspecto = FORMATOS_PUBLICACION[0]
   const ratio = ASPECT_RATIOS[aspecto].ratio
 
   const texto = React.useRef<HTMLDivElement>(null)
@@ -202,7 +202,7 @@ export function Redes() {
                       </span>
                     </span>
                     <span className="shrink-0 text-[11px] text-muted-foreground tabular-nums">
-                      {r.aspects[0]}
+                      {FORMATOS_PUBLICACION.join(" · ")}
                     </span>
                   </button>
                 </li>

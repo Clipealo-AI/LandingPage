@@ -2,7 +2,7 @@ import type { ComponentProps } from "react"
 
 import { cn } from "@/lib/utils"
 
-/** WhatsApp mark, kept inline so contact links need no remote icon asset. */
+/** Small monochrome mark that inherits its surrounding text color. */
 export function WhatsAppIcon({ className, ...props }: ComponentProps<"svg">) {
   return (
     <svg
@@ -13,11 +13,11 @@ export function WhatsAppIcon({ className, ...props }: ComponentProps<"svg">) {
       {...props}
     >
       <path
-        fill="#25D366"
+        fill="currentColor"
         d="M12.04 2a9.94 9.94 0 0 0-8.48 15.12L2.4 21.6l4.6-1.2A9.94 9.94 0 1 0 12.04 2Zm0 18.05a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-2.73.72.73-2.66-.2-.31a8.12 8.12 0 1 1 6.63 3.56Z"
       />
       <path
-        fill="white"
+        fill="currentColor"
         d="M17.02 14.19c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.89-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.12 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.6-.66 1.82-1.29.23-.64.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32Z"
       />
     </svg>

@@ -19,8 +19,6 @@ export const siteConfig = {
   },
 } as const
 
-type SiteConfig = typeof siteConfig
-
 /** Páginas legales. Etiquetas: `marketing.legalNav.<id>`. */
 export const legalNav = [
   { id: "privacy", href: "/legal/privacidad" },

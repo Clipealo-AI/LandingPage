@@ -297,16 +297,7 @@ export function getFormat(locale: Locale): Format {
 const es = getFormat("es")
 export const formatBytes = es.bytes
 export const formatCompact = es.compact
-const formatNumber = es.number
 export const formatPercent = es.percent
-const formatRelative = es.relative
-const formatDate = es.date
-const formatDateTime = es.dateTime
-const formatMoney = es.money
-const formatMonth = es.month
-const formatMonthShort = es.monthShort
-const formatDelta = es.delta
 export const formatList = es.list
-
 
 export { clamp }

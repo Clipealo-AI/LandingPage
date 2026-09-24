@@ -20,8 +20,8 @@ import {
 
 /**
  * Cambia el idioma conservando la página, sus parámetros y la consulta
- * (`?seccion=`, `?modo=`): la misma pantalla, en otro idioma. La cookie la
- * escribe el proxy al entrar en la nueva dirección.
+ * (`?seccion=`, `?modo=`): la misma pantalla, en otro idioma. El prefijo de
+ * idioma de la URL conserva la selección al navegar en el sitio estático.
  */
 export function useCambiarIdioma() {
   const locale = useLocale()

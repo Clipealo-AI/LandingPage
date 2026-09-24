@@ -38,12 +38,6 @@ export interface BlogArticle {
   faqs?: { question: string; answer: string }[]
 }
 
-const categoryColors: Record<BlogCategory, string> = {
-  "Buenas Prácticas": "#d94c11",
-  "Por Qué Importa": "#1472fd",
-  "Guía de Inicio": "#087e84",
-}
-
 export const blogArticles: BlogArticle[] = [
   {
     id: "regla-3-segundos",

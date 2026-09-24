@@ -17,12 +17,3 @@ export function useNombrePlan() {
     [t]
   )
 }
-
-/** Lema traducido del plan público. */
-function useLemaPlan() {
-  const t = useTranslations("pricing")
-  return React.useCallback(
-    (plan: PlanCatalogo) => t(`plans.${plan.base}.tagline`),
-    [t]
-  )
-}

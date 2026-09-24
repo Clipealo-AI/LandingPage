@@ -45,13 +45,6 @@ export function PatternLineas({ className, ...props }: LayerProps) {
   return <Layer className={cn("pattern-lineas opacity-40", className)} {...props} />
 }
 
-/** Rejilla tecnica de fondo. Por defecto se funde hacia los bordes. */
-function GridBackdrop({ fade = "edges", className, ...props }: LayerProps) {
-  return (
-    <Layer fade={fade} className={cn("pattern-grid opacity-60", className)} {...props} />
-  )
-}
-
 /** Halo suave de marca detras de un hero o una tarjeta destacada. */
 export function BrandGlow({
   className,

@@ -6,6 +6,8 @@ import { legalNav, siteConfig } from "@/lib/site"
 import { blogArticles } from "@/lib/marketing/blog-articles"
 import { featureNavigation, useCaseNavigation } from "@/lib/marketing/navigation"
 
+export const dynamic = "force-static"
+
 type Publica = {
   href: string
   changeFrequency: "weekly" | "monthly" | "yearly"
