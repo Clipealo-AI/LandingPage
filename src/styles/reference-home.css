@@ -578,7 +578,7 @@
 .reference-dialog-close svg { width: 1rem; height: 1rem; }
 .reference-dialog-grid { display: grid; min-height: 0; flex: 1; grid-template-columns: minmax(14rem, .85fr) minmax(19rem, 1.2fr) minmax(13rem, .75fr); overflow: hidden; }
 .reference-dialog-player-column { display: grid; min-height: 0; place-items: center; overflow: auto; padding: 1rem; border-right: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
-.reference-dialog-player { position: relative; width: min(100%, 20rem); overflow: hidden; aspect-ratio: 9 / 16; border: 1px solid hsl(var(--border)); border-radius: 1rem; background: hsl(var(--brand-ink)); }
+.reference-dialog-player { position: relative; width: auto; height: min(66dvh, 34rem); max-height: calc(88dvh - 7.5rem); max-width: 100%; overflow: hidden; aspect-ratio: 9 / 16; border: 1px solid hsl(var(--border)); border-radius: 1rem; background: hsl(var(--brand-ink)); }
 .reference-dialog-player > video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .reference-clip-controls { position: absolute; inset: auto 0 0; padding: .75rem .8rem .55rem; color: white; background: linear-gradient(transparent, rgba(2, 8, 24, .92) 32%); }
 .reference-clip-controls > input { display: block; width: 100%; height: .8rem; margin: 0 0 .3rem; accent-color: hsl(var(--brand-orange)); cursor: pointer; }
@@ -699,7 +699,7 @@
   .reference-dialog-header { padding: .8rem .9rem; }
   .reference-dialog-grid { display: block; overflow: auto; }
   .reference-dialog-player-column { overflow: visible; padding: .85rem; border-right: 0; border-bottom: 1px solid hsl(var(--border)); }
-  .reference-dialog-player { width: auto; height: min(48dvh, 25rem); }
+  .reference-dialog-player { width: auto; height: min(46dvh, 25rem); }
   .reference-dialog-information { overflow: visible; padding: .85rem; border-right: 0; border-bottom: 1px solid hsl(var(--border)); }
   .reference-dialog-actions { overflow: visible; padding: .85rem; }
 }
