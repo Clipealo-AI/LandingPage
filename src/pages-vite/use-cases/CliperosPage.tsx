@@ -1,4 +1,4 @@
-import { Scissors, Clock, Users, Gamepad2, MessageCircle, Camera, Music, Swords, Search } from 'lucide-react';
+import { Gamepad2, MessageCircle, Camera, Music, Swords, Search } from 'lucide-react';
 import UseCasePageTemplate, { type UseCasePageData } from '@/components/use-cases/UseCasePageTemplate';
 import heroImage from '@/assets/use-case-cliperos.jpg';
 

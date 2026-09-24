@@ -1,7 +1,6 @@
 import {
   BookOpen,
   Download,
-  FileText,
   FolderOpen,
   Gamepad2,
   Globe,

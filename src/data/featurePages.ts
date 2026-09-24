@@ -11,7 +11,6 @@ export interface FeaturePageData {
   displayDate: string;
 }
 
-const TODAY = '2026-05-03';
 const TODAY_ISO = '2026-05-03T00:00:00-05:00';
 const TODAY_DISPLAY = '3 de mayo de 2026';
 

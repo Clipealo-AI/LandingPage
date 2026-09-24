@@ -1,4 +1,4 @@
-import { Gamepad2, MessageCircle, Camera, Music, Trophy, Sparkles, Link, Cpu, Download } from 'lucide-react';
+import { Gamepad2, MessageCircle, Camera, Music, Trophy, Sparkles } from 'lucide-react';
 import UseCasePageTemplate, { type UseCasePageData } from '@/components/use-cases/UseCasePageTemplate';
 import heroImage from '@/assets/use-case-streamers.jpg';
 

@@ -13,6 +13,7 @@ import iconYoutube from '@/assets/platform-youtube.png';
 import marketing from '../../messages/es/marketing.json';
 
 const testimonials = [
+  { name: 'Turno', avatar: '/clients/turno.webp', platforms: ['/platforms/youtube.webp', '/platforms/instagram.webp', '/platforms/tiktok.webp', '/platforms/x.webp'], stat: '124 mil suscriptores' },
   { name: 'EL CHUPAPI L4D', avatar: avatarChupapi, platforms: [iconKick, iconTiktok], stat: '200 seguidores' },
   { name: 'Gatimixx', avatar: avatarGatimixx, platforms: [iconTwitch], stat: '150 seguidores' },
   { name: 'Skilpe', avatar: avatarSkilpe, platforms: [iconTiktok], stat: '+100K vistas' },
