@@ -22,9 +22,13 @@ npm run build
 
 ## Rutas
 
-- `/`: portada de marketing
-- `/precios` (`/pricing`, `/precos`): planes y comparativa
-- `/legal/privacidad`, `/legal/terminos`: páginas legales
+- `/{es,en,pt}`: portada de marketing
+- `/{locale}/precios`: planes y comparativa
+- `/{locale}/legal/privacidad`, `/{locale}/legal/terminos`: páginas legales
+
+Firebase redirige `/` a `/es/` y conserva redirecciones permanentes desde las
+direcciones históricas `/en/pricing`, `/pt/precos`, `/en/legal/privacy` y sus
+equivalentes legales en portugués.
 
 ## Estructura
 
@@ -39,3 +43,16 @@ npm run build
 La paleta y los temas claro/oscuro se definen en `app/globals.css`. Los
 componentes consumen sus tokens semánticos para mantener el mismo diseño en
 ambos temas.
+
+## Entrega continua
+
+Los pushes a `dev` y `main` ejecutan el mismo workflow reutilizable: instala con
+lockfile, valida tipos, lint, traducciones, pruebas y código muerto, genera el
+sitio estático y lo publica en el Firebase Hosting de su entorno. GitHub se
+autentica mediante Workload Identity Federation; el repositorio no guarda
+claves de Google Cloud.
+
+- `dev` → `https://landing.dev.clipealo-ai.com`
+- `main` → `https://clipealo-ai.com`
+
+Los pull requests hacia ambas ramas deben superar el workflow de validación.

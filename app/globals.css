@@ -610,15 +610,6 @@
   }
 }
 
-/* 2 rem de subida (1,6 × --motion-distance), que con «reducir movimiento» vale
-   0: la aparición queda en fundido sin una regla aparte. */
-@layer base {
-  .js [data-reveal="pending"] {
-    opacity: 0;
-    translate: 0 calc(var(--motion-distance) * 1.6);
-  }
-}
-
 /* «Reducir movimiento» (14 sep 2026): reducir, no quitar.
    Antes una regla global cortaba TODAS las animaciones y transiciones a
    0,01 ms, y con ella la respuesta a cualquier pulsación: en Windows con los

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Check, ChevronDown, Languages, Menu, UserRound } from "lucide-react"
+import { ArrowRight, Check, ChevronDown, Languages, Menu, UserRound } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Link, usePathname } from "@/i18n/navigation"
@@ -170,7 +170,7 @@ export function SiteHeader() {
           : "border-b border-transparent"
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+      <div className="container-page flex h-16 items-center justify-between gap-2 sm:gap-4">
         <Link
           href="/"
           aria-label={t("header.home")}
@@ -179,7 +179,8 @@ export function SiteHeader() {
             sobreOscuro ? "text-white" : "text-foreground"
           )}
         >
-          <Logo size="md" />
+          <Logo size="md" className="hidden min-[420px]:inline-flex" />
+          <Logo size="md" iconOnly className="min-[420px]:hidden" />
         </Link>
 
         <nav
@@ -320,13 +321,20 @@ export function SiteHeader() {
             variant={ctaSecundaria ? "outline" : "brand"}
             size="lg"
             className={cn(
+              "max-[419px]:size-9 max-[419px]:px-0",
               // Solo mientras flota sobre el hero: al bajar, el contorno normal
               sobreOscuro &&
                 "border-white/30 bg-transparent text-white hover:border-white/50 hover:bg-white/10 hover:text-white"
             )}
             asChild
           >
-            <Link href="https://app.clipealo-ai.com/">{t("actions.upload")}</Link>
+            <Link href="https://app.clipealo-ai.com/" aria-label={t("actions.upload")}>
+              <span className="max-[419px]:sr-only">{t("actions.upload")}</span>
+              <ArrowRight
+                className="hidden size-4 max-[419px]:block"
+                aria-hidden="true"
+              />
+            </Link>
           </Button>
 
           <Sheet>

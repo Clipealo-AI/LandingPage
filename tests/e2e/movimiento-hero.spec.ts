@@ -4,15 +4,13 @@ import { irA, modoCaptura, modoMovimiento } from "./helpers"
 
 /**
  * Movimiento del hero (Lote 1): coreografía de carga (E1), barrido del cabezal
- * sobre el titular (E2), demo de la vista previa al revelarse (E3) y las clases
- * `m-nudge` de las acciones (E4).
+ * sobre el titular (E2) y las clases `m-nudge` de las acciones (E3).
  *
  * Todo corre en los dos modos: el director revisa con las animaciones de Windows
  * apagadas, que Chrome traduce a `prefers-reduced-motion: reduce`. Con reduce no
  * basta con que nada se desplace (eso lo vigila movimiento.spec.ts): cada efecto
  * tiene que SEGUIR VIÉNDOSE. Por eso cada efecto se congela en un instante
- * intermedio y se mide lo que sustituye al movimiento (fundido, destello, anillo
- * o luz).
+ * intermedio y se mide lo que sustituye al movimiento (fundido, destello o luz).
  *
  * Las animaciones de carga pueden haber terminado cuando la página hidrata:
  * `relanzarHero` las reinicia todas y las deja en pausa en su primer instante,
@@ -34,15 +32,11 @@ type Animacion = {
 type Muestra = {
   opacidad: number
   translate: string
-  scale: string
   fondo: string
   posicionFondo: string
-  sombra: string
-  /** Borde izquierdo respecto al padre, en fracción de su ancho. */
-  posicion: number
 }
 
-/** Reinicia las animaciones del hero (carga y demo) y las deja en pausa. */
+/** Reinicia las animaciones de carga del hero y las deja en pausa. */
 const relanzarHero = (page: Page) =>
   page.evaluate(() => {
     const seccion = document.querySelector("h1")!.closest("section")!
@@ -56,14 +50,10 @@ const relanzarHero = (page: Page) =>
     // La del pseudo del cabezal: quitar y poner la clase recrea el ::before
     const barridos = Array.from(seccion.querySelectorAll<HTMLElement>(".m-sweep"))
     for (const el of barridos) el.classList.remove("m-sweep")
-    // La demo cuelga de data-reveal="done": salir de ese estado y volver
-    const vista = seccion.querySelector<HTMLElement>('.reveal[data-reveal="done"]')
-    if (vista) vista.dataset.reveal = "relanzar"
     flush()
 
     for (const el of propias) el.style.animationName = ""
     for (const el of barridos) el.classList.add("m-sweep")
-    if (vista) vista.dataset.reveal = "done"
     flush()
 
     for (const a of seccion.getAnimations({ subtree: true })) {
@@ -75,18 +65,7 @@ const relanzarHero = (page: Page) =>
 const animacionesHero = (page: Page) =>
   page.evaluate(() => {
     const seccion = document.querySelector("h1")!.closest("section")!
-    const marcas = [
-      "m-load-glow",
-      "m-claim-sweep",
-      "m-sweep",
-      "animate-crop-in",
-      "m-demo-rise",
-      "m-demo-pop",
-      "m-demo-playhead",
-      "m-demo-selection",
-      "m-demo-pick",
-      "m-demo-ring",
-    ]
+    const marcas = ["m-load-glow", "m-claim-sweep", "m-sweep", "animate-crop-in"]
     const marcaDe = (el: Element) => {
       if (el.matches('[data-slot="badge"].m-load')) return "badge"
       if (el.matches(".m-load-rise")) return "acciones"
@@ -147,24 +126,17 @@ const muestra = (
         ? momento
         : Number(t.delay) + (Number(t.duration) * parseFloat(momento)) / 100
     const cs = getComputedStyle(el, pseudo ?? null)
-    const caja = el.getBoundingClientRect()
-    const padre = el.parentElement!.getBoundingClientRect()
     return {
       opacidad: Number(cs.opacity),
       translate: cs.translate,
-      scale: cs.scale,
       fondo: cs.backgroundImage,
       posicionFondo: cs.backgroundPosition,
-      sombra: cs.boxShadow,
-      posicion: (caja.left - padre.left) / padre.width,
     } satisfies Muestra
   }, criterio)
 
-/** `translate` o `scale` sin efecto: "none" o todos sus valores neutros. */
+/** `translate` sin efecto: "none" o todos sus valores neutros. */
 const sinDesplazar = (valor: string) =>
   valor === "none" || valor.split(/\s+/).every((v) => parseFloat(v) === 0)
-const sinEscalar = (valor: string) =>
-  valor === "none" || valor.split(/\s+/).every((v) => parseFloat(v) === 1)
 /** Componente vertical de un `translate` calculado («0px 3.2px»). */
 const desplazamientoY = (valor: string) => parseFloat(valor.split(/\s+/)[1] ?? "0")
 /**
@@ -213,8 +185,7 @@ for (const modo of MODOS) {
       ).toEqual([450, 550, 650, 750])
 
       // Todo lo de carga termina en menos de 2 s (AGENTS.md, regla 5)
-      const carga = animaciones.filter((a) => !a.marca.startsWith("m-demo"))
-      expect(Math.max(...carga.map((a) => a.fin))).toBeLessThan(2000)
+      expect(Math.max(...animaciones.map((a) => a.fin))).toBeLessThan(2000)
 
       // Ni el h1 ni la descripción (candidatos a LCP) llevan animación
       const quietos = await page.evaluate(() => {
@@ -330,145 +301,7 @@ for (const modo of MODOS) {
       ).toBe("0")
     })
 
-    test("E3 · la vista previa hace la demo al revelarse y todo termina antes de 5 s", async ({
-      page,
-    }) => {
-      await page.addInitScript(() => {
-        window.__clipealoSounds = []
-      })
-      // Ventana baja: la vista previa arranca fuera de pantalla, sin revelar
-      const ancho = page.viewportSize()?.width ?? 1280
-      await page.setViewportSize({ width: ancho, height: 480 })
-      await irA(page, "/")
-
-      const vista = page
-        .locator(".reveal")
-        .filter({ has: page.locator(".m-demo-playhead") })
-      await expect(vista).toHaveAttribute("data-reveal", "pending")
-      expect(
-        await vista.evaluate(
-          (el) =>
-            el.getAnimations({ subtree: true }).filter((a) => a instanceof CSSAnimation)
-              .length
-        )
-      ).toBe(0)
-
-      await vista.scrollIntoViewIfNeeded()
-      await expect(vista).toHaveAttribute("data-reveal", "done")
-      await relanzarHero(page)
-      const demo = (await animacionesHero(page)).filter((a) =>
-        a.marca.startsWith("m-demo")
-      )
-
-      expect(resumen(demo, "m-demo-rise")).toEqual([
-        ["rise-in", 150, 500, 1],
-        ["rise-in", 230, 500, 1],
-        ["rise-in", 310, 500, 1],
-      ])
-      expect(resumen(demo, "m-demo-pop")).toEqual([
-        ["pop", 900, 420, 1],
-        ["pop", 980, 420, 1],
-        ["pop", 1060, 420, 1],
-      ])
-      expect(resumen(demo, "m-demo-playhead")).toEqual([
-        [reduce ? "demo-playhead-soft" : "demo-playhead", 350, 1400, 1],
-      ])
-      expect(resumen(demo, "m-demo-selection")).toEqual([["flash-soft", 1550, 700, 1]])
-      expect(resumen(demo, "m-demo-pick")).toEqual([["flash-soft", 1300, 1000, 1]])
-      // El Play late dos veces
-      expect(resumen(demo, "m-demo-ring")).toEqual([
-        [reduce ? "flash-soft" : "pulse-ring", 1200, 1400, 2],
-      ])
-      expect(Math.max(...demo.map((a) => a.fin))).toBeLessThan(5000)
-
-      // Un solo gesto de marca de recorte en la sección: las esquinas del titular
-      const hero = page.locator("section").filter({ has: page.locator("h1") })
-      await expect(hero.locator("[data-crop-mark]")).toHaveCount(0)
-
-      // Los clips entran: con reduce funden sin subir
-      const clip = await muestra(page, {
-        selector: ".m-demo-rise",
-        nombre: "rise-in",
-        momento: "30%",
-      })
-      expect(clip!.opacidad).toBeGreaterThan(0)
-      expect(clip!.opacidad).toBeLessThan(1)
-      if (reduce) expect(sinDesplazar(clip!.translate), clip!.translate).toBe(true)
-      else expect(desplazamientoY(clip!.translate)).toBeGreaterThan(0)
-
-      // Las puntuaciones hacen pop: con reduce funden sin escalar
-      const puntuacion = await muestra(page, {
-        selector: ".m-demo-pop",
-        nombre: "pop",
-        momento: "20%",
-      })
-      expect(puntuacion!.opacidad).toBeGreaterThan(0)
-      expect(puntuacion!.opacidad).toBeLessThan(1)
-      if (reduce) expect(sinEscalar(puntuacion!.scale), puntuacion!.scale).toBe(true)
-      else expect(parseFloat(puntuacion!.scale)).toBeLessThan(1)
-
-      // El cabezal: sin reduce viaja hasta el 52 %; con reduce aparece allí y se ve
-      if (reduce) {
-        const cabezal = await muestra(page, {
-          selector: ".m-demo-playhead",
-          nombre: "demo-playhead-soft",
-          momento: "50%",
-        })
-        expect(cabezal!.opacidad).toBe(1)
-        expect(cabezal!.posicion).toBeCloseTo(0.52, 1)
-      } else {
-        const enCamino = await muestra(page, {
-          selector: ".m-demo-playhead",
-          nombre: "demo-playhead",
-          momento: "30%",
-        })
-        expect(enCamino!.opacidad).toBe(1)
-        expect(enCamino!.posicion).toBeGreaterThan(0.01)
-        expect(enCamino!.posicion).toBeLessThan(0.5)
-        const llega = await muestra(page, {
-          selector: ".m-demo-playhead",
-          nombre: "demo-playhead",
-          momento: "85%",
-        })
-        expect(llega!.posicion).toBeCloseTo(0.52, 1)
-      }
-
-      // La selección destella y el clip elegido se ilumina, igual en los dos modos
-      const seleccion = await muestra(page, {
-        selector: ".m-demo-selection",
-        nombre: "flash-soft",
-        momento: "35%",
-      })
-      expect(seleccion!.opacidad).toBeGreaterThan(0.9)
-      const elegido = await muestra(page, {
-        selector: ".m-demo-pick",
-        pseudo: "::after",
-        nombre: "flash-soft",
-        momento: "35%",
-      })
-      expect(elegido!.opacidad).toBeGreaterThan(0.9)
-      expect(elegido!.sombra).toContain("2px")
-
-      // El Play: sin reduce el anillo crece; con reduce se enciende entero sin crecer
-      const anillo = await muestra(page, {
-        selector: ".m-demo-ring",
-        nombre: reduce ? "flash-soft" : "pulse-ring",
-        momento: reduce ? "35%" : "20%",
-      })
-      if (reduce) {
-        expect(anillo!.opacidad).toBeGreaterThan(0.9)
-        expect(sinEscalar(anillo!.scale), anillo!.scale).toBe(true)
-        expect(anillo!.sombra).toContain("3px")
-      } else {
-        expect(anillo!.opacidad).toBeGreaterThan(0)
-        expect(parseFloat(anillo!.scale)).toBeGreaterThan(1)
-      }
-
-      // Nada de esto suena (AGENTS.md, regla 7)
-      expect(await page.evaluate(() => window.__clipealoSounds ?? [])).toEqual([])
-    })
-
-    test("E4 · la flecha y el Play de las acciones llevan m-nudge; se anima la fila, no los botones", async ({
+    test("E3 · la flecha y el Play de las acciones llevan m-nudge; se anima la fila, no los botones", async ({
       page,
     }) => {
       await irA(page, "/")
@@ -491,14 +324,12 @@ for (const modo of MODOS) {
         return {
           entradas: leer(".m-load, .m-claim-sweep"),
           barrido: leer(".m-sweep", "::before"),
-          demo: leer(".m-demo-playhead, .m-demo-selection, .m-demo-ring"),
           posicionBrillo: getComputedStyle(seccion.querySelector(".m-claim-sweep")!)
             .backgroundPosition,
         }
       })
       expect(estado.entradas).toEqual(["1", "1", "1", "1"])
       expect(estado.barrido).toEqual(["0"])
-      expect(estado.demo).toEqual(["0", "0", "0"])
       // En reposo el brillo queda fuera del texto: solo se ve su color
       expect(posicionX(estado.posicionBrillo)).toBe(0)
     })
@@ -568,9 +399,7 @@ test.describe("hero sin JavaScript", () => {
   test.use({ javaScriptEnabled: false })
 
   for (const modo of MODOS) {
-    test(`la carga termina visible y la demo no arranca (reduced-motion: ${modo})`, async ({
-      page,
-    }) => {
+    test(`la carga termina visible (reduced-motion: ${modo})`, async ({ page }) => {
       await modoMovimiento(page, modo)
       // Sin JS no hay hidratación que esperar: `irA` se quedaría colgado
       await page.goto("/", { waitUntil: "load" })
@@ -582,13 +411,7 @@ test.describe("hero sin JavaScript", () => {
       }
       await expect(hero.locator(".m-sweep")).toHaveCount(1)
 
-      // Sin revelar no hay demo: la vista previa se ve y sus capas no
-      const vista = hero.locator(".reveal")
-      await expect(vista).toHaveAttribute("data-reveal", "pending")
-      await expect(vista).toHaveCSS("opacity", "1")
-      for (const capa of [".m-demo-playhead", ".m-demo-selection", ".m-demo-ring"]) {
-        await expect(hero.locator(capa)).toHaveCSS("opacity", "0")
-      }
+      await expect(hero.locator(".rubius-product-shell")).toHaveCount(1)
     })
   }
 })

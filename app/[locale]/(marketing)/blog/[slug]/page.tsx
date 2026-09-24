@@ -79,7 +79,7 @@ export default async function BlogArticlePage({
                 {readingTime}
               </span>
             </div>
-            <h1 className="mt-5 display text-[clamp(2rem,5vw,3.75rem)] leading-[1.08] text-balance">
+            <h1 className="mt-5 display text-[clamp(2rem,5vw,3.75rem)] leading-[1.08] text-balance break-words">
               {article.title}
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">

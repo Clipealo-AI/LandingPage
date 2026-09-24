@@ -10,7 +10,7 @@ export const siteConfig = {
   tagline: "De videos largos a grandes clips",
   description:
     "Sube el video completo. La IA encuentra los momentos que la gente ve hasta el final y te los devuelve en 9:16, con subtítulos.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://clipealo.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://clipealo-ai.com",
   claim: "Recorta . Edita . Comparte . Crece",
   links: {
     twitter: "https://twitter.com/clipealo",

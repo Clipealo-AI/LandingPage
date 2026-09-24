@@ -485,10 +485,6 @@
     animation-iteration-count: 1 !important;
     transition: none !important;
   }
-  [data-reveal] {
-    opacity: 1 !important;
-    translate: none !important;
-  }
 }
 html[data-capture] *,
 html[data-capture] *::before,
@@ -497,8 +493,4 @@ html[data-capture] *::after {
   animation-delay: -1ms !important;
   animation-iteration-count: 1 !important;
   transition: none !important;
-}
-html[data-capture] [data-reveal] {
-  opacity: 1 !important;
-  translate: none !important;
 }

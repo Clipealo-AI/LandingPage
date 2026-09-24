@@ -49,8 +49,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    // Se prueba el build de produccion: en dev el HTML no es el que ve el usuario
-    command: `npm run build && npx next start -p ${PORT}`,
+    // Se prueba el export estático que recibe Firebase Hosting. `next start` no
+    // admite proyectos con `output: "export"`.
+    command: `npm run build && npx serve --config serve.json --listen ${PORT} --no-clipboard`,
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,

@@ -32,9 +32,9 @@ export function PricingNetworks() {
         return (
           <article
             key={red.id}
-            className="flex flex-col gap-4 rounded-frame bg-card p-5 ring-1 ring-border"
+            className="flex min-w-0 flex-col gap-4 rounded-frame bg-card p-5 ring-1 ring-border"
           >
-            <header className="flex items-center gap-3">
+            <header className="flex min-w-0 flex-wrap items-center gap-3">
               <SocialBadge network={red.id} size="md" tone="marca" />
               <div className="min-w-0">
                 <h3 className="font-bold tracking-tight">{red.name}</h3>
