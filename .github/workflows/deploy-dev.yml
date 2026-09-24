@@ -1,0 +1,73 @@
+name: Deploy landing dev
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: landing-dev-hosting
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Check and deploy Next.js to Firebase Hosting dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check, test, and build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://landing.dev.clipealo-ai.com
+        run: npm run check && npm run build
+
+      - name: Firebase and Cloud Run provisioning status
+        if: ${{ vars.GCP_FIREBASE_READY != 'true' }}
+        run: echo "Dev deploy skipped until Google Cloud provisioning and workload identity are ready."
+
+      - name: Authenticate to Google Cloud with Workload Identity Federation
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOYER_SERVICE_ACCOUNT }}
+
+      - name: Setup Google Cloud CLI
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Deploy Next.js to Cloud Run
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
+        run: >-
+          gcloud run deploy clipealo-landing-dev
+          --source .
+          --region southamerica-west1
+          --project clipealo-gpt-amigos-dev
+          --allow-unauthenticated
+          --max 3
+          --memory 1Gi
+          --set-build-env-vars NEXT_PUBLIC_SITE_URL=https://landing.dev.clipealo-ai.com
+          --set-env-vars NEXT_PUBLIC_SITE_URL=https://landing.dev.clipealo-ai.com
+          --quiet
+
+      - name: Install Firebase CLI
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
+        run: npm install --global firebase-tools@15.30.2
+
+      - name: Deploy Firebase Hosting configuration
+        if: ${{ vars.GCP_FIREBASE_READY == 'true' }}
+        run: firebase deploy --only hosting --project clipealo-gpt-amigos-dev --config firebase.dev.json --non-interactive

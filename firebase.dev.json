@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "site": "clipealo-gpt-amigos-dev",
+    "public": "public",
+    "ignore": [
+      "firebase.dev.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "clipealo-landing-dev",
+          "region": "southamerica-west1",
+          "pinTag": true
+        }
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow, noarchive"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          }
+        ]
+      }
+    ]
+  }
+}
