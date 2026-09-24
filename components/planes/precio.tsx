@@ -1,19 +1,19 @@
 "use client"
 
 import * as React from "react"
-import { useLocale, useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
 
-import { MONEDA, precio } from "@/lib/pricing"
+import { formatPrecio } from "@/lib/pricing"
+import type { PricingCurrency } from "@/lib/pricing"
 
 /**
- * Precio con su moneda en el idioma: «14,50 US$» · «US$14.50» · «US$ 14,50».
- * Lo comparten las tarjetas y la cabecera de la comparativa.
+ * Precio con la moneda elegida en el catálogo. Se comparte entre tarjetas,
+ * comparativa y recargas para que un cambio de divisa sea consistente.
  */
-export function usePrecio() {
-  const t = useTranslations("pricing")
+export function usePrecio(currency: PricingCurrency) {
   const locale = useLocale()
   return React.useCallback(
-    (n: number) => t("price", { amount: precio(n, locale), currency: MONEDA }),
-    [t, locale]
+    (n: number) => formatPrecio(n, currency, locale),
+    [currency, locale]
   )
 }

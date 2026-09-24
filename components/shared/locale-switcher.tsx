@@ -35,7 +35,7 @@ export function useCambiarIdioma() {
       if (siguiente === locale) return
       const query = Object.fromEntries(new URLSearchParams(window.location.search))
       startTransition(() => {
-        // `pathname` es la ruta interna («/campanas/[id]»): los params la completan
+        // `pathname` es la ruta interna; los params completan la ruta dinámica
         router.replace(hrefDinamico(pathname, params as Record<string, string>, query), {
           locale: siguiente,
           scroll: false,

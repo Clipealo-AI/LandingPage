@@ -1,173 +1,181 @@
 {
   "plans": {
     "free": {
-      "name": "Trial",
-      "tagline": "To see if it works for you.",
-      "cta": "Start for free",
-      "highlights": {
-        "minutes": "{minutes} minutes of video per month",
-        "videoLimits": "Videos up to 60 min and 1 GB",
-        "aiClips": "AI clips",
-        "export": "720p export",
-        "accounts": "1 connected social account",
-        "storage": "3-day storage",
-        "watermark": "Clipealo watermark"
-      }
+      "name": "Free",
+      "tagline": "Give Clipealo a try.",
+      "cta": "Start for free"
     },
-    "creator": {
-      "name": "Creator",
-      "tagline": "Quality video, no watermark.",
-      "cta": "Choose Creator",
-      "highlights": {
-        "minutes": "{minutes} minutes of video per month",
-        "videoLimits": "Videos up to 600 min and 30 GB",
-        "export": "4K export",
-        "noWatermark": "No watermark",
-        "captions": "Auto captions and translation",
-        "reframe": "Automatic reframe",
-        "accounts": "6 connected social accounts",
-        "storage": "100 GB of storage"
-      }
+    "basic": {
+      "name": "Basic",
+      "tagline": "For growing creators.",
+      "cta": "Get started"
     },
-    "business": {
-      "name": "Business",
-      "tagline": "Grow your brand with simple workflows.",
-      "cta": "Choose Business",
-      "highlights": {
-        "everythingInCreator": "Everything in Creator",
-        "sharedWorkspace": "Shared workspace",
-        "seats": "Team members billed per seat",
-        "accounts": "20 connected social accounts",
-        "brandKit": "Brand kit",
-        "storage": "Unlimited storage",
-        "api": "API with higher limits"
-      }
+    "standard": {
+      "name": "Standard",
+      "tagline": "For professional creators.",
+      "cta": "Get started"
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "For agencies and teams.",
+      "cta": "Get started"
     }
   },
-  "price": "{currency}{amount}",
-  "forever": "forever",
-  "perMonth": "/ month",
-  "billedYearly": "billed annually ({total} per year) · was <s>{before}</s>",
-  "orYearly": "or {price} per month billed annually",
+  "perMonth": "/month",
   "mostPopular": "Most popular",
-  "mostPopularShort": "Most popular",
-  "choose": "Choose {plan}",
+  "mostPopularShort": "Popular",
   "billing": {
     "monthly": "Monthly",
     "yearly": "Yearly",
-    "yearlyLabel": "Annual billing"
+    "yearlyLabel": "Annual billing",
+    "billedMonthly": "Billed monthly",
+    "billedYearly": "Billed annually",
+    "withExtraCredits": "{billing} · base {base} + {credits} credits",
+    "currencyLabel": "Currency",
+    "soles": "🇵🇪 Soles",
+    "dollars": "🇺🇸 US dollars",
+    "currencyNamePEN": "Peruvian soles",
+    "currencyNameUSD": "US dollars"
+  },
+  "creditDefinition": "1 credit = 1 minute of video",
+  "creditSelector": "Monthly credits for {plan}",
+  "creditOption": "{credits} credits / month · ≈ {hours} h",
+  "creditOptionFree": "{credits} credits / month · ≈ 30 min",
+  "cardSections": {
+    "vod": "VOD",
+    "editor": "Editor",
+    "social": "Social posting",
+    "analytics": "Analytics"
+  },
+  "cardFeatures": {
+    "process30": "30 min processing",
+    "youtube": "Import from YouTube",
+    "process5h": "5 h processing",
+    "process10h": "10 h processing",
+    "process20h": "20 h processing",
+    "manualUpload": "+ Manual video upload",
+    "zoomRecordings": "Clips from Zoom recordings",
+    "quality720": "720p export",
+    "quality1080": "1080p export",
+    "quality4k": "4K export",
+    "clips5": "5 downloadable clips per month",
+    "clips30": "30 downloadable clips per month",
+    "clips100": "100 downloadable clips per month",
+    "clipsUnlimited": "Unlimited downloadable clips",
+    "watermark": "With watermark",
+    "noWatermark": "No watermark",
+    "storage500": "500 MB storage",
+    "storage5gb30d": "5 GB storage · 30 days",
+    "storage20gb90d": "20 GB storage · 90 days",
+    "storage100gb90d": "100 GB storage · 90 days",
+    "brandKit": "Brand kit",
+    "posts3": "3 posts/month · TikTok",
+    "posts15": "15 posts/month · all networks",
+    "posts50Schedule": "50 posts/month + scheduling",
+    "postsUnlimitedSchedule": "Unlimited posts + scheduling",
+    "tiktokOnly": "Publish to TikTok",
+    "allNetworks": "Publish to all networks",
+    "audienceByNetwork": "Set an audience for each network",
+    "tiktokAnalytics": "TikTok analytics included"
   },
   "groups": {
-    "creditos": "Credits and uploads",
-    "ia": "Clips and AI",
-    "exportacion": "Export",
-    "publicacion": "Social publishing",
-    "ganar": "Earning with your clips",
-    "equipo": "Workspace and team",
-    "marca": "Branding",
-    "api": "API and support"
+    "ia": "AI clip generation",
+    "editor": "Video editor",
+    "social": "Social publishing",
+    "support": "Support"
   },
   "features": {
-    "minutesPerMonth": "Video minutes per month",
-    "maxDuration": "Max length per video",
-    "maxFileSize": "Max file size",
-    "videoLinks": "YouTube, Google Drive and Vimeo links",
-    "liveStreams": "Twitch and Kick livestreams",
-    "aiClips": "AI clips with retention score",
-    "transcript": "Word-by-word editable transcript",
-    "autoCaptions": "Auto captions",
-    "captionTranslation": "Caption translation",
-    "autoReframe": "Automatic reframe with tracking",
-    "nameDictionary": "Proper name dictionary",
-    "exportQuality": "Export quality",
-    "formats": "Formats",
-    "clipsPerProject": "Clips per project",
+    "monthlyCredits": "Monthly credits",
+    "videoHours": "Processable video time",
+    "videoSources": "Import videos from",
     "noWatermark": "No watermark",
-    "connectedAccounts": "Connected social accounts",
-    "networks": "Available platforms",
-    "scheduling": "Scheduling posts",
-    "directPublish": "Direct publishing to your accounts",
-    "clipAnalytics": "Per-clip analytics",
+    "downloadQuality": "Download quality",
+    "downloadableClips": "Downloadable clips / month",
     "storage": "Storage",
-    "workspace": "Workspace",
-    "teamMembers": "Team members",
-    "roles": "Roles and permissions",
-    "captionTemplates": "Caption templates",
-    "brandKit": "Brand kit: logo, colors and fonts",
-    "teamTemplates": "Custom team templates",
-    "api": "API",
-    "webhooks": "Webhooks",
-    "support": "Support",
-    "participarCampanas": "Joining brand campaigns",
-    "training": "Learning",
-    "operaciones": "Trim and shrink"
-  },
-  "featureHints": {
-    "minutesPerMonth": "One credit is one minute of uploaded video",
-    "autoReframe": "Follows the speaker and switches between two people",
-    "networks": "Format and length adapt to each platform",
-    "directPublish": "You pick the accounts and Clipealo publishes to them",
-    "scheduling": "Pick a day and a time, it goes out on its own and the link is saved"
+    "exportFormats": "Export formats",
+    "brandTemplate": "Custom brand template",
+    "monthlyPosts": "Posts / month",
+    "publishNetworks": "Publish to",
+    "scheduling": "Schedule your posts",
+    "audienceByNetwork": "Set your audience per social network",
+    "discord": "Discord community",
+    "whatsappSupport": "Support",
+    "priorityWhatsapp": "Priority support"
   },
   "values": {
-    "minutes": "{minutes}",
-    "minutesExpandable": "{minutes} · expandable",
-    "accounts": "{accounts}",
-    "nineLanguages": "9 languages",
-    "unlimitedClips": "Unlimited",
-    "onlyTiktok": "TikTok only",
-    "allSix": "All six",
-    "threeDays": "3 days",
     "unlimited": "Unlimited",
-    "private": "Private",
-    "shared": "Shared",
-    "perSeat": "{seat} per seat per month",
-    "analyticsLimited": "{red} · last {clips} clips",
-    "basic": "Basic",
-    "all": "All",
-    "limited": "Limited",
-    "highLimits": "High limits",
-    "community": "Community",
-    "email": "Email",
-    "priority": "Priority",
-    "freeClasses": "The welcome track",
-    "allClasses": "Every class"
+    "tiktokOnly": "TikTok only",
+    "allNetworks": "All networks",
+    "storage": {
+      "free": "500 MB",
+      "basic": "5 GB · 30 days",
+      "standard": "20 GB · 90 days",
+      "premium": "100 GB · 90 days"
+    },
+    "videoSources": {
+      "free": "YouTube",
+      "basic": "YouTube, Kick and Twitch + manual upload",
+      "standard": "YouTube, Kick, Twitch and Facebook + manual upload",
+      "premium": "YouTube, Kick, Twitch, Facebook, Google Drive and Zoom + manual upload"
+    }
+  },
+  "enterprise": {
+    "eyebrow": "ENTERPRISE",
+    "title": "Enterprise",
+    "lead": "Agencies, publishers and brands",
+    "price": "Contact us",
+    "turnaround": "A tailored proposal within 24 hours.",
+    "contact": "Contact us",
+    "includesTitle": "Includes",
+    "extrasTitle": "Extras",
+    "included": {
+      "everythingPremium": "Everything in Premium",
+      "creditsByVolume": "Credits based on agreed volume",
+      "multiUserChannels": "Multiple users and channels",
+      "multiBranding": "Full multi-branding",
+      "processingSla": "Guaranteed processing SLA",
+      "dedicatedClipper": "A dedicated clipper for each vertical"
+    },
+    "extras": {
+      "approvalFlow": "Clip approval workflow",
+      "whiteLabel": "White label available",
+      "creditPackages": "Credit packages"
+    }
+  },
+  "topups": {
+    "title": "Top up credits whenever you need them.",
+    "lead": "{credits} credits = {hours} hour of video.",
+    "popular": "Popular",
+    "creditsLabel": "credits",
+    "hours": "≈ {count, plural, one {# hour} other {# hours}}",
+    "buy": "Buy",
+    "footer": "All plans can be canceled anytime · Secure payment · Billed in {currency}"
   },
   "faq": {
     "credit": {
       "q": "What is a credit?",
-      "a": "A credit is one minute of video you upload. A 60-minute podcast uses 60 credits, whether it yields 5 clips or 20. Clips, exports and posts don’t use credits."
+      "a": "One credit equals one minute of processable video. For example, 60 credits equal one hour of video."
     },
-    "outOfCredits": {
-      "q": "What happens if I run out of credits?",
-      "a": "You can keep editing and publishing what you already have. To upload more video, wait for your renewal or upgrade your plan; on Business you can add credits without changing plans. Unused minutes don’t roll over to the next month."
-    },
-    "changePlan": {
-      "q": "Can I change plans anytime?",
-      "a": "Yes. If you upgrade, you only pay the prorated part of the cycle and the new credits are added right away. If you downgrade, the change applies at the end of the current cycle."
+    "adjustCredits": {
+      "q": "Can I adjust my monthly credits?",
+      "a": "Yes. On Basic, Standard and Premium, you can choose the monthly credit volume you need, from the plan minimum up to 6,000."
     },
     "annualBilling": {
       "q": "How does annual billing work?",
-      "a": "You pay for the year upfront with a 50% discount on the monthly price. Credits are delivered every month, not all at once."
+      "a": "Annual billing gives you 20% off the plan base price. The displayed price is the monthly equivalent and is billed annually. Additional credits are charged separately."
     },
-    "cancelRefund": {
-      "q": "Can I cancel? Are there refunds?",
-      "a": "You cancel from Settings, with no calls or commitment, and keep your plan until the end of the paid cycle. If it’s your first payment and you haven’t used more than 30 credits, we’ll refund you within the following 7 days."
+    "cancel": {
+      "q": "Can I cancel anytime?",
+      "a": "Yes. You can cancel your plan at any time."
     },
-    "currencyTaxes": {
-      "q": "What currency are you charged in, and what about taxes?",
-      "a": "Prices are in US dollars (US$) and exclude taxes: IGV or VAT is calculated at checkout based on your country. We accept cards and, in Peru, Yape and Plin."
+    "currencies": {
+      "q": "Which currencies can I view prices in?",
+      "a": "Use the currency selector on the page to switch between Peruvian soles and US dollars."
     },
-    "teamSeats": {
-      "q": "How are team members billed on Business?",
-      "a": "Each additional member is billed per seat, on the same cycle as the plan. Seats share the workspace’s credits and storage."
-    },
-    "afterCancel": {
-      "q": "What happens to my videos if I cancel?",
-      "a": "You can download all your material for 30 days after canceling. We don’t use your content to train models or share it with third parties."
+    "creditPacks": {
+      "q": "Can I buy extra credits?",
+      "a": "Yes. You can top up with 60, 180 or 300 credits whenever you need them."
     }
   },
-  "gate": {
-    "cta": "See the plans"
-  }
+  "gate": { "cta": "See the plans" }
 }

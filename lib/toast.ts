@@ -16,7 +16,7 @@ import { playSound, type SoundName } from "@/lib/sound"
  */
 
 type Mensaje = Parameters<typeof sonner.success>[0]
-export type ToastOptions = ExternalToast & { sound?: SoundName | false }
+type ToastOptions = ExternalToast & { sound?: SoundName | false }
 type Mostrar = (mensaje: Mensaje, opciones?: ToastOptions) => string | number
 
 const SELECTOR_AVISO = "[data-sonner-toast]"

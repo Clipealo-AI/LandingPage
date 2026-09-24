@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { ArrowRight, Play, Sparkles } from "lucide-react";
-import { useTranslations } from "next-intl";
+import * as React from "react"
+import { ArrowRight, Play, Sparkles } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { BrandGlow, PatternIsotipos } from "@/components/brand/patterns";
-import { ProductPreview } from "@/components/marketing/product-preview";
+import { Link } from "@/i18n/navigation"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { BrandGlow, PatternIsotipos } from "@/components/brand/patterns"
+import { RubiusPreview } from "@/components/marketing/rubius-preview"
 
 const CORNERS = [
   {
@@ -31,7 +31,7 @@ const CORNERS = [
     className: "-bottom-2 -right-2 rounded-br-lg border-t-0 border-l-0",
     delay: 0.75,
   },
-];
+]
 
 /**
  * Hero.
@@ -43,12 +43,12 @@ const CORNERS = [
  * `h1` y la descripción (candidatos a LCP) están pintados y quietos desde el
  * primer fotograma: ni ellos ni sus antepasados llevan animación.
  *
- * La vista previa reproduce un tramo real del contenido de Rubius y sincroniza
- * el progreso con los tres clips extraídos del mismo video.
+ * La vista previa hace una demo al revelarse. Con «reducir movimiento» todo se
+ * sigue viendo: lo que sube o escala funde en su sitio y el barrido destella.
  */
 export function Hero() {
-  const t = useTranslations("marketing");
-  const tc = useTranslations("common.meta");
+  const t = useTranslations("marketing")
+  const tc = useTranslations("common.meta")
 
   return (
     <section className="relative isolate overflow-hidden bg-ink-950 pt-32 pb-20 sm:pt-40 md:pb-28">
@@ -103,13 +103,8 @@ export function Hero() {
             className="m-load m-load-rise mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
             style={{ "--d": "300ms" } as React.CSSProperties}
           >
-            <Button
-              variant="brand"
-              size="xl"
-              asChild
-              className="w-full sm:w-auto"
-            >
-              <Link href="/subir">
+            <Button variant="brand" size="xl" asChild className="w-full sm:w-auto">
+              <Link href="https://app.clipealo-ai.com/">
                 {t("actions.upload")} <ArrowRight className="m-nudge" />
               </Link>
             </Button>
@@ -131,8 +126,8 @@ export function Hero() {
           </p>
         </div>
 
-        <ProductPreview />
+        <RubiusPreview />
       </div>
     </section>
-  );
+  )
 }

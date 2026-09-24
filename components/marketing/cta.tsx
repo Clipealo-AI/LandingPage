@@ -3,11 +3,14 @@ import { ArrowRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Link } from "@/i18n/navigation"
-import { legalNav, marketingNav, siteConfig } from "@/lib/site"
+import { footerNav, siteConfig } from "@/lib/site"
 import { Logo } from "@/components/brand/logo"
 import { Button } from "@/components/ui/button"
 import { PatternLineas } from "@/components/brand/patterns"
 import { LocaleSwitcher } from "@/components/shared/locale-switcher"
+import { WhatsAppIcon } from "@/components/brand/whatsapp-icon"
+import { WHATSAPP_NUMBER } from "@/lib/contact"
+import { cn } from "@/lib/utils"
 
 export function Cta() {
   const t = useTranslations("marketing")
@@ -44,7 +47,7 @@ export function Cta() {
           effect="crop"
           className="mt-9 bg-ink-950 text-ink-50 shadow-lg hover:bg-ink-900"
         >
-          <Link href="/subir">
+          <Link href="https://app.clipealo-ai.com/">
             {t("actions.upload")} <ArrowRight className="m-nudge" />
           </Link>
         </Button>
@@ -56,6 +59,8 @@ export function Cta() {
 type FooterLink = {
   href: string | { pathname: string; hash: string }
   label: string
+  icon?: React.ReactNode
+  ariaLabel?: string
 }
 
 export function SiteFooter() {
@@ -74,26 +79,29 @@ export function SiteFooter() {
           <div className="grid grid-cols-2 gap-x-12 gap-y-8 sm:grid-cols-3">
             <FooterColumn
               title={t("footer.product")}
-              links={marketingNav
-                .filter((l) => l.id !== "system")
-                .map((l) => ({ href: l.href, label: t(`nav.${l.id}`) }))}
+              links={footerNav.product.map((link) => ({
+                href: link.href,
+                label: t(`footer.links.${link.id}`),
+              }))}
             />
             <FooterColumn
               title={t("footer.resources")}
-              links={[
-                { href: "/design-system", label: t("footer.designSystem") },
-                {
-                  href: { pathname: "/", hash: "como-funciona" },
-                  label: t("nav.howItWorks"),
-                },
-                { href: "mailto:hola@clipealo.com", label: t("footer.contact") },
-              ]}
+              links={footerNav.resources.map((link) => ({
+                href: link.href,
+                label: t(`footer.links.${link.id}`),
+                icon:
+                  link.id === "whatsapp" ? (
+                    <WhatsAppIcon className="size-4" />
+                  ) : undefined,
+                ariaLabel:
+                  link.id === "whatsapp" ? `WhatsApp · ${WHATSAPP_NUMBER}` : undefined,
+              }))}
             />
             <FooterColumn
               title={t("footer.legal")}
-              links={legalNav.map((l) => ({
-                href: l.href,
-                label: t(`legalNav.${l.id}`),
+              links={footerNav.legal.map((link) => ({
+                href: link.href,
+                label: t(`legalNav.${link.id}`),
               }))}
             />
           </div>
@@ -125,18 +133,24 @@ function FooterColumn({ title, links }: { title: string; links: readonly FooterL
       </h3>
       <ul className="mt-3 space-y-2.5 text-sm">
         {links.map((link) => {
-          // `next/link` no aporta nada en un mailto y ademas lo prefetchearia
+          // Los destinos externos (web y WhatsApp) no necesitan `next/link`.
           const { href } = link
-          const isExternal = typeof href === "string" && href.startsWith("mailto:")
+          const isExternal =
+            typeof href === "string" && /^(https?:|mailto:|tel:)/i.test(href)
           const className = "opacity-75 transition-opacity hover:opacity-100"
           return (
             <li key={link.label}>
               {isExternal ? (
-                <a href={href} className={className}>
+                <a
+                  href={href}
+                  aria-label={link.ariaLabel}
+                  className={cn(className, link.icon && "inline-flex items-center gap-2")}
+                >
+                  {link.icon}
                   {link.label}
                 </a>
               ) : (
-                <Link href={href} className={className}>
+                <Link href={href as never} className={className}>
                   {link.label}
                 </Link>
               )}

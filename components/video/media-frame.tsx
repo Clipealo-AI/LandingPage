@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 import { formatTimecode } from "@/lib/format"
-import { ASPECT_RATIOS, type AspectRatioKey } from "@/lib/types"
+import { ASPECT_RATIOS, type AspectRatioKey } from "@/lib/video-formats"
 import { CropFrame } from "@/components/brand/logo"
 
 export interface MediaFrameProps extends React.ComponentProps<"div"> {

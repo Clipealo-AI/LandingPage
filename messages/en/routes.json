@@ -1,0 +1,67 @@
+{
+  "shared": {
+    "back": "Back",
+    "backToAllFeatures": "See all features",
+    "backToAllUseCases": "See all use cases",
+    "explore": "Explore",
+    "featureIndexEyebrow": "The platform",
+    "featureIndexTitle": "Everything you need to turn videos into clips",
+    "featureIndexLead": "From video analysis to clip delivery, bring the tools that speed up your workflow together in one place.",
+    "caseIndexEyebrow": "Use cases",
+    "caseIndexTitle": "A lighter way to create for every team",
+    "caseIndexLead": "Clipealo helps people turn long videos into short content, from independent creators to brand teams.",
+    "howItWorks": "How it works",
+    "faqTitle": "Frequently asked questions",
+    "whatYouCanDo": "What you can do",
+    "examples": "Supported content",
+    "results": "Save time on every delivery",
+    "related": "You may also need",
+    "openFeature": "Explore feature",
+    "openCase": "Explore use case",
+    "viewPricing": "View pricing",
+    "tryClipealo": "Try Clipealo",
+    "contactWhatsApp": "Message us",
+    "steps": {
+      "upload": {
+        "title": "Add your video",
+        "description": "Paste a supported link or upload a file from your device."
+      },
+      "analyze": {
+        "title": "Let AI find the moments",
+        "description": "Clipealo analyzes the content and suggests segments for you to review."
+      },
+      "review": {
+        "title": "Customize and share",
+        "description": "Adjust the result, choose a format, and prepare clips for each channel."
+      }
+    },
+    "emptyRelated": "Explore Clipealo features to complete your workflow.",
+    "featureCtaHeading": "Let Clipealo find your best moments",
+    "featureCtaLead": "Start with a video and prepare your next clips in one place.",
+    "caseValueTitle": "Turn more of your content into shareable clips",
+    "caseCtaHeading": "Take your next videos further"
+  },
+  "blog": {
+    "eyebrow": "Resources",
+    "title": "Ideas to get more from every video",
+    "lead": "Practical guides for clippers, streamers, and teams that want to publish short-form content more consistently.",
+    "featured": "Featured article",
+    "readArticle": "Read article",
+    "back": "Back to the blog",
+    "published": "Published {date}",
+    "readingTime": "{minutes} read",
+    "coverAlt": "Article cover: {title}",
+    "related": "Keep reading",
+    "allCategories": "All topics",
+    "categories": {
+      "Buenas Prácticas": "Best practices",
+      "Por Qué Importa": "Why it matters",
+      "Guía de Inicio": "Getting started"
+    },
+    "originalLanguage": "This article was originally published in Spanish.",
+    "ctaTitle": "Turn your next video into clips",
+    "ctaLead": "Try Clipealo's workflow with a video you already have.",
+    "articleCtaTitle": "Put the guide into practice",
+    "articleCtaLead": "Try Clipealo with a video and review the moments it finds."
+  }
+}

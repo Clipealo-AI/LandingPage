@@ -17,7 +17,7 @@
 /* El precio rueda. Al cambiar de ciclo, PlanCards remonta el precio y su línea
    de facturación (`key` por ciclo) con esta clase: entran 0,4 rem desde abajo
    con fundido. Se anima la cifra entera, nunca dígito a dígito, y no se reserva
-   ancho: «14,50 US$» · «US$14.50» · «US$ 14,50» miden distinto.
+   ancho: el símbolo y los decimales cambian entre soles, dólares e idiomas.
    Con «reducir», la distancia vale 0 (--motion-distance) y queda un fundido más
    largo y con `ease-out` para que el cambio se siga viendo sin desplazamiento:
    con --ease-brand en 320 ms la cifra ya estaba al 90 % a los 120 ms. */
@@ -31,7 +31,7 @@
   }
 }
 
-/* El ahorro destella. Al pasar a anual, el badge «−50 %» se remonta con esta
+/* El ahorro destella. Al pasar a anual, el badge «−20 %» se remonta con esta
    clase: un anillo de 3 px en `primary` aparece y se va en su sitio.
    Nunca `currentColor` ni `--ring`: en este badge los dos son naranja (el foco
    de la marca es naranja) y el naranja es solo la marca de recorte y el clip

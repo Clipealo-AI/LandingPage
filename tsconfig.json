@@ -30,5 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "docs", ".next", "src", "vite.config.ts", "vite-plugin-blog-prerender.ts", "tailwind.config.vite.ts"]
+  "exclude": ["node_modules", "docs", ".next"]
 }

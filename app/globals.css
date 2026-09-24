@@ -13,10 +13,7 @@
 @import "./motion/pricing.css";
 @import "./motion/faq.css";
 @import "./motion/acciones.css";
-/* Onboarding «Tu primer corte» (/bienvenida): fuera de la landing, mismas reglas */
-@import "./motion/onboarding.css";
-@import "./motion/calendario.css";
-
+@import "./motion/rubius-preview.css";
 @custom-variant dark (&:is(.dark *));
 
 /* ==========================================================================
@@ -85,7 +82,7 @@
   /* Tipografia */
   --font-display: var(--font-climate-crisis), "Arial Black", system-ui, sans-serif;
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-mono: ui-monospace, "SFMono-Regular", monospace;
 
   /* Radio — 0.875rem = 3.5/32 del lado: el mismo ratio de las esquinas del isotipo */
   --radius: 0.875rem;
@@ -122,9 +119,8 @@
   --shadow-brand: 0 8px 24px -6px oklch(0.6837 0.206 39.34 / 0.4);
   --shadow-brand-sm: 0 4px 14px -6px oklch(0.6837 0.206 39.34 / 0.35);
 
-  /* Alturas del chrome de aplicacion — corta los magic numbers repetidos */
-  --spacing-topbar: 3.5rem;
-  --spacing-timeline: 8.5rem;
+  /* Altura de la navegación fija de la landing. */
+  --spacing-site-header: 3.5rem;
 
   /* Animaciones propias. Sus @keyframes viven en app/motion/base.css, fuera de
      @theme: Tailwind descarta los de @theme que ninguna clase `animate-*` usa
@@ -368,7 +364,7 @@
     @apply font-sans;
     scroll-behavior: smooth;
     /* El header sticky no puede tapar el destino de un ancla */
-    scroll-padding-top: calc(var(--spacing-topbar) + 1.5rem);
+    scroll-padding-top: calc(var(--spacing-site-header) + 1.5rem);
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -563,40 +559,6 @@
   padding-inline: var(--gutter-page);
 }
 
-/* Rejilla de clips. Una sola definición para la biblioteca, el panel y el
-   esqueleto de carga: si el esqueleto tiene otras columnas, deja de ser la
-   sombra de lo que va a llegar. `auto-fill` gana columnas sola al crecer la
-   pantalla, en vez de topar en el último breakpoint declarado. */
-@utility grid-clips {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(var(--clip-min, 16rem), 1fr));
-}
-
-/* Producto: paneles, listas y rejillas. Aquí el espacio horizontal es útil. */
-@utility container-app {
-  margin-inline: auto;
-  width: 100%;
-  /* 140rem = 2660 px con el raíz a 19: en un ultrawide la herramienta sí quiere
-     ese ancho, porque son columnas de clips, no prosa. */
-  max-width: 140rem;
-  padding-inline: var(--gutter-app);
-}
-
-/* Formularios de una columna: el ancho no aporta nada. */
-@utility container-form {
-  margin-inline: auto;
-  width: 100%;
-  max-width: 64rem;
-  padding-inline: var(--gutter-app);
-}
-
-/* Superficie de herramienta (el estudio): sin tope, solo margen de respiro. */
-@utility container-fluid {
-  width: 100%;
-  padding-inline: var(--gutter-tool);
-}
-
 /* --------------------------------------------------------------------------
    ESCALA
    El tamaño raíz es la única palanca que alcanza a la vez a los 48 primitivos,
@@ -610,29 +572,21 @@
 @layer base {
   :root {
     --gutter-page: 1.25rem;
-    --gutter-app: 1rem;
-    --gutter-tool: 0.75rem;
   }
 
   @media (width >= 40rem) {
     :root {
       --gutter-page: 2rem;
-      --gutter-app: 1.5rem;
-      --gutter-tool: 1rem;
     }
   }
   @media (width >= 80rem) {
     :root {
       --gutter-page: 2.5rem;
-      --gutter-app: 2rem;
-      --gutter-tool: 1rem;
     }
   }
   @media (width >= 120rem) {
     :root {
       --gutter-page: 3rem;
-      --gutter-app: 2.5rem;
-      --gutter-tool: 1.25rem;
     }
   }
 

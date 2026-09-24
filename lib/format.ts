@@ -59,7 +59,7 @@ export function formatDuration(seconds: number) {
 const BYTE_UNITS = ["B", "KB", "MB", "GB", "TB"] as const
 
 /** Tipo de lista de `Format.list`: «a, b y c» · «a, b o c» · medidas. */
-export type TipoLista = "conjunction" | "disjunction" | "unit"
+type TipoLista = "conjunction" | "disjunction" | "unit"
 
 const RELATIVE_STEPS: [Intl.RelativeTimeFormatUnit, number][] = [
   ["second", 60],
@@ -78,8 +78,8 @@ function createFormat(locale: Locale) {
 
   /**
    * Construir un `Intl.NumberFormat` cuesta más que usarlo, y estos tres se
-   * llaman una vez por celda: una tabla del backoffice o una rejilla de
-   * campañas levantan cientos por render. Se guardan por número de decimales.
+   * llaman una vez por celda en las comparativas y tarjetas. Se guardan por
+   * número de decimales.
    *
    * Tres mapas y no uno: aunque coincidan los decimales, las tres
    * configuraciones son distintas —`money` agrupa los millares siempre,
@@ -297,106 +297,16 @@ export function getFormat(locale: Locale): Format {
 const es = getFormat("es")
 export const formatBytes = es.bytes
 export const formatCompact = es.compact
-export const formatNumber = es.number
+const formatNumber = es.number
 export const formatPercent = es.percent
-export const formatRelative = es.relative
-export const formatDate = es.date
-export const formatDateTime = es.dateTime
-export const formatMoney = es.money
-export const formatMonth = es.month
-export const formatMonthShort = es.monthShort
-export const formatDelta = es.delta
+const formatRelative = es.relative
+const formatDate = es.date
+const formatDateTime = es.dateTime
+const formatMoney = es.money
+const formatMonth = es.month
+const formatMonthShort = es.monthShort
+const formatDelta = es.delta
 export const formatList = es.list
 
-/* ---------------------------------------------------------------------------
-   Fechas con zona horaria: lo que necesita el Calendario
-   --------------------------------------------------------------------------- */
-
-/**
- * Formateadores atados a una zona horaria concreta. El resto de la app pinta
- * fechas en la zona de quien mira (`date`, `dateTime`); la agenda no puede: una
- * publicación programada a las 19:00 en Lima es a las 19:00 en Lima aunque la
- * mire alguien desde Madrid, así que la zona se pasa y se dice en pantalla.
- *
- * La hora sale como la escribe cada idioma: «19:00» en español y portugués,
- * «7:00 PM» en inglés.
- */
-export function createFechasZona(locale: Locale, zona: string) {
-  const tag = INTL[locale]
-  const hora = new Intl.DateTimeFormat(tag, {
-    timeZone: zona,
-    hour: "numeric",
-    minute: "2-digit",
-  })
-  const diaCorto = new Intl.DateTimeFormat(tag, { timeZone: zona, weekday: "short" })
-  const diaLargo = new Intl.DateTimeFormat(tag, { timeZone: zona, weekday: "long" })
-  const diaYMes = new Intl.DateTimeFormat(tag, {
-    timeZone: zona,
-    day: "numeric",
-    month: "short",
-  })
-  const fechaLarga = new Intl.DateTimeFormat(tag, {
-    timeZone: zona,
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  })
-  const fechaHora = new Intl.DateTimeFormat(tag, {
-    timeZone: zona,
-    day: "numeric",
-    month: "short",
-    hour: "numeric",
-    minute: "2-digit",
-  })
-  const mesLargo = new Intl.DateTimeFormat(tag, {
-    timeZone: zona,
-    month: "long",
-    year: "numeric",
-  })
-
-  const enFecha = (x: string | number | Date) => (x instanceof Date ? x : new Date(x))
-
-  return {
-    zona,
-    /** «19:00» · "7:00 PM" */
-    hora: (x: string | number | Date) => hora.format(enFecha(x)),
-    /** «lun» · "Mon" */
-    diaCorto: (x: string | number | Date) => diaCorto.format(enFecha(x)),
-    /** «lunes» · "Monday" */
-    diaLargo: (x: string | number | Date) => diaLargo.format(enFecha(x)),
-    /** «13 sept» */
-    diaYMes: (x: string | number | Date) => diaYMes.format(enFecha(x)),
-    /** «domingo, 13 de septiembre» */
-    fechaLarga: (x: string | number | Date) => fechaLarga.format(enFecha(x)),
-    /** «13 sept, 19:00» */
-    fechaHora: (x: string | number | Date) => fechaHora.format(enFecha(x)),
-    /** «septiembre de 2026» */
-    mes: (x: string | number | Date) => mesLargo.format(enFecha(x)),
-    /** «7–13 sept»: el título de la semana, con el guion del idioma. */
-    rango: (desde: string | number | Date, hasta: string | number | Date) =>
-      diaYMes.formatRange(enFecha(desde), enFecha(hasta)),
-  }
-}
-
-export type FechasZona = ReturnType<typeof createFechasZona>
-
-const cacheZonas = new Map<string, FechasZona>()
-
-/** Formateadores de (idioma, zona), creados una sola vez por combinación. */
-export function getFechasZona(locale: Locale, zona: string): FechasZona {
-  const clave = `${locale}|${zona}`
-  let f = cacheZonas.get(clave)
-  if (!f) {
-    f = createFechasZona(locale, zona)
-    cacheZonas.set(clave, f)
-  }
-  return f
-}
-
-/** Posicion 0–1 dentro de un rango; util para pintar la linea de tiempo. */
-export function progressOf(value: number, start: number, end: number) {
-  if (end <= start) return 0
-  return clamp((value - start) / (end - start), 0, 1)
-}
 
 export { clamp }

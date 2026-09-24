@@ -11,8 +11,11 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
 
 const nextConfig: NextConfig = {
   images: {
-    // Pósters y miniaturas llegan firmados desde el almacenamiento de video
-    remotePatterns: [{ protocol: "https", hostname: "**.clipealo.com" }],
+    // Miniaturas públicas de la landing y pósters del almacenamiento de video.
+    remotePatterns: [
+      { protocol: "https", hostname: "**.clipealo.com" },
+      { protocol: "https", hostname: "storage.googleapis.com" },
+    ],
     formats: ["image/avif", "image/webp"],
   },
 

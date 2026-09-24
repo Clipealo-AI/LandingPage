@@ -32,7 +32,7 @@ export function ErrorState({
   description,
   error,
   onRetry,
-  backHref = "/dashboard",
+  backHref = "/",
   backLabel,
   className,
 }: ErrorStateProps) {
@@ -51,7 +51,7 @@ export function ErrorState({
     <div
       role="alert"
       className={cn(
-        "container-app grid min-h-[60svh] place-content-center gap-5 py-16 text-center",
+        "container-page grid min-h-[60svh] place-content-center gap-5 py-16 text-center",
         className
       )}
     >

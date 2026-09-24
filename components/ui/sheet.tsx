@@ -129,7 +129,7 @@ export {
   SheetClose,
   SheetContent,
   SheetHeader,
-  SheetFooter,
+  
   SheetTitle,
-  SheetDescription,
+  
 }

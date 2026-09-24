@@ -46,7 +46,7 @@ export function PatternLineas({ className, ...props }: LayerProps) {
 }
 
 /** Rejilla tecnica de fondo. Por defecto se funde hacia los bordes. */
-export function GridBackdrop({ fade = "edges", className, ...props }: LayerProps) {
+function GridBackdrop({ fade = "edges", className, ...props }: LayerProps) {
   return (
     <Layer fade={fade} className={cn("pattern-grid opacity-60", className)} {...props} />
   )

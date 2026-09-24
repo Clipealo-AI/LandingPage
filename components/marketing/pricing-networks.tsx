@@ -5,9 +5,8 @@ import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
 import { formatDuration } from "@/lib/format"
-import { planesVisibles, redesDe } from "@/lib/planes"
+import { PLANES_SEMILLA, planesVisibles, redesDe } from "@/lib/planes"
 import { socialList } from "@/lib/social"
-import { useCatalogoPlanes } from "@/hooks/use-catalogo-planes"
 import { useNombrePlan } from "@/components/planes/nombre-plan"
 import { SocialBadge } from "@/components/brand/social"
 import { Badge } from "@/components/ui/badge"
@@ -21,7 +20,7 @@ export function PricingNetworks() {
   const t = useTranslations("marketing.pricingNetworks")
   const tc = useTranslations("common")
   const nombrePlan = useNombrePlan()
-  const planes = planesVisibles(useCatalogoPlanes())
+  const planes = planesVisibles(PLANES_SEMILLA)
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

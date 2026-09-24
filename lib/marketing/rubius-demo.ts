@@ -1,7 +1,7 @@
-import records from "./rubius-demo.json";
+import records from "./rubius-demo.json"
 
 const MEDIA_BASE =
-  "https://storage.googleapis.com/clipealo-gpt-amigos-prod-v1/demos/landing/rubius/v6";
+  "https://storage.googleapis.com/clipealo-gpt-amigos-prod-v1/demos/landing/rubius/v6"
 
 /** Tramo continuo del video de origen; los tiempos de los clips vienen de la BD. */
 export const RUBIUS_SOURCE = {
@@ -10,9 +10,9 @@ export const RUBIUS_SOURCE = {
   end: 490,
   video: `${MEDIA_BASE}/overview.mp4`,
   poster: `${MEDIA_BASE}/overview.webp`,
-} as const;
+} as const
 
-export const CLIPEALO_APP_URL = "https://app.clipealo-ai.com";
+export const CLIPEALO_APP_URL = "https://app.clipealo-ai.com"
 
 const clipPresentation = {
   "7eb2ce28-e16c-4e96-989a-133411c87d0a": {
@@ -39,23 +39,22 @@ const clipPresentation = {
     slug: "pokemon",
     displayTitle: "Cartas Pokémon nivel pro",
   },
-} as const;
+} as const
 
 export const RUBIUS_CLIPS = records.map((clip) => {
-  const presentation =
-    clipPresentation[clip.id as keyof typeof clipPresentation];
-  if (!presentation) throw new Error(`Clip del demo desconocido: ${clip.id}`);
+  const presentation = clipPresentation[clip.id as keyof typeof clipPresentation]
+  if (!presentation) throw new Error(`Clip del demo desconocido: ${clip.id}`)
 
   return {
     ...clip,
     ...presentation,
     video: `${MEDIA_BASE}/${presentation.slug}.mp4`,
     poster: `${MEDIA_BASE}/${presentation.slug}.webp`,
-  };
-});
+  }
+})
 
 export const RUBIUS_PREVIEW_CLIPS = RUBIUS_CLIPS.filter(
-  (clip) => clip.start >= RUBIUS_SOURCE.start && clip.end <= RUBIUS_SOURCE.end,
-);
+  (clip) => clip.start >= RUBIUS_SOURCE.start && clip.end <= RUBIUS_SOURCE.end
+)
 
-export type RubiusClip = (typeof RUBIUS_CLIPS)[number];
+export type RubiusClip = (typeof RUBIUS_CLIPS)[number]

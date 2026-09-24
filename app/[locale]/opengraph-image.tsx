@@ -133,7 +133,7 @@ export default async function OpengraphImage({
           {t("claim")}
         </span>
         <span style={{ color: "#dce9ff", fontSize: 26, opacity: 0.6 }}>
-          9:16 · 4:5 · 1:1 · 16:9
+          Vertical · 9:16
         </span>
       </div>
     </div>,

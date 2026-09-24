@@ -1,36 +1,14 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import {
-  BookOpen,
-  ChevronDown,
-  FileText,
-  FolderOpen,
-  Gamepad2,
-  Globe,
-  HelpCircle,
-  Languages,
-  Menu,
-  MessageCircle,
-  Palette,
-  Search,
-  Smartphone,
-  Target,
-  Users,
-  UserRound,
-  Video,
-  Zap,
-  Check,
-  type LucideIcon,
-} from "lucide-react";
-import { useTranslations } from "next-intl";
+import * as React from "react"
+import { Check, ChevronDown, Languages, Menu, UserRound } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-import { Link, usePathname } from "@/i18n/navigation";
-import { LOCALE_NAME, LOCALE_TAG, routing } from "@/i18n/routing";
-import { cn } from "@/lib/utils";
-import { Logo } from "@/components/brand/logo";
-import { DiscordIcon } from "@/components/brand/discord-icon";
-import { Button } from "@/components/ui/button";
+import { Link, usePathname } from "@/i18n/navigation"
+import { LOCALE_NAME, LOCALE_TAG, routing } from "@/i18n/routing"
+import { cn } from "@/lib/utils"
+import { Logo } from "@/components/brand/logo"
+import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetClose,
@@ -38,181 +16,92 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/components/ui/sheet"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { LocaleSwitcher, useCambiarIdioma } from "@/components/shared/locale-switcher"
+import { ThemeToggle } from "@/components/shared/theme-toggle"
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
-  LocaleSwitcher,
-  useCambiarIdioma,
-} from "@/components/shared/locale-switcher";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
+  featureNavigation,
+  resourceNavigation,
+  useCaseNavigation,
+} from "@/lib/marketing/navigation"
 
 /**
- * Rutas cuya primera pantalla es oscura (hero de la landing, portada del
- * sistema de diseño). Solo ahí la cabecera arranca en blanco; en /precios o
+ * Rutas cuya primera pantalla es oscura (hero de la landing). Solo ahí la
+ * cabecera arranca en blanco; en /precios o
  * en las páginas legales el fondo es claro desde el primer píxel y el texto
  * debe ser el del tema desde el servidor, sin esperar a hidratar.
  *
  * `usePathname` de `@/i18n/navigation` devuelve la ruta interna, sin prefijo de
- * idioma: «/en» llega como «/» y «/pt/design-system», como «/design-system».
+ * idioma: «/en» llega como «/» y «/pt/precos», como «/precios».
  */
-const RUTAS_HERO_OSCURO = new Set(["/", "/design-system"]);
+const RUTAS_HERO_OSCURO = new Set(["/"])
 
 /**
- * Rutas cuya primera pantalla ya trae su propia acción naranja —el hero, la
- * portada del sistema de diseño, la tarjeta destacada de /precios—: ahí la
+ * Rutas cuya primera pantalla ya trae su propia acción naranja —el hero y la
+ * tarjeta destacada de /precios—: ahí la
  * cabecera va en contorno. Es un conjunto aparte porque /precios es clara
  * desde el primer píxel y el texto blanco no le toca.
  */
-const RUTAS_CON_ACCION_PROPIA = new Set([...RUTAS_HERO_OSCURO, "/precios"]);
-const DISCORD_URL = "https://discord.com/invite/XjhXBtaK6A";
+const RUTAS_CON_ACCION_PROPIA = new Set([...RUTAS_HERO_OSCURO, "/precios"])
 
-type MenuKey = "funcionalidades" | "casos" | "recursos";
+const DISCORD_URL = "https://discord.com/invite/XjhXBtaK6A"
 
-type MenuItem = {
-  icon: LucideIcon;
-  label: string;
-  description: string;
-  href: string;
-};
+const MENUS = {
+  features: {
+    items: featureNavigation.map(({ id, slug, icon }) => ({
+      id,
+      href: `/funciones/${slug}`,
+      icon,
+    })),
+  },
+  useCases: {
+    items: useCaseNavigation.map(({ id, slug, icon }) => ({
+      id,
+      href: `/casos/${slug}`,
+      icon,
+    })),
+  },
+  resources: { items: resourceNavigation },
+} as const
 
-const MENUS: { id: MenuKey; label: string; items: MenuItem[] }[] = [
-  {
-    id: "funcionalidades",
-    label: "Funcionalidades",
-    items: [
-      {
-        icon: Zap,
-        label: "Clips automáticos",
-        description:
-          "Pega el link de tu stream. La IA procesa el video completo y genera clips listos para publicar.",
-        href: "/funciones/clips-automaticos-con-ia",
-      },
-      {
-        icon: Target,
-        label: "Entrenada en contenido LATAM",
-        description:
-          "Detecta momentos virales en español. Entiende jerga local y contexto cultural.",
-        href: "/funciones/ia-entrenada-contenido-latam",
-      },
-      {
-        icon: MessageCircle,
-        label: "Editor de subtítulos",
-        description:
-          "Personaliza fuentes, colores, animaciones y posición de subtítulos automáticos.",
-        href: "/funciones/editor-subtitulos-estilos",
-      },
-      {
-        icon: Smartphone,
-        label: "Exporta en 2 formatos",
-        description:
-          "16:9 para YouTube/Kick y 9:16 para TikTok/Reels. Reencuadre automático en 1 clic.",
-        href: "/funciones/exporta-dos-formatos",
-      },
-      {
-        icon: Palette,
-        label: "Plantillas de marca",
-        description:
-          "Configura el branding de cada cliente y aplícalo a todos sus clips en un clic.",
-        href: "/funciones/plantillas-de-marca",
-      },
-      {
-        icon: FolderOpen,
-        label: "Gestión de proyectos",
-        description:
-          "Organiza todos tus videos y clips por cliente, campaña o fecha.",
-        href: "/funciones/gestion-proyectos-carpetas",
-      },
-      {
-        icon: Search,
-        label: "Exportación en masa",
-        description: "Descarga todos los clips de un proyecto en un solo clic.",
-        href: "/funciones/exportacion-en-masa",
-      },
-    ],
-  },
-  {
-    id: "casos",
-    label: "Casos de uso",
-    items: [
-      {
-        icon: Video,
-        label: "Cliperos",
-        description: "Convierte momentos épicos en clips virales.",
-        href: "/casos/cliperos",
-      },
-      {
-        icon: Gamepad2,
-        label: "Streamers",
-        description: "Extrae los mejores momentos de tus streams.",
-        href: "/casos/streamers",
-      },
-      {
-        icon: MessageCircle,
-        label: "Podcasters",
-        description: "Convierte episodios largos en clips sociales.",
-        href: "/casos/podcasters",
-      },
-      {
-        icon: BookOpen,
-        label: "Coaches y educadores",
-        description: "Comparte clases y tutoriales como contenido corto.",
-        href: "/casos/coaches",
-      },
-      {
-        icon: Palette,
-        label: "Creadores de contenido",
-        description: "Lleva tus videos largos a todas tus redes.",
-        href: "/casos/creadores",
-      },
-      {
-        icon: Users,
-        label: "Comunidades y esports",
-        description: "Crea highlights de torneos y eventos.",
-        href: "/casos/comunidades",
-      },
-      {
-        icon: Globe,
-        label: "Agencias audiovisuales",
-        description: "Gestiona contenido de varios creadores.",
-        href: "/casos/agencias",
-      },
-      {
-        icon: Search,
-        label: "Marcas",
-        description: "Genera contenido a partir de streams patrocinados.",
-        href: "/casos/marcas",
-      },
-    ],
-  },
-  {
-    id: "recursos",
-    label: "Recursos",
-    items: [
-      {
-        icon: BookOpen,
-        label: "Blog",
-        description: "Guías para crear contenido y crecer.",
-        href: "/blog",
-      },
-      {
-        icon: HelpCircle,
-        label: "Preguntas frecuentes",
-        description: "Resolvemos tus dudas más comunes.",
-        href: "/#faq",
-      },
-      {
-        icon: FileText,
-        label: "Guías",
-        description: "Aprende a sacar más de Clipealo.",
-        href: "/blog",
-      },
-    ],
-  },
-];
+type MenuId = keyof typeof MENUS
+
+const MENU_ORDER: MenuId[] = ["features", "useCases", "resources"]
+
+function DiscordGlyph() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01 10.2 10.2 0 0 0 .372.292.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+    </svg>
+  )
+}
+
+function MenuLink({
+  href,
+  external = false,
+  className,
+  children,
+}: {
+  href: string
+  external?: boolean
+  className: string
+  children: React.ReactNode
+}) {
+  if (external) {
+    return (
+      <a href={href} className={className}>
+        {children}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={href as never} className={className}>
+      {children}
+    </Link>
+  )
+}
 
 /**
  * Cabecera de marketing.
@@ -223,13 +112,14 @@ const MENUS: { id: MenuKey; label: string; items: MenuItem[] }[] = [
  * oscuro; en el resto usa los colores del tema desde el principio.
  */
 export function SiteHeader() {
-  const t = useTranslations("marketing");
-  const [scrolled, setScrolled] = React.useState(false);
-  const [menuAbierto, setMenuAbierto] = React.useState<MenuKey | null>(null);
-  const ultimoTipoPointer = React.useRef<string | null>(null);
-  const header = React.useRef<HTMLElement>(null);
-  const pathname = usePathname();
-  const sobreOscuro = !scrolled && RUTAS_HERO_OSCURO.has(pathname);
+  const t = useTranslations("marketing")
+  const menuT = useTranslations("marketing.header")
+  const menuText = menuT as unknown as (key: string) => string
+  const [scrolled, setScrolled] = React.useState(false)
+  const [activeMenu, setActiveMenu] = React.useState<MenuId | null>(null)
+  const closeMenuTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+  const pathname = usePathname()
+  const sobreOscuro = !scrolled && RUTAS_HERO_OSCURO.has(pathname)
   /**
    * En las rutas con hero, el naranja es del hero y la cabecera no compite.
    *
@@ -246,45 +136,38 @@ export function SiteHeader() {
    * En /precios el naranja es el de la tarjeta destacada, y la comparativa no
    * lo repite: la cabecera tampoco compite ahí.
    */
-  const ctaSecundaria = RUTAS_CON_ACCION_PROPIA.has(pathname);
+  const ctaSecundaria = RUTAS_CON_ACCION_PROPIA.has(pathname)
   // Hover, pulsado y abierto en blanco: la tinta de `--surface-*` no se ve sobre el hero
   const botonSobreOscuro =
     sobreOscuro &&
-    "text-white hover:bg-white/10 hover:text-white active:bg-white/15 aria-expanded:bg-white/10 aria-expanded:text-white";
+    "text-white hover:bg-white/10 hover:text-white active:bg-white/15 aria-expanded:bg-white/10 aria-expanded:text-white"
 
   React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
-  React.useEffect(() => {
-    if (!menuAbierto) return;
-    const cerrarFuera = (event: MouseEvent) => {
-      if (!header.current?.contains(event.target as Node)) setMenuAbierto(null);
-    };
-    const cerrarEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuAbierto(null);
-    };
-    document.addEventListener("mousedown", cerrarFuera);
-    document.addEventListener("keydown", cerrarEscape);
-    return () => {
-      document.removeEventListener("mousedown", cerrarFuera);
-      document.removeEventListener("keydown", cerrarEscape);
-    };
-  }, [menuAbierto]);
+  const cancelMenuClose = () => {
+    if (closeMenuTimer.current) clearTimeout(closeMenuTimer.current)
+    closeMenuTimer.current = null
+  }
+  const scheduleMenuClose = () => {
+    cancelMenuClose()
+    closeMenuTimer.current = setTimeout(() => setActiveMenu(null), 140)
+  }
+  React.useEffect(() => () => cancelMenuClose(), [])
 
   return (
     <header
-      ref={header}
       data-scrolled={scrolled}
       data-sobre-oscuro={sobreOscuro}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
           ? "border-b bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent",
+          : "border-b border-transparent"
       )}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
@@ -293,7 +176,7 @@ export function SiteHeader() {
           aria-label={t("header.home")}
           className={cn(
             "rounded-md transition-colors",
-            sobreOscuro ? "text-white" : "text-foreground",
+            sobreOscuro ? "text-white" : "text-foreground"
           )}
         >
           <Logo size="md" />
@@ -301,134 +184,117 @@ export function SiteHeader() {
 
         <nav
           aria-label={t("header.mainNav")}
-          className="relative hidden items-center gap-1 after:absolute after:left-1/2 after:top-full after:h-4 after:w-[min(56rem,calc(100vw-2rem))] after:-translate-x-1/2 after:content-[''] lg:flex"
-          onPointerLeave={(event) => {
-            // The panel is rendered inside the nav, so moving from its trigger
-            // into the panel keeps the disclosure open. Leaving the whole nav
-            // closes it without a timer or a pointer gap.
-            if (event.pointerType === "mouse") setMenuAbierto(null);
+          className="relative hidden items-center gap-1 lg:flex"
+          onMouseEnter={cancelMenuClose}
+          onMouseLeave={scheduleMenuClose}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setActiveMenu(null)
           }}
         >
-          {MENUS.map((menu) => {
-            const abierto = menuAbierto === menu.id;
+          {MENU_ORDER.map((menuId) => {
+            const isOpen = activeMenu === menuId
             return (
-              <div key={menu.id}>
-                <button
-                  type="button"
-                  aria-expanded={abierto}
-                  aria-controls={`menu-${menu.id}`}
-                  onPointerEnter={(event) => {
-                    if (event.pointerType === "mouse") setMenuAbierto(menu.id);
-                  }}
-                  onPointerDown={(event) => {
-                    ultimoTipoPointer.current = event.pointerType;
-                  }}
-                  onClick={(event) => {
-                    // On desktop, the pointer already opened this disclosure.
-                    // Keep it open when clicked; touch and keyboard still toggle.
-                    if (
-                      ultimoTipoPointer.current === "mouse" &&
-                      event.detail > 0
-                    ) {
-                      setMenuAbierto(menu.id);
-                      return;
-                    }
-                    setMenuAbierto((actual) =>
-                      actual === menu.id ? null : menu.id,
-                    );
-                  }}
-                  className={cn(
-                    "inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium transition-colors",
-                    sobreOscuro
-                      ? "text-white/75 hover:bg-white/10 hover:text-white aria-expanded:bg-white/10 aria-expanded:text-white"
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
-                  )}
-                >
-                  {menu.label}
-                  <ChevronDown
-                    className={cn(
-                      "size-3.5 transition-transform",
-                      abierto && "rotate-180",
-                    )}
-                    aria-hidden
-                  />
-                </button>
-                {abierto && (
-                  <div
-                    id={`menu-${menu.id}`}
-                    className="fixed left-1/2 top-16 z-50 w-[calc(100vw-2rem)] max-w-[56rem] -translate-x-1/2 rounded-2xl border border-border bg-popover p-5 text-popover-foreground shadow-xl sm:p-7"
-                  >
-                    <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2">
-                      {menu.items.map(({ icon: Icon, ...item }) => {
-                        const contenido = (
-                          <>
-                            <Icon
-                              className="mt-0.5 size-5 shrink-0 text-primary"
-                              aria-hidden
-                            />
-                            <span className="min-w-0">
-                              <span className="block text-sm font-semibold text-popover-foreground">
-                                {item.label}
-                              </span>
-                              <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                                {item.description}
-                              </span>
-                            </span>
-                          </>
-                        );
-                        const className =
-                          "flex min-h-20 gap-3 rounded-xl p-3 transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
-                        return (
-                          <Link
-                            key={`${item.href}-${item.label}`}
-                            href={item.href}
-                            className={className}
-                            onClick={() => setMenuAbierto(null)}
-                          >
-                            {contenido}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
+              <button
+                key={menuId}
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={isOpen}
+                aria-controls={`marketing-menu-${menuId}`}
+                onMouseEnter={() => setActiveMenu(menuId)}
+                onFocus={() => setActiveMenu(menuId)}
+                onClick={() => {
+                  cancelMenuClose()
+                  setActiveMenu(menuId)
+                }}
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                  sobreOscuro
+                    ? "text-white/75 hover:bg-white/10 hover:text-white aria-expanded:bg-white/10 aria-expanded:text-white"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground"
                 )}
-              </div>
-            );
+              >
+                {menuText(`menus.${menuId}`)}
+                <ChevronDown
+                  className={cn("size-3.5 transition-transform", isOpen && "rotate-180")}
+                  aria-hidden="true"
+                />
+              </button>
+            )
           })}
           <Link
             href="/precios"
             className={cn(
-              "rounded-xl px-3 py-2 text-sm font-medium transition-colors",
+              "rounded-md px-3 py-2 text-sm font-medium transition-colors",
               sobreOscuro
                 ? "text-white/75 hover:bg-white/10 hover:text-white"
-                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
             )}
           >
-            Precios
+            {t("nav.pricing")}
           </Link>
+
+          {activeMenu && (
+            <div
+              id={`marketing-menu-${activeMenu}`}
+              className="absolute top-[calc(100%+0.5rem)] left-1/2 z-50 grid w-[min(54rem,calc(100vw-2rem))] -translate-x-1/2 grid-cols-2 gap-x-8 gap-y-1 rounded-2xl border border-border bg-popover p-6 text-popover-foreground shadow-xl"
+              onMouseEnter={cancelMenuClose}
+              onMouseLeave={scheduleMenuClose}
+            >
+              {MENUS[activeMenu].items.map((item) => {
+                const Icon = item.icon
+                return (
+                  <MenuLink
+                    key={item.id}
+                    href={item.href}
+                    external={"external" in item && item.external}
+                    className="group flex min-w-0 items-start gap-3 rounded-xl p-3 transition-colors hover:bg-muted focus-visible:bg-muted focus-visible:outline-none"
+                  >
+                    <Icon
+                      className="mt-0.5 size-5 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
+                    <span className="min-w-0">
+                      <span className="block text-sm font-semibold">
+                        {menuText(`menuItems.${item.id}.title`)}
+                      </span>
+                      <span className="mt-1 block text-sm leading-snug text-muted-foreground">
+                        {menuText(`menuItems.${item.id}.description`)}
+                      </span>
+                    </span>
+                  </MenuLink>
+                )
+              })}
+              {activeMenu === "features" && (
+                <Link
+                  href="/funciones"
+                  className="col-span-2 mt-1 rounded-lg border-t border-border px-3 pt-4 text-sm font-semibold text-primary hover:underline"
+                >
+                  {menuText("menus.allFeatures")} <span aria-hidden="true">→</span>
+                </Link>
+              )}
+            </div>
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
           <ThemeToggle className={cn(botonSobreOscuro)} />
 
           {/* Idioma: como el acceso, en móvil no cabe y va en el menú */}
-          <LocaleSwitcher
-            className={cn("hidden sm:inline-flex", botonSobreOscuro)}
-          />
+          <LocaleSwitcher className={cn("hidden sm:inline-flex", botonSobreOscuro)} />
 
           <Button
             variant="ghost"
             size="icon-sm"
             asChild
-            className={cn("hidden md:inline-flex", botonSobreOscuro)}
+            className={cn("hidden sm:inline-flex", botonSobreOscuro)}
           >
             <a
               href={DISCORD_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label={t("header.discord")}
             >
-              <DiscordIcon className="size-5" />
+              <DiscordGlyph />
             </a>
           </Button>
 
@@ -442,7 +308,7 @@ export function SiteHeader() {
                 asChild
                 className={cn("hidden sm:inline-flex", botonSobreOscuro)}
               >
-                <Link href="/login" aria-label={t("header.login")}>
+                <Link href="https://app.clipealo-ai.com/" aria-label={t("header.login")}>
                   <UserRound />
                 </Link>
               </Button>
@@ -456,11 +322,11 @@ export function SiteHeader() {
             className={cn(
               // Solo mientras flota sobre el hero: al bajar, el contorno normal
               sobreOscuro &&
-                "border-white/30 bg-transparent text-white hover:border-white/50 hover:bg-white/10 hover:text-white",
+                "border-white/30 bg-transparent text-white hover:border-white/50 hover:bg-white/10 hover:text-white"
             )}
             asChild
           >
-            <Link href="/subir">{t("actions.upload")}</Link>
+            <Link href="https://app.clipealo-ai.com/">{t("actions.upload")}</Link>
           </Button>
 
           <Sheet>
@@ -469,45 +335,71 @@ export function SiteHeader() {
                 variant="ghost"
                 size="icon-sm"
                 aria-label={t("header.openMenu")}
-                className={cn("lg:hidden", botonSobreOscuro)}
+                className={cn("md:hidden", botonSobreOscuro)}
               >
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72">
+            <SheetContent side="right" className="w-80 overflow-y-auto">
               <SheetHeader>
                 <SheetTitle className="sr-only">{t("header.menu")}</SheetTitle>
                 <Logo size="md" />
               </SheetHeader>
-              <nav
-                aria-label={t("header.mobileNav")}
-                className="grid gap-1 px-4"
-              >
-                {MENUS.map((menu) => (
-                  <details
-                    key={menu.id}
-                    className="group rounded-lg px-3 py-2.5 text-sm"
-                  >
-                    <summary className="cursor-pointer list-none font-medium">
-                      <span className="flex items-center justify-between">
-                        {menu.label}
-                        <ChevronDown
-                          className="size-4 transition-transform group-open:rotate-180"
-                          aria-hidden
-                        />
-                      </span>
+              <nav aria-label={t("header.mobileNav")} className="grid gap-1 px-4">
+                {MENU_ORDER.map((menuId) => (
+                  <details key={menuId} className="group border-b border-border py-2">
+                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold hover:bg-muted">
+                      {menuText(`menus.${menuId}`)}
+                      <ChevronDown
+                        className="size-4 transition-transform group-open:rotate-180"
+                        aria-hidden="true"
+                      />
                     </summary>
-                    <div className="mt-2 grid gap-1 border-l pl-3">
-                      {menu.items.map((item) => (
-                        <SheetClose key={`${item.href}-${item.label}`} asChild>
+                    <div className="grid gap-1 pt-1 pl-2">
+                      {MENUS[menuId].items.map((item) => {
+                        const Icon = item.icon
+                        const external = "external" in item && item.external
+                        const content = (
+                          <>
+                            <Icon
+                              className="mt-0.5 size-4 shrink-0 text-primary"
+                              aria-hidden="true"
+                            />
+                            <span>{menuText(`menuItems.${item.id}.title`)}</span>
+                          </>
+                        )
+                        return (
+                          <React.Fragment key={item.id}>
+                            <SheetClose asChild>
+                              {external ? (
+                                <a
+                                  href={item.href}
+                                  className="flex items-start gap-2 rounded-lg px-3 py-2 text-sm hover:bg-muted"
+                                >
+                                  {content}
+                                </a>
+                              ) : (
+                                <Link
+                                  href={item.href as never}
+                                  className="flex items-start gap-2 rounded-lg px-3 py-2 text-sm hover:bg-muted"
+                                >
+                                  {content}
+                                </Link>
+                              )}
+                            </SheetClose>
+                          </React.Fragment>
+                        )
+                      })}
+                      {menuId === "features" && (
+                        <SheetClose asChild>
                           <Link
-                            href={item.href}
-                            className="rounded-md px-2 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+                            href="/funciones"
+                            className="rounded-lg px-3 py-2 text-sm font-semibold text-primary hover:bg-muted"
                           >
-                            {item.label}
+                            {menuText("menus.allFeatures")}
                           </Link>
                         </SheetClose>
-                      ))}
+                      )}
                     </div>
                   </details>
                 ))}
@@ -516,28 +408,16 @@ export function SiteHeader() {
                     href="/precios"
                     className="rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted"
                   >
-                    Precios
+                    {t("nav.pricing")}
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>
                   <Link
-                    href="/login"
+                    href="https://app.clipealo-ai.com/"
                     className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted"
                   >
-                    <UserRound className="size-4" aria-hidden />{" "}
-                    {t("header.login")}
+                    <UserRound className="size-4" aria-hidden /> {t("header.login")}
                   </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <a
-                    href={DISCORD_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={t("header.discord")}
-                    className="grid size-10 place-items-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
-                  >
-                    <DiscordIcon className="size-5" />
-                  </a>
                 </SheetClose>
               </nav>
               <IdiomaMovil />
@@ -546,7 +426,7 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  );
+  )
 }
 
 /**
@@ -554,9 +434,9 @@ export function SiteHeader() {
  * propio idioma para que lo encuentre quien no lee el actual.
  */
 function IdiomaMovil() {
-  const t = useTranslations("common.locale");
-  const { locale, cambiar, pendiente } = useCambiarIdioma();
-  const id = React.useId();
+  const t = useTranslations("common.locale")
+  const { locale, cambiar, pendiente } = useCambiarIdioma()
+  const id = React.useId()
 
   return (
     <div
@@ -581,12 +461,10 @@ function IdiomaMovil() {
             className="flex items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-left text-sm font-medium hover:bg-muted"
           >
             {LOCALE_NAME[l]}
-            {l === locale && (
-              <Check className="size-4 text-primary" aria-hidden />
-            )}
+            {l === locale && <Check className="size-4 text-primary" aria-hidden />}
           </button>
         </SheetClose>
       ))}
     </div>
-  );
+  )
 }

@@ -205,7 +205,7 @@ export function Features() {
           </ul>
         </Tile>
 
-        {/* Multiformato · fila 3 */}
+        {/* Exportación vertical · fila 3 */}
         <Tile data-light="claro" className="bg-card md:col-span-1">
           <span className="inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
             <Wand2 className="size-5" aria-hidden />
@@ -216,15 +216,13 @@ export function Features() {
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {t("multiformat.body")}
           </p>
-          <div className="mt-7 flex items-end gap-2">
-            {(["9:16", "4:5", "1:1", "16:9"] as const).map((aspect) => (
-              <div key={aspect} className="flex-1 text-center">
-                <MediaFrame aspect={aspect} className="rounded-md" />
-                <span className="mt-1.5 block text-[10px] text-muted-foreground tabular-nums">
-                  {aspect}
-                </span>
-              </div>
-            ))}
+          <div className="mt-7 flex justify-center">
+            <div className="w-24 text-center">
+              <MediaFrame aspect="9:16" className="rounded-md" />
+              <span className="mt-1.5 block text-[10px] text-muted-foreground tabular-nums">
+                9:16
+              </span>
+            </div>
           </div>
         </Tile>
       </div>

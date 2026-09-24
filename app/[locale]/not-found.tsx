@@ -29,14 +29,6 @@ export default function NotFound() {
               <ArrowLeft /> {t("home")}
             </Link>
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            asChild
-            className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
-          >
-            <Link href="/proyectos">{t("clips")}</Link>
-          </Button>
         </div>
       </div>
     </main>

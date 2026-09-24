@@ -218,11 +218,11 @@ export function KickIcon({ tone = "current", ...props }: SocialIconProps) {
 
 /*
  * Proveedores de acceso. No son redes de destino: van en los botones de
- * «Continuar con…» de /login.
+ * Botones de acceso a la aplicación.
  */
 
 /** La «G» de cuatro colores de las pautas de marca de Google para el botón de acceso. */
-export function GoogleIcon({ tone = "official", ...props }: SocialIconProps) {
+function GoogleIcon({ tone = "official", ...props }: SocialIconProps) {
   if (tone !== "official") {
     return (
       <Marca title="Google" {...props}>
@@ -260,7 +260,7 @@ const APPLE =
 
 /** La manzana es negra sobre claro y blanca sobre oscuro en su manual: hereda. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- `tone` se extrae para no llegar al <svg>
-export function AppleIcon({ tone, ...props }: SocialIconProps) {
+function AppleIcon({ tone, ...props }: SocialIconProps) {
   return (
     <Marca title="Apple" {...props}>
       <path d={APPLE} fill="currentColor" />

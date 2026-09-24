@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { hasLocale } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 
-import { climateCrisis, dmSans, geistMono } from "@/app/fuentes"
+import { climateCrisis, dmSans } from "@/app/fuentes"
 import { Providers } from "@/components/providers"
 import { IntlZone } from "@/i18n/zone"
 import { LOCALE_TAG, routing } from "@/i18n/routing"
@@ -75,7 +75,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
     <html
       lang={LOCALE_TAG[locale]}
       suppressHydrationWarning
-      className={`${climateCrisis.variable} ${dmSans.variable} ${geistMono.variable} h-full`}
+      className={`${climateCrisis.variable} ${dmSans.variable} h-full`}
     >
       <body className="flex min-h-full flex-col antialiased">
         {/* Marca que hay JavaScript antes del primer pintado. Las animaciones de

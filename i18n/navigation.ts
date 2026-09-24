@@ -5,22 +5,18 @@ import { routing } from "@/i18n/routing"
 /**
  * Navegación con idioma. Sustituye a `next/link` y a `useRouter`, `usePathname`
  * y `redirect` de `next/navigation`: añaden el prefijo y traducen la dirección.
- * `usePathname` devuelve la ruta interna, sin prefijo y en español
- * («/campanas/[id]» para una ruta dinámica).
+ * `usePathname` devuelve la ruta interna, sin prefijo de idioma.
  */
-export const { Link, redirect, usePathname, useRouter, getPathname } =
+export const { Link,  usePathname, useRouter, getPathname } =
   createNavigation(routing)
 
 type Query = Record<string, string>
 
 /**
- * Enlace a una ruta dinámica traducida: `hrefDinamico("/campanas/[id]", { id })`
- * da «/campaigns/cmp_liga» en inglés y «/campanhas/cmp_liga» en portugués.
+ * Enlace a una ruta dinámica traducida, por ejemplo `/legal/[slug]`.
  *
- * `pathnames` tiene un tipo abierto para que las rutas del admin y los enlaces
- * con consulta vayan como texto; a cambio TypeScript no conoce `params` y el
- * molde vive solo aquí. Una ruta estática con consulta no lo necesita:
- * `{ pathname: "/ajustes", query: { seccion } }`.
+ * `pathnames` deja abierto el tipo de las rutas para que Next-intl complete los
+ * parámetros dinámicos; el molde queda concentrado en este helper.
  */
 export function hrefDinamico(
   pathname: string,

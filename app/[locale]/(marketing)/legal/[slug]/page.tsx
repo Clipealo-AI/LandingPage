@@ -2,15 +2,16 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getTranslations } from "next-intl/server"
 
-import { ComingSoon } from "@/components/shared/coming-soon"
+import { LegalDocument } from "@/components/marketing/legal-document"
 import { alternates } from "@/i18n/metadata"
 import { idiomaDe } from "@/i18n/server"
+import { loadLegalDocument } from "@/lib/legal-documents"
 
 /**
  * Slugs de las páginas legales: la ruta interna, en español (se traducen en
  * `i18n/routing.ts`). Título, entradilla y resumen: `marketing.legal.pages.<slug>`.
  */
-const PAGINAS = ["privacidad", "terminos", "cookies"] as const
+const PAGINAS = ["privacidad", "terminos"] as const
 
 type Slug = (typeof PAGINAS)[number]
 
@@ -42,27 +43,14 @@ export default async function LegalPage({ params }: PageProps<"/[locale]/legal/[
   if (!esSlug(slug)) notFound()
   const t = await getTranslations({ locale, namespace: "marketing" })
 
-  return (
-    <div className="container-page py-32 [--container-page:52rem]">
-      {/* Cada página necesita su propio h1: `ComingSoon` es el cuerpo, no la cabecera */}
-      <header className="space-y-3">
-        <p className="text-sm font-semibold tracking-wide text-brand uppercase">
-          {t("legal.eyebrow")}
-        </p>
-        <h1 className="display text-[clamp(2rem,5vw,3rem)]">
-          {t(`legal.pages.${slug}.title`)}
-        </h1>
-        <p className="text-lg text-pretty text-muted-foreground">
-          {t(`legal.pages.${slug}.lead`)}
-        </p>
-      </header>
+  const document = await loadLegalDocument(locale, slug === "privacidad" ? "privacy" : "terms")
 
-      <ComingSoon
-        title={t("legal.underReview")}
-        description={t(`legal.pages.${slug}.description`)}
-        backHref="/"
-        backLabel={t("actions.backHome")}
-      />
-    </div>
+  return (
+    <LegalDocument
+      document={document}
+      eyebrow={t("legal.eyebrow")}
+      lead={t(`legal.pages.${slug}.lead`)}
+      backLabel={t("actions.backHome")}
+    />
   )
 }

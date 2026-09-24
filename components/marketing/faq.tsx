@@ -1,6 +1,8 @@
 import * as React from "react"
 import { useTranslations } from "next-intl"
 
+import { WhatsAppIcon } from "@/components/brand/whatsapp-icon"
+import { WHATSAPP_URL } from "@/lib/contact"
 import { cn } from "@/lib/utils"
 import {
   Accordion,
@@ -10,7 +12,7 @@ import {
 } from "@/components/ui/accordion"
 
 /** Pregunta y respuesta ya traducidas. */
-export interface FaqItem {
+interface FaqItem {
   q: string
   a: string
 }
@@ -47,7 +49,7 @@ export function Faq({ items, title, className }: FaqProps) {
     items ?? QUESTIONS.map((id) => ({ q: t(`items.${id}.q`), a: t(`items.${id}.a`) }))
 
   return (
-    <section className={cn("container-page py-20 md:py-28", className)}>
+    <section id="faq" className={cn("container-page py-20 md:py-28", className)}>
       <div className="grid gap-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:gap-16">
         <div data-motion-group>
           <h2 className="m-anim m-cut display text-[clamp(1.75rem,4vw,2.5rem)]">
@@ -57,9 +59,12 @@ export function Faq({ items, title, className }: FaqProps) {
             {t.rich("contact", {
               link: (chunks) => (
                 <a
-                  href="mailto:hola@clipealo.com"
-                  className="font-medium text-primary underline underline-offset-4"
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-medium text-primary underline underline-offset-4"
                 >
+                  <WhatsAppIcon className="size-4" />
                   {chunks}
                 </a>
               ),

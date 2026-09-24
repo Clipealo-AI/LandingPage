@@ -1,8 +1,7 @@
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, setRequestLocale } from "next-intl/server"
 
-import { NAMESPACES_CLIENTE, pickMessages, type ClaveMensajes } from "@/i18n/messages"
-import { MezclaMensajes } from "@/i18n/mezcla"
+import { NAMESPACES_CLIENTE, pickMessages } from "@/i18n/messages"
 import type { Locale } from "@/i18n/routing"
 
 /**
@@ -25,24 +24,4 @@ export async function IntlZone({
       {children}
     </NextIntlClientProvider>
   )
-}
-
-/**
- * Los textos que una página necesita ADEMÁS de los de su zona.
- *
- * El suelo de la zona (`IntlZone`) lleva lo que se pinta en todas partes; lo
- * que solo usa una pantalla —las analíticas, el calendario, la formación— se
- * añade aquí, y así el resto de rutas no lo descarga. Lo que hace falta en
- * cada una no se adivina: lo comprueba `tests/unit/zonas-i18n.test.ts`
- * siguiendo los imports de verdad.
- */
-export async function IntlExtra({
-  ns,
-  children,
-}: {
-  ns: readonly ClaveMensajes[]
-  children: React.ReactNode
-}) {
-  const messages = await getMessages()
-  return <MezclaMensajes extra={pickMessages(messages, ns)}>{children}</MezclaMensajes>
 }

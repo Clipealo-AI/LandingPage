@@ -1,23 +1,41 @@
-# Clipealo Landing Page
+# Clipealo · sitio de marketing
 
-The public landing is the Vite + React site in `src/`. The repository also
-contains a Next.js application; Firebase Hosting deploys only the static Vite
-landing.
+Landing de Clipealo en español, inglés y portugués de Brasil. Presenta el
+producto, sus casos de uso, precios y recursos de marca; las acciones para
+usar Clipealo dirigen a `https://app.clipealo-ai.com/`.
 
-## Run the landing with Bun
+## Desarrollo local
 
-```sh
-bun install --frozen-lockfile
-bun run dev:landing
+```bash
+npm install
+npm run dev
 ```
 
-## Landing scripts
+El sitio queda en [http://localhost:5173](http://localhost:5173).
 
-- `bun run build:landing`: production landing build
-- `bun run build:landing:dev`: dev build with analytics removed and indexing blocked
-- `bun run check:landing`: landing typecheck, lint, and production build
-- `bun run preview:landing`: preview the last landing build locally
+```bash
+npm run typecheck
+npm run lint
+npm run test
+npm run build
+```
 
-Pushes to `dev` build and deploy to Firebase Hosting in
-`clipealo-gpt-amigos-dev`. The production Cloud Build trigger follows `main`
-and deploys the production build to the existing Firebase Hosting site.
+## Rutas
+
+- `/`: portada de marketing
+- `/precios` (`/pricing`, `/precos`): planes y comparativa
+- `/legal/privacidad`, `/legal/terminos`: páginas legales
+
+## Estructura
+
+- `app/`: rutas públicas, metadatos, estilos y animaciones de la landing
+- `components/marketing/`: secciones y navegación del sitio
+- `components/brand/`: logotipo, iconos y recursos visuales de Clipealo
+- `components/video/`: muestras visuales usadas por las secciones de marketing
+- `messages/{es,en,pt}/`: textos de las páginas públicas
+- `docs/marca/`: referencias visuales del rebranding
+- `tests/`: pruebas de componentes y navegación de marketing
+
+La paleta y los temas claro/oscuro se definen en `app/globals.css`. Los
+componentes consumen sus tokens semánticos para mantener el mismo diseño en
+ambos temas.

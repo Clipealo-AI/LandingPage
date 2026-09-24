@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl"
 import { cn } from "@/lib/utils"
 import { formatDuration } from "@/lib/format"
 import { EASE_BRAND, prefiereMenosMovimiento } from "@/lib/motion"
-import { ASPECT_RATIOS } from "@/lib/types"
+import { ASPECT_RATIOS } from "@/lib/video-formats"
 import { socialList, type SocialId } from "@/lib/social"
 import { useMotionGroup } from "@/hooks/use-motion-group"
 import { Badge } from "@/components/ui/badge"
@@ -15,16 +15,11 @@ import { CropFrame } from "@/components/brand/logo"
 import { SocialBadge } from "@/components/brand/social"
 import { MediaFrame } from "@/components/video/media-frame"
 
-/** Alto fijo del escenario; el ancho lo dicta el formato de la red elegida. */
+/** Alto fijo del escenario; la publicación usa el mismo 9:16 en cada red. */
 const ALTO = "clamp(16rem, 34vh, 24rem)"
 
-/**
- * Proporción del formato más ancho de la lista (16:9). La caja del marco mide
- * siempre eso y cada formato se recorta dentro con `clip-path`.
- */
-const PROPORCION_MAX = Math.max(
-  ...socialList.map((r) => ASPECT_RATIOS[r.aspects[0]].ratio)
-)
+/** La caja del marco siempre representa el único formato de publicación: 9:16. */
+const PROPORCION_PUBLICACION = ASPECT_RATIOS["9:16"].ratio
 
 /** Lo que hace el producto con cada red: `marketing.networks.bullets.<id>`. */
 const VENTAJAS = ["formats", "limit", "schedule"] as const
@@ -103,23 +98,19 @@ function fundirMarco(escenario: HTMLElement) {
 /**
  * «Un corte, seis destinos».
  *
- * La sección no enseña logotipos por enseñarlos: al elegir una red, el marco
- * cambia al formato que esa red premia. Es la promesa del producto —el mismo
- * momento reencuadrado para cada sitio— explicada con el dedo, no con texto.
+ * La sección enseña que un mismo clip vertical 9:16 puede prepararse para cada
+ * destino. Al elegir una red cambian sus límites de duración y su superficie.
  *
- * El marco no cambia de ancho: es una caja fija del formato más ancho y cada
- * formato se recorta dentro con `clip-path`; el borde y las esquinas se acercan
- * con `translate` y `transform`. Así pasar el ratón por la lista no desplaza el
- * layout (CLS), y la transición sigue siendo de 500 ms con el alto fijo.
+ * El marco conserva la proporción 9:16 en todos los destinos. El borde y las
+ * esquinas usan el gesto de marca al cambiar de red sin desplazar el layout.
  *
  * Movimiento (AGENTS.md, reglas 5 y 6; CSS en app/motion/redes.css):
  * - Al entrar en pantalla, el titular se corta a 12 fps y el antetítulo y la
  *   entradilla suben (grupo de la columna de texto); las esquinas del escenario
  *   se cierran (grupo del escenario). La lista de redes no se anima.
- * - Al elegir otra red, además del recorte: tras 120 ms con la misma red, las
- *   esquinas vuelven a cerrarse y el patrón destella; el rótulo entra en fundido.
- * - Con «reducir»: fundidos en su sitio, formato instantáneo con fundido del
- *   marco, y los botones de red no suben al pasar el ratón.
+ * - Al elegir otra red, tras 120 ms las esquinas vuelven a cerrarse y el patrón
+ *   destella; el rótulo de destino entra en fundido.
+ * - Con «reducir»: fundidos en su sitio y sin desplazamiento de los botones.
  */
 export function Redes() {
   const t = useTranslations("marketing.networks")
@@ -265,7 +256,7 @@ export function Redes() {
               {
                 "--redes-alto": ALTO,
                 "--redes-proporcion": ratio,
-                "--redes-proporcion-max": PROPORCION_MAX,
+                "--redes-proporcion-max": PROPORCION_PUBLICACION,
               } as React.CSSProperties
             }
           >
@@ -273,7 +264,10 @@ export function Redes() {
               <div
                 data-redes-marco
                 className="m-redes-marco border-white/15"
-                style={{ height: ALTO, width: `calc(${ALTO} * ${PROPORCION_MAX})` }}
+                style={{
+                  height: ALTO,
+                  width: `calc(${ALTO} * ${PROPORCION_PUBLICACION})`,
+                }}
               >
                 {/* Sobre el escenario oscuro el marco necesita su propio borde.
                     Recortado, lo pintan los medios marcos de .m-redes-marco con

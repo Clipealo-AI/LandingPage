@@ -11,14 +11,14 @@ import { cn } from "@/lib/utils"
  * utilidad de texto en el contenedor (`text-foreground`, `text-white`...) y
  * el isotipo funciona en claro y oscuro sin variantes duplicadas.
  */
-export interface IsotipoProps extends React.ComponentProps<"svg"> {
+interface IsotipoProps extends React.ComponentProps<"svg"> {
   /** `mono` pinta tambien la esquina con currentColor (sellos, favicon 1 tinta). */
   tone?: "brand" | "mono"
   /** Oculta el `<title>` cuando el logotipo de al lado ya nombra la marca. */
   decorative?: boolean
 }
 
-export function Isotipo({
+function Isotipo({
   tone = "brand",
   decorative = false,
   className,
@@ -101,7 +101,7 @@ export interface CropFrameProps extends React.ComponentProps<"div"> {
   /**
    * Las esquinas entran al montarse: `animate-crop-in` (450 ms, `backwards`),
    * escalonadas. Con «reducir movimiento», `fade-soft` de 200 ms en su sitio
-   * (`[data-crop-animate]` en app/motion/onboarding.css). Quitarla a mitad
+   * (`[data-crop-animate]` en los estilos de movimiento de la landing). Quitarla a mitad
    * deja las esquinas en su estado final.
    */
   animateIn?: boolean

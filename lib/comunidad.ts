@@ -1,13 +1,6 @@
 import type { SocialId } from "@/lib/social"
 
-export type CreatorNetwork = SocialId | "kick"
-
-/** Cita de demostración que acompaña el formulario de inicio de sesión. */
-export const AUTH_DEMO_TESTIMONIAL = {
-  name: "Camila Quispe",
-  network: "youtube",
-  followers: 3_400_000,
-} as const
+type CreatorNetwork = SocialId | "kick"
 
 export type ClientNetwork = CreatorNetwork | "twitch"
 
@@ -70,4 +63,34 @@ export const CLIENT_CHANNELS: ClientChannel[] = [
     metric: "1.85K seguidores",
     photo: "/clients/sirghostv.jpg",
   },
+]
+
+export interface BrandProof {
+  name: string
+  icon:
+    | "podcast"
+    | "radio"
+    | "newspaper"
+    | "store"
+    | "graduation"
+    | "headphones"
+    | "tv"
+    | "landmark"
+    | "mic"
+    | "users"
+  style: "heavy" | "caps"
+}
+
+/** Franja de equipos y marcas que acompaña a los canales de la comunidad. */
+export const BRANDS: BrandProof[] = [
+  { name: "Podcast Lima", icon: "podcast", style: "heavy" },
+  { name: "Radio Andina", icon: "radio", style: "caps" },
+  { name: "Kunan Media", icon: "newspaper", style: "heavy" },
+  { name: "Tambo Digital", icon: "store", style: "caps" },
+  { name: "Academia Nómada", icon: "graduation", style: "heavy" },
+  { name: "Pulso FM", icon: "headphones", style: "caps" },
+  { name: "Canal Sur", icon: "tv", style: "heavy" },
+  { name: "Banco del Valle", icon: "landmark", style: "caps" },
+  { name: "Ola Studio", icon: "mic", style: "heavy" },
+  { name: "Creadores Perú", icon: "users", style: "caps" },
 ]

@@ -21,9 +21,8 @@ export async function generateMetadata({
 }
 
 /**
- * Página dedicada de precios: las tres tarjetas, la comparativa completa,
- * las redes de cada plan y las preguntas de facturación. La landing conserva
- * su resumen y enlaza aquí.
+ * Página dedicada de precios: los cuatro planes, la comparativa, las redes,
+ * la propuesta Empresarial, las recargas y las preguntas de facturación.
  */
 export default async function PreciosPage({ params }: PageProps<"/[locale]/precios">) {
   const locale = await idiomaDe(params)

@@ -1,3 +1,5 @@
+import { WHATSAPP_URL } from "@/lib/contact"
+
 /**
  * Datos de la marca. `tagline`, `description` y `claim` quedan como referencia
  * en español: la interfaz y los metadatos leen los mensajes (`common.meta` y
@@ -17,25 +19,31 @@ export const siteConfig = {
   },
 } as const
 
-export type SiteConfig = typeof siteConfig
-
-/**
- * Navegación de marketing. Etiquetas: `marketing.nav.<id>`.
- *
- * Las anclas de la landing van como objeto: escritas como texto
- * («/#como-funciona»), el prefijo de idioma daría «/en/#como-funciona», con una
- * barra final que obliga a redirigir; como objeto sale «/en#como-funciona».
- */
-export const marketingNav = [
-  { id: "howItWorks", href: { pathname: "/", hash: "como-funciona" } },
-  { id: "product", href: { pathname: "/", hash: "producto" } },
-  { id: "pricing", href: "/precios" },
-  { id: "system", href: "/design-system" },
-] as const
+type SiteConfig = typeof siteConfig
 
 /** Páginas legales. Etiquetas: `marketing.legalNav.<id>`. */
 export const legalNav = [
   { id: "privacy", href: "/legal/privacidad" },
   { id: "terms", href: "/legal/terminos" },
-  { id: "cookies", href: "/legal/cookies" },
 ] as const
+
+/** Enlaces del pie de página. Las páginas de producto y recursos viven aquí. */
+export const footerNav = {
+  product: [
+    { id: "allFeatures", href: "/funciones" },
+    {
+      id: "automaticClips",
+      href: "/funciones/clips-automaticos-con-ia",
+    },
+    { id: "pricing", href: "/precios" },
+  ],
+  resources: [
+    { id: "blogGuides", href: "/blog" },
+    { id: "faq", href: { pathname: "/", hash: "faq" } },
+    { id: "whatsapp", href: WHATSAPP_URL },
+  ],
+  legal: [
+    { id: "privacy", href: "/legal/privacidad" },
+    { id: "terms", href: "/legal/terminos" },
+  ],
+} as const

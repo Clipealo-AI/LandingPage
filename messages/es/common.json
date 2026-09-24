@@ -29,41 +29,22 @@
     "vsPrevious": "respecto al periodo anterior"
   },
   "notFound": {
-    "title": "Este clip no existe.",
-    "description": "El enlace puede haber caducado o el proyecto se eliminó. Vuelve a la biblioteca y busca el clip por su título.",
-    "home": "Volver al inicio",
-    "clips": "Ver mis clips"
+    "title": "Esta página no existe.",
+    "description": "El enlace puede haber cambiado o caducado. Vuelve al inicio para seguir explorando Clipealo.",
+    "home": "Volver al inicio"
   },
   "social": {
     "surface": {
       "tiktok": "Para ti",
       "instagram": "Reels",
-      "youtube": "Shorts y video",
+      "youtube": "Shorts",
       "x": "Cronología",
       "linkedin": "Feed profesional",
       "facebook": "Reels y feed"
     }
   },
   "ui": {
-    "breadcrumb": "Ruta de navegación",
-    "more": "Más",
-    "carousel": "carrusel",
-    "slide": "diapositiva",
-    "previousSlide": "Diapositiva anterior",
-    "nextSlide": "Diapositiva siguiente",
-    "commandTitle": "Paleta de comandos",
-    "commandDescription": "Busca un comando para ejecutar…",
-    "close": "Cerrar",
-    "pagination": "Paginación",
-    "previous": "Anterior",
-    "next": "Siguiente",
-    "previousPage": "Ir a la página anterior",
-    "nextPage": "Ir a la página siguiente",
-    "morePages": "Más páginas",
-    "sidebar": "Barra lateral",
-    "sidebarDescription": "Muestra la barra lateral en el móvil.",
-    "toggleSidebar": "Mostrar u ocultar la barra lateral",
-    "loading": "Cargando"
+    "close": "Cerrar"
   },
   "video": {
     "aspect": {
@@ -87,11 +68,6 @@
     "aspectSwitcher": {
       "label": "Formato de salida"
     },
-    "clipStatus": {
-      "borrador": "Borrador",
-      "listo": "Listo",
-      "publicado": "Publicado"
-    },
     "jobStage": {
       "subiendo": "Subiendo",
       "transcribiendo": "Transcribiendo",
@@ -99,27 +75,6 @@
       "recortando": "Recortando",
       "reencuadrando": "Reencuadrando a vertical",
       "listo": "Listo"
-    },
-    "clipCard": {
-      "play": "Reproducir {title}",
-      "actions": "Acciones de {title}",
-      "edit": "Editar clip",
-      "download": "Descargar {aspect}",
-      "duplicate": "Duplicar",
-      "copyLink": "Copiar enlace",
-      "publish": "Publicar…",
-      "schedule": "Programar…",
-      "delete": "Eliminar",
-      "withCaptions": "Con subtítulos",
-      "withoutCaptions": "Sin subtítulos",
-      "captionsIncluded": "Subtítulos incluidos",
-      "views": "Reproducciones",
-      "likes": "Me gusta",
-      "retention": "Retención",
-      "format": "Formato {destination}",
-      "needsRender": "Descargar y duplicar necesitan el archivo renderizado, que todavía no se genera.",
-      "linkCopied": "Enlace copiado",
-      "linkFailed": "No se ha podido copiar el enlace"
     },
     "processing": {
       "failed": "Error al procesar",
@@ -155,31 +110,6 @@
       "start": "Inicio del clip",
       "end": "Fin del clip"
     },
-    "upload": {
-      "status": {
-        "en-cola": "En cola",
-        "subiendo": "Subiendo",
-        "pausado": "Pausado",
-        "completado": "Completado",
-        "error": "Error"
-      },
-      "invalidType": "«{name}» no es un formato de video admitido.",
-      "tooBig": "«{name}» supera el límite de {limit}.",
-      "dropHere": "Suéltalo aquí",
-      "dragOrUpload": "Arrastra tus videos o súbelos",
-      "hint": "MP4, MOV, WebM o MKV · hasta {limit} · la subida se reanuda si se corta",
-      "select": "Seleccionar archivos",
-      "selectLabel": "Seleccionar archivos de video",
-      "urlPlaceholder": "…o pega un enlace de YouTube, Drive o Vimeo",
-      "urlLabel": "Enlace del video",
-      "import": "Importar",
-      "queue": "Cola de subida",
-      "progress": "{uploaded} de {total}",
-      "pause": "Pausar",
-      "resume": "Reanudar",
-      "retry": "Reintentar desde donde se quedó",
-      "remove": "Quitar {name}"
-    },
     "player": {
       "region": "Reproductor: {title}",
       "regionDefault": "Reproductor de video",
@@ -202,52 +132,6 @@
         "load": "No se pudo cargar el video",
         "blocked": "Reproducción bloqueada por el navegador"
       }
-    },
-    "operacion": {
-      "recortar": {
-        "label": "Recortar",
-        "description": "Quedarse con un tramo del video, tal cual, sin análisis ni reencuadre."
-      },
-      "reducir": {
-        "label": "Reducir tamaño",
-        "description": "El mismo video, con menos peso. Elige cuánto sacrificar."
-      },
-      "calidad": {
-        "ligera": "Ligera · pesa un 30 % menos",
-        "equilibrada": "Equilibrada · la mitad",
-        "maxima": "Máxima · una cuarta parte"
-      },
-      "variante": {
-        "label": "Variante",
-        "description": "Una versión del clip: otro gancho, otra duración, otro formato o unos subtítulos distintos."
-      }
-    },
-    "subtitulos": {
-      "sin": "Sin subtítulos",
-      "limpio": "Limpios",
-      "karaoke": "Karaoke",
-      "caja": "En caja"
     }
-  },
-  "errors": {
-    "sin-red": "No hay conexión. Comprueba tu red y vuelve a intentarlo.",
-    "no-autorizado": "Tu sesión no vale para esto. Vuelve a entrar.",
-    "no-encontrado": "Esto ya no está.",
-    "conflicto": "Alguien lo cambió antes que tú. Vuelve a cargar y mira cómo quedó.",
-    "limite": "Demasiadas peticiones seguidas. Espera unos segundos.",
-    "servidor": "Se ha roto por nuestro lado. Ya lo estamos mirando.",
-    "desconocido": "Algo ha fallado. Vuelve a intentarlo."
-  },
-  "misiones": {
-    "proyecto": "Sube tu primer video",
-    "unirse": "Únete a una campaña",
-    "conectar": "Conecta tu {red}",
-    "conectarRed": "Conecta tu red",
-    "enviar": "Envía tu primer clip",
-    "hecha": "Hecho",
-    "pendiente": "Pendiente",
-    "titulo": "Tus primeras misiones",
-    "progreso": "{hechas} de {total}",
-    "ver": "Ver campañas para ti"
   }
 }
