@@ -1,0 +1,104 @@
+{
+  "objetivo": {
+    "greeting": "Hi, {nombre}. Let’s set up your profile in {total, plural, one {# take} other {# takes}}.",
+    "question": "What brings you to Clipealo?",
+    "why": "So we can take you straight to what you came for.",
+    "greetingSinNombre": "Hi. Let’s set up your profile in {total, plural, one {# take} other {# takes}}.",
+    "options": {
+      "campanas": {
+        "title": "Get paid to clip campaigns",
+        "description": "Clip content from brands and creators and get paid for views."
+      },
+      "mis-videos": {
+        "title": "Clip my streams and videos",
+        "description": "Turn your long videos into clips for every network."
+      },
+      "ambos": {
+        "title": "Both",
+        "description": "We’ll start with campaigns; your own videos whenever you want."
+      }
+    },
+    "reaction": {
+      "campanas": "Perfect: we’ll show you campaigns that pay for views.",
+      "mis-videos": "Great: we’ll set up each network with the right format.",
+      "ambos": "Done: we’ll set up your campaigns, and uploading your first video stays one click away."
+    }
+  },
+  "nichos": {
+    "question": "What would you like to clip?",
+    "why": "Pick up to 5. We’ll use this to sort your campaign feed.",
+    "games": {
+      "label": "Any specific game? (optional)",
+      "search": {
+        "label": "Search for a game",
+        "results": "Games",
+        "empty": "We couldn’t find it.",
+        "chosen": "Selected",
+        "clear": "Clear search"
+      }
+    },
+    "detected": "Based on your creators, we’ll show you {verticales} campaigns.",
+    "reaction": "{count, plural, =0 {No {nichos} campaigns yet. We’ll let you know as soon as one goes live.} one {{nichos}: # campaign is waiting for you.} other {{nichos}: # campaigns are waiting for you.}}",
+    "reactionUnsure": "{count, plural, =0 {No rush: we’ll let you know as soon as a campaign goes live.} one {No rush: in the meantime, # campaign is waiting for you.} other {No rush: in the meantime, # campaigns are waiting for you.}}"
+  },
+  "fandom": {
+    "question": "Who would you love to make clips of?",
+    "why": "Streamers, podcasts, artists, or clubs. You’ll see their campaigns first.",
+    "suggestions": "Popular with clippers in {pais}",
+    "suggestionsAny": "Popular with clippers",
+    "followers": "{seguidores} followers",
+    "search": {
+      "label": "Search by name or paste the channel link",
+      "placeholder": "Name, @channel, or link",
+      "results": "Creators",
+      "group": "On {plataforma}",
+      "link": "{plataforma} link",
+      "empty": "We couldn’t find them.",
+      "add": "Add “{texto}”",
+      "chosen": "Already on your radar",
+      "clear": "Clear search"
+    },
+    "counter": "{n} of {max}",
+    "hasCampaign": "Has a campaign",
+    "radar": "Your radar",
+    "remove": "Remove {creador}",
+    "detected": {
+      "label": "Detected",
+      "platforms": "You watch them on {plataformas}.",
+      "verticals": "We’ll show you {verticales} campaigns."
+    },
+    "notice": "We’ll let you know in the app when they launch a campaign.",
+    "emailAlerts": "Email me too",
+    "added": "Added: {creador}. {n} of {max}.",
+    "removed": "Removed: {creador}. {n} of {max}.",
+    "reaction": {
+      "umbral": "More than {umbral, number} clippers already follow {creador}.",
+      "primeros": "You’ll be one of the first to clip {creador}."
+    }
+  },
+  "redes": {
+    "question": "Where do you post your clips?",
+    "why": "We only show you campaigns you can accept.",
+    "soloConecta": "The {plan} plan only connects {red}. Select every network you post on anyway: that’s how we know which campaigns fit you.",
+    "reaction": {
+      "red": "{red} rewards clips from {min, number} to {max, number} seconds in {formato}. We’ll keep that in mind.",
+      "sinCuenta": "No problem: we’ll show you how to open one when you join your first campaign.",
+      "otra": "Noted: we’ll let you know when there are campaigns for that network."
+    }
+  },
+  "basicos": {
+    "question": "Last one: where do you clip from?",
+    "why": "So we can show you campaigns in your country and how you get paid.",
+    "country": {
+      "label": "Country",
+      "placeholder": "Choose your country",
+      "other": "Other country"
+    },
+    "languages": {
+      "label": "Languages of your clips",
+      "help": "Up to {max}."
+    },
+    "reaction": "In {pais}, you get paid with {metodos}.",
+    "reactionOther": "You get paid with {metodos}."
+  }
+}

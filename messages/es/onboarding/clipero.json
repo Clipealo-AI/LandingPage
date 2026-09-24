@@ -1,0 +1,104 @@
+{
+  "objetivo": {
+    "greeting": "Hola, {nombre}. Montemos tu perfil en {total, plural, one {# toma} other {# tomas}}.",
+    "question": "¿Qué vienes a hacer a Clipealo?",
+    "why": "Para llevarte directo a lo tuyo.",
+    "greetingSinNombre": "Hola. Montemos tu perfil en {total, plural, one {# toma} other {# tomas}}.",
+    "options": {
+      "campanas": {
+        "title": "Cobrar clipeando campañas",
+        "description": "Recorta contenido de marcas y creadores y cobra por vistas."
+      },
+      "mis-videos": {
+        "title": "Recortar mis directos y videos",
+        "description": "Convierte tus videos largos en clips para cada red."
+      },
+      "ambos": {
+        "title": "Las dos cosas",
+        "description": "Empezamos por las campañas; tus videos, cuando quieras."
+      }
+    },
+    "reaction": {
+      "campanas": "Perfecto: te enseñamos campañas que pagan por vistas.",
+      "mis-videos": "Genial: dejamos cada red con su formato.",
+      "ambos": "Hecho: te preparamos las campañas y te dejamos a mano subir tu primer video."
+    }
+  },
+  "nichos": {
+    "question": "¿Qué te gustaría clipear?",
+    "why": "Elige hasta 5. Con esto ordenamos tu feed de campañas.",
+    "games": {
+      "label": "¿Algún juego en concreto? (opcional)",
+      "search": {
+        "label": "Busca un juego",
+        "results": "Juegos",
+        "empty": "No lo encontramos.",
+        "chosen": "Elegido",
+        "clear": "Borrar la búsqueda"
+      }
+    },
+    "detected": "Por tus creadores, te enseñamos campañas de {verticales}.",
+    "reaction": "{count, plural, =0 {Aún no hay campañas de {nichos}. Te avisamos en cuanto salga una.} one {{nichos}: # campaña te espera.} other {{nichos}: # campañas te esperan.}}",
+    "reactionUnsure": "{count, plural, =0 {Sin prisa: te avisamos en cuanto salga una campaña.} one {Sin prisa: mientras tanto, # campaña te espera.} other {Sin prisa: mientras tanto, # campañas te esperan.}}"
+  },
+  "fandom": {
+    "question": "¿De quién harías clips encantado?",
+    "why": "Streamers, podcasts, artistas o clubes. Primero verás sus campañas.",
+    "suggestions": "Populares entre cliperos de {pais}",
+    "suggestionsAny": "Populares entre cliperos",
+    "followers": "{seguidores} seguidores",
+    "search": {
+      "label": "Busca por nombre o pega el enlace del canal",
+      "placeholder": "Nombre, @canal o enlace",
+      "results": "Creadores",
+      "group": "En {plataforma}",
+      "link": "Enlace de {plataforma}",
+      "empty": "No lo encontramos.",
+      "add": "Añadir «{texto}»",
+      "chosen": "Ya está en tu radar",
+      "clear": "Borrar la búsqueda"
+    },
+    "counter": "{n} de {max}",
+    "hasCampaign": "Tiene campaña",
+    "radar": "Tu radar",
+    "remove": "Quitar a {creador}",
+    "detected": {
+      "label": "Detectado",
+      "platforms": "Los ves en {plataformas}.",
+      "verticals": "Te enseñamos campañas de {verticales}."
+    },
+    "notice": "Te avisamos en la app cuando lancen campaña.",
+    "emailAlerts": "Avisarme también por correo",
+    "added": "Añadido: {creador}. {n} de {max}.",
+    "removed": "Quitado: {creador}. {n} de {max}.",
+    "reaction": {
+      "umbral": "Más de {umbral, number} cliperos ya siguen a {creador}.",
+      "primeros": "Serás de los primeros en clipear a {creador}."
+    }
+  },
+  "redes": {
+    "question": "¿Dónde publicas tus clips?",
+    "why": "Solo te enseñamos campañas que puedas aceptar.",
+    "soloConecta": "Con el plan {plan} solo se conecta {red}. Marca igual donde publiques: nos dice qué campañas te sirven.",
+    "reaction": {
+      "red": "{red} premia clips de {min, number} a {max, number} s en {formato}. Lo tendremos en cuenta.",
+      "sinCuenta": "Sin problema: te enseñamos a abrirla al unirte a tu primera campaña.",
+      "otra": "Anotado: te avisamos cuando haya campañas para esa red."
+    }
+  },
+  "basicos": {
+    "question": "Lo último: ¿desde dónde clipeas?",
+    "why": "Para enseñarte campañas de tu país y cómo cobrar.",
+    "country": {
+      "label": "País",
+      "placeholder": "Elige tu país",
+      "other": "Otro país"
+    },
+    "languages": {
+      "label": "Idiomas de tus clips",
+      "help": "Hasta {max}."
+    },
+    "reaction": "En {pais} cobras con {metodos}.",
+    "reactionOther": "Cobras con {metodos}."
+  }
+}

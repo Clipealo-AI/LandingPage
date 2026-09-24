@@ -1,0 +1,264 @@
+{
+  "claim": "Cut . Edit . Share . Grow",
+  "nav": {
+    "howItWorks": "How it works",
+    "product": "Product",
+    "pricing": "Pricing",
+    "system": "System"
+  },
+  "legalNav": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  },
+  "actions": {
+    "upload": "Upload a video",
+    "backHome": "Back to home"
+  },
+  "header": {
+    "home": "Clipealo, home",
+    "mainNav": "Main",
+    "mobileNav": "Main (mobile)",
+    "login": "Log in",
+    "openMenu": "Open menu",
+    "menu": "Menu",
+    "discord": "Discord community"
+  },
+  "hero": {
+    "badge": "Automatic reframe that follows the speaker",
+    "title": "From long videos<br></br>to great clips.",
+    "howItWorks": "See how it works",
+    "detectedMoments": "Detected moments",
+    "suggestedClips": "Suggested clips",
+    "videoPreview": "Excerpt from Rubius’s unboxing",
+    "playPreview": "Play original video",
+    "sourceLabel": "Rubius Z · unboxing excerpt",
+    "seekToMoment": "Jump to moment: {title}",
+    "seekPreview": "Seek through the original video",
+    "pausePreview": "Pause video",
+    "scanInProgress": "Playing through the excerpt…",
+    "viewClip": "View clip and transcript: {title}",
+    "sourceTime": "From the original video · {start}–{end}",
+    "clipVideo": "Clip: {title}",
+    "transcript": "Transcript",
+    "unmuteVideo": "Turn sound on",
+    "muteVideo": "Mute video",
+    "seekClip": "Seek through clip",
+    "playClip": "Play clip",
+    "pauseClip": "Pause clip",
+    "fullscreen": "Fullscreen",
+    "clipInfo": "Clip information",
+    "clipTitle": "Title",
+    "clipDescription": "Description",
+    "clipReason": "Why this moment",
+    "originalTime": "source {start}–{end}",
+    "videoFormat": "Video format",
+    "publishClip": "Publish",
+    "publishDraft": "Publish as draft",
+    "editClip": "Edit clip",
+    "downloadClip": "Download",
+    "clipDescriptions": {
+      "patos": "Rubius opens duck-shaped keys and discovers they can also be used as keychains.",
+      "teclado": "He connects the yellow keyboard, tries the keys and introduces the “duck legion”.",
+      "indiana-jones": "He opens the Indiana Jones collector’s edition and discovers the game code engraved on a prop.",
+      "puzle": "He explores the physical puzzle in the collector’s edition and tries to work out how to open it.",
+      "premios": "Rubius shows Twitch awards for 5, 50 and 250 million hours watched.",
+      "pokemon": "He shows how a display case changes the look of his Umbreon, Charizard and Pikachu cards."
+    },
+    "clipReasons": {
+      "patos": "Revealing an unexpected object makes this unboxing moment instantly recognizable and shareable.",
+      "teclado": "The visual payoff and Rubius’s reaction complete the story started when he opened the box.",
+      "indiana-jones": "The hidden code changes the story and prompts a spontaneous reaction.",
+      "puzle": "The visual challenge keeps viewers curious about how the piece works.",
+      "premios": "The sequence of awards and the surprising numbers create an immediate visual hook.",
+      "pokemon": "The before and after of a familiar object gives viewers a clear visual payoff."
+    }
+  },
+  "community": {
+    "title": "Creators with over 6.8 million followers and teams across Spanish-speaking Latin America already publish with Clipealo.",
+    "creators": "Creators who trust Clipealo",
+    "channels": "Channels that trust Clipealo"
+  },
+  "reframe": {
+    "title": "The same content,<br></br>more possibilities.",
+    "original": "Your video, just as you shot it",
+    "ready": "9:16 clip ready",
+    "caption": "Clip what really matters."
+  },
+  "features": {
+    "eyebrow": "The product",
+    "title": "Small clips,<br></br>big opportunities.",
+    "lead": "The whole journey—from upload to publishing—in a single tool, without exporting anywhere else.",
+    "ai": {
+      "title": "AI that finds the best moments",
+      "body": "It analyzes the audio, spots attention peaks and suggests the cuts. You save hours of editing and focus on creating."
+    },
+    "vertical": {
+      "title": "Vertical from minute one",
+      "body": "Automatic reframe that follows the speaker. No black bars, no cut-off faces."
+    },
+    "quote": {
+      "text": "Ideas are worthless without execution.",
+      "author": "Content creator"
+    },
+    "captions": {
+      "title": "Captions people actually read",
+      "body": "Timestamped transcription, proper name correction and translation into nine languages."
+    },
+    "allInOne": {
+      "title": "Everything in one tool",
+      "body": "No jumping between five apps to publish a clip."
+    },
+    "toolbox": {
+      "trim": "Trim",
+      "edit": "Edit",
+      "share": "Share",
+      "ai": "AI",
+      "creators": "Creators",
+      "clips": "Clips",
+      "captions": "Captions",
+      "analytics": "Analytics"
+    },
+    "multiformat": {
+      "title": "One cut, four formats",
+      "body": "Export the same moment in 9:16, 4:5, 1:1 and 16:9 without editing again."
+    }
+  },
+  "steps": {
+    "title": "Same content,<br></br>more impact.",
+    "full": {
+      "title": "Full content",
+      "body": "Your original video, as it is. Podcast, livestream, class or interview."
+    },
+    "moment": {
+      "title": "Pick the moment",
+      "body": "Clip what really matters. You decide, or let the AI suggest."
+    },
+    "ready": {
+      "title": "9:16 clip ready",
+      "body": "The ideal format for Reels, Shorts and TikTok. Captions included."
+    }
+  },
+  "networks": {
+    "eyebrow": "Publishing",
+    "title": "We clip for<br></br>your favorite platforms.",
+    "lead": "The same moment, exported in the format and length each platform rewards. Connect your account once and Clipealo publishes to it, now or whenever you schedule it.",
+    "list": "Destination platforms",
+    "sweetSpot": "{min} to {max}",
+    "sweetSpotNote": "is what retains best on {network}; it allows up to {max}",
+    "bullets": {
+      "formats": "Exports to all four formats without reprocessing",
+      "limit": "Warns you if the clip exceeds the platform’s limit",
+      "schedule": "Publish or schedule from your library"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Pay for minutes,<br></br>not seats.",
+    "lead": "One credit is one minute of video. Every plan includes AI clips and vertical export. No commitment.",
+    "compare": "See the full comparison and each plan’s platforms",
+    "footnote": "Unused minutes don’t roll over. On Business, each additional member is billed per seat. Taxes not included."
+  },
+  "pricingTable": {
+    "caption": "Feature comparison of the Trial, Creator and Business plans",
+    "feature": "Feature",
+    "included": "Included",
+    "notIncluded": "Not included"
+  },
+  "pricingNetworks": {
+    "allPlans": "All plans",
+    "fromPlan": "From {plan}",
+    "formats": "Formats",
+    "maxDuration": "Max length",
+    "bestRetention": "Best retention",
+    "included": "included",
+    "notIncluded": "not included"
+  },
+  "pricingPage": {
+    "meta": {
+      "title": "Pricing",
+      "description": "Free Trial, Creator and Business. Full comparison of credits, export, social publishing, team, branding and API. No commitment."
+    },
+    "eyebrow": "Pricing",
+    "title": "A plan for every<br></br>publishing pace.",
+    "lead": "One credit is one minute of uploaded video. Clips, exports and posts don’t use credits. No commitment: switch or cancel whenever you want.",
+    "compare": {
+      "title": "Everything, in detail.",
+      "lead": "Credits, uploads, AI, export, publishing, workspace, branding and API. If it’s not in the table, it’s not in the plan.",
+      "networksLink": "Platforms by plan"
+    },
+    "networks": {
+      "eyebrow": "Publishing",
+      "title": "Each plan’s platforms.",
+      "lead": "Connect your account once and Clipealo publishes to it, now or scheduled. Each one sets a format and a length, and the editor applies them on export: a 90-second clip won’t fit in a Short, and a 16:9 one doesn’t work on TikTok."
+    },
+    "faqTitle": "Questions<br></br>about billing."
+  },
+  "faq": {
+    "title": "Frequently asked<br></br>questions.",
+    "contact": "Not here? <link>Write to us</link>, we reply the same day.",
+    "items": {
+      "processing": {
+        "q": "How long does it take to process a video?",
+        "a": "A one-hour podcast takes 4 to 7 minutes. We start suggesting clips as soon as the transcription is done, so you don’t have to wait for the whole process to finish to review the first cuts."
+      },
+      "fileFormats": {
+        "q": "Which file formats are supported?",
+        "a": "MP4, MOV, WebM and MKV, up to 8 GB per file. You can also paste a YouTube, Google Drive or Vimeo link and we’ll download it for you."
+      },
+      "faces": {
+        "q": "Does the vertical reframe cut off faces?",
+        "a": "No. The reframe follows the speaker frame by frame and, when there are two people, switches the framing based on who’s talking. You can always adjust the framing by hand in the editor."
+      },
+      "editCaptions": {
+        "q": "Can I edit the captions?",
+        "a": "Yes. The transcript is editable word by word and your changes show up in the rendered clip. You can add a dictionary of proper names so the same mistake doesn’t happen again."
+      },
+      "afterCancel": {
+        "q": "What happens to my videos if I cancel?",
+        "a": "You can download all your material for 30 days after canceling. We don’t use your content to train models or share it with third parties."
+      },
+      "publish": {
+        "q": "Does Clipealo publish to my networks for me?",
+        "a": "Yes. You connect TikTok, Instagram or YouTube with publishing permission and pick which accounts each clip goes to: right now, or at the time you schedule, which comes with the Creator plan or above. The clip goes out from your own account, with the text you write for each platform, and the analytics come in on their own."
+      }
+    }
+  },
+  "cta": {
+    "title": "Start with one video.",
+    "lead": "Upload one you already have and see what clips come out. No card required."
+  },
+  "footer": {
+    "product": "Product",
+    "resources": "Resources",
+    "legal": "Legal",
+    "designSystem": "Design system",
+    "contact": "Contact",
+    "copyright": "© {year} {name}. Made in Spain."
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "underReview": "Document under review",
+    "pages": {
+      "privacidad": {
+        "title": "Privacy",
+        "lead": "What we do with your videos and your data.",
+        "description": "We don’t use your content to train models or share it with third parties. The full legal text is under review."
+      },
+      "terminos": {
+        "title": "Terms of service",
+        "lead": "The platform’s terms of use.",
+        "description": "They cover each plan’s limits, content ownership and cancellation. The full legal text is under review."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "lead": "What we store in your browser and why.",
+        "description": "Only your session and your theme and language preferences. No third-party or ad-tracking cookies. The full details are under review."
+      }
+    }
+  },
+  "og": {
+    "titleTop": "From long videos",
+    "titleBottom": "to great clips."
+  }
+}

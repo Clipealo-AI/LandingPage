@@ -1,0 +1,32 @@
+{
+  "sinTipo": "Elige cómo vas a usar Clipealo.",
+  "sinMayorEdad": "Para usar Clipealo tienes que tener 18 años o más.",
+  "sinTerminos": "Acepta los términos para continuar.",
+  "sinObjetivo": "Elige qué vienes a hacer.",
+  "sinNichos": "Elige al menos un tema o marca «Aún no lo sé».",
+  "sinRedes": "Elige al menos una red o marca «Aún no tengo cuenta».",
+  "sinPais": "Elige tu país.",
+  "sinIdiomas": "Elige al menos un idioma.",
+  "maxIdiomas": "Hasta {max} idiomas. Quita uno para cambiarlo.",
+  "sinPlataformas": "Elige al menos una plataforma.",
+  "sinFrecuencia": "Dinos cada cuánto sales en directo.",
+  "sinTemaCanal": "Elige al menos un tema.",
+  "enlaceNoReconocido": "No reconocemos ese enlace. Prueba con el de Twitch, Kick, YouTube o TikTok.",
+  "sinTipoOrg": "Elige a quién representas.",
+  "orgCorto": "Escribe el nombre (de {min} a {max} caracteres).",
+  "orgLargo": "Escribe el nombre (de {min} a {max} caracteres).",
+  "webNoValida": "Esa dirección no parece válida. Ejemplo: https://tumarca.com",
+  "sinSector": "Elige qué vas a promocionar.",
+  "sinCanal": "Pega el enlace del canal.",
+  "sinPaises": "Elige al menos un país.",
+  "limiteElegidos": "Ya tienes {max}. Quita uno para cambiarlo.",
+  "guardadoFallido": {
+    "title": "No podemos guardar tus respuestas en este navegador",
+    "description": "Puedes seguir, pero se perderán al cerrar la pestaña."
+  },
+  "solicitudFallida": {
+    "title": "No pudimos enviar la solicitud",
+    "description": "Revisa tu conexión y vuelve a intentarlo."
+  },
+  "sugerenciasFallidas": "No pudimos cargar sugerencias. Escribe el nombre o pega el enlace."
+}

@@ -1,0 +1,177 @@
+/* ==========================================================================
+   MOVIMIENTO · REFRAME (Lote 2)
+   «De horizontal a vertical» ligado al scroll (E7).
+
+   Sin @layer, como base.css. Las variables, clases (.m-anim, .m-rise…) y
+   keyframes compartidos viven en base.css y no se redefinen aquí; lo propio
+   de «reducir movimiento» se escribe con `@variant reduced`.
+
+   - Sin preferencia: el marco se cierra de forma continua con el scroll, igual
+     que antes.
+   - Con «reducir»: cuatro planos de montaje con la proporción de cada formato
+     de Multiformato, de más ancho a más estrecho (16:9, 1:1, 4:5 y 9:16),
+     medidos sobre el alto de la caja. Cada cambio es un corte seco: el marco
+     funde de 0,35 a 1 en 300 ms (WAAPI en reframe.tsx) y los rótulos, igual.
+   - El marco se recorta con `clip-path` y no cambia de `width`: medido en M0,
+     el ancho animado sumaba CLS 0,019 a 2560 px y 0,046 en móvil al bajar por
+     la sección. El borde lo pintan dos medios marcos que se desplazan con
+     `translate`, que no cuenta como desplazamiento de layout.
+
+   Variables (las escribe reframe.tsx en la sección):
+   - --progress: 0 a 1 a lo largo de la sección (useScrollProgress).
+   - --plano: 0 a 3, el plano del montaje (planoReframe). Solo lo usa «reducir».
+   Sin JS se ve el estado final (regla 8): `html:not(.js)`.
+   ========================================================================== */
+
+/* Registradas: el valor calculado es un número, no una fórmula (los tests lo
+   leen y un `var()` inválido cae al valor inicial, no deja el marco sin recortar). */
+@property --t-geo {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --plano {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.reframe-section {
+  --progress: 0;
+}
+/* Sin JS, el estado final compuesto: es el que explica la idea */
+html:not(.js) .reframe-section {
+  --progress: 1;
+  --plano: 3;
+}
+@media print {
+  .reframe-section {
+    --progress: 1 !important;
+    --plano: 3 !important;
+  }
+}
+/* Cuatro planos necesitan menos recorrido que la interpolación continua: con
+   240vh los cortes quedaban muy separados y la sección parecía atascada. */
+.reframe-section {
+  @variant reduced {
+    height: 200vh;
+  }
+}
+
+.reframe-stage {
+  /* Progreso remapeado al tramo útil [0,12 – 0,72] (planoReframe usa el mismo) */
+  --t: clamp(0, calc((var(--progress) - 0.12) / 0.6), 1);
+  /* Geometría del marco y de la selección: 0 = 16:9, 1 = 9:16 */
+  --t-geo: var(--t);
+  --reframe-original: calc(1 - clamp(0, calc((var(--progress) - 0.2) / 0.25), 1));
+  --reframe-ready: clamp(0, calc((var(--progress) - 0.55) / 0.2), 1);
+}
+.reframe-stage {
+  @variant reduced {
+    /* PLANOS_REFRAME - 1 = 3 */
+    --t-geo: calc(var(--plano) / 3);
+    /* «Tu video…» se va en el primer corte y «Clip 9:16 listo» llega en el último */
+    --reframe-original: calc(1 - min(1, var(--plano)));
+    --reframe-ready: max(0, calc(var(--plano) - 2));
+  }
+}
+
+/* Caja fija del marco: su tamaño no cambia nunca (alto y ancho explícitos, así
+   que la contención de tamaño no altera nada). Contenedor para medir el recorte
+   en `cqw` y `cqh` desde el marco y desde sus pseudo-elementos por igual. */
+.reframe-encuadre {
+  container-type: size;
+}
+
+.reframe-marco {
+  /* Sin dejar menos de 9 rem de marco visible. El tope solo actúa por debajo de
+     ~460 px: a 390 px el marco final pasa de 119 a 144 px sin preferencia y
+     «Clipe 9:16 pronto» (unos 122 px) cabe dentro. */
+  --reframe-tope: max(0px, calc(50cqw - 4.5rem));
+  /* Recorte por lado: un tercio del ancho en vertical (como el antiguo
+     `width: calc(100% - 66% * t)`). */
+  --reframe-recorte: min(calc(33cqw * var(--t-geo)), var(--reframe-tope));
+  clip-path: inset(0 var(--reframe-recorte) round var(--radius-frame));
+}
+/* Con «reducir», cada plano recorta hasta la proporción de su formato:
+   (ancho − alto × proporción) / 2 por lado. Donde la caja no da para la
+   proporción (el 16:9 y el 1:1 en un móvil vertical), cada plano recorta al
+   menos un 3 % del ancho más que el anterior: los cuatro cortes se ven y
+   ninguno parece atascado. Un indicador por plano (1 en el suyo, 0 en los
+   demás) elige el recorte; `--plano` es un entero registrado. */
+.reframe-marco {
+  @variant reduced {
+    --reframe-r0: max(0px, calc((100cqw - 100cqh * 16 / 9) / 2));
+    --reframe-r1: max(calc(var(--reframe-r0) + 3cqw), calc((100cqw - 100cqh) / 2));
+    --reframe-r2: max(
+      calc(var(--reframe-r1) + 3cqw),
+      calc((100cqw - 100cqh * 4 / 5) / 2)
+    );
+    --reframe-r3: max(
+      calc(var(--reframe-r2) + 3cqw),
+      calc((100cqw - 100cqh * 9 / 16) / 2)
+    );
+    --reframe-recorte: min(
+      var(--reframe-tope),
+      calc(
+        var(--reframe-r0) * clamp(0, 1 - var(--plano), 1) + var(--reframe-r1) *
+          (clamp(0, var(--plano), 1) - clamp(0, var(--plano) - 1, 1)) +
+          var(--reframe-r2) *
+          (clamp(0, var(--plano) - 1, 1) - clamp(0, var(--plano) - 2, 1)) +
+          var(--reframe-r3) * clamp(0, var(--plano) - 2, 1)
+      )
+    );
+  }
+}
+
+/* Borde del marco: dos medios marcos (izquierdo y derecho) que se acercan con
+   `translate` y se recortan en el centro. El color sale de `border-white/10`
+   del propio marco, que no tiene ancho de borde. Por encima del contenido. */
+.reframe-marco::before,
+.reframe-marco::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset-block: 0;
+  width: 50%;
+  border: 1px solid;
+  border-color: inherit;
+  pointer-events: none;
+}
+.reframe-marco::before {
+  left: 0;
+  border-inline-end-width: 0;
+  border-start-start-radius: var(--radius-frame);
+  border-end-start-radius: var(--radius-frame);
+  translate: var(--reframe-recorte) 0;
+  clip-path: inset(0 var(--reframe-recorte) 0 0);
+}
+.reframe-marco::after {
+  right: 0;
+  border-inline-start-width: 0;
+  border-start-end-radius: var(--radius-frame);
+  border-end-end-radius: var(--radius-frame);
+  translate: calc(-1 * var(--reframe-recorte)) 0;
+  clip-path: inset(0 0 0 var(--reframe-recorte));
+}
+
+/* Rótulos: siguen al scroll sin preferencia; con «reducir» cambian por planos
+   con el mismo fundido que el corte del marco (300 ms, `ease-out`: con
+   --ease-brand estaba casi hecho en el primer fotograma). */
+.reframe-original {
+  opacity: var(--reframe-original);
+}
+.reframe-ready {
+  opacity: var(--reframe-ready);
+}
+.reframe-label {
+  @variant reduced {
+    transition: opacity 300ms ease-out;
+  }
+}
+
+/* Selección de la línea de tiempo: el mismo tramo que el antiguo
+   `left: 38% * t; width: 100% - 78% * t`, sin recalcular el layout. */
+.reframe-seleccion {
+  clip-path: inset(0 calc(40% * var(--t-geo)) 0 calc(38% * var(--t-geo)) round 999px);
+}

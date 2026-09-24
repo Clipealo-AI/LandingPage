@@ -1,0 +1,504 @@
+/* ==========================================================================
+   MOVIMIENTO · BASE
+   Cimientos del movimiento de la landing (AGENTS.md, reglas 5, 6 y 8).
+
+   - Sin @layer a propósito, como el bloque 4b de globals.css: las reglas de
+     «reducir movimiento» tienen que ganar a las utilidades.
+   - Los @keyframes van aquí y nunca dentro de @theme: Tailwind descarta los de
+     @theme que ninguna clase `animate-*` usa, y así `fade-soft` no llegaba a
+     producción.
+   - Una sola animación para los dos modos: distancias y escalas iniciales
+     viven en las variables --motion-*, que valen 0 o 1 con «reducir».
+   - El estado natural es el estado final. Lo oculto solo existe mientras un
+     grupo espera (`[data-motion-state="idle"]`) o detrás de `.js`.
+   Contrato para los lotes: scratchpad/diseno/contrato-lote0.md y la cabecera
+   de lib/motion.ts.
+   ========================================================================== */
+
+/* Modo reducido: manda la preferencia guardada del usuario (Ajustes › Perfil o
+   `?movimiento=reducido`), que el script de arranque deja en `data-motion`. El
+   movimiento completo es el de por defecto para todo el mundo (decisión del
+   director, 15 sep 2026); sin JS se respeta la preferencia del sistema, que es
+   lo único que hay entonces. */
+@custom-variant reduced {
+  &:where(:root[data-motion="reduced"] *) {
+    @slot;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &:where(html:not(.js):not([data-motion]) *) {
+      @slot;
+    }
+  }
+}
+
+/* Registrada para poder hacer transición de la intensidad de la luz (E11) */
+@property --light-strength {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+/* Posición de la luz. Sin heredar: PointerLight las escribe en la tarjeta en cada
+   movimiento del ratón y solo las lee el fondo de la propia tarjeta. Heredadas,
+   cada cambio recalculaba el estilo de todos sus descendientes (70 en la de IA). */
+@property --mx {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --my {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+:root {
+  /* Distancias y escalas iniciales: 0 o 1 con «reducir» (abajo) */
+  --motion-distance: 1.25rem;
+  --motion-crop-from: 1.35;
+  --motion-crop-gap: 0.75rem;
+  --motion-pop-from: 0.5;
+  --motion-ring-to: 1.6;
+  --motion-aim-from: 1.12;
+
+  /* Ritmo de las entradas */
+  --duration-enter: 520ms;
+  --duration-crop: 450ms;
+  --stagger: 80ms;
+
+  /* Color de la marca de recorte. Sobre naranja se cambia en el contenedor
+     (`[--crop-color:var(--color-ink-950)]`); cropSnap() lo lee del botón. */
+  --crop-color: var(--color-brand-500);
+}
+
+/* Sin JS no hay preferencia guardada: manda la del sistema */
+@media (prefers-reduced-motion: reduce) {
+  html:not(.js):not([data-motion]) {
+    --motion-distance: 0px;
+    --motion-crop-from: 1;
+    --motion-crop-gap: 0px;
+    --motion-pop-from: 1;
+    --motion-ring-to: 1;
+    --motion-aim-from: 1;
+    scroll-behavior: auto;
+  }
+}
+:root[data-motion="reduced"] {
+  --motion-distance: 0px;
+  --motion-crop-from: 1;
+  --motion-crop-gap: 0px;
+  --motion-pop-from: 1;
+  --motion-ring-to: 1;
+  --motion-aim-from: 1;
+  scroll-behavior: auto;
+}
+
+/* --------------------------------------------------------------------------
+   KEYFRAMES
+   Solo `from` cuando el destino es el estado natural: así respetan la opacidad
+   propia del elemento (un `opacity-40` sigue en 0,4 al terminar).
+   -------------------------------------------------------------------------- */
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes fade-soft {
+  from {
+    opacity: 0;
+  }
+}
+/* Salida del fundido: Radix espera a `animationend` para desmontar */
+@keyframes fade-soft-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes flash-soft {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    translate: 0 calc(var(--motion-distance) * var(--rise-k, 1));
+  }
+}
+/* Esquinas del hero y aviso de éxito */
+@keyframes crop-in {
+  from {
+    opacity: 0;
+    scale: var(--motion-crop-from);
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    scale: var(--motion-pop-from);
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.6;
+    scale: 1;
+  }
+  70%,
+  100% {
+    opacity: 0;
+    scale: var(--motion-ring-to);
+  }
+}
+/* El carrusel sigue con `transform`: smoke.spec.ts mide su matriz */
+/* Un carrusel que no se ve no tiene por qué componer fotogramas: el atributo
+   lo pone su IntersectionObserver en components/shared/marquee.tsx */
+[data-marquee][data-fuera] [data-marquee-track] {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes crop-close {
+  from {
+    opacity: 0;
+    translate: calc(var(--cx) * var(--motion-crop-gap))
+      calc(var(--cy) * var(--motion-crop-gap));
+  }
+}
+/* La curva de cada tramo va escrita: `var()` no vale como
+   `animation-timing-function` dentro de @keyframes y Chrome cae a lineal.
+   Es la de --ease-brand. */
+@keyframes crop-flash {
+  0% {
+    opacity: 0;
+    scale: var(--motion-crop-from);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  22% {
+    opacity: 1;
+    scale: 1;
+  }
+  72% {
+    opacity: 1;
+    scale: 1;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+@keyframes cut-in {
+  from {
+    clip-path: inset(-0.35em calc(100% - var(--cut-from, 0%)) -0.35em -0.15em);
+  }
+  to {
+    clip-path: inset(-0.35em -0.15em -0.35em -0.15em);
+  }
+}
+@keyframes cut-blade {
+  from {
+    opacity: 1;
+    translate: calc(-100% + var(--cut-from, 0%)) 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes light-up {
+  50% {
+    color: var(--primary);
+    border-color: color-mix(in oklab, var(--primary) 45%, transparent);
+    background-color: color-mix(in oklab, var(--primary) 10%, transparent);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   GRUPOS «AL ENTRAR EN PANTALLA»
+   lib/motion.ts pone `data-motion-state` en cada `[data-motion-group]`:
+   - sin atributo (sin JS, sin observador, /precios) → no hay animación;
+   - "static" → ya se veía al hidratar: no se anima;
+   - "idle"   → espera fuera de pantalla, en pausa en su primer fotograma;
+   - "play"   → corre una vez.
+   Los grupos no se anidan. La pausa va en `--m-play` (heredada): cualquier
+   animación propia de un lote que dependa del grupo usa
+   `animation-play-state: var(--m-play, running)`.
+   -------------------------------------------------------------------------- */
+[data-motion-state="idle"] {
+  --m-play: paused;
+}
+/* El foco del teclado nunca espera: lib/motion.ts pasa a «static» el grupo que lo
+   recibe (sin animación, terminado). Esto solo cubre el mismo fotograma. */
+[data-motion-state="idle"]:focus-within,
+[data-motion-state="play"] {
+  --m-play: running;
+}
+
+:is([data-motion-state="idle"], [data-motion-state="play"]) .m-anim,
+:is([data-motion-state="idle"], [data-motion-state="play"]).m-anim {
+  animation: var(--m-name) var(--m-dur) var(--m-ease) backwards;
+  animation-delay: calc(
+    var(--m-wait, 0ms) + var(--m-at, 0ms) + var(--i, 0) * var(--stagger)
+  );
+  animation-play-state: var(--m-play, running);
+}
+
+.m-rise {
+  --m-name: rise-in;
+  --m-dur: var(--duration-enter);
+  --m-ease: var(--ease-brand);
+}
+.m-pop {
+  --m-name: pop;
+  --m-dur: 420ms;
+  --m-ease: var(--ease-spring);
+}
+.m-light {
+  --m-name: light-up;
+  --m-dur: 480ms;
+  --m-ease: ease-in-out;
+}
+.m-word {
+  --m-name: fade-soft;
+  --m-dur: 320ms;
+  --m-ease: var(--ease-brand);
+}
+
+/* Titular cortado a 12 fps (E5): la caja se descubre de izquierda a derecha en
+   9 fotogramas y una cuchilla de 3 px marca el corte. */
+.m-cut {
+  --m-name: cut-in;
+  --m-dur: 720ms;
+  --m-ease: steps(9, jump-none);
+}
+.m-cut:not(.absolute, .fixed, .sticky) {
+  position: relative;
+}
+.m-cut::after {
+  content: "";
+  position: absolute;
+  inset-block: -0.1em;
+  left: 0;
+  width: 100%;
+  border-inline-end: 3px solid var(--cut-color, var(--primary));
+  opacity: 0;
+  pointer-events: none;
+}
+/* Sin relleno hacia atrás: durante el retardo la cuchilla no se ve quieta */
+:is([data-motion-state="idle"], [data-motion-state="play"]) .m-cut::after,
+:is([data-motion-state="idle"], [data-motion-state="play"]).m-cut::after {
+  animation: cut-blade 720ms steps(9, jump-none);
+  animation-delay: calc(
+    var(--m-wait, 0ms) + var(--m-at, 0ms) + var(--i, 0) * var(--stagger)
+  );
+  animation-play-state: var(--m-play, running);
+}
+/* Mientras espera sin retardo, la animación en pausa está en su primer
+   fotograma (opacidad 1, pegada al borde izquierdo): se veía una línea quieta
+   junto al titular en la franja inferior de la pantalla. `visibility` no la
+   anima nadie, así que la esconde sin tocar la animación. */
+[data-motion-state="idle"]:not(:focus-within) .m-cut::after,
+[data-motion-state="idle"]:not(:focus-within).m-cut::after {
+  visibility: hidden;
+}
+/* Con «reducir»: sin cuchilla, el titular funde en su sitio a cortes (cuatro
+   escalones de opacidad en 720 ms, lo que dura el corte). Un fundido continuo
+   con --ease-brand hacía el 90 % del cambio en 120 ms: el titular aparecía de
+   golpe y no se distinguía de las subidas de alrededor. `jump-end`: en pausa, en
+   su primer fotograma, sigue en opacidad 0 aunque no tenga retardo. Va después
+   de las reglas de la cuchilla para ganarles en la cascada. */
+.m-cut {
+  @variant reduced {
+    --m-name: fade-soft;
+    --m-dur: 720ms;
+    --m-ease: steps(4, jump-end);
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+/* Esquinas de CropFrame que se cierran (logo.tsx pone data-crop-corner) */
+[data-crop-corner="tl"] {
+  --cx: -1;
+  --cy: -1;
+  --c: 0;
+}
+[data-crop-corner="tr"] {
+  --cx: 1;
+  --cy: -1;
+  --c: 1;
+}
+[data-crop-corner="br"] {
+  --cx: 1;
+  --cy: 1;
+  --c: 2;
+}
+[data-crop-corner="bl"] {
+  --cx: -1;
+  --cy: 1;
+  --c: 3;
+}
+:is([data-motion-state="idle"], [data-motion-state="play"])
+  [data-crop-corner]:where(.m-crop-corners, .m-crop-corners *) {
+  animation: crop-close var(--duration-crop) var(--ease-brand) backwards;
+  animation-delay: calc(
+    var(--m-wait, 0ms) + var(--m-crop-at, 300ms) + var(--i, 0) * var(--stagger) +
+      var(--c) * 60ms
+  );
+  animation-play-state: var(--m-play, running);
+}
+
+/* Marca de recorte efímera sobre cualquier caja, con un pseudo y sin nodos.
+   En un elemento en línea, `whitespace-nowrap`: partida en dos líneas no se lee. */
+[data-crop-mark]:not(.absolute, .fixed, .sticky) {
+  position: relative;
+}
+[data-crop-mark]::after {
+  --l: var(--crop-mark-l, 12px);
+  content: "";
+  position: absolute;
+  inset: var(--crop-mark-inset, -6px);
+  border: 2.5px solid var(--crop-color);
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  mask:
+    linear-gradient(#000 0 0) 0 0 / var(--l) var(--l) no-repeat,
+    linear-gradient(#000 0 0) 100% 0 / var(--l) var(--l) no-repeat,
+    linear-gradient(#000 0 0) 0 100% / var(--l) var(--l) no-repeat,
+    linear-gradient(#000 0 0) 100% 100% / var(--l) var(--l) no-repeat;
+}
+:is([data-motion-state="idle"], [data-motion-state="play"]) [data-crop-mark]::after,
+:is([data-motion-state="idle"], [data-motion-state="play"])[data-crop-mark]::after {
+  animation: crop-flash var(--crop-mark-dur, 1400ms) linear backwards;
+  animation-delay: calc(var(--m-wait, 0ms) + var(--crop-mark-at, 0ms));
+  animation-play-state: var(--m-play, running);
+}
+
+/* --------------------------------------------------------------------------
+   LUZ BAJO EL PUNTERO (E11)
+   PointerLight pone `data-lit` y escribe --mx/--my en la tarjeta que hay bajo
+   el ratón. Solo con ratón: en táctil no hay nada que seguir. Un `[data-light]`
+   no lleva utilidades `transition-*` ni `bg-[image]`: esta regla las pisaría.
+   -------------------------------------------------------------------------- */
+/* Dentro de @supports: sin color-mix, el optimizador pintaba de fallback la luz al
+   100 % en todas las tarjetas. */
+@supports (color: color-mix(in oklab, red, red)) {
+  @media (hover: hover) and (pointer: fine) {
+    [data-light] {
+      --light-color: var(--primary);
+      background-image: radial-gradient(
+        24rem circle at var(--mx, 50%) var(--my, 50%),
+        color-mix(in oklab, var(--light-color) var(--light-strength), transparent),
+        transparent 70%
+      );
+      transition: --light-strength var(--duration-base) var(--ease-brand);
+    }
+    [data-light="tinta"] {
+      --light-color: var(--color-ink-50);
+    }
+    [data-light][data-lit] {
+      --light-strength: 9%;
+    }
+    [data-light="tinta"][data-lit] {
+      --light-strength: 7%;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   «REDUCIR MOVIMIENTO» EN PIEZAS COMPARTIDAS
+   Reducir, no quitar: lo que desplaza o escala pasa a fundido en su sitio. Las
+   esquinas del hero, el aviso de éxito y el anillo ya lo resuelven solas con
+   las variables --motion-*.
+   -------------------------------------------------------------------------- */
+
+/* tw-animate-css compone la entrada y la salida con estas variables. Con
+   `[class*=…]` alcanza también a las variantes (`data-open:animate-in`), y sin
+   capa gana a las utilidades `slide-in-from-*` y `zoom-in-*`: menús, diálogos,
+   tooltips y paneles laterales entran y salen en fundido. */
+[class*="animate-in"],
+[class*="animate-out"] {
+  @variant reduced {
+    --tw-enter-translate-x: 0;
+    --tw-enter-translate-y: 0;
+    --tw-exit-translate-x: 0;
+    --tw-exit-translate-y: 0;
+    --tw-enter-scale: 1;
+    --tw-exit-scale: 1;
+    --tw-enter-rotate: 0;
+    --tw-exit-rotate: 0;
+    --tw-enter-opacity: 0;
+    --tw-exit-opacity: 0;
+  }
+}
+
+/* Acordeón: la altura animada empuja lo de debajo. Con «reducir» la respuesta
+   aparece y se va en fundido; la salida es obligatoria porque Radix espera a
+   `animationend` (con un nombre distinto al de entrada) para desmontar. */
+[data-slot="accordion-content"][data-state="open"] {
+  @variant reduced {
+    animation-name: fade-soft;
+  }
+}
+[data-slot="accordion-content"][data-state="closed"] {
+  @variant reduced {
+    animation-name: fade-soft-out;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CAPTURA E IMPRESIÓN: todo terminado
+   `html[data-capture]` lo pone modoCaptura() de tests/e2e/helpers.ts. El
+   carrusel queda en su posición inicial (las capturas lo enmascaran).
+   -------------------------------------------------------------------------- */
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    translate: none !important;
+  }
+}
+html[data-capture] *,
+html[data-capture] *::before,
+html[data-capture] *::after {
+  animation-duration: 1ms !important;
+  animation-delay: -1ms !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+}
+html[data-capture] [data-reveal] {
+  opacity: 1 !important;
+  translate: none !important;
+}

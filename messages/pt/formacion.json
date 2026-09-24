@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "Formação"
+  },
+  "nav": "Formação",
+  "crumbs": {
+    "formacion": "Formação"
+  },
+  "titulo": "Formação",
+  "intro": "Aulas curtas do time do Clipealo. Você começa pela trilha que combina com você; as outras ficam aqui para quando precisar.",
+  "resumen": {
+    "clases": "{n, plural, one {# aula publicada} other {# aulas publicadas}}",
+    "minutos": "{min} min no total",
+    "vistas": "{hechas} de {total} assistidas"
+  },
+  "ruta": {
+    "etiqueta": "Sua trilha",
+    "progreso": "{hechas} de {total} aulas",
+    "restante": "Falta {tiempo}",
+    "duracion": "{tiempo} no total",
+    "continuar": "Continuar a trilha",
+    "empezar": "Começar a trilha",
+    "repasar": "Assistir de novo",
+    "terminada": "Trilha concluída",
+    "siguiente": "A seguir: {titulo}",
+    "repasarDesde": "Você recomeça por: {titulo}",
+    "otra": "Ir para «{titulo}»",
+    "ocultar": "Já sei disso",
+    "apartada": "«{titulo}» ficou de lado.",
+    "volverAEnsenar": "Mostrar de novo",
+    "aria": "Progresso da trilha {titulo}",
+    "bloqueadas": "{n, plural, one {# aula pede o plano {plan}} other {# aulas pedem o plano {plan}}}",
+    "desbloquear": "Desbloquear o que falta",
+    "siguienteConPlan": "Próxima, com o plano {plan}: {titulo}"
+  },
+  "catalogo": {
+    "titulo": "Todas as aulas",
+    "orden": "Ordenadas pelo que você clipa e pelo quanto já editou",
+    "ordenSinPerfil": "Ordenadas por data de publicação"
+  },
+  "leccion": {
+    "ver": "Assistir à aula",
+    "seguir": "Continuar assistindo",
+    "revisar": "Assistir de novo",
+    "vista": "Assistida",
+    "enCurso": "Pela metade",
+    "marcar": "Marcar como assistida",
+    "reiniciar": "Começar do zero",
+    "progreso": "{pct} assistida",
+    "progresoAria": "Progresso da aula {titulo}",
+    "abrir": "Abrir a aula {titulo}",
+    "nivel": "Nível",
+    "duracion": "Duração",
+    "temas": "Temas",
+    "redes": "Redes",
+    "publicada": "Publicada em {fecha}",
+    "autor": "Time do Clipealo",
+    "sinVideo": "O vídeo é enviado pelo painel do time. Enquanto isso, veja aqui do que trata a aula.",
+    "cerrar": "Fechar a aula",
+    "siguiente": "Próxima aula"
+  },
+  "bloqueada": {
+    "insignia": "Incluída no {plan}",
+    "titulo": "Esta aula é do plano {plan}",
+    "descripcion": "Dá para ver do que trata e quanto dura; para assistir inteira é preciso o plano {plan}.",
+    "ventajas": {
+      "todas": "Todas as aulas, inclusive as que ainda vão sair",
+      "ruta": "As trilhas completas, sem pular etapas",
+      "campanas": "Entrar em campanhas de marcas e ganhar com seus clipes",
+      "calendario": "O calendário para agendar suas publicações"
+    },
+    "abrir": "Ver do que trata {titulo}",
+    "boton": "Ver do que trata"
+  },
+  "razones": {
+    "tema": "Pelos seus temas",
+    "red": "Pelas suas redes",
+    "nivel": "Pelo seu nível"
+  },
+  "niveles": {
+    "inicio": "Início",
+    "medio": "Intermediário",
+    "avanzado": "Avançado"
+  },
+  "avisos": {
+    "completada": "Aula assistida: {titulo}",
+    "rutaTerminada": "Você concluiu “{titulo}”",
+    "reiniciada": "Aula de volta ao início",
+    "sinGuardar": "Este navegador não guarda nada: seu progresso se perde ao fechar a aba.",
+    "rutaOculta": "Trilha de lado. As aulas continuam aqui embaixo.",
+    "rutaVuelve": "Desfazer"
+  },
+  "clases": {
+    "lec_que_funciona": {
+      "titulo": "O que faz um clipe funcionar",
+      "descripcion": "Os três ingredientes que se repetem nos clipes assistidos até o fim: uma ideia, um conflito e um final que não se explica."
+    },
+    "lec_primer_corte": {
+      "titulo": "Seu primeiro corte, passo a passo",
+      "descripcion": "Você sobe um vídeo longo, o Clipealo sugere os momentos e você decide: onde começa, onde termina e por quê."
+    },
+    "lec_subtitulos": {
+      "titulo": "Legendas que se leem sem som",
+      "descripcion": "Tamanho, ritmo e onde colocar para o clipe funcionar com o celular no mudo, que é como quase tudo é assistido."
+    },
+    "lec_vertical": {
+      "titulo": "Vertical sem cortar cabeças",
+      "descripcion": "Como reenquadrar de 16:9 para 9:16 quando há duas pessoas na tela, um chat do lado ou um placar que não dá para perder."
+    },
+    "lec_gancho": {
+      "titulo": "O gancho: os três primeiros segundos",
+      "descripcion": "Quatro jeitos de abrir um clipe e como escolher o que combina com o momento que você cortou, sem prometer o que não tem."
+    },
+    "lec_publicar": {
+      "titulo": "Publicar no TikTok, no Reels e no Shorts",
+      "descripcion": "O mesmo corte, três saídas: o que muda em cada rede e o que não vale a pena refazer."
+    },
+    "lec_campanas": {
+      "titulo": "Entre numa campanha sem ter o clipe recusado",
+      "descripcion": "O que a agência olha na revisão: requisitos, marca visível, duração e o prazo que você aceitou ao entrar."
+    },
+    "lec_analiticas": {
+      "titulo": "Leia suas análises e repita o que deu certo",
+      "descripcion": "Retenção, visualizações e salvamentos: o que olhar de verdade para decidir o próximo corte em vez de chutar."
+    }
+  },
+  "rutas": {
+    "ruta_primera_semana": {
+      "titulo": "Sua primeira semana",
+      "descripcion": "De nunca ter editado a ter seu primeiro clipe publicado, em cinco aulas seguidas."
+    },
+    "ruta_mas_vistas": {
+      "titulo": "Aumente suas visualizações",
+      "descripcion": "Você já publica: agora o gancho, a saída para cada rede e os números que dizem o que repetir."
+    }
+  }
+}

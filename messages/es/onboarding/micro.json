@@ -1,0 +1,116 @@
+{
+  "later": "Ahora no",
+  "never": "No volver a preguntar",
+  "save": "Guardar",
+  "eyebrow": "Una pregunta rápida",
+  "cerrada": {
+    "pospuesta": "Vale. Te lo preguntamos dentro de unos días.",
+    "descartada": "Hecho. No te lo volveremos a preguntar.",
+    "respondida": "Anotado. Gracias por contestar."
+  },
+  "preguntas": {
+    "experiencia": {
+      "label": "Experiencia editando",
+      "question": "¿Cuánto has editado antes?",
+      "why": "Para darte consejos de tu nivel.",
+      "done": "Guardado. Te daremos consejos de tu nivel.",
+      "guide": "Ver la guía de 2 minutos"
+    },
+    "ligas": {
+      "label": "Ligas",
+      "question": "¿Qué ligas te gusta clipear?",
+      "why": "Tu clip de «{campana}» ya está aprobado. Elige hasta {max} y te buscamos más campañas así.",
+      "whyGeneric": "Elige hasta {max} y te buscamos más campañas así.",
+      "done": "Guardado. Te buscamos más campañas de tus ligas."
+    },
+    "generos": {
+      "label": "Géneros de música",
+      "question": "¿Qué música te gusta clipear?",
+      "why": "Tu clip de «{campana}» ya está aprobado. Elige hasta {max} y te buscamos más campañas así.",
+      "whyGeneric": "Elige hasta {max} y te buscamos más campañas así.",
+      "done": "Guardado. Te buscamos más campañas de tu música."
+    },
+    "formatos": {
+      "label": "Tipos de directo",
+      "question": "¿Qué directos te gusta clipear?",
+      "why": "Tu clip de «{campana}» ya está aprobado. Elige hasta {max} y te buscamos más campañas así.",
+      "whyGeneric": "Elige hasta {max} y te buscamos más campañas así.",
+      "done": "Guardado. Te buscamos más campañas de esos directos."
+    },
+    "disponibilidad": {
+      "label": "Horas a la semana",
+      "question": "¿Cuántas horas a la semana le dedicas a clipear?",
+      "why": "Para recomendarte cuántas campañas llevar a la vez.",
+      "done": "Guardado. Ajustamos cuántas campañas te recomendamos a la vez."
+    },
+    "motivo-pausa": {
+      "label": "Qué te frena",
+      "question": "¿Qué te frena?",
+      "why": "{dias, plural, one {Hace # día que no envías clips.} other {Hace # días que no envías clips.}} Con tu respuesta te proponemos campañas parecidas o una guía.",
+      "whyGeneric": "Con tu respuesta te proponemos campañas parecidas o una guía.",
+      "done": "Gracias. Te proponemos campañas parecidas y una guía."
+    },
+    "motivaciones": {
+      "label": "Qué buscas",
+      "question": "¿Qué buscas en Clipealo?",
+      "why": "Elige hasta {max}. Con esto ordenamos tu feed de campañas.",
+      "done": "Guardado. Ordenamos tu feed con esto."
+    },
+    "herramientas": {
+      "label": "Con qué editas",
+      "question": "¿Con qué editas además de Clipealo?",
+      "why": "Para decidir con qué herramientas conectar primero.",
+      "done": "Gracias. Lo tendremos en cuenta."
+    },
+    "sigues-clipeando": {
+      "label": "Tus temas",
+      "question": "¿Sigues clipeando {verticales}?",
+      "why": "Elegiste esos temas hace más de 6 meses. Así tu feed sigue al día.",
+      "yes": "Sí, sigo",
+      "change": "Cambiar mis temas",
+      "done": "Perfecto: tu feed sigue igual."
+    }
+  },
+  "requisitos": {
+    "title": "Antes de enviar tu primer clip",
+    "description": "{n, plural, one {Nos falta {campos}.} other {Nos faltan {campos}.}} Sin eso no podemos enseñarte campañas que puedas aceptar ni decirte cómo cobrar.",
+    "campos": {
+      "redes": "dónde publicas",
+      "pais": "tu país",
+      "idiomas": "los idiomas de tus clips"
+    },
+    "redes": "¿Dónde publicas tus clips?",
+    "pais": "¿Desde dónde clipeas?",
+    "paisPlaceholder": "Elige tu país",
+    "paisOtro": "Otro país",
+    "idiomas": "Idiomas de tus clips",
+    "idiomasHelp": "Hasta {max}.",
+    "continue": "Guardar y continuar"
+  },
+  "progreso": {
+    "title": "Termina tu perfil ({pct})",
+    "description": "{n, plural, =0 {Solo te falta ver tu resultado.} one {Te queda # toma.} other {Te quedan # tomas.}} Cuanto más sepamos, mejores campañas te enseñamos.",
+    "nichos": "Elige tus temas: sin ellos te enseñamos campañas de todo.",
+    "precision": "Precisión de tus recomendaciones: {nivel, select, baja {baja} media {media} alta {alta} other {media}}.",
+    "pendientes": "Te falta",
+    "continue": "Seguir donde lo dejé",
+    "start": "Empezar",
+    "ring": "Perfil completado al {pct}"
+  },
+  "misiones": {
+    "progress": "{hechas} de {total}",
+    "proyecto": "Sube tu primer video",
+    "estado": {
+      "hecha": "Hecha",
+      "pendiente": "Pendiente"
+    },
+    "go": "Ir"
+  },
+  "panel": {
+    "label": "Tu perfil y tus próximos pasos"
+  },
+  "nudge": "Tu perfil está sin terminar",
+  "anillo": {
+    "label": "Tu perfil: {pct}"
+  }
+}

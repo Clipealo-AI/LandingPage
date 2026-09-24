@@ -1,0 +1,24 @@
+{
+  "question": "¿Cómo vas a usar Clipealo?",
+  "adult": "Tengo 18 años o más",
+  "greeting": "Hola, {nombre}. Montemos tu perfil en {total, plural, one {# toma} other {# tomas}}.",
+  "greetingSinNombre": "Hola. Montemos tu perfil en {total, plural, one {# toma} other {# tomas}}.",
+  "why": "Para enseñarte lo tuyo desde el principio.",
+  "options": {
+    "clipero": {
+      "title": "Hago clips",
+      "description": "Recorto mis videos o los de campañas y cobro por las vistas."
+    },
+    "agencia": {
+      "title": "Represento una marca o agencia",
+      "description": "Quiero publicar campañas para que creadores recorten mi contenido."
+    }
+  },
+  "adultHelp": "Clipealo es para mayores de edad. Lo confirmamos en tu primer retiro.",
+  "terms": "Acepto los <terms>términos</terms> y la <privacy>política de privacidad</privacy>",
+  "privacyNote": "Usamos tus datos para darte el servicio, recomendarte campañas y hacer estadísticas de la plataforma en grupos de 50 personas o más. Puedes oponerte en Ajustes › Tus datos.",
+  "reaction": {
+    "clipero": "Perfecto: montamos tu perfil de clipero.",
+    "agencia": "Perfecto: preparamos tu solicitud de agencia."
+  }
+}

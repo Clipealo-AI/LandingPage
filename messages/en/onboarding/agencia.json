@@ -1,0 +1,169 @@
+{
+  "tipo-org": {
+    "greeting": "Hi, {nombre}. Let’s get your request ready in {total, plural, one {# take} other {# takes}}.",
+    "greetingSinNombre": "Hi. Let’s get your request ready in {total, plural, one {# take} other {# takes}}.",
+    "question": "Who do you represent?",
+    "why": "We’ll set up the right campaign template for you.",
+    "reaction": {
+      "agencia-marketing": "Great: agency template ready.",
+      "marca": "Great: brand template ready.",
+      "startup-app": "Great: app template ready.",
+      "sello-distribuidora": "Great: label template ready.",
+      "artista": "Great: artist template ready.",
+      "management-streamers": "Great: management template ready.",
+      "streamer-creador": "Great: creator template ready.",
+      "infoproductor": "Great: digital product template ready.",
+      "club-liga-evento": "Great: club and event template ready.",
+      "medio-podcast": "Great: media template ready.",
+      "universidad": "A template awaits so your lectures and talks travel as clips, crediting whoever gives them.",
+      "instituto-academia": "A template awaits so your courses reach people who don’t know you yet, as clips.",
+      "otro": "Great: general template ready."
+    }
+  },
+  "org": {
+    "question": "What’s it called and where can we find you?",
+    "why": "We check this before granting you the agency profile.",
+    "fields": {
+      "nombre": "Brand, artist, or agency name",
+      "nombreHelp": "{min} to {max} characters, as clippers will see it.",
+      "web": "Website or official social profile",
+      "webPlaceholder": "https://",
+      "webHelp": "Your website or your official profile on a social network.",
+      "rol": "Your role (optional)",
+      "rolPlaceholder": "Choose your role",
+      "pais": "Organization’s country",
+      "paisPlaceholder": "Choose a country",
+      "paisOtro": "Another country"
+    },
+    "reaction": "Your email matches the website, so the review will go faster."
+  },
+  "promocion": {
+    "question": "What are you going to promote?",
+    "why": "We’ll give you a reference CPM and the legal notices, ready to go.",
+    "fields": {
+      "canal": "What’s the channel?",
+      "canalPlaceholder": "twitch.tv/yourchannel",
+      "canalDetectado": "Detected: {plataforma} · @{handle}",
+      "sector": "Product industry",
+      "verticales": "What’s the content you want clipped about?",
+      "verticalesVariante": "What’s it about?",
+      "verticalesHelp": "Up to {max}."
+    },
+    "regulado": "Review",
+    "creador": {
+      "label": "Is it a specific creator’s content? (optional)",
+      "placeholder": "Search by name or paste the channel link",
+      "empty": "We couldn’t find them in the catalog. You can continue without it.",
+      "choose": "Choose",
+      "elegido": "Chosen creator",
+      "remove": "Remove {creador}",
+      "chosen": "Chosen: {creador}.",
+      "removed": "Removed: {creador}.",
+      "fans": "More than {umbral, number, agrupado} clippers already follow {creador}.",
+      "few": "Few clippers follow {creador} yet. We’ll help you find them."
+    },
+    "reaction": {
+      "cpm": "Reference CPM in {sector}: {min}–{max} (market).",
+      "sinCpm": "We don’t give a reference CPM in {sector}. We’ll set it with you.",
+      "regulado": "We review {sector} campaigns by hand. Only age-verified clippers can take part, and every clip carries a legal notice."
+    }
+  },
+  "alcance": {
+    "question": "Where and for whom do you want the clips?",
+    "why": "We’ll tell you how many clippers can take part.",
+    "fields": {
+      "redes": "Networks where they’ll be posted",
+      "paises": "Audience countries",
+      "idiomas": "Languages"
+    },
+    "reaction": {
+      "oferta": "More than {umbral, number} {nichos} clippers post on {redes} in {paises}.",
+      "pocos": "We’re still few in that combination. We’ll help you open it up."
+    }
+  },
+  "render": {
+    "title": "Your first campaign, almost ready",
+    "intro": "Move the budget and see how it would be split. Nothing is published until we verify your agency.",
+    "vistaPrevia": "How it will look in Explore",
+    "simulador": {
+      "title": "Simulator",
+      "presupuesto": "Budget",
+      "cpm": "CPM: pay per 1,000 views",
+      "cpmReferencia": "Industry reference range: {min}–{max} (market).",
+      "cpmSinReferencia": "No market reference in this industry: usual range.",
+      "tope": "Cap per video",
+      "topeValor": "{pct} · {tope}",
+      "minimo": "Minimum views to get paid",
+      "minimoOpcion": "{n, plural, =0 {No minimum} one {{n, number, agrupado} view} other {{n, number, agrupado} views}}",
+      "resumen": "With <b>{presupuesto}</b> at <b>{cpm}</b> per 1,000 views and a {pct} cap per video: up to <b>{vistas, number, agrupado} paid views</b> and at least <b>{videos, number} videos getting paid</b>{minimo, plural, =0 {.} other {, as long as each one passes {minimo, number, agrupado} views.}}"
+    },
+    "mercado": {
+      "title": "Market",
+      "oferta": "More than {umbral, number, agrupado} {nichos} clippers in {paises} post on {redes}.",
+      "pocos": "There are still few {nichos} clippers in {paises}. We’ll help you open up that combination.",
+      "cpm": "Reference CPM in {sector}: {min}–{max} (market).",
+      "sinCpm": "We don’t give a reference CPM in {sector}. We’ll set it with you."
+    },
+    "regulado": {
+      "title": "Regulated industry",
+      "chips": {
+        "verificados": "Age-verified only",
+        "menores": "No underage audience",
+        "aviso": "Legal notice by country"
+      },
+      "queImplica": "What this means",
+      "explicacion": "We review {sector} campaigns by hand. Only age-verified clippers can take part, we exclude accounts whose audience is mostly 13 to 17, and every clip carries its country’s legal notice."
+    },
+    "extra": {
+      "title": "Two more things (optional)",
+      "permisos": {
+        "contacto": {
+          "label": "Have someone from the team help me with the first campaign",
+          "description": "We’ll reach out once to set it up with you."
+        },
+        "novedades": {
+          "label": "News for brands by email",
+          "description": "Case studies, pricing, and new formats. One a month at most."
+        }
+      },
+      "comoLlegaste": {
+        "label": "How did you hear about Clipealo? (optional)",
+        "placeholder": "A video, an event, a recommendation…",
+        "counter": "{n} of {max}",
+        "chips": "How you found us"
+      }
+    },
+    "resumen": {
+      "title": "Your request",
+      "sinRespuesta": "Not answered",
+      "coincide": "your email matches",
+      "canal": "Channel @{handle}"
+    },
+    "note": "We review it in less than 2 business days. Meanwhile, explore Clipealo as a clipper.",
+    "submit": "Send request",
+    "sent": {
+      "title": "Request sent",
+      "description": "We’ll let you know in the app as soon as we review it.",
+      "announce": "Request sent. We’ll let you know in the app as soon as we review it."
+    },
+    "enviada": {
+      "title": "Request sent",
+      "description": "We review it in less than 2 business days. Your draft is saved, and you can publish it as soon as we verify your agency.",
+      "decision": "Decision by {fecha}."
+    },
+    "rechazada": {
+      "title": "Your request needs changes",
+      "motivo": "Declined: {motivo}",
+      "sinMotivo": "Declined",
+      "description": "Review what you told us and send it again.",
+      "submit": "Send again"
+    },
+    "aprobada": {
+      "title": "You’re an agency now",
+      "description": "Your draft is waiting for you in Create campaign.",
+      "crear": "Create campaign"
+    },
+    "explore": "Explore campaigns",
+    "panel": "Go to dashboard"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "page": {
+    "title": "Análises",
+    "description": "Cada publicação que o Clipealo faz nas suas contas entra aqui sozinha. Não é em tempo real: os números são trazidos das redes quando você clica em Atualizar."
+  },
+  "plan": {
+    "limite": "No plano {plan}, medimos seus {clips} clipes mais recentes do {red}.",
+    "fuera": "{n, plural, one {Ficou # publicação de fora} other {Ficaram # publicações de fora}}."
+  },
+  "refresh": {
+    "idle": "Atualizar",
+    "busy": "Atualizando…",
+    "wait": "Atualizar em {seconds} s",
+    "updatedAt": "Atualizado em <date></date>",
+    "toast": {
+      "title": "Métricas atualizadas",
+      "description": "{n, plural, one {+{views} visualização} other {+{views} visualizações}} desde a última atualização."
+    }
+  },
+  "filters": {
+    "period": "Período",
+    "periodOption": "{days} dias",
+    "network": "Rede",
+    "allNetworks": "Todas as redes"
+  },
+  "empty": {
+    "title": "Ainda não há clipes publicados",
+    "titleNetwork": "Ainda não há clipes publicados no {network}",
+    "description": "Publique um clipe pelo projeto dele e ele aparece aqui assim que for indexado.",
+    "cta": "Ir para meus clipes"
+  },
+  "kpi": {
+    "views": "Visualizações em {days} dias",
+    "viewsHint": "vs. os {days} dias anteriores",
+    "likes": "Curtidas",
+    "comments": "Comentários",
+    "shares": "Compartilhamentos",
+    "retention": "Retenção média",
+    "retentionDelta": "{sign}{value, number, ::.0} p.p."
+  },
+  "growth": {
+    "title": "Crescimento das visualizações",
+    "description": "Visualizações ganhas desde o início do período, por rede.",
+    "descriptionNetwork": "Visualizações ganhas desde o início do período no {network}.",
+    "lastUpdate": "{date} · última atualização",
+    "showTable": "Ver os dados em tabela",
+    "tableCaption": "Visualizações ganhas desde o início do período, por rede e dia",
+    "day": "Dia"
+  },
+  "networks": {
+    "title": "Onde são vistos",
+    "newPublications": "{count, plural, one {# publicação nova} other {# publicações novas}} em {days} dias.",
+    "noNewPublications": "Nenhuma publicação nova em {days} dias.",
+    "listLabel": "Visualizações por rede no período",
+    "shareOfTotal": "{percent} do total",
+    "summary": "Engajamento {rate} · {count, plural, one {# clipe publicado} other {# clipes publicados}}"
+  },
+  "published": {
+    "title": "Clipes publicados",
+    "description": "{count, plural, one {# publicação indexada} other {# publicações indexadas}}. Clique em uma para ver o crescimento."
+  },
+  "table": {
+    "clip": "Clipe",
+    "views": "Visualizações",
+    "inPeriod": "No período",
+    "sinceLast": "Desde a última atualização",
+    "likes": "Curtidas",
+    "shares": "Compartilhamentos",
+    "retention": "Retenção",
+    "last14Days": "Últimos 14 dias",
+    "detail": "Ver detalhes",
+    "new": "Novo"
+  },
+  "sheet": {
+    "published": "{network} · publicado {when}",
+    "description": "Números da última atualização, em {date}.",
+    "metrics": {
+      "views": "Visualizações",
+      "likes": "Curtidas",
+      "comments": "Comentários",
+      "shares": "Compartilhamentos"
+    },
+    "retention": "Retenção média",
+    "retentionLabel": "Retenção média: {percent}",
+    "retentionHelp": "Quanto do clipe as pessoas assistem, em média.",
+    "engagement": "Engajamento {rate}.",
+    "chartCaption": "Visualizações acumuladas desde a publicação",
+    "open": "Abrir no {network}",
+    "verClip": "Ver o clipe"
+  }
+}

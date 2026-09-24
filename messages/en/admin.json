@@ -1,0 +1,2221 @@
+{
+  "plans": {
+    "interno": {
+      "name": "Internal"
+    }
+  },
+  "labels": {
+    "channel": {
+      "organico": "Organic",
+      "afiliado": "Affiliate",
+      "referido": "Referral",
+      "directo": "Direct",
+      "ads": "Ads"
+    },
+    "source": {
+      "youtube": "YouTube",
+      "directo": "Direct upload",
+      "kick": "Kick",
+      "twitch": "Twitch",
+      "drive": "Google Drive",
+      "facebook": "Facebook",
+      "zoom": "Zoom"
+    },
+    "paymentMethod": {
+      "tarjeta": "Card",
+      "yape": "Yape",
+      "plin": "Plin",
+      "transferencia": "Bank transfer"
+    },
+    "paymentStatus": {
+      "aprobado": "Approved",
+      "rechazado": "Declined",
+      "pendiente": "Pending",
+      "reembolsado": "Refunded"
+    },
+    "paymentKind": {
+      "nueva": "New",
+      "renovacion": "Renewal",
+      "upgrade": "Upgrade"
+    },
+    "billing": {
+      "mensual": "Monthly",
+      "anual": "Yearly"
+    },
+    "subscriptionStatus": {
+      "activa": "Active",
+      "vencida": "Past due",
+      "cancelada": "Canceled",
+      "pendiente-pago": "Payment pending"
+    },
+    "referralStatus": {
+      "registrado": "Signed up",
+      "activado": "Activated",
+      "convertido": "Converted"
+    },
+    "failureReason": {
+      "fondos-insuficientes": "Insufficient funds",
+      "tarjeta-vencida": "Expired card",
+      "rechazada-emisor": "Declined by the issuer",
+      "yape-tiempo-agotado": "Yape timed out"
+    },
+    "churnReason": {
+      "voluntaria": "Voluntary cancellation",
+      "cobro-fallido": "Failed charge"
+    },
+    "semaforo": {
+      "rojo": "Urgent",
+      "ambar": "Follow up",
+      "verde": "On track"
+    },
+    "segment": {
+      "pql": "PQL",
+      "pagante-inactivo": "Inactive payer",
+      "dormido": "Dormant",
+      "ex-pagante": "Former payer",
+      "incoherencia": "Plan/subscription mismatch",
+      "pendiente-verificacion": "Payment to verify",
+      "cobro-fallido": "Failed charge",
+      "revisar": "Review",
+      "sin-activar": "Not activated",
+      "activo": "Active"
+    },
+    "subscriptionState": {
+      "cliente-de-pago": "Paying customer",
+      "vencida": "Past due",
+      "cancelada": "Canceled",
+      "pendiente-pago": "Payment pending",
+      "ninguna": "No subscription"
+    },
+    "accountState": {
+      "conectada": "Connected",
+      "caducada": "Expired",
+      "revocada": "Revoked"
+    }
+  },
+  "metrics": {
+    "resolvedChannel": {
+      "afiliado": "Affiliate · {codigo}",
+      "invitadoPor": "Invited by {nombre}"
+    },
+    "signal": {
+      "rechazo-previo": "prior decline",
+      "vencida-en-gracia": "past due, in grace",
+      "pago-sin-verificar": "unverified payment",
+      "ultimo-cobro-rechazado": "last charge declined",
+      "inactivo-14d": "inactive 14 d",
+      "sin-proyectos-ciclo": "no projects this cycle",
+      "primera-renovacion": "first renewal"
+    },
+    "action": {
+      "sin-accion": "No action",
+      "verificar-pago": "Verify payment",
+      "reintentar-cobro": "Retry charge",
+      "enviar-enlace-yape-plin": "Send Yape/Plin link",
+      "contactar-o-prueba": "Contact or move to Trial",
+      "recordatorio-renovacion": "Renewal reminder",
+      "recordatorio-previo": "Advance reminder",
+      "mensaje-personal": "Personal message",
+      "reprocesar": "Reprocess",
+      "revisar-cola": "Check queue",
+      "otorgar-recompensa": "Grant reward",
+      "liquidar": "Pay out",
+      "revisar": "Review",
+      "reintentar-publicacion": "Retry the post",
+      "pedir-reconexion": "Ask them to reconnect"
+    },
+    "queueTitle": {
+      "pendiente": "Payment to verify",
+      "rechazado": "Declined charge",
+      "vencida": "Lapsed, not renewed",
+      "proxima": "Renews soon",
+      "inactivo": "Inactive payer",
+      "proyecto-error": "Paying user’s project failed",
+      "proyecto-atascado": "Stuck project",
+      "recompensa-referido": "Referral reward not granted",
+      "comision-afiliado": "Affiliate commission to pay out",
+      "coste-anomalo": "Unusual AI cost",
+      "publicacion-fallida": "Clip that never went out",
+      "cuenta-caducada": "Expired account with posts due"
+    },
+    "reason": {
+      "transferenciaSinVerificar": "Bank transfer unverified for {horas} h",
+      "cobroRechazado": "{razon} · {intentos, plural, one {# attempt} other {# attempts}}",
+      "cobroRechazadoSinRazon": "Charge declined",
+      "vencidaSinRenovar": "Lapsed {dias} d ago, not renewed",
+      "primeraRenovacion": "First renewal",
+      "renuevaSemana": "Renews this week",
+      "cobroManual": "{base} · manual charge via {metodo, select, yape {Yape} plin {Plin} other {bank transfer}}",
+      "sinProyectosCiclo": "No projects in the current cycle",
+      "sinActividad14d": "No activity for more than 14 days",
+      "proyectoError": "Failed {horas} h ago with no successful project since",
+      "proyectoAtascado": "Processing for {horas} h",
+      "recompensaPendiente": "{invitado} paid {dias} d ago; {minutos} min still owed",
+      "comisionPendiente": "{codigo} · accrued {dias} d ago",
+      "costeAnomalo": "{anomalia} · {minutos} min",
+      "publicacionFallida": "{plataforma} · {motivo} · {intentos, plural, one {# attempt} other {# attempts}}",
+      "cuentaCaducada": "{plataforma} · {dias, plural, =0 {expired today} one {expired # day ago} other {expired # days ago}}, with posts scheduled"
+    },
+    "publishFailure": {
+      "cuentaCaducada": "Expired account",
+      "permisoDenegado": "No permission to publish",
+      "rechazoRed": "Turned down by the network",
+      "limiteApi": "Network rate limit",
+      "sinRed": "Network unreachable"
+    },
+    "anomaly": {
+      "metric": {
+        "coste-3x-mediana": "Cost > 3× the 30-day median",
+        "coste-minuto-2x-mediana": "Cost per minute > 2× the median"
+      },
+      "row": {
+        "coste-3x-mediana": "Cost > 3× the median",
+        "coste-minuto-2x-mediana": "Cost per minute > 2× the median"
+      },
+      "short": {
+        "coste-3x-mediana": "Cost > 3× median",
+        "coste-minuto-2x-mediana": "US$ per min > 2× median"
+      }
+    }
+  },
+  "meta": {
+    "title": "Backoffice",
+    "template": "%s — Clipealo Backoffice"
+  },
+  "nav": {
+    "home": "Clipealo, backoffice",
+    "badge": "Admin",
+    "groups": {
+      "negocio": "Business",
+      "clientes": "Customers",
+      "crecimiento": "Growth",
+      "creadores": "Creators"
+    },
+    "items": {
+      "panel": "Dashboard",
+      "ingresos": "Revenue",
+      "costes": "AI costs",
+      "planes": "Plans",
+      "usuarios": "Users",
+      "vencimientos": "Renewals",
+      "afiliados": "Affiliates",
+      "referidos": "Referrals",
+      "campanas": "Campaigns",
+      "disputas": "Disputes",
+      "formacion": "Learning",
+      "mercado": "Market",
+      "feedback": "Inbox",
+      "preguntas": "Questions"
+    },
+    "backToProduct": "Back to the product"
+  },
+  "userNav": {
+    "users": "{count, plural, one {# user} other {# users}}",
+    "publicSite": "View the public site",
+    "logout": "Log out",
+    "logoutDone": "Signed out",
+    "logoutHint": "There’s no operator session in the archetype yet: access to the panel isn’t restricted."
+  },
+  "page": {
+    "crumb": "Backoffice",
+    "mtd": "Month to date · day {dia} of {diasMes}",
+    "closed": "Closed month",
+    "updated": "Updated {fecha} · {zona}"
+  },
+  "monthPicker": {
+    "label": "Month",
+    "today": "{mes} · today"
+  },
+  "kpi": {
+    "grid": "Key metrics"
+  },
+  "mockAction": {
+    "title": "Simulated action"
+  },
+  "table": {
+    "loading": "Loading table",
+    "clear": "Clear",
+    "count": "{n} of {total}",
+    "noResults": "No results",
+    "pagination": "Pagination",
+    "page": "Page {actual} of {paginas}",
+    "previous": "Previous",
+    "next": "Next",
+    "actions": "Actions"
+  },
+  "compare": {
+    "prevClose": "vs. prior close",
+    "prevMonth": "vs. prior month",
+    "sameDays": "vs. same {dia} days last month",
+    "prev30d": "vs. prior 30 d",
+    "weekAgo": "vs. a week ago",
+    "cohortAvg": "vs. 3-cohort average",
+    "organic": "vs. organic"
+  },
+  "units": {
+    "points": "{valor} pts",
+    "pointsNbsp": "{valor} pts",
+    "clientsDelta": "{signo}{n, plural, one {# customer} other {# customers}}",
+    "months": "{n, plural, =1 {# month} other {# months}}",
+    "days": "{n} d",
+    "daysAgo": "{n} d ago",
+    "subscriptions": "{n, plural, one {# subscription} other {# subscriptions}}",
+    "renewals": "{n, plural, one {# renewal} other {# renewals}}"
+  },
+  "kpis": {
+    "mrr": {
+      "label": "Real MRR",
+      "atRisk": "At risk {monto} · {n, plural, one {# subscription} other {# subscriptions}} ({pct})",
+      "noRisk": "No MRR at risk",
+      "net": "Net this month {neto} · 3-mo avg {media}",
+      "footnote": "ARR {arr} (MRR × 12) · active subscriptions normalized, yearly ÷ 12"
+    },
+    "caja": {
+      "labelMtd": "Net cash to date",
+      "labelMonth": "Net cash this month"
+    },
+    "activos": {
+      "label": "Active users 30 d",
+      "week": "{wau} this week · stickiness {pct}",
+      "mix": "{nuevos} new · {recurrentes} returning · {prueba} on Trial",
+      "payers": "Paying users active in their cycle: {activos} of {total} ({pct}); warning below 70%"
+    },
+    "ltvNote": "n = {n} customers; estimate uses a minimum churn of {pct}"
+  },
+  "panel": {
+    "title": "Dashboard",
+    "description": "What to know every morning: recurring revenue, cash, customers, usage and today’s queues with their amounts.",
+    "caja": {
+      "lines": "Charges {cobros} · AI −{ia} · commissions −{comisiones}",
+      "forecast": "30-d forecast {prevision} · owed {pendiente}",
+      "footnote": "Charges − refunds − AI − commissions − rewards. All-time total in Revenue."
+    },
+    "clientes": {
+      "label": "Paying customers",
+      "flow": "+{nuevos} new · −{bajas} churned · +{reactivados} reactivated",
+      "churnNoData": "3-mo avg churn: no data",
+      "churn": "3-mo avg churn {pct}",
+      "churnInvoluntary": "3-mo avg churn {pct} · {involuntario} from failed charges",
+      "footnote": "NRR 3 mo {nrr} · {pagaron} have ever paid, {perdida} no longer do"
+    },
+    "hoy": {
+      "title": "Today: queues with amounts",
+      "description": "Collect, fix or reach out. Red before amber; then by amount."
+    },
+    "activacion": {
+      "title": "Activation by signup week",
+      "description": "Signup → first project → first clip → payment. Each step is a different lever.",
+      "cohort": "Week",
+      "caption": "Activation funnel for the last eight weeks",
+      "ttv": "Time to first clip (median, 30 d):",
+      "before": "before {n} d",
+      "firstFail": "first-project failure"
+    },
+    "publicaciones": {
+      "alertTitle": "Clips aren’t going out",
+      "alertDescription": "{n, plural, one {# publishing row} other {# publishing rows}} in today’s queue: posts that failed and accounts waiting to be reconnected. Figures are simulated until the API is connected.",
+      "alertLink": "See publishing health",
+      "published": "Clips that went out (month):",
+      "toPublish": "from ready clip to published",
+      "hours": "{n, number} h",
+      "count": "{n, plural, one {# post} other {# posts}}",
+      "simulated": "simulated until the API is connected"
+    },
+    "puente": {
+      "title": "MRR bridge · 6 months",
+      "description": "What comes in goes up, what goes out goes down. With ten customers, every bar has a name."
+    },
+    "cajaChart": {
+      "title": "Net cash · 6 months",
+      "description": "Net charges minus AI and commissions. Cash margin this month: <b>{margen}</b> · AI cost per minute {porMinuto}"
+    },
+    "pql": {
+      "title": "Trial users who already behave like customers",
+      "description": "{n} candidates ({previo} a week ago). Selling by hand to people already getting value is the cheapest conversion.",
+      "viewAll": "View all",
+      "caption": "Trial users with the most usage in the last 30 days",
+      "user": "User",
+      "ready30d": "Ready 30 d",
+      "min30d": "Min 30 d",
+      "ai30d": "AI 30 d",
+      "lastActivity": "Last activity",
+      "tenure": "{n} d since signup",
+      "criteria": "Criteria: Trial users with no payments and two ready projects in 14 days, at 80% of their minutes, or active this week with more than ten clips. Cost of serving Trial this month: {coste} ({pct} of AI cost)."
+    }
+  },
+  "queues": {
+    "emptyTitle": "Nothing to collect or fix today",
+    "emptyDescription": "No flagged renewals, no failed charges, no stuck projects.",
+    "urgent": "<b>{rojas}</b> urgent of {total}",
+    "atStake": "<b>{monto}</b> at stake",
+    "more": "{n} more in <link>Renewals</link>."
+  },
+  "funnel": {
+    "cohort": "Signup",
+    "signups": "Signups",
+    "project": "Project",
+    "clip": "Clip",
+    "payment": "Payment",
+    "within": "≤ {n} d",
+    "inProgress": "in progress"
+  },
+  "cohorts": {
+    "caption": "Share of each cohort that creates a project in the months after signup",
+    "cohort": "Cohort",
+    "activated": "Activated",
+    "signups": "Signups"
+  },
+  "charts": {
+    "viewTable": "View the data as a table",
+    "toDate": "{mes} · to date",
+    "toDateRow": "{mes} (to date)",
+    "month": "Month",
+    "bridge": {
+      "nuevo": "New",
+      "expansion": "Expansion",
+      "reactivacion": "Reactivation",
+      "contraccion": "Contraction",
+      "baja": "Churn",
+      "neto": "Net",
+      "mrrClose": "Closing MRR",
+      "caption": "MRR bridge by month",
+      "tooltip": "{mes} · MRR {mrr} · net {neto}"
+    },
+    "cash": {
+      "cobros": "Net charges",
+      "costes": "AI cost",
+      "comisiones": "Commissions",
+      "tooltip": "{mes} · net cash {caja}"
+    }
+  },
+  "ingresos": {
+    "title": "Revenue",
+    "description": "Recurring revenue and its bridge, what gets collected versus what we try to collect, refunds with their cause, net cash and what a customer is worth.",
+    "mrr": {
+      "moves": {
+        "nuevo": "new {monto}",
+        "expansion": "expansion {monto}",
+        "reactivacion": "reactivation {monto}",
+        "contraccion": "contraction −{monto}",
+        "baja": "churn −{monto}"
+      },
+      "noMoves": "No bridge movements this month",
+      "footnote": "ARR {arr} (MRR × 12) · at risk {riesgo} ({pct}) · {clientes} paying customers"
+    },
+    "cobro": {
+      "label": "Renewal collection rate · 3 mo",
+      "refundsNone": "Refunds 30 d: no approved charges in the window",
+      "refunds": "Refunds 30 d {pct} of the approved amount",
+      "refundsMonth": "Refunds 30 d {pct} of the approved amount · {n} this month",
+      "month": "This month {aprobados} approved · {rechazados} declined · {pendientes} pending ({monto})",
+      "footnote": "Approved ÷ (approved + declined) for renewals and upgrades over 92 days. Alert below 80% or with refunds above 5%."
+    },
+    "caja": {
+      "accumulated": "All-time total {monto}",
+      "forecast": "30-d forecast {prevision} · expected charges {cobros}",
+      "footnote": "Charges {cobros} − AI {ia} − commissions {comisiones} − rewards {recompensas} · owed {pendiente}"
+    },
+    "ltv": {
+      "label": "Realized LTV per customer",
+      "estimatedNone": "Estimated LTV: not enough observed churn",
+      "estimated": "Estimated LTV {monto}",
+      "lifetime": "avg lifetime {meses}",
+      "arppu": "ARPPU {monto}",
+      "ltvCac": "LTV:CAC {ratio}",
+      "payback": "CAC payback in {meses}",
+      "footnote": "{nota} · realized = all-time net charges ÷ {n} who have ever paid",
+      "diverge": "the estimate is double the realized value: go by the realized one"
+    },
+    "pagos": {
+      "title": "Payments",
+      "description": "Every charge attempt up to the cutoff date, with its attribution and what it carries in commissions and rewards. Pending and declined on top: those are the ones to resolve.",
+      "manual": "Manual payment",
+      "manualEffect": "Would open the manual payment form: user, plan, amount and method (Yape, Plin or bank transfer) with the receipt.",
+      "export": "Export CSV",
+      "exportEffect": "Would download the month’s payments with the applied filters as a CSV, with the same columns as the table."
+    },
+    "analisis": {
+      "title": "Recurrence and collection",
+      "description": "Where MRR comes from and where it leaks; which method actually collects and whether new customers pay again.",
+      "tabs": {
+        "label": "Revenue analysis",
+        "puente": "Bridge and cash",
+        "planes": "MRR by plan",
+        "segunda": "Second charge",
+        "cobros": "Method and type"
+      },
+      "bridge": {
+        "negativeTwice": "Negative net two months in a row",
+        "noNew": "No new MRR this month",
+        "positive": "More coming in than going out",
+        "net": "Net this month {neto} vs. 3-mo avg {media}"
+      },
+      "cash": {
+        "description": "Net charges minus AI and commissions. Cash margin this month: <b>{margen}</b> · the current month is a partial reading."
+      },
+      "plans": {
+        "caption": "MRR, customers and ARPPU by plan",
+        "plan": "Plan",
+        "customers": "Customers",
+        "customersPct": "% customers",
+        "mrr": "MRR",
+        "mrrPct": "% MRR",
+        "arppu": "ARPPU",
+        "total": "Total",
+        "arppuHint": "MRR ÷ {n} paying customers, per month",
+        "arpu": "ARPU",
+        "arpuHint": "MRR ÷ active users 30 d, excluding Internal",
+        "mix": "MRR mix",
+        "mixItem": "{pct} {plan}",
+        "list": "With {n} customers, every row has a name: the subscription list is in <link>Plans</link>."
+      },
+      "second": {
+        "title": "Customers who pay again",
+        "summary": "<b>{con}</b> of <b>{elegibles}</b> eligible have paid a renewal or an upgrade.",
+        "noEligible": "No eligible customers yet",
+        "oneOff": "Each new customer is worth a single payment",
+        "repeats": "New customers pay again",
+        "note": "Eligible: first approved payment at least one cycle ago (monthly 30 d, yearly 365 d). Below 50%, review price and value before scaling acquisition. While there are fewer than 20 eligible customers, the named list is shown.",
+        "caption": "Named list of customers eligible for a second charge",
+        "user": "User",
+        "currentPlan": "Current plan",
+        "approved": "Approved payments",
+        "second": "Second charge",
+        "repeat": "Repeats",
+        "single": "Single payment"
+      },
+      "charges": {
+        "byMethod": "By payment method",
+        "byMethodCaption": "This month’s charges by payment method",
+        "byKind": "By payment type",
+        "byKindCaption": "This month’s charges by payment type",
+        "method": "Method",
+        "kind": "Type",
+        "approved": "Approved",
+        "amount": "Amount",
+        "declined": "Declined",
+        "rate": "Collection rate",
+        "footer": "Collection rate this month, all types: <b>{mes}</b> · renewals over 3 mo: <b>{renovaciones}</b> · a method with declines and no alternative is a reason to add Yape or Plin."
+      }
+    },
+    "table": {
+      "date": "Date",
+      "time": "{hora} Lima",
+      "user": "User",
+      "plan": "Plan",
+      "kind": "Type",
+      "amount": "Amount",
+      "status": "Status",
+      "attribution": "Attribution",
+      "probableCause": "Probable cause: {causa}",
+      "cause": {
+        "pipeline": "Pipeline",
+        "duplicado": "Duplicate charge",
+        "otro": "Other"
+      },
+      "commission": "Commission {monto}",
+      "reward": "Reward {monto}",
+      "who": "{nombre} ({monto})",
+      "approve": "Approve",
+      "approveEffect": "Would mark payment {pago} from {quien} as approved and activate subscription {suscripcion}.",
+      "reject": "Decline",
+      "rejectEffect": "Would decline payment {pago} from {quien} and notify the user to try again.",
+      "retry": "Retry",
+      "retryEffect": "Would retry the charge for {quien} via {metodo} or record a manual payment via Yape or bank transfer.",
+      "refund": "Refund",
+      "refundEffect": "Would record the refund for {quien}.",
+      "refundEffectCommission": "Would record the refund for {quien}, subtract {comision} from the affiliate commission.",
+      "refundEffectReward": "Would record the refund for {quien} and mark the referral reward as not applicable.",
+      "refundEffectBoth": "Would record the refund for {quien}, subtract {comision} from the affiliate commission and mark the referral reward as not applicable.",
+      "filters": {
+        "status": "Status",
+        "allStatuses": "All statuses",
+        "pendiente": "Pending",
+        "rechazado": "Declined",
+        "aprobado": "Approved",
+        "reembolsado": "Refunded",
+        "kind": "Type",
+        "allKinds": "All types",
+        "method": "Method",
+        "allMethods": "All methods",
+        "plan": "Plan",
+        "allPlans": "All plans"
+      },
+      "caption": "Payments with status, attribution and derived commission and reward",
+      "search": "Search user or email",
+      "emptyTitle": "No payments match those filters",
+      "emptyDescription": "Try removing the status or method filter.",
+      "summary": "Approved <b>{aprobados}</b> · pending <b>{pendientes}</b> · declined <b>{rechazados}</b> · refunded <b>{reembolsados}</b>"
+    }
+  },
+  "costes": {
+    "title": "AI costs",
+    "description": "What each processed minute costs, who we’re giving it away to, what margin is left and how much money burns in errors.",
+    "kpis": {
+      "costLabelMtd": "AI cost to date",
+      "costLabelMonth": "AI cost this month",
+      "split": "Trial {prueba} · paid {pago} · Internal {interno}",
+      "trial": "Trial {monto}",
+      "trialMrr": "= {pct} of MRR",
+      "trialPerActive": "{monto} per active Trial user",
+      "costFootnote": "Amber if Trial goes above 60% of cost; red if the subsidy exceeds 20% of MRR or Internal 20% of cost. All-time {acumulado}",
+      "perMinute": "Cost per processed minute",
+      "perProject": "Per ready project {proyecto} · per clip {clip}",
+      "volume": "{minutos} min · {proyectos} projects · {clips} clips",
+      "perActiveUser": "{monto} per active user",
+      "perMinuteWarning": "Month’s cost ÷ minutes of ready projects. Warning: {monto} per minute in one source, more than double the source median",
+      "perMinuteFootnote": "Month’s cost ÷ minutes of ready projects. Warning if a source doubles the source median; red if it rises more than 30% after a model change",
+      "margin": "Gross margin after AI",
+      "marginVersions": "Cash basis {caja} · all-time {historico}",
+      "marginGross": "Gross {bruto} on {ingresos} collected · customer AI {ia}",
+      "marginFootnote": "Recurring: (MRR − paying customers’ AI) ÷ MRR. Cash: (charges − refunds − AI − commissions) ÷ charges. Red below 80%",
+      "errors": "Pipeline errors 7 d",
+      "errorsCount": "{n} of {total} projects · 24 h: {n24} of {total24}",
+      "errorsCountPct": "{n} of {total} projects · 24 h: {n24} of {total24} ({pct})",
+      "errorsUnresolved": "{sinResolver} unresolved ({dePago} paying) · {atascados} stuck > 2 h",
+      "errorsFootnote": "Cost in errors 7 d {monto}. Red if 24-h errors go above 5% or above 5% of cost",
+      "errorsFootnotePct": "Cost in errors 7 d {monto} ({pct} of cost). Red if 24-h errors go above 5% or above 5% of cost"
+    },
+    "proyectos": {
+      "title": "Projects with cost",
+      "description": "This month’s, plus any unresolved error or stuck project. Unresolved and unusual first; then by cost.",
+      "export": "Export this month’s costs",
+      "exportEffect": "Generates the {mes} cost CSV with one row per project and its breakdown by provider and model."
+    },
+    "pipeline": {
+      "title": "Pipeline health",
+      "description": "Errors at 24 h and 7 d, what’s still broken, what has been queued for more than two hours and the cost burned in errors.",
+      "cancelStuck": "Cancel stuck",
+      "cancelStuckEffect": "Cancels the {n} stuck projects and notifies their users to upload them again.",
+      "reprocess": "Reprocess unresolved",
+      "reprocessEffect": "Requeues the {n} unresolved errors, paying customers first. Estimated cost {monto}.",
+      "stats": {
+        "errors24h": "Errors 24 h",
+        "errors7d": "Errors 7 d",
+        "ofProjects": "{n} of {total} projects",
+        "errorCost": "Cost in errors 7 d",
+        "errorCostPct": "{pct} of the week’s cost",
+        "unresolved": "Unresolved errors",
+        "unresolvedPaying": "{n} from paying customers",
+        "stuck": "Stuck > 2 h",
+        "stuckHint": "Processing for more than two hours",
+        "firstFail": "First-project failure",
+        "firstFailHint": "Signups from the last 30 d"
+      },
+      "table": {
+        "caption": "Errors in the last seven days by video source",
+        "source": "Source · 7 d",
+        "projects": "Projects",
+        "errors": "Errors",
+        "rate": "Rate",
+        "empty": "No projects in the last seven days",
+        "noRate": "Fewer than five projects: no rate",
+        "disable": "Disable",
+        "disableEffect": "Temporarily disables {fuente} in the upload UI until the error rate goes down."
+      },
+      "note": "Unresolved: an error with no later ready project from the same user and source. Stuck: processing for more than 2 h. Red if 24-h errors exceed 5% or are three or more; with more than 5% of cost in errors, there are no automatic retries. A source with more than 20% errors in 7 d is disabled for uploads."
+    },
+    "anomalias": {
+      "title": "Unusual cost · 30 d",
+      "description": "Projects that triple the median cost or double the median cost per minute. Review before reprocessing.",
+      "emptyTitle": "No unusual costs in 30 days",
+      "emptyDescription": "No project triples the median cost or doubles the median cost per minute.",
+      "summary": "<b>{n}</b> projects · <b>{monto}</b> at stake",
+      "caption": "Projects with unusual AI cost in the last 30 days",
+      "project": "Project",
+      "min": "Min",
+      "cost": "Cost",
+      "perMin": "US$ per min",
+      "markReviewed": "Mark as reviewed",
+      "markReviewedEffect": "Marks the anomaly on project {proyecto} ({motivo}) as reviewed and saves the operator’s note.",
+      "note": "Median across projects with cost in the last 30 days. A repeated anomaly on the same account is a candidate for a minutes cap or a block."
+    },
+    "publicaciones": {
+      "title": "Publishing health",
+      "description": "The last mile of the pipeline: what went out to the networks this month, what failed this week and how the connected accounts are holding up.",
+      "simulated": "Simulated data until the API is connected: the schedule and the accounts live in each person’s browser, so the server has nothing to count.",
+      "reconnect": "Ask to reconnect ({n})",
+      "reconnectEffect": "Messages whoever holds one of the {n} expired accounts so they connect it again. The posts waiting on it go out as soon as they do.",
+      "stats": {
+        "published": "Published",
+        "share": "{red} {pct}",
+        "noNetworks": "No network had posts this month",
+        "publishedFootnote": "Only the posts the network confirmed.",
+        "failures": "Failed posts · 7 d",
+        "failuresOf": "{n} of {total} finished posts",
+        "success": "Success {pct}",
+        "failuresFootnote": "Warning from {aviso} failures; alert from {alerta}.",
+        "accounts": "Network accounts",
+        "accountsFootnote": "{n, plural, one {# person with at least one live account} other {# people with at least one live account}}",
+        "toPublish": "From ready clip to published",
+        "hours": "{n, number} h",
+        "clipsOut": "{pct} of this month’s clips went out",
+        "clipsOutNone": "No clip was ready this month",
+        "toPublishFootnote": "Median for the month. It’s how long the work takes to be worth anything."
+      },
+      "failures": {
+        "reason": "Reason",
+        "network": "Network",
+        "count": "Posts",
+        "captionReason": "Failed posts in the last seven days, by reason",
+        "captionNetwork": "Failed posts in the last seven days, by network",
+        "empty": "No post failed in the last seven days."
+      },
+      "note": "The window is seven days: a failure gets fixed in hours, and a whole month would hide the day an integration went down. Of each post we keep the failure code and nothing else: not the published link, not the account."
+    },
+    "fuentes": {
+      "title": "Performance by source · 30 d",
+      "description": "Volume vs. the prior 30 days, success, unit cost and conversion of people who started with each source. A source with history and zero projects is a broken connector.",
+      "caption": "Performance by video source in the last 30 days",
+      "source": "Source",
+      "projects": "Projects",
+      "prior": "(prior 30 d)",
+      "success": "Success",
+      "clipsPerProject": "Clips / proj.",
+      "users": "Users",
+      "perProject": "US$ per proj.",
+      "perMin": "US$ per min",
+      "firstSourceConv": "1st-source conv.",
+      "broken": "Broken connector",
+      "reviewConnector": "Check connector",
+      "reviewConnectorEffect": "Opens an incident for the {fuente} connector: {n} projects on record and none in 30 days.",
+      "disable": "Disable",
+      "disableEffect": "Temporarily disables {fuente} in the upload UI while its pipeline is reviewed.",
+      "note": "Success = ready ÷ finished. Red below 80% success (and five or more projects); amber if cost per minute doubles the source median. Conversion: users whose first project came from that source and have ever paid.",
+      "noteMedian": "Success = ready ÷ finished. Red below 80% success (and five or more projects); amber if cost per minute doubles the source median ({mediana}). Conversion: users whose first project came from that source and have ever paid."
+    },
+    "modelos": {
+      "title": "Provider and model",
+      "description": "This month’s accounting: transcription (AssemblyAI) and analysis (Gemini), with each model’s unit cost.",
+      "restrict": "Limit expensive model to paid",
+      "restrictEffect": "Limits the most expensive analysis model to paid plans; Trial moves to the budget model.",
+      "caption": "This month’s AI cost by provider and model",
+      "providerModel": "Provider · model",
+      "cost": "Cost",
+      "share": "Share",
+      "unit": "Unit cost",
+      "empty": "No AI cost this month",
+      "audioMinutes": "{n} audio min",
+      "tokens": "{n} tokens",
+      "projects": "{n, plural, one {# project} other {# projects}}",
+      "perMinute": "{monto} / min",
+      "perProject": "{monto} / project",
+      "total": "Month total",
+      "accumulated": "All-time {monto}",
+      "note": "Unit cost: US$ per audio minute on AssemblyAI (transcription) and US$ per project on Gemini (analysis). A jump in unit cost between months reveals a model or pricing change."
+    },
+    "topFree": {
+      "title": "Top 10 Trial accounts by cost",
+      "description": "Trial accounts with no payments that use the most AI this month.",
+      "cap": "Minutes cap on Trial",
+      "capEffect": "Sets a per-project minutes cap on the Trial plan (proposal: 20 min) and notifies affected users.",
+      "caption": "Trial users with the highest AI cost this month",
+      "user": "User",
+      "min": "Min",
+      "cost": "Cost",
+      "shareOfTrial": "Of Trial cost",
+      "empty": "No Trial users with cost this month",
+      "projects": "{canal} · {n, plural, one {# project} other {# projects}}",
+      "block": "Block",
+      "blockEffect": "Blocks {nombre}’s Trial account for high cost ({monto} this month) and sends an email.",
+      "note": "Trial users with no approved payments. Cost of serving Trial this month {monto} ({pct} of AI cost)",
+      "notePerActive": ", {monto} per active Trial user",
+      "noteSubsidy": "; subsidy {pct} of MRR"
+    },
+    "serie": {
+      "title": "Six months",
+      "description": "Total cost vs. Trial cost, and the cost per minute: the trend to watch after every model change.",
+      "chartTitle": "AI cost and Trial cost",
+      "chartDescription": "This month Trial accounts for {pct} of cost.",
+      "chartDescriptionMrr": "This month Trial accounts for {pct} of cost and {mrr} of MRR.",
+      "perMinuteTitle": "Cost per processed minute",
+      "perMinuteDescription": "Month’s cost ÷ minutes of ready projects. Red if it rises more than 30% after a model migration.",
+      "chart": {
+        "costes": "AI cost",
+        "costeFree": "Trial cost",
+        "trialShare": "Trial share of cost",
+        "perMinute": "US$ per minute",
+        "tooltipShare": "{mes} · Trial {pct} of cost",
+        "caption": "AI cost and Trial cost by month"
+      }
+    },
+    "table": {
+      "date": "Date",
+      "user": "User",
+      "plan": "Plan",
+      "source": "Source",
+      "status": "Status",
+      "min": "Min",
+      "clips": "Clips",
+      "cost": "Cost",
+      "perMin": "US$ per min",
+      "breakdown": "Breakdown",
+      "anomaly": "Anomaly",
+      "state": {
+        "listo": "Ready",
+        "procesando": "Processing",
+        "error": "Error"
+      },
+      "unresolved": "Unresolved",
+      "queued": "{n} h in queue",
+      "reprocess": "Reprocess",
+      "reprocessEffect": "Requeues project {proyecto} from {nombre} ({fuente}, {minutos} min). Estimated cost {monto}.",
+      "filters": {
+        "plan": "User’s plan",
+        "allPlans": "All plans",
+        "source": "Source",
+        "allSources": "All sources",
+        "status": "Status",
+        "all": "All",
+        "listo": "Ready",
+        "procesando": "Processing",
+        "error": "Error",
+        "incidents": "Incidents",
+        "anomalous": "Unusual only",
+        "errors": "Errors only"
+      },
+      "caption": "Projects with AI cost this month, with unresolved errors and stuck projects",
+      "search": "Search user or project",
+      "emptyTitle": "No projects match these filters",
+      "emptyDescription": "Try removing the incidents filter or switching months.",
+      "summaryCost": "Cost <b>{monto}</b>",
+      "summaryVolume": "{minutos} ready min · {clips} clips",
+      "summaryPerMinute": "{monto} per minute",
+      "summaryIncidents": "{n} with incidents"
+    }
+  },
+  "planes": {
+    "title": "Plans",
+    "description": "Which plan concentrates revenue, what it costs to serve and whether each subscriber pays for themselves. This is where the pricing table used by forecasts lives.",
+    "catalogo": {
+      "title": "The catalogue",
+      "description": "The three plans on the website and the ones created here. Changes show up on /pricing, in the app and at every gate without reloading.",
+      "resumen": "{visibles, plural, one {# on /pricing} other {# on /pricing}} · {ocultos, plural, one {# hidden} other {# hidden}} · {creados, plural, one {# created here} other {# created here}}",
+      "frontera": "Accounts per plan come from the simulated business at the close of the selected month (today, if it is the current month): each registered account sits in the plan of its current paying subscription and, without one, in Trial. The demo account lives in this browser and is not among them; plans created here have no accounts in that data until the API returns them. The figures above only know the three website plans.",
+      "crear": "Create a plan",
+      "reiniciar": "Back to factory plans",
+      "semilla": "From the website",
+      "creado": "Created here",
+      "visible": "On /pricing",
+      "oculto": "Hidden",
+      "apagado": "Off",
+      "destacado": "Featured",
+      "como": "Like {plan}",
+      "gratis": "Free",
+      "precios": "{mensual} per month · {anual} per month billed yearly",
+      "minutos": "{n, plural, one {# minute per month} other {# minutes per month}}",
+      "conexiones": "{n, plural, one {# social account at a time} other {# social accounts at a time}}",
+      "asiento": "{precio} per seat per month",
+      "cuentas": "{n, plural, one {# account} other {# accounts}} · {pago, plural, =0 {none paying} one {# paying} other {# paying}}",
+      "sinCuentas": "No accounts yet in the business data",
+      "desbloquea": "Unlocks",
+      "sinCapacidades": "Unlocks nothing paid",
+      "mostrar": "Show {nombre} on /pricing",
+      "subir": "Move {nombre} up",
+      "bajar": "Move {nombre} down",
+      "editar": "Edit {nombre}",
+      "borrar": "Delete {nombre}",
+      "ocultoNota": "Hidden plans are not on /pricing: they are assigned from the agency request or from the demo menu.",
+      "apagadoNota": "A plan that is off cannot be held or assigned: whoever had it falls back to the demo plan.",
+      "form": {
+        "newTitle": "Create a plan",
+        "editTitle": "Edit {nombre}",
+        "description": "It inherits the comparison, the card bullets and the networks of its tier; on top you choose name, prices, minutes and what it unlocks. The name stays in the language you write it in: it is content and is not translated.",
+        "semillaDescription": "For a website plan you change prices, seat price, minutes, capabilities and whether it shows. Name and tagline live in the three languages inside the product.",
+        "nombre": "Name",
+        "nombrePlaceholder": "University",
+        "lema": "Tagline",
+        "lemaPlaceholder": "So your classes travel as clips.",
+        "lemaHint": "Empty, the tier's tagline shows.",
+        "base": "Like which plan",
+        "baseHint": "Changing it resets prices, minutes and capabilities to that tier; then adjust.",
+        "monthly": "Price per month",
+        "yearly": "Price per month billed yearly",
+        "minutos": "Video minutes per month",
+        "asiento": "Price per additional seat",
+        "asientoHint": "Per month, for each team member beyond the owner. At 0, members are included and the comparison says so.",
+        "cuentas": "Connected social accounts",
+        "cuentasHint": "At a time, across all networks. Which networks it allows comes from its tier: Trial is TikTok only.",
+        "capacidades": "What it unlocks",
+        "capacidadesHint": "What the app actually charges for. Its comparison row is written from here, not from the tier.",
+        "visible": "Shows on /pricing",
+        "visibleHint": "Hidden plans are assigned by hand from the backoffice.",
+        "activo": "Can be held",
+        "activoHint": "Off, whoever had it falls back to the demo plan.",
+        "featured": "Featured card",
+        "featuredHint": "At most one: featuring this one removes the mark from the one that had it.",
+        "cancel": "Cancel",
+        "save": "Save",
+        "errors": {
+          "nombreCorto": "The name needs at least {min} characters.",
+          "nombreRepetido": "There is already a plan with that name.",
+          "precioFuera": "The price goes from {min} to {max}.",
+          "anualMayor": "The yearly price cannot be higher than the monthly one.",
+          "minutosFuera": "Minutes go from {min} to {max}.",
+          "asientoFuera": "The seat price goes from {min} to {max}.",
+          "cuentasFuera": "Accounts go from {min} to {max}."
+        }
+      },
+      "toasts": {
+        "guardado": "Plan saved",
+        "borrado": "Plan deleted",
+        "visible": "Now on /pricing",
+        "oculto": "No longer on /pricing",
+        "orden": "Order changed",
+        "reiniciado": "Factory catalogue"
+      },
+      "delete": {
+        "title": "Delete “{nombre}”?",
+        "description": "Only plans created here can be deleted, and it cannot be undone. Whoever had it falls back to the demo plan. If you only want it off the page, hide it.",
+        "cancel": "Keep it",
+        "action": "Delete the plan"
+      }
+    },
+    "kpis": {
+      "mrr": "MRR by plan",
+      "mrrLine": "{plan} · {clientes} of customers · {mrr} of MRR",
+      "mrrFootnote": "Mix: % of paying customers vs. % of MRR, plan by plan. A plan that weighs more in customers than in MRR is cheap for how much it gets used.",
+      "arppu": "ARPPU",
+      "arppuPlan": "{plan} {monto}",
+      "arpu": "ARPU {monto} per active user · {n} paying customers",
+      "arppuWarning": "Warning: all {n} paid signups in 90 d came in through {plan}, the cheapest plan.",
+      "arppuFootnote": "MRR ÷ paying customers; per plan, the plan’s MRR ÷ its customers. With a single-digit n, check the named list.",
+      "contribution": "Contribution after AI",
+      "contributionShare": "{pct} of MRR · customer AI cost {monto}",
+      "contributionCosts": "Trial −{prueba} · Internal −{interno} · {n, plural, one {# subscriber} other {# subscribers}} with margin < 70%",
+      "contributionFootnote": "MRR from paid plans − this month’s AI cost for their users. Red below 80%; amber if any subscriber drops below 70%.",
+      "flow": "Paid signups and churn · 90 d",
+      "flowCount": "+{n, plural, one {# signup} other {# signups}} · −{bajas, plural, one {# churned} other {# churned}}",
+      "flowBridge": "This month’s bridge: expansion {expansion}, contraction {contraccion}",
+      "flowFootnote": "Signups: paid subscriptions started in 90 d. Churn: customers who stopped being customers in the last three months. 3-mo avg churn {pct}."
+    },
+    "rows": {
+      "title": "One row per plan",
+      "description": "MRR descending. Trial and Internal close the table as cost rows with no MRR.",
+      "simulate": "Simulate contribution",
+      "simulateEffect": "Would open the simulator: new minute limits per plan × cost per minute from AI costs → projected contribution.",
+      "note": "Usage: median minutes over the last 30 d for the plan’s users vs. included minutes; red above 100%, amber below 20%. Low margin: subscribers with margin < 70%, meaning their AI cost this month eats more than 30% of their monthly price. 90 d: plan subscription signups / churn. MRR excludes seats: the simulation does not sell them."
+    },
+    "mix": {
+      "title": "Mix: customers vs. MRR",
+      "description": "The two bars should look alike. If a plan takes up more in customers than in MRR, the price isn’t keeping up with usage; if it takes up more in MRR, it carries the business with few names.",
+      "empty": "No paying customers on the reference date.",
+      "customers": "Customers",
+      "mrr": "MRR",
+      "legend": "{n, plural, one {# customer} other {# customers}} ({pctClientes}) · {mrr} ({pctMrr})",
+      "heavierCustomers": "Weighs more in customers than MRR",
+      "heavierMrr": "Weighs more in MRR than customers",
+      "balanced": "Balanced"
+    },
+    "definition": {
+      "title": "What counts as a paying customer",
+      "description": "An active subscription (or in grace for the {dias} days after a failed charge), a plan other than Internal and an amount above zero. It’s the only definition in the backoffice: MRR, churn and ARPPU all come from the same list.",
+      "registered": "Registered subscriptions",
+      "activeOrGrace": "Active or in grace",
+      "inGrace": "({n} in grace)",
+      "courtesy": "− Internal (courtesy)",
+      "zeroAmount": "− Zero amount",
+      "paying": "Paying customers",
+      "subscriptions": "({n} subscriptions)",
+      "labelNoteNone": "The user’s plan label doesn’t count: no users with a paid label and no current subscription.",
+      "labelNote": "The user’s plan label doesn’t count: {n, plural, one {# user} other {# users}} with a paid label and no current subscription show up as a mismatch in Users.",
+      "viewMismatches": "View mismatches"
+    },
+    "subscriptions": {
+      "title": "Subscriptions",
+      "description": "{n} subscriptions registered up to the reference date, current ones first. Each row says whether it counts as a paying customer and, if not, why.",
+      "caption": "Subscriptions registered up to the reference date, current ones first",
+      "user": "User",
+      "plan": "Plan",
+      "cycle": "Cycle",
+      "amount": "Amount",
+      "monthly": "Monthly",
+      "status": "Status",
+      "paying": "Paying customer",
+      "method": "Method",
+      "start": "Start",
+      "renewal": "Renewal",
+      "perMonth": "/mo",
+      "inGrace": "in grace",
+      "yes": "Yes",
+      "no": "No",
+      "why": {
+        "cortesia": "Courtesy",
+        "importeCero": "Zero amount",
+        "cancelada": "Canceled",
+        "fueraDeGracia": "Out of grace"
+      },
+      "canceled": "canceled {cuando}"
+    },
+    "table": {
+      "caption": "Plans: price, paying customers, MRR, AI cost and contribution this month",
+      "plan": "Plan",
+      "customers": "Customers",
+      "mrr": "MRR",
+      "arppu": "ARPPU",
+      "aiCost": "AI cost",
+      "contribution": "Contribution",
+      "usage": "Usage",
+      "usageWindow": "30 d",
+      "lowMargin": "Low margin",
+      "window90d": "90 d",
+      "churn3m": "Churn 3 mo",
+      "paidPlans": "Paid plans",
+      "paidPlansHint": "Excluding Trial and Internal",
+      "courtesyBadge": "Courtesy · no MRR",
+      "costBadge": "Cost · no MRR",
+      "perMonth": "{monto}/mo",
+      "perYear": "{monto}/yr",
+      "perSeat": "{monto}/extra seat",
+      "noPrice": "No price",
+      "unlimited": "unlimited minutes",
+      "included": "{n} min included",
+      "users": "{n} users",
+      "noUsage": "No usage",
+      "ofMinutes": " / {n} min",
+      "minutes": " min",
+      "usageAria": "Included minutes used: {pct}",
+      "editInCatalogue": "Edit {plan} in the catalogue"
+    }
+  },
+  "usuarios": {
+    "title": "Users",
+    "description": "Who activates, who converts, who comes back and who uses the product without paying. Each row brings its segment so the next action is obvious.",
+    "kpis": {
+      "activeFootnote": "Active = created a project in the window, plan ≠ Internal. Paying users active in their cycle: {activos} of {total} ({pct}); warning below 70%. Sparkline: active users per week, 12 weeks.",
+      "d7": "D7 activation",
+      "d7Cohort": "D7 activation · {mes}",
+      "d7Line": "{activados} of {registrados} signups with a clip in 7 d · with project {pct}",
+      "d7Avg": "3-cohort avg {media} · paid within 30 d {pagaron}",
+      "d7None": "No monthly cohort has reached 7 days yet",
+      "d7Footnote": "First clip ready within ≤ 7 d of signup. Warning if signup→project < 50% (upload friction); alert if project→clip < 80% (pipeline).",
+      "conv": "60-d conversion",
+      "convCohort": "60-d conversion · {mes}",
+      "convLine": "{registrados} signups · Conv30 {conv30} · {pagaron} paid within 30 d",
+      "convActivated": "Among activated {pct} (goal {meta}) · median to payment {mediana}",
+      "convNone": "No cohort has reached 60 days yet",
+      "convFootnote": "Historical reference: {pagaron} of {elegibles} eligible users have ever paid ({pct}). Conv60 goal ≥ {meta}; alert if activated conversion < 8% (price, Trial limits or payment method).",
+      "pql": "PQL users",
+      "pqlCost": "Cost of serving Trial this month {monto} ({pct} of AI cost)",
+      "pqlSegments": "{sinActivar} not activated · {exPagantes} former payers to win back",
+      "pqlFootnote": "Trial users with no payments and two ready projects in 14 d, at 80% of their minutes, or active this week with more than ten clips. The 30-d close rate is measured from the “Contacted” date."
+    },
+    "all": {
+      "title": "All users",
+      "description": "{total} up to the cutoff date · {altas} signups this month ({previas} in the comparison period) · {pagando} paying · {prueba} on Trial · {internos} internal."
+    },
+    "cohorts": {
+      "title": "Signup cohorts",
+      "description": "Each signup month, from signup to payment; how many come back the next month; and who activated but no longer shows up.",
+      "tabs": {
+        "funnel": "Monthly funnel",
+        "retention": "Retention",
+        "dormant": "Dormant and former payers"
+      },
+      "month": "Month",
+      "funnelCaption": "Activation funnel for the last six monthly cohorts",
+      "funnelNote": "Thresholds: signup→project below 50% is upload friction; project→clip below 80% is the pipeline; clip→payment below 5% is the paywall or a Trial plan that’s too generous. Cohorts marked “in progress” haven’t yet reached the 30 days of the payment step.",
+      "retention": "Share of each cohort that creates a project in the months after signup. Among activated users, M1 of the last closed cohort ({mes}): <b>{pct}</b> · {nivel}. Below 20% the product is episodic; from 35% with a flat curve there’s a core that sticks.",
+      "retentionAvg": "Share of each cohort that creates a project in the months after signup. Among activated users, M1 of the last closed cohort ({mes}): <b>{pct}</b> · {nivel} · average of the previous 3 {media}. Below 20% the product is episodic; from 35% with a flat curve there’s a core that sticks.",
+      "retentionNone": "Share of each cohort that creates a project in the months after signup. Among activated users, M1 of the last closed cohort: no closed cohorts. Below 20% the product is episodic; from 35% with a flat curve there’s a core that sticks.",
+      "overSignups": "Out of signups",
+      "overActivated": "Out of activated in 7 d",
+      "level": {
+        "episodico": "episodic product",
+        "medio": "intermediate retention",
+        "nucleo": "a core that sticks"
+      }
+    },
+    "countries": {
+      "title": "By country",
+      "description": "Where users are and where revenue is. Each user’s country is set at signup: it filters the table and travels with them to every view.",
+      "caption": "Users, signups this month, active users, paying customers, MRR and revenue by country",
+      "country": "Country",
+      "users": "Users",
+      "usersTitle": "Total users and % of all users",
+      "signups": "Signups",
+      "signupsTitle": "Signups this month",
+      "active": "Active 30 d",
+      "activeTitle": "With a project in the last 30 days",
+      "paying": "Paying",
+      "payingTitle": "Paying customers and conversion over users",
+      "mrr": "MRR",
+      "revenue": "Revenue"
+    },
+    "channels": {
+      "title": "By acquisition channel",
+      "description": "Cumulative up to the cutoff date. Organic is the benchmark: a channel that activates less than half as well brings signups that only consume AI.",
+      "caption": "Users, signups this month, activation, payers, conversion and revenue by acquisition channel",
+      "channel": "Channel",
+      "users": "Users",
+      "usersTitle": "Total users and signups this month",
+      "activated": "Activ. D7",
+      "activatedTitle": "Activated in 7 days and % of users",
+      "paid": "Paid",
+      "paidTitle": "With an approved payment and % of users",
+      "revenue": "Revenue",
+      "note": "“Users” is cumulative, with this month’s signups alongside; “Activ. D7” and “Paid” show their % of users. “Paid” counts anyone with an approved payment, not just today’s paying customers; “Revenue” is the sum of those payments.",
+      "weak": "Activates less than half as much as organic"
+    },
+    "mismatch": {
+      "title": "{n, plural, one {# user} other {# users}} with a paid plan label and no paying subscription",
+      "description": "The label rules the product and the subscription rules revenue: until they match, someone is using a plan they don’t pay for. They’re tagged with the “Plan/subscription mismatch” segment.",
+      "viewList": "View the list",
+      "reconcile": "Reconcile labels",
+      "reconcileEffect": "Moves the {n} users with no paying subscription to Trial, keeping their projects, and logs the change."
+    },
+    "table": {
+      "filters": {
+        "segment": "Segment",
+        "anySegment": "Any segment",
+        "plan": "Plan",
+        "anyPlan": "Any plan",
+        "subscription": "Subscription",
+        "anySubscription": "Any subscription",
+        "country": "Country",
+        "anyCountry": "Any country",
+        "channel": "Channel",
+        "anyChannel": "Any channel",
+        "cohort": "Signup cohort",
+        "anyCohort": "Any cohort",
+        "activity": "Activity",
+        "anyActivity": "Any activity",
+        "active": "Project in last {n} d",
+        "organisation": "Organisation type",
+        "anyOrganisation": "Any organisation"
+      },
+      "user": "User",
+      "country": "Country",
+      "plan": "Plan",
+      "subscription": "Subscription",
+      "channel": "Channel",
+      "signup": "Signup",
+      "activity": "Activity",
+      "projects30d": "Proj. 30 d",
+      "ready": "Ready",
+      "min30d": "Min 30 d",
+      "ai30d": "AI 30 d",
+      "payments": "Payments",
+      "segment": "Segment",
+      "paymentsCell": "{n} · {monto}",
+      "toVerify": "{n} to verify",
+      "declined": "{n, plural, one {# declined} other {# declined}}",
+      "contacted": "Contacted",
+      "contactedEffect": "Marks {nombre} as contacted today and saves the note; it’s used to measure the PQL close rate and dormant-user reactivation.",
+      "changePlan": "Change plan",
+      "changePlanEffect": "Opens the plan change for {nombre} (currently {plan}): target plan, courtesy or move to Trial keeping projects, with a reason.",
+      "caption": "Users registered up to the snapshot date, with their segment, usage and payments",
+      "search": "Search by name, email or country",
+      "emptyTitle": "No users match those filters",
+      "emptyDescription": "Try removing the segment or widening the activity window.",
+      "summary": "{dePago} paying · {pql} PQL · {inactivos, plural, one {# inactive payer} other {# inactive payers}} · {minutos} min in 30 d"
+    },
+    "dormant": {
+      "summary": "<b>{n}</b> dormant · <b>{exPagantes}</b> {exPagantes, plural, one {former payer} other {former payers}} · <b>{activados}</b> activated on Trial. The {listados} with the most all-time minutes are listed; the rest, under the <ex>“Former payer”</ex> and <dormido>“Dormant”</dormido> segments.",
+      "caption": "Dormant users and former payers with the most processed minutes",
+      "user": "User",
+      "type": "Type",
+      "paid": "Paid",
+      "minutes": "Minutes",
+      "lastActivity": "Last activity",
+      "projects": "{n, plural, one {# project} other {# projects}}",
+      "formerPayer": "Former payer",
+      "activatedOnTrial": "Activated on Trial",
+      "contact": "Contact",
+      "contactEffect": "Sends a reactivation message to {nombre} and saves the date to measure whether they create a project in 30 d.",
+      "contactEffectOffer": "Sends a reactivation message to {nombre} with a come-back offer and saves the date to measure whether they create a project in 30 d.",
+      "empty": "Nobody who activated before has been away for 30 to 180 days.",
+      "note": "Reactivation (contacted users who create a project within 30 d) is measured from the contact date, so the button records it."
+    }
+  },
+  "vencimientos": {
+    "title": "Renewals and charges",
+    "description": "Pending verification, unrecovered declines, lapsed without renewal, upcoming flagged renewals and inactive payers: each row with its amount, age and reason, so no renewal slips away.",
+    "kpis": {
+      "atRisk": "MRR at risk",
+      "atRiskShare": "{suscripciones} · {pct} of MRR ({mrr})",
+      "renew7d": "Renewing in 7 d: {monto} · {suscripciones}",
+      "noRenew7d": "None of them renew in the next 7 d",
+      "inactive": "Inactive payers: {rojos} urgent ({mrrRojo}) · {ambar} to follow up ({mrrAmbar})",
+      "noInactive": "No inactive payers",
+      "atRiskFootnote": "Monthly price of paying customers with any signal: prior decline, past due in grace, last charge declined, inactive 14 d or no projects this cycle. Alert above {pct}.",
+      "renewals": "Renewals in 30 d",
+      "renewalsFlagged": "{renovaciones} · {n} flagged",
+      "renewals7d": "In 7 d: {monto} · {renovaciones}, {n} flagged",
+      "expected": "Expected charges 30 d {monto}",
+      "expectedRate": "Expected charges 30 d {monto} · collection rate {pct}",
+      "renewalsFootnote": "Full cycle amount for paying customers renewing in the window. Expected charges = amount × historical renewal collection rate. Red when flagged within 7 d, amber within 30 d.",
+      "declined": "Unrecovered declines",
+      "declinedQueue": "{suscripciones} in the recovery queue",
+      "recoveryNone": "Recovery 30 d: no declines in the window",
+      "recovery": "Recovery 30 d {pct}",
+      "declinedFootnote": "Last charge declined with no later approval. Recovery = subscriptions with a decline in 30 d that were charged again. Alert below {pct}: check the gateway or add Yape/Plin.",
+      "lapsed": "Lapsed and pending payments",
+      "bucket": "{desde}–{hasta} d: {n}",
+      "bucketAmount": "{desde}–{hasta} d: {n} ({monto})",
+      "pending": "Payments to verify: {n} · {monto} · max {horas} h waiting",
+      "noPending": "No payments pending verification",
+      "lapsedFootnote": "Lapsed and declined by days since the failed renewal: amber from 3 d, red from 7 d. Pending payments: amber > {aviso} h, red > {alerta} h."
+    },
+    "definition": "Paying customer = active subscription (or in the 7-day grace period after a failed charge), plan other than Internal and amount above zero: today <b>{n}</b>. Another <link>{incoherencias} users</link> carry a paid plan label with no current subscription and don’t count as customers or MRR.",
+    "queues": {
+      "title": "Collection and retention queues",
+      "description": "One row per subscription in a queue. Red first, then by days left; filters live in the URL.",
+      "reminders": "Reminders ({n})",
+      "remindersEffect": "Sends an advance reminder with a payment link to the {n} flagged renewals in the next 30 days",
+      "retry": "Retry declined ({n})",
+      "retryEffect": "Schedules automatic retries (day 1, 3 and 7) for {n, plural, one {# declined charge} other {# declined charges}} totaling {monto}"
+    },
+    "churn": {
+      "title": "This month’s churn",
+      "description": "Paying customers at the start of the month who no longer are. Voluntary if they canceled; involuntary if the charge failed and the 7-day grace period passed.",
+      "stats": {
+        "churn": "Churn this month",
+        "churnValue": "{bajas} of {inicio}",
+        "churnNone": "no customers at the start of the month",
+        "churnPct": "{pct} of customers at the start of the month",
+        "churn3m": "3-mo avg churn",
+        "churn3mHint": "alert above {pct} per month",
+        "split": "Voluntary · involuntary",
+        "splitNone": "no churn to classify",
+        "splitCharge": "{pct} from failed charges: the lever is collection",
+        "splitProduct": "{pct} from failed charges: the lever is product or price",
+        "lost": "Lost MRR",
+        "lostHint": "normalized monthly price of churned customers"
+      },
+      "emptyTitle": "No churn this month",
+      "emptyDescription": "No paying customer at the start of the month has stopped being one.",
+      "caption": "Paying customers who churned this month",
+      "user": "User",
+      "plan": "Plan",
+      "reason": "Reason",
+      "mrr": "MRR",
+      "voluntary": "Voluntary",
+      "involuntary": "Involuntary",
+      "reasonsTitle": "Reasons combined",
+      "reasonsDescription": "Sorted by lost MRR. The decline reason comes from the payment gateway.",
+      "reasonCount": "{tipo} · {n, plural, one {# cancellation} other {# cancellations}}"
+    },
+    "table": {
+      "queueFilter": {
+        "pendiente": "Pending",
+        "rechazado": "Declined",
+        "vencida": "Lapsed",
+        "proxima": "Upcoming",
+        "inactivo": "Inactive"
+      },
+      "filters": {
+        "queue": "Queue",
+        "allQueues": "All",
+        "priority": "Priority",
+        "anyPriority": "Any priority",
+        "plan": "Plan",
+        "allPlans": "All plans",
+        "method": "Payment method",
+        "allMethods": "All methods"
+      },
+      "priority": "Priority",
+      "queue": "Queue",
+      "user": "User",
+      "plan": "Plan",
+      "amount": "Amount",
+      "amountSub": "{billing, select, anual {yearly} other {monthly}} · {mrr} per month",
+      "renewal": "Renewal",
+      "today": "today",
+      "inDays": "in {n} d",
+      "lapsedAgo": "lapsed {n} d ago",
+      "signals": "Signals",
+      "lastPayment": "Last payment",
+      "failedAttempts": "{n, plural, one {# failed attempt} other {# failed attempts}} in 30 d",
+      "noPayments": "No payments",
+      "activity": "Activity",
+      "cycleProjects": "{n, plural, one {# project} other {# projects}} this cycle",
+      "action": "Action",
+      "actionEffect": "{accion} · {nombre} ({plan}, {monto} via {metodo})",
+      "caption": "Subscriptions in a collection or retention queue",
+      "emptyTitle": "Nothing in this queue",
+      "emptyDescription": "No subscription matches the filter. Try another queue or clear the filters.",
+      "summary": "<b>{rojos}</b> urgent · {importe} in cycle amounts · {mrr} of MRR"
+    }
+  },
+  "afiliados": {
+    "title": "Affiliates",
+    "description": "Who brings creators who activate and pay and who only brings signups that consume AI; how much each one is owed and since when; and how much a customer is worth paying for.",
+    "payout": "Pay out pending · {monto}",
+    "payoutEffect": "Would pay out {monto} to {n, plural, one {# affiliate} other {# affiliates}} and record the commission as paid today.",
+    "kpis": {
+      "pending": "Commission pending payout",
+      "pendingNone": "No affiliates with pending commission",
+      "pendingOldest": "{n, plural, one {# affiliate} other {# affiliates}} · oldest {dias} d ago ({codigo})",
+      "accrued": "Accrued {devengada} · paid {pagada}",
+      "pendingFootnote": "Accrued − paid per affiliate; age counts from the oldest approved payment not yet covered. Red above 30 d.",
+      "cac": "Affiliate CAC · 90 d",
+      "ltvCacNone": "LTV:CAC no data: no attributed payers in 90 d",
+      "ltvCac": "LTV:CAC {ratio} with realized LTV {ltv}",
+      "blended": "Blended {blended} · LTV:CAC {ratio} · payback {payback}",
+      "paybackMonths": "{n} mo",
+      "cacFootnote": "Commissions accrued in 90 d ÷ attributed payers with a first payment in the window. {nota}. Red if LTV:CAC < 1; warning if payback goes past 6 months.",
+      "payers": "Payers attributed to affiliates",
+      "conversion": "Conversion {conv} of {altas} signups · organic {organico}",
+      "activation": "D7 activation {act} · organic {organico} · {altas30} signups in 30 d",
+      "payersFootnote": "Users brought in by a code with at least one approved payment; conversion = payers ÷ channel signups, cumulative. Warning if activation drops below half of organic.",
+      "revenue": "Attributed revenue 30 d · net of commission",
+      "gross": "Gross {bruto} · commission −{comision}",
+      "accumulated": "All-time {monto} · ROI {roi} (revenue ÷ accrued commission)",
+      "revenueFootnote": "Approved payments from attributed users in the last 30 d, minus each affiliate’s commission %. The all-time total subtracts refunds."
+    },
+    "codes": {
+      "title": "Performance and commissions by code",
+      "description": "Pending payout first; then the lowest ROI. Commission above 50% of revenue or activation below half of organic: renegotiate or pause. Ten signups with no payer in 60 d: review."
+    },
+    "detail": {
+      "title": "Users attributed per affiliate",
+      "description": "Each signup with its activation, its payments and what it has cost to serve. Codes with alerts open by default.",
+      "meta": "{canal} · {pct} commission · since {fecha}",
+      "signups": "Signups",
+      "activated": "Activated D7",
+      "payers": "Payers",
+      "revenue": "Revenue",
+      "pending": "Pending",
+      "commission": "Accrued commission <b>{devengada}</b> · paid {pagada} · pending <b>{pendiente}</b> · AI for non-paying signups {ia}",
+      "commissionAge": "Accrued commission <b>{devengada}</b> · paid {pagada} · pending <b>{pendiente}</b> for {dias} d · AI for non-paying signups {ia}",
+      "none": "This code hasn’t brought in any signups yet.",
+      "caption": "Users attributed to {nombre}",
+      "user": "User",
+      "signup": "Signup",
+      "plan": "Plan",
+      "activatedD7": "Activated D7",
+      "projects": "Projects",
+      "paid": "Paid",
+      "commissionCol": "Commission",
+      "aiCost": "AI cost",
+      "method": "Method",
+      "yes": "Yes",
+      "no": "No",
+      "footer": "{n, plural, one {# signup} other {# signups}} · {pagantes} with a payment · {sinProyecto} with no projects. Each user’s commission is their paid amount × {pct}."
+    },
+    "channels": {
+      "title": "Affiliate channel vs. the rest",
+      "description": "Activation and conversion for each acquisition channel, cumulative to date. Organic is the benchmark.",
+      "caption": "Activation and conversion by acquisition channel",
+      "channel": "Channel",
+      "users": "Users",
+      "signupsMonth": "Signups this month",
+      "activated": "Activated D7",
+      "payers": "Payers",
+      "revenue": "Revenue",
+      "benchmark": "benchmark"
+    },
+    "status": {
+      "activo": "Active",
+      "pausado": "Paused"
+    },
+    "alert": {
+      "liquidar": {
+        "label": "Pay out",
+        "title": "Commission pending for more than 30 days"
+      },
+      "calidad": {
+        "label": "Quality",
+        "title": "Commission exceeds 50% of attributed revenue"
+      },
+      "fraude": {
+        "label": "Fraud",
+        "title": "Ten or more signups and no payers in 60 days"
+      }
+    },
+    "actions": {
+      "payout": "Pay out",
+      "payoutEffect": "Would pay out {monto} to {nombre} ({codigo}) and record the commission as paid today.",
+      "pause": "Pause",
+      "pauseAria": "Pause {codigo}",
+      "pauseTitle": "Pause the code",
+      "pauseEffect": "Code {codigo} would stop attributing new signups; commissions already accrued are kept.",
+      "resume": "Reactivate",
+      "resumeAria": "Reactivate {codigo}",
+      "resumeTitle": "Reactivate the code",
+      "resumeEffect": "Code {codigo} would attribute signups again from today.",
+      "rate": "Change %",
+      "rateAria": "Change the commission % for {codigo}",
+      "rateTitle": "Change the commission %",
+      "rateEffect": "Would open the form to set a new commission % for {codigo} (currently {pct}) with an effective date; earlier payments keep the rate in force."
+    },
+    "table": {
+      "filters": {
+        "status": "Status",
+        "all": "All",
+        "active": "Active",
+        "paused": "Paused",
+        "pending": "Pending commission",
+        "withAndWithout": "With or without pending",
+        "withPending": "With pending",
+        "alert": "Alert",
+        "anyAlert": "Any alert",
+        "withAlert": "With alert",
+        "noAlert": "No alert"
+      },
+      "affiliate": "Affiliate",
+      "commissionPct": "commission {pct}",
+      "signups": "Signups",
+      "signupsWindow": "30 d / total",
+      "activated": "Activated D7",
+      "ofSignups": "{n} of {total}",
+      "payers": "Payers",
+      "revenue": "Revenue",
+      "revenue30d": "30 d {monto}",
+      "accrued": "Accrued",
+      "paid": "paid {monto}",
+      "pending": "Pending",
+      "upToDate": "up to date",
+      "roi": "ROI",
+      "noRevenue": "no revenue",
+      "ratio": "ratio {pct}",
+      "aiNonPaying": "AI non-payers",
+      "alert": "Alert",
+      "caption": "Affiliates with their funnel, attributed revenue and commissions",
+      "search": "Search by name, code or channel",
+      "emptyTitle": "No affiliates match that filter",
+      "emptyDescription": "Try removing the status or the alert.",
+      "summary": "Pending <b>{pendiente}</b> · accrued {devengada} · attributed revenue {ingreso} · AI for non-paying signups {ia}"
+    }
+  },
+  "referidos": {
+    "title": "Referrals",
+    "description": "Whether the program pays off (invitees activate and pay at least as well as organic, and the reward costs less than they bring in) and that no referrer is left without their minutes.",
+    "editReward": "Edit reward",
+    "editRewardEffect": "Opens the reward editor: minutes or discount, value and effective date.",
+    "pauseProgram": "Pause program",
+    "pauseProgramEffect": "Pauses the program: stops generating invite links. Rewards already pending are kept.",
+    "kpis": {
+      "pending": "Pending rewards",
+      "pendingValue": "{monto} · {minutos} min to grant",
+      "pendingNone": "No referrer is waiting for their minutes",
+      "oldest": "Oldest {dias} d",
+      "oldestLate": "Oldest {dias} d · past 48 h",
+      "granted": "{monto} granted in total",
+      "pendingFootnote": "An invitee who already converted whose referrer hasn’t received their minutes. Red after 48 h from the first payment.",
+      "activation": "Invitee activation · 90 d",
+      "activationOrganic": "Organic {pct} · first clip ready in ≤ 7 d",
+      "invitees": "{total} invitees in 90 d · {atascados} stuck, not activated",
+      "activationFootnote": "Invitees with a first clip within 7 days ÷ invitees in the window. Warning if they activate less than organic.",
+      "conversion": "Invitee conversion · 90 d",
+      "conversionOrganic": "Organic {pct} · payment in ≤ 60 d",
+      "converted": "{convertidos} converted in total · {activados} activated without paying",
+      "conversionFootnote": "Invitees with an approved payment ÷ invitees in the window. Warning if they convert less than organic.",
+      "value": "Program value · 90 d",
+      "valueRatio": "{n}×",
+      "inviteeRevenue": "Invitee revenue {monto}",
+      "cac": "Referral CAC {monto} per conversion",
+      "valueFootnote": "Invitee revenue ÷ cost of granted rewards. A gifted minute is worth {monto}. Red below 1×."
+    },
+    "all": {
+      "title": "All referrals",
+      "description": "One row per invitee. Pending rewards go first, by age; then signed-up invitees who haven’t activated in more than 14 days.",
+      "grantEffect": "Grants {minutos} min to {n, plural, one {# referrer} other {# referrers}} and notifies them by email.",
+      "grant": "{n, plural, one {Grant the pending one} other {Grant the # pending}}"
+    },
+    "referrers": {
+      "title": "Referrers",
+      "description": "Who brings invitees who activate and pay. Sorted by conversions; revenue is their invitees’ all-time total.",
+      "emptyTitle": "Nobody has invited anyone yet",
+      "emptyDescription": "When a user shares their link and someone signs up, it will show up here.",
+      "caption": "Referrers with the most converted invitees",
+      "referrer": "Referrer",
+      "invitees": "Invitees",
+      "activated": "Activated",
+      "converted": "Converted",
+      "revenue": "Revenue"
+    },
+    "program": {
+      "title": "Program health",
+      "description": "How many people invite out of active users, what share of signups it brings and what it costs in minutes.",
+      "inviteRate": "Invite rate",
+      "inviteRateDetail": "{n, plural, one {# referrer} other {# referrers}} · {mau} active in 30 d",
+      "share": "Share of signups",
+      "shareDetail": "{n} of the 90-d signups come from invitations",
+      "granted": "Rewards granted",
+      "grantedDetail": "{minutos} min gifted in total",
+      "toGrant": "To grant",
+      "nothingPending": "Nothing pending",
+      "toGrantDetail": "{minutos} min · {n, plural, one {# referrer} other {# referrers}}",
+      "steps": {
+        "registered": "Signed-up invitees",
+        "registeredNote": "{n} stuck (> 14 d without activating)",
+        "activated": "Activated",
+        "activatedNote": "with at least one project",
+        "converted": "Converted",
+        "convertedNote": "with an approved payment"
+      },
+      "caption": "Cumulative invitee funnel: signed up, activated and converted",
+      "funnel": "Invitee funnel",
+      "n": "n",
+      "ofInvitees": "of invitees",
+      "lowRate": "Fewer than {pct} of active users invite: move the invite prompt to the first ready clip. A gifted minute costs what it’s worth on Creator (US$29 ÷ 600 min).",
+      "okRate": "More than {pct} of active users invite; the invite prompt is being seen. A gifted minute costs what it’s worth on Creator (US$29 ÷ 600 min)."
+    },
+    "table": {
+      "rewardState": {
+        "pendiente": "Pending",
+        "otorgada": "Granted",
+        "no-procede": "Not applicable"
+      },
+      "filters": {
+        "status": "Invitee status",
+        "anyStatus": "Any status",
+        "reward": "Reward status",
+        "anyReward": "Reward: all",
+        "stuck": "Stuck",
+        "all": "All"
+      },
+      "referrer": "Referrer",
+      "invitee": "Invitee",
+      "signup": "Signup",
+      "status": "Status",
+      "notActivated": "{n} d not activated",
+      "milestones": "Milestones",
+      "activatedOn": "Activated <date>{fecha}</date>",
+      "convertedOn": "Converted <date>{fecha}</date>",
+      "reward": "Reward",
+      "rewardDetail": "{minutos} min · {monto}",
+      "age": "Age",
+      "revenue": "Revenue",
+      "grant": "Grant",
+      "grantEffect": "Grants {minutos} min to {nombre} and notifies them by email.",
+      "notApplicable": "Not applicable",
+      "notApplicableEffect": "Marks {nombre}’s reward as not applicable (refund or fraud) and records the reason.",
+      "remind": "Remind",
+      "remindEffect": "Sends {nombre} a reminder to upload their first video.",
+      "caption": "Referrals: referrer, invitee, status, reward and revenue",
+      "search": "Search by referrer, invitee or email",
+      "emptyTitle": "No referrals match those filters",
+      "emptyDescription": "Try removing a filter or searching by name or email.",
+      "summary": "{convertidos, plural, one {# converted} other {# converted}} · {pendientes, plural, one {# pending reward} other {# pending rewards}} ({valor}) · invitee revenue <b>{ingreso}</b>"
+    }
+  },
+  "campanas": {
+    "title": "Campaigns",
+    "description": "Grant the agency profile, pay out clipper withdrawals and moderate campaigns.",
+    "create": "Create campaign",
+    "kpis": {
+      "team": "Team to-dos",
+      "withdrawals": "{n, plural, one {# withdrawal} other {# withdrawals}} to pay · {monto}",
+      "agencyRequest": "1 agency request",
+      "noAgencyRequests": "No agency requests",
+      "teamFootnote": "Agency requests are reviewed within 24–48 h; withdrawals, the same day.",
+      "active": "Active campaigns",
+      "activeMix": "{privadas} private · {destacadas} featured",
+      "budget": "Budget at stake",
+      "budgetHint": "What’s left to pay out in active campaigns",
+      "paid": "Paid to creators",
+      "approvedClips": "{n} approved clips"
+    },
+    "agency": {
+      "title": "Agency profile",
+      "description": "Agencies publish campaigns without review. Before granting the profile you look at the organisation, schedule an interview and build them a plan.",
+      "request": "{email} · requests the agency profile",
+      "grant": "Grant",
+      "granted": "Agency profile granted",
+      "grantedDescription": "{nombre} now publishes without review, on the {plan} plan.",
+      "reject": "Decline",
+      "rejected": "Agency request declined",
+      "none": "No pending requests.",
+      "type": "{tipo} · requests the agency profile",
+      "who": "{nombre} ({rol})",
+      "interview": "Schedule interview",
+      "interviewed": "Interview scheduled for {fecha}",
+      "interviewNote": "Note: {nota}",
+      "interviewDialog": {
+        "title": "Schedule an interview",
+        "description": "The agency sees it on their request screen. It’s what happens before granting the profile: see who they are and build them a plan.",
+        "when": "When",
+        "note": "Note for the agency",
+        "notePlaceholder": "20-minute video call. Bring an example of the content you want clipped.",
+        "cancel": "Cancel",
+        "send": "Schedule",
+        "sent": "Interview scheduled",
+        "sentDescription": "{nombre} will see it on their request.",
+        "errors": {
+          "fecha": "Pick a date."
+        }
+      },
+      "grantWith": "Grant with plan",
+      "plan": "Plan assigned",
+      "planHint": "Comes out of the interview. It can be changed later from Plans.",
+      "hiddenPlan": "hidden",
+      "rejectDialog": {
+        "title": "Reject the request",
+        "description": "The reason is shown to them: nobody is left wondering why.",
+        "reason": "Reason",
+        "cancel": "Cancel",
+        "send": "Reject"
+      }
+    },
+    "withdrawals": {
+      "title": "Withdrawals to pay",
+      "description": "What creators ask to withdraw from their wallet.",
+      "none": "No withdrawals to pay.",
+      "creator": "Creator",
+      "method": "Method",
+      "amount": "Amount",
+      "requested": "Requested",
+      "markPaid": "Mark as paid",
+      "paid": "Withdrawal paid",
+      "paidDescription": "{monto} to {nombre} via {metodo}.",
+      "rejectAria": "Decline {nombre}’s withdrawal",
+      "rejectReason": "The payout details are not valid.",
+      "rejected": "Withdrawal declined",
+      "rejectedDescription": "{nombre}: the amount goes back to their wallet."
+    },
+    "all": {
+      "title": "All campaigns",
+      "description": "Newest to oldest.",
+      "campaign": "Campaign",
+      "createdBy": "Created by",
+      "status": "Status",
+      "budget": "Budget",
+      "spent": "Spent",
+      "spentAria": "Spent {pct}",
+      "cpmCap": "CPM · cap",
+      "clips": "Clips",
+      "ends": "Ends",
+      "featured": "Featured",
+      "private": "Private · {codigo}",
+      "actionsFor": "Actions for {titulo}",
+      "view": "View campaign",
+      "unfeatured": "No longer featured",
+      "featuredDone": "Campaign featured",
+      "unfeature": "Remove from Featured",
+      "feature": "Feature in Explore",
+      "pause": "Pause",
+      "paused": "Campaign paused",
+      "resume": "Resume",
+      "resumed": "Campaign resumed",
+      "finish": "End campaign",
+      "finished": "Campaign completed"
+    }
+  },
+  "disputas": {
+    "title": "Disputes",
+    "description": "When the clipper and whoever pays cannot agree, the admin decides. The ruling unblocks the commitment and is explained to both of them.",
+    "kpis": {
+      "open": "To arbitrate",
+      "openBy": "{cliperos} from the clipper · {agencias} from whoever pays",
+      "openHint": "An open dispute keeps its campaign from closing.",
+      "money": "Money at stake",
+      "moneyHint": "The per-video cap of every campaign in dispute.",
+      "oldest": "Waiting longest",
+      "oldestHint": "Since it was opened, with no ruling.",
+      "resolved": "Resolved",
+      "resolvedPaid": "{n, plural, one {# ended in payment} other {# ended in payment}}",
+      "resolvedHint": "Rulings issued so far.",
+      "days": "{n, plural, =0 {today} one {# day} other {# days}}"
+    },
+    "queue": {
+      "title": "Queue",
+      "description": "Whoever has waited longest comes first.",
+      "empty": "No disputes are waiting.",
+      "age": "Opened",
+      "parties": "Both sides",
+      "campaign": "Campaign",
+      "money": "At stake",
+      "reason": "Reason",
+      "status": "Status",
+      "ago": "{n, plural, =0 {today} one {# day ago} other {# days ago}}",
+      "versus": "against {agencia}",
+      "claims": "{parte, select, clipero {Claimed by the clipper} agencia {Claimed by whoever pays} other {Claim}}",
+      "missing": "Campaign not in the catalogue",
+      "arbitrate": "Arbitrate",
+      "arbitrateAria": "Arbitrate the dispute of {clipero}"
+    },
+    "history": {
+      "title": "Resolved",
+      "description": "What was decided and with what explanation.",
+      "empty": "No ruling has been issued yet.",
+      "resolved": "Resolved",
+      "award": "Ruling",
+      "note": "Note",
+      "noNote": "No note"
+    },
+    "role": {
+      "clipero": "Clipper",
+      "agencia": "Whoever pays"
+    },
+    "status": {
+      "abierta": "Open",
+      "en-revision": "Under review",
+      "resuelta": "Resolved"
+    },
+    "reason": {
+      "no-entrego": {
+        "label": "Did not deliver",
+        "description": "The deadline passed and the clip never arrived."
+      },
+      "no-revisa": {
+        "label": "No review",
+        "description": "The clip is delivered and nobody approves or rejects it."
+      },
+      "rechazo-injusto": {
+        "label": "Unfair rejection",
+        "description": "The application or the clip was rejected with no reason."
+      },
+      "no-paga": {
+        "label": "Not paid",
+        "description": "The clip is approved and the money has not been settled."
+      },
+      "contenido": {
+        "label": "Content",
+        "description": "The clip does not meet what the campaign asked for."
+      }
+    },
+    "award": {
+      "liberar-plaza": {
+        "label": "Free the slot",
+        "description": "The commitment expires and the slot goes back to the campaign. Nobody gets paid."
+      },
+      "dar-prorroga": {
+        "label": "Grant an extension",
+        "description": "The commitment goes back to accepted with a new deadline starting today."
+      },
+      "pagar-clipero": {
+        "label": "Pay the clipper",
+        "description": "The commitment counts as met and the clip enters the campaign settlement."
+      },
+      "sin-pago": {
+        "label": "No payment",
+        "description": "The commitment closes as rejected: this clip is not paid."
+      }
+    },
+    "detail": {
+      "title": "Dispute · {campana}",
+      "opened": "Opened on {fecha} · {motivo}",
+      "money": "At stake: {monto}, the per-video cap of this campaign.",
+      "versions": "Both versions",
+      "silent": "Has not written their version.",
+      "noDetail": "Filed the claim without writing anything else.",
+      "requestNote": "What they wrote when applying for the slot.",
+      "clip": "The delivered clip",
+      "clipViews": "{vistas} views",
+      "clipOpen": "Open the clip",
+      "timeline": "The dates",
+      "requested": "Applied to join",
+      "decided": "Campaign decision",
+      "dueDate": "Deadline",
+      "delivered": "Clip delivered",
+      "openedAt": "Dispute opened",
+      "resolvedAt": "Resolved"
+    },
+    "commitment": {
+      "line": "The commitment is {estado}.",
+      "estado": {
+        "solicitada": "requested",
+        "aceptada": "accepted",
+        "entregada": "delivered",
+        "cumplida": "met",
+        "rechazada": "rejected",
+        "retirada": "withdrawn",
+        "caducada": "expired",
+        "en-disputa": "in dispute"
+      }
+    },
+    "form": {
+      "award": "The ruling",
+      "awardHint": "Each one leaves the commitment in a different state, and there is no going back.",
+      "days": "Extension days",
+      "daysHint": "Counted from today.",
+      "note": "Note for both sides",
+      "noteHint": "The clipper and whoever pays both read it: write what you are basing this on.",
+      "notePlaceholder": "What you are basing the decision on…",
+      "noteRequired": "Write the note: both sides need to know why.",
+      "submit": "Issue the ruling",
+      "cancel": "Cancel"
+    },
+    "done": {
+      "title": "Ruling issued",
+      "description": "{campana} · {laudo}"
+    }
+  },
+  "formacion": {
+    "title": "Learning",
+    "description": "The classes clippers see. Publish, pull back and decide which plan each one needs.",
+    "create": "New class",
+    "kpis": {
+      "published": "Published",
+      "publishedLines": "{borradores, plural, =0 {No drafts} one {# draft} other {# drafts}} · {retiradas, plural, =0 {nothing pulled back} one {# pulled back} other {# pulled back}}",
+      "publishedFootnote": "Only published ones show up in Learning.",
+      "minutes": "Published minutes",
+      "minutesLines": "{inicio} starter · {medio} intermediate · {avanzado} advanced",
+      "noVideo": "No video",
+      "noVideoLines": "They show in the catalogue, but there is nothing to play.",
+      "noVideoFootnote": "That is the work left for the team.",
+      "paid": "Paid",
+      "paidLines": "{free} free · {creator} on Creator · {business} on Business",
+      "paidFootnote": "What needs a plan shows with a padlock, never hidden."
+    },
+    "views": {
+      "title": "Views are not counted yet",
+      "description": "Every student keeps their progress in their own browser and it never reaches us, so this panel does not invent how many watched a class. Once there is a server, they get counted for real."
+    },
+    "rutas": {
+      "title": "Tracks",
+      "description": "The order classes are suggested in. A track is not sold on its own: its plan is the highest of the classes it holds.",
+      "create": "New track",
+      "empty": "No tracks yet",
+      "clases": "{n, plural, =0 {no classes} one {# class} other {# classes}}",
+      "sinPublicar": "{n, plural, one {# unpublished} other {# unpublished}}",
+      "para": "Suggested to: {lista}",
+      "subir": "Move {titulo} up",
+      "bajar": "Move {titulo} down",
+      "quitar": "Remove {titulo} from the track",
+      "anadir": "Add a class",
+      "anadirVacio": "No classes left to add",
+      "editar": "Edit the track",
+      "borrar": "Delete the track",
+      "form": {
+        "newTitle": "New track",
+        "editTitle": "Edit “{titulo}”",
+        "description": "The title and the description are what the clipper reads: they go in Spanish, like the classes.",
+        "titulo": "Title",
+        "descripcion": "What it covers",
+        "para": "Who it is suggested to",
+        "paraHint": "It comes from what they answered in onboarding about how much they have edited.",
+        "cancel": "Cancel",
+        "save": "Save",
+        "errors": {
+          "tituloCorto": "The title needs at least {min} characters.",
+          "descripcionCorta": "Write at least {min} characters.",
+          "sinClases": "It holds no classes yet. You add them on its card, with “Add a class”; until then clippers don’t see it.",
+          "sinPara": "Pick at least who it is suggested to.",
+          "sinPublicadas": "None of its classes is published, so clippers will not see this track yet."
+        }
+      },
+      "toasts": {
+        "saved": "Track saved",
+        "deleted": "Track deleted",
+        "ordered": "Order changed"
+      },
+      "delete": {
+        "title": "Delete “{titulo}”?",
+        "description": "Only tracks created here can be deleted, and it cannot be undone. The classes stay in the catalogue.",
+        "cancel": "Keep it",
+        "action": "Delete the track"
+      }
+    },
+    "table": {
+      "caption": "Catalogue classes",
+      "search": "Search by title or description",
+      "clase": "Class",
+      "estado": "Status",
+      "plan": "Plan",
+      "nivel": "Level",
+      "duracion": "Length",
+      "publicada": "Published",
+      "acciones": "Actions",
+      "sinVideo": "No video",
+      "empty": "No class matches these filters",
+      "emptyDescription": "Try clearing the filter or create a new class.",
+      "resumen": "{n, plural, one {# class} other {# classes}} · {min} min"
+    },
+    "filters": {
+      "estado": "Status",
+      "plan": "Plan",
+      "todos": "All"
+    },
+    "estados": {
+      "borrador": "Draft",
+      "publicada": "Published",
+      "despublicada": "Pulled back"
+    },
+    "niveles": {
+      "inicio": "Starter",
+      "medio": "Intermediate",
+      "avanzado": "Advanced"
+    },
+    "acciones": {
+      "editar": "Edit",
+      "publicar": "Publish",
+      "retirar": "Pull back",
+      "borrar": "Delete",
+      "menu": "What to do with {titulo}"
+    },
+    "form": {
+      "newTitle": "New class",
+      "editTitle": "Edit “{titulo}”",
+      "description": "The title and the description are what the clipper reads: they go in Spanish, like the rest of the content.",
+      "titulo": "Title",
+      "descripcion": "What it covers",
+      "duracion": "Length (seconds)",
+      "nivel": "Level",
+      "temas": "Topics",
+      "temasHint": "The topics decide who gets it suggested.",
+      "redes": "Networks",
+      "redesHint": "Only if the class is about one network in particular.",
+      "video": "Class video",
+      "videoHint": "Drop the file or paste the link. With no video the class still shows, and it says the video is on its way.",
+      "quitarVideo": "Remove the link",
+      "sinAlmacenamiento": "The file went through the whole queue, but there is nowhere to keep it yet: until there is storage, no link is left behind. Paste one meanwhile.",
+      "portada": "Cover link",
+      "plan": "Minimum plan",
+      "planHint": "With Trial everyone sees it.",
+      "estado": "Status",
+      "cancel": "Cancel",
+      "save": "Save",
+      "errors": {
+        "tituloCorto": "The title needs at least {min} characters.",
+        "descripcionCorta": "Write at least {min} characters: it is what decides whether they open it.",
+        "duracionRango": "Between {min} and {max} seconds.",
+        "temasRequeridos": "Pick at least one topic.",
+        "temasDemasiados": "At most {max} topics.",
+        "videoUrl": "Write a valid link (https://…).",
+        "portadaUrl": "Write a valid link (https://…).",
+        "publicadaSinVideo": "It will publish with no video: people will see what it covers, but there will be nothing to play."
+      }
+    },
+    "toasts": {
+      "saved": "Class saved",
+      "published": "Class published",
+      "unpublished": "Class pulled back",
+      "unpublishedDescription": "It stops showing in Learning. The progress of whoever was watching is untouched.",
+      "deleted": "Class deleted",
+      "noStorage": "This browser saves nothing, so the change is lost on reload."
+    },
+    "delete": {
+      "title": "Delete “{titulo}”?",
+      "description": "Only classes created here can be deleted, and it cannot be undone. To pull it back without losing it, use Pull back.",
+      "cancel": "Keep it",
+      "action": "Delete the class"
+    }
+  },
+  "mercado": {
+    "title": "Market",
+    "description": "How many clippers there are for the money coming in, niche by niche and country by country.",
+    "simulado": "Simulated data until the API is connected.",
+    "kpis": {
+      "cliperos": "Clippers with a profile",
+      "cliperosHint": "Clipper accounts that answered the welcome.",
+      "enRiesgo": "Money with no one to clip it",
+      "enRiesgoHint": "Active budget in cells with no supply or a shortage.",
+      "huecos": "Cells with a shortage",
+      "huecosHint": "Fewer than 2 clippers per US$1,000 active.",
+      "excedentes": "Cells with a surplus",
+      "excedentesHint": "More than 20 clippers per US$1,000: someone to sell to."
+    },
+    "cobertura": {
+      "title": "Coverage by niche and country",
+      "description": "Weighted clippers per US$1,000 active. The status is written out, not just colored.",
+      "vertical": "Niche",
+      "global": "Global",
+      "muestraBaja": "small sample",
+      "oculta": "fewer than 10 people"
+    },
+    "estados": {
+      "sin-oferta": "No supply",
+      "escasez": "Shortage",
+      "equilibrio": "Balanced",
+      "excedente": "Surplus",
+      "sin-datos": "No data"
+    },
+    "huecos": {
+      "title": "Gaps: where people are missing",
+      "description": "Sorted by the active money at stake.",
+      "empty": "No cell has a shortage with the current filter.",
+      "columns": {
+        "celda": "Cell",
+        "demanda": "Active money",
+        "oferta": "Weighted clippers",
+        "cobertura": "Per US$1,000",
+        "estado": "Status"
+      }
+    },
+    "excedentes": {
+      "title": "Surplus: who to sell to",
+      "description": "More clippers than money: sectors worth selling into.",
+      "empty": "No cell has a surplus with the current filter."
+    },
+    "cpm": {
+      "title": "CPM that fills campaigns, by sector",
+      "description": "From campaigns that spent their budget within 90 days, weighted by budget.",
+      "columns": {
+        "sector": "Sector",
+        "p25": "p25",
+        "p50": "Median",
+        "p75": "p75",
+        "base": "Basis",
+        "n": "Campaigns"
+      },
+      "base": {
+        "sector-pais": "sector and country",
+        "sector": "sector",
+        "vertical": "niche",
+        "referencia": "market benchmark",
+        "sin-referencia": "no benchmark"
+      }
+    },
+    "fandom": {
+      "title": "Creators with fans and no campaign",
+      "description": "Active clippers who follow them. This is the sales list.",
+      "empty": "No creator reaches the minimum of active fans.",
+      "columns": {
+        "creador": "Creator",
+        "fans": "Active fans",
+        "pais": "Main country",
+        "vistas": "Median views",
+        "usuario": "Already a user"
+      },
+      "esUsuario": "Yes"
+    },
+    "calidad": {
+      "title": "Data quality",
+      "description": "How much of what we decide on is measured and how much is only declared.",
+      "base": "of {n} clippers with a profile",
+      "baseInferidos": "of the {n} with an inferred niche",
+      "items": {
+        "conectados": "With a connected account",
+        "inferidos": "With a niche inferred from their clips",
+        "confianzaBaja": "Low-confidence answers",
+        "opuestos": "Opted out of statistics",
+        "pendientes": "Creators to catalog",
+        "sinNormalizar": "“How did you find us” unclassified",
+        "concordancia": "Declared matches measured"
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Welcome",
+    "description": "How “Your first cut” is doing: who finishes it, where they drop off and what they skip.",
+    "simulado": "Simulated data until the API is connected: each person’s onboarding lives in their own browser.",
+    "kpis": {
+      "cuentas": "Accounts with a welcome",
+      "finalizacion": "Finish it",
+      "finalizacionHint": "Of those who start it. Target: 75% clippers, 65% agencies.",
+      "tiempo": "Typical time",
+      "tiempoHint": "Median of those who finish. Target: 60s or less.",
+      "completitud": "Average profile"
+    },
+    "estados": {
+      "sin-empezar": "Not started",
+      "en-curso": "In progress",
+      "pospuesto": "Postponed",
+      "completado": "Finished"
+    },
+    "flujos": {
+      "title": "By branch",
+      "clipero": "Campaign clipper",
+      "creador": "Creator with own videos",
+      "agencia": "Agency",
+      "columns": {
+        "flujo": "Branch",
+        "cuentas": "Accounts",
+        "completados": "Finished",
+        "tasa": "%"
+      }
+    },
+    "tomas": {
+      "title": "Take by take",
+      "description": "Over 40% skipped: the question moves to progressive profiling. Over 10% drop-off: the take gets redesigned.",
+      "columns": {
+        "toma": "Take",
+        "vistos": "Seen",
+        "respondidos": "Answered",
+        "saltados": "Skipped",
+        "abandono": "Drop-off",
+        "tiempo": "Time"
+      }
+    },
+    "consentimientos": {
+      "title": "Consents",
+      "estadisticas": "Accept statistics",
+      "informesSector": "Sector reports",
+      "novedades": "Email updates",
+      "revocaron": "Withdrew within 30 days"
+    },
+    "aceleracion": "Speed the text up",
+    "saltoIntro": "Skip the intro"
+  },
+  "feedback": {
+    "title": "Inbox",
+    "description": "What clippers and agencies write to Clipealo. You read it, answer it and archive it; it’s never deleted.",
+    "kpis": {
+      "nuevos": "Unopened",
+      "nuevosHint": "Nobody on the team has read them yet",
+      "abiertos": "Pending",
+      "abiertosHint": "Unopened plus read-but-unanswered",
+      "espera": "Longest wait",
+      "esperaHint": "Of the oldest pending one",
+      "respondidos": "Answered",
+      "respondidosHint": "The answer reaches them in Help › Your messages"
+    },
+    "sinEspera": "Nothing waiting",
+    "dias": "{n, plural, =0 {today} one {# day} other {# days}}",
+    "tabla": {
+      "caption": "Messages received",
+      "buscar": "Search the messages…",
+      "autor": "Who",
+      "tipo": "About",
+      "mensaje": "Message",
+      "desde": "From",
+      "fecha": "Received",
+      "estado": "Status",
+      "acciones": "Actions",
+      "vacio": "No messages match this filter",
+      "vacioHint": "Try removing the status or the topic.",
+      "resumen": "{n, plural, one {# message} other {# messages}} · {abiertos} pending"
+    },
+    "filtros": {
+      "estado": "Status",
+      "tipo": "About",
+      "de": "Who",
+      "todos": "All",
+      "todosTipos": "Any topic",
+      "todosAutores": "Anyone"
+    },
+    "de": {
+      "clipero": "Clipper",
+      "agencia": "Agency"
+    },
+    "abrir": "Open the message from {autor}",
+    "detalle": {
+      "title": "Message from {autor}",
+      "recibido": "Received on {fecha}, from {ruta}",
+      "recibidoSinRuta": "Received on {fecha}",
+      "respuesta": "Your answer",
+      "respuestaPlaceholder": "Answer what you know and say what you don’t. They read it as written.",
+      "respuestaHint": "It’s published in their Help › Your messages and announced in their bell.",
+      "yaRespondido": "Answered on {fecha}",
+      "enviar": "Send answer",
+      "archivar": "Archive",
+      "cerrar": "Close",
+      "errors": {
+        "vacia": "Write the answer before sending it."
+      }
+    },
+    "toasts": {
+      "respondido": "Answer sent",
+      "respondidoHint": "{autor} will see it in their Help.",
+      "archivado": "Message archived",
+      "archivadoHint": "It leaves the queue, but it isn’t deleted."
+    },
+    "cola": {
+      "title": "The queue",
+      "description": "Newest first. Opening a message marks it read; archiving takes it out of here without deleting it."
+    }
+  },
+  "preguntas": {
+    "title": "Questions",
+    "description": "What clippers get asked, where and how often. What you change here shows up in the app without a reload.",
+    "kpis": {
+      "activas": "Asked",
+      "activasHint": "Out of {total} in the catalogue",
+      "panel": "On the dashboard",
+      "panelHint": "A card under the greeting",
+      "enviar": "When submitting a clip",
+      "enviarHint": "A line inside the dialog",
+      "creadas": "Written here",
+      "creadasHint": "The rest ship with the product"
+    },
+    "catalogo": {
+      "title": "The catalogue",
+      "description": "The ones that ship with the product have their text in all three languages and write to an account field: of those you change whether they’re asked, where and in what order. The ones you write here carry their own text and options.",
+      "crear": "Write a question",
+      "semilla": "From the product",
+      "creada": "Written here",
+      "activa": "Asked",
+      "apagada": "Off",
+      "lugar": "Where it shows",
+      "subir": "Move {titulo} up",
+      "bajar": "Move {titulo} down",
+      "editar": "Edit {titulo}",
+      "borrar": "Delete {titulo}",
+      "alternar": "Ask {titulo}",
+      "desdeAlta": "{n, plural, =0 {from sign-up} one {from day #} other {from day #}}",
+      "opciones": "{n, plural, one {# option} other {# options}}",
+      "unica": "One answer",
+      "multiple": "Several, up to {max}",
+      "apagadaNota": "Turned off it isn’t asked, but what was already answered stays in the account.",
+      "multipleCorto": "Several",
+      "semillaNota": "The short name is for this screen; the exact wording, with its “why”, lives inside the product in all three languages."
+    },
+    "lugares": {
+      "panel": "Dashboard",
+      "enviar": "Submit clip"
+    },
+    "reglas": {
+      "title": "How often to ask",
+      "description": "The rules apply to the whole catalogue. Asking too much tires people out; asking too little collects nothing.",
+      "diasEntre": "Days between two questions",
+      "diasEntreHint": "One every so many days, at most",
+      "diasPospuesta": "Days before a “Not now” comes back",
+      "diasPospuestaHint": "Respecting the decision of whoever put it off",
+      "diasMotivaciones": "Day the motivations question is asked",
+      "diasMotivacionesHint": "Counting from sign-up",
+      "diasHerramientas": "Day the tools question is asked",
+      "diasHerramientasHint": "Counting from sign-up",
+      "diasSinEnvios": "Days without submitting before asking what’s stopping them",
+      "diasSinEnviosHint": "Since their last submitted clip",
+      "diasRevalidar": "Days before checking they still clip those topics",
+      "diasRevalidarHint": "Since they picked them",
+      "enviosDisponibilidad": "Submission that triggers the availability question",
+      "enviosDisponibilidadHint": "The third by default",
+      "maxSubverticales": "Leagues, genres or formats that can be picked",
+      "maxSubverticalesHint": "The more there are, the less useful the answer",
+      "rango": "Between {min} and {max}",
+      "reiniciar": "Back to factory values"
+    },
+    "form": {
+      "newTitle": "Write a question",
+      "editTitle": "Edit “{titulo}”",
+      "description": "It goes in the language you write it in: it’s content, like a class title, and it isn’t translated. Only clippers get asked.",
+      "titulo": "The question",
+      "tituloPlaceholder": "What’s hardest for you when putting a clip together?",
+      "ayuda": "Why you’re asking",
+      "ayudaHint": "Shown underneath. Nobody answers blind, and without it they drop out sooner.",
+      "ayudaPlaceholder": "To know which part of the editor to improve first.",
+      "lugar": "Where it shows",
+      "tipo": "How many can be picked",
+      "max": "At most",
+      "opciones": "Options",
+      "opcionesHint": "Between {min} and {max}. Short and non-overlapping: people pick the first that fits.",
+      "opcion": "Option {n}",
+      "anadirOpcion": "Add an option",
+      "quitarOpcion": "Remove option {n}",
+      "desdeAltaDias": "From which day after sign-up",
+      "desdeAltaDiasHint": "0 asks it from day one.",
+      "activa": "Ask it right away",
+      "cancel": "Cancel",
+      "save": "Save",
+      "errors": {
+        "tituloCorto": "The question needs at least {min} characters.",
+        "ayudaCorta": "Write at least {min} characters: it’s what makes people answer.",
+        "pocasOpciones": "At least {min} options are needed.",
+        "opcionVacia": "There’s an empty option.",
+        "opcionRepetida": "Two options are the same."
+      }
+    },
+    "toasts": {
+      "guardada": "Question saved",
+      "borrada": "Question deleted",
+      "encendida": "It will be asked",
+      "apagada": "It will stop being asked",
+      "orden": "Order changed",
+      "regla": "Rule changed",
+      "reiniciadas": "Factory catalogue"
+    },
+    "delete": {
+      "title": "Delete “{titulo}”?",
+      "description": "Only questions written here can be deleted, and it can’t be undone. What people already answered stays in their account. If you just want to stop asking it, turn it off.",
+      "cancel": "Keep it",
+      "action": "Delete the question"
+    },
+    "frontera": "Answers live in each person’s browser, so they can’t be counted here. You see what gets asked, not who answered what.",
+    "semillas": {
+      "experiencia": "How much you’ve edited",
+      "ligas": "Which leagues you follow",
+      "generos": "Which music genres",
+      "formatos": "Which live formats",
+      "disponibilidad": "How much time you have",
+      "motivo-pausa": "What’s stopping you now",
+      "motivaciones": "Why you clip",
+      "herramientas": "What you edit with",
+      "sigues-clipeando": "Still on your topics?"
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "claim": "Recorta . Edita . Comparte . Crece",
+  "nav": {
+    "howItWorks": "Cómo funciona",
+    "product": "Producto",
+    "pricing": "Precios",
+    "system": "Sistema"
+  },
+  "legalNav": {
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "Cookies"
+  },
+  "actions": {
+    "upload": "Subir un video",
+    "backHome": "Volver al inicio"
+  },
+  "header": {
+    "home": "Clipealo, inicio",
+    "mainNav": "Principal",
+    "mobileNav": "Principal (móvil)",
+    "login": "Iniciar sesión",
+    "openMenu": "Abrir menú",
+    "menu": "Menú",
+    "discord": "Comunidad de Discord"
+  },
+  "hero": {
+    "badge": "Reencuadre automático con seguimiento de quien habla",
+    "title": "De videos largos<br></br>a grandes clips.",
+    "howItWorks": "Ver cómo funciona",
+    "detectedMoments": "Momentos detectados",
+    "suggestedClips": "Clips propuestos",
+    "videoPreview": "Fragmento del unboxing de Rubius",
+    "playPreview": "Reproducir video original",
+    "sourceLabel": "Rubius Z · fragmento del unboxing",
+    "seekToMoment": "Ir al momento: {title}",
+    "seekPreview": "Mover la reproducción del video original",
+    "pausePreview": "Pausar el video",
+    "scanInProgress": "Recorriendo el fragmento…",
+    "viewClip": "Ver clip y transcripción: {title}",
+    "sourceTime": "Del video original · {start}–{end}",
+    "clipVideo": "Clip: {title}",
+    "transcript": "Transcripción",
+    "unmuteVideo": "Activar audio",
+    "muteVideo": "Silenciar video",
+    "seekClip": "Mover reproducción del clip",
+    "playClip": "Reproducir clip",
+    "pauseClip": "Pausar clip",
+    "fullscreen": "Pantalla completa",
+    "clipInfo": "Información del clip",
+    "clipTitle": "Título",
+    "clipDescription": "Descripción",
+    "clipReason": "Razón",
+    "originalTime": "origen {start}–{end}",
+    "videoFormat": "Formato del video",
+    "publishClip": "Publicar",
+    "publishDraft": "Publicar como borrador",
+    "editClip": "Editar clip",
+    "downloadClip": "Descargar",
+    "clipDescriptions": {
+      "patos": "Rubius abre las teclas con forma de pato y descubre que también pueden usarse como llaveros.",
+      "teclado": "Conecta el teclado amarillo, prueba las teclas y presenta la «legión de los patos».",
+      "indiana-jones": "Descubre la edición de Indiana Jones y se sorprende al ver el código del juego grabado en una pieza.",
+      "puzle": "Explora el puzle físico de la edición coleccionista mientras intenta averiguar cómo se abre.",
+      "premios": "Rubius enseña las placas de Twitch por 5, 50 y 250 millones de horas vistas.",
+      "pokemon": "Muestra cómo una vitrina cambia la presentación de sus cartas de Umbreon, Charizard y Pikachu."
+    },
+    "clipReasons": {
+      "patos": "La revelación de un objeto inesperado convierte el unboxing en una escena fácil de reconocer y compartir.",
+      "teclado": "El resultado visual y la reacción de Rubius completan la historia iniciada al abrir la caja.",
+      "indiana-jones": "El descubrimiento del código cambia la historia del unboxing y provoca una reacción espontánea.",
+      "puzle": "El reto visual mantiene la curiosidad hasta que se descubre cómo funciona la pieza.",
+      "premios": "La progresión de los premios y las cifras sorprendentes crean un gancho visual inmediato.",
+      "pokemon": "El antes y después de un objeto conocido ofrece un resultado visual fácil de entender."
+    }
+  },
+  "community": {
+    "title": "Creadores con más de 6,8 millones de seguidores y equipos de toda Hispanoamérica ya publican con Clipealo.",
+    "creators": "Creadores que ya confían en Clipealo",
+    "channels": "Canales que ya confían en Clipealo"
+  },
+  "reframe": {
+    "title": "Un mismo contenido,<br></br>más posibilidades.",
+    "original": "Tu video, tal como lo grabaste",
+    "ready": "Clip 9:16 listo",
+    "caption": "Recorta lo que realmente importa."
+  },
+  "features": {
+    "eyebrow": "El producto",
+    "title": "Pequeños clips,<br></br>grandes oportunidades.",
+    "lead": "Todo el recorrido —de la subida a la publicación— en una sola herramienta, sin exportar a ninguna otra parte.",
+    "ai": {
+      "title": "IA que encuentra los mejores momentos",
+      "body": "Analiza el audio, detecta los picos de atención y te propone los cortes. Ahorras horas de edición y te enfocas en crear."
+    },
+    "vertical": {
+      "title": "Vertical desde el minuto uno",
+      "body": "Reencuadre automático que sigue a quien habla. Nada de barras negras ni caras cortadas."
+    },
+    "quote": {
+      "text": "Las ideas no valen nada sin ejecución.",
+      "author": "Creador de contenido"
+    },
+    "captions": {
+      "title": "Subtítulos que se leen",
+      "body": "Transcripción con marcas de tiempo, corrección de nombres propios y traducción a nueve idiomas."
+    },
+    "allInOne": {
+      "title": "Todo en una sola herramienta",
+      "body": "Sin saltar entre cinco apps para publicar un clip."
+    },
+    "toolbox": {
+      "trim": "Recortar",
+      "edit": "Editar",
+      "share": "Compartir",
+      "ai": "IA",
+      "creators": "Creadores",
+      "clips": "Clips",
+      "captions": "Subtítulos",
+      "analytics": "Analíticas"
+    },
+    "multiformat": {
+      "title": "Un corte, cuatro formatos",
+      "body": "Exporta el mismo momento en 9:16, 4:5, 1:1 y 16:9 sin volver a editar."
+    }
+  },
+  "steps": {
+    "title": "Mismo contenido,<br></br>más impacto.",
+    "full": {
+      "title": "Contenido completo",
+      "body": "Tu video original, tal como es. Podcast, directo, clase o entrevista."
+    },
+    "moment": {
+      "title": "Selección del momento",
+      "body": "Recorta lo que realmente importa. Tú decides o dejas que la IA proponga."
+    },
+    "ready": {
+      "title": "Clip 9:16 listo",
+      "body": "El formato ideal para Reels, Shorts y TikTok. Con subtítulos incluidos."
+    }
+  },
+  "networks": {
+    "eyebrow": "Publicación",
+    "title": "Clipeamos para<br></br>tus redes favoritas.",
+    "lead": "El mismo momento, exportado con el formato y la duración que premia cada sitio. Conectas la cuenta una vez y Clipealo publica en ella, ahora o cuando lo programes.",
+    "list": "Redes de destino",
+    "sweetSpot": "{min} a {max}",
+    "sweetSpotNote": "es lo que mejor retiene en {network}; admite hasta {max}",
+    "bullets": {
+      "formats": "Exporta a los cuatro formatos sin volver a procesar",
+      "limit": "Avisa si el clip no entra en el límite de la red",
+      "schedule": "Publica o programa desde la biblioteca"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "title": "Paga por minutos,<br></br>no por asientos.",
+    "lead": "Un crédito es un minuto de video. Todos los planes incluyen clips con IA y exportación vertical. Sin permanencia.",
+    "compare": "Ver la comparativa completa y las redes de cada plan",
+    "footnote": "Los minutos no consumidos no se acumulan. En Empresa, cada miembro adicional se factura por asiento. Impuestos no incluidos."
+  },
+  "pricingTable": {
+    "caption": "Comparativa de prestaciones de los planes Prueba, Creador y Empresa",
+    "feature": "Prestación",
+    "included": "Incluido",
+    "notIncluded": "No incluido"
+  },
+  "pricingNetworks": {
+    "allPlans": "Todos los planes",
+    "fromPlan": "Desde {plan}",
+    "formats": "Formatos",
+    "maxDuration": "Duración máxima",
+    "bestRetention": "Lo que mejor retiene",
+    "included": "incluido",
+    "notIncluded": "no incluido"
+  },
+  "pricingPage": {
+    "meta": {
+      "title": "Precios",
+      "description": "Prueba gratis, Creador y Empresa. Comparativa completa de créditos, exportación, publicación en redes, equipo, marca y API. Sin permanencia."
+    },
+    "eyebrow": "Precios",
+    "title": "Un plan para cada<br></br>ritmo de publicación.",
+    "lead": "Un crédito es un minuto de video subido. Los clips, las exportaciones y las publicaciones no consumen créditos. Sin permanencia: cambias o cancelas cuando quieras.",
+    "compare": {
+      "title": "Todo, en detalle.",
+      "lead": "Créditos, subida, inteligencia artificial, exportación, publicación, espacio, marca y API. Lo que no está en la tabla no existe en el plan.",
+      "networksLink": "Redes por plan"
+    },
+    "networks": {
+      "eyebrow": "Publicación",
+      "title": "Las redes de cada plan.",
+      "lead": "Conectas la cuenta una vez y Clipealo publica en ella, ahora o programado. Cada una impone un formato y una duración, y el editor los aplica al exportar: un clip de 90 segundos no entra en un Short, y uno en 16:9 no funciona en TikTok."
+    },
+    "faqTitle": "Preguntas<br></br>sobre el pago."
+  },
+  "faq": {
+    "title": "Preguntas<br></br>frecuentes.",
+    "contact": "¿No está aquí? <link>Escríbenos</link>, contestamos el mismo día.",
+    "items": {
+      "processing": {
+        "q": "¿Cuánto tarda en procesar un video?",
+        "a": "Un podcast de una hora tarda entre 4 y 7 minutos. Empezamos a proponer clips en cuanto termina la transcripción, así que no hace falta esperar al final del proceso para revisar los primeros cortes."
+      },
+      "fileFormats": {
+        "q": "¿Qué formatos de archivo acepta?",
+        "a": "MP4, MOV, WebM y MKV, hasta 8 GB por archivo. También puedes pegar un enlace de YouTube, Google Drive o Vimeo y lo descargamos nosotros."
+      },
+      "faces": {
+        "q": "¿El reencuadre vertical corta las caras?",
+        "a": "No. El reencuadre sigue a quien habla fotograma a fotograma y, cuando hay dos personas, alterna el encuadre según quién tiene el turno. Siempre puedes ajustar el encuadre a mano en el editor."
+      },
+      "editCaptions": {
+        "q": "¿Los subtítulos se pueden editar?",
+        "a": "Sí. La transcripción es editable palabra por palabra y los cambios se reflejan en el clip renderizado. Puedes añadir un diccionario de nombres propios para que no se repita el mismo error."
+      },
+      "afterCancel": {
+        "q": "¿Qué pasa con mis videos si cancelo?",
+        "a": "Puedes descargar todo tu material durante 30 días después de cancelar. No usamos tu contenido para entrenar modelos ni lo compartimos con terceros."
+      },
+      "publish": {
+        "q": "¿Clipealo publica en mis redes por mí?",
+        "a": "Sí. Conectas TikTok, Instagram o YouTube con permiso de publicación y eliges en qué cuentas sale cada clip: ahora mismo, o a la hora que programes, que es del plan Creador en adelante. El clip sale de tu cuenta, con el texto que escribes para cada red, y las analíticas entran solas."
+      }
+    }
+  },
+  "cta": {
+    "title": "Empieza con un video.",
+    "lead": "Sube uno que ya tengas y mira qué clips salen. No hace falta tarjeta."
+  },
+  "footer": {
+    "product": "Producto",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "designSystem": "Sistema de diseño",
+    "contact": "Contacto",
+    "copyright": "© {year} {name}. Hecho en España."
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "underReview": "Documento en revisión",
+    "pages": {
+      "privacidad": {
+        "title": "Privacidad",
+        "lead": "Qué hacemos con tus videos y tus datos.",
+        "description": "No usamos tu contenido para entrenar modelos ni lo compartimos con terceros. El texto legal completo está en revisión."
+      },
+      "terminos": {
+        "title": "Términos del servicio",
+        "lead": "Las condiciones de uso de la plataforma.",
+        "description": "Cubren los límites de cada plan, la propiedad del contenido y la cancelación. El texto legal completo está en revisión."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "lead": "Qué guardamos en tu navegador y para qué.",
+        "description": "Solo la sesión y tus preferencias de tema e idioma. No hay cookies de terceros ni de seguimiento publicitario. El detalle completo está en revisión."
+      }
+    }
+  },
+  "og": {
+    "titleTop": "De videos largos",
+    "titleBottom": "a grandes clips."
+  }
+}

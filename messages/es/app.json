@@ -1,0 +1,477 @@
+{
+  "nav": {
+    "groups": {
+      "work": "Trabajo",
+      "earn": "Ganar",
+      "account": "Cuenta"
+    },
+    "dashboard": "Resumen",
+    "projects": "Proyectos",
+    "clips": "Clips",
+    "calendar": "Calendario",
+    "analytics": "Analíticas",
+    "campaigns": "Campañas",
+    "learn": "Formación",
+    "wallet": "Wallet",
+    "settings": "Ajustes",
+    "help": "Ayuda",
+    "upload": "Subir un video",
+    "operations": "Operaciones"
+  },
+  "loading": {
+    "app": "Cargando",
+    "clips": "Cargando los clips",
+    "studio": "Cargando el estudio"
+  },
+  "sidebar": {
+    "home": "Clipealo, panel",
+    "plan": "Plan {plan}",
+    "usage": "{used} / {included} min este mes"
+  },
+  "userNav": {
+    "upgrade": "Mejorar plan",
+    "billing": "Facturación",
+    "sounds": "Sonidos",
+    "profile": "Perfil de la cuenta · demo",
+    "plan": "Plan · demo",
+    "profiles": {
+      "usuario": "Usuario",
+      "agencia": "Agencia"
+    },
+    "backoffice": "Backoffice",
+    "wiki": "Wiki del producto",
+    "logout": "Cerrar sesión",
+    "reset": "Reiniciar demo",
+    "resetDone": "Demo reiniciada",
+    "resetDoneHint": "Campañas, calendario, cuenta, plan, redes, avisos y Formación vuelven a como estaban.",
+    "logoutDone": "Sesión cerrada",
+    "logoutHint": "En la demo no hay sesión de verdad todavía: tus datos siguen guardados en este navegador."
+  },
+  "topbar": {
+    "notifications": "Notificaciones",
+    "unread": "{n, plural, one {Tienes # aviso sin leer} other {Tienes # avisos sin leer}}",
+    "empty": "No hay nada esperándote. Cuando una publicación salga o no pueda salir, aparecerá aquí.",
+    "manage": "Elegir qué avisos quiero"
+  },
+  "command": {
+    "trigger": "Buscar…",
+    "title": "Buscador",
+    "description": "Busca proyectos, clips y acciones",
+    "placeholder": "Busca un proyecto, un clip o una acción…",
+    "empty": "Sin resultados.",
+    "groups": {
+      "actions": "Acciones",
+      "goTo": "Ir a",
+      "projects": "Proyectos",
+      "clips": "Clips",
+      "theme": "Tema"
+    },
+    "theme": {
+      "light": "Claro",
+      "dark": "Oscuro"
+    }
+  },
+  "dashboard": {
+    "greeting": "Hola, {name}",
+    "summary": "Tienes {videos, plural, one {# video procesándose} other {# videos procesándose}} y {clips, plural, one {# clip esperando revisión} other {# clips esperando revisión}}.",
+    "metrics": "Métricas",
+    "stats": {
+      "views": "Reproducciones (30 d)",
+      "published": "Clips publicados",
+      "retention": "Retención media",
+      "minutes": "Minutos procesados",
+      "minutesHint": "de {included} incluidos"
+    },
+    "weekViews": "Reproducciones esta semana",
+    "inProgress": "En proceso",
+    "recent": "Clips recientes",
+    "seeAll": "Ver todos",
+    "tocaPublicar": {
+      "aviso": "Tienes {n, plural, one {# publicación sin salir} other {# publicaciones sin salir}}.",
+      "enlace": "Ver en el calendario"
+    }
+  },
+  "viewsChart": {
+    "total": "reproducciones en los últimos 7 días",
+    "series": "Reproducciones",
+    "tooltipViews": "{count, plural, one {{views} reproducción} other {{views} reproducciones}}",
+    "tooltipClips": "{count, plural, one {# clip} other {# clips}}",
+    "showTable": "Ver los datos como tabla",
+    "caption": "Reproducciones y clips publicados por día",
+    "columns": {
+      "day": "Día",
+      "views": "Reproducciones",
+      "clips": "Clips"
+    },
+    "days": {
+      "lun": "Lun",
+      "mar": "Mar",
+      "mie": "Mié",
+      "jue": "Jue",
+      "vie": "Vie",
+      "sab": "Sáb",
+      "dom": "Dom"
+    }
+  },
+  "activeJobs": {
+    "allDone": "Todo procesado. No hay nada en cola.",
+    "seeAll": "Ver todos los proyectos"
+  },
+  "clipsLibrary": {
+    "searchPlaceholder": "Buscar por título, gancho o etiqueta…",
+    "searchLabel": "Buscar clips",
+    "statusFilter": "Filtrar por estado",
+    "status": {
+      "todos": "todos",
+      "borrador": "borrador",
+      "listo": "listo",
+      "publicado": "publicado"
+    },
+    "format": "Formato",
+    "allFormats": "Todos",
+    "aspects": {
+      "9:16": "Vertical",
+      "1:1": "Cuadrado",
+      "4:5": "Retrato",
+      "16:9": "Horizontal"
+    },
+    "sortBy": "Ordenar por",
+    "sort": {
+      "score": "Mejor puntuación",
+      "reciente": "Más reciente",
+      "duracion": "Más largo"
+    },
+    "clear": "Limpiar",
+    "count": "{shown} de {total, plural, one {# clip} other {# clips}}",
+    "playing": "Reproduciendo «{title}»",
+    "deleted": "Clip «{title}» eliminado",
+    "undo": "Deshacer",
+    "restored": "Restaurado",
+    "emptyTitle": "Ningún clip coincide",
+    "emptyDescription": "Prueba con otros filtros o sube un video nuevo para generar más clips.",
+    "clearFilters": "Limpiar filtros"
+  },
+  "projects": {
+    "description": "Cada video que subes es un proyecto con sus clips, su transcripción y su historial."
+  },
+  "proyecto": {
+    "description": "{n, plural, =0 {Todavía sin clips de este video} one {# clip generado de este video} other {# clips generados de este video}}",
+    "abrirEstudio": "Abrir el estudio",
+    "procesoTitulo": "Todavía no hay clips",
+    "procesoAyuda": "En cuanto termine el análisis aparecen aquí.",
+    "verClips": "Ver los clips"
+  },
+  "clip": {
+    "razon": "Por qué este momento",
+    "datos": "El clip",
+    "formato": "Formato",
+    "duracion": "Duración",
+    "tramo": "Tramo del original",
+    "subtitulos": "Subtítulos",
+    "etiquetas": "Etiquetas",
+    "transcripcion": "Lo que se dice",
+    "transcripcionDe": "De {titulo}, entre {desde} y {hasta}",
+    "sinTranscripcion": "De este tramo todavía no hay transcripción guardada.",
+    "publicar": "Publicar",
+    "editar": "Editar el clip",
+    "descargando": "Preparando la descarga…",
+    "dondeHaSalido": "Dónde ha salido",
+    "dondeHaSalidoAyuda": "Lo publicado y lo programado de este clip. Los enlaces son los que devuelve cada red.",
+    "copia": {
+      "titulo": "El texto con el que sale",
+      "ayuda": "Uno por red. Sin escribir nada, sale la plantilla de su proyecto.",
+      "heredada": "Viene de la plantilla del proyecto.",
+      "verPlantilla": "Editar la plantilla",
+      "volverAPlantilla": "Volver a la plantilla",
+      "avisos": "Lo que {red} hará con este texto"
+    }
+  },
+  "publicar": {
+    "titulo": "Publicar el clip",
+    "descripcion": "Elige en qué cuentas sale. Se publica ahora, con el texto que tengas escrito para cada red.",
+    "cuentas": "Tus cuentas conectadas",
+    "ningunaDisponible": "Ninguna de tus cuentas conectadas puede recibir este clip.",
+    "fuera": "{n, plural, one {# cuenta se queda fuera} other {# cuentas se quedan fuera}}",
+    "sinCuentas": "Todavía no tienes ninguna cuenta conectada donde publicar.",
+    "conectar": "Conectar una cuenta",
+    "fueraDelCupo": "El plan {plan} cubre {max, plural, one {# cuenta conectada} other {# cuentas conectadas}} y esta se queda fuera.",
+    "textoNoCabe": "El texto de {red} no cabe en lo que la red acepta: arréglalo antes de publicar.",
+    "publicarAhora": "Publicar ahora",
+    "publicarEnVarias": "Publicar en {n} cuentas",
+    "programar": "Programar",
+    "programarBloqueado": "Programar es del plan {plan} en adelante.",
+    "publicadas": "{n, plural, one {Publicado en # cuenta} other {Publicado en # cuentas}}",
+    "publicadasAyuda": "El enlace queda guardado y Analíticas lo sigue.",
+    "noSalio": "No salió en {red}",
+    "salio": "Publicada",
+    "enCamino": "En camino",
+    "todaviaNada": "Todavía no ha salido en ninguna cuenta.",
+    "abrir": "Abrir"
+  },
+  "projectsList": {
+    "refreshing": "Actualizando estado…",
+    "clipCount": "{count, plural, one {# clip} other {# clips}}",
+    "retry": "Reintentar",
+    "openStudio": "Ver clips",
+    "viewStatus": "Ver estado"
+  },
+  "upload": {
+    "metaDescription": "Sube el video completo y elige cómo quieres los clips.",
+    "crumb": "Subir",
+    "eyebrow": "Nuevo proyecto",
+    "title": "Sube un video",
+    "description": "Sube el video entero y elige cómo quieres los clips. El análisis todavía no está conectado: el proyecto aparece en tu lista y su avance es una simulación."
+  },
+  "uploadPanel": {
+    "done": "Subida terminada",
+    "doneDescription": "Pulsa «Procesar» para crear el proyecto. El análisis todavía no está conectado: lo que verás avanzar es una simulación.",
+    "viewStatus": "Ver estado",
+    "linkQueued": "Importar por enlace todavía no está conectado",
+    "settingsTitle": "Cómo quieres los clips",
+    "format": "Formato principal",
+    "formatHint": "Siempre puedes exportar los demás formatos después, sin volver a procesar.",
+    "duration": "Duración objetivo del clip",
+    "durationHint": "Entre 30 y 60 s es lo que mejor retiene en Reels y Shorts.",
+    "audioLanguage": "Idioma del audio",
+    "languages": {
+      "auto": "Detectar automáticamente",
+      "es": "Español",
+      "en": "Inglés",
+      "pt": "Portugués",
+      "fr": "Francés"
+    },
+    "options": "Opciones de procesado",
+    "captions": "Subtítulos automáticos",
+    "captionsHint": "Transcripción editable y quemada en el clip.",
+    "faceTracking": "Seguimiento de rostro",
+    "faceTrackingHint": "El encuadre vertical sigue a quien habla en cada momento.",
+    "uploading": "Subiendo {count, plural, one {# archivo} other {# archivos}} · {progress}",
+    "cancel": "Cancelar",
+    "saved": "{count, plural, =0 {Sin proyectos que crear} one {Proyecto creado} other {# proyectos creados}}",
+    "savedDescription": "{aspect} · {seconds} s · {captions, select, yes {con subtítulos} other {sin subtítulos}}",
+    "process": "{count, plural, =0 {Procesar video} one {Procesar video} other {Procesar videos}}",
+    "failed": "Fallo al subir"
+  },
+  "studio": {
+    "metaTitle": "Estudio",
+    "detected": "{count, plural, one {# clip detectado} other {# clips detectados}}",
+    "preparingDownload": "Preparando descarga…",
+    "download": "Descargar",
+    "sentToPublish": "Clip listo para publicar",
+    "sentToPublishHint": "Elige en qué cuentas sale y cuándo: ahora o a la hora que marques.",
+    "publishBlocked": "Programar es del plan {plan} en adelante.",
+    "publish": "Publicar",
+    "crumb": "Estudio",
+    "schedule": "Programar",
+    "selected": "Clip seleccionado: {title}",
+    "trim": "Recorte",
+    "trimTitle": "Recorte del clip",
+    "aiProposed": "Propuesto por IA",
+    "trimUpdated": "Recorte actualizado",
+    "tabs": {
+      "clips": "Clips",
+      "transcript": "Transcripción",
+      "settings": "Ajustes"
+    },
+    "clipTitle": "Título del clip",
+    "titleCount": "{count}/{max} caracteres",
+    "hook": "Gancho detectado",
+    "tags": "Etiquetas",
+    "searchingFraming": "Buscando encuadres alternativos…",
+    "reframe": "Reencuadrar de nuevo",
+    "tracks": {
+      "video": "Video",
+      "audio": "Audio",
+      "clips": "Clips detectados",
+      "captions": "Subtítulos"
+    },
+    "error": {
+      "title": "No hemos podido abrir el estudio",
+      "description": "El proyecto puede estar aún procesándose o el enlace ha caducado. Tus clips siguen intactos.",
+      "back": "Volver a proyectos"
+    }
+  },
+  "help": {
+    "description": "Escríbenos a hola@clipealo.com y contestamos el mismo día.",
+    "soonTitle": "Centro de ayuda en construcción",
+    "soonDescription": "Mientras tanto, la sección de preguntas frecuentes de la landing cubre lo más habitual.",
+    "bullets": {
+      "formats": "Guías de formatos y límites",
+      "errors": "Solución de errores de proceso",
+      "shortcuts": "Atajos de teclado del editor"
+    }
+  },
+  "jobs": {
+    "requeued": "Proyecto reencolado",
+    "retryFailed": "No se pudo reintentar",
+    "notFound": "No existe el proyecto {id}",
+    "createFailed": "No se ha podido crear el proyecto"
+  },
+  "operaciones": {
+    "metaDescription": "Herramientas sobre tus videos: recortar, reducir tamaño, variantes, publicación y derechos.",
+    "crumb": "Operaciones",
+    "eyebrow": "Herramientas",
+    "title": "Operaciones",
+    "description": "Una suite de herramientas para trabajar tus videos sin pasar por el análisis. Cada una es su página; lo que encargas entra en Proyectos como un trabajo más.",
+    "abrir": "Abrir",
+    "delPlan": "Del plan {plan} en adelante",
+    "paraTodos": "En todos los planes",
+    "volver": "Todas las herramientas",
+    "herramientas": {
+      "recortar": {
+        "nombre": "Recortar",
+        "descripcion": "Quedarte con un tramo del video, tal cual, sin análisis ni reencuadre."
+      },
+      "reducir": {
+        "nombre": "Reducir tamaño",
+        "descripcion": "El mismo video con menos peso. Eliges cuánto sacrificar."
+      },
+      "variantes": {
+        "nombre": "Variantes",
+        "descripcion": "De un clip, varias versiones que son contenido distinto: otro gancho, otra duración, otro formato, otros subtítulos, otra portada."
+      },
+      "publicacion": {
+        "nombre": "Publicación",
+        "descripcion": "Título, descripción y hashtags por red: la plantilla con la que salen los clips de un proyecto."
+      },
+      "derechos": {
+        "nombre": "Derechos",
+        "descripcion": "Qué te permite cada campaña y cómo va la lista blanca de tus cuentas."
+      }
+    },
+    "video": "Video",
+    "videoHint": "Uno de tus proyectos. Para uno nuevo, súbelo primero.",
+    "sinVideos": "Todavía no tienes ningún proyecto: sube un video y vuelve.",
+    "subir": "Subir un video",
+    "encargar": "Encargar",
+    "encargado": "Operación encargada",
+    "encargadoHint": "Sale en Proyectos con su progreso; el análisis no se toca.",
+    "errors": {
+      "sinVideo": "Elige un video.",
+      "recorteInvertido": "El final tiene que ir después del inicio.",
+      "recorteCorto": "Un recorte necesita al menos {min} segundo.",
+      "recorteFuera": "El tramo se sale del video: va de {min} a {max} segundos."
+    },
+    "recortar": {
+      "title": "Recortar",
+      "description": "Quedarte con un tramo del video, tal cual, sin análisis ni reencuadre. Entra en Proyectos como un trabajo más.",
+      "inicio": "Desde (segundos)",
+      "fin": "Hasta (segundos)",
+      "resultado": "Quedan {duracion} de {total}.",
+      "bloqueado": "Recortar es del plan {plan} en adelante."
+    },
+    "reducir": {
+      "title": "Reducir tamaño",
+      "description": "El mismo video, con menos peso. Elige cuánto sacrificar; la cifra real la da el procesado.",
+      "calidad": "Calidad",
+      "tamano": "Pesaría unos {aprox}, de {total}. La cifra real la da el procesado.",
+      "bloqueado": "Reducir tamaño es del plan {plan} en adelante."
+    },
+    "variantes": {
+      "title": "Variantes",
+      "description": "De un clip, varias versiones que son contenido distinto: otro gancho, otra duración, otro formato, otros subtítulos, otra portada. Cada una entra en Proyectos como un trabajo más. Lo que cambia es lo que se ve; el archivo nunca se disfraza.",
+      "ganchos": "Ganchos",
+      "ganchosHint": "Segundo en el que empieza cada versión. Hasta {max}; los propuestos reparten el video.",
+      "gancho": "Gancho {n} (segundos)",
+      "anadirGancho": "Añadir un gancho",
+      "quitarGancho": "Quitar el gancho {n}",
+      "duraciones": "Duraciones",
+      "duracionesHint": "Segundos de cada versión desde su gancho; si el video se acaba antes, hasta el final.",
+      "duracion": "{n} s",
+      "formatos": "Formatos",
+      "formatosHint": "Uno por red de destino: 9:16 para TikTok y Reels, 1:1 y 4:5 para el feed, 16:9 para YouTube y X.",
+      "subtitulos": "Subtítulos",
+      "subtitulosHint": "Estilo de los rótulos de cada versión.",
+      "idioma": "Idioma de los subtítulos",
+      "portadaEnGancho": "Portada en el fotograma del gancho",
+      "portadaHint": "Cada versión abre con la imagen de su propio gancho; sin esto, todas con la del inicio del video.",
+      "total": "{n, plural, =0 {Ninguna variante} one {# variante} other {# variantes}}",
+      "totalHint": "Cada combinación de gancho, duración, formato y subtítulos es una versión. Como mucho {max}.",
+      "lista": "Lo que se va a encargar",
+      "variante": "V{n}",
+      "resumen": "{gancho} · {duracion} s · {formato} · {subtitulos}",
+      "encargar": "Encargar {n, plural, one {# variante} other {# variantes}}",
+      "encargado": "Variantes encargadas",
+      "encargadoHint": "Salen en Proyectos, cada una con su etiqueta y su progreso.",
+      "bloqueado": "Variantes es del plan {plan} en adelante.",
+      "errors": {
+        "sinVideo": "Elige un video.",
+        "sinVariantes": "No hay ninguna combinación posible: revisa ganchos y duraciones.",
+        "demasiadasVariantes": "Como mucho {max} variantes a la vez: quita ganchos, duraciones o formatos.",
+        "ganchoFuera": "Un gancho se sale del video: va de {min} a {max} segundos.",
+        "duracionCorta": "Con ese gancho no quedan {min} segundos de video."
+      }
+    },
+    "publicacion": {
+      "title": "Publicación",
+      "description": "La plantilla de un proyecto por red: título, descripción y hashtags con los que Clipealo publica sus clips en cada cuenta. Un clip puede apartarse de ella desde su ficha. Nada de esto toca el archivo.",
+      "red": "Red",
+      "titulo": "Título",
+      "texto": "Texto",
+      "contador": "{n} de {max} caracteres",
+      "hashtags": "Hashtags",
+      "hashtagsHint": "Separados por espacios o comas. {n} de {max} recomendados.",
+      "hashtagsPlaceholder": "#clips #futbol",
+      "copiar": "Copiar para {red}",
+      "copiado": "Copiado",
+      "copiadoHint": "Por si lo publicas en {red} fuera de Clipealo.",
+      "limpiar": "Vaciar lo de {red}",
+      "conTexto": "Con texto",
+      "nota": "Se guarda al escribir, en este navegador. Donde la red tiene campo de título aparte (YouTube), el título va ahí; en las demás abre el texto.",
+      "avisos": {
+        "tituloLargo": "{red} no acepta títulos de más de {max} caracteres; llevas {n}.",
+        "textoLargo": "{red} no acepta textos de más de {max} caracteres; llevas {n}.",
+        "demasiadosHashtags": "Más de {max} hashtags pierden alcance en {red}; llevas {n}.",
+        "hashtagInvalido": "Un hashtag solo lleva letras, números y guion bajo.",
+        "vacia": "No hay nada que copiar todavía."
+      }
+    },
+    "derechos": {
+      "title": "Derechos",
+      "description": "Que diez cliperos publiquen el mismo clip es legítimo si los derechos están claros. Aquí se ve qué permite cada campaña en la que estás y cómo va la lista blanca de tus cuentas: el permiso de la agencia hecho efectivo en las plataformas.",
+      "sinCampanas": "Todavía no estás en ninguna campaña: la licencia la da cada campaña.",
+      "explorar": "Explorar campañas",
+      "alcance": "Alcance",
+      "redes": "Redes",
+      "atribucion": "Atribución",
+      "notas": "Condiciones",
+      "listaBlanca": "Lista blanca",
+      "situacion": {
+        "no-ofrecida": "La agencia no ofrece lista blanca",
+        "disponible": "Disponible: pídela para una cuenta",
+        "pendiente": "Pedida, a la espera de la agencia",
+        "activa": "Activa: tu cuenta está dada de alta",
+        "rechazada": "Rechazada"
+      },
+      "pedir": "Pedir lista blanca",
+      "cuenta": "Cuenta",
+      "cuentaHint": "Las plataformas dan de alta un canal concreto, no a una persona.",
+      "pedida": "Lista blanca pedida",
+      "pedidaHint": "La agencia la ve en su campaña y decide.",
+      "sinCuentas": "No tienes cuentas conectadas en las redes de esta campaña.",
+      "conectar": "Conectar una cuenta",
+      "resueltaEl": "{fecha}",
+      "errors": {
+        "sinListaBlanca": "Esta campaña no ofrece lista blanca.",
+        "sinCuenta": "Elige una cuenta.",
+        "redFuera": "Esa red no está en la campaña.",
+        "yaPedida": "Ya está pedida para esa cuenta.",
+        "campanaCerrada": "La campaña ya no admite solicitudes."
+      },
+      "agencia": {
+        "title": "Solicitudes de lista blanca",
+        "description": "Cuentas de cliperos que piden el alta en tu Content ID. Dar de alta es decirle a la plataforma que esa cuenta puede usar tu material.",
+        "ninguna": "Nadie ha pedido lista blanca todavía.",
+        "cuenta": "{handle} en {red}",
+        "pedidaEl": "Pedida el {fecha}",
+        "aprobar": "Dar de alta",
+        "rechazar": "Rechazar",
+        "motivo": "Motivo",
+        "motivoHint": "Lo verá el clipero.",
+        "aprobada": "Cuenta dada de alta",
+        "rechazada": "Solicitud rechazada",
+        "cancelar": "Cancelar"
+      }
+    }
+  }
+}

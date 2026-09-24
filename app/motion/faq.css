@@ -1,0 +1,28 @@
+/* ==========================================================================
+   MOVIMIENTO · FAQ (Lote 5)
+   Fundido de las respuestas. El reduce del acordeón ya está en base.css.
+
+   Sin @layer, como base.css. Las variables, clases (.m-anim, .m-rise…) y
+   keyframes compartidos viven en base.css y no se redefinen aquí; lo propio
+   de «reducir movimiento» se escribe con `@variant reduced`.
+
+   - El titular (E5) usa `m-anim m-cut` y el contacto `m-anim m-rise` desde
+     faq.tsx, con las reglas de base.css.
+   ========================================================================== */
+
+/* Al abrir una pregunta, la respuesta (el div interior del panel, que es quien
+   recibe la clase de AccordionContent) se funde un instante después de que el
+   panel empiece a crecer. Solo opacidad, así que es la misma animación en los
+   dos modos:
+   - sin preferencia, el panel crece (`accordion-down`) y el texto llega detrás;
+   - con «reducir», el panel no crece: se funde al abrir (`fade-soft`) y al
+     cerrar (`fade-soft-out`) por base.css, y la respuesta llega detrás.
+   No se usan `slide-in-*` ni `animate-in`: desplazarían con «reducir» o
+   pisarían la animación del panel.
+   Cerrar no funde la respuesta: la altura (o el fundido del panel) ya lo
+   cuenta, y un fundido propio sin `forwards` (regla 8) acabaría antes que el
+   panel y la volvería a enseñar un instante.
+   Responde al gesto: igual en la landing y en /precios. */
+[data-slot="accordion-content"][data-state="open"] > .m-respuesta {
+  animation: fade-soft var(--duration-slow) var(--ease-brand) 60ms backwards;
+}

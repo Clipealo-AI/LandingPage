@@ -1,0 +1,104 @@
+{
+  "objetivo": {
+    "greeting": "Oi, {nombre}. Vamos montar seu perfil em {total, plural, one {# tomada} other {# tomadas}}.",
+    "question": "O que você veio fazer no Clipealo?",
+    "why": "Para te levar direto ao que interessa.",
+    "greetingSinNombre": "Oi. Vamos montar seu perfil em {total, plural, one {# tomada} other {# tomadas}}.",
+    "options": {
+      "campanas": {
+        "title": "Ganhar clipando campanhas",
+        "description": "Recorte conteúdo de marcas e criadores e receba por visualizações."
+      },
+      "mis-videos": {
+        "title": "Recortar minhas lives e vídeos",
+        "description": "Transforme seus vídeos longos em clipes para cada rede."
+      },
+      "ambos": {
+        "title": "As duas coisas",
+        "description": "Começamos pelas campanhas; seus vídeos, quando você quiser."
+      }
+    },
+    "reaction": {
+      "campanas": "Perfeito: vamos mostrar campanhas que pagam por visualizações.",
+      "mis-videos": "Ótimo: deixamos cada rede com o formato certo.",
+      "ambos": "Feito: preparamos suas campanhas e deixamos à mão subir seu primeiro vídeo."
+    }
+  },
+  "nichos": {
+    "question": "O que você gostaria de clipar?",
+    "why": "Escolha até 5. Com isso, ordenamos seu feed de campanhas.",
+    "games": {
+      "label": "Algum jogo específico? (opcional)",
+      "search": {
+        "label": "Busque um jogo",
+        "results": "Jogos",
+        "empty": "Não encontramos.",
+        "chosen": "Selecionado",
+        "clear": "Limpar busca"
+      }
+    },
+    "detected": "Pelos seus criadores, vamos mostrar campanhas de {verticales}.",
+    "reaction": "{count, plural, =0 {Ainda não há campanhas de {nichos}. Avisamos assim que sair uma.} one {{nichos}: # campanha espera por você.} other {{nichos}: # campanhas esperam por você.}}",
+    "reactionUnsure": "{count, plural, =0 {Sem pressa: avisamos assim que sair uma campanha.} one {Sem pressa: enquanto isso, # campanha espera por você.} other {Sem pressa: enquanto isso, # campanhas esperam por você.}}"
+  },
+  "fandom": {
+    "question": "De quem você adoraria fazer clipes?",
+    "why": "Streamers, podcasts, artistas ou clubes. Você verá as campanhas deles primeiro.",
+    "suggestions": "Populares entre clipadores · {pais}",
+    "suggestionsAny": "Populares entre clipadores",
+    "followers": "{seguidores} seguidores",
+    "search": {
+      "label": "Busque pelo nome ou cole o link do canal",
+      "placeholder": "Nome, @canal ou link",
+      "results": "Criadores",
+      "group": "{plataforma}",
+      "link": "Link reconhecido: {plataforma}",
+      "empty": "Não encontramos.",
+      "add": "Adicionar “{texto}”",
+      "chosen": "Já está no seu radar",
+      "clear": "Limpar busca"
+    },
+    "counter": "{n} de {max}",
+    "hasCampaign": "Tem campanha",
+    "radar": "Seu radar",
+    "remove": "Remover {creador}",
+    "detected": {
+      "label": "Detectado",
+      "platforms": "Plataformas onde você os acompanha: {plataformas}.",
+      "verticals": "Vamos mostrar campanhas de {verticales}."
+    },
+    "notice": "Avisamos no app quando lançarem campanha.",
+    "emailAlerts": "Avisar também por e-mail",
+    "added": "Adicionado: {creador}. {n} de {max}.",
+    "removed": "Removido: {creador}. {n} de {max}.",
+    "reaction": {
+      "umbral": "Mais de {umbral, number} clipadores já seguem {creador}.",
+      "primeros": "Você vai estar entre os primeiros a clipar {creador}."
+    }
+  },
+  "redes": {
+    "question": "Onde você publica seus clipes?",
+    "why": "Só mostramos campanhas que você pode aceitar.",
+    "soloConecta": "No plano {plan} só dá para conectar {red}. Marque assim mesmo onde você publica: é o que nos diz quais campanhas servem para você.",
+    "reaction": {
+      "red": "{red} premia clipes de {min, number} a {max, number} s em {formato}. Vamos levar isso em conta.",
+      "sinCuenta": "Sem problema: mostramos como criar uma quando você entrar na sua primeira campanha.",
+      "otra": "Anotado: avisamos quando houver campanhas para essa rede."
+    }
+  },
+  "basicos": {
+    "question": "Por último: de onde você clipa?",
+    "why": "Para mostrar campanhas do seu país e como receber.",
+    "country": {
+      "label": "País",
+      "placeholder": "Escolha seu país",
+      "other": "Outro país"
+    },
+    "languages": {
+      "label": "Idiomas dos seus clipes",
+      "help": "Até {max}."
+    },
+    "reaction": "{pais}: você recebe por {metodos}.",
+    "reactionOther": "Você recebe por {metodos}."
+  }
+}

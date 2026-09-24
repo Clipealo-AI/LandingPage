@@ -1,0 +1,287 @@
+{
+  "verticales": {
+    "gaming": "Gaming",
+    "directos-irl": "Streams and talk",
+    "podcast": "Podcasts and interviews",
+    "deportes": "Sports",
+    "musica": "Music",
+    "humor": "Comedy",
+    "educacion": "Education",
+    "negocios": "Business and startups",
+    "finanzas": "Personal finance",
+    "tecnologia": "Tech and AI",
+    "estilo": "Fashion and beauty",
+    "comida": "Food",
+    "salud-fitness": "Fitness and wellness",
+    "anime-vtubers": "Anime and VTubers",
+    "actualidad": "News and current events"
+  },
+  "aunNoSe": "Not sure yet",
+  "formatosDirecto": {
+    "just-chatting": "Just Chatting",
+    "irl": "IRL and street",
+    "reacciones": "Reactions",
+    "eventos-streamers": "Streamer events",
+    "subathon": "Subathons"
+  },
+  "juegos": {
+    "otro-juego": "Another game"
+  },
+  "ligas": {
+    "selecciones": "National teams",
+    "boxeo": "Boxing",
+    "otra-liga": "Another league"
+  },
+  "generosMusica": {
+    "urbano-latino": "Latin urban",
+    "regional-mexicano": "Regional Mexican",
+    "cumbia": "Cumbia",
+    "salsa": "Salsa",
+    "pop-rock-latino": "Latin pop and rock",
+    "sertanejo": "Sertanejo",
+    "funk-br": "Brazilian funk",
+    "electronica": "Electronic",
+    "rap-trap": "Rap and trap",
+    "kpop": "K-pop",
+    "otro-genero": "Another genre"
+  },
+  "plataformasDirecto": {
+    "no-transmito": "I don’t stream, I upload videos"
+  },
+  "redesPublicacion": {
+    "otra": "Another network",
+    "sin-cuenta": "I don’t have an account yet"
+  },
+  "tramosSeguidores": {
+    "empiezo": "Just starting",
+    "lt-1k": "Under 1,000",
+    "1k-10k": "1,000 to 10,000",
+    "10k-100k": "10,000 to 100,000",
+    "100k-1m": "100,000 to 1 million",
+    "1m-plus": "Over 1 million"
+  },
+  "tramosEspectadores": {
+    "lt-10": "Under 10",
+    "10-50": "10 to 50",
+    "50-200": "50 to 200",
+    "200-1k": "200 to 1,000",
+    "1k-10k": "1,000 to 10,000",
+    "10k-plus": "Over 10,000"
+  },
+  "frecuenciasDirecto": {
+    "casi-diario": "Almost every day",
+    "3-6-semana": "3 to 6 times a week",
+    "1-2-semana": "Once or twice a week",
+    "algunas-mes": "A few times a month",
+    "ocasional": "Every now and then"
+  },
+  "duracionesDirecto": {
+    "lt-1h": "Under 1 h",
+    "1-3h": "1 to 3 h",
+    "3-6h": "3 to 6 h",
+    "6h-plus": "Over 6 h"
+  },
+  "objetivosUso": {
+    "campanas": "Clip campaigns",
+    "mis-videos": "Cut my own videos",
+    "ambos": "Both"
+  },
+  "experiencia": {
+    "nunca": "I’ve never edited",
+    "diversion": "For fun",
+    "regular": "Regularly",
+    "clientes": "For clients"
+  },
+  "disponibilidad": {
+    "lt-3": "Under 3 h",
+    "3-10": "3 to 10 h",
+    "10-20": "10 to 20 h",
+    "20-plus": "Over 20 h"
+  },
+  "motivaciones": {
+    "ingreso-extra": "Earn some extra money",
+    "vivir": "Make a living from it",
+    "crecer-cuentas": "Grow my accounts",
+    "portafolio": "Portfolio or clients",
+    "apoyar-creador": "Support my creator",
+    "aprender": "Learn to edit"
+  },
+  "tiposCuentaPublicacion": {
+    "personal": "My personal account",
+    "fan-page": "A creator’s fan page",
+    "nicho": "A niche page",
+    "nueva-clips": "A new account for clips"
+  },
+  "etiquetasSeguridad": {
+    "palabrotas": "Swearing",
+    "juegos-adultos": "Mature games",
+    "apuestas": "Gambling",
+    "violencia": "Violence",
+    "alcohol-tabaco": "Alcohol and tobacco",
+    "cripto": "Crypto"
+  },
+  "herramientas": {
+    "capcut": "CapCut",
+    "premiere": "Premiere Pro",
+    "davinci": "DaVinci Resolve",
+    "finalcut-ae": "Final Cut or After Effects",
+    "ia-clipping": "AI clipping (Opus, Vizard, Klap…)",
+    "ninguna": "None",
+    "otra": "Other"
+  },
+  "motivosPausa": {
+    "sin-campanas": "No campaigns in my niche",
+    "pagan-poco": "The pay is too low",
+    "cuesta-editar": "Editing is hard for me",
+    "sin-tiempo": "I don’t have time",
+    "rechazos": "My clips got rejected",
+    "otro": "Something else"
+  },
+  "comoNosConociste": {
+    "video-creador": "A creator’s video",
+    "amigo": "Someone told me",
+    "tiktok": "TikTok",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "anuncio": "An ad",
+    "buscador": "Searching online",
+    "evento": "An event",
+    "otro": "Other"
+  },
+  "interesCampanaPropia": {
+    "si": "Yes, tell me more",
+    "mas-adelante": "Maybe later",
+    "no": "No"
+  },
+  "tiposOrganizacion": {
+    "agencia-marketing": "Marketing or influencer agency",
+    "marca": "Brand",
+    "startup-app": "Startup or app",
+    "sello-distribuidora": "Label or distributor",
+    "artista": "Artist",
+    "management-streamers": "Streamer management",
+    "streamer-creador": "I’m a streamer or creator",
+    "infoproductor": "Course creator",
+    "club-liga-evento": "Club, league or event",
+    "medio-podcast": "Media outlet or podcast network",
+    "universidad": "University",
+    "instituto-academia": "Institute or academy",
+    "otro": "Other"
+  },
+  "sectores": {
+    "entretenimiento-creadores": "Entertainment and creators",
+    "musica": "Music",
+    "gaming-esports": "Gaming and esports",
+    "apps-software-ia": "Apps, software and AI",
+    "ecommerce-moda-belleza": "E-commerce, fashion and beauty",
+    "comida-bebidas": "Food and beverages",
+    "educacion-infoproductos": "Education and online courses",
+    "finanzas-fintech": "Finance and fintech",
+    "cripto-trading": "Crypto and trading",
+    "apuestas-casino": "Betting and casino",
+    "salud-suplementos": "Health and supplements",
+    "alcohol": "Alcohol",
+    "politica-causas": "Politics and causes",
+    "deportes": "Sports",
+    "medios": "Media",
+    "tecnologia-telecom": "Tech and telecom",
+    "viajes": "Travel",
+    "automocion": "Automotive",
+    "inmobiliario": "Real estate",
+    "ong": "Nonprofits"
+  },
+  "tramosPresupuesto": {
+    "lt-500": "Under US$500",
+    "500-2k": "US$500 to US$2,000",
+    "2k-10k": "US$2,000 to US$10,000",
+    "10k-50k": "US$10,000 to US$50,000",
+    "50k-plus": "Over US$50,000",
+    "no-decir": "I’d rather not say"
+  },
+  "frecuenciasCampana": {
+    "unica": "Just one campaign",
+    "varias-ano": "Several a year",
+    "mensual": "Every month",
+    "siempre-activa": "Always on"
+  },
+  "tramosCpm": {
+    "lt-0_5": "Under US$0.50",
+    "0_5-1": "US$0.50 to US$1",
+    "1-3": "US$1 to US$3",
+    "3-6": "US$3 to US$6",
+    "6-plus": "Over US$6",
+    "recomiendame": "Recommend one for me"
+  },
+  "tramosClientes": {
+    "1": "One client",
+    "2-5": "2 to 5",
+    "6-20": "6 to 20",
+    "21-plus": "More than 20"
+  },
+  "materiales": {
+    "directos": "Livestreams",
+    "videos-largos": "Long videos",
+    "podcast": "Podcast",
+    "videoclips": "Music videos",
+    "eventos-entrevistas": "Events and interviews",
+    "anuncios": "Ads"
+  },
+  "objetivosCampana": {
+    "alcance": "Reach",
+    "lanzamiento": "Launch",
+    "crecer-canal": "Grow a channel",
+    "trafico-ventas": "Traffic and sales",
+    "presencia-continua": "Always-on presence",
+    "reactivar-catalogo": "Revive a catalog"
+  },
+  "roles": {
+    "fundador": "Founder",
+    "marketing": "Marketing",
+    "manager": "Manager",
+    "creador": "Creator",
+    "otro": "Other"
+  },
+  "motivosRechazo": {
+    "web-no-verificable": "We couldn’t verify the website",
+    "sector-no-admitido": "Industry not allowed",
+    "datos-incompletos": "Missing information",
+    "duplicada": "Duplicate request",
+    "otro": "Other reason"
+  },
+  "finalidades": {
+    "terminos": "Terms of service",
+    "privacidad": "Privacy notice",
+    "mayor-edad": "Legal age",
+    "estadisticas": "Platform statistics",
+    "informes-sector": "Industry reports",
+    "perfil-visible": "Profile visible to agencies",
+    "novedades-correo": "News and tips by email",
+    "novedades-marcas": "News for brands by email",
+    "alertas-correo": "Creator alerts by email",
+    "contacto-comercial": "Contact from the sales team",
+    "datos-cobro": "Payout details and verification"
+  },
+  "conservacion": {
+    "respuestas-perfil": "Deleted after 18 months of inactivity; we keep your country and your consents.",
+    "registro-consentimientos": "For as long as you have your account, plus the legal period in your country.",
+    "tramo-declarado": "Until you connect the account and we measure it.",
+    "texto-como-llegaste": "12 months; after that we only keep the category.",
+    "eventos-onboarding": "24 months, without the content of your answers."
+  },
+  "fuentes": {
+    "declarado": "Self-reported",
+    "medido": "Measured",
+    "inferido": "Inferred"
+  },
+  "precision": {
+    "baja": "Low",
+    "media": "Medium",
+    "alta": "High"
+  },
+  "estadosOnboarding": {
+    "sin-empezar": "Not started",
+    "en-curso": "In progress",
+    "pospuesto": "Postponed",
+    "completado": "Completed"
+  }
+}

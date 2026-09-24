@@ -1,0 +1,82 @@
+{
+  "take": "Toma {n} de {total}",
+  "documentTitle": "Toma {n} de {total} · {paso} · Clipealo",
+  "documentTitleFinal": "{paso} · Clipealo",
+  "actions": {
+    "back": "Atrás",
+    "continue": "Continuar",
+    "skip": "Saltar esta toma",
+    "later": "Hacerlo luego",
+    "skipIntro": "Saltar intro",
+    "edit": "Editar"
+  },
+  "enter": "Enter ↵",
+  "postponed": "Guardado. Lo retomas cuando quieras, desde donde lo dejaste.",
+  "dataLabel": {
+    "trigger": "Tus datos",
+    "title": "Tus datos",
+    "whoLabel": "Quién lo ve",
+    "quien": {
+      "equipo": "Tú y el equipo de Clipealo.",
+      "estadisticas": "Tú y el equipo de Clipealo. En las estadísticas de la plataforma, solo en grupos de 50 personas o más y redondeado.",
+      "agencias": "El equipo de Clipealo, para revisar tu solicitud de agencia. No lo ven otros usuarios."
+    },
+    "howLongLabel": "Cuánto lo guardamos",
+    "whereLabel": "Dónde lo cambias",
+    "where": "Ajustes › Tus datos"
+  },
+  "pasos": {
+    "cuenta": "Tu cuenta",
+    "objetivo": "Qué vienes a hacer",
+    "nichos": "Tus temas",
+    "fandom": "Tus creadores",
+    "redes": "Tus redes",
+    "basicos": "País e idiomas",
+    "directo": "Tus directos",
+    "canal": "Tu canal",
+    "render": "Tu primer corte",
+    "tipo-org": "A quién representas",
+    "org": "Tu organización",
+    "promocion": "Qué promocionas",
+    "alcance": "Dónde y para quién",
+    "render-agencia": "Tu solicitud"
+  },
+  "timeline": {
+    "label": "Tomas",
+    "item": "Toma {n}, {paso}. {estado}",
+    "estado": {
+      "actual": "En curso",
+      "respondida": "Respondida",
+      "saltada": "Saltada",
+      "pendiente": "Pendiente"
+    }
+  },
+  "live": {
+    "encajan": "{count, plural, =0 {Aún no hay campañas que encajen contigo} one {# campaña encaja contigo} other {# campañas encajan contigo}}"
+  },
+  "tarjeta": {
+    "sinNombre": "Tu perfil",
+    "lista": "Lista",
+    "rama": {
+      "clipero": "Clipero",
+      "creador": "Creador",
+      "agencia": "Agencia"
+    },
+    "feed": "Campañas para ti",
+    "radar": "Tu radar",
+    "sector": "Sector",
+    "revision": "Revisión",
+    "cpm": "CPM de referencia: {valor}",
+    "redes": "Tus redes",
+    "redesObjetivo": "Redes objetivo",
+    "alcance": "Alcance",
+    "paisIdiomas": "País e idiomas",
+    "tieneCampana": "El punto marca a quien ya tiene campaña",
+    "mas": "+{n}",
+    "minutos": "~{min} min al mes",
+    "verificacion": "Verificación pendiente",
+    "dominio": "El dominio coincide",
+    "abrir": "Ver tu tarjeta",
+    "cerrar": "Ocultar tu tarjeta"
+  }
+}

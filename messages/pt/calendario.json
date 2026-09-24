@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "title": "Calendário"
+  },
+  "nav": "Calendário",
+  "crumbs": {
+    "calendario": "Calendário"
+  },
+  "titulo": "Calendário",
+  "intro": "Agende e gerencie suas publicações.",
+  "zona": {
+    "sello": "Hora de {ciudad} ({desfase})",
+    "cambiar": "Mudar o fuso horário",
+    "aviso": "Seu navegador está em {ciudad}: os horários daqui são os de {zona}."
+  },
+  "barra": {
+    "hoy": "Hoje",
+    "anterior": "Semana anterior",
+    "siguiente": "Próxima semana",
+    "anteriorMes": "Mês anterior",
+    "siguienteMes": "Próximo mês",
+    "vista": "Visualização",
+    "semana": "Semana",
+    "lista": "Lista",
+    "mes": "Mês"
+  },
+  "filtros": {
+    "grupo": "Filtrar o calendário",
+    "redesAria": "Redes: {valor}",
+    "todasLasRedes": "Todas as redes",
+    "nRedes": "{n, plural, one {# rede} other {# redes}}",
+    "enVista": "{n, plural, =0 {nada à vista} one {# à vista} other {# à vista}}",
+    "cuentaAria": "Conta: {valor}",
+    "todasLasCuentas": "Todas as contas",
+    "cuentaOpcion": "{red} · {handle}",
+    "cuentaDesconocida": "Uma conta que não está mais aqui",
+    "sinCuenta": "Planos sem conta",
+    "quitar": "Remover o filtro",
+    "resultado": "{n, number} de {total, number} publicações à vista"
+  },
+  "programar": "Agendar publicação",
+  "diaEntero": "Ver o dia inteiro",
+  "franjaCorta": "Ver só as horas com publicações",
+  "ahora": "Agora",
+  "dia": {
+    "publicaciones": "{n, plural, =0 {sem publicações} one {# publicação} other {# publicações}}"
+  },
+  "mes": {
+    "mas": "+{n, number} mais",
+    "masVer": "Ver {fecha} na visualização Semana"
+  },
+  "estado": {
+    "planificada": "Planejada",
+    "publicando": "Publicando",
+    "toca-publicar": "Hora de publicar",
+    "publicada": "Publicada",
+    "fallida": "Não saiu",
+    "cancelada": "Cancelada",
+    "sin-cuenta": "Sem conta"
+  },
+  "tarjeta": {
+    "aria": "{hora} · {red} · {titulo} · {estado}",
+    "sinCuenta": "A conta do {red} não está mais conectada.",
+    "ver": "Ver a publicação"
+  },
+  "mover": {
+    "ayuda": "Arraste as publicações para mudar o dia ou a hora, ou aperte M em uma.",
+    "ayudaTeclado": "No teclado: M pega, as setas movem, Enter solta e Esc devolve.",
+    "movida": "Agora sai em {fecha}.",
+    "bloqueada": "Aí não dá: {motivo}",
+    "noSeMueve": {
+      "publicada": "Já está publicada.",
+      "publicando": "Está sendo publicada agora mesmo.",
+      "cancelada": "Está cancelada.",
+      "sinCuenta": "A conta dela não está mais conectada.",
+      "noEncaja": "Esse clipe não cabe nessa rede, e mudar a hora não resolve."
+    },
+    "tope": "Fim da faixa · “Ver o dia inteiro” para descer mais"
+  },
+  "bandeja": {
+    "titulo": "{n, plural, =0 {Nada pendente neste filtro} one {# publicação que não saiu} other {# publicações que não saíram}}",
+    "descripcion": "Não saíram: a rede recusou, a conta não está mais aí ou é você quem publica. Aqui você resolve.",
+    "publicada": "Já publiquei",
+    "publicarAhora": "Publicar agora",
+    "reintentar": "Tentar de novo",
+    "fuera": "{n, plural, one {Há # publicação que não saiu fora deste filtro} other {Há # publicações que não saíram fora deste filtro}}",
+    "verTodas": "Ver todas"
+  },
+  "compositor": {
+    "titulo": "Agendar publicação",
+    "descripcion": "Escolha os clipes, em quais contas conectadas eles saem e quando.",
+    "promesa": "A Clipealo publica nas contas que você escolher, na hora que marcar, e guarda o link.",
+    "proyecto": "Projeto",
+    "proyectoVacio": "Este projeto ainda não tem clipes.",
+    "clips": "Clipes",
+    "clipsElegidos": "{n, plural, =0 {Nenhum clipe escolhido} one {# clipe escolhido} other {# clipes escolhidos}}",
+    "redes": "Em quais contas sai",
+    "redesVacio": "Você não tem nenhuma conta conectada onde publicar.",
+    "cuentaDe": "Conta do {red}",
+    "cuando": "Quando",
+    "dia": "Dia",
+    "hora": "Hora",
+    "zonaAviso": "O horário é o de {ciudad} ({desfase}), o fuso da sua conta.",
+    "separacion": "Duas publicações seguidas na mesma conta ficam {min, number} minutos separadas.",
+    "previo": "O que vai ser criado",
+    "bloqueos": "Isto precisa ser resolvido antes de agendar",
+    "consejos": "Vale saber",
+    "resumen": "{n, plural, =0 {Ainda não será criada nenhuma publicação} one {Será criada # publicação} other {Serão criadas # publicações}}",
+    "cancelar": "Cancelar",
+    "confirmar": "Agendar",
+    "programadas": "{n, plural, one {# publicação agendada} other {# publicações agendadas}}",
+    "programadasCuando": "A primeira sai em {fecha}. Avisamos você quando estiver publicada.",
+    "programadasDescripcion": "Saem sozinhas na hora delas.",
+    "errores": {
+      "sinClip": "Escolha pelo menos um clipe.",
+      "sinCuenta": "Escolha pelo menos uma conta conectada para publicar.",
+      "faltaFecha": "Falta o dia ou a hora.",
+      "enPasado": "Escolha um dia e uma hora que ainda não passaram.",
+      "formatoNoAdmitido": "O {red} não aceita o formato {aspecto}.",
+      "duracionExcedida": "{n, plural, =1 {Dura {segundos, number} s e o máximo são {max, number} s.} other {# clipes passam do máximo de {max, number} s.}}",
+      "duplicadaEnCuenta": "Você já tem esse clipe nesse mesmo horário no {red}.",
+      "fueraDeVentanaCampana": "Nesse dia a campanha já não aceita clipes.",
+      "muyPegadaAOtra": "Há outra publicação nessa conta a {minutos, number} min; melhor deixar {min, number}.",
+      "demasiadasHoy": "Seriam {n, number} publicações nesse dia na mesma conta; acima de {max, number} o ritmo cansa.",
+      "fueraDeDuracionIdeal": "{n, plural, =1 {Dura {segundos, number} s: no {red} segura melhor entre {min, number} e {max, number} s.} other {# clipes ficam fora do que segura melhor no {red}: entre {min, number} e {max, number} s.}}"
+    }
+  },
+  "detalle": {
+    "programadaPara": "Agendada para {fecha}",
+    "publicadaEl": "Publicada em {fecha}",
+    "texto": "Texto sugerido",
+    "lote": "Não vai sozinha",
+    "loteDescripcion": "{n, plural, one {O mesmo clipe vai também para mais # rede, da mesma leva} other {O mesmo clipe vai também para mais # redes, da mesma leva}}",
+    "reprogramar": "Mudar o dia e a hora",
+    "dia": "Dia",
+    "hora": "Hora",
+    "zonaAviso": "O horário é o de {ciudad} ({desfase}), o fuso da sua conta.",
+    "mover": "Mover",
+    "moverSinCambios": "Mude o dia ou a hora para poder movê-la.",
+    "movida": "Agora sai em {fecha}.",
+    "cancelar": "Cancelar a publicação",
+    "cancelada": "Publicação cancelada.",
+    "deshacer": "Desfazer",
+    "recuperar": "Planejar de novo",
+    "recuperada": "Voltou a estar planejada.",
+    "publicarAhora": "Publicar agora",
+    "publicando": "Publicando no {red}…",
+    "reintentar": "Tentar de novo",
+    "reconectar": "Reconectar a conta",
+    "falloTitulo": "Não deu para publicar",
+    "intentos": "{n, plural, one {# tentativa} other {# tentativas}}",
+    "manual": "Você subiu na mão?",
+    "promesa": "Você subiu por conta própria? Cole o link e fica registrada: as Análises seguem ela igual às que a Clipealo publica.",
+    "enlace": "Link da publicação",
+    "enlacePlaceholder": "https://…",
+    "enlaceAyuda": "Copie da própria rede, do jeito que está.",
+    "enlaceError": "Cole um link válido, começando por https://",
+    "publicar": "Já publiquei",
+    "publicada": "Publicada!",
+    "publicadaDescripcion": "O link já está guardado e as Análises seguem ele.",
+    "verPublicacion": "Abrir a publicação"
+  },
+  "vacio": {
+    "semana": {
+      "titulo": "Nada agendado nesta semana",
+      "descripcion": "Escolha clipes de um projeto e espalhe pelos próximos dias."
+    },
+    "mes": {
+      "titulo": "Nada agendado neste mês",
+      "descripcion": "Escolha clipes de um projeto e espalhe pelos próximos dias."
+    },
+    "filtro": {
+      "titulo": "Nada deste filtro à vista",
+      "descripcion": "{n, plural, one {Há # publicação em outras redes ou contas.} other {Há # publicações em outras redes ou contas.}}"
+    },
+    "sinCuentas": {
+      "titulo": "Conecte uma rede para começar",
+      "descripcion": "A Clipealo publica nas suas contas conectadas: conecte uma para começar.",
+      "cta": "Ir para Contas conectadas"
+    }
+  },
+  "muro": {
+    "titulo": "Agendar é do plano {plan}",
+    "descripcion": "Você escolhe o dia e a hora e a publicação sai sozinha na conta que disser. Publicar agora você já tem.",
+    "ventajas": {
+      "plan": "Planeje a semana inteira de uma vez",
+      "lote": "O mesmo clipe em várias redes, em uma só ação",
+      "aviso": "Sai sozinha na hora que você marcar",
+      "enlace": "O link fica guardado ao publicar e entra nas Análises"
+    },
+    "nota": "Publicar agora nas suas contas conectadas está em todos os planos, inclusive no Teste."
+  },
+  "fallo": {
+    "cuentaCaducada": "A conexão com a conta expirou.",
+    "permisoDenegado": "A conta não dá permissão para publicar.",
+    "rechazoRed": "A rede recusou a publicação.",
+    "limiteApi": "A rede não aceita mais publicações hoje.",
+    "sinRed": "Não deu para chegar na rede."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "title": "Meus compromissos",
+  "description": "O que você solicitou e aquilo em que foi aceito, com o prazo de cada um. Sair a tempo libera a vaga e não gera penalidade.",
+  "tabs": {
+    "activos": "Ativos",
+    "historial": "Histórico"
+  },
+  "empty": {
+    "activos": {
+      "title": "Você não tem nenhum compromisso aberto",
+      "description": "Solicite entrar em uma campanha: quando aceitarem você, ela aparece aqui com a contagem regressiva.",
+      "cta": "Explorar campanhas"
+    },
+    "historial": {
+      "title": "Aqui fica o que você já fechou",
+      "description": "Os compromissos cumpridos, vencidos ou dos quais você saiu ficam guardados nesta aba."
+    }
+  },
+  "estado": {
+    "solicitada": "Solicitação enviada",
+    "aceptada": "Dentro da campanha",
+    "entregada": "Entregue, em revisão",
+    "cumplida": "Cumprido",
+    "rechazada": "Não aceitaram você",
+    "retirada": "Você saiu",
+    "caducada": "Prazo vencido",
+    "en-disputa": "Em reclamação"
+  },
+  "linea": {
+    "solicitada": "Estão vendo seu perfil. Avisamos assim que decidirem.",
+    "aceptada": "Você está dentro: entregue seu clipe antes de o prazo acabar.",
+    "entregada": "Você entregou seu clipe. Agora é a vez de quem paga revisar.",
+    "cumplida": "Clipe aprovado: o compromisso foi cumprido.",
+    "rechazada": "Não aceitaram sua solicitação para esta campanha.",
+    "retirada": "Você saiu a tempo e sua vaga ficou livre.",
+    "caducada": "O prazo venceu sem entrega e sua vaga ficou livre.",
+    "en-disputa": "Há uma reclamação aberta: o time da Clipealo está analisando."
+  },
+  "solicitado": "Solicitado em {date}",
+  "plazo": {
+    "quedan": "{n, plural, one {Falta # dia} other {Faltam # dias}}",
+    "ultimo": "Último dia para entregar",
+    "vencido": "{n, plural, one {O prazo venceu há # dia} other {O prazo venceu há # dias}}",
+    "hasta": "Até {date}",
+    "sin": "Ainda sem prazo"
+  },
+  "clip": "Seu clipe: {title}",
+  "acciones": {
+    "entregar": "Entregar meu clipe",
+    "ver": "Ver campanha",
+    "retirarme": "Sair",
+    "cancelar": "Cancelar solicitação",
+    "reclamar": "Reclamar"
+  },
+  "retirar": {
+    "title": "Sair de “{title}”?",
+    "description": "Sua vaga fica livre na hora e não há penalidade. Você pode solicitar entrar de novo enquanto a campanha aceitar gente.",
+    "cancelTitle": "Cancelar sua solicitação para “{title}”?",
+    "cancelDescription": "Quem paga deixa de vê-la. Você pode solicitar entrar de novo enquanto as inscrições seguirem abertas.",
+    "keep": "Deixar como está",
+    "confirm": "Sim, quero sair",
+    "cancelConfirm": "Sim, cancelar",
+    "done": "Você não está mais na campanha",
+    "doneDescription": "Sua vaga em “{title}” está livre de novo.",
+    "cancelDone": "Solicitação cancelada",
+    "cancelDoneDescription": "Retiramos sua solicitação para “{title}”."
+  },
+  "disputa": {
+    "title": "Abrir uma reclamação",
+    "descriptionClipero": "Conte o que aconteceu em “{title}”. O time da Clipealo analisa.",
+    "descriptionAgencia": "Conte o que aconteceu com {clipero} em “{title}”. O time da Clipealo analisa.",
+    "motivo": "O que aconteceu?",
+    "motivos": {
+      "no-entrego": {
+        "title": "Não entregou o clipe",
+        "description": "Aceitou a campanha, o prazo venceu e não responde."
+      },
+      "no-revisa": {
+        "title": "Não revisam meu clipe",
+        "description": "Entreguei e a campanha não decide."
+      },
+      "rechazo-injusto": {
+        "title": "Me recusaram sem motivo",
+        "description": "A recusa não se sustenta diante do que a campanha pedia."
+      },
+      "no-paga": {
+        "title": "Aprovado e sem receber",
+        "description": "Meu clipe está aprovado e o pagamento não chega."
+      },
+      "contenido": {
+        "title": "O clipe não cumpre",
+        "description": "Está publicado e ignora os requisitos da campanha."
+      }
+    },
+    "detalle": "Conte com suas palavras (opcional)",
+    "detallePlaceholder": "Datas, mensagens, links… o que ajudar a entender.",
+    "contador": "{n}/{max}",
+    "avisoTitle": "Quem revisa é o time da Clipealo",
+    "aviso": "Enquanto a reclamação estiver aberta, a campanha não pode ser encerrada e o dinheiro em jogo fica reservado. As duas partes veem o que for decidido.",
+    "send": "Enviar reclamação",
+    "cancel": "Cancelar",
+    "sent": "Reclamação enviada",
+    "sentDescription": "O time da Clipealo analisa e decide. Avisamos você com o resultado.",
+    "none": "Agora não há nada a reclamar neste compromisso.",
+    "abierta": "Já existe uma reclamação aberta sobre este compromisso.",
+    "close": "Fechar"
+  }
+}

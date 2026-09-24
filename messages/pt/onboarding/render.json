@@ -1,0 +1,16 @@
+{
+  "skip": "Ver resultado agora",
+  "log": {
+    "temas": "Lendo seus temas: {nichos}",
+    "campanas": "Buscando campanhas em {idiomas} para {redes}",
+    "listo": "pronto",
+    "temasSinElegir": "Lendo seus temas: ainda por decidir",
+    "redesTodas": "qualquer rede",
+    "campanasResultado": "{count, plural, =0 {nenhuma campanha ainda} one {# combina} other {# combinam}}",
+    "radar": "{n, plural, =0 {Seu radar: seus criadores ainda não têm campanha} one {Seu radar: # dos seus criadores tem campanha} other {Seu radar: # dos seus criadores têm campanha}}",
+    "radarVacio": "Seu radar: nenhum criador por enquanto",
+    "wallet": "Sua carteira ({pais}): você recebe por {metodos}",
+    "walletOtro": "Sua carteira: você recebe por {metodos}"
+  },
+  "ready": "{count, plural, =0 {Perfil pronto. Avisamos quando chegarem campanhas do seu nicho.} one {Perfil pronto: # campanha combina com você.} other {Perfil pronto: # campanhas combinam com você.}}"
+}

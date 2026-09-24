@@ -1,0 +1,51 @@
+{
+  "tipos": {
+    "idea": "Una idea",
+    "problema": "Algo no funciona",
+    "precio": "Precios y planes",
+    "contenido": "Contenido y formación",
+    "otro": "Otra cosa"
+  },
+  "estados": {
+    "nuevo": "Enviado",
+    "leido": "Leído por el equipo",
+    "respondido": "Respondido",
+    "archivado": "Archivado"
+  },
+  "abrir": "Enviar un comentario",
+  "dialogo": {
+    "title": "Cuéntanos",
+    "description": "Lo lee el equipo de Clipealo, y se responde. Escribe lo que pasó y dónde: es lo que hace que sirva.",
+    "tipo": "¿De qué va?",
+    "texto": "Tu mensaje",
+    "textoPlaceholder": "Qué esperabas, qué pasó y en qué pantalla.",
+    "desde": "Se manda desde {ruta}",
+    "sinRuta": "Se manda sin pantalla asociada",
+    "cancel": "Ahora no",
+    "send": "Enviar",
+    "errors": {
+      "textoCorto": "Escribe al menos {min} caracteres: con menos no se entiende qué pasó.",
+      "textoLargo": "Como mucho {max} caracteres."
+    }
+  },
+  "enviado": {
+    "title": "Mensaje enviado",
+    "description": "Lo lee el equipo. Si hay respuesta, la verás en Ayuda › Tus mensajes."
+  },
+  "mios": {
+    "title": "Tus mensajes",
+    "description": "Lo que le has escrito al equipo y lo que te ha contestado.",
+    "empty": "Todavía no has escrito nada. Cuando algo te chirríe, dínoslo: es la forma más rápida de que cambie.",
+    "respuesta": "Respuesta del equipo",
+    "sinRespuesta": "Sin respuesta todavía",
+    "sinLeer": "Nueva",
+    "enviado": "Enviado el {fecha}",
+    "respondido": "Respondido el {fecha}",
+    "desde": "Desde {ruta}",
+    "marcarLeida": "Marcar como leída"
+  },
+  "aviso": {
+    "titulo": "{n, plural, one {# respuesta del equipo} other {# respuestas del equipo}}",
+    "enlace": "Leerlas en Ayuda"
+  }
+}

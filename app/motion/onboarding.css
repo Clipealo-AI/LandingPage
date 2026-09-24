@@ -1,0 +1,264 @@
+/* ==========================================================================
+   MOVIMIENTO · ONBOARDING «Tu primer corte» (/bienvenida)
+   La pregunta que se escribe palabra a palabra (`[data-toma-texto]`), el
+   cursor, la entrada escalonada de los controles (`[data-toma-entrada]`), la
+   reacción, el cambio de toma, el timeline y el render
+   (docs/onboarding-2026-09.md, §5.3-§5.14).
+
+   Sin @layer, como base.css. Las variables `--motion-*`, las clases y los
+   keyframes compartidos (`fade-soft`, `pop`, `crop-in`…) viven en base.css y
+   globals.css y no se redefinen aquí. Los `@keyframes` propios van fuera de
+   `@theme` y con `backwards`, nunca `forwards` (AGENTS.md, regla 8): sin JS,
+   con las animaciones desactivadas o en una captura, todo se ve terminado.
+
+   Con «reducir movimiento» (regla 6) nada se queda sin respuesta: la pregunta
+   pasa a karaoke (solo color), lo que desplaza o escala se funde en su sitio y
+   el cursor se queda quieto al final en vez de avanzar.
+
+   El monitor (`bg-stage`) es superficie siempre oscura en los dos temas
+   (regla 1): sus luces van en `primary`, tinta o blanco, nunca en naranja.
+   ========================================================================== */
+
+@keyframes toma-palabra {
+  from {
+    opacity: 0;
+    translate: 0 0.25em;
+  }
+}
+@keyframes toma-karaoke {
+  from {
+    color: var(--muted-foreground);
+  }
+}
+@keyframes toma-entrada {
+  from {
+    opacity: 0;
+    translate: 0 0.5rem;
+  }
+}
+@keyframes toma-cursor {
+  from,
+  to {
+    opacity: 1;
+  }
+}
+@keyframes toma-cursor-fin {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes render-barra {
+  from {
+    scale: 0 1;
+  }
+}
+@keyframes tarjeta-capa {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+@keyframes claqueta-cierra {
+  from {
+    rotate: -18deg;
+  }
+}
+@keyframes claqueta-destello {
+  from {
+    opacity: 0.35;
+  }
+}
+@keyframes contador-destello {
+  from {
+    background-color: color-mix(in oklab, var(--primary) 12%, transparent);
+  }
+}
+@keyframes anillo-primary {
+  from {
+    box-shadow: 0 0 0 0.2rem color-mix(in oklab, var(--primary) 55%, transparent);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   La frase que se escribe: una palabra por span, con su retardo propio
+   -------------------------------------------------------------------------- */
+
+[data-toma-texto] [data-palabra] {
+  display: inline-block;
+  position: relative;
+  animation: toma-palabra 200ms var(--ease-brand) backwards; /* = DURACION_PALABRA_MS */
+  animation-delay: var(--retardo);
+
+  /* Karaoke: la frase se lee entera desde el primer fotograma y cada palabra
+     se enciende a su hora. Solo color, nada se mueve. */
+  @variant reduced {
+    animation-name: toma-karaoke;
+    animation-duration: 160ms;
+  }
+}
+
+/* Cursor: una barra de 2 px que avanza con la palabra, sin moverla */
+[data-toma-texto]:is([data-cursor="fin"], [data-cursor="sigue"]) [data-palabra]::after {
+  content: "";
+  position: absolute;
+  inset-block: 0.14em;
+  inset-inline-end: -0.12em;
+  inline-size: 2px;
+  background: var(--primary);
+  opacity: 0;
+  animation: toma-cursor var(--dura) var(--retardo);
+}
+
+/* En la última palabra parpadea tres veces y se apaga (WCAG 2.2.2: < 5 s) */
+[data-toma-texto][data-cursor="fin"] [data-palabra][data-fin]::after {
+  animation: toma-cursor-fin 1060ms linear var(--retardo) 3;
+}
+
+/* Con «reducir» el cursor no recorre la frase: solo aparece en la última
+   palabra, fijo 600 ms al final, y desaparece (§5.4). El `@variant` va sobre el
+   elemento y anida el pseudoelemento, como `.m-cut` en base.css: escrito dentro
+   de la regla del `::after` compila a un `:where()` vacío que no casa con nada
+   y el cursor se quedaba con el movimiento completo. Van después de las reglas
+   de arriba para ganarles en la cascada (misma especificidad). */
+[data-toma-texto]:is([data-cursor="fin"], [data-cursor="sigue"])
+  [data-palabra]:not([data-fin]) {
+  @variant reduced {
+    &::after {
+      content: none;
+    }
+  }
+}
+[data-toma-texto][data-cursor="fin"] [data-palabra][data-fin] {
+  @variant reduced {
+    &::after {
+      animation: toma-cursor 600ms var(--retardo);
+    }
+  }
+}
+
+/* Acelerado, ya visto o sin JS: la frase entera, sin cursor */
+[data-toma-texto][data-completo] [data-palabra],
+[data-toma-texto][data-completo] [data-palabra]::after {
+  animation: none;
+}
+[data-toma-texto][data-completo] [data-palabra]::after {
+  content: none;
+}
+
+/* --------------------------------------------------------------------------
+   Controles, reacción y esquinas de la pregunta
+   -------------------------------------------------------------------------- */
+
+/* Se pueden usar desde el primer fotograma: solo entran a la vista */
+/* La copia de la toma que sale (`EscenaToma`). Su texto viaja en un atributo y
+   vuelve como contenido generado: mientras dura la salida, el mismo texto no
+   está dos veces en el árbol, así que ni un lector de pantalla ni una búsqueda
+   por texto encuentran la toma vieja. Sin esto la copia salía en blanco. */
+[data-toma-fantasma] [data-texto-fantasma]::before {
+  content: attr(data-texto-fantasma);
+}
+
+[data-toma-entrada] > * {
+  animation: toma-entrada 220ms var(--ease-brand) backwards;
+  animation-delay: calc(min(var(--i, 0), 7) * 35ms);
+
+  @variant reduced {
+    animation-name: fade-soft;
+  }
+}
+
+/* La reacción entra en fundido cruzado; la anterior se va y se desmonta con
+   `animationend` (sin esta animación se quedaría encima de la nueva) */
+[data-reaccion-texto][data-funde] {
+  animation: fade-soft 150ms var(--ease-brand) backwards;
+}
+[data-reaccion-previa] {
+  animation: fade-soft-out 150ms var(--ease-brand) forwards;
+}
+
+/* Esquinas de la pregunta: se cierran en orden (base.css pone `crop-in`, que
+   con «reducir» ya es solo opacidad) */
+[data-toma-marco] [data-crop-corner][data-crop-animate] {
+  animation-delay: calc(var(--c, 0) * 60ms);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline de tomas y monitor
+   -------------------------------------------------------------------------- */
+
+[data-segmento] [data-barra] {
+  transition:
+    background-color var(--duration-base) var(--ease-brand),
+    opacity var(--duration-base) var(--ease-brand);
+}
+
+/* --------------------------------------------------------------------------
+   Tarjeta de perfil: una capa por respuesta (§5.6)
+   -------------------------------------------------------------------------- */
+
+/* Cada capa entra al montarse, que es cuando llega su respuesta */
+[data-capa] {
+  animation: tarjeta-capa 320ms var(--ease-brand) backwards;
+  animation-delay: calc(min(var(--i, 0), 5) * 40ms);
+
+  @variant reduced {
+    animation-name: fade-soft;
+    animation-duration: 240ms;
+  }
+}
+
+/* Chips, avatares y logos saltan uno detrás de otro; con «reducir», un anillo
+   en su sitio dice lo mismo sin mover nada */
+[data-capa-pop] > * {
+  animation: pop 320ms var(--ease-spring) backwards;
+  animation-delay: calc(min(var(--i, 0), 7) * 45ms);
+
+  @variant reduced {
+    animation: anillo-primary 600ms var(--ease-brand) backwards;
+  }
+}
+
+/* Claqueta: las barras se cierran una vez al entrar la capa */
+[data-claqueta-barra] {
+  transform-origin: left center;
+  animation: claqueta-cierra 420ms var(--ease-spring) backwards;
+  animation-delay: 120ms;
+
+  @variant reduced {
+    animation-name: claqueta-destello;
+    animation-duration: 300ms;
+  }
+}
+
+/* Contador de campañas: la cuenta hasta el valor la lleva el JS (600 ms). Con
+   «reducir movimiento» el número cambia de golpe y lo que avisa es el destello,
+   que se dispara solo porque el contador se vuelve a montar con cada valor. */
+[data-contador] {
+  @variant reduced {
+    animation: contador-destello 150ms var(--ease-brand) backwards;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Render: el registro se escribe, el ✓ salta y la barra recorre
+   -------------------------------------------------------------------------- */
+
+[data-render-linea][data-listo] [data-render-check] {
+  animation: pop 420ms var(--ease-spring) backwards;
+}
+[data-render-linea][data-listo] [data-render-resultado] {
+  animation: fade-soft 240ms var(--ease-brand) backwards;
+}
+
+/* La barra es un indicador de progreso: con «reducir» también avanza */
+[data-render-barra] {
+  animation: render-barra var(--render-total, 1800ms) linear backwards;
+}
+[data-render-log][data-completo] [data-render-barra] {
+  animation: none;
+}

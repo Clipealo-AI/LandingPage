@@ -1,0 +1,93 @@
+{
+  "directo": {
+    "question": "Onde você faz lives ou envia seus vídeos longos?",
+    "why": "Deixamos a importação pronta a partir daí.",
+    "frequency": {
+      "label": "Com que frequência você faz lives?"
+    },
+    "duration": {
+      "label": "Quanto dura uma live normal? (opcional)"
+    },
+    "reaction": {
+      "minutos": "Nesse ritmo, você enviaria cerca de {min, number} minutos por mês.",
+      "sinDirectos": "Sem problema: envie seus vídeos quando quiser e deixamos tudo pronto para cada rede."
+    }
+  },
+  "canal": {
+    "question": "Sobre o que é o seu canal?",
+    "why": "Escolha até 3. Ajustamos legendas, duração e modelos.",
+    "link": {
+      "label": "Link do seu canal (opcional)",
+      "placeholder": "twitch.tv/seucanal",
+      "detected": "Detectado: {plataforma} · @{handle}"
+    },
+    "interest": {
+      "directos": "Você gostaria que outros clipadores recortassem suas lives? Você só paga por visualizações.",
+      "videos": "Você gostaria que outros clipadores recortassem seus vídeos? Você só paga por visualizações."
+    },
+    "reaction": {
+      "marcaAgua": "Sua marca d’água será @{handle}.",
+      "canal": "Canal do {plataforma} pronto para importar: @{handle}.",
+      "temas": "Modelos de {temas} prontos para seus clipes.",
+      "interesSi": "Feito: no final, deixamos sua solicitação pronta para lançar sua campanha."
+    }
+  },
+  "render": {
+    "log": {
+      "importacion": "Preparando a importação de {plataformas}",
+      "subida": "Preparando o envio dos seus vídeos",
+      "ritmo": "Calculando seu ritmo: cerca de {min, number} minutos por mês",
+      "plantillas": "Ajustando legendas e modelos para {temas}",
+      "plantillasMarca": "Ajustando modelos de {temas} com sua marca d’água @{handle}",
+      "formatos": "Formatos para {redes}: {formatos}"
+    }
+  },
+  "resultado": {
+    "fuente": "Cole o link do seu VOD do {plataforma} e transformamos em clipes para cada rede.",
+    "fuenteSinDirectos": "Arraste seus vídeos e transformamos em clipes para cada rede.",
+    "prevision": {
+      "title": "Sua previsão",
+      "directos": "Com {frecuencia}, cada uma com {duracion}, você enviaria cerca de {min, number} minutos por mês.",
+      "sinDirectos": "Sem lives para calcular: envie seus vídeos quando quiser.",
+      "frecuencia": {
+        "casi-diario": "lives quase todo dia",
+        "3-6-semana": "3 a 6 lives por semana",
+        "1-2-semana": "1 ou 2 lives por semana",
+        "algunas-mes": "algumas lives por mês",
+        "ocasional": "lives de vez em quando"
+      },
+      "duracion": {
+        "lt-1h": "menos de 1 h",
+        "1-3h": "1 a 3 h",
+        "3-6h": "3 a 6 h",
+        "6h-plus": "mais de 6 h"
+      },
+      "duracionPorDefecto": "cerca de {horas, number} h",
+      "plan": "O plano {plan} inclui {incluidos, number} minutos por mês.",
+      "planAmpliable": "O plano {plan} inclui {incluidos, number} minutos por mês e pode ser ampliado.",
+      "planes": {
+        "free": "Teste",
+        "creator": "Criador",
+        "business": "Empresa"
+      },
+      "precios": "Ver preços"
+    },
+    "agencia": {
+      "title": "Peça o perfil de agência",
+      "description": "Lance sua própria campanha e deixe outros clipadores recortarem suas lives: você só paga por visualizações. Já deixamos preenchidos seu nome, seu canal e seus temas.",
+      "action": "Preparar a solicitação"
+    },
+    "tarjeta": {
+      "title": "Seu cartão de criador",
+      "completitud": "Seu perfil está {pct} completo. Conecte suas redes para completá-lo."
+    }
+  },
+  "subir": {
+    "fuente": {
+      "label": "Link do seu VOD do {plataforma}",
+      "placeholder": "Cole o link do seu VOD do {plataforma}",
+      "plataformas": "Plataforma de origem"
+    },
+    "formato": "Escolhido para {redes}."
+  }
+}

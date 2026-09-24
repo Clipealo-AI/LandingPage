@@ -1,0 +1,2221 @@
+{
+  "plans": {
+    "interno": {
+      "name": "Interno"
+    }
+  },
+  "labels": {
+    "channel": {
+      "organico": "Orgánico",
+      "afiliado": "Afiliado",
+      "referido": "Referido",
+      "directo": "Directo",
+      "ads": "Anuncios"
+    },
+    "source": {
+      "youtube": "YouTube",
+      "directo": "Subida directa",
+      "kick": "Kick",
+      "twitch": "Twitch",
+      "drive": "Google Drive",
+      "facebook": "Facebook",
+      "zoom": "Zoom"
+    },
+    "paymentMethod": {
+      "tarjeta": "Tarjeta",
+      "yape": "Yape",
+      "plin": "Plin",
+      "transferencia": "Transferencia"
+    },
+    "paymentStatus": {
+      "aprobado": "Aprobado",
+      "rechazado": "Rechazado",
+      "pendiente": "Pendiente",
+      "reembolsado": "Reembolsado"
+    },
+    "paymentKind": {
+      "nueva": "Nueva",
+      "renovacion": "Renovación",
+      "upgrade": "Subida de plan"
+    },
+    "billing": {
+      "mensual": "Mensual",
+      "anual": "Anual"
+    },
+    "subscriptionStatus": {
+      "activa": "Activa",
+      "vencida": "Vencida",
+      "cancelada": "Cancelada",
+      "pendiente-pago": "Pendiente de pago"
+    },
+    "referralStatus": {
+      "registrado": "Registrado",
+      "activado": "Activado",
+      "convertido": "Convertido"
+    },
+    "failureReason": {
+      "fondos-insuficientes": "Fondos insuficientes",
+      "tarjeta-vencida": "Tarjeta vencida",
+      "rechazada-emisor": "Rechazada por el emisor",
+      "yape-tiempo-agotado": "Tiempo de espera de Yape agotado"
+    },
+    "churnReason": {
+      "voluntaria": "Baja voluntaria",
+      "cobro-fallido": "Cobro fallido"
+    },
+    "semaforo": {
+      "rojo": "Urgente",
+      "ambar": "Atender",
+      "verde": "Al día"
+    },
+    "segment": {
+      "pql": "PQL",
+      "pagante-inactivo": "Pagante inactivo",
+      "dormido": "Dormido",
+      "ex-pagante": "Ex-pagante",
+      "incoherencia": "Incoherencia plan/suscripción",
+      "pendiente-verificacion": "Pago por verificar",
+      "cobro-fallido": "Cobro fallido",
+      "revisar": "Revisar",
+      "sin-activar": "Sin activar",
+      "activo": "Activo"
+    },
+    "subscriptionState": {
+      "cliente-de-pago": "Cliente de pago",
+      "vencida": "Vencida",
+      "cancelada": "Cancelada",
+      "pendiente-pago": "Pendiente de pago",
+      "ninguna": "Sin suscripción"
+    },
+    "accountState": {
+      "conectada": "Conectadas",
+      "caducada": "Caducadas",
+      "revocada": "Revocadas"
+    }
+  },
+  "metrics": {
+    "resolvedChannel": {
+      "afiliado": "Afiliado · {codigo}",
+      "invitadoPor": "Invitado por {nombre}"
+    },
+    "signal": {
+      "rechazo-previo": "rechazo previo",
+      "vencida-en-gracia": "vencida en gracia",
+      "pago-sin-verificar": "pago sin verificar",
+      "ultimo-cobro-rechazado": "último cobro rechazado",
+      "inactivo-14d": "inactivo 14 d",
+      "sin-proyectos-ciclo": "sin proyectos en el ciclo",
+      "primera-renovacion": "primera renovación"
+    },
+    "action": {
+      "sin-accion": "Sin acción",
+      "verificar-pago": "Verificar pago",
+      "reintentar-cobro": "Reintentar cobro",
+      "enviar-enlace-yape-plin": "Enviar enlace Yape/Plin",
+      "contactar-o-prueba": "Contactar o pasar a Prueba",
+      "recordatorio-renovacion": "Recordatorio de renovación",
+      "recordatorio-previo": "Recordatorio previo",
+      "mensaje-personal": "Mensaje personal",
+      "reprocesar": "Reprocesar",
+      "revisar-cola": "Revisar cola",
+      "otorgar-recompensa": "Otorgar recompensa",
+      "liquidar": "Liquidar",
+      "revisar": "Revisar",
+      "reintentar-publicacion": "Reintentar el envío",
+      "pedir-reconexion": "Pedir que reconecte la cuenta"
+    },
+    "queueTitle": {
+      "pendiente": "Pago por verificar",
+      "rechazado": "Cobro rechazado",
+      "vencida": "Vencida sin renovar",
+      "proxima": "Renueva pronto",
+      "inactivo": "Pagante inactivo",
+      "proyecto-error": "Proyecto de pagante en error",
+      "proyecto-atascado": "Proyecto atascado",
+      "recompensa-referido": "Recompensa de referido sin otorgar",
+      "comision-afiliado": "Comisión de afiliado por liquidar",
+      "coste-anomalo": "Coste de IA anómalo",
+      "publicacion-fallida": "Clip que no salió",
+      "cuenta-caducada": "Cuenta caducada con envíos por delante"
+    },
+    "reason": {
+      "transferenciaSinVerificar": "Transferencia sin verificar desde hace {horas} h",
+      "cobroRechazado": "{razon} · {intentos, plural, one {# intento} other {# intentos}}",
+      "cobroRechazadoSinRazon": "Cobro rechazado",
+      "vencidaSinRenovar": "Vencida hace {dias} d sin renovar",
+      "primeraRenovacion": "Primera renovación",
+      "renuevaSemana": "Renueva esta semana",
+      "cobroManual": "{base} · cobro manual por {metodo, select, yape {Yape} plin {Plin} other {transferencia}}",
+      "sinProyectosCiclo": "Sin proyectos en el ciclo actual",
+      "sinActividad14d": "Sin actividad desde hace más de 14 días",
+      "proyectoError": "Error hace {horas} h sin un proyecto posterior que salga bien",
+      "proyectoAtascado": "Procesando desde hace {horas} h",
+      "recompensaPendiente": "{invitado} ya pagó hace {dias} d; faltan {minutos} min",
+      "comisionPendiente": "{codigo} · devengada hace {dias} d",
+      "costeAnomalo": "{anomalia} · {minutos} min",
+      "publicacionFallida": "{plataforma} · {motivo} · {intentos, plural, one {# intento} other {# intentos}}",
+      "cuentaCaducada": "{plataforma} · {dias, plural, =0 {caducada hoy} one {caducada hace # día} other {caducada hace # días}} y con envíos programados"
+    },
+    "publishFailure": {
+      "cuentaCaducada": "Cuenta caducada",
+      "permisoDenegado": "Sin permiso para publicar",
+      "rechazoRed": "La red lo rechazó",
+      "limiteApi": "Límite de la red",
+      "sinRed": "No se llegó a la red"
+    },
+    "anomaly": {
+      "metric": {
+        "coste-3x-mediana": "Coste > 3× la mediana de 30 d",
+        "coste-minuto-2x-mediana": "Coste por minuto > 2× la mediana"
+      },
+      "row": {
+        "coste-3x-mediana": "Coste > 3× la mediana",
+        "coste-minuto-2x-mediana": "Coste por minuto > 2× la mediana"
+      },
+      "short": {
+        "coste-3x-mediana": "Coste > 3× mediana",
+        "coste-minuto-2x-mediana": "US$ por min > 2× mediana"
+      }
+    }
+  },
+  "meta": {
+    "title": "Backoffice",
+    "template": "%s — Backoffice Clipealo"
+  },
+  "nav": {
+    "home": "Clipealo, backoffice",
+    "badge": "Admin",
+    "groups": {
+      "negocio": "Negocio",
+      "clientes": "Clientes",
+      "crecimiento": "Crecimiento",
+      "creadores": "Creadores"
+    },
+    "items": {
+      "panel": "Panel",
+      "ingresos": "Ingresos",
+      "costes": "Costes de IA",
+      "planes": "Planes",
+      "usuarios": "Usuarios",
+      "vencimientos": "Vencimientos",
+      "afiliados": "Afiliados",
+      "referidos": "Referidos",
+      "campanas": "Campañas",
+      "disputas": "Disputas",
+      "formacion": "Formación",
+      "mercado": "Mercado",
+      "feedback": "Casillero",
+      "preguntas": "Preguntas"
+    },
+    "backToProduct": "Volver al producto"
+  },
+  "userNav": {
+    "users": "{count, plural, one {# usuario} other {# usuarios}}",
+    "publicSite": "Ver la web pública",
+    "logout": "Salir",
+    "logoutDone": "Sesión cerrada",
+    "logoutHint": "En el arquetipo no hay sesión de operador todavía: el acceso al panel no está restringido."
+  },
+  "page": {
+    "crumb": "Backoffice",
+    "mtd": "Hasta hoy · día {dia} de {diasMes}",
+    "closed": "Mes cerrado",
+    "updated": "Actualizado el {fecha} · {zona}"
+  },
+  "monthPicker": {
+    "label": "Mes",
+    "today": "{mes} · hoy"
+  },
+  "kpi": {
+    "grid": "Indicadores"
+  },
+  "mockAction": {
+    "title": "Acción simulada"
+  },
+  "table": {
+    "loading": "Cargando tabla",
+    "clear": "Limpiar",
+    "count": "{n} de {total}",
+    "noResults": "Sin resultados",
+    "pagination": "Paginación",
+    "page": "Página {actual} de {paginas}",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "actions": "Acciones"
+  },
+  "compare": {
+    "prevClose": "frente al cierre anterior",
+    "prevMonth": "frente al mes anterior",
+    "sameDays": "vs. mismos {dia} días del mes anterior",
+    "prev30d": "frente a los 30 d previos",
+    "weekAgo": "frente a hace una semana",
+    "cohortAvg": "vs. media de 3 cohortes",
+    "organic": "frente al orgánico"
+  },
+  "units": {
+    "points": "{valor} puntos",
+    "pointsNbsp": "{valor} puntos",
+    "clientsDelta": "{signo}{n, plural, one {# cliente} other {# clientes}}",
+    "months": "{n, plural, =1 {# mes} other {# meses}}",
+    "days": "{n} d",
+    "daysAgo": "hace {n} d",
+    "subscriptions": "{n, plural, one {# suscripción} other {# suscripciones}}",
+    "renewals": "{n, plural, one {# renovación} other {# renovaciones}}"
+  },
+  "kpis": {
+    "mrr": {
+      "label": "MRR real",
+      "atRisk": "En riesgo {monto} · {n, plural, one {# suscripción} other {# suscripciones}} ({pct})",
+      "noRisk": "Sin MRR en riesgo",
+      "net": "Neto del mes {neto} · media 3 m {media}",
+      "footnote": "ARR {arr} (MRR × 12) · suscripciones activas normalizadas, anual ÷ 12"
+    },
+    "caja": {
+      "labelMtd": "Caja neta hasta hoy",
+      "labelMonth": "Caja neta del mes"
+    },
+    "activos": {
+      "label": "Usuarios activos 30 d",
+      "week": "{wau} esta semana · adherencia {pct}",
+      "mix": "{nuevos} nuevos · {recurrentes} recurrentes · {prueba} en Prueba",
+      "payers": "Pagantes que usan el producto en su ciclo: {activos} de {total} ({pct}); aviso por debajo del 70 %"
+    },
+    "ltvNote": "n = {n} clientes; estimación con baja mínima del {pct}"
+  },
+  "panel": {
+    "title": "Panel",
+    "description": "Lo que hay que saber cada mañana: ingreso recurrente, caja, clientes, uso y las colas del día con su importe.",
+    "caja": {
+      "lines": "Cobros {cobros} · IA −{ia} · comisiones −{comisiones}",
+      "forecast": "Previsión 30 d {prevision} · pendiente de pagar {pendiente}",
+      "footnote": "Cobros − reembolsos − IA − comisiones − recompensas. Acumulado histórico en Ingresos."
+    },
+    "clientes": {
+      "label": "Clientes de pago",
+      "flow": "+{nuevos} nuevos · −{bajas} bajas · +{reactivados} reactivados",
+      "churnNoData": "Baja media 3 m: sin datos",
+      "churn": "Baja media 3 m {pct}",
+      "churnInvoluntary": "Baja media 3 m {pct} · {involuntario} por cobro fallido",
+      "footnote": "NRR 3 m {nrr} · {pagaron} han pagado alguna vez, {perdida} ya no"
+    },
+    "hoy": {
+      "title": "Hoy: colas con importe",
+      "description": "Cobrar, arreglar o contactar. Rojo antes que ámbar; luego, por importe."
+    },
+    "activacion": {
+      "title": "Activación por semana de alta",
+      "description": "Registro → primer proyecto → primer clip → pago. Cada tramo es una palanca distinta.",
+      "cohort": "Semana",
+      "caption": "Funnel de activación de las últimas ocho semanas",
+      "ttv": "Tiempo hasta el primer clip (mediana, 30 d):",
+      "before": "antes {n} d",
+      "firstFail": "fallo del primer proyecto"
+    },
+    "publicaciones": {
+      "alertTitle": "Hay clips que no están saliendo",
+      "alertDescription": "{n, plural, one {# fila de publicación} other {# filas de publicación}} en la cola de hoy: envíos que fallaron y cuentas por reconectar. Cifras simuladas hasta conectar la API.",
+      "alertLink": "Ver la salud de publicación",
+      "published": "Clips que salieron (mes):",
+      "toPublish": "de clip listo a publicado",
+      "hours": "{n, number} h",
+      "count": "{n, plural, one {# publicación} other {# publicaciones}}",
+      "simulated": "simulado hasta conectar la API"
+    },
+    "puente": {
+      "title": "Puente de MRR · 6 meses",
+      "description": "Lo que entra hacia arriba, lo que sale hacia abajo. Con diez clientes cada barra tiene nombre."
+    },
+    "cajaChart": {
+      "title": "Caja neta · 6 meses",
+      "description": "Cobros netos menos IA y comisiones. Margen de caja del mes: <b>{margen}</b> · coste de IA por minuto {porMinuto}"
+    },
+    "pql": {
+      "title": "Usuarios de Prueba que ya se comportan como clientes",
+      "description": "{n} candidatos ({previo} hace una semana). Vender a mano a quien ya extrae valor es la conversión más barata.",
+      "viewAll": "Ver todos",
+      "caption": "Usuarios de Prueba con mayor uso en los últimos 30 días",
+      "user": "Usuario",
+      "ready30d": "Listos 30 d",
+      "min30d": "Min 30 d",
+      "ai30d": "IA 30 d",
+      "lastActivity": "Última actividad",
+      "tenure": "{n} d de alta",
+      "criteria": "Criterio: usuarios de Prueba sin ningún pago y con dos proyectos listos en 14 días, al 80 % de sus minutos o activo esta semana con más de diez clips. Coste de servir a Prueba este mes: {coste} ({pct} del coste de IA)."
+    }
+  },
+  "queues": {
+    "emptyTitle": "Nada que cobrar ni arreglar hoy",
+    "emptyDescription": "Ninguna renovación con señal, ningún cobro fallido, ningún proyecto atascado.",
+    "urgent": "<b>{rojas}</b> urgentes de {total}",
+    "atStake": "<b>{monto}</b> en juego",
+    "more": "{n} más en <link>Vencimientos</link>."
+  },
+  "funnel": {
+    "cohort": "Alta",
+    "signups": "Altas",
+    "project": "Proyecto",
+    "clip": "Clip",
+    "payment": "Pago",
+    "within": "≤ {n} d",
+    "inProgress": "en curso"
+  },
+  "cohorts": {
+    "caption": "Porcentaje de cada cohorte que crea un proyecto en los meses siguientes al alta",
+    "cohort": "Cohorte",
+    "activated": "Activados",
+    "signups": "Altas"
+  },
+  "charts": {
+    "viewTable": "Ver los datos como tabla",
+    "toDate": "{mes} · hasta hoy",
+    "toDateRow": "{mes} (hasta hoy)",
+    "month": "Mes",
+    "bridge": {
+      "nuevo": "Nuevo",
+      "expansion": "Expansión",
+      "reactivacion": "Reactivación",
+      "contraccion": "Contracción",
+      "baja": "Baja",
+      "neto": "Neto",
+      "mrrClose": "MRR cierre",
+      "caption": "Puente de MRR por mes",
+      "tooltip": "{mes} · MRR {mrr} · neto {neto}"
+    },
+    "cash": {
+      "cobros": "Cobros netos",
+      "costes": "Coste de IA",
+      "comisiones": "Comisiones",
+      "tooltip": "{mes} · caja neta {caja}"
+    }
+  },
+  "ingresos": {
+    "title": "Ingresos",
+    "description": "Ingreso recurrente y su puente, lo que se cobra frente a lo que se intenta cobrar, reembolsos con causa, caja neta y lo que vale un cliente.",
+    "mrr": {
+      "moves": {
+        "nuevo": "nuevo {monto}",
+        "expansion": "expansión {monto}",
+        "reactivacion": "reactivación {monto}",
+        "contraccion": "contracción −{monto}",
+        "baja": "baja −{monto}"
+      },
+      "noMoves": "Sin movimientos en el puente este mes",
+      "footnote": "ARR {arr} (MRR × 12) · en riesgo {riesgo} ({pct}) · {clientes} clientes de pago"
+    },
+    "cobro": {
+      "label": "Cobro efectivo de renovaciones · 3 m",
+      "refundsNone": "Reembolsos 30 d: sin cobros aprobados en la ventana",
+      "refunds": "Reembolsos 30 d {pct} del importe aprobado",
+      "refundsMonth": "Reembolsos 30 d {pct} del importe aprobado · {n} este mes",
+      "month": "Este mes {aprobados} aprobados · {rechazados} rechazados · {pendientes} pendientes ({monto})",
+      "footnote": "Aprobados ÷ (aprobados + rechazados) de renovaciones y subidas de plan en 92 días. Alerta por debajo del 80 % o con reembolsos por encima del 5 %."
+    },
+    "caja": {
+      "accumulated": "Acumulada desde el origen {monto}",
+      "forecast": "Previsión 30 d {prevision} · cobros previstos {cobros}",
+      "footnote": "Cobros {cobros} − IA {ia} − comisiones {comisiones} − recompensas {recompensas} · pendiente de pagar {pendiente}"
+    },
+    "ltv": {
+      "label": "LTV realizado por cliente",
+      "estimatedNone": "LTV estimado: sin baja observada suficiente",
+      "estimated": "LTV estimado {monto}",
+      "lifetime": "vida media {meses}",
+      "arppu": "ARPPU {monto}",
+      "ltvCac": "LTV:CAC {ratio}",
+      "payback": "recupera el CAC en {meses}",
+      "footnote": "{nota} · realizado = cobros netos históricos ÷ {n} que han pagado alguna vez",
+      "diverge": "el estimado dobla al realizado: manda el realizado"
+    },
+    "pagos": {
+      "title": "Pagos",
+      "description": "Cada intento de cobro hasta la fecha de corte, con su atribución y lo que arrastra en comisiones y recompensas. Pendientes y rechazados arriba: son los que hay que resolver.",
+      "manual": "Pago manual",
+      "manualEffect": "Abriría el formulario de pago manual: usuario, plan, importe y método (Yape, Plin o transferencia) con el comprobante.",
+      "export": "Exportar CSV",
+      "exportEffect": "Descargaría los pagos del mes con los filtros aplicados en CSV, con las mismas columnas de la tabla."
+    },
+    "analisis": {
+      "title": "Recurrencia y cobro",
+      "description": "De dónde viene el MRR y por dónde se escapa; qué método cobra de verdad y si el cliente nuevo vuelve a pagar.",
+      "tabs": {
+        "label": "Análisis de ingresos",
+        "puente": "Puente y caja",
+        "planes": "MRR por plan",
+        "segunda": "Segunda cobranza",
+        "cobros": "Método y tipo"
+      },
+      "bridge": {
+        "negativeTwice": "Neto negativo dos meses seguidos",
+        "noNew": "Sin MRR nuevo este mes",
+        "positive": "Entra más de lo que sale",
+        "net": "Neto del mes {neto} frente a la media 3 m {media}"
+      },
+      "cash": {
+        "description": "Cobros netos menos IA y comisiones. Margen de caja del mes: <b>{margen}</b> · el mes en curso es una lectura parcial."
+      },
+      "plans": {
+        "caption": "MRR, clientes y ARPPU por plan",
+        "plan": "Plan",
+        "customers": "Clientes",
+        "customersPct": "% clientes",
+        "mrr": "MRR",
+        "mrrPct": "% MRR",
+        "arppu": "ARPPU",
+        "total": "Total",
+        "arppuHint": "MRR ÷ {n} clientes de pago, al mes",
+        "arpu": "ARPU",
+        "arpuHint": "MRR ÷ usuarios activos 30 d, sin Interno",
+        "mix": "Mezcla del MRR",
+        "mixItem": "{pct} {plan}",
+        "list": "Con {n} clientes, cada fila tiene nombre: la lista de suscripciones está en <link>Planes</link>."
+      },
+      "second": {
+        "title": "Clientes que vuelven a pagar",
+        "summary": "<b>{con}</b> de <b>{elegibles}</b> elegibles han pagado una renovación o una subida de plan.",
+        "noEligible": "Sin elegibles todavía",
+        "oneOff": "Cada cliente nuevo vale un solo pago",
+        "repeats": "El cliente nuevo repite",
+        "note": "Elegible: primer pago aprobado hace al menos un ciclo (mensual 30 d, anual 365 d). Por debajo del 50 % conviene revisar precio y valor antes de escalar la adquisición. Mientras haya menos de 20 elegibles se muestra la lista nominal.",
+        "caption": "Lista nominal de clientes elegibles para segunda cobranza",
+        "user": "Usuario",
+        "currentPlan": "Plan actual",
+        "approved": "Pagos aprobados",
+        "second": "Segunda cobranza",
+        "repeat": "Repite",
+        "single": "Un solo pago"
+      },
+      "charges": {
+        "byMethod": "Por método de pago",
+        "byMethodCaption": "Cobros del mes por método de pago",
+        "byKind": "Por tipo de pago",
+        "byKindCaption": "Cobros del mes por tipo de pago",
+        "method": "Método",
+        "kind": "Tipo",
+        "approved": "Aprobados",
+        "amount": "Importe",
+        "declined": "Rechazados",
+        "rate": "Cobro efectivo",
+        "footer": "Cobro efectivo del mes, todos los tipos: <b>{mes}</b> · renovaciones en 3 m: <b>{renovaciones}</b> · un método con rechazos y sin alternativa es motivo para añadir Yape o Plin."
+      }
+    },
+    "table": {
+      "date": "Fecha",
+      "time": "{hora} Lima",
+      "user": "Usuario",
+      "plan": "Plan",
+      "kind": "Tipo",
+      "amount": "Importe",
+      "status": "Estado",
+      "attribution": "Atribución",
+      "probableCause": "Causa probable: {causa}",
+      "cause": {
+        "pipeline": "Pipeline",
+        "duplicado": "Cobro duplicado",
+        "otro": "Otro"
+      },
+      "commission": "Comisión {monto}",
+      "reward": "Recompensa {monto}",
+      "who": "{nombre} ({monto})",
+      "approve": "Aprobar",
+      "approveEffect": "Marcaría como aprobado el pago {pago} de {quien} y activaría la suscripción {suscripcion}.",
+      "reject": "Rechazar",
+      "rejectEffect": "Rechazaría el pago {pago} de {quien} y avisaría al usuario para que reintente.",
+      "retry": "Reintentar",
+      "retryEffect": "Reintentaría el cobro de {quien} por {metodo} o registraría un pago manual por Yape o transferencia.",
+      "refund": "Reembolsar",
+      "refundEffect": "Registraría el reembolso de {quien}.",
+      "refundEffectCommission": "Registraría el reembolso de {quien}, restaría {comision} de la comisión del afiliado.",
+      "refundEffectReward": "Registraría el reembolso de {quien} y marcaría la recompensa del referido como no procedente.",
+      "refundEffectBoth": "Registraría el reembolso de {quien}, restaría {comision} de la comisión del afiliado y marcaría la recompensa del referido como no procedente.",
+      "filters": {
+        "status": "Estado",
+        "allStatuses": "Todos los estados",
+        "pendiente": "Pendientes",
+        "rechazado": "Rechazados",
+        "aprobado": "Aprobados",
+        "reembolsado": "Reembolsados",
+        "kind": "Tipo",
+        "allKinds": "Todos los tipos",
+        "method": "Método",
+        "allMethods": "Todos los métodos",
+        "plan": "Plan",
+        "allPlans": "Todos los planes"
+      },
+      "caption": "Pagos con estado, atribución, comisión y recompensa derivadas",
+      "search": "Buscar usuario o correo",
+      "emptyTitle": "Sin pagos con esos filtros",
+      "emptyDescription": "Prueba a quitar el filtro de estado o de método.",
+      "summary": "Aprobados <b>{aprobados}</b> · pendientes <b>{pendientes}</b> · rechazados <b>{rechazados}</b> · reembolsados <b>{reembolsados}</b>"
+    }
+  },
+  "costes": {
+    "title": "Costes de IA",
+    "description": "Cuánto cuesta cada minuto procesado, a quién se lo estamos regalando, qué margen queda y cuánto dinero se quema en errores.",
+    "kpis": {
+      "costLabelMtd": "Coste de IA hasta hoy",
+      "costLabelMonth": "Coste de IA del mes",
+      "split": "Prueba {prueba} · pago {pago} · Interno {interno}",
+      "trial": "Prueba {monto}",
+      "trialMrr": "= {pct} del MRR",
+      "trialPerActive": "{monto} por usuario de Prueba activo",
+      "costFootnote": "Ámbar si Prueba pasa del 60 % del coste; rojo si el subsidio supera el 20 % del MRR o Interno el 20 % del coste. Acumulado {acumulado}",
+      "perMinute": "Coste por minuto procesado",
+      "perProject": "Por proyecto listo {proyecto} · por clip {clip}",
+      "volume": "{minutos} min · {proyectos} proyectos · {clips} clips",
+      "perActiveUser": "{monto} por usuario activo",
+      "perMinuteWarning": "Coste del mes ÷ minutos de proyectos listos. Aviso: {monto} por minuto en una fuente, más del doble de la mediana de fuentes",
+      "perMinuteFootnote": "Coste del mes ÷ minutos de proyectos listos. Aviso si una fuente dobla la mediana de fuentes; rojo si sube más del 30 % tras un cambio de modelo",
+      "margin": "Margen bruto tras IA",
+      "marginVersions": "Versión caja {caja} · histórico {historico}",
+      "marginGross": "Bruto {bruto} sobre {ingresos} cobrados · IA de clientes {ia}",
+      "marginFootnote": "Recurrente: (MRR − IA de clientes de pago) ÷ MRR. Caja: (cobros − reembolsos − IA − comisiones) ÷ cobros. Rojo por debajo del 80 %",
+      "errors": "Errores del pipeline 7 d",
+      "errorsCount": "{n} de {total} proyectos · 24 h: {n24} de {total24}",
+      "errorsCountPct": "{n} de {total} proyectos · 24 h: {n24} de {total24} ({pct})",
+      "errorsUnresolved": "{sinResolver} sin resolver ({dePago} de pago) · {atascados} atascados > 2 h",
+      "errorsFootnote": "Coste en errores 7 d {monto}. Rojo si los errores de 24 h pasan del 5 % o del 5 % del coste",
+      "errorsFootnotePct": "Coste en errores 7 d {monto} ({pct} del coste). Rojo si los errores de 24 h pasan del 5 % o del 5 % del coste"
+    },
+    "proyectos": {
+      "title": "Proyectos con coste",
+      "description": "Los del mes, más cualquier error sin resolver o proyecto atascado. Sin resolver y anómalos primero; luego, por coste.",
+      "export": "Exportar costes del mes",
+      "exportEffect": "Genera el CSV de costes de {mes} con una fila por proyecto y su desglose por proveedor y modelo."
+    },
+    "pipeline": {
+      "title": "Salud del pipeline",
+      "description": "Errores a 24 h y 7 d, lo que sigue roto, lo que lleva más de dos horas en cola y el coste quemado en errores.",
+      "cancelStuck": "Cancelar atascados",
+      "cancelStuckEffect": "Cancela los {n} proyectos atascados y avisa a sus usuarios para que vuelvan a subirlos.",
+      "reprocess": "Reprocesar sin resolver",
+      "reprocessEffect": "Reencola los {n} errores sin resolver, los de clientes de pago primero. Coste estimado {monto}.",
+      "stats": {
+        "errors24h": "Errores 24 h",
+        "errors7d": "Errores 7 d",
+        "ofProjects": "{n} de {total} proyectos",
+        "errorCost": "Coste en errores 7 d",
+        "errorCostPct": "{pct} del coste de la semana",
+        "unresolved": "Errores sin resolver",
+        "unresolvedPaying": "{n} de clientes de pago",
+        "stuck": "Atascados > 2 h",
+        "stuckHint": "En proceso desde hace más de dos horas",
+        "firstFail": "Fallo del primer proyecto",
+        "firstFailHint": "Altas de los últimos 30 d"
+      },
+      "table": {
+        "caption": "Errores de los últimos siete días por fuente de vídeo",
+        "source": "Fuente · 7 d",
+        "projects": "Proyectos",
+        "errors": "Errores",
+        "rate": "Tasa",
+        "empty": "Sin proyectos en los últimos siete días",
+        "noRate": "Menos de cinco proyectos: sin tasa",
+        "disable": "Deshabilitar",
+        "disableEffect": "Deshabilita temporalmente {fuente} en la UI de subida hasta que baje la tasa de error."
+      },
+      "note": "Sin resolver: error sin un proyecto posterior listo del mismo usuario y fuente. Atascado: en proceso más de 2 h. Rojo si los errores de 24 h superan el 5 % o son tres o más; con más del 5 % del coste en errores no se reintenta en automático. Una fuente con más del 20 % de error en 7 d se deshabilita en la subida."
+    },
+    "anomalias": {
+      "title": "Coste anómalo · 30 d",
+      "description": "Proyectos que triplican la mediana de coste o doblan la de coste por minuto. Revisar antes de reprocesar.",
+      "emptyTitle": "Sin costes anómalos en 30 días",
+      "emptyDescription": "Ningún proyecto triplica la mediana de coste ni dobla la de coste por minuto.",
+      "summary": "<b>{n}</b> proyectos · <b>{monto}</b> en juego",
+      "caption": "Proyectos con coste de IA anómalo en los últimos 30 días",
+      "project": "Proyecto",
+      "min": "Min",
+      "cost": "Coste",
+      "perMin": "US$ por min",
+      "markReviewed": "Marcar revisado",
+      "markReviewedEffect": "Marca la anomalía del proyecto {proyecto} ({motivo}) como revisada y guarda la nota del operador.",
+      "note": "Mediana sobre los proyectos con coste de los últimos 30 días. Una anomalía repetida en la misma cuenta es candidata a tope de minutos o a bloqueo."
+    },
+    "publicaciones": {
+      "title": "Salud de publicación",
+      "description": "La última milla del pipeline: qué salió a las redes este mes, qué falló esta semana y cómo están las cuentas conectadas.",
+      "simulated": "Datos simulados hasta conectar la API: la agenda y las cuentas viven en el navegador de cada persona y el servidor no las puede contar.",
+      "reconnect": "Pedir reconexión ({n})",
+      "reconnectEffect": "Escribe a quien tiene alguna de las {n} cuentas caducadas para que vuelva a conectarla. Los envíos que esperan salen en cuanto lo haga.",
+      "stats": {
+        "published": "Publicadas",
+        "share": "{red} {pct}",
+        "noNetworks": "Ninguna red con envíos este mes",
+        "publishedFootnote": "Solo los envíos que la red confirmó.",
+        "failures": "Envíos fallidos · 7 d",
+        "failuresOf": "{n} de {total} envíos resueltos",
+        "success": "Éxito {pct}",
+        "failuresFootnote": "Aviso desde {aviso} de fallos; alerta desde {alerta}.",
+        "accounts": "Cuentas de redes",
+        "accountsFootnote": "{n, plural, one {# persona con al menos una cuenta viva} other {# personas con al menos una cuenta viva}}",
+        "toPublish": "De clip listo a publicado",
+        "hours": "{n, number} h",
+        "clipsOut": "Salió el {pct} de los clips del mes",
+        "clipsOutNone": "Ningún clip listo este mes",
+        "toPublishFootnote": "Mediana del mes. Es lo que tarda el trabajo en valer."
+      },
+      "failures": {
+        "reason": "Motivo",
+        "network": "Red",
+        "count": "Envíos",
+        "captionReason": "Envíos fallidos de los últimos siete días por motivo",
+        "captionNetwork": "Envíos fallidos de los últimos siete días por red",
+        "empty": "Ningún envío falló en los últimos siete días."
+      },
+      "note": "La ventana es de siete días: un fallo se arregla en horas y el mes entero escondería el día en que se cayó una integración. De cada envío se guarda el código del fallo y nada más: ni el enlace publicado ni la cuenta."
+    },
+    "fuentes": {
+      "title": "Rendimiento por fuente · 30 d",
+      "description": "Volumen frente a los 30 días previos, éxito, coste unitario y conversión de quien empezó por cada fuente. Una fuente con histórico y cero proyectos es un conector roto.",
+      "caption": "Rendimiento por fuente de vídeo en los últimos 30 días",
+      "source": "Fuente",
+      "projects": "Proyectos",
+      "prior": "(30 d previos)",
+      "success": "Éxito",
+      "clipsPerProject": "Clips / proy.",
+      "users": "Usuarios",
+      "perProject": "US$ por proy.",
+      "perMin": "US$ por min",
+      "firstSourceConv": "Conv. 1.ª fuente",
+      "broken": "Conector roto",
+      "reviewConnector": "Revisar conector",
+      "reviewConnectorEffect": "Abre una incidencia del conector de {fuente}: {n} proyectos históricos y ninguno en 30 días.",
+      "disable": "Deshabilitar",
+      "disableEffect": "Deshabilita temporalmente {fuente} en la UI de subida mientras se revisa su pipeline.",
+      "note": "Éxito = listos ÷ terminados. Rojo con menos del 80 % de éxito (y cinco proyectos o más); ámbar si el coste por minuto dobla la mediana de fuentes. Conversión: usuarios cuyo primer proyecto fue de esa fuente y han pagado alguna vez.",
+      "noteMedian": "Éxito = listos ÷ terminados. Rojo con menos del 80 % de éxito (y cinco proyectos o más); ámbar si el coste por minuto dobla la mediana de fuentes ({mediana}). Conversión: usuarios cuyo primer proyecto fue de esa fuente y han pagado alguna vez."
+    },
+    "modelos": {
+      "title": "Proveedor y modelo",
+      "description": "Contabilidad del mes: transcripción (AssemblyAI) y análisis (Gemini), con el coste unitario de cada modelo.",
+      "restrict": "Restringir modelo caro a pago",
+      "restrictEffect": "Restringe el modelo de análisis más caro a los planes de pago; Prueba pasa al modelo económico.",
+      "caption": "Coste de IA del mes por proveedor y modelo",
+      "providerModel": "Proveedor · modelo",
+      "cost": "Coste",
+      "share": "Peso",
+      "unit": "Unitario",
+      "empty": "Sin coste de IA en el mes",
+      "audioMinutes": "{n} min de audio",
+      "tokens": "{n} tokens",
+      "projects": "{n, plural, one {# proyecto} other {# proyectos}}",
+      "perMinute": "{monto} / min",
+      "perProject": "{monto} / proyecto",
+      "total": "Total del mes",
+      "accumulated": "Acumulado histórico {monto}",
+      "note": "Unitario: US$ por minuto de audio en AssemblyAI (transcripción) y US$ por proyecto en Gemini (análisis). Un salto del unitario entre meses delata un cambio de modelo o de tarifa."
+    },
+    "topFree": {
+      "title": "Top 10 de Prueba por coste",
+      "description": "Cuentas de Prueba sin ningún pago que más IA consumen este mes.",
+      "cap": "Tope de minutos en Prueba",
+      "capEffect": "Pone un tope de minutos por proyecto en el plan Prueba (propuesta: 20 min) y avisa a los usuarios afectados.",
+      "caption": "Usuarios de Prueba con mayor coste de IA en el mes",
+      "user": "Usuario",
+      "min": "Min",
+      "cost": "Coste",
+      "shareOfTrial": "Del coste de Prueba",
+      "empty": "Ningún usuario de Prueba con coste en el mes",
+      "projects": "{canal} · {n, plural, one {# proyecto} other {# proyectos}}",
+      "block": "Bloquear",
+      "blockEffect": "Bloquea la cuenta de Prueba de {nombre} por alto coste ({monto} en el mes) y avisa por correo.",
+      "note": "Usuarios de Prueba sin ningún pago aprobado. Coste de servir a Prueba este mes {monto} ({pct} del coste de IA)",
+      "notePerActive": ", {monto} por usuario de Prueba activo",
+      "noteSubsidy": "; subsidio {pct} del MRR"
+    },
+    "serie": {
+      "title": "Seis meses",
+      "description": "Coste total frente a coste de Prueba, y el coste por minuto: la tendencia que hay que vigilar tras cada cambio de modelo.",
+      "chartTitle": "Coste de IA y coste de Prueba",
+      "chartDescription": "Este mes Prueba supone {pct} del coste.",
+      "chartDescriptionMrr": "Este mes Prueba supone {pct} del coste y {mrr} del MRR.",
+      "perMinuteTitle": "Coste por minuto procesado",
+      "perMinuteDescription": "Coste del mes ÷ minutos de proyectos listos. Rojo si sube más del 30 % tras una migración de modelo.",
+      "chart": {
+        "costes": "Coste de IA",
+        "costeFree": "Coste de Prueba",
+        "trialShare": "Prueba del coste",
+        "perMinute": "US$ por minuto",
+        "tooltipShare": "{mes} · Prueba {pct} del coste",
+        "caption": "Coste de IA y coste de Prueba por mes"
+      }
+    },
+    "table": {
+      "date": "Fecha",
+      "user": "Usuario",
+      "plan": "Plan",
+      "source": "Fuente",
+      "status": "Estado",
+      "min": "Min",
+      "clips": "Clips",
+      "cost": "Coste",
+      "perMin": "US$ por min",
+      "breakdown": "Desglose",
+      "anomaly": "Anomalía",
+      "state": {
+        "listo": "Listo",
+        "procesando": "Procesando",
+        "error": "Error"
+      },
+      "unresolved": "Sin resolver",
+      "queued": "{n} h en cola",
+      "reprocess": "Reprocesar",
+      "reprocessEffect": "Reencola el proyecto {proyecto} de {nombre} ({fuente}, {minutos} min). Coste estimado {monto}.",
+      "filters": {
+        "plan": "Plan del usuario",
+        "allPlans": "Todos los planes",
+        "source": "Fuente",
+        "allSources": "Todas las fuentes",
+        "status": "Estado",
+        "all": "Todos",
+        "listo": "Listos",
+        "procesando": "Procesando",
+        "error": "Error",
+        "incidents": "Incidencias",
+        "anomalous": "Solo anómalos",
+        "errors": "Solo errores"
+      },
+      "caption": "Proyectos con coste de IA del mes, con errores sin resolver y proyectos atascados",
+      "search": "Buscar usuario o proyecto",
+      "emptyTitle": "Sin proyectos con estos filtros",
+      "emptyDescription": "Prueba a quitar el filtro de incidencias o a cambiar de mes.",
+      "summaryCost": "Coste <b>{monto}</b>",
+      "summaryVolume": "{minutos} min listos · {clips} clips",
+      "summaryPerMinute": "{monto} por minuto",
+      "summaryIncidents": "{n} con incidencia"
+    }
+  },
+  "planes": {
+    "title": "Planes",
+    "description": "Qué plan concentra el ingreso, cuánto cuesta servirlo y si cada suscriptor se paga a sí mismo. Aquí vive la tabla de precios que usan las previsiones.",
+    "catalogo": {
+      "title": "El catálogo",
+      "description": "Los tres planes de la web y los que se creen aquí. Lo que se cambia se nota en /precios, en la app y en cada puerta sin recargar.",
+      "resumen": "{visibles, plural, one {# en /precios} other {# en /precios}} · {ocultos, plural, one {# oculto} other {# ocultos}} · {creados, plural, one {# creado aquí} other {# creados aquí}}",
+      "frontera": "Las cuentas por plan salen del negocio simulado, al cierre del mes elegido (hoy, si es el mes en curso): cada cuenta registrada está en el plan de su suscripción de pago vigente y, sin ella, en Prueba. La cuenta de la demo vive en este navegador y no está entre ellas; los planes creados aquí no tienen cuentas en esos datos hasta que la API los devuelva. Las cifras de arriba solo conocen los tres planes de la web.",
+      "crear": "Crear un plan",
+      "reiniciar": "Volver a los de fábrica",
+      "semilla": "De la web",
+      "creado": "Creado aquí",
+      "visible": "En /precios",
+      "oculto": "Oculto",
+      "apagado": "Apagado",
+      "destacado": "Destacado",
+      "como": "Como {plan}",
+      "gratis": "Gratis",
+      "precios": "{mensual} al mes · {anual} al mes con facturación anual",
+      "minutos": "{n, plural, one {# minuto al mes} other {# minutos al mes}}",
+      "conexiones": "{n, plural, one {# cuenta social a la vez} other {# cuentas sociales a la vez}}",
+      "asiento": "{precio} al mes por asiento",
+      "cuentas": "{n, plural, one {# cuenta} other {# cuentas}} · {pago, plural, =0 {ninguna de pago} one {# de pago} other {# de pago}}",
+      "sinCuentas": "Sin cuentas todavía en los datos del negocio",
+      "desbloquea": "Desbloquea",
+      "sinCapacidades": "No desbloquea nada de pago",
+      "mostrar": "Enseñar {nombre} en /precios",
+      "subir": "Subir {nombre}",
+      "bajar": "Bajar {nombre}",
+      "editar": "Editar {nombre}",
+      "borrar": "Borrar {nombre}",
+      "ocultoNota": "Oculto no sale en /precios: se asigna desde la solicitud de agencia o desde el menú de la demo.",
+      "apagadoNota": "Apagado no se puede tener ni asignar: quien lo tenía cae al plan de la demo.",
+      "form": {
+        "newTitle": "Crear un plan",
+        "editTitle": "Editar {nombre}",
+        "description": "Hereda la comparativa, los puntos de la tarjeta y las redes de su escalón; encima eliges nombre, precios, minutos y qué desbloquea. El nombre va en el idioma en que lo escribas: es contenido y no se traduce.",
+        "semillaDescription": "De un plan de la web se cambian precios, precio por asiento, minutos, capacidades y si sale. El nombre y el lema viven en los tres idiomas dentro del producto.",
+        "nombre": "Nombre",
+        "nombrePlaceholder": "Universidad",
+        "lema": "Lema",
+        "lemaPlaceholder": "Para que tus clases circulen en clips.",
+        "lemaHint": "Vacío, sale el de su escalón.",
+        "base": "Como qué plan",
+        "baseHint": "Al cambiarlo, precios, minutos y capacidades toman los de ese escalón; luego se ajustan.",
+        "monthly": "Precio al mes",
+        "yearly": "Precio al mes con facturación anual",
+        "minutos": "Minutos de video al mes",
+        "asiento": "Precio por asiento adicional",
+        "asientoHint": "Al mes, por cada miembro del equipo además del titular. Con 0, los miembros van incluidos y la comparativa lo dice.",
+        "cuentas": "Cuentas sociales conectadas",
+        "cuentasHint": "A la vez, sumando todas las redes. Las redes que admite las da su escalón: Prueba solo TikTok.",
+        "capacidades": "Qué desbloquea",
+        "capacidadesHint": "Lo que la app cobra de verdad. Su fila de la comparativa se escribe desde aquí, no desde el escalón.",
+        "visible": "Sale en /precios",
+        "visibleHint": "Oculto se asigna a mano desde el backoffice.",
+        "activo": "Se puede tener",
+        "activoHint": "Apagado, quien lo tenía cae al plan de la demo.",
+        "featured": "Tarjeta destacada",
+        "featuredHint": "Como mucho una: destacar esta quita la marca de la que la tenía.",
+        "cancel": "Cancelar",
+        "save": "Guardar",
+        "errors": {
+          "nombreCorto": "El nombre necesita al menos {min} caracteres.",
+          "nombreRepetido": "Ya hay un plan con ese nombre.",
+          "precioFuera": "El precio va de {min} a {max}.",
+          "anualMayor": "El precio anual no puede ser mayor que el mensual.",
+          "minutosFuera": "Los minutos van de {min} a {max}.",
+          "asientoFuera": "El precio por asiento va de {min} a {max}.",
+          "cuentasFuera": "Las cuentas van de {min} a {max}."
+        }
+      },
+      "toasts": {
+        "guardado": "Plan guardado",
+        "borrado": "Plan borrado",
+        "visible": "Sale en /precios",
+        "oculto": "Ya no sale en /precios",
+        "orden": "Orden cambiado",
+        "reiniciado": "Catálogo de fábrica"
+      },
+      "delete": {
+        "title": "¿Borrar «{nombre}»?",
+        "description": "Solo se borran los planes creados aquí, y no se deshace. Quien lo tuviera cae al plan de la demo. Si solo quieres que no salga, ocúltalo.",
+        "cancel": "No borrarlo",
+        "action": "Borrar el plan"
+      }
+    },
+    "kpis": {
+      "mrr": "MRR por plan",
+      "mrrLine": "{plan} · {clientes} de clientes · {mrr} del MRR",
+      "mrrFootnote": "Mezcla: % de clientes de pago frente a % del MRR, plan a plan. Un plan que pesa más en clientes que en MRR está barato para lo que se usa.",
+      "arppu": "ARPPU",
+      "arppuPlan": "{plan} {monto}",
+      "arpu": "ARPU {monto} por usuario activo · {n} clientes de pago",
+      "arppuWarning": "Aviso: las {n} altas de pago de 90 d entraron por {plan}, el plan más barato.",
+      "arppuFootnote": "MRR ÷ clientes de pago; por plan, MRR del plan ÷ sus clientes. Con n de un dígito, mira la lista nominal.",
+      "contribution": "Contribución tras IA",
+      "contributionShare": "{pct} del MRR · coste IA de clientes {monto}",
+      "contributionCosts": "Prueba −{prueba} · Interno −{interno} · {n, plural, one {# suscriptor} other {# suscriptores}} con margen < 70 %",
+      "contributionFootnote": "MRR de los planes de pago − coste de IA del mes de sus usuarios. Rojo por debajo del 80 %; ámbar si algún suscriptor baja del 70 %.",
+      "flow": "Altas y bajas de pago · 90 d",
+      "flowCount": "+{n, plural, one {# alta} other {# altas}} · −{bajas, plural, one {# baja} other {# bajas}}",
+      "flowBridge": "Puente del mes: expansión {expansion}, contracción {contraccion}",
+      "flowFootnote": "Altas: suscripciones de pago iniciadas en 90 d. Bajas: clientes que dejaron de serlo en los tres últimos meses. Baja media 3 m {pct}."
+    },
+    "rows": {
+      "title": "Una fila por plan",
+      "description": "MRR descendente. Prueba e Interno cierran la tabla como filas de coste sin MRR.",
+      "simulate": "Simular contribución",
+      "simulateEffect": "Abriría el simulador: nuevos límites de minutos por plan × coste por minuto de Costes → contribución prevista.",
+      "note": "Uso: mediana de minutos de los últimos 30 d de los usuarios del plan frente a los incluidos; rojo si supera el 100 %, ámbar si no llega al 20 %. Margen bajo: suscriptores con margen < 70 %, es decir, cuyo coste de IA del mes se come más del 30 % de su precio mensual. 90 d: altas / bajas de suscripciones del plan. El MRR no incluye asientos: la simulación no los vende."
+    },
+    "mix": {
+      "title": "Mezcla: clientes frente a MRR",
+      "description": "Las dos barras deberían parecerse. Si un plan ocupa más en clientes que en MRR, el precio no acompaña al uso; si ocupa más en MRR, sostiene el negocio con pocos nombres.",
+      "empty": "Sin clientes de pago en la fecha de referencia.",
+      "customers": "Clientes",
+      "mrr": "MRR",
+      "legend": "{n, plural, one {# cliente} other {# clientes}} ({pctClientes}) · {mrr} ({pctMrr})",
+      "heavierCustomers": "Pesa más en clientes que en MRR",
+      "heavierMrr": "Pesa más en MRR que en clientes",
+      "balanced": "Equilibrado"
+    },
+    "definition": {
+      "title": "Qué cuenta como cliente de pago",
+      "description": "Suscripción activa —o en gracia durante los {dias} días siguientes a un cobro fallido—, plan distinto de Interno e importe mayor que cero. Es la única definición del backoffice: el MRR, las bajas y el ARPPU salen de la misma lista.",
+      "registered": "Suscripciones registradas",
+      "activeOrGrace": "Activas o en gracia",
+      "inGrace": "({n} en gracia)",
+      "courtesy": "− Interno (cortesía)",
+      "zeroAmount": "− Importe cero",
+      "paying": "Clientes de pago",
+      "subscriptions": "({n} suscripciones)",
+      "labelNoteNone": "La etiqueta de plan del usuario no cuenta: ningún usuario con etiqueta de pago y sin suscripción vigente.",
+      "labelNote": "La etiqueta de plan del usuario no cuenta: {n, plural, one {# usuario} other {# usuarios}} con etiqueta de pago y sin suscripción vigente aparece como incoherencia en Usuarios.",
+      "viewMismatches": "Ver incoherencias"
+    },
+    "subscriptions": {
+      "title": "Suscripciones",
+      "description": "{n} suscripciones registradas hasta la fecha de referencia, vigentes primero. Cada fila dice si cuenta como cliente de pago y, si no, por qué.",
+      "caption": "Suscripciones registradas hasta la fecha de referencia, vigentes primero",
+      "user": "Usuario",
+      "plan": "Plan",
+      "cycle": "Ciclo",
+      "amount": "Importe",
+      "monthly": "Mensual",
+      "status": "Estado",
+      "paying": "Cliente de pago",
+      "method": "Método",
+      "start": "Inicio",
+      "renewal": "Renovación",
+      "perMonth": "/mes",
+      "inGrace": "en gracia",
+      "yes": "Sí",
+      "no": "No",
+      "why": {
+        "cortesia": "Cortesía",
+        "importeCero": "Importe cero",
+        "cancelada": "Cancelada",
+        "fueraDeGracia": "Fuera de gracia"
+      },
+      "canceled": "cancelada {cuando}"
+    },
+    "table": {
+      "caption": "Planes: precio, clientes de pago, MRR, coste de IA y contribución del mes",
+      "plan": "Plan",
+      "customers": "Clientes",
+      "mrr": "MRR",
+      "arppu": "ARPPU",
+      "aiCost": "Coste IA",
+      "contribution": "Contribución",
+      "usage": "Uso",
+      "usageWindow": "30 d",
+      "lowMargin": "Margen bajo",
+      "window90d": "90 d",
+      "churn3m": "Baja 3 m",
+      "paidPlans": "Planes de pago",
+      "paidPlansHint": "Sin Prueba ni Interno",
+      "courtesyBadge": "Cortesía · sin MRR",
+      "costBadge": "Coste · sin MRR",
+      "perMonth": "{monto}/mes",
+      "perYear": "{monto}/año",
+      "perSeat": "{monto}/asiento adicional",
+      "noPrice": "Sin precio",
+      "unlimited": "minutos sin límite",
+      "included": "{n} min incluidos",
+      "users": "{n} usuarios",
+      "noUsage": "Sin uso",
+      "ofMinutes": " / {n} min",
+      "minutes": " min",
+      "usageAria": "Uso de los minutos incluidos: {pct}",
+      "editInCatalogue": "Editar {plan} en el catálogo"
+    }
+  },
+  "usuarios": {
+    "title": "Usuarios",
+    "description": "Quién se activa, quién convierte, quién vuelve y quién usa el producto sin pagar. Cada fila trae su segmento para que la acción sea obvia.",
+    "kpis": {
+      "activeFootnote": "Activo = creó un proyecto en la ventana, plan ≠ Interno. Pagantes que usan el producto en su ciclo: {activos} de {total} ({pct}); aviso por debajo del 70 %. Sparkline: usuarios activos por semana, 12 semanas.",
+      "d7": "Activación D7",
+      "d7Cohort": "Activación D7 · {mes}",
+      "d7Line": "{activados} de {registrados} altas con clip en 7 d · con proyecto {pct}",
+      "d7Avg": "Media 3 cohortes {media} · pagaron en 30 d {pagaron}",
+      "d7None": "Ninguna cohorte mensual ha cumplido aún los 7 días",
+      "d7Footnote": "Primer clip listo a ≤ 7 d del alta. Aviso si registro→proyecto < 50 % (fricción de subida); alerta si proyecto→clip < 80 % (pipeline).",
+      "conv": "Conversión a 60 d",
+      "convCohort": "Conversión a 60 d · {mes}",
+      "convLine": "{registrados} altas · Conv30 {conv30} · {pagaron} pagaron en 30 d",
+      "convActivated": "Entre activados {pct} (meta {meta}) · mediana a pago {mediana}",
+      "convNone": "Ninguna cohorte ha cumplido aún los 60 días",
+      "convFootnote": "Referencia histórica: pagaron alguna vez {pagaron} de {elegibles} elegibles ({pct}). Meta Conv60 ≥ {meta}; alerta si entre activados < 8 % (precio, límites de Prueba o medio de pago).",
+      "pql": "Usuarios PQL",
+      "pqlCost": "Coste de servir a Prueba este mes {monto} ({pct} del coste de IA)",
+      "pqlSegments": "{sinActivar} sin activar · {exPagantes} ex-pagantes reactivables",
+      "pqlFootnote": "Usuarios de Prueba sin ningún pago con dos proyectos listos en 14 d, al 80 % de sus minutos o activo esta semana con más de diez clips. La tasa de cierre a 30 d se mide desde la fecha de «Contactado»."
+    },
+    "all": {
+      "title": "Todos los usuarios",
+      "description": "{total} hasta la fecha de corte · {altas} altas este mes ({previas} en el comparable) · {pagando} de pago · {prueba} en Prueba · {internos} internos."
+    },
+    "cohorts": {
+      "title": "Cohortes de alta",
+      "description": "Cada mes de alta, de registro a pago; cuántos vuelven al mes siguiente; y quiénes activaron y hoy no entran.",
+      "tabs": {
+        "funnel": "Funnel mensual",
+        "retention": "Retención",
+        "dormant": "Dormidos y ex-pagantes"
+      },
+      "month": "Mes",
+      "funnelCaption": "Funnel de activación de las últimas seis cohortes mensuales",
+      "funnelNote": "Umbrales: registro→proyecto por debajo del 50 % es fricción de subida; proyecto→clip por debajo del 80 % es pipeline; clip→pago por debajo del 5 % es paywall o un plan Prueba demasiado generoso. Las cohortes «en curso» aún no han cumplido los 30 días del paso de pago.",
+      "retention": "Porcentaje de cada cohorte que crea un proyecto en los meses siguientes al alta. Sobre activados, M1 de la última cohorte cerrada ({mes}): <b>{pct}</b> · {nivel}. Por debajo del 20 % el producto es episódico; a partir del 35 % con curva plana hay un núcleo que retiene.",
+      "retentionAvg": "Porcentaje de cada cohorte que crea un proyecto en los meses siguientes al alta. Sobre activados, M1 de la última cohorte cerrada ({mes}): <b>{pct}</b> · {nivel} · media de las 3 anteriores {media}. Por debajo del 20 % el producto es episódico; a partir del 35 % con curva plana hay un núcleo que retiene.",
+      "retentionNone": "Porcentaje de cada cohorte que crea un proyecto en los meses siguientes al alta. Sobre activados, M1 de la última cohorte cerrada: sin cohortes cerradas. Por debajo del 20 % el producto es episódico; a partir del 35 % con curva plana hay un núcleo que retiene.",
+      "overSignups": "Sobre registrados",
+      "overActivated": "Sobre activados en 7 d",
+      "level": {
+        "episodico": "producto episódico",
+        "medio": "retención intermedia",
+        "nucleo": "núcleo que retiene"
+      }
+    },
+    "countries": {
+      "title": "Por país",
+      "description": "Dónde están los usuarios y dónde está el ingreso. El país de cada usuario es un dato de alta: se filtra en la tabla y viaja con él a todas las vistas.",
+      "caption": "Usuarios, altas del mes, activos, clientes de pago, MRR e ingreso por país",
+      "country": "País",
+      "users": "Usuarios",
+      "usersTitle": "Usuarios acumulados y % del total",
+      "signups": "Altas",
+      "signupsTitle": "Altas del mes",
+      "active": "Activos 30 d",
+      "activeTitle": "Con un proyecto en los últimos 30 días",
+      "paying": "De pago",
+      "payingTitle": "Clientes de pago y conversión sobre usuarios",
+      "mrr": "MRR",
+      "revenue": "Ingreso"
+    },
+    "channels": {
+      "title": "Por canal de adquisición",
+      "description": "Acumulado hasta la fecha de corte. El orgánico es la referencia: un canal que activa menos de la mitad trae altas que solo consumen IA.",
+      "caption": "Usuarios, altas del mes, activación, pagantes, conversión e ingreso por canal de adquisición",
+      "channel": "Canal",
+      "users": "Usuarios",
+      "usersTitle": "Usuarios acumulados y altas del mes",
+      "activated": "Activ. D7",
+      "activatedTitle": "Activados en 7 días y % sobre usuarios",
+      "paid": "Pagaron",
+      "paidTitle": "Con algún pago aprobado y % sobre usuarios",
+      "revenue": "Ingreso",
+      "note": "«Usuarios» acumulados, con las altas del mes al lado; «Activ. D7» y «Pagaron» llevan su % sobre usuarios. «Pagaron» cuenta a quien tiene algún pago aprobado, no solo a los clientes de pago de hoy; «Ingreso» es la suma de esos pagos.",
+      "weak": "Activa menos de la mitad que el orgánico"
+    },
+    "mismatch": {
+      "title": "{n, plural, one {# usuario} other {# usuarios}} con etiqueta de plan de pago y sin suscripción de cliente de pago",
+      "description": "La etiqueta manda en el producto y la suscripción en el ingreso: mientras no coincidan, alguien usa un plan que no paga. Se marcan con el segmento «Incoherencia plan/suscripción».",
+      "viewList": "Ver la lista",
+      "reconcile": "Reconciliar etiquetas",
+      "reconcileEffect": "Pasa a Prueba a los {n} usuarios sin suscripción de cliente de pago, conservando sus proyectos, y deja registro del cambio."
+    },
+    "table": {
+      "filters": {
+        "segment": "Segmento",
+        "anySegment": "Cualquier segmento",
+        "plan": "Plan",
+        "anyPlan": "Cualquier plan",
+        "subscription": "Suscripción",
+        "anySubscription": "Toda suscripción",
+        "country": "País",
+        "anyCountry": "Cualquier país",
+        "channel": "Canal",
+        "anyChannel": "Cualquier canal",
+        "cohort": "Cohorte de alta",
+        "anyCohort": "Toda cohorte",
+        "activity": "Actividad",
+        "anyActivity": "Cualquier actividad",
+        "active": "Con proyecto en {n} d",
+        "organisation": "Tipo de organización",
+        "anyOrganisation": "Cualquier organización"
+      },
+      "user": "Usuario",
+      "country": "País",
+      "plan": "Plan",
+      "subscription": "Suscripción",
+      "channel": "Canal",
+      "signup": "Alta",
+      "activity": "Actividad",
+      "projects30d": "Proy. 30 d",
+      "ready": "Listos",
+      "min30d": "Min 30 d",
+      "ai30d": "IA 30 d",
+      "payments": "Pagos",
+      "segment": "Segmento",
+      "paymentsCell": "{n} · {monto}",
+      "toVerify": "{n} por verificar",
+      "declined": "{n, plural, one {# rechazado} other {# rechazados}}",
+      "contacted": "Contactado",
+      "contactedEffect": "Marca a {nombre} como contactado hoy y guarda la nota; sirve para medir la tasa de cierre de PQL y la reactivación de dormidos.",
+      "changePlan": "Cambiar plan",
+      "changePlanEffect": "Abre el cambio de plan de {nombre} (ahora {plan}): plan destino, cortesía o paso a Prueba conservando proyectos, con motivo.",
+      "caption": "Usuarios registrados hasta la fecha de la instantánea, con su segmento, uso y pagos",
+      "search": "Buscar por nombre, correo o país",
+      "emptyTitle": "Ningún usuario con esos filtros",
+      "emptyDescription": "Prueba a quitar el segmento o a ampliar la ventana de actividad.",
+      "summary": "{dePago} de pago · {pql} PQL · {inactivos, plural, one {# pagante inactivo} other {# pagantes inactivos}} · {minutos} min en 30 d"
+    },
+    "dormant": {
+      "summary": "<b>{n}</b> dormidos · <b>{exPagantes}</b> {exPagantes, plural, one {ex-pagante} other {ex-pagantes}} · <b>{activados}</b> de Prueba activados. Se listan los {listados} con más minutos históricos; el resto, con los segmentos <ex>«Ex-pagante»</ex> y <dormido>«Dormido»</dormido>.",
+      "caption": "Usuarios dormidos y ex-pagantes con más minutos procesados",
+      "user": "Usuario",
+      "type": "Tipo",
+      "paid": "Pagó",
+      "minutes": "Minutos",
+      "lastActivity": "Última actividad",
+      "projects": "{n, plural, one {# proyecto} other {# proyectos}}",
+      "formerPayer": "Ex-pagante",
+      "activatedOnTrial": "Activado en Prueba",
+      "contact": "Contactar",
+      "contactEffect": "Envía un mensaje de reactivación a {nombre} y guarda la fecha para medir si crea un proyecto en 30 d.",
+      "contactEffectOffer": "Envía un mensaje de reactivación a {nombre} con una oferta de vuelta y guarda la fecha para medir si crea un proyecto en 30 d.",
+      "empty": "Nadie lleva entre 30 y 180 días sin entrar habiendo activado antes.",
+      "note": "La reactivación (contactados que crean un proyecto en 30 d) se mide a partir de la fecha de contacto, así que el botón la registra."
+    }
+  },
+  "vencimientos": {
+    "title": "Vencimientos y cobros",
+    "description": "Pendientes de verificar, rechazados sin recuperar, vencidas sin renovar, renovaciones próximas con señal y pagantes inactivos: cada fila con su importe, su antigüedad y su motivo, para no perder ni una renovación.",
+    "kpis": {
+      "atRisk": "MRR en riesgo",
+      "atRiskShare": "{suscripciones} · {pct} del MRR ({mrr})",
+      "renew7d": "Renuevan en 7 d: {monto} · {suscripciones}",
+      "noRenew7d": "Ninguna de ellas renueva en los próximos 7 d",
+      "inactive": "Pagantes inactivos: {rojos} urgentes ({mrrRojo}) · {ambar} por atender ({mrrAmbar})",
+      "noInactive": "Sin pagantes inactivos",
+      "atRiskFootnote": "Precio mensual de los clientes de pago con alguna señal: rechazo previo, vencida en gracia, último cobro rechazado, inactivo 14 d o sin proyectos en el ciclo. Alerta por encima del {pct}.",
+      "renewals": "Renovaciones en 30 d",
+      "renewalsFlagged": "{renovaciones} · {n} con señal",
+      "renewals7d": "En 7 d: {monto} · {renovaciones}, {n} con señal",
+      "expected": "Cobros previstos 30 d {monto}",
+      "expectedRate": "Cobros previstos 30 d {monto} · tasa de cobro {pct}",
+      "renewalsFootnote": "Importe íntegro del ciclo de los clientes de pago que renuevan en la ventana. Cobros previstos = importe × tasa histórica de cobro de renovaciones. Rojo con señal a 7 d, ámbar a 30 d.",
+      "declined": "Rechazados sin recuperar",
+      "declinedQueue": "{suscripciones} en cola de recobro",
+      "recoveryNone": "Recuperación 30 d: sin rechazos en la ventana",
+      "recovery": "Recuperación 30 d {pct}",
+      "declinedFootnote": "Último cobro rechazado sin un aprobado posterior. Recuperación = suscripciones con rechazo en 30 d que volvieron a cobrar. Alerta por debajo del {pct}: revisar la pasarela o añadir Yape/Plin.",
+      "lapsed": "Vencidas y pagos pendientes",
+      "bucket": "{desde}–{hasta} d: {n}",
+      "bucketAmount": "{desde}–{hasta} d: {n} ({monto})",
+      "pending": "Pagos por verificar: {n} · {monto} · máx {horas} h de espera",
+      "noPending": "Ningún pago pendiente de verificar",
+      "lapsedFootnote": "Vencidas y rechazadas por días desde la renovación fallida: ámbar desde 3 d, rojo desde 7 d. Pagos pendientes: ámbar > {aviso} h, rojo > {alerta} h."
+    },
+    "definition": "Cliente de pago = suscripción activa (o en gracia de 7 días tras un cobro fallido), plan distinto de Interno e importe mayor que cero: hoy <b>{n}</b>. Otros <link>{incoherencias} usuarios</link> llevan etiqueta de plan de pago sin suscripción vigente y no cuentan como clientes ni como MRR.",
+    "queues": {
+      "title": "Colas de cobro y retención",
+      "description": "Una fila por suscripción en alguna cola. Rojo primero, luego por días restantes; los filtros viven en la URL.",
+      "reminders": "Recordatorios ({n})",
+      "remindersEffect": "Envía un recordatorio previo con enlace de pago a las {n} renovaciones con señal de los próximos 30 días",
+      "retry": "Reintentar rechazados ({n})",
+      "retryEffect": "Programa el reintento automático (día 1, 3 y 7) de {n, plural, one {# cobro rechazado} other {# cobros rechazados}} por {monto}"
+    },
+    "churn": {
+      "title": "Bajas del mes",
+      "description": "Clientes de pago al inicio del mes que ya no lo son. Voluntaria si canceló; involuntaria si el cobro falló y pasaron los 7 días de gracia.",
+      "stats": {
+        "churn": "Bajas del mes",
+        "churnValue": "{bajas} de {inicio}",
+        "churnNone": "sin clientes al inicio del mes",
+        "churnPct": "{pct} de los clientes al inicio del mes",
+        "churn3m": "Baja media 3 m",
+        "churn3mHint": "alerta por encima del {pct} mensual",
+        "split": "Voluntarias · involuntarias",
+        "splitNone": "sin bajas que clasificar",
+        "splitCharge": "{pct} por cobro fallido: la palanca es el cobro",
+        "splitProduct": "{pct} por cobro fallido: la palanca es producto o precio",
+        "lost": "MRR perdido",
+        "lostHint": "precio mensual normalizado de las bajas"
+      },
+      "emptyTitle": "Sin bajas este mes",
+      "emptyDescription": "Ningún cliente de pago al inicio del mes ha dejado de serlo.",
+      "caption": "Clientes de pago que han causado baja este mes",
+      "user": "Usuario",
+      "plan": "Plan",
+      "reason": "Motivo",
+      "mrr": "MRR",
+      "voluntary": "Voluntaria",
+      "involuntary": "Involuntaria",
+      "reasonsTitle": "Motivos agregados",
+      "reasonsDescription": "Ordenados por MRR perdido. El motivo del rechazo lo devuelve la pasarela.",
+      "reasonCount": "{tipo} · {n, plural, one {# baja} other {# bajas}}"
+    },
+    "table": {
+      "queueFilter": {
+        "pendiente": "Pendientes",
+        "rechazado": "Rechazados",
+        "vencida": "Vencidas",
+        "proxima": "Próximas",
+        "inactivo": "Inactivos"
+      },
+      "filters": {
+        "queue": "Cola",
+        "allQueues": "Todas",
+        "priority": "Prioridad",
+        "anyPriority": "Cualquier prioridad",
+        "plan": "Plan",
+        "allPlans": "Todos los planes",
+        "method": "Método de pago",
+        "allMethods": "Todos los métodos"
+      },
+      "priority": "Prioridad",
+      "queue": "Cola",
+      "user": "Usuario",
+      "plan": "Plan",
+      "amount": "Importe",
+      "amountSub": "{billing, select, anual {anual} other {mensual}} · {mrr} al mes",
+      "renewal": "Renovación",
+      "today": "hoy",
+      "inDays": "en {n} d",
+      "lapsedAgo": "vencida hace {n} d",
+      "signals": "Señales",
+      "lastPayment": "Último pago",
+      "failedAttempts": "{n, plural, one {# intento fallido} other {# intentos fallidos}} en 30 d",
+      "noPayments": "Sin pagos",
+      "activity": "Actividad",
+      "cycleProjects": "{n, plural, one {# proyecto} other {# proyectos}} en el ciclo",
+      "action": "Acción",
+      "actionEffect": "{accion} · {nombre} ({plan}, {monto} por {metodo})",
+      "caption": "Suscripciones en alguna cola de cobro o retención",
+      "emptyTitle": "Nada en esta cola",
+      "emptyDescription": "Ninguna suscripción cumple el filtro. Prueba con otra cola o limpia los filtros.",
+      "summary": "<b>{rojos}</b> urgentes · {importe} en importes de ciclo · {mrr} de MRR"
+    }
+  },
+  "afiliados": {
+    "title": "Afiliados",
+    "description": "Quién trae creadores que activan y pagan y quién solo altas que consumen IA; cuánto se le debe a cada uno y desde cuándo; y cuánto se puede pagar por un cliente.",
+    "payout": "Liquidar pendientes · {monto}",
+    "payoutEffect": "Se liquidarían {monto} a {n, plural, one {# afiliado} other {# afiliados}} y se registraría la comisión pagada con fecha de hoy.",
+    "kpis": {
+      "pending": "Comisión pendiente de liquidar",
+      "pendingNone": "Ningún afiliado con comisión pendiente",
+      "pendingOldest": "{n, plural, one {# afiliado} other {# afiliados}} · la más antigua hace {dias} d ({codigo})",
+      "accrued": "Devengada {devengada} · pagada {pagada}",
+      "pendingFootnote": "Devengada − pagada por afiliado; la antigüedad cuenta desde el pago aprobado más antiguo sin cubrir. Rojo por encima de 30 d.",
+      "cac": "CAC de afiliados · 90 d",
+      "ltvCacNone": "LTV:CAC sin datos: ningún pagante atribuido en 90 d",
+      "ltvCac": "LTV:CAC {ratio} con LTV realizado {ltv}",
+      "blended": "Blended {blended} · LTV:CAC {ratio} · payback {payback}",
+      "paybackMonths": "{n} m",
+      "cacFootnote": "Comisiones devengadas en 90 d ÷ pagantes atribuidos con primer pago en la ventana. {nota}. Rojo si LTV:CAC < 1; aviso si el payback pasa de 6 meses.",
+      "payers": "Pagantes atribuidos a afiliados",
+      "conversion": "Conversión {conv} de {altas} altas · orgánico {organico}",
+      "activation": "Activación D7 {act} · orgánico {organico} · {altas30} altas en 30 d",
+      "payersFootnote": "Usuarios traídos por un código con al menos un pago aprobado; conversión = pagantes ÷ altas del canal, acumulado. Aviso si la activación baja de la mitad de la orgánica.",
+      "revenue": "Ingreso atribuido 30 d · neto de comisión",
+      "gross": "Bruto {bruto} · comisión −{comision}",
+      "accumulated": "Acumulado {monto} · ROI {roi} (ingreso ÷ comisión devengada)",
+      "revenueFootnote": "Pagos aprobados de usuarios atribuidos en los últimos 30 d, menos el % de comisión de cada afiliado. El acumulado descuenta reembolsos."
+    },
+    "codes": {
+      "title": "Rendimiento y comisiones por código",
+      "description": "Pendiente de pago primero; después, el ROI más bajo. Comisión por encima del 50 % del ingreso o activación por debajo de la mitad de la orgánica: renegociar o pausar. Diez altas sin ningún pagante en 60 d: revisar."
+    },
+    "detail": {
+      "title": "Usuarios atribuidos por afiliado",
+      "description": "Cada alta con su activación, sus pagos y lo que ha costado servirla. Se abren los códigos con alerta.",
+      "meta": "{canal} · {pct} de comisión · desde {fecha}",
+      "signups": "Altas",
+      "activated": "Activados D7",
+      "payers": "Pagantes",
+      "revenue": "Ingreso",
+      "pending": "Pendiente",
+      "commission": "Comisión devengada <b>{devengada}</b> · pagada {pagada} · pendiente <b>{pendiente}</b> · IA de altas no pagantes {ia}",
+      "commissionAge": "Comisión devengada <b>{devengada}</b> · pagada {pagada} · pendiente <b>{pendiente}</b> desde hace {dias} d · IA de altas no pagantes {ia}",
+      "none": "Este código todavía no ha traído ninguna alta.",
+      "caption": "Usuarios atribuidos a {nombre}",
+      "user": "Usuario",
+      "signup": "Alta",
+      "plan": "Plan",
+      "activatedD7": "Activado D7",
+      "projects": "Proyectos",
+      "paid": "Pagado",
+      "commissionCol": "Comisión",
+      "aiCost": "Coste IA",
+      "method": "Método",
+      "yes": "Sí",
+      "no": "No",
+      "footer": "{n, plural, one {# alta} other {# altas}} · {pagantes} con algún pago · {sinProyecto} sin ningún proyecto. La comisión de cada usuario es su pagado × {pct}."
+    },
+    "channels": {
+      "title": "Canal afiliado frente al resto",
+      "description": "Activación y conversión de cada canal de adquisición, acumulado hasta hoy. El orgánico es la referencia.",
+      "caption": "Activación y conversión por canal de adquisición",
+      "channel": "Canal",
+      "users": "Usuarios",
+      "signupsMonth": "Altas del mes",
+      "activated": "Activados D7",
+      "payers": "Pagantes",
+      "revenue": "Ingreso",
+      "benchmark": "referencia"
+    },
+    "status": {
+      "activo": "Activo",
+      "pausado": "Pausado"
+    },
+    "alert": {
+      "liquidar": {
+        "label": "Liquidar",
+        "title": "Comisión pendiente desde hace más de 30 días"
+      },
+      "calidad": {
+        "label": "Calidad",
+        "title": "La comisión supera el 50 % del ingreso atribuido"
+      },
+      "fraude": {
+        "label": "Fraude",
+        "title": "Diez altas o más y ningún pagante en 60 días"
+      }
+    },
+    "actions": {
+      "payout": "Liquidar",
+      "payoutEffect": "Se liquidarían {monto} a {nombre} ({codigo}) y se registraría la comisión pagada con fecha de hoy.",
+      "pause": "Pausar",
+      "pauseAria": "Pausar {codigo}",
+      "pauseTitle": "Pausar el código",
+      "pauseEffect": "El código {codigo} dejaría de atribuir altas nuevas; las comisiones ya devengadas se conservan.",
+      "resume": "Reactivar",
+      "resumeAria": "Reactivar {codigo}",
+      "resumeTitle": "Reactivar el código",
+      "resumeEffect": "El código {codigo} volvería a atribuir altas desde hoy.",
+      "rate": "Cambiar %",
+      "rateAria": "Cambiar el % de comisión de {codigo}",
+      "rateTitle": "Cambiar el % de comisión",
+      "rateEffect": "Se abriría el formulario para fijar un nuevo % de comisión de {codigo} (hoy {pct}) con fecha de efecto; los pagos anteriores conservan el % vigente."
+    },
+    "table": {
+      "filters": {
+        "status": "Estado",
+        "all": "Todos",
+        "active": "Activos",
+        "paused": "Pausados",
+        "pending": "Comisión pendiente",
+        "withAndWithout": "Con y sin pendiente",
+        "withPending": "Con pendiente",
+        "alert": "Alerta",
+        "anyAlert": "Cualquier alerta",
+        "withAlert": "Con alerta",
+        "noAlert": "Sin alerta"
+      },
+      "affiliate": "Afiliado",
+      "commissionPct": "comisión {pct}",
+      "signups": "Altas",
+      "signupsWindow": "30 d / total",
+      "activated": "Activados D7",
+      "ofSignups": "{n} de {total}",
+      "payers": "Pagantes",
+      "revenue": "Ingreso",
+      "revenue30d": "30 d {monto}",
+      "accrued": "Devengada",
+      "paid": "pagada {monto}",
+      "pending": "Pendiente",
+      "upToDate": "al día",
+      "roi": "ROI",
+      "noRevenue": "sin ingreso",
+      "ratio": "ratio {pct}",
+      "aiNonPaying": "IA no pagantes",
+      "alert": "Alerta",
+      "caption": "Afiliados con su funnel, ingreso atribuido y comisiones",
+      "search": "Buscar por nombre, código o canal",
+      "emptyTitle": "Ningún afiliado con ese filtro",
+      "emptyDescription": "Prueba a quitar el estado o la alerta.",
+      "summary": "Pendiente <b>{pendiente}</b> · devengada {devengada} · ingreso atribuido {ingreso} · IA de altas no pagantes {ia}"
+    }
+  },
+  "referidos": {
+    "title": "Referidos",
+    "description": "Si el programa compensa —los invitados activan y pagan al menos como el orgánico y la recompensa cuesta menos de lo que ingresan— y que ningún invitador se quede sin sus minutos.",
+    "editReward": "Editar recompensa",
+    "editRewardEffect": "Abre el editor de la recompensa: minutos o descuento, valor y fecha de efecto.",
+    "pauseProgram": "Pausar programa",
+    "pauseProgramEffect": "Pausa el programa: deja de generar enlaces de invitación. Las recompensas ya pendientes se mantienen.",
+    "kpis": {
+      "pending": "Recompensas pendientes",
+      "pendingValue": "{monto} · {minutos} min por otorgar",
+      "pendingNone": "Ningún invitador espera sus minutos",
+      "oldest": "Antigüedad máxima {dias} d",
+      "oldestLate": "Antigüedad máxima {dias} d · fuera de las 48 h",
+      "granted": "Otorgadas {monto} en total",
+      "pendingFootnote": "Invitado ya convertido cuyo invitador no ha recibido sus minutos. Rojo pasadas 48 h desde el primer pago.",
+      "activation": "Activación de invitados · 90 d",
+      "activationOrganic": "Orgánico {pct} · primer clip listo en ≤ 7 d",
+      "invitees": "{total} invitados en 90 d · {atascados} atascados sin activar",
+      "activationFootnote": "Invitados con primer clip en 7 días ÷ invitados de la ventana. Aviso si activan menos que el orgánico.",
+      "conversion": "Conversión de invitados · 90 d",
+      "conversionOrganic": "Orgánico {pct} · pago en ≤ 60 d",
+      "converted": "{convertidos} convertidos en total · {activados} activados sin pagar",
+      "conversionFootnote": "Invitados con un pago aprobado ÷ invitados de la ventana. Aviso si convierten menos que el orgánico.",
+      "value": "Valor del programa · 90 d",
+      "valueRatio": "{n}×",
+      "inviteeRevenue": "Ingresos de invitados {monto}",
+      "cac": "CAC de referidos {monto} por convertido",
+      "valueFootnote": "Ingresos de invitados ÷ coste de las recompensas otorgadas. Un minuto regalado vale {monto}. Rojo por debajo de 1×."
+    },
+    "all": {
+      "title": "Todos los referidos",
+      "description": "Una fila por invitado. Las recompensas pendientes van primero, por antigüedad; después, los registrados que llevan más de 14 días sin activar.",
+      "grantEffect": "Otorga {minutos} min a {n, plural, one {# invitador} other {# invitadores}} y les avisa por correo.",
+      "grant": "{n, plural, one {Otorgar la pendiente} other {Otorgar las # pendientes}}"
+    },
+    "referrers": {
+      "title": "Invitadores",
+      "description": "Quién trae invitados que activan y pagan. Ordenados por convertidos; el ingreso es el acumulado de sus invitados.",
+      "emptyTitle": "Nadie ha invitado todavía",
+      "emptyDescription": "Cuando un usuario comparta su enlace y alguien se registre, aparecerá aquí.",
+      "caption": "Invitadores con más invitados convertidos",
+      "referrer": "Invitador",
+      "invitees": "Invitados",
+      "activated": "Activados",
+      "converted": "Convertidos",
+      "revenue": "Ingreso"
+    },
+    "program": {
+      "title": "Salud del programa",
+      "description": "Cuánta gente invita sobre los usuarios activos, qué parte de las altas trae y lo que cuesta en minutos.",
+      "inviteRate": "Tasa de invitación",
+      "inviteRateDetail": "{n, plural, one {# invitador} other {# invitadores}} · {mau} activos en 30 d",
+      "share": "Aporte a las altas",
+      "shareDetail": "{n} de las altas de 90 d llegan por invitación",
+      "granted": "Recompensas otorgadas",
+      "grantedDetail": "{minutos} min regalados en total",
+      "toGrant": "Por otorgar",
+      "nothingPending": "Nada pendiente",
+      "toGrantDetail": "{minutos} min · {n, plural, one {# invitador} other {# invitadores}}",
+      "steps": {
+        "registered": "Invitados registrados",
+        "registeredNote": "{n} atascados (> 14 d sin activar)",
+        "activated": "Activados",
+        "activatedNote": "con al menos un proyecto",
+        "converted": "Convertidos",
+        "convertedNote": "con un pago aprobado"
+      },
+      "caption": "Embudo acumulado de invitados: registrados, activados y convertidos",
+      "funnel": "Embudo de invitados",
+      "n": "n",
+      "ofInvitees": "de invitados",
+      "lowRate": "Menos del {pct} de los activos invita: mover el aviso de invitación al primer clip listo. Un minuto regalado cuesta lo que vale en Creador (US$ 29 ÷ 600 min).",
+      "okRate": "Invitan más del {pct} de los activos; el aviso de invitación se ve. Un minuto regalado cuesta lo que vale en Creador (US$ 29 ÷ 600 min)."
+    },
+    "table": {
+      "rewardState": {
+        "pendiente": "Pendiente",
+        "otorgada": "Otorgada",
+        "no-procede": "No procede"
+      },
+      "filters": {
+        "status": "Estado del invitado",
+        "anyStatus": "Cualquier estado",
+        "reward": "Estado de la recompensa",
+        "anyReward": "Recompensa: todas",
+        "stuck": "Atascados",
+        "all": "Todos"
+      },
+      "referrer": "Invitador",
+      "invitee": "Invitado",
+      "signup": "Registro",
+      "status": "Estado",
+      "notActivated": "{n} d sin activar",
+      "milestones": "Hitos",
+      "activatedOn": "Activado <date>{fecha}</date>",
+      "convertedOn": "Convertido <date>{fecha}</date>",
+      "reward": "Recompensa",
+      "rewardDetail": "{minutos} min · {monto}",
+      "age": "Antigüedad",
+      "revenue": "Ingreso",
+      "grant": "Otorgar",
+      "grantEffect": "Otorga {minutos} min a {nombre} y le avisa por correo.",
+      "notApplicable": "No procede",
+      "notApplicableEffect": "Marca la recompensa de {nombre} como no procedente (reembolso o fraude) y deja constancia del motivo.",
+      "remind": "Recordar",
+      "remindEffect": "Envía a {nombre} un recordatorio para subir su primer video.",
+      "caption": "Referidos: invitador, invitado, estado, recompensa e ingreso",
+      "search": "Buscar por invitador, invitado o correo",
+      "emptyTitle": "Sin referidos con esos filtros",
+      "emptyDescription": "Prueba a quitar un filtro o a buscar por nombre o correo.",
+      "summary": "{convertidos, plural, one {# convertido} other {# convertidos}} · {pendientes, plural, one {# recompensa pendiente} other {# recompensas pendientes}} ({valor}) · ingreso de invitados <b>{ingreso}</b>"
+    }
+  },
+  "campanas": {
+    "title": "Campañas",
+    "description": "Concede el perfil de agencia, paga los retiros de los cliperos y modera las campañas.",
+    "create": "Crear campaña",
+    "kpis": {
+      "team": "Pendiente del equipo",
+      "withdrawals": "{n, plural, one {# retiro} other {# retiros}} por pagar · {monto}",
+      "agencyRequest": "1 solicitud de agencia",
+      "noAgencyRequests": "Sin solicitudes de agencia",
+      "teamFootnote": "Las solicitudes de agencia se revisan en 24–48 h; los retiros, en el día.",
+      "active": "Campañas activas",
+      "activeMix": "{privadas} privadas · {destacadas} destacadas",
+      "budget": "Presupuesto en juego",
+      "budgetHint": "Lo que queda por repartir en las activas",
+      "paid": "Pagado a creadores",
+      "approvedClips": "{n} clips aprobados"
+    },
+    "agency": {
+      "title": "Perfil de agencia",
+      "description": "Las agencias publican campañas sin revisión. Antes de conceder el perfil se mira la organización, se cita una entrevista y se le hace un plan.",
+      "request": "{email} · pide el perfil de agencia",
+      "grant": "Conceder",
+      "granted": "Perfil de agencia concedido",
+      "grantedDescription": "{nombre} ya publica sin revisión, con el plan {plan}.",
+      "reject": "Rechazar",
+      "rejected": "Solicitud de agencia rechazada",
+      "none": "Sin solicitudes pendientes.",
+      "type": "{tipo} · pide el perfil de agencia",
+      "who": "{nombre} ({rol})",
+      "interview": "Citar entrevista",
+      "interviewed": "Entrevista citada el {fecha}",
+      "interviewNote": "Nota: {nota}",
+      "interviewDialog": {
+        "title": "Citar a entrevista",
+        "description": "La agencia lo ve en su pantalla de solicitud. Es lo que se hace antes de conceder el perfil: ver quién es y hacerle un plan.",
+        "when": "Cuándo",
+        "note": "Nota para la agencia",
+        "notePlaceholder": "Videollamada de 20 minutos. Trae un ejemplo del contenido que quieres clipear.",
+        "cancel": "Cancelar",
+        "send": "Citar",
+        "sent": "Entrevista citada",
+        "sentDescription": "{nombre} lo verá en su solicitud.",
+        "errors": {
+          "fecha": "Elige una fecha."
+        }
+      },
+      "grantWith": "Conceder con plan",
+      "plan": "Plan que se le asigna",
+      "planHint": "Sale de la entrevista. Se puede cambiar después desde Planes.",
+      "hiddenPlan": "oculto",
+      "rejectDialog": {
+        "title": "Rechazar la solicitud",
+        "description": "El motivo se le enseña: nadie se queda sin saber por qué.",
+        "reason": "Motivo",
+        "cancel": "Cancelar",
+        "send": "Rechazar"
+      }
+    },
+    "withdrawals": {
+      "title": "Retiros por pagar",
+      "description": "Lo que los creadores piden sacar de su wallet.",
+      "none": "No hay retiros por pagar.",
+      "creator": "Creador",
+      "method": "Método",
+      "amount": "Importe",
+      "requested": "Pedido",
+      "markPaid": "Marcar pagado",
+      "paid": "Retiro pagado",
+      "paidDescription": "{monto} a {nombre} por {metodo}.",
+      "rejectAria": "Rechazar el retiro de {nombre}",
+      "rejectReason": "Los datos de cobro no son válidos.",
+      "rejected": "Retiro rechazado",
+      "rejectedDescription": "{nombre}: el importe vuelve a su wallet."
+    },
+    "all": {
+      "title": "Todas las campañas",
+      "description": "De la más reciente a la más antigua.",
+      "campaign": "Campaña",
+      "createdBy": "Creada por",
+      "status": "Estado",
+      "budget": "Presupuesto",
+      "spent": "Consumido",
+      "spentAria": "Consumido {pct}",
+      "cpmCap": "CPM · tope",
+      "clips": "Clips",
+      "ends": "Termina",
+      "featured": "Destacada",
+      "private": "Privada · {codigo}",
+      "actionsFor": "Acciones de {titulo}",
+      "view": "Ver campaña",
+      "unfeatured": "Ya no está destacada",
+      "featuredDone": "Campaña destacada",
+      "unfeature": "Quitar de destacadas",
+      "feature": "Destacar en Explorar",
+      "pause": "Pausar",
+      "paused": "Campaña pausada",
+      "resume": "Reanudar",
+      "resumed": "Campaña reanudada",
+      "finish": "Finalizar",
+      "finished": "Campaña finalizada"
+    }
+  },
+  "disputas": {
+    "title": "Disputas",
+    "description": "Cuando el clipero y quien paga no se ponen de acuerdo, decide el admin. El laudo desbloquea el compromiso y se les explica a los dos.",
+    "kpis": {
+      "open": "Por arbitrar",
+      "openBy": "{cliperos} del clipero · {agencias} de quien paga",
+      "openHint": "Una disputa abierta impide cerrar su campaña.",
+      "money": "Dinero en juego",
+      "moneyHint": "El tope por video de cada campaña en disputa.",
+      "oldest": "La que más espera",
+      "oldestHint": "Desde que se abrió, sin laudo.",
+      "resolved": "Resueltas",
+      "resolvedPaid": "{n, plural, one {# terminó en pago} other {# terminaron en pago}}",
+      "resolvedHint": "Laudos dictados hasta hoy.",
+      "days": "{n, plural, =0 {hoy} one {# día} other {# días}}"
+    },
+    "queue": {
+      "title": "Cola",
+      "description": "Primero la que más lleva esperando.",
+      "empty": "No hay ninguna disputa esperando.",
+      "age": "Abierta",
+      "parties": "Las dos partes",
+      "campaign": "Campaña",
+      "money": "En juego",
+      "reason": "Motivo",
+      "status": "Estado",
+      "ago": "{n, plural, =0 {hoy} one {hace # día} other {hace # días}}",
+      "versus": "frente a {agencia}",
+      "claims": "{parte, select, clipero {Reclama el clipero} agencia {Reclama quien paga} other {Reclamación}}",
+      "missing": "Campaña fuera del catálogo",
+      "arbitrate": "Arbitrar",
+      "arbitrateAria": "Arbitrar la disputa de {clipero}"
+    },
+    "history": {
+      "title": "Resueltas",
+      "description": "Lo que se decidió y con qué explicación.",
+      "empty": "Todavía no se ha dictado ningún laudo.",
+      "resolved": "Resuelta",
+      "award": "Laudo",
+      "note": "Nota",
+      "noNote": "Sin nota"
+    },
+    "role": {
+      "clipero": "Clipero",
+      "agencia": "Quien paga"
+    },
+    "status": {
+      "abierta": "Abierta",
+      "en-revision": "En revisión",
+      "resuelta": "Resuelta"
+    },
+    "reason": {
+      "no-entrego": {
+        "label": "No entregó",
+        "description": "Venció el plazo y el clip nunca llegó."
+      },
+      "no-revisa": {
+        "label": "No revisa",
+        "description": "El clip está entregado y nadie lo aprueba ni lo rechaza."
+      },
+      "rechazo-injusto": {
+        "label": "Rechazo injusto",
+        "description": "La solicitud o el clip se rechazaron sin motivo."
+      },
+      "no-paga": {
+        "label": "No paga",
+        "description": "El clip está aprobado y el dinero no se ha liquidado."
+      },
+      "contenido": {
+        "label": "Contenido",
+        "description": "El clip no cumple lo que pedía la campaña."
+      }
+    },
+    "award": {
+      "liberar-plaza": {
+        "label": "Liberar la plaza",
+        "description": "El compromiso queda caducado y la plaza vuelve a la campaña. Nadie cobra."
+      },
+      "dar-prorroga": {
+        "label": "Dar prórroga",
+        "description": "El compromiso vuelve a estar aceptado con un plazo nuevo desde hoy."
+      },
+      "pagar-clipero": {
+        "label": "Pagar al clipero",
+        "description": "El compromiso se da por cumplido y el clip entra en la liquidación de la campaña."
+      },
+      "sin-pago": {
+        "label": "Sin pago",
+        "description": "El compromiso se cierra rechazado: por este clip no se paga."
+      }
+    },
+    "detail": {
+      "title": "Disputa · {campana}",
+      "opened": "Abierta el {fecha} · {motivo}",
+      "money": "En juego: {monto}, el tope por video de esta campaña.",
+      "versions": "Las dos versiones",
+      "silent": "No ha escrito su versión.",
+      "noDetail": "Reclamó sin escribir nada más.",
+      "requestNote": "Lo que escribió al pedir la plaza.",
+      "clip": "El clip entregado",
+      "clipViews": "{vistas} vistas",
+      "clipOpen": "Ver el clip",
+      "timeline": "Las fechas",
+      "requested": "Pidió entrar",
+      "decided": "Decisión de la campaña",
+      "dueDate": "Fin del plazo",
+      "delivered": "Clip entregado",
+      "openedAt": "Disputa abierta",
+      "resolvedAt": "Resuelta"
+    },
+    "commitment": {
+      "line": "El compromiso está {estado}.",
+      "estado": {
+        "solicitada": "solicitado",
+        "aceptada": "aceptado",
+        "entregada": "entregado",
+        "cumplida": "cumplido",
+        "rechazada": "rechazado",
+        "retirada": "retirado",
+        "caducada": "caducado",
+        "en-disputa": "en disputa"
+      }
+    },
+    "form": {
+      "award": "El laudo",
+      "awardHint": "Cada uno deja el compromiso en un estado distinto y no tiene vuelta atrás.",
+      "days": "Días de prórroga",
+      "daysHint": "Cuentan desde hoy.",
+      "note": "Nota para las dos partes",
+      "noteHint": "La leen el clipero y quien paga: escribe en qué te basas.",
+      "notePlaceholder": "En qué te basas para decidir…",
+      "noteRequired": "Escribe la nota: las dos partes tienen que saber por qué.",
+      "submit": "Dictar el laudo",
+      "cancel": "Cancelar"
+    },
+    "done": {
+      "title": "Laudo dictado",
+      "description": "{campana} · {laudo}"
+    }
+  },
+  "formacion": {
+    "title": "Formación",
+    "description": "Las clases que ve el clipero. Publicar, retirar y decidir qué plan hace falta para cada una.",
+    "create": "Nueva clase",
+    "kpis": {
+      "published": "Publicadas",
+      "publishedLines": "{borradores, plural, =0 {Ningún borrador} one {# borrador} other {# borradores}} · {retiradas, plural, =0 {nada retirado} one {# retirada} other {# retiradas}}",
+      "publishedFootnote": "Solo las publicadas se ven en Formación.",
+      "minutes": "Minutos publicados",
+      "minutesLines": "{inicio} de inicio · {medio} medias · {avanzado} avanzadas",
+      "noVideo": "Sin video",
+      "noVideoLines": "Se ven en el catálogo, pero no hay nada que reproducir.",
+      "noVideoFootnote": "Es el trabajo que le queda al equipo.",
+      "paid": "De pago",
+      "paidLines": "{free} gratis · {creator} en Creador · {business} en Empresa",
+      "paidFootnote": "Lo que pide plan sale con candado, nunca escondido."
+    },
+    "views": {
+      "title": "Las vistas todavía no se cuentan",
+      "description": "El avance de cada alumno vive en su navegador y no llega hasta aquí, así que este panel no inventa cuántos han visto una clase. Cuando haya servidor, se contarán de verdad."
+    },
+    "rutas": {
+      "title": "Rutas",
+      "description": "El orden en que se proponen las clases. Una ruta no se vende aparte: su plan es el más alto de las clases que lleva.",
+      "create": "Nueva ruta",
+      "empty": "Todavía no hay ninguna ruta",
+      "clases": "{n, plural, =0 {sin clases} one {# clase} other {# clases}}",
+      "sinPublicar": "{n, plural, one {# sin publicar} other {# sin publicar}}",
+      "para": "Se propone a: {lista}",
+      "subir": "Subir {titulo}",
+      "bajar": "Bajar {titulo}",
+      "quitar": "Quitar {titulo} de la ruta",
+      "anadir": "Añadir una clase",
+      "anadirVacio": "No queda ninguna clase por añadir",
+      "editar": "Editar la ruta",
+      "borrar": "Borrar la ruta",
+      "form": {
+        "newTitle": "Nueva ruta",
+        "editTitle": "Editar «{titulo}»",
+        "description": "El título y la descripción son lo que lee el clipero: van en español, como las clases.",
+        "titulo": "Título",
+        "descripcion": "De qué va",
+        "para": "A quién se le propone",
+        "paraHint": "Sale de lo que respondió en el onboarding sobre cuánto ha editado.",
+        "cancel": "Cancelar",
+        "save": "Guardar",
+        "errors": {
+          "tituloCorto": "El título necesita al menos {min} caracteres.",
+          "descripcionCorta": "Escribe al menos {min} caracteres.",
+          "sinClases": "Todavía no lleva ninguna clase. Se añaden en su tarjeta, con «Añadir una clase»; hasta entonces el clipero no la ve.",
+          "sinPara": "Elige al menos a quién se le propone.",
+          "sinPublicadas": "Ninguna de sus clases está publicada, así que el clipero no verá esta ruta todavía."
+        }
+      },
+      "toasts": {
+        "saved": "Ruta guardada",
+        "deleted": "Ruta borrada",
+        "ordered": "Orden cambiado"
+      },
+      "delete": {
+        "title": "¿Borrar «{titulo}»?",
+        "description": "Solo se borran las rutas creadas aquí, y no se deshace. Las clases no se tocan: siguen en el catálogo.",
+        "cancel": "No borrarla",
+        "action": "Borrar la ruta"
+      }
+    },
+    "table": {
+      "caption": "Clases del catálogo",
+      "search": "Buscar por título o descripción",
+      "clase": "Clase",
+      "estado": "Estado",
+      "plan": "Plan",
+      "nivel": "Nivel",
+      "duracion": "Duración",
+      "publicada": "Publicada",
+      "acciones": "Acciones",
+      "sinVideo": "Sin video",
+      "empty": "Ninguna clase con estos filtros",
+      "emptyDescription": "Prueba a quitar el filtro o crea una clase nueva.",
+      "resumen": "{n, plural, one {# clase} other {# clases}} · {min} min"
+    },
+    "filters": {
+      "estado": "Estado",
+      "plan": "Plan",
+      "todos": "Todos"
+    },
+    "estados": {
+      "borrador": "Borrador",
+      "publicada": "Publicada",
+      "despublicada": "Retirada"
+    },
+    "niveles": {
+      "inicio": "Inicio",
+      "medio": "Medio",
+      "avanzado": "Avanzado"
+    },
+    "acciones": {
+      "editar": "Editar",
+      "publicar": "Publicar",
+      "retirar": "Retirar",
+      "borrar": "Borrar",
+      "menu": "Qué hacer con {titulo}"
+    },
+    "form": {
+      "newTitle": "Nueva clase",
+      "editTitle": "Editar «{titulo}»",
+      "description": "El título y la descripción son lo que lee el clipero: van en español, como el resto del contenido.",
+      "titulo": "Título",
+      "descripcion": "De qué va",
+      "duracion": "Duración (segundos)",
+      "nivel": "Nivel",
+      "temas": "Temas",
+      "temasHint": "Por los temas se decide a quién se le propone.",
+      "redes": "Redes",
+      "redesHint": "Solo si la clase habla de una red concreta.",
+      "video": "Video de la clase",
+      "videoHint": "Suelta el archivo o pega el enlace. Sin video la clase se ve igual, y se dice que está por subir.",
+      "quitarVideo": "Quitar el enlace",
+      "sinAlmacenamiento": "El archivo ha recorrido la cola entera, pero todavía no hay dónde guardarlo: hasta que haya almacenamiento no queda ningún enlace. Pega uno mientras tanto.",
+      "portada": "Enlace de la portada",
+      "plan": "Plan mínimo",
+      "planHint": "Con Prueba la ve todo el mundo.",
+      "estado": "Estado",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "errors": {
+        "tituloCorto": "El título necesita al menos {min} caracteres.",
+        "descripcionCorta": "Escribe al menos {min} caracteres: es lo que decide si la abren.",
+        "duracionRango": "Entre {min} y {max} segundos.",
+        "temasRequeridos": "Elige al menos un tema.",
+        "temasDemasiados": "Como mucho {max} temas.",
+        "videoUrl": "Escribe un enlace válido (https://…).",
+        "portadaUrl": "Escribe un enlace válido (https://…).",
+        "publicadaSinVideo": "Se publicará sin video: se verá de qué va, pero no habrá nada que reproducir."
+      }
+    },
+    "toasts": {
+      "saved": "Clase guardada",
+      "published": "Clase publicada",
+      "unpublished": "Clase retirada",
+      "unpublishedDescription": "Deja de verse en Formación. El avance de quien la estaba viendo no se toca.",
+      "deleted": "Clase borrada",
+      "noStorage": "Este navegador no guarda nada, así que el cambio se pierde al recargar."
+    },
+    "delete": {
+      "title": "¿Borrar «{titulo}»?",
+      "description": "Solo se borran las clases creadas aquí, y no se deshace. Para retirarla sin perderla, usa Retirar.",
+      "cancel": "No borrarla",
+      "action": "Borrar la clase"
+    }
+  },
+  "mercado": {
+    "title": "Mercado",
+    "description": "Cuántos cliperos hay para el dinero que entra, nicho a nicho y país a país.",
+    "simulado": "Datos simulados hasta conectar la API.",
+    "kpis": {
+      "cliperos": "Cliperos con perfil",
+      "cliperosHint": "Cuentas de clipero con la bienvenida respondida.",
+      "enRiesgo": "Dinero sin quien lo clipee",
+      "enRiesgoHint": "Presupuesto activo en celdas sin oferta o en escasez.",
+      "huecos": "Celdas en escasez",
+      "huecosHint": "Menos de 2 cliperos por cada US$ 1.000 activos.",
+      "excedentes": "Celdas con excedente",
+      "excedentesHint": "Más de 20 cliperos por cada US$ 1.000: hay a quién vender."
+    },
+    "cobertura": {
+      "title": "Cobertura por nicho y país",
+      "description": "Cliperos ponderados por cada US$ 1.000 activos. El estado va escrito, no solo en color.",
+      "vertical": "Nicho",
+      "global": "Global",
+      "muestraBaja": "muestra baja",
+      "oculta": "menos de 10 personas"
+    },
+    "estados": {
+      "sin-oferta": "Sin oferta",
+      "escasez": "Escasez",
+      "equilibrio": "Equilibrio",
+      "excedente": "Excedente",
+      "sin-datos": "Sin datos"
+    },
+    "huecos": {
+      "title": "Huecos: dónde falta gente",
+      "description": "Ordenados por el dinero activo que hay en juego.",
+      "empty": "Ninguna celda en escasez con el filtro actual.",
+      "columns": {
+        "celda": "Celda",
+        "demanda": "Dinero activo",
+        "oferta": "Cliperos ponderados",
+        "cobertura": "Por US$ 1.000",
+        "estado": "Estado"
+      }
+    },
+    "excedentes": {
+      "title": "Excedentes: a quién vender",
+      "description": "Sobran cliperos para el dinero que hay: sectores que comprar.",
+      "empty": "Ninguna celda con excedente con el filtro actual."
+    },
+    "cpm": {
+      "title": "CPM que llena por sector",
+      "description": "De las campañas que gastaron su presupuesto en 90 días, ponderado por presupuesto.",
+      "columns": {
+        "sector": "Sector",
+        "p25": "p25",
+        "p50": "Mediana",
+        "p75": "p75",
+        "base": "Base",
+        "n": "Campañas"
+      },
+      "base": {
+        "sector-pais": "sector y país",
+        "sector": "sector",
+        "vertical": "nicho",
+        "referencia": "referencia de mercado",
+        "sin-referencia": "sin referencia"
+      }
+    },
+    "fandom": {
+      "title": "Creadores con fans y sin campaña",
+      "description": "Cliperos activos que los siguen. Es la lista de contactos de ventas.",
+      "empty": "Ningún creador llega al mínimo de fans activos.",
+      "columns": {
+        "creador": "Creador",
+        "fans": "Fans activos",
+        "pais": "País principal",
+        "vistas": "Vistas medianas",
+        "usuario": "Ya es usuario"
+      },
+      "esUsuario": "Sí"
+    },
+    "calidad": {
+      "title": "Calidad del dato",
+      "description": "Cuánto de lo que decidimos está medido y cuánto solo declarado.",
+      "base": "de {n} cliperos con perfil",
+      "baseInferidos": "de {n} con nicho deducido",
+      "items": {
+        "conectados": "Con cuenta conectada",
+        "inferidos": "Con nicho deducido de sus envíos",
+        "confianzaBaja": "Respuestas poco fiables",
+        "opuestos": "Se oponen a las estadísticas",
+        "pendientes": "Creadores por catalogar",
+        "sinNormalizar": "«Cómo llegaste» sin clasificar",
+        "concordancia": "Coincide lo declarado con lo medido"
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Bienvenida",
+    "description": "Cómo va «Tu primer corte»: quién la termina, dónde se cae y qué salta.",
+    "simulado": "Datos simulados hasta conectar la API: el onboarding de cada persona vive en su navegador.",
+    "kpis": {
+      "cuentas": "Cuentas con bienvenida",
+      "finalizacion": "La terminan",
+      "finalizacionHint": "De quienes la empiezan. Objetivo: 75 % cliperos, 65 % agencias.",
+      "tiempo": "Tiempo típico",
+      "tiempoHint": "Mediana de quienes la terminan. Objetivo: 60 s o menos.",
+      "completitud": "Perfil medio"
+    },
+    "estados": {
+      "sin-empezar": "Sin empezar",
+      "en-curso": "A medias",
+      "pospuesto": "Pospuesta",
+      "completado": "Terminada"
+    },
+    "flujos": {
+      "title": "Por rama",
+      "clipero": "Clipero de campañas",
+      "creador": "Creador con sus videos",
+      "agencia": "Agencia",
+      "columns": {
+        "flujo": "Rama",
+        "cuentas": "Cuentas",
+        "completados": "Terminadas",
+        "tasa": "%"
+      }
+    },
+    "tomas": {
+      "title": "Toma a toma",
+      "description": "Más del 40 % de saltos: la pregunta se mueve al perfilado progresivo. Más del 10 % de abandono: la toma se rediseña.",
+      "columns": {
+        "toma": "Toma",
+        "vistos": "Vistas",
+        "respondidos": "Respondidas",
+        "saltados": "Saltadas",
+        "abandono": "Abandono",
+        "tiempo": "Tiempo"
+      }
+    },
+    "consentimientos": {
+      "title": "Consentimientos",
+      "estadisticas": "Aceptan estadísticas",
+      "informesSector": "Informes de sector",
+      "novedades": "Novedades por correo",
+      "revocaron": "Revocaron en 30 días"
+    },
+    "aceleracion": "Aceleran el texto",
+    "saltoIntro": "Saltan la intro"
+  },
+  "feedback": {
+    "title": "Casillero",
+    "description": "Lo que cliperos y agencias le escriben a Clipealo. Se lee, se responde y se archiva; no se borra.",
+    "kpis": {
+      "nuevos": "Sin abrir",
+      "nuevosHint": "Nadie del equipo los ha leído todavía",
+      "abiertos": "Pendientes",
+      "abiertosHint": "Sin abrir más leídos sin responder",
+      "espera": "Espera más larga",
+      "esperaHint": "Del pendiente más antiguo",
+      "respondidos": "Respondidos",
+      "respondidosHint": "La respuesta le llega en Ayuda › Tus mensajes"
+    },
+    "sinEspera": "Nada esperando",
+    "dias": "{n, plural, =0 {hoy} one {# día} other {# días}}",
+    "tabla": {
+      "caption": "Mensajes recibidos",
+      "buscar": "Buscar en los mensajes…",
+      "autor": "Quién",
+      "tipo": "De qué",
+      "mensaje": "Mensaje",
+      "desde": "Desde",
+      "fecha": "Recibido",
+      "estado": "Estado",
+      "acciones": "Acciones",
+      "vacio": "No hay ningún mensaje con este filtro",
+      "vacioHint": "Prueba a quitar el estado o el tipo.",
+      "resumen": "{n, plural, one {# mensaje} other {# mensajes}} · {abiertos} pendientes"
+    },
+    "filtros": {
+      "estado": "Estado",
+      "tipo": "De qué",
+      "de": "Quién",
+      "todos": "Todos",
+      "todosTipos": "De cualquier tema",
+      "todosAutores": "Cualquiera"
+    },
+    "de": {
+      "clipero": "Clipero",
+      "agencia": "Agencia"
+    },
+    "abrir": "Abrir el mensaje de {autor}",
+    "detalle": {
+      "title": "Mensaje de {autor}",
+      "recibido": "Recibido el {fecha}, desde {ruta}",
+      "recibidoSinRuta": "Recibido el {fecha}",
+      "respuesta": "Tu respuesta",
+      "respuestaPlaceholder": "Contesta lo que sepas y di lo que no. Lo lee tal cual.",
+      "respuestaHint": "Se publica en su Ayuda › Tus mensajes y se le avisa en la campana.",
+      "yaRespondido": "Respondido el {fecha}",
+      "enviar": "Responder",
+      "archivar": "Archivar",
+      "cerrar": "Cerrar",
+      "errors": {
+        "vacia": "Escribe la respuesta antes de enviarla."
+      }
+    },
+    "toasts": {
+      "respondido": "Respuesta enviada",
+      "respondidoHint": "{autor} la verá en su Ayuda.",
+      "archivado": "Mensaje archivado",
+      "archivadoHint": "Sale de la cola, pero no se borra."
+    },
+    "cola": {
+      "title": "La cola",
+      "description": "De lo más nuevo a lo más viejo. Abrir un mensaje lo marca leído; archivar lo saca de aquí sin borrarlo."
+    }
+  },
+  "preguntas": {
+    "title": "Preguntas",
+    "description": "Qué se le pregunta al clipero, dónde y cada cuánto. Lo que se cambia aquí se nota en la app sin recargar.",
+    "kpis": {
+      "activas": "Se preguntan",
+      "activasHint": "De {total} del catálogo",
+      "panel": "En el panel",
+      "panelHint": "Tarjeta debajo del saludo",
+      "enviar": "Al enviar un clip",
+      "enviarHint": "Una línea dentro del diálogo",
+      "creadas": "Escritas aquí",
+      "creadasHint": "Las demás vienen con el producto"
+    },
+    "catalogo": {
+      "title": "El catálogo",
+      "description": "Las que vienen con el producto tienen su texto en los tres idiomas y escriben en un campo de la cuenta: de ellas se cambia si se preguntan, dónde y en qué orden. Las que escribas aquí llevan su propio texto y sus opciones.",
+      "crear": "Escribir una pregunta",
+      "semilla": "Del producto",
+      "creada": "Escrita aquí",
+      "activa": "Se pregunta",
+      "apagada": "Apagada",
+      "lugar": "Dónde sale",
+      "subir": "Subir {titulo}",
+      "bajar": "Bajar {titulo}",
+      "editar": "Editar {titulo}",
+      "borrar": "Borrar {titulo}",
+      "alternar": "Preguntar {titulo}",
+      "desdeAlta": "{n, plural, =0 {desde el alta} one {a partir del día #} other {a partir del día #}}",
+      "opciones": "{n, plural, one {# opción} other {# opciones}}",
+      "unica": "Una respuesta",
+      "multiple": "Varias, hasta {max}",
+      "apagadaNota": "Apagada no se pregunta, pero lo que ya se respondió sigue en la cuenta.",
+      "multipleCorto": "Varias",
+      "semillaNota": "El nombre corto es para esta pantalla; la pregunta literal, con su «para qué», vive en los tres idiomas dentro del producto."
+    },
+    "lugares": {
+      "panel": "Panel",
+      "enviar": "Enviar clip"
+    },
+    "reglas": {
+      "title": "Cada cuánto se pregunta",
+      "description": "Las reglas valen para todo el catálogo. Preguntar de más cansa; preguntar de menos no recoge nada.",
+      "diasEntre": "Días entre dos preguntas",
+      "diasEntreHint": "Una cada tantos días, como mucho",
+      "diasPospuesta": "Días que tarda en volver un «Ahora no»",
+      "diasPospuestaHint": "Se respeta la decisión de quien la pospuso",
+      "diasMotivaciones": "Día en que se pregunta por las motivaciones",
+      "diasMotivacionesHint": "Contando desde el alta",
+      "diasHerramientas": "Día en que se pregunta por las herramientas",
+      "diasHerramientasHint": "Contando desde el alta",
+      "diasSinEnvios": "Días sin enviar antes de preguntar qué le frena",
+      "diasSinEnviosHint": "Desde su último clip enviado",
+      "diasRevalidar": "Días antes de revisar si sigue con sus temas",
+      "diasRevalidarHint": "Desde que los eligió",
+      "enviosDisponibilidad": "Envío en el que se pregunta la disponibilidad",
+      "enviosDisponibilidadHint": "El tercero por defecto",
+      "maxSubverticales": "Ligas, géneros o formatos que se pueden marcar",
+      "maxSubverticalesHint": "Cuantos más, menos útil es el dato",
+      "rango": "Entre {min} y {max}",
+      "reiniciar": "Volver a los valores de fábrica"
+    },
+    "form": {
+      "newTitle": "Escribir una pregunta",
+      "editTitle": "Editar «{titulo}»",
+      "description": "Va en el idioma en que la escribas: es contenido, como el título de una clase, y no se traduce. Solo se le pregunta a cliperos.",
+      "titulo": "La pregunta",
+      "tituloPlaceholder": "¿Qué es lo que más te cuesta al montar un clip?",
+      "ayuda": "Para qué se pregunta",
+      "ayudaHint": "Se enseña debajo. Nadie responde a ciegas, y sin esto se abandona antes.",
+      "ayudaPlaceholder": "Para saber qué parte del editor mejorar primero.",
+      "lugar": "Dónde sale",
+      "tipo": "Cuántas se pueden marcar",
+      "max": "Como mucho",
+      "opciones": "Opciones",
+      "opcionesHint": "Entre {min} y {max}. Cortas y sin solaparse: la gente elige la primera que encaja.",
+      "opcion": "Opción {n}",
+      "anadirOpcion": "Añadir una opción",
+      "quitarOpcion": "Quitar la opción {n}",
+      "desdeAltaDias": "A partir de qué día desde el alta",
+      "desdeAltaDiasHint": "0 la pregunta desde el primer día.",
+      "activa": "Preguntarla ya",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "errors": {
+        "tituloCorto": "La pregunta necesita al menos {min} caracteres.",
+        "ayudaCorta": "Escribe al menos {min} caracteres: es lo que hace que la respondan.",
+        "pocasOpciones": "Hacen falta al menos {min} opciones.",
+        "opcionVacia": "Hay una opción sin escribir.",
+        "opcionRepetida": "Hay dos opciones iguales."
+      }
+    },
+    "toasts": {
+      "guardada": "Pregunta guardada",
+      "borrada": "Pregunta borrada",
+      "encendida": "Se preguntará",
+      "apagada": "Dejará de preguntarse",
+      "orden": "Orden cambiado",
+      "regla": "Regla cambiada",
+      "reiniciadas": "Catálogo de fábrica"
+    },
+    "delete": {
+      "title": "¿Borrar «{titulo}»?",
+      "description": "Solo se borran las preguntas escritas aquí, y no se deshace. Lo que la gente ya respondió se queda en su cuenta. Si solo quieres dejar de preguntarla, apágala.",
+      "cancel": "No borrarla",
+      "action": "Borrar la pregunta"
+    },
+    "frontera": "Lo que se responde vive en el navegador de cada persona, así que aquí no se pueden contar respuestas. Se ve qué se pregunta, no quién contestó qué.",
+    "semillas": {
+      "experiencia": "Cuánto has editado",
+      "ligas": "Qué ligas sigues",
+      "generos": "Qué géneros de música",
+      "formatos": "Qué formatos de directo",
+      "disponibilidad": "Cuánto tiempo tienes",
+      "motivo-pausa": "Qué te frena ahora",
+      "motivaciones": "Por qué clipeas",
+      "herramientas": "Con qué editas",
+      "sigues-clipeando": "¿Sigues con tus temas?"
+    }
+  }
+}

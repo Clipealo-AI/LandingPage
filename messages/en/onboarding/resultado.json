@@ -1,0 +1,61 @@
+{
+  "title": "Your first cut is ready.",
+  "celebrate": {
+    "title": "Your profile is ready",
+    "description": "{count, plural, =0 {We’ll let you know when campaigns for you arrive.} one {# campaign is a fit for you.} other {# campaigns are a fit for you.}}"
+  },
+  "acciones": {
+    "campanas": "See my campaigns",
+    "panel": "Go to dashboard",
+    "continuar": "Continue",
+    "subir": "Upload my first video",
+    "clips": "See your clips"
+  },
+  "permisos": {
+    "informesSector": {
+      "label": "Include me in sector reports",
+      "description": "We combine your answers with those of at least 49 other people so agencies can see which niches are growing and launch more campaigns in yours. No one can see you there."
+    },
+    "novedades": {
+      "label": "News and tips by email",
+      "description": "One or two a month. Unsubscribe in one click."
+    }
+  },
+  "paraTi": {
+    "title": "For you",
+    "adyacentes": "While {vertical} campaigns arrive, these {adyacente} campaigns are a fit for you.",
+    "sinCampanas": "We’ll let you know as soon as one goes live."
+  },
+  "cobro": {
+    "title": "How you get paid",
+    "texto": "In “{campana},” they pay {cpm} per 1,000 views <b>starting at {minimo, number} views</b>. With {vistas, number} views, you’d earn {pago}. A video earns at most {tope} ({pct} of the budget), so the money reaches more clippers."
+  },
+  "mision": {
+    "title": "First mission"
+  },
+  "tarjeta": {
+    "title": "Your clipper card",
+    "precision": "Accuracy of your recommendations: {nivel, select, baja {low} media {medium} alta {high} other {medium}}. It goes up when you connect your account."
+  },
+  "extra": {
+    "title": "Two more things (optional)",
+    "comoLlegaste": {
+      "label": "How did you hear about Clipealo? (optional)",
+      "placeholder": "A video, a friend, an ad…",
+      "counter": "{n} of {max}",
+      "chips": "How you found us"
+    }
+  },
+  "resumen": {
+    "title": "What you told us",
+    "saltada": "Skipped",
+    "sinRespuesta": "Not answered"
+  },
+  "creador": {
+    "ready": "Profile ready: you can upload your first video now."
+  },
+  "expres": {
+    "title": "All set. Taking you to “{campana}.”",
+    "titleSinCampana": "All set. Taking you to your campaign."
+  }
+}

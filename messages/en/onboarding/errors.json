@@ -1,0 +1,32 @@
+{
+  "sinTipo": "Choose how you’ll use Clipealo.",
+  "sinMayorEdad": "You must be 18 or older to use Clipealo.",
+  "sinTerminos": "Accept the terms to continue.",
+  "sinObjetivo": "Choose what you’re here to do.",
+  "sinNichos": "Pick at least one topic or select “Not sure yet.”",
+  "sinRedes": "Pick at least one network or select “I don’t have an account yet.”",
+  "sinPais": "Choose your country.",
+  "sinIdiomas": "Pick at least one language.",
+  "maxIdiomas": "Up to {max} languages. Remove one to change it.",
+  "sinPlataformas": "Pick at least one platform.",
+  "sinFrecuencia": "Tell us how often you go live.",
+  "sinTemaCanal": "Pick at least one topic.",
+  "enlaceNoReconocido": "We don’t recognize that link. Try your Twitch, Kick, YouTube, or TikTok link.",
+  "sinTipoOrg": "Choose who you represent.",
+  "orgCorto": "Enter the name ({min} to {max} characters).",
+  "orgLargo": "Enter the name ({min} to {max} characters).",
+  "webNoValida": "That address doesn’t look valid. Example: https://yourbrand.com",
+  "sinSector": "Choose what you’re going to promote.",
+  "sinCanal": "Paste the channel link.",
+  "sinPaises": "Pick at least one country.",
+  "limiteElegidos": "You already have {max}. Remove one to change it.",
+  "guardadoFallido": {
+    "title": "We can’t save your answers in this browser",
+    "description": "You can keep going, but they’ll be lost when you close the tab."
+  },
+  "solicitudFallida": {
+    "title": "We couldn’t send your request",
+    "description": "Check your connection and try again."
+  },
+  "sugerenciasFallidas": "We couldn’t load suggestions. Type the name or paste the link."
+}

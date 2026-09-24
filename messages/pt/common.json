@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "tagline": "De vídeos longos a grandes clipes",
+    "description": "Envie o vídeo completo. A IA encontra os momentos que as pessoas assistem até o fim e devolve em 9:16, com legendas.",
+    "keywords": "clipes, vídeo vertical, reels, shorts, tiktok, edição com IA, legendas automáticas",
+    "ogLocale": "pt_BR"
+  },
+  "skipToContent": "Pular para o conteúdo",
+  "locale": {
+    "label": "Idioma",
+    "change": "Mudar idioma (atual: {current})"
+  },
+  "actions": {
+    "retry": "Tentar de novo",
+    "backToOverview": "Voltar à visão geral"
+  },
+  "theme": {
+    "change": "Mudar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "errorState": {
+    "title": "Algo quebrou por aqui",
+    "description": "Não conseguimos carregar esta parte. Você pode tentar de novo: nada do seu trabalho foi perdido.",
+    "reference": "Referência: {digest}"
+  },
+  "statCard": {
+    "vsPrevious": "em relação ao período anterior"
+  },
+  "notFound": {
+    "title": "Este clipe não existe.",
+    "description": "O link pode ter expirado ou o projeto foi excluído. Volte à biblioteca e busque o clipe pelo título.",
+    "home": "Voltar ao início",
+    "clips": "Ver meus clipes"
+  },
+  "social": {
+    "surface": {
+      "tiktok": "Para Você",
+      "instagram": "Reels",
+      "youtube": "Shorts e vídeo",
+      "x": "Linha do tempo",
+      "linkedin": "Feed profissional",
+      "facebook": "Reels e feed"
+    }
+  },
+  "ui": {
+    "breadcrumb": "Trilha de navegação",
+    "more": "Mais",
+    "carousel": "carrossel",
+    "slide": "slide",
+    "previousSlide": "Slide anterior",
+    "nextSlide": "Próximo slide",
+    "commandTitle": "Paleta de comandos",
+    "commandDescription": "Busque um comando para executar…",
+    "close": "Fechar",
+    "pagination": "Paginação",
+    "previous": "Anterior",
+    "next": "Próxima",
+    "previousPage": "Ir para a página anterior",
+    "nextPage": "Ir para a próxima página",
+    "morePages": "Mais páginas",
+    "sidebar": "Barra lateral",
+    "sidebarDescription": "Mostra a barra lateral no celular.",
+    "toggleSidebar": "Mostrar ou ocultar a barra lateral",
+    "loading": "Carregando"
+  },
+  "video": {
+    "aspect": {
+      "9:16": {
+        "label": "Vertical",
+        "destination": "Reels · Shorts · TikTok"
+      },
+      "1:1": {
+        "label": "Quadrado",
+        "destination": "Feed do Instagram"
+      },
+      "4:5": {
+        "label": "Retrato",
+        "destination": "Feed vertical"
+      },
+      "16:9": {
+        "label": "Horizontal",
+        "destination": "YouTube · Web"
+      }
+    },
+    "aspectSwitcher": {
+      "label": "Formato de saída"
+    },
+    "clipStatus": {
+      "borrador": "Rascunho",
+      "listo": "Pronto",
+      "publicado": "Publicado"
+    },
+    "jobStage": {
+      "subiendo": "Enviando",
+      "transcribiendo": "Transcrevendo",
+      "analizando": "Analisando momentos",
+      "recortando": "Cortando",
+      "reencuadrando": "Reenquadrando para vertical",
+      "listo": "Pronto"
+    },
+    "clipCard": {
+      "play": "Reproduzir {title}",
+      "actions": "Ações de {title}",
+      "edit": "Editar clipe",
+      "download": "Baixar {aspect}",
+      "duplicate": "Duplicar",
+      "copyLink": "Copiar link",
+      "publish": "Publicar…",
+      "schedule": "Agendar…",
+      "delete": "Excluir",
+      "withCaptions": "Com legendas",
+      "withoutCaptions": "Sem legendas",
+      "captionsIncluded": "Legendas incluídas",
+      "views": "Visualizações",
+      "likes": "Curtidas",
+      "retention": "Retenção",
+      "format": "Formato {destination}",
+      "needsRender": "Baixar e duplicar precisam do arquivo renderizado, que ainda não é gerado.",
+      "linkCopied": "Link copiado",
+      "linkFailed": "Não deu para copiar o link"
+    },
+    "processing": {
+      "failed": "Erro ao processar",
+      "status": "Status: {stage}",
+      "statusError": "erro"
+    },
+    "score": {
+      "outOf": "de 100 de potencial",
+      "help": {
+        "alto": "Grande chance de funcionar: gancho claro nos primeiros 3 segundos.",
+        "medio": "Bom momento, mas o início precisa de um corte mais justo.",
+        "bajo": "Contexto útil, pouco potencial de alcance sozinho."
+      }
+    },
+    "scrubber": {
+      "label": "Progresso do vídeo",
+      "valueText": "{current} de {total}"
+    },
+    "timeline": {
+      "title": "Linha do tempo",
+      "zoomOut": "Diminuir zoom",
+      "zoomIn": "Aumentar zoom",
+      "tracks": "Faixas",
+      "item": "{label}, {start} a {end}"
+    },
+    "transcript": {
+      "searchPlaceholder": "Buscar na transcrição…",
+      "searchLabel": "Buscar na transcrição",
+      "moment": "Momento",
+      "noResults": "Nenhum resultado para “{query}”."
+    },
+    "trim": {
+      "start": "Início do clipe",
+      "end": "Fim do clipe"
+    },
+    "upload": {
+      "status": {
+        "en-cola": "Na fila",
+        "subiendo": "Enviando",
+        "pausado": "Pausado",
+        "completado": "Concluído",
+        "error": "Erro"
+      },
+      "invalidType": "“{name}” não é um formato de vídeo compatível.",
+      "tooBig": "“{name}” excede o limite de {limit}.",
+      "dropHere": "Solte aqui",
+      "dragOrUpload": "Arraste ou envie seus vídeos",
+      "hint": "MP4, MOV, WebM ou MKV · até {limit} · o envio é retomado se cair",
+      "select": "Selecionar arquivos",
+      "selectLabel": "Selecionar arquivos de vídeo",
+      "urlPlaceholder": "…ou cole um link do YouTube, Drive ou Vimeo",
+      "urlLabel": "Link do vídeo",
+      "import": "Importar",
+      "queue": "Fila de envio",
+      "progress": "{uploaded} de {total}",
+      "pause": "Pausar",
+      "resume": "Retomar",
+      "retry": "Retomar de onde parou",
+      "remove": "Remover {name}"
+    },
+    "player": {
+      "region": "Player: {title}",
+      "regionDefault": "Player de vídeo",
+      "preview": "Prévia",
+      "loading": "Carregando vídeo",
+      "replay": "Reproduzir de novo",
+      "play": "Reproduzir",
+      "playKey": "Reproduzir (espaço)",
+      "pauseKey": "Pausar (espaço)",
+      "mute": "Silenciar (m)",
+      "unmute": "Ativar som (m)",
+      "volume": "Volume",
+      "hideCaptions": "Ocultar legendas (c)",
+      "showCaptions": "Mostrar legendas (c)",
+      "speed": "Velocidade de reprodução",
+      "normalSpeed": "· normal",
+      "fullscreen": "Tela cheia (f)",
+      "exitFullscreen": "Sair da tela cheia (f)",
+      "error": {
+        "load": "Não foi possível carregar o vídeo",
+        "blocked": "Reprodução bloqueada pelo navegador"
+      }
+    },
+    "operacion": {
+      "recortar": {
+        "label": "Cortar",
+        "description": "Ficar com um trecho do vídeo, como está, sem análise nem reenquadre."
+      },
+      "reducir": {
+        "label": "Reduzir tamanho",
+        "description": "O mesmo vídeo, mais leve. Escolha quanto sacrificar."
+      },
+      "calidad": {
+        "ligera": "Leve · pesa 30 % menos",
+        "equilibrada": "Equilibrada · a metade",
+        "maxima": "Máxima · um quarto"
+      },
+      "variante": {
+        "label": "Variante",
+        "description": "Uma versão do clipe: outro gancho, outra duração, outro formato ou legendas diferentes."
+      }
+    },
+    "subtitulos": {
+      "sin": "Sem legendas",
+      "limpio": "Limpas",
+      "karaoke": "Karaokê",
+      "caja": "Em caixa"
+    }
+  },
+  "errors": {
+    "sin-red": "Sem conexão. Verifique sua rede e tente de novo.",
+    "no-autorizado": "Sua sessão não cobre isso. Entre de novo.",
+    "no-encontrado": "Isto não está mais aqui.",
+    "conflicto": "Alguém mudou antes de você. Recarregue e veja como ficou.",
+    "limite": "Muitas requisições seguidas. Espere alguns segundos.",
+    "servidor": "Quebrou do nosso lado. Já estamos olhando.",
+    "desconocido": "Algo deu errado. Tente de novo."
+  },
+  "misiones": {
+    "proyecto": "Envie seu primeiro vídeo",
+    "unirse": "Entre em uma campanha",
+    "conectar": "Conecte seu {red}",
+    "conectarRed": "Conecte sua rede",
+    "enviar": "Envie seu primeiro clipe",
+    "hecha": "Feito",
+    "pendiente": "Pendente",
+    "titulo": "Suas primeiras missões",
+    "progreso": "{hechas} de {total}",
+    "ver": "Ver campanhas para você"
+  }
+}

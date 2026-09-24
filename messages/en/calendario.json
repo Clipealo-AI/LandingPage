@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "title": "Calendar"
+  },
+  "nav": "Calendar",
+  "crumbs": {
+    "calendario": "Calendar"
+  },
+  "titulo": "Calendar",
+  "intro": "Schedule and manage your posts.",
+  "zona": {
+    "sello": "{ciudad} time ({desfase})",
+    "cambiar": "Change time zone",
+    "aviso": "Your browser is in {ciudad}: the times here are {zona}."
+  },
+  "barra": {
+    "hoy": "Today",
+    "anterior": "Previous week",
+    "siguiente": "Next week",
+    "anteriorMes": "Previous month",
+    "siguienteMes": "Next month",
+    "vista": "View",
+    "semana": "Week",
+    "lista": "List",
+    "mes": "Month"
+  },
+  "filtros": {
+    "grupo": "Filter the calendar",
+    "redesAria": "Networks: {valor}",
+    "todasLasRedes": "All networks",
+    "nRedes": "{n, plural, one {# network} other {# networks}}",
+    "enVista": "{n, plural, =0 {none in view} one {# in view} other {# in view}}",
+    "cuentaAria": "Account: {valor}",
+    "todasLasCuentas": "All accounts",
+    "cuentaOpcion": "{red} · {handle}",
+    "cuentaDesconocida": "An account that isn’t here any more",
+    "sinCuenta": "Plans with no account",
+    "quitar": "Clear the filter",
+    "resultado": "{n, number} of {total, number} posts in view"
+  },
+  "programar": "Schedule a post",
+  "diaEntero": "Show the whole day",
+  "franjaCorta": "Show only hours with posts",
+  "ahora": "Now",
+  "dia": {
+    "publicaciones": "{n, plural, =0 {no posts} one {# post} other {# posts}}"
+  },
+  "mes": {
+    "mas": "+{n, number} more",
+    "masVer": "See {fecha} in Week view"
+  },
+  "estado": {
+    "planificada": "Planned",
+    "publicando": "Publishing",
+    "toca-publicar": "Time to post",
+    "publicada": "Posted",
+    "fallida": "Didn’t go out",
+    "cancelada": "Cancelled",
+    "sin-cuenta": "No account"
+  },
+  "tarjeta": {
+    "aria": "{hora} · {red} · {titulo} · {estado}",
+    "sinCuenta": "That {red} account is no longer connected.",
+    "ver": "See the post"
+  },
+  "mover": {
+    "ayuda": "Drag posts to change their day or time, or press M on one.",
+    "ayudaTeclado": "With the keyboard: M picks it up, arrows move it, Enter drops it and Esc puts it back.",
+    "movida": "It now goes out on {fecha}.",
+    "bloqueada": "Not there: {motivo}",
+    "noSeMueve": {
+      "publicada": "It is already published.",
+      "publicando": "It’s being published right now.",
+      "cancelada": "It is cancelled.",
+      "sinCuenta": "Its account is no longer connected.",
+      "noEncaja": "That clip doesn’t fit that network, and changing the time won’t fix it."
+    },
+    "tope": "End of the band · “See the whole day” to go lower"
+  },
+  "bandeja": {
+    "titulo": "{n, plural, =0 {Nothing pending in this filter} one {# post that hasn’t gone out} other {# posts that haven’t gone out}}",
+    "descripcion": "They didn’t go out: the network turned them down, the account is gone, or you post them yourself. Sort them out here.",
+    "publicada": "I posted it",
+    "publicarAhora": "Publish now",
+    "reintentar": "Try again",
+    "fuera": "{n, plural, one {# post hasn’t gone out outside this filter} other {# posts haven’t gone out outside this filter}}",
+    "verTodas": "Show all"
+  },
+  "compositor": {
+    "titulo": "Schedule a post",
+    "descripcion": "Pick the clips, which connected accounts they go to and when.",
+    "promesa": "Clipealo publishes them on the accounts you pick, at the time you set, and keeps the link.",
+    "proyecto": "Project",
+    "proyectoVacio": "This project has no clips yet.",
+    "clips": "Clips",
+    "clipsElegidos": "{n, plural, =0 {No clips picked} one {# clip picked} other {# clips picked}}",
+    "redes": "Which accounts it goes to",
+    "redesVacio": "You have no connected accounts to publish to.",
+    "cuentaDe": "{red} account",
+    "cuando": "When",
+    "dia": "Day",
+    "hora": "Time",
+    "zonaAviso": "Times are {ciudad} time ({desfase}), your account’s zone.",
+    "separacion": "Two posts in a row on the same account are spaced {min, number} minutes apart.",
+    "previo": "What will be created",
+    "bloqueos": "Fix this before scheduling",
+    "consejos": "Worth knowing",
+    "resumen": "{n, plural, =0 {No posts will be created yet} one {# post will be created} other {# posts will be created}}",
+    "cancelar": "Cancel",
+    "confirmar": "Schedule",
+    "programadas": "{n, plural, one {# post scheduled} other {# posts scheduled}}",
+    "programadasCuando": "The first one goes out on {fecha}. We’ll tell you once it’s published.",
+    "programadasDescripcion": "They go out on their own, at their time.",
+    "errores": {
+      "sinClip": "Pick at least one clip.",
+      "sinCuenta": "Pick at least one connected account to post to.",
+      "faltaFecha": "The day or the time is missing.",
+      "enPasado": "Pick a day and time that haven’t passed.",
+      "formatoNoAdmitido": "{red} doesn’t take the {aspecto} format.",
+      "duracionExcedida": "{n, plural, =1 {It runs {segundos, number} s and the limit is {max, number} s.} other {# clips go over the {max, number} s limit.}}",
+      "duplicadaEnCuenta": "You already have that clip at that exact time on {red}.",
+      "fueraDeVentanaCampana": "The campaign no longer takes clips on that day.",
+      "muyPegadaAOtra": "There’s another post on that account {minutos, number} min away; better leave {min, number}.",
+      "demasiadasHoy": "That would be {n, number} posts that day on the same account; past {max, number} the pace wears thin.",
+      "fueraDeDuracionIdeal": "{n, plural, =1 {It runs {segundos, number} s: on {red} it holds better between {min, number} and {max, number} s.} other {# clips fall outside what holds better on {red}: between {min, number} and {max, number} s.}}"
+    }
+  },
+  "detalle": {
+    "programadaPara": "Scheduled for {fecha}",
+    "publicadaEl": "Posted on {fecha}",
+    "texto": "Suggested caption",
+    "lote": "It doesn’t go alone",
+    "loteDescripcion": "{n, plural, one {The same clip also goes to # more network, from the same batch} other {The same clip also goes to # more networks, from the same batch}}",
+    "reprogramar": "Change the day and time",
+    "dia": "Day",
+    "hora": "Time",
+    "zonaAviso": "Times are {ciudad} time ({desfase}), your account’s zone.",
+    "mover": "Move",
+    "moverSinCambios": "Change the day or the time to move it.",
+    "movida": "It now goes out on {fecha}.",
+    "cancelar": "Cancel the post",
+    "cancelada": "Post cancelled.",
+    "deshacer": "Undo",
+    "recuperar": "Plan it again",
+    "recuperada": "It’s planned again.",
+    "publicarAhora": "Publish now",
+    "publicando": "Publishing to {red}…",
+    "reintentar": "Try again",
+    "reconectar": "Reconnect the account",
+    "falloTitulo": "It couldn’t be published",
+    "intentos": "{n, plural, one {# attempt} other {# attempts}}",
+    "manual": "Did you upload it yourself?",
+    "promesa": "Did you upload it on your own? Paste the link and it’s on the record: Analytics follows it just like the ones Clipealo publishes.",
+    "enlace": "Link to the post",
+    "enlacePlaceholder": "https://…",
+    "enlaceAyuda": "Copy it from the network itself, as it is.",
+    "enlaceError": "Paste a valid link, starting with https://",
+    "publicar": "I posted it",
+    "publicada": "Posted!",
+    "publicadaDescripcion": "The link is saved and Analytics is following it.",
+    "verPublicacion": "Open the post"
+  },
+  "vacio": {
+    "semana": {
+      "titulo": "Nothing scheduled this week",
+      "descripcion": "Pick clips from a project and spread them across the days ahead."
+    },
+    "mes": {
+      "titulo": "Nothing scheduled this month",
+      "descripcion": "Pick clips from a project and spread them across the days ahead."
+    },
+    "filtro": {
+      "titulo": "Nothing from this filter in view",
+      "descripcion": "{n, plural, one {There is # post on other networks or accounts.} other {There are # posts on other networks or accounts.}}"
+    },
+    "sinCuentas": {
+      "titulo": "Connect a network to get started",
+      "descripcion": "Clipealo publishes to your connected accounts: connect one to get started.",
+      "cta": "Go to connected accounts"
+    }
+  },
+  "muro": {
+    "titulo": "Scheduling comes with the {plan} plan",
+    "descripcion": "Pick a day and a time and the post goes out on its own, on the account you say. Publishing now you already have.",
+    "ventajas": {
+      "plan": "Plan the whole week in one go",
+      "lote": "The same clip on several networks, in a single action",
+      "aviso": "It goes out on its own at the time you set",
+      "enlace": "The link is saved when it goes out and lands in Analytics"
+    },
+    "nota": "Publishing now to your connected accounts is in every plan, Trial included."
+  },
+  "fallo": {
+    "cuentaCaducada": "The connection to that account expired.",
+    "permisoDenegado": "The account doesn’t give permission to publish.",
+    "rechazoRed": "The network turned the post down.",
+    "limiteApi": "The network won’t take any more posts today.",
+    "sinRed": "We couldn’t reach the network."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "take": "Tomada {n} de {total}",
+  "documentTitle": "Tomada {n} de {total} · {paso} · Clipealo",
+  "documentTitleFinal": "{paso} · Clipealo",
+  "actions": {
+    "back": "Voltar",
+    "continue": "Continuar",
+    "skip": "Pular esta tomada",
+    "later": "Fazer depois",
+    "skipIntro": "Pular intro",
+    "edit": "Editar"
+  },
+  "enter": "Enter ↵",
+  "postponed": "Salvo. Você retoma quando quiser, de onde parou.",
+  "dataLabel": {
+    "trigger": "Seus dados",
+    "title": "Seus dados",
+    "whoLabel": "Quem vê",
+    "quien": {
+      "equipo": "Você e a equipe do Clipealo.",
+      "estadisticas": "Você e a equipe do Clipealo. Nas estatísticas da plataforma, só em grupos de 50 pessoas ou mais e com números arredondados.",
+      "agencias": "A equipe do Clipealo, para analisar sua solicitação de agência. Outros usuários não veem."
+    },
+    "howLongLabel": "Por quanto tempo guardamos",
+    "whereLabel": "Onde mudar",
+    "where": "Configurações › Seus dados"
+  },
+  "pasos": {
+    "cuenta": "Sua conta",
+    "objetivo": "O que você veio fazer",
+    "nichos": "Seus temas",
+    "fandom": "Seus criadores",
+    "redes": "Suas redes",
+    "basicos": "País e idiomas",
+    "directo": "Suas lives",
+    "canal": "Seu canal",
+    "render": "Seu primeiro corte",
+    "tipo-org": "Quem você representa",
+    "org": "Sua organização",
+    "promocion": "O que você divulga",
+    "alcance": "Onde e para quem",
+    "render-agencia": "Sua solicitação"
+  },
+  "timeline": {
+    "label": "Tomadas",
+    "item": "Tomada {n}, {paso}. {estado}",
+    "estado": {
+      "actual": "Em andamento",
+      "respondida": "Respondida",
+      "saltada": "Pulada",
+      "pendiente": "Pendente"
+    }
+  },
+  "live": {
+    "encajan": "{count, plural, =0 {Ainda não há campanhas que combinem com você} one {# campanha combina com você} other {# campanhas combinam com você}}"
+  },
+  "tarjeta": {
+    "sinNombre": "Seu perfil",
+    "lista": "Pronto",
+    "rama": {
+      "clipero": "Clipador",
+      "creador": "Criador",
+      "agencia": "Agência"
+    },
+    "feed": "Campanhas para você",
+    "radar": "Seu radar",
+    "sector": "Setor",
+    "revision": "Análise",
+    "cpm": "CPM de referência: {valor}",
+    "redes": "Suas redes",
+    "redesObjetivo": "Redes-alvo",
+    "alcance": "Alcance",
+    "paisIdiomas": "País e idiomas",
+    "tieneCampana": "O ponto marca quem já tem campanha",
+    "mas": "+{n}",
+    "minutos": "~{min} min por mês",
+    "verificacion": "Verificação pendente",
+    "dominio": "O domínio coincide",
+    "abrir": "Ver seu cartão",
+    "cerrar": "Ocultar seu cartão"
+  }
+}

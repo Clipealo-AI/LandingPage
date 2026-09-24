@@ -1,0 +1,173 @@
+{
+  "plans": {
+    "free": {
+      "name": "Teste",
+      "tagline": "Para ver se funciona para você.",
+      "cta": "Começar grátis",
+      "highlights": {
+        "minutes": "{minutes} minutos de vídeo por mês",
+        "videoLimits": "Vídeos de até 60 min e 1 GB",
+        "aiClips": "Clipes com IA",
+        "export": "Exportação em 720p",
+        "accounts": "1 conta social conectada",
+        "storage": "Armazenamento por 3 dias",
+        "watermark": "Com marca d’água Clipealo"
+      }
+    },
+    "creator": {
+      "name": "Criador",
+      "tagline": "Vídeo de qualidade, sem marca d’água.",
+      "cta": "Escolher Criador",
+      "highlights": {
+        "minutes": "{minutes} minutos de vídeo por mês",
+        "videoLimits": "Vídeos de até 600 min e 30 GB",
+        "export": "Exportação em 4K",
+        "noWatermark": "Sem marca d’água",
+        "captions": "Legendas automáticas e tradução",
+        "reframe": "Reenquadramento automático",
+        "accounts": "6 contas sociais conectadas",
+        "storage": "100 GB de armazenamento"
+      }
+    },
+    "business": {
+      "name": "Empresa",
+      "tagline": "Faça sua marca crescer com fluxos simples.",
+      "cta": "Escolher Empresa",
+      "highlights": {
+        "everythingInCreator": "Tudo do plano Criador",
+        "sharedWorkspace": "Espaço de trabalho compartilhado",
+        "seats": "Membros da equipe por assento",
+        "accounts": "20 contas sociais conectadas",
+        "brandKit": "Kit de marca",
+        "storage": "Armazenamento ilimitado",
+        "api": "API com limites mais altos"
+      }
+    }
+  },
+  "price": "{currency} {amount}",
+  "forever": "para sempre",
+  "perMonth": "/ mês",
+  "billedYearly": "cobrado anualmente ({total} por ano) · antes <s>{before}</s>",
+  "orYearly": "ou {price} por mês no plano anual",
+  "mostPopular": "O mais escolhido",
+  "mostPopularShort": "Mais escolhido",
+  "choose": "Escolher {plan}",
+  "billing": {
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "yearlyLabel": "Cobrança anual"
+  },
+  "groups": {
+    "creditos": "Créditos e envio",
+    "ia": "Clipes e inteligência artificial",
+    "exportacion": "Exportação",
+    "publicacion": "Publicação nas redes",
+    "ganar": "Ganhar com seus clipes",
+    "equipo": "Espaço e equipe",
+    "marca": "Marca",
+    "api": "API e suporte"
+  },
+  "features": {
+    "minutesPerMonth": "Minutos de vídeo por mês",
+    "maxDuration": "Duração máxima por vídeo",
+    "maxFileSize": "Tamanho máximo por arquivo",
+    "videoLinks": "Links do YouTube, Google Drive e Vimeo",
+    "liveStreams": "Lives da Twitch e do Kick",
+    "aiClips": "Clipes com IA e pontuação de retenção",
+    "transcript": "Transcrição editável palavra por palavra",
+    "autoCaptions": "Legendas automáticas",
+    "captionTranslation": "Tradução de legendas",
+    "autoReframe": "Reenquadramento automático com rastreamento",
+    "nameDictionary": "Dicionário de nomes próprios",
+    "exportQuality": "Qualidade de exportação",
+    "formats": "Formatos",
+    "clipsPerProject": "Clipes por projeto",
+    "noWatermark": "Sem marca d’água",
+    "connectedAccounts": "Contas sociais conectadas",
+    "networks": "Redes disponíveis",
+    "scheduling": "Agendar publicações",
+    "directPublish": "Publicação direta nas suas contas",
+    "clipAnalytics": "Análises por clipe",
+    "storage": "Armazenamento",
+    "workspace": "Espaço de trabalho",
+    "teamMembers": "Membros da equipe",
+    "roles": "Funções e permissões",
+    "captionTemplates": "Modelos de legenda",
+    "brandKit": "Kit de marca: logo, cores e fontes",
+    "teamTemplates": "Modelos próprios da equipe",
+    "api": "API",
+    "webhooks": "Webhooks",
+    "support": "Suporte",
+    "participarCampanas": "Entrar em campanhas de marcas",
+    "training": "Formação",
+    "operaciones": "Cortar e reduzir tamanho"
+  },
+  "featureHints": {
+    "minutesPerMonth": "Um crédito é um minuto de vídeo enviado",
+    "autoReframe": "Acompanha quem fala e alterna entre duas pessoas",
+    "networks": "Formato e duração se adaptam a cada rede",
+    "directPublish": "Você escolhe as contas e o Clipealo publica nelas",
+    "scheduling": "Você escolhe o dia e a hora, sai sozinha e o link fica guardado"
+  },
+  "values": {
+    "minutes": "{minutes}",
+    "minutesExpandable": "{minutes} · ampliáveis",
+    "accounts": "{accounts}",
+    "nineLanguages": "9 idiomas",
+    "unlimitedClips": "Ilimitados",
+    "onlyTiktok": "Só TikTok",
+    "allSix": "As seis",
+    "threeDays": "3 dias",
+    "unlimited": "Ilimitado",
+    "private": "Privado",
+    "shared": "Compartilhado",
+    "perSeat": "{seat} por assento por mês",
+    "analyticsLimited": "{red} · últimos {clips} clipes",
+    "basic": "Básicos",
+    "all": "Todos",
+    "limited": "Limitada",
+    "highLimits": "Limites altos",
+    "community": "Comunidade",
+    "email": "E-mail",
+    "priority": "Prioritário",
+    "freeClasses": "A trilha de boas-vindas",
+    "allClasses": "Todas as aulas"
+  },
+  "faq": {
+    "credit": {
+      "q": "O que é um crédito?",
+      "a": "Um crédito é um minuto de vídeo que você envia. Um podcast de 60 minutos consome 60 créditos, saiam 5 clipes ou 20. Clipes, exportações e publicações não consomem créditos."
+    },
+    "outOfCredits": {
+      "q": "O que acontece se meus créditos acabarem?",
+      "a": "Você pode continuar editando e publicando o que já tem. Para enviar mais vídeo, espere a renovação ou mude para um plano maior; no Empresa você pode ampliar os créditos sem mudar de plano. Minutos não usados não se acumulam para o mês seguinte."
+    },
+    "changePlan": {
+      "q": "Posso mudar de plano quando quiser?",
+      "a": "Sim. Se mudar para um plano maior, você paga só a parte proporcional do ciclo e os novos créditos entram na hora. Se mudar para um menor, a mudança vale no fim do ciclo atual."
+    },
+    "annualBilling": {
+      "q": "Como funciona a cobrança anual?",
+      "a": "Você paga o ano adiantado com 50% de desconto sobre o preço mensal. Os créditos são liberados todo mês, não de uma vez."
+    },
+    "cancelRefund": {
+      "q": "Posso cancelar? Tem reembolso?",
+      "a": "Você cancela em Configurações, sem ligações nem fidelidade, e mantém o plano até o fim do ciclo pago. Se for seu primeiro pagamento e você não tiver consumido mais de 30 créditos, devolvemos o valor nos 7 dias seguintes."
+    },
+    "currencyTaxes": {
+      "q": "Em que moeda é a cobrança e como ficam os impostos?",
+      "a": "Os preços estão em dólares americanos (US$), sem impostos: o IGV ou IVA é calculado no pagamento conforme o seu país. Aceitamos cartão e, no Peru, Yape e Plin."
+    },
+    "teamSeats": {
+      "q": "Como são cobrados os membros da equipe no Empresa?",
+      "a": "Cada membro adicional é cobrado por assento, no mesmo ciclo do plano. Os assentos compartilham os créditos e o armazenamento do espaço de trabalho."
+    },
+    "afterCancel": {
+      "q": "O que acontece com meus vídeos se eu cancelar?",
+      "a": "Você pode baixar todo o seu material por 30 dias depois de cancelar. Não usamos seu conteúdo para treinar modelos nem o compartilhamos com terceiros."
+    }
+  },
+  "gate": {
+    "cta": "Ver os planos"
+  }
+}

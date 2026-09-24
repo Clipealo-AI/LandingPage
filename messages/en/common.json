@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "tagline": "From long videos to great clips",
+    "description": "Upload the full video. AI finds the moments people watch to the end and hands them back in 9:16, with captions.",
+    "keywords": "clips, vertical video, reels, shorts, tiktok, AI editing, automatic captions",
+    "ogLocale": "en_US"
+  },
+  "skipToContent": "Skip to content",
+  "locale": {
+    "label": "Language",
+    "change": "Change language (current: {current})"
+  },
+  "actions": {
+    "retry": "Try again",
+    "backToOverview": "Back to overview"
+  },
+  "theme": {
+    "change": "Change theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "errorState": {
+    "title": "Something broke here",
+    "description": "We couldn’t load this part. You can try again: none of your work has been lost.",
+    "reference": "Reference: {digest}"
+  },
+  "statCard": {
+    "vsPrevious": "vs. previous period"
+  },
+  "notFound": {
+    "title": "This clip doesn’t exist.",
+    "description": "The link may have expired or the project was deleted. Go back to your library and search for the clip by its title.",
+    "home": "Back to home",
+    "clips": "See my clips"
+  },
+  "social": {
+    "surface": {
+      "tiktok": "For You",
+      "instagram": "Reels",
+      "youtube": "Shorts and video",
+      "x": "Timeline",
+      "linkedin": "Professional feed",
+      "facebook": "Reels and feed"
+    }
+  },
+  "ui": {
+    "breadcrumb": "Breadcrumb",
+    "more": "More",
+    "carousel": "carousel",
+    "slide": "slide",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "commandTitle": "Command palette",
+    "commandDescription": "Search for a command to run…",
+    "close": "Close",
+    "pagination": "Pagination",
+    "previous": "Previous",
+    "next": "Next",
+    "previousPage": "Go to previous page",
+    "nextPage": "Go to next page",
+    "morePages": "More pages",
+    "sidebar": "Sidebar",
+    "sidebarDescription": "Displays the mobile sidebar.",
+    "toggleSidebar": "Toggle sidebar",
+    "loading": "Loading"
+  },
+  "video": {
+    "aspect": {
+      "9:16": {
+        "label": "Vertical",
+        "destination": "Reels · Shorts · TikTok"
+      },
+      "1:1": {
+        "label": "Square",
+        "destination": "Instagram feed"
+      },
+      "4:5": {
+        "label": "Portrait",
+        "destination": "Vertical feed"
+      },
+      "16:9": {
+        "label": "Landscape",
+        "destination": "YouTube · Web"
+      }
+    },
+    "aspectSwitcher": {
+      "label": "Output format"
+    },
+    "clipStatus": {
+      "borrador": "Draft",
+      "listo": "Ready",
+      "publicado": "Published"
+    },
+    "jobStage": {
+      "subiendo": "Uploading",
+      "transcribiendo": "Transcribing",
+      "analizando": "Analyzing moments",
+      "recortando": "Trimming",
+      "reencuadrando": "Reframing to vertical",
+      "listo": "Ready"
+    },
+    "clipCard": {
+      "play": "Play {title}",
+      "actions": "Actions for {title}",
+      "edit": "Edit clip",
+      "download": "Download {aspect}",
+      "duplicate": "Duplicate",
+      "copyLink": "Copy link",
+      "publish": "Publish…",
+      "schedule": "Schedule…",
+      "delete": "Delete",
+      "withCaptions": "With captions",
+      "withoutCaptions": "No captions",
+      "captionsIncluded": "Captions included",
+      "views": "Views",
+      "likes": "Likes",
+      "retention": "Retention",
+      "format": "Format: {destination}",
+      "needsRender": "Download and duplicate need the rendered file, which isn’t generated yet.",
+      "linkCopied": "Link copied",
+      "linkFailed": "The link couldn’t be copied"
+    },
+    "processing": {
+      "failed": "Processing failed",
+      "status": "Status: {stage}",
+      "statusError": "error"
+    },
+    "score": {
+      "outOf": "out of 100 potential",
+      "help": {
+        "alto": "Very likely to work: clear hook in the first 3 seconds.",
+        "medio": "Good moment, but the opening needs a tighter trim.",
+        "bajo": "Useful context, little reach potential on its own."
+      }
+    },
+    "scrubber": {
+      "label": "Video progress",
+      "valueText": "{current} of {total}"
+    },
+    "timeline": {
+      "title": "Timeline",
+      "zoomOut": "Zoom out",
+      "zoomIn": "Zoom in",
+      "tracks": "Tracks",
+      "item": "{label}, {start} to {end}"
+    },
+    "transcript": {
+      "searchPlaceholder": "Search the transcript…",
+      "searchLabel": "Search the transcript",
+      "moment": "Moment",
+      "noResults": "No results for “{query}”."
+    },
+    "trim": {
+      "start": "Clip start",
+      "end": "Clip end"
+    },
+    "upload": {
+      "status": {
+        "en-cola": "Queued",
+        "subiendo": "Uploading",
+        "pausado": "Paused",
+        "completado": "Completed",
+        "error": "Error"
+      },
+      "invalidType": "“{name}” isn’t a supported video format.",
+      "tooBig": "“{name}” exceeds the {limit} limit.",
+      "dropHere": "Drop it here",
+      "dragOrUpload": "Drag in your videos or upload them",
+      "hint": "MP4, MOV, WebM or MKV · up to {limit} · uploads resume if interrupted",
+      "select": "Select files",
+      "selectLabel": "Select video files",
+      "urlPlaceholder": "…or paste a YouTube, Drive or Vimeo link",
+      "urlLabel": "Video link",
+      "import": "Import",
+      "queue": "Upload queue",
+      "progress": "{uploaded} of {total}",
+      "pause": "Pause",
+      "resume": "Resume",
+      "retry": "Retry from where it stopped",
+      "remove": "Remove {name}"
+    },
+    "player": {
+      "region": "Player: {title}",
+      "regionDefault": "Video player",
+      "preview": "Preview",
+      "loading": "Loading video",
+      "replay": "Replay",
+      "play": "Play",
+      "playKey": "Play (space)",
+      "pauseKey": "Pause (space)",
+      "mute": "Mute (m)",
+      "unmute": "Unmute (m)",
+      "volume": "Volume",
+      "hideCaptions": "Hide captions (c)",
+      "showCaptions": "Show captions (c)",
+      "speed": "Playback speed",
+      "normalSpeed": "· normal",
+      "fullscreen": "Full screen (f)",
+      "exitFullscreen": "Exit full screen (f)",
+      "error": {
+        "load": "Couldn’t load the video",
+        "blocked": "Playback blocked by the browser"
+      }
+    },
+    "operacion": {
+      "recortar": {
+        "label": "Trim",
+        "description": "Keep a section of the video as is, no analysis or reframe."
+      },
+      "reducir": {
+        "label": "Shrink",
+        "description": "The same video, lighter. Choose how much to give up."
+      },
+      "calidad": {
+        "ligera": "Light · 30% smaller",
+        "equilibrada": "Balanced · half",
+        "maxima": "Maximum · a quarter"
+      },
+      "variante": {
+        "label": "Variant",
+        "description": "One version of the clip: another hook, length, format or captions."
+      }
+    },
+    "subtitulos": {
+      "sin": "No captions",
+      "limpio": "Clean",
+      "karaoke": "Karaoke",
+      "caja": "Boxed"
+    }
+  },
+  "errors": {
+    "sin-red": "No connection. Check your network and try again.",
+    "no-autorizado": "Your session doesn’t cover this. Sign in again.",
+    "no-encontrado": "This isn’t here any more.",
+    "conflicto": "Someone changed it before you did. Reload and see how it ended up.",
+    "limite": "Too many requests in a row. Wait a few seconds.",
+    "servidor": "It broke on our side. We’re already looking at it.",
+    "desconocido": "Something went wrong. Try again."
+  },
+  "misiones": {
+    "proyecto": "Upload your first video",
+    "unirse": "Join a campaign",
+    "conectar": "Connect your {red}",
+    "conectarRed": "Connect your network",
+    "enviar": "Submit your first clip",
+    "hecha": "Done",
+    "pendiente": "To do",
+    "titulo": "Your first missions",
+    "progreso": "{hechas} of {total}",
+    "ver": "See campaigns for you"
+  }
+}

@@ -1,0 +1,140 @@
+/* ==========================================================================
+   MOVIMIENTO · HERO (Lote 1)
+   Coreografía de carga (E1) y barrido del cabezal (E2).
+
+   Sin @layer, como base.css. Las variables, clases (.m-anim, .m-rise…) y
+   keyframes compartidos viven en base.css y no se redefinen aquí; lo propio
+   de «reducir movimiento» se escribe con `@variant reduced`.
+
+   - Al cargar, solo CSS: corre antes de hidratar y todo termina antes de 2 s
+     (AGENTS.md, regla 5). Nunca se anima el h1 ni la descripción, ni ningún
+     antepasado suyo: el barrido es una capa hermana del h1.
+   - La vista previa usa el tiempo de reproducción real del video; no anima un
+     cabezal ficticio. El único gesto de marca son las esquinas del titular.
+   - Con «reducir»: lo que sube o escala funde en su sitio (variables
+     --motion-*); el barrido y el cabezal destellan en su sitio; el brillo del
+     claim, el halo, la selección y los anillos se quedan (son luz). Todo sigue
+     viéndose.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   E1 · COREOGRAFÍA DE CARGA
+   Badge a los 100 ms, acciones a los 300 ms (se anima la fila, no los botones:
+   la pulsación de [data-button] queda intacta), claim a los 800 ms con un
+   brillo que lo recorre y halo de 0,55 a 1.
+   -------------------------------------------------------------------------- */
+.m-load {
+  animation: var(--m-name) var(--m-dur) var(--m-ease) backwards;
+  animation-delay: var(--d, 0ms);
+}
+.m-load-rise {
+  --m-name: rise-in;
+  --m-dur: 500ms;
+  --m-ease: var(--ease-brand);
+  --rise-k: 0.4;
+}
+.m-load-glow {
+  --m-name: glow-in;
+  --m-dur: 1600ms;
+  --m-ease: var(--ease-brand);
+}
+@keyframes glow-in {
+  from {
+    opacity: 0.55;
+  }
+}
+
+/* Brillo del claim. Va en un `span` en línea dentro del `p`: así el fondo mide
+   lo que mide el texto en cada idioma y no el ancho del bloque, donde el brillo
+   cruzaba el texto centrado en unos 60 ms. Con 300 % de ancho la franja (40-60 %)
+   queda fuera del texto en los dos extremos y lo cruza durante la mitad central
+   del recorrido; la curva simétrica reparte ese cruce en unos 400 ms. En reposo
+   (posición 0 %) solo se ve `currentColor`: el texto queda como estaba. */
+.m-claim-sweep {
+  background-image: linear-gradient(
+    100deg,
+    currentColor 40%,
+    color-mix(in oklab, var(--color-mist) 95%, transparent) 50%,
+    currentColor 60%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    fade-soft 400ms var(--ease-brand) 800ms backwards,
+    claim-sweep 900ms cubic-bezier(0.45, 0, 0.55, 1) 900ms backwards;
+}
+@keyframes claim-sweep {
+  from {
+    background-position: 100% 0%;
+  }
+}
+/* Alto contraste o impresión sin gráficos de fondo: el texto con su color */
+@media print, (forced-colors: active) {
+  .m-claim-sweep {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   E2 · BARRIDO DEL CABEZAL SOBRE EL TITULAR
+   Al acabar las esquinas (1.200 ms) una línea de 2 px en tinta clara, con una
+   estela, recorre la caja del titular y se desvanece: termina a los 1.960 ms.
+   La capa recorta dentro de la caja con padding; las esquinas son hermanas y
+   no se recortan.
+   -------------------------------------------------------------------------- */
+.m-sweep {
+  --sweep-trail: linear-gradient(
+    90deg,
+    transparent 55%,
+    color-mix(in oklab, var(--color-ink-50) 8%, transparent) 90%,
+    color-mix(in oklab, var(--color-ink-50) 85%, transparent) calc(100% - 2px)
+  );
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: var(--radius);
+}
+.m-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: var(--sweep-trail);
+  animation: hero-sweep 760ms linear 1200ms backwards;
+}
+@keyframes hero-sweep {
+  0% {
+    opacity: 1;
+    translate: -100% 0;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  85% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  100% {
+    opacity: 0;
+    translate: 0 0;
+  }
+}
+/* Con «reducir»: la línea no viaja. Destella en su sitio el último fotograma
+   del barrido (estela y línea en el borde derecho) sobre un velo del 8 % que
+   ilumina toda la caja: un «¡corte!» que se ve sin desplazar nada. Termina a
+   los 1.760 ms. Va después de la regla del pseudo para ganarle. */
+.m-sweep {
+  @variant reduced {
+    &::before {
+      background:
+        var(--sweep-trail), color-mix(in oklab, var(--color-ink-50) 8%, transparent);
+      animation-name: flash-soft;
+      animation-duration: 560ms;
+      animation-timing-function: var(--ease-brand);
+    }
+  }
+}

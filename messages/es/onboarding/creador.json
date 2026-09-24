@@ -1,0 +1,93 @@
+{
+  "directo": {
+    "question": "¿Dónde transmites o subes tus videos largos?",
+    "why": "Dejamos lista la importación desde ahí.",
+    "frequency": {
+      "label": "¿Cada cuánto sales en directo?"
+    },
+    "duration": {
+      "label": "¿Cuánto dura un directo normal? (opcional)"
+    },
+    "reaction": {
+      "minutos": "Con ese ritmo subirías unos {min, number} minutos al mes.",
+      "sinDirectos": "Sin problema: sube tus videos cuando quieras y los dejamos listos para cada red."
+    }
+  },
+  "canal": {
+    "question": "¿De qué va tu canal?",
+    "why": "Elige hasta 3. Ajustamos subtítulos, duración y plantillas.",
+    "link": {
+      "label": "Enlace de tu canal (opcional)",
+      "placeholder": "twitch.tv/tucanal",
+      "detected": "Detectado: {plataforma} · @{handle}"
+    },
+    "interest": {
+      "directos": "¿Te gustaría que otros cliperos recorten tus directos? Solo pagas por vistas.",
+      "videos": "¿Te gustaría que otros cliperos recorten tus videos? Solo pagas por vistas."
+    },
+    "reaction": {
+      "marcaAgua": "Tu marca de agua será @{handle}.",
+      "canal": "Canal de {plataforma} listo para importar: @{handle}.",
+      "temas": "Plantillas de {temas} listas para tus clips.",
+      "interesSi": "Hecho: al final te dejamos preparada la solicitud para lanzar tu campaña."
+    }
+  },
+  "render": {
+    "log": {
+      "importacion": "Preparando la importación desde {plataformas}",
+      "subida": "Preparando la subida de tus videos",
+      "ritmo": "Calculando tu ritmo: unos {min, number} minutos al mes",
+      "plantillas": "Ajustando subtítulos y plantillas para {temas}",
+      "plantillasMarca": "Ajustando plantillas de {temas} con tu marca de agua @{handle}",
+      "formatos": "Formatos para {redes}: {formatos}"
+    }
+  },
+  "resultado": {
+    "fuente": "Pega el enlace de tu VOD de {plataforma} y lo recortamos en clips para cada red.",
+    "fuenteSinDirectos": "Arrastra tus videos y los recortamos en clips para cada red.",
+    "prevision": {
+      "title": "Tu previsión",
+      "directos": "Con {frecuencia}, de {duracion} cada uno, subirías unos {min, number} minutos al mes.",
+      "sinDirectos": "Sin directos que calcular: subes tus videos cuando quieras.",
+      "frecuencia": {
+        "casi-diario": "directos casi a diario",
+        "3-6-semana": "3 a 6 directos por semana",
+        "1-2-semana": "1 o 2 directos por semana",
+        "algunas-mes": "algunos directos al mes",
+        "ocasional": "directos de vez en cuando"
+      },
+      "duracion": {
+        "lt-1h": "menos de 1 h",
+        "1-3h": "1 a 3 h",
+        "3-6h": "3 a 6 h",
+        "6h-plus": "más de 6 h"
+      },
+      "duracionPorDefecto": "unas {horas, number} h",
+      "plan": "El plan {plan} incluye {incluidos, number} minutos al mes.",
+      "planAmpliable": "El plan {plan} incluye {incluidos, number} minutos al mes y se puede ampliar.",
+      "planes": {
+        "free": "Prueba",
+        "creator": "Creador",
+        "business": "Empresa"
+      },
+      "precios": "Ver precios"
+    },
+    "agencia": {
+      "title": "Pide el perfil de agencia",
+      "description": "Lanza tu propia campaña y deja que otros cliperos recorten tus directos: solo pagas por vistas. Te dejamos puestos tu nombre, tu canal y tus temas.",
+      "action": "Preparar la solicitud"
+    },
+    "tarjeta": {
+      "title": "Tu tarjeta de creador",
+      "completitud": "Tu perfil está al {pct}. Conecta tus redes para completarlo."
+    }
+  },
+  "subir": {
+    "fuente": {
+      "label": "Enlace de tu VOD de {plataforma}",
+      "placeholder": "Pega el enlace de tu VOD de {plataforma}",
+      "plataformas": "Plataforma de origen"
+    },
+    "formato": "Elegido para {redes}."
+  }
+}

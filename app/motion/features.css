@@ -1,0 +1,80 @@
+/* ==========================================================================
+   MOVIMIENTO · FEATURES (Lote 3)
+   Tarjetas por filas, barra que se llena, esquinas y karaoke de idiomas (E9);
+   la cita palabra a palabra (E10) usa `.m-word` de base.css.
+
+   Sin @layer, como base.css. Las variables, clases (.m-anim, .m-rise…) y
+   keyframes compartidos viven en base.css y no se redefinen aquí; lo propio
+   de «reducir movimiento» se escribe con `@variant reduced`.
+
+   Coreografía de cada tarjeta (grupo propio; `i` = su --i desde md, 0 en
+   móvil), en ms desde que entra en pantalla:
+   - Entrada: sube con fundido de i×80 a E = 520 + i×80 (`--m-fin-entrada`).
+   - IA (i 0): la barra se llena de E a E + 900 → 1.420.
+   - Vertical (i 1): el 16:9 se apaga de E a E + 600; las esquinas del 9:16
+     se cierran desde E + 120, una cada 60 ms → última a E + 750 (1.350).
+   - Cita (i 0): una palabra cada 70 ms desde E → 7 palabras en es, 1.260.
+   - Subtítulos (i 1): un idioma cada 60 ms desde E, 400 ms cada uno →
+     E + 8×60 + 400 = 1.480 (1.400 en móvil). Menos de 1,5 s.
+   Todos los gestos empiezan al terminar la entrada y acaban antes de 1,5 s.
+
+   Con «reducir»: la entrada y las esquinas pasan a fundido en su sitio por las
+   variables --motion-*; la barra, el apagado del 16:9, los idiomas y las
+   palabras se quedan igual (indicador, opacidad y color). Todo se sigue viendo.
+   ========================================================================== */
+
+/* Fin de la entrada de la tarjeta. Se resuelve en la tarjeta (con su --i y el
+   --stagger de 80 ms) y los hijos lo heredan ya calculado, aunque redefinan
+   --i o --stagger para sus propios escalonados. */
+.m-tarjeta {
+  --m-fin-entrada: calc(var(--duration-enter) + var(--i, 0) * var(--stagger));
+}
+
+/* IA: la barra se llena. `translate` se suma al `transform: translateX(-23%)`
+   en línea del indicador (ui/progress.tsx no se toca): parte de −77 % más y
+   vuelve a su sitio. Es un indicador, así que no cambia con «reducir» (está en
+   la lista blanca de movimiento.spec.ts). */
+:is([data-motion-state="idle"], [data-motion-state="play"])
+  .m-fill
+  [data-slot="progress-indicator"] {
+  animation: progress-fill 900ms var(--ease-out-quint) backwards;
+  animation-delay: calc(var(--m-wait, 0ms) + var(--m-fin-entrada, 0ms));
+  animation-play-state: var(--m-play, running);
+}
+@keyframes progress-fill {
+  from {
+    translate: calc(-1 * var(--fill, 0%)) 0;
+  }
+}
+
+/* Vertical: el 16:9 pasa de 1 a su opacidad propia (0,4). El keyframe parte de
+   opacidad 1, así que en «idle» no se oculta: solo espera. */
+.m-dim {
+  --m-name: dim-in;
+  --m-dur: 600ms;
+  --m-ease: var(--ease-brand);
+  --m-at: var(--m-fin-entrada, 0ms);
+  --i: 0;
+}
+@keyframes dim-in {
+  from {
+    opacity: 1;
+  }
+}
+
+/* Vertical: las esquinas del 9:16 se cierran después (crop-close de base.css,
+   que suma --i × --stagger y 60 ms por esquina). */
+.m-tarjeta .m-crop-corners {
+  --m-crop-at: calc(var(--m-fin-entrada, 0ms) + 120ms);
+  --i: 0;
+}
+
+/* Subtítulos: karaoke de los 9 idiomas (light-up de base.css, color y fondo en
+   primary). Cada Badge lleva su --i (0 a 8). */
+.m-karaoke {
+  --m-at: var(--m-fin-entrada, 0ms);
+  --stagger: 60ms;
+}
+.m-karaoke .m-light {
+  --m-dur: 400ms;
+}

@@ -1,0 +1,108 @@
+{
+  "title": "My commitments",
+  "description": "What you applied for and what you were accepted into, with its deadline. Stepping back in time frees the slot with no penalty.",
+  "tabs": {
+    "activos": "Open",
+    "historial": "History"
+  },
+  "empty": {
+    "activos": {
+      "title": "You have no open commitments",
+      "description": "Apply to a campaign: once they accept you, it shows up here with its countdown.",
+      "cta": "Browse campaigns"
+    },
+    "historial": {
+      "title": "This is where the closed ones land",
+      "description": "Commitments you fulfilled, let expire or stepped back from are kept in this tab."
+    }
+  },
+  "estado": {
+    "solicitada": "Application sent",
+    "aceptada": "You're in",
+    "entregada": "Delivered, under review",
+    "cumplida": "Fulfilled",
+    "rechazada": "Not accepted",
+    "retirada": "You stepped back",
+    "caducada": "Deadline passed",
+    "en-disputa": "Under dispute"
+  },
+  "linea": {
+    "solicitada": "They're looking at your profile. We'll tell you as soon as they decide.",
+    "aceptada": "You're in: deliver your clip before the deadline runs out.",
+    "entregada": "You delivered your clip. Now it's on the payer to review it.",
+    "cumplida": "Clip approved: the commitment is settled.",
+    "rechazada": "They didn't accept your application for this campaign.",
+    "retirada": "You stepped back in time and your slot was freed.",
+    "caducada": "The deadline passed with no delivery and your slot was freed.",
+    "en-disputa": "There's an open dispute: the Clipealo team is on it."
+  },
+  "solicitado": "Applied on {date}",
+  "plazo": {
+    "quedan": "{n, plural, one {# day left} other {# days left}}",
+    "ultimo": "Last day to deliver",
+    "vencido": "{n, plural, one {Deadline passed # day ago} other {Deadline passed # days ago}}",
+    "hasta": "Until {date}",
+    "sin": "No deadline yet"
+  },
+  "clip": "Your clip: {title}",
+  "acciones": {
+    "entregar": "Deliver my clip",
+    "ver": "View campaign",
+    "retirarme": "Step back",
+    "cancelar": "Cancel application",
+    "reclamar": "Raise a dispute"
+  },
+  "retirar": {
+    "title": "Step back from “{title}”?",
+    "description": "Your slot is freed right away and there's no penalty. You can apply again while the campaign is still taking people.",
+    "cancelTitle": "Cancel your application to “{title}”?",
+    "cancelDescription": "The payer will stop seeing it. You can apply again while applications stay open.",
+    "keep": "Leave it as it is",
+    "confirm": "Yes, step back",
+    "cancelConfirm": "Yes, cancel it",
+    "done": "You're out of the campaign",
+    "doneDescription": "Your slot in “{title}” is free again.",
+    "cancelDone": "Application cancelled",
+    "cancelDoneDescription": "We pulled your application to “{title}”."
+  },
+  "disputa": {
+    "title": "Raise a dispute",
+    "descriptionClipero": "Tell us what happened with “{title}”. The Clipealo team looks into it.",
+    "descriptionAgencia": "Tell us what happened with {clipero} on “{title}”. The Clipealo team looks into it.",
+    "motivo": "What happened?",
+    "motivos": {
+      "no-entrego": {
+        "title": "They never delivered",
+        "description": "They accepted the campaign, the deadline passed and they don't answer."
+      },
+      "no-revisa": {
+        "title": "Nobody reviews my clip",
+        "description": "I delivered it and the campaign isn't deciding."
+      },
+      "rechazo-injusto": {
+        "title": "I was rejected with no reason",
+        "description": "The rejection doesn't hold up against what the campaign asked for."
+      },
+      "no-paga": {
+        "title": "Approved and unpaid",
+        "description": "My clip is approved and the payment hasn't arrived."
+      },
+      "contenido": {
+        "title": "The clip doesn't comply",
+        "description": "It's published and it skips the campaign requirements."
+      }
+    },
+    "detalle": "Tell it in your own words (optional)",
+    "detallePlaceholder": "Dates, messages, links… whatever helps to understand it.",
+    "contador": "{n}/{max}",
+    "avisoTitle": "The Clipealo team reviews it",
+    "aviso": "While the dispute is open, the campaign can't be closed and the money at stake stays reserved. Both sides see whatever is decided.",
+    "send": "Send dispute",
+    "cancel": "Cancel",
+    "sent": "Dispute sent",
+    "sentDescription": "The Clipealo team reviews it and decides. We'll let you know the outcome.",
+    "none": "There's nothing to dispute on this commitment right now.",
+    "abierta": "There's already an open dispute on this commitment.",
+    "close": "Close"
+  }
+}

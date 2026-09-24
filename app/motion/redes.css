@@ -1,0 +1,149 @@
+/* ==========================================================================
+   MOVIMIENTO · REDES (Lote 4)
+   Re-encuadre con marca al cambiar de red (E13).
+
+   Sin @layer, como base.css. Las variables, clases (.m-anim, .m-rise…) y
+   keyframes compartidos viven en base.css y no se redefinen aquí; lo propio
+   de «reducir movimiento» se escribe con `@variant reduced`.
+
+   Lo demás de la sección no necesita CSS propio:
+   - titular (E5): `.m-anim.m-cut` y `.m-rise` en el grupo de la columna de texto;
+   - esquinas al entrar: `.m-crop-corners` con `--m-crop-at: 200ms` en el
+     grupo del escenario;
+   - re-encuadre al cambiar de red (esquinas, patrón y, con «reducir», el
+     fundido del marco): Web Animations API en components/marketing/redes.tsx.
+   ========================================================================== */
+
+/* Rótulo «TikTok · 9:16»: cada red monta un nodo nuevo (`key`) que entra en
+   fundido. Solo desde el primer cambio (`data-redes-cambio`, que redes.tsx
+   escribe en el escenario): al cargar, el rótulo ya está y no se anima. Es
+   opacidad, así que con «reducir» se ve igual. */
+[data-redes-cambio] .m-swap {
+  animation: fade-soft var(--duration-base) var(--ease-brand) backwards;
+}
+
+/* Botón de red: sube 2 px al pasar el ratón (`hover:-translate-y-0.5`, con
+   `translate` en la lista de transición). Con «reducir» no sube: la respuesta
+   es el borde, el fondo y la sombra, en su sitio. */
+.m-red-boton {
+  @variant reduced {
+    translate: none;
+    transition-property: border-color, background-color, box-shadow;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FORMATO SIN DESPLAZAR EL LAYOUT
+   Antes el marco cambiaba de `width` y, centrado, movía su borde izquierdo,
+   las esquinas y el rótulo: pasar el ratón por la lista sumaba CLS 0,047 a
+   2560 px con «reducir» (cambio de golpe) y 0,024 con la transición. El hover
+   no es una entrada discreta, así que cuenta.
+
+   Ahora nada cambia de caja:
+   - la columna ocupa todo el ancho del escenario;
+   - el marco mide siempre el formato más ancho (`--redes-proporcion-max`) y el
+     formato elegido se recorta dentro con `clip-path` (.m-redes-media);
+   - el borde lo pintan dos medios marcos que se acercan con `translate`, como
+     en el reencuadre (reframe.css);
+   - las esquinas de CropFrame se acercan con `transform`. No con `translate`:
+     sus animaciones de cierre (crop-close al entrar y el re-encuadre WAAPI)
+     animan `translate` y se suman a esta posición; con `translate`, la
+     transición del formato taparía el cierre (las transiciones ganan a las
+     animaciones en la cascada). Aquí no hay utilidades `translate-*` de
+     Tailwind que la lista pudiera perder.
+
+   Variables (las escribe redes.tsx en la columna):
+   - --redes-alto: el alto fijo del marco;
+   - --redes-proporcion: la del formato elegido;
+   - --redes-proporcion-max: la del más ancho (16:9).
+   -------------------------------------------------------------------------- */
+.m-redes-columna {
+  --redes-ancho: calc(var(--redes-alto) * var(--redes-proporcion));
+  /* Lo que se recorta por cada lado de la caja */
+  --redes-recorte: calc(
+    var(--redes-alto) * (var(--redes-proporcion-max) - var(--redes-proporcion)) / 2
+  );
+  /* Si el formato no cabe en el escenario (16:9 en un móvil), antes el marco se
+     alineaba a la izquierda y se salía por la derecha: se conserva */
+  translate: max(0px, calc((var(--redes-ancho) - 100%) / 2)) 0;
+}
+
+.m-redes-media {
+  clip-path: inset(0 var(--redes-recorte) round var(--radius-xl));
+}
+
+.m-redes-marco {
+  position: relative;
+}
+/* El anillo de 1 px de MediaFrame (`ring-white/15`), por fuera del recorte. El
+   color sale de `border-white/15` del propio marco, que no tiene ancho de borde. */
+.m-redes-marco::before,
+.m-redes-marco::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset-block: -1px;
+  width: calc(50% + 1px);
+  border: 1px solid;
+  border-color: inherit;
+  pointer-events: none;
+}
+.m-redes-marco::before {
+  left: -1px;
+  border-inline-end-width: 0;
+  border-start-start-radius: calc(var(--radius-xl) + 1px);
+  border-end-start-radius: calc(var(--radius-xl) + 1px);
+  translate: var(--redes-recorte) 0;
+  clip-path: inset(0 var(--redes-recorte) 0 0);
+}
+.m-redes-marco::after {
+  right: -1px;
+  border-inline-start-width: 0;
+  border-start-end-radius: calc(var(--radius-xl) + 1px);
+  border-end-end-radius: calc(var(--radius-xl) + 1px);
+  translate: calc(-1 * var(--redes-recorte)) 0;
+  clip-path: inset(0 0 0 var(--redes-recorte));
+}
+
+/* Esquinas: las de la izquierda (--cx: −1) entran hacia la derecha y al revés */
+.m-redes-encuadre > [data-crop-corner] {
+  transform: translateX(calc(-1 * var(--cx) * var(--redes-recorte)));
+}
+
+/* Sin preferencia, el formato cambia en 500 ms, como el ancho animado de antes */
+.m-redes-columna,
+.m-redes-marco::before,
+.m-redes-marco::after {
+  transition:
+    translate 500ms var(--ease-brand),
+    clip-path 500ms var(--ease-brand);
+}
+.m-redes-media {
+  transition: clip-path 500ms var(--ease-brand);
+}
+.m-redes-encuadre > [data-crop-corner] {
+  /* La opacidad, como en CropFrame (`transition-opacity duration-300`) */
+  transition-property: opacity, transform;
+  transition-duration: 300ms, 500ms;
+  transition-timing-function:
+    var(--default-transition-timing-function), var(--ease-brand);
+}
+
+/* Con «reducir», cambio instantáneo: lo que se ve es el fundido del marco */
+.m-redes-columna,
+.m-redes-media,
+.m-redes-marco {
+  @variant reduced {
+    transition: none;
+
+    &::before,
+    &::after {
+      transition: none;
+    }
+  }
+}
+.m-redes-encuadre > [data-crop-corner] {
+  @variant reduced {
+    transition-property: opacity;
+  }
+}
