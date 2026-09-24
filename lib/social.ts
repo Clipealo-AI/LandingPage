@@ -1,5 +1,3 @@
-import type { AspectRatioKey } from "@/lib/video-formats"
-
 /** Destinos de publicación soportados por Clipealo. */
 const SOCIAL_IDS = ["tiktok", "instagram", "youtube", "x", "linkedin", "facebook"] as const
 
@@ -9,7 +7,6 @@ type SocialNetwork = {
   id: SocialId
   name: string
   surface: string
-  aspects: AspectRatioKey[]
   maxSeconds: number
   sweetSpot: [number, number]
 }
@@ -19,7 +16,6 @@ const SOCIAL_NETWORKS: Record<SocialId, SocialNetwork> = {
     id: "tiktok",
     name: "TikTok",
     surface: "Para ti",
-    aspects: ["9:16"],
     maxSeconds: 600,
     sweetSpot: [21, 60],
   },
@@ -27,7 +23,6 @@ const SOCIAL_NETWORKS: Record<SocialId, SocialNetwork> = {
     id: "instagram",
     name: "Instagram",
     surface: "Reels",
-    aspects: ["9:16"],
     maxSeconds: 180,
     sweetSpot: [15, 45],
   },
@@ -35,7 +30,6 @@ const SOCIAL_NETWORKS: Record<SocialId, SocialNetwork> = {
     id: "youtube",
     name: "YouTube",
     surface: "Shorts",
-    aspects: ["9:16"],
     maxSeconds: 60,
     sweetSpot: [25, 55],
   },
@@ -43,7 +37,6 @@ const SOCIAL_NETWORKS: Record<SocialId, SocialNetwork> = {
     id: "x",
     name: "X",
     surface: "Cronología",
-    aspects: ["9:16"],
     maxSeconds: 140,
     sweetSpot: [20, 60],
   },
@@ -51,7 +44,6 @@ const SOCIAL_NETWORKS: Record<SocialId, SocialNetwork> = {
     id: "linkedin",
     name: "LinkedIn",
     surface: "Feed profesional",
-    aspects: ["9:16"],
     maxSeconds: 600,
     sweetSpot: [30, 90],
   },
@@ -59,7 +51,6 @@ const SOCIAL_NETWORKS: Record<SocialId, SocialNetwork> = {
     id: "facebook",
     name: "Facebook",
     surface: "Reels y feed",
-    aspects: ["9:16"],
     maxSeconds: 90,
     sweetSpot: [15, 45],
   },

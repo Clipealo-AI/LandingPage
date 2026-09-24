@@ -117,7 +117,7 @@ export function Redes() {
   const tc = useTranslations("common")
   const [activa, setActiva] = React.useState<SocialId>("tiktok")
   const red = socialList.find((r) => r.id === activa) ?? socialList[0]
-  const aspecto = red.aspects[0]
+  const aspecto = "9:16" as const
   const ratio = ASPECT_RATIOS[aspecto].ratio
 
   const texto = React.useRef<HTMLDivElement>(null)
