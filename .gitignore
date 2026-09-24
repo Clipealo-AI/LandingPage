@@ -39,6 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+firebase-debug.log*
 
 # artefactos de prueba y sondas
 /test-results/
