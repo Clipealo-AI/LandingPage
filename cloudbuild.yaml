@@ -18,7 +18,7 @@ steps:
       - "-c"
       - |
         set -euo pipefail
-        npm install -g firebase-tools@14
+        npm install -g firebase-tools@15.30.2
         firebase deploy \
           --only hosting:${_FIREBASE_SITE} \
           --project=${PROJECT_ID} \
