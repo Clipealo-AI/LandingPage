@@ -25,9 +25,6 @@
     "description": "No hemos podido cargar esta parte. Puedes reintentarlo: no se ha perdido nada de tu trabajo.",
     "reference": "Referencia: {digest}"
   },
-  "statCard": {
-    "vsPrevious": "respecto al periodo anterior"
-  },
   "notFound": {
     "title": "Esta página no existe.",
     "description": "El enlace puede haber cambiado o caducado. Vuelve al inicio para seguir explorando Clipealo.",
@@ -49,88 +46,7 @@
   "video": {
     "aspect": {
       "9:16": {
-        "label": "Vertical",
-        "destination": "Reels · Shorts · TikTok"
-      },
-      "1:1": {
-        "label": "Cuadrado",
-        "destination": "Feed de Instagram"
-      },
-      "4:5": {
-        "label": "Retrato",
-        "destination": "Feed vertical"
-      },
-      "16:9": {
-        "label": "Horizontal",
-        "destination": "YouTube · Web"
-      }
-    },
-    "aspectSwitcher": {
-      "label": "Formato de salida"
-    },
-    "jobStage": {
-      "subiendo": "Subiendo",
-      "transcribiendo": "Transcribiendo",
-      "analizando": "Analizando momentos",
-      "recortando": "Recortando",
-      "reencuadrando": "Reencuadrando a vertical",
-      "listo": "Listo"
-    },
-    "processing": {
-      "failed": "Error al procesar",
-      "status": "Estado: {stage}",
-      "statusError": "error"
-    },
-    "score": {
-      "outOf": "de 100 de potencial",
-      "help": {
-        "alto": "Muy probable que funcione: gancho claro en los primeros 3 segundos.",
-        "medio": "Buen momento, pero el arranque necesita un recorte más ajustado.",
-        "bajo": "Contexto útil, poco potencial de alcance por sí solo."
-      }
-    },
-    "scrubber": {
-      "label": "Progreso del video",
-      "valueText": "{current} de {total}"
-    },
-    "timeline": {
-      "title": "Línea de tiempo",
-      "zoomOut": "Alejar",
-      "zoomIn": "Acercar",
-      "tracks": "Pistas",
-      "item": "{label}, {start} a {end}"
-    },
-    "transcript": {
-      "searchPlaceholder": "Buscar en la transcripción…",
-      "searchLabel": "Buscar en la transcripción",
-      "moment": "Momento",
-      "noResults": "Sin resultados para «{query}»."
-    },
-    "trim": {
-      "start": "Inicio del clip",
-      "end": "Fin del clip"
-    },
-    "player": {
-      "region": "Reproductor: {title}",
-      "regionDefault": "Reproductor de video",
-      "preview": "Vista previa",
-      "loading": "Cargando video",
-      "replay": "Volver a reproducir",
-      "play": "Reproducir",
-      "playKey": "Reproducir (espacio)",
-      "pauseKey": "Pausar (espacio)",
-      "mute": "Silenciar (m)",
-      "unmute": "Activar sonido (m)",
-      "volume": "Volumen",
-      "hideCaptions": "Ocultar subtítulos (c)",
-      "showCaptions": "Mostrar subtítulos (c)",
-      "speed": "Velocidad de reproducción",
-      "normalSpeed": "· normal",
-      "fullscreen": "Pantalla completa (f)",
-      "exitFullscreen": "Salir de pantalla completa (f)",
-      "error": {
-        "load": "No se pudo cargar el video",
-        "blocked": "Reproducción bloqueada por el navegador"
+        "label": "Vertical"
       }
     }
   }

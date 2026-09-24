@@ -25,9 +25,6 @@
     "description": "We couldn’t load this part. You can try again: none of your work has been lost.",
     "reference": "Reference: {digest}"
   },
-  "statCard": {
-    "vsPrevious": "vs. previous period"
-  },
   "notFound": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has moved.",
@@ -49,88 +46,7 @@
   "video": {
     "aspect": {
       "9:16": {
-        "label": "Vertical",
-        "destination": "Reels · Shorts · TikTok"
-      },
-      "1:1": {
-        "label": "Square",
-        "destination": "Instagram feed"
-      },
-      "4:5": {
-        "label": "Portrait",
-        "destination": "Vertical feed"
-      },
-      "16:9": {
-        "label": "Landscape",
-        "destination": "YouTube · Web"
-      }
-    },
-    "aspectSwitcher": {
-      "label": "Output format"
-    },
-    "jobStage": {
-      "subiendo": "Uploading",
-      "transcribiendo": "Transcribing",
-      "analizando": "Analyzing moments",
-      "recortando": "Trimming",
-      "reencuadrando": "Reframing to vertical",
-      "listo": "Ready"
-    },
-    "processing": {
-      "failed": "Processing failed",
-      "status": "Status: {stage}",
-      "statusError": "error"
-    },
-    "score": {
-      "outOf": "out of 100 potential",
-      "help": {
-        "alto": "Very likely to work: clear hook in the first 3 seconds.",
-        "medio": "Good moment, but the opening needs a tighter trim.",
-        "bajo": "Useful context, little reach potential on its own."
-      }
-    },
-    "scrubber": {
-      "label": "Video progress",
-      "valueText": "{current} of {total}"
-    },
-    "timeline": {
-      "title": "Timeline",
-      "zoomOut": "Zoom out",
-      "zoomIn": "Zoom in",
-      "tracks": "Tracks",
-      "item": "{label}, {start} to {end}"
-    },
-    "transcript": {
-      "searchPlaceholder": "Search the transcript…",
-      "searchLabel": "Search the transcript",
-      "moment": "Moment",
-      "noResults": "No results for “{query}”."
-    },
-    "trim": {
-      "start": "Clip start",
-      "end": "Clip end"
-    },
-    "player": {
-      "region": "Player: {title}",
-      "regionDefault": "Video player",
-      "preview": "Preview",
-      "loading": "Loading video",
-      "replay": "Replay",
-      "play": "Play",
-      "playKey": "Play (space)",
-      "pauseKey": "Pause (space)",
-      "mute": "Mute (m)",
-      "unmute": "Unmute (m)",
-      "volume": "Volume",
-      "hideCaptions": "Hide captions (c)",
-      "showCaptions": "Show captions (c)",
-      "speed": "Playback speed",
-      "normalSpeed": "· normal",
-      "fullscreen": "Full screen (f)",
-      "exitFullscreen": "Exit full screen (f)",
-      "error": {
-        "load": "Couldn’t load the video",
-        "blocked": "Playback blocked by the browser"
+        "label": "Vertical"
       }
     }
   }

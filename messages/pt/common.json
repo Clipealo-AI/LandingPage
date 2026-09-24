@@ -25,9 +25,6 @@
     "description": "Não conseguimos carregar esta parte. Você pode tentar de novo: nada do seu trabalho foi perdido.",
     "reference": "Referência: {digest}"
   },
-  "statCard": {
-    "vsPrevious": "em relação ao período anterior"
-  },
   "notFound": {
     "title": "Página não encontrada",
     "description": "A página que você procura não existe ou foi movida.",
@@ -49,88 +46,7 @@
   "video": {
     "aspect": {
       "9:16": {
-        "label": "Vertical",
-        "destination": "Reels · Shorts · TikTok"
-      },
-      "1:1": {
-        "label": "Quadrado",
-        "destination": "Feed do Instagram"
-      },
-      "4:5": {
-        "label": "Retrato",
-        "destination": "Feed vertical"
-      },
-      "16:9": {
-        "label": "Horizontal",
-        "destination": "YouTube · Web"
-      }
-    },
-    "aspectSwitcher": {
-      "label": "Formato de saída"
-    },
-    "jobStage": {
-      "subiendo": "Enviando",
-      "transcribiendo": "Transcrevendo",
-      "analizando": "Analisando momentos",
-      "recortando": "Cortando",
-      "reencuadrando": "Reenquadrando para vertical",
-      "listo": "Pronto"
-    },
-    "processing": {
-      "failed": "Erro ao processar",
-      "status": "Status: {stage}",
-      "statusError": "erro"
-    },
-    "score": {
-      "outOf": "de 100 de potencial",
-      "help": {
-        "alto": "Grande chance de funcionar: gancho claro nos primeiros 3 segundos.",
-        "medio": "Bom momento, mas o início precisa de um corte mais justo.",
-        "bajo": "Contexto útil, pouco potencial de alcance sozinho."
-      }
-    },
-    "scrubber": {
-      "label": "Progresso do vídeo",
-      "valueText": "{current} de {total}"
-    },
-    "timeline": {
-      "title": "Linha do tempo",
-      "zoomOut": "Diminuir zoom",
-      "zoomIn": "Aumentar zoom",
-      "tracks": "Faixas",
-      "item": "{label}, {start} a {end}"
-    },
-    "transcript": {
-      "searchPlaceholder": "Buscar na transcrição…",
-      "searchLabel": "Buscar na transcrição",
-      "moment": "Momento",
-      "noResults": "Nenhum resultado para “{query}”."
-    },
-    "trim": {
-      "start": "Início do clipe",
-      "end": "Fim do clipe"
-    },
-    "player": {
-      "region": "Player: {title}",
-      "regionDefault": "Player de vídeo",
-      "preview": "Prévia",
-      "loading": "Carregando vídeo",
-      "replay": "Reproduzir de novo",
-      "play": "Reproduzir",
-      "playKey": "Reproduzir (espaço)",
-      "pauseKey": "Pausar (espaço)",
-      "mute": "Silenciar (m)",
-      "unmute": "Ativar som (m)",
-      "volume": "Volume",
-      "hideCaptions": "Ocultar legendas (c)",
-      "showCaptions": "Mostrar legendas (c)",
-      "speed": "Velocidade de reprodução",
-      "normalSpeed": "· normal",
-      "fullscreen": "Tela cheia (f)",
-      "exitFullscreen": "Sair da tela cheia (f)",
-      "error": {
-        "load": "Não foi possível carregar o vídeo",
-        "blocked": "Reprodução bloqueada pelo navegador"
+        "label": "Vertical"
       }
     }
   }
