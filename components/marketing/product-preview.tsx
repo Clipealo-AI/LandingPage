@@ -17,6 +17,7 @@ import { MediaFrame } from "@/components/video/media-frame";
 import { Waveform } from "@/components/video/waveform";
 import { Reveal } from "@/components/shared/reveal";
 import { ClipPreviewDialog } from "@/components/marketing/clip-preview-dialog";
+import { usePauseOffscreenVideo } from "@/components/marketing/use-pause-offscreen-video";
 
 const DURATION = RUBIUS_SOURCE.end - RUBIUS_SOURCE.start;
 
@@ -24,6 +25,13 @@ const DURATION = RUBIUS_SOURCE.end - RUBIUS_SOURCE.start;
 export function ProductPreview() {
   const t = useTranslations("marketing.hero");
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [videoElement, setVideoElement] =
+    React.useState<HTMLVideoElement | null>(null);
+  const attachVideoRef = React.useCallback((video: HTMLVideoElement | null) => {
+    videoRef.current = video;
+    if (video) setVideoElement(video);
+  }, []);
+  usePauseOffscreenVideo(videoElement);
   const [time, setTime] = React.useState(0);
   const [playing, setPlaying] = React.useState(false);
   const [muted, setMuted] = React.useState(false);
@@ -81,7 +89,7 @@ export function ProductPreview() {
               <div className="min-w-0 space-y-3">
                 <MediaFrame aspect="16:9" className="bg-stage ring-0">
                   <video
-                    ref={videoRef}
+                    ref={attachVideoRef}
                     src={RUBIUS_SOURCE.video}
                     poster={RUBIUS_SOURCE.poster}
                     preload="metadata"
@@ -215,9 +223,11 @@ export function ProductPreview() {
                       )}
                       {playing ? t("pausePreview") : t("playPreview")}
                     </button>
-                    <span className="truncate text-[11px] text-muted-foreground">
-                      {active?.displayTitle ?? t("scanInProgress")}
-                    </span>
+                    {active && (
+                      <span className="truncate text-[11px] text-muted-foreground">
+                        {active.displayTitle}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

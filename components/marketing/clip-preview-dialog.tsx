@@ -29,6 +29,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { MediaFrame } from "@/components/video/media-frame";
+import { usePauseOffscreenVideo } from "@/components/marketing/use-pause-offscreen-video";
 
 interface ClipPreviewDialogProps {
   clip: RubiusClip | null;
@@ -51,6 +52,13 @@ export function ClipPreviewDialog({ clip, onClose }: ClipPreviewDialogProps) {
 function ClipPreviewContent({ clip }: { clip: RubiusClip }) {
   const t = useTranslations("marketing.hero");
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [videoElement, setVideoElement] =
+    React.useState<HTMLVideoElement | null>(null);
+  const attachVideoRef = React.useCallback((video: HTMLVideoElement | null) => {
+    videoRef.current = video;
+    if (video) setVideoElement(video);
+  }, []);
+  usePauseOffscreenVideo(videoElement);
   const frameRef = React.useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = React.useState(false);
   const [muted, setMuted] = React.useState(false);
@@ -105,7 +113,7 @@ function ClipPreviewContent({ clip }: { clip: RubiusClip }) {
             <div ref={frameRef} className="mx-auto max-w-64">
               <MediaFrame aspect="9:16" className="bg-stage ring-stage-border">
                 <video
-                  ref={videoRef}
+                  ref={attachVideoRef}
                   src={clip.video}
                   poster={clip.poster}
                   preload="metadata"
