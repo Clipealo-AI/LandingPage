@@ -21,10 +21,11 @@ export interface ClientChannel {
 }
 
 export const CLIENT_CHANNELS: ClientChannel[] = [
+  // Perfil oficial @turnoenvivo, YouTube y redes enlazadas desde turno.live.
   {
     name: "Turno",
     networks: ["youtube", "instagram", "tiktok", "x"],
-    metric: "124 mil suscriptores en YouTube",
+    metric: "124 mil suscriptores",
     photo: "/clients/turno.webp",
   },
   {

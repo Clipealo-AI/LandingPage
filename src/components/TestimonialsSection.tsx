@@ -10,6 +10,7 @@ import iconKick from '@/assets/icons/kick.png';
 import iconTwitch from '@/assets/icons/twitch.png';
 import iconLinkedin from '@/assets/icons/linkedin.png';
 import iconYoutube from '@/assets/platform-youtube.png';
+import marketing from '../../messages/es/marketing.json';
 
 const testimonials = [
   { name: 'EL CHUPAPI L4D', avatar: avatarChupapi, platforms: [iconKick, iconTiktok], stat: '200 seguidores' },
@@ -22,14 +23,14 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="overflow-hidden border-y border-border bg-[#f0f5fc] py-14 dark:bg-[#101b34] sm:py-16" aria-label="Comunidad de Clipealo">
+  <section className="overflow-hidden border-y border-border bg-secondary-color py-14 sm:py-16" aria-label={marketing.community.creators}>
     <div className="brand-container mb-8 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
-      <div><p className="eyebrow">Comunidad Clipealo</p><h2 className="mt-2 text-2xl font-bold tracking-tight">Quienes ya confían en Clipealo</h2></div>
-      <p className="text-sm text-muted-foreground">Creadores que convierten sus transmisiones en nuevas oportunidades.</p>
+      <div><p className="eyebrow">{marketing.community.creators}</p><h2 className="mt-2 text-2xl font-bold tracking-tight">{marketing.community.title}</h2></div>
+      <p className="text-sm text-muted-foreground">{marketing.community.channels}</p>
     </div>
     <div className="relative">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#f0f5fc] to-transparent dark:from-[#101b34] sm:w-24" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#f0f5fc] to-transparent dark:from-[#101b34] sm:w-24" />
+      <div className="marketing-carousel-fade-left pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-24" />
+      <div className="marketing-carousel-fade-right pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-24" />
       <div className="testimonials-track flex w-max gap-4" role="list">
         {[...testimonials, ...testimonials].map((person, index) => (
           <article key={`${person.name}-${index}`} role="listitem" aria-hidden={index >= testimonials.length} className="brand-card flex w-64 items-center gap-3 px-4 py-3">

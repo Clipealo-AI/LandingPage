@@ -1,148 +1,96 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { ArrowRight, Calendar, Clock, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Search } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
-import { blogArticles, categoryColors, type BlogCategory } from '@/data/blogArticles';
+import marketing from '../../messages/es/marketing.json';
+import { blogArticles } from '@/data/blogArticles';
+import { appUrl } from '@/data/marketingNavigation';
+import { trackLead } from '@/lib/tracking';
 
-const categories: Array<'Todos' | BlogCategory> = ['Todos', 'Buenas Prácticas', 'Por Qué Importa', 'Guía de Inicio'];
+const categories = [marketing.blogPage.allCategories, ...new Set(blogArticles.map((article) => article.category))];
 
 const AuthorAvatar = ({ initial }: { initial: string }) => (
-  <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-    style={{ background: 'linear-gradient(135deg, #1472fd, #fd5e1c)' }}>
-    {initial}
-  </div>
+  <span className="marketing-author-avatar" aria-hidden="true">{initial}</span>
 );
 
 const BlogPage = () => {
-  const [activeCategory, setActiveCategory] = useState<'Todos' | BlogCategory>('Todos');
-
-  const filtered = useMemo(() => {
-    if (activeCategory === 'Todos') return blogArticles;
-    return blogArticles.filter(a => a.category === activeCategory);
-  }, [activeCategory]);
-
-  const featured = filtered[0];
-  const grid = filtered.slice(1);
+  const [activeCategory, setActiveCategory] = useState<string>(marketing.blogPage.allCategories);
+  const filteredArticles = useMemo(() => activeCategory === marketing.blogPage.allCategories
+    ? blogArticles
+    : blogArticles.filter((article) => article.category === activeCategory), [activeCategory]);
+  const featuredArticle = filteredArticles[0];
+  const otherArticles = filteredArticles.slice(1);
 
   return (
-    <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Blog — Guías y estrategias para cliperos y streamers"
-        description="Guías, estrategias y casos reales para cliperos, streamers y creadores de contenido en LATAM. Aprende a clipear y crece más rápido."
-        canonicalPath="/blog"
-      />
+    <main className="min-h-screen bg-background text-foreground">
+      <SEOHead title={marketing.blogPage.metaTitle} description={marketing.blogPage.metaDescription} canonicalPath="/blog" />
       <Header />
-
-      {/* Hero */}
-      <section className="pt-28 pb-8 px-4">
-        <div className="max-w-[1100px] mx-auto">
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-[38px] font-extrabold leading-[1.15] mb-4"
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          >
-            Aprende a clipear. <span className="text-primary">Crece más rápido.</span>
-          </motion.h1>
-          <motion.p
-            className="text-muted-foreground text-base md:text-lg max-w-[480px] mb-8"
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-          >
-            Guías, estrategias y casos reales para cliperos, streamers y creadores de contenido en LATAM.
-          </motion.p>
+      <section className="marketing-index-hero">
+        <div className="reference-container">
+          <p className="eyebrow">{marketing.routeMenu.resources}</p>
+          <h1 className="display-font text-balance">{marketing.blogPage.title}</h1>
+          <p className="marketing-index-lead">{marketing.blogPage.lead}</p>
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="px-4 mb-10">
-        <div className="max-w-[1100px] mx-auto flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-          {categories.map(cat => (
+      <section className="marketing-index-content reference-container" aria-label={marketing.routeMenu.resources}>
+        <div className="marketing-blog-filters" role="group" aria-label={marketing.blogPage.allCategories}>
+          <Search aria-hidden="true" />
+          {categories.map((category) => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className="whitespace-nowrap rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 border shrink-0"
-              style={
-                activeCategory === cat
-                  ? { background: '#1472fd', borderColor: '#1472fd', color: '#fff' }
-                  : { background: 'transparent', borderColor: 'hsl(var(--border))', color: 'hsl(var(--muted-foreground))' }
-              }
+              key={category}
+              type="button"
+              aria-pressed={activeCategory === category}
+              className={activeCategory === category ? 'marketing-blog-filter is-active' : 'marketing-blog-filter'}
+              onClick={() => setActiveCategory(category)}
             >
-              {cat}
+              {category}
             </button>
           ))}
         </div>
-      </section>
 
-      <div className="max-w-[1100px] mx-auto px-4 pb-20">
-        {filtered.length === 0 ? (
-          <p className="text-muted-foreground text-center py-20">Pronto publicaremos artículos en esta categoría.</p>
+        {!featuredArticle ? (
+          <p className="marketing-blog-empty">{marketing.blogPage.empty}</p>
         ) : (
           <>
-            {/* Featured */}
-            {featured && (
-              <Link to={`/blog/${featured.id}`} className="block mb-10">
-                <motion.article
-                  className="brand-card grid overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                  initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                >
-                  <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
-                    <img src={featured.cover} alt={featured.title} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8 md:p-9 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: categoryColors[featured.category] + '22', color: categoryColors[featured.category] }}>
-                        {featured.category}
-                      </span>
-                      <span className="text-xs font-medium px-3 py-1 rounded-full bg-muted text-muted-foreground">
-                        Destacado
-                      </span>
-                    </div>
-                    <h2 className="text-xl md:text-[22px] font-bold leading-[1.35] mb-5 text-foreground">
-                      {featured.title}
-                    </h2>
-                    <div className="flex items-center gap-3">
-                      <AuthorAvatar initial={featured.author.initial} />
-                      <div>
-                        <p className="text-sm font-medium text-foreground">{featured.author.name}</p>
-                        <p className="text-[11px] text-muted-foreground">{featured.author.role} · {featured.date}</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.article>
-              </Link>
-            )}
+            <Link to={`/blog/${featuredArticle.id}`} className="marketing-blog-featured">
+              <div className="marketing-blog-featured-image">
+                <img src={featuredArticle.cover} alt={marketing.blogPage.coverAlt.replace('{title}', featuredArticle.title)} loading="lazy" />
+              </div>
+              <div className="marketing-blog-featured-copy">
+                <span className="marketing-blog-featured-label">{marketing.blogPage.featured}</span>
+                <span className="marketing-blog-category">{featuredArticle.category}</span>
+                <h2>{featuredArticle.title}</h2>
+                <p>{featuredArticle.metaDescription}</p>
+                <div className="marketing-blog-meta">
+                  <AuthorAvatar initial={featuredArticle.author.initial} />
+                  <span>{featuredArticle.author.name}</span>
+                  <span className="marketing-blog-meta-item"><Calendar aria-hidden="true" />{featuredArticle.displayDate}</span>
+                  <span className="marketing-blog-meta-item"><Clock aria-hidden="true" />{featuredArticle.readingTime}</span>
+                </div>
+                <span className="marketing-feature-more">{marketing.blogPage.readArticle}<ArrowRight aria-hidden="true" /></span>
+              </div>
+            </Link>
 
-            {/* Grid */}
-            {grid.length > 0 && (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {grid.map((article, i) => (
-                  <Link to={`/blog/${article.id}`} key={article.id}>
-                    <motion.article
-                      className="brand-card flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.05 * i }}
-                    >
-                      <div className="aspect-video overflow-hidden">
-                        <img src={article.cover} alt={article.title} className="w-full h-full object-cover" />
+            {otherArticles.length > 0 && (
+              <div className="marketing-blog-grid">
+                {otherArticles.map((article) => (
+                  <Link key={article.id} to={`/blog/${article.id}`} className="marketing-blog-card">
+                    <div className="marketing-blog-card-image">
+                      <img src={article.cover} alt={marketing.blogPage.coverAlt.replace('{title}', article.title)} loading="lazy" />
+                    </div>
+                    <div className="marketing-blog-card-copy">
+                      <span className="marketing-blog-category">{article.category}</span>
+                      <h2>{article.title}</h2>
+                      <p>{article.metaDescription}</p>
+                      <div className="marketing-blog-meta">
+                        <AuthorAvatar initial={article.author.initial} />
+                        <span>{article.author.name}</span>
+                        <span className="marketing-blog-meta-item"><Clock aria-hidden="true" />{article.readingTime}</span>
                       </div>
-                      <div className="p-5 flex flex-col flex-1">
-                        <span className="text-[11px] font-semibold px-3 py-1 rounded-full self-start mb-3" style={{ background: categoryColors[article.category] + '22', color: categoryColors[article.category] }}>
-                          {article.category}
-                        </span>
-                        <h3 className="text-[15px] font-bold leading-[1.4] text-foreground mb-4 flex-1">
-                          {article.title}
-                        </h3>
-                        <div className="flex items-center gap-2 mt-auto">
-                          <AuthorAvatar initial={article.author.initial} />
-                          <div>
-                            <p className="text-xs font-medium text-foreground">{article.author.name}</p>
-                            <p className="text-[10px] text-muted-foreground">{article.author.role} · {article.date}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.article>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -150,31 +98,16 @@ const BlogPage = () => {
           </>
         )}
 
-        {/* CTA Banner */}
-        <motion.div
-          className="mt-16 rounded-2xl p-10 md:p-12 text-center border"
-          style={{ background: 'linear-gradient(135deg, rgba(20,114,253,0.08), rgba(253,94,28,0.08))', borderColor: 'rgba(20,114,253,0.2)' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-2xl md:text-[26px] font-extrabold mb-3 text-foreground">
-            ¿Listo para aplicar todo esto?
-          </h2>
-          <p className="text-muted-foreground text-[15px] mb-6">
-            Procesa tu primer VOD gratis. Sin tarjeta. Sin setup.
-          </p>
-          <a
-            href="https://app.clipealo-ai.com/?utm_source=landing_blog&utm_medium=cta"
-            className="btn-cta inline-block text-base"
-          >
-            Empezar con Clipealo gratis →
+        <aside className="marketing-resource-cta">
+          <h2>{marketing.blogPage.ctaTitle}</h2>
+          <p>{marketing.blogPage.ctaLead}</p>
+          <a href={appUrl} className="marketing-resource-cta-button" onClick={() => trackLead('Landing - CTA blog')}>
+            {marketing.actions.upload}<ArrowRight aria-hidden="true" />
           </a>
-        </motion.div>
-      </div>
-
+        </aside>
+      </section>
       <Footer />
-    </div>
+    </main>
   );
 };
 

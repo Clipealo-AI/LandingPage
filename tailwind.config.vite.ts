@@ -3,7 +3,7 @@ import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -29,6 +29,17 @@ export default {
         "bg-secondary": "hsl(var(--bg-secondary))",
         "bg-card": "hsl(var(--bg-card))",
         "bg-elevated": "hsl(var(--bg-elevated))",
+        stage: {
+          DEFAULT: "hsl(var(--stage))",
+          foreground: "hsl(var(--stage-foreground))",
+          muted: "hsl(var(--stage-muted))",
+          border: "hsl(var(--stage-border))",
+        },
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          foreground: "hsl(var(--brand-foreground))",
+          hover: "hsl(var(--brand-hover))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

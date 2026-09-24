@@ -1,7 +1,7 @@
 import records from "./rubius-demo.json";
 
 const MEDIA_BASE =
-  "https://storage.googleapis.com/clipealo-gpt-amigos-prod-v1/demos/landing/rubius/v3";
+  "https://storage.googleapis.com/clipealo-gpt-amigos-prod-v1/demos/landing/rubius/v6";
 
 /** Tramo continuo del video de origen; los tiempos de los clips vienen de la BD. */
 export const RUBIUS_SOURCE = {

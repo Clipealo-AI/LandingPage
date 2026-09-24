@@ -1,62 +1,45 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
-import { blogArticles, categoryColors } from '@/data/blogArticles';
+import marketing from '../../messages/es/marketing.json';
+import { blogArticles } from '@/data/blogArticles';
+import { appUrl } from '@/data/marketingNavigation';
+import { trackLead } from '@/lib/tracking';
 
 const AuthorAvatar = ({ initial }: { initial: string }) => (
-  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-    style={{ background: 'linear-gradient(135deg, #1472fd, #fd5e1c)' }}>
-    {initial}
-  </div>
+  <span className="marketing-author-avatar" aria-hidden="true">{initial}</span>
 );
+
+const renderInline = (text: string) => text.split(/(\*\*[^*]+\*\*)/g).map((part, index) => (
+  part.startsWith('**') && part.endsWith('**')
+    ? <strong key={index} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>
+    : part
+));
 
 const renderContent = (text: string) => {
   if (text.startsWith('## ')) {
-    return <h2 className="text-xl md:text-2xl font-bold text-foreground mt-10 mb-4">{text.replace('## ', '')}</h2>;
+    return <h2 className="text-xl md:text-2xl font-bold text-foreground mt-10 mb-4">{text.slice(3)}</h2>;
   }
-
-  // Process markdown-like formatting
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  const rendered = parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
-    }
-    return part;
-  });
-
   if (text.startsWith('- ')) {
-    const items = text.split('\n').filter(Boolean);
     return (
       <ul className="space-y-2 my-4">
-        {items.map((item, i) => {
-          const content = item.replace(/^- /, '');
-          const itemParts = content.split(/(\*\*[^*]+\*\*)/g);
-          return (
-            <li key={i} className="flex gap-2 text-muted-foreground leading-relaxed">
-              <span className="text-primary mt-1.5 shrink-0">•</span>
-              <span>
-                {itemParts.map((p, j) =>
-                  p.startsWith('**') && p.endsWith('**')
-                    ? <strong key={j} className="text-foreground font-semibold">{p.slice(2, -2)}</strong>
-                    : p
-                )}
-              </span>
-            </li>
-          );
-        })}
+        {text.split('\n').filter(Boolean).map((item, index) => (
+          <li key={index} className="flex gap-2 text-muted-foreground leading-relaxed">
+            <span className="text-primary mt-1.5 shrink-0" aria-hidden="true">•</span>
+            <span>{renderInline(item.replace(/^- /, ''))}</span>
+          </li>
+        ))}
       </ul>
     );
   }
-
-  return <p className="text-muted-foreground leading-relaxed my-4 whitespace-pre-line">{rendered}</p>;
+  return <p className="text-muted-foreground leading-relaxed my-4 whitespace-pre-line">{renderInline(text)}</p>;
 };
 
 const BlogArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const article = blogArticles.find(a => a.id === slug);
+  const article = blogArticles.find((item) => item.id === slug);
 
   if (!article) return <Navigate to="/blog" replace />;
 
@@ -65,7 +48,7 @@ const BlogArticlePage = () => {
     '@type': 'BlogPosting',
     headline: article.title,
     description: article.metaDescription,
-    image: typeof article.cover === 'string' ? article.cover : undefined,
+    image: article.cover,
     author: { '@type': 'Person', name: article.author.name },
     publisher: { '@type': 'Organization', name: 'Clipealo', logo: { '@type': 'ImageObject', url: 'https://www.clipealo-ai.com/clipealo-icon.svg' } },
     datePublished: article.isoDate,
@@ -73,11 +56,10 @@ const BlogArticlePage = () => {
     mainEntityOfPage: `https://www.clipealo-ai.com/blog/${article.id}`,
     inLanguage: 'es',
   };
-
-  const faqJsonLd = article.faqs && article.faqs.length > 0 ? {
+  const faqJsonLd = article.faqs?.length ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: article.faqs.map(faq => ({
+    mainEntity: article.faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: { '@type': 'Answer', text: faq.answer },
@@ -85,113 +67,63 @@ const BlogArticlePage = () => {
   } : null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background text-foreground">
       <SEOHead
         title={article.title}
         description={article.metaDescription}
-        ogImage={typeof article.cover === 'string' ? article.cover : undefined}
+        ogImage={article.cover}
         canonicalPath={`/blog/${article.id}`}
         type="article"
         jsonLd={articleJsonLd}
         publishedTime={article.isoDate}
         modifiedTime={article.modifiedDate}
       />
-      {faqJsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
-      )}
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <Header />
 
-      <article className="pt-28 pb-20 px-4">
-        <div className="max-w-[720px] mx-auto">
-          {/* Back */}
-          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
-            <ArrowLeft className="w-4 h-4" /> Volver al blog
-          </Link>
-
-          {/* Visible publication date */}
-          <div className="flex items-center gap-2 mb-5 text-sm text-muted-foreground">
-            <Calendar className="w-4 h-4" />
-            <time dateTime={article.isoDate}>Publicado el {article.displayDate}</time>
+      <article className="marketing-article">
+        <div className="marketing-article-content">
+          <Link to="/blog" className="marketing-article-back"><ArrowLeft aria-hidden="true" />{marketing.blogPage.back}</Link>
+          <div className="marketing-article-date"><Calendar aria-hidden="true" /><time dateTime={article.isoDate}>{marketing.blogPage.published.replace('{date}', article.displayDate)}</time></div>
+          <div className="marketing-article-tags">
+            <span className="marketing-blog-category">{article.category}</span>
+            <span>{marketing.blogPage.readingTime.replace('{minutes}', article.readingTime.replace(/\s*min$/, ''))}</span>
           </div>
-
-          {/* Category & Reading Time */}
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: categoryColors[article.category] + '22', color: categoryColors[article.category] }}>
-              {article.category}
-            </span>
-            <span className="text-xs text-muted-foreground">{article.readingTime} lectura</span>
-          </div>
-
-          {/* Title */}
-          <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-6 text-foreground"
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          >
-            {article.title}
-          </motion.h1>
-
-          {/* Author */}
-          <div className="flex items-center gap-3 mb-8 pb-8 border-b border-border">
+          <h1>{article.title}</h1>
+          <div className="marketing-article-author">
             <AuthorAvatar initial={article.author.initial} />
             <div>
-              <p className="text-sm font-medium text-foreground">{article.author.name}</p>
-              <p className="text-xs text-muted-foreground">{article.author.role} · {article.date}</p>
+              <p>{article.author.name}</p>
+              <span>{article.author.role} · {article.date}</span>
             </div>
           </div>
+          <div className="marketing-article-cover">
+            <img src={article.cover} alt={marketing.blogPage.coverAlt.replace('{title}', article.title)} />
+          </div>
+          <div className="prose-custom">
+            {article.content.map((block, index) => <div key={index}>{renderContent(block)}</div>)}
+          </div>
 
-          {/* Cover */}
-          <motion.div
-            className="rounded-xl overflow-hidden mb-10"
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-          >
-            <img src={article.cover} alt={`Imagen de portada del artículo: ${article.title}`} className="w-full" loading="lazy" />
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            className="prose-custom"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
-          >
-            {article.content.map((block, i) => (
-              <div key={i}>{renderContent(block)}</div>
-            ))}
-          </motion.div>
-
-          {/* Internal links */}
-          {article.internalLinks && article.internalLinks.length > 0 && (
-            <div className="mt-10 mb-6 rounded-xl border border-border bg-card p-6">
-              <p className="text-sm font-semibold text-foreground mb-3">Te puede interesar:</p>
-              <ul className="space-y-2">
-                {article.internalLinks.map((link, i) => (
-                  <li key={i}>
-                    <Link to={link.href} className="text-sm text-primary hover:underline underline-offset-2 transition-colors">
-                      → {link.label}
-                    </Link>
-                  </li>
-                ))}
+          {article.internalLinks.length > 0 && (
+            <aside className="marketing-article-related">
+              <h2>{marketing.blogPage.related}</h2>
+              <ul>
+                {article.internalLinks.map((item) => <li key={item.href}><Link to={item.href}>{item.label}</Link></li>)}
               </ul>
-            </div>
+            </aside>
           )}
 
-          {/* CTA */}
-          <div className="mt-12 rounded-2xl p-8 text-center border" style={{
-            background: 'linear-gradient(135deg, rgba(20,114,253,0.08), rgba(253,94,28,0.08))',
-            borderColor: 'rgba(20,114,253,0.2)',
-          }}>
-            <p className="text-lg font-bold text-foreground mb-2">¿Listo para probarlo?</p>
-            <p className="text-sm text-muted-foreground mb-5">Clipealo detecta automáticamente los mejores momentos de tus VODs. 30 minutos gratis.</p>
-            <a href="https://app.clipealo-ai.com/?utm_source=landing_blog_article&utm_medium=cta" className="btn-cta inline-block text-base">
-              Empezar gratis →
+          <aside className="marketing-resource-cta">
+            <h2>{marketing.blogPage.articleCtaTitle}</h2>
+            <p>{marketing.blogPage.articleCtaLead}</p>
+            <a href={appUrl} className="marketing-resource-cta-button" onClick={() => trackLead('Landing - CTA artículo blog')}>
+              {marketing.actions.upload}<ArrowLeft className="rotate-180" aria-hidden="true" />
             </a>
-          </div>
+          </aside>
         </div>
       </article>
-
       <Footer />
-    </div>
+    </main>
   );
 };
 

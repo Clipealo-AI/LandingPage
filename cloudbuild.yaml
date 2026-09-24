@@ -8,7 +8,7 @@ steps:
     id: "build"
     waitFor: ["install"]
     entrypoint: "bun"
-    args: ["run", "build"]
+    args: ["run", "check:landing"]
 
   - name: "node:20-slim"
     id: "deploy"

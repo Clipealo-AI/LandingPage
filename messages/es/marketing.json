@@ -6,6 +6,36 @@
     "pricing": "Precios",
     "system": "Sistema"
   },
+  "routeMenu": {
+    "features": "Funcionalidades",
+    "cases": "Casos de uso",
+    "resources": "Recursos",
+    "featureLinks": {
+      "clips": { "label": "Clips automáticos", "description": "Pega el enlace de un video y recibe clips listos para publicar." },
+      "latam": { "label": "IA entrenada en contenido LATAM", "description": "Entiende el español latino, la jerga local y el contexto cultural." },
+      "subtitles": { "label": "Editor de subtítulos", "description": "Personaliza fuentes, colores, animaciones y posición." },
+      "formats": { "label": "Exporta en 2 formatos", "description": "Adapta tus clips a 16:9 y 9:16 con reencuadre automático." },
+      "templates": { "label": "Plantillas de marca", "description": "Aplica la identidad visual de cada cliente en un clic." },
+      "projects": { "label": "Gestión de proyectos", "description": "Organiza videos y clips por cliente, campaña o fecha." },
+      "bulk": { "label": "Exportación en masa", "description": "Descarga todos los clips de un proyecto de una sola vez." }
+    },
+    "caseLinks": {
+      "cliperos": { "label": "Cliperos", "description": "Produce más clips para cada creador." },
+      "streamers": { "label": "Streamers", "description": "Convierte tus transmisiones en clips para redes." },
+      "podcasters": { "label": "Podcasters", "description": "Lleva los mejores momentos de cada episodio a redes." },
+      "coaches": { "label": "Coaches y educadores", "description": "Convierte clases y sesiones en contenido corto." },
+      "creators": { "label": "Creadores de contenido", "description": "Reutiliza tus videos largos en todas tus redes." },
+      "communities": { "label": "Comunidades y esports", "description": "Crea highlights de torneos y eventos." },
+      "agencies": { "label": "Agencias audiovisuales", "description": "Gestiona clips para varios clientes desde un lugar." },
+      "brands": { "label": "Marcas", "description": "Crea contenido para campañas y patrocinios." }
+    },
+    "resourceLinks": {
+      "discord": { "label": "Discord", "description": "Conversa con la comunidad de creadores." },
+      "blog": { "label": "Blog y guías", "description": "Ideas y consejos para crear mejores clips." },
+      "faq": { "label": "Preguntas frecuentes", "description": "Resuelve tus dudas sobre Clipealo." },
+      "contact": { "label": "Contacto", "description": "Escríbenos si necesitas ayuda." }
+    }
+  },
   "legalNav": {
     "privacy": "Privacidad",
     "terms": "Términos",
@@ -22,21 +52,60 @@
     "login": "Iniciar sesión",
     "openMenu": "Abrir menú",
     "menu": "Menú",
-    "discord": "Comunidad de Discord"
+    "discord": "Comunidad de Discord",
+    "closeMenu": "Cerrar menú",
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
+  "featureIndex": {
+    "eyebrow": "El producto",
+    "title": "Todo para pasar de video largo a clip listo.",
+    "lead": "Desde encontrar el momento hasta exportarlo con tu estilo, en un solo lugar.",
+    "pricing": "Ver precios"
+  },
+  "featurePage": {
+    "all": "Todas las funcionalidades",
+    "published": "Publicado el {date}",
+    "faq": "Preguntas frecuentes",
+    "try": "Probar Clipealo",
+    "notFound": "No encontramos esta funcionalidad."
+  },
+  "casePage": {
+    "impact": "Impacto en tu flujo de trabajo"
+  },
+  "blogPage": {
+    "metaTitle": "Blog — Guías y estrategias para cliperos y streamers",
+    "metaDescription": "Guías y consejos para cliperos, streamers y creadores de contenido en LATAM.",
+    "title": "Aprende a clipear. Crece más rápido.",
+    "lead": "Guías y consejos para cliperos, streamers y creadores de contenido en LATAM.",
+    "allCategories": "Todos",
+    "featured": "Destacado",
+    "readArticle": "Leer artículo",
+    "empty": "Pronto publicaremos artículos en esta categoría.",
+    "ctaTitle": "¿Listo para aplicar todo esto?",
+    "ctaLead": "Sube un video y mira qué clips encuentra Clipealo.",
+    "back": "Volver al blog",
+    "published": "Publicado el {date}",
+    "readingTime": "{minutes} min de lectura",
+    "related": "Te puede interesar:",
+    "articleCtaTitle": "¿Listo para probarlo?",
+    "articleCtaLead": "Sube un video y deja que Clipealo encuentre los mejores momentos.",
+    "coverAlt": "Imagen de portada del artículo: {title}"
   },
   "hero": {
     "badge": "Reencuadre automático con seguimiento de quien habla",
     "title": "De videos largos<br></br>a grandes clips.",
+    "description": "Sube el video completo. La IA encuentra los momentos que la gente ve hasta el final y te los devuelve en 9:16, con subtítulos.",
     "howItWorks": "Ver cómo funciona",
     "detectedMoments": "Momentos detectados",
     "suggestedClips": "Clips propuestos",
+    "withCaptions": "con subtítulos",
     "videoPreview": "Fragmento del unboxing de Rubius",
     "playPreview": "Reproducir video original",
     "sourceLabel": "Rubius Z · fragmento del unboxing",
     "seekToMoment": "Ir al momento: {title}",
     "seekPreview": "Mover la reproducción del video original",
     "pausePreview": "Pausar el video",
-    "scanInProgress": "Recorriendo el fragmento…",
     "viewClip": "Ver clip y transcripción: {title}",
     "sourceTime": "Del video original · {start}–{end}",
     "clipVideo": "Clip: {title}",
@@ -234,7 +303,13 @@
     "legal": "Legal",
     "designSystem": "Sistema de diseño",
     "contact": "Contacto",
-    "copyright": "© {year} {name}. Hecho en España."
+    "allFunctions": "Todas las funcionalidades",
+    "automaticClips": "Clips automáticos",
+    "pricingLink": "Precios",
+    "blog": "Blog y guías",
+    "faq": "Preguntas frecuentes",
+    "tagline": "De videos largos a grandes clips.",
+    "copyright": "© {year} {name}."
   },
   "legal": {
     "eyebrow": "Legal",

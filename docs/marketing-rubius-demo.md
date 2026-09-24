@@ -21,8 +21,16 @@ Los títulos y las transcripciones literales se exportaron a `lib/marketing/rubi
 
 El reproductor muestra solo **05:55–08:10** (2:15 min), un fragmento continuo que contiene dos de los seis clips seleccionados. Las marcas de la línea temporal usan sus tiempos reales. La lista contiene los seis resultados, muestra cuatro tarjetas y permite desplazarse para ver las demás.
 
-La landing reproduce directamente desde `gs://clipealo-gpt-amigos-prod-v1/demos/landing/rubius/v3/` por la URL pública de Google Cloud Storage. `overview.mp4` es el fragmento en 16:9; los seis MP4 restantes son cortes en 9:16 (540×960) con subtítulos derivados de la transcripción. Todos incluyen una pista AAC. El audio empieza silenciado para permitir reproducción automática y el control de volumen lo activa por gesto del visitante.
+La landing reproduce directamente desde `gs://clipealo-gpt-amigos-prod-v1/demos/landing/rubius/v6/` por la URL pública de Google Cloud Storage. La fuente local es la descarga de mayor resolución disponible del video original: 2560×1440 a 60 fps. `overview.mp4` conserva el fragmento en 16:9 de v4, exportado a 1920×1080 a 60 fps. Los seis MP4 de clips son cortes en 9:16, exportados a 1080×1920 a 30 fps, todos con audio AAC.
+
+Los clips se regeneraron en el computador local con el `FFmpegProcessor.process_multi` de `plataform/clip-generator`, usando los títulos, rangos y subtítulos palabra por palabra que entrega el worker desde la BD. Se mantuvo el layout del generador: video horizontal centrado, fondo desenfocado, gancho arriba y subtítulos sincronizados; sin marca de agua. La codificación usa H.264 CRF 12 y preset slow para conservar más detalle. Las miniaturas se extrajeron de los MP4 finales y solo los archivos terminados se subieron a Google Cloud Storage.
+
+El audio está activado por defecto. El video principal espera el clic en reproducir para que el navegador pueda iniciar la reproducción con sonido; abrir un clip desde la lista inicia su reproducción con sonido tras ese gesto.
 
 El visor de cada clip replica la estructura de la app: reproductor, información y transcripción, formato y acciones. Las acciones abren la app activa en `https://app.clipealo-ai.com`; reproducir, buscar, activar audio, ampliar y cerrar funcionan dentro de la landing.
 
 El bucket histórico `clipealo-plataform-prod-v2` al que apuntan los registros antiguos ya no existe. Los archivos de esta demo están en el bucket actual y la landing no modifica las URL históricas de los proyectos.
+
+## Turno en la prueba social
+
+El canal aparece como **Turno** (`@turnoenvivo`). En la BD de Clipealo figura una cuenta Turno con 339 proyectos y 3.103 clips al 23 de septiembre de 2026. El [canal oficial de YouTube](https://www.youtube.com/@turnoenvivo/about) muestra 124 mil suscriptores; esa es la métrica de la tarjeta. El [sitio oficial](https://www.turno.live/) enlaza YouTube, Instagram, TikTok y X, por eso aparecen esos cuatro iconos. La foto de la tarjeta procede del avatar público del canal oficial.

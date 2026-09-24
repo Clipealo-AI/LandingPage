@@ -1,18 +1,23 @@
 # Clipealo Landing Page
 
-Landing page built with Vite + React + TypeScript + Tailwind.
+The public landing is the Vite + React site in `src/`. The repository also
+contains a Next.js application; Firebase Hosting deploys only the static Vite
+landing.
 
-## Run with Bun
+## Run the landing with Bun
 
 ```sh
-bun install
-bun run dev
+bun install --frozen-lockfile
+bun run dev:landing
 ```
 
-## Available scripts
+## Landing scripts
 
-- `bun run dev`: start local development server
-- `bun run build`: production build
-- `bun run lint`: run ESLint
-- `bun run check`: run build + lint
-- `bun run preview`: preview production build locally
+- `bun run build:landing`: production landing build
+- `bun run build:landing:dev`: dev build with analytics removed and indexing blocked
+- `bun run check:landing`: landing typecheck, lint, and production build
+- `bun run preview:landing`: preview the last landing build locally
+
+Pushes to `dev` build and deploy to Firebase Hosting in
+`clipealo-gpt-amigos-dev`. The production Cloud Build trigger follows `main`
+and deploys the production build to the existing Firebase Hosting site.
