@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "clipealo-gpt-amigos-prod",
-    "dev": "clipealo-gpt-amigos-dev"
+    "default": "clipealo-gpt-amigos-prod"
   }
 }

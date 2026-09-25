@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clipealo Brand Colors */
+    --color-pink: 350 95% 62%;
+    --color-purple: 290 78% 52%;
+    --color-cyan: 179 91% 58%;
+    --color-blue: 211 95% 49%;
+    
+    /* Backgrounds */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --bg-secondary: 0 0% 4%;
+    --bg-card: 0 0% 10%;
+    --bg-elevated: 0 0% 12%;
+    
+    /* Card */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    
+    /* Popover */
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Primary - Pink */
+    --primary: 350 95% 62%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary */
+    --secondary: 290 78% 52%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 65%;
+    
+    /* Accent - Cyan */
+    --accent: 179 91% 58%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Success */
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 0 0% 15%;
+    --border-hover: 0 0% 24%;
+    --input: 0 0% 15%;
+    --ring: 290 78% 52%;
+    
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 290 78% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 290 78% 52%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-optical-sizing: auto;
+  }
+}
+
+@layer components {
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, hsl(var(--color-pink)) 0%, hsl(var(--color-purple)) 50%, hsl(var(--color-cyan)) 100%);
+  }
+  
+  .gradient-text-pink-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, hsl(var(--color-pink)) 0%, hsl(var(--color-purple)) 100%);
+  }
+  
+  /* Gradient Backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--color-pink)) 0%, hsl(var(--color-purple)) 100%);
+  }
+  
+  .gradient-glow-bg {
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsla(var(--color-purple), 0.25) 0%, transparent 60%);
+  }
+  
+  /* Glow Effects */
+  .glow-pink {
+    box-shadow: 0 0 20px hsla(var(--color-pink), 0.5), 0 0 40px hsla(var(--color-pink), 0.3);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px hsla(var(--color-purple), 0.5), 0 0 40px hsla(var(--color-purple), 0.3);
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 20px hsla(var(--color-cyan), 0.5), 0 0 40px hsla(var(--color-cyan), 0.3);
+  }
+  
+  .glow-success {
+    box-shadow: 0 0 20px hsla(var(--success), 0.5), 0 0 40px hsla(var(--success), 0.3);
+  }
+  
+  /* Logo Glow Animation */
+  .logo-glow {
+    filter: drop-shadow(0 0 25px hsl(var(--color-cyan)));
+    animation: logo-pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes logo-pulse {
+    0%, 100% { filter: drop-shadow(0 0 25px hsl(var(--color-cyan))); }
+    50% { filter: drop-shadow(0 0 40px hsl(var(--color-cyan))); }
+  }
+  
+  /* Countdown Card */
+  .countdown-card {
+    @apply bg-card border-2 border-border rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .countdown-number {
+    @apply text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text;
+  }
+  
+  .countdown-label {
+    @apply text-[10px] sm:text-xs md:text-sm text-muted-foreground uppercase tracking-wider mt-1 sm:mt-2;
+  }
+  
+  /* Feature Card */
+  .feature-card {
+    @apply bg-card border border-border rounded-2xl p-8 transition-all duration-500;
+  }
+  
+  .feature-card:hover {
+    @apply border-secondary;
+    box-shadow: 0 20px 60px hsla(var(--color-purple), 0.3);
+    transform: translateY(-8px);
+  }
+  
+  /* Creator Card */
+  .creator-card {
+    @apply bg-card border border-border rounded-3xl p-10 text-center transition-all duration-500 h-full;
+  }
+  
+  .creator-card:hover {
+    @apply border-secondary;
+    box-shadow: 0 20px 60px hsla(var(--color-purple), 0.4);
+    transform: translateY(-12px);
+  }
+  
+  /* Form Input */
+  .form-input {
+    @apply w-full px-5 py-4 bg-bg-secondary border-2 border-border rounded-xl text-foreground text-base transition-all duration-300;
+  }
+  
+  .form-input::placeholder {
+    @apply text-muted-foreground;
+  }
+  
+  .form-input:focus {
+    @apply outline-none border-secondary bg-background;
+    box-shadow: 0 0 0 4px hsla(var(--color-purple), 0.2);
+  }
+  
+  .form-input.error {
+    @apply border-destructive;
+  }
+  
+  /* Custom Checkbox */
+  .custom-checkbox {
+    @apply flex items-center gap-3 p-4 bg-bg-secondary border-2 border-border rounded-xl cursor-pointer transition-all duration-200;
+  }
+  
+  .custom-checkbox:hover {
+    @apply bg-bg-elevated border-border-hover;
+  }
+  
+  .custom-checkbox.selected {
+    @apply border-secondary;
+    box-shadow: 0 0 12px hsla(var(--color-purple), 0.4);
+  }
+  
+  /* CTA Button */
+  .btn-cta {
+    @apply px-8 sm:px-10 md:px-14 py-4 sm:py-5 text-base sm:text-lg md:text-xl font-bold rounded-xl sm:rounded-2xl text-white transition-all duration-300 cursor-pointer border-none;
+    background: linear-gradient(135deg, hsl(var(--color-pink)) 0%, hsl(var(--color-purple)) 100%);
+    box-shadow: 0 0 40px hsla(var(--color-pink), 0.6);
+  }
+  
+  .btn-cta:hover:not(:disabled) {
+    transform: translateY(-4px);
+    box-shadow: 0 0 50px hsla(var(--color-pink), 0.8);
+  }
+  
+  .btn-cta:disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+  
+  /* WhatsApp Button */
+  .btn-whatsapp {
+    @apply w-full py-5 px-6 text-lg font-bold rounded-2xl text-white flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer border-none;
+    background: hsl(var(--success));
+    box-shadow: 0 0 25px hsla(var(--success), 0.5);
+  }
+  
+  .btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px hsla(var(--success), 0.7);
+  }
+  
+  /* Benefit Badge */
+  .benefit-badge {
+    @apply inline-block px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-card border-2 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold text-foreground;
+    border-color: hsl(var(--color-cyan));
+    box-shadow: 0 0 30px hsla(var(--color-cyan), 0.4);
+  }
+  
+  /* FAQ Item */
+  .faq-item {
+    @apply bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 mb-4;
+  }
+  
+  .faq-item.active {
+    @apply border-secondary;
+    box-shadow: 0 0 25px hsla(var(--color-purple), 0.3);
+  }
+  
+  .faq-question {
+    @apply p-6 cursor-pointer flex justify-between items-center font-semibold text-lg text-foreground select-none transition-colors duration-200;
+  }
+  
+  .faq-question:hover {
+    @apply bg-bg-secondary;
+  }
+  
+  /* Social Icon */
+  .social-icon {
+    @apply w-12 h-12 flex items-center justify-center border-2 border-border rounded-full text-muted-foreground transition-all duration-300;
+  }
+  
+  .social-icon:hover {
+    @apply text-accent border-accent;
+    box-shadow: 0 0 20px hsla(var(--color-cyan), 0.5);
+    transform: translateY(-4px);
+  }
+  
+  /* Grid Pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsla(var(--border), 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(var(--border), 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .bg-secondary-color {
+    background-color: hsl(var(--bg-secondary));
+  }
+  
+  .bg-elevated {
+    background-color: hsl(var(--bg-elevated));
+  }
+  
+  .text-cyan {
+    color: hsl(var(--color-cyan));
+  }
+  
+  .text-pink {
+    color: hsl(var(--color-pink));
+  }
+  
+  .border-cyan {
+    border-color: hsl(var(--color-cyan));
+  }
+}

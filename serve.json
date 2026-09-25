@@ -1,5 +1,0 @@
-{
-  "public": "out",
-  "trailingSlash": true,
-  "redirects": [{ "source": "/", "destination": "/es/", "type": 302 }]
-}

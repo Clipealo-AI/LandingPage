@@ -1,72 +1,33 @@
 {
   "hosting": {
     "site": "clipealo-gpt-amigos-prod",
-    "public": "out",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "redirects": [
-      { "source": "/", "destination": "/es/", "type": 302 },
-      { "source": "/en/pricing", "destination": "/en/precios/", "type": 301 },
-      { "source": "/en/pricing/", "destination": "/en/precios/", "type": 301 },
-      { "source": "/pt/precos", "destination": "/pt/precios/", "type": 301 },
-      { "source": "/pt/precos/", "destination": "/pt/precios/", "type": 301 },
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
       {
-        "source": "/en/legal/privacy",
-        "destination": "/en/legal/privacidad/",
-        "type": 301
-      },
-      {
-        "source": "/en/legal/privacy/",
-        "destination": "/en/legal/privacidad/",
-        "type": 301
-      },
-      {
-        "source": "/pt/legal/privacidade",
-        "destination": "/pt/legal/privacidad/",
-        "type": 301
-      },
-      {
-        "source": "/pt/legal/privacidade/",
-        "destination": "/pt/legal/privacidad/",
-        "type": 301
-      },
-      { "source": "/en/legal/terms", "destination": "/en/legal/terminos/", "type": 301 },
-      { "source": "/en/legal/terms/", "destination": "/en/legal/terminos/", "type": 301 },
-      { "source": "/pt/legal/termos", "destination": "/pt/legal/terminos/", "type": 301 },
-      { "source": "/pt/legal/termos/", "destination": "/pt/legal/terminos/", "type": 301 }
+        "source": "**",
+        "destination": "/index.html"
+      }
     ],
     "headers": [
       {
-        "source": "**",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-        ]
-      },
-      {
-        "source": "/_next/static/**",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-        ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|png|webp|avif|gif|svg|woff|woff2)",
+        "source": "**/*.@(js|css|woff2|woff|ttf)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=86400, stale-while-revalidate=604800"
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       },
       {
         "source": "**",
         "headers": [
-          { "key": "Strict-Transport-Security", "value": "max-age=31536000" },
           { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-          {
-            "key": "Permissions-Policy",
-            "value": "camera=(), microphone=(), geolocation=()"
-          }
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
         ]
       }
     ]
