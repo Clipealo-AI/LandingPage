@@ -25,23 +25,23 @@
     "menuItems": {
       "automaticClips": {
         "title": "Automatic clips",
-        "description": "Paste a video link and get clips ready to publish."
+        "description": "Upload a video or import a compatible link and review suggested clips."
       },
       "latamAi": {
-        "title": "AI trained on Latin American content",
-        "description": "Understands Latin American Spanish, local slang and cultural context."
+        "title": "Clips for Spanish-language content",
+        "description": "Review suggestions and captions for content in Spanish."
       },
       "subtitleEditor": {
         "title": "Subtitle editor",
-        "description": "Customize fonts, colors, animations and placement."
+        "description": "Review the transcript and adjust subtitle styling."
       },
       "verticalExport": {
         "title": "Vertical 9:16 export",
-        "description": "Prepare vertical clips with automatic reframing."
+        "description": "Prepare vertical clips and review the framing before export."
       },
       "brandTemplates": {
         "title": "Brand templates",
-        "description": "Apply each client’s visual identity in one click."
+        "description": "Keep a recognizable style for each project."
       },
       "projectManagement": {
         "title": "Project management",
@@ -49,7 +49,7 @@
       },
       "batchExport": {
         "title": "Bulk export",
-        "description": "Download every clip in a project at once."
+        "description": "Organize and download clips from a project."
       },
       "cliperos": {
         "title": "Clippers",
@@ -152,7 +152,7 @@
     "closeDialog": "Close"
   },
   "community": {
-    "title": "Creators with over 6.8 million followers and teams across Spanish-speaking Latin America already publish with Clipealo.",
+    "title": "Creators with over <b>6.8 million</b> followers and teams across Spanish-speaking Latin America already publish with Clipealo.",
     "creators": "Creators who trust Clipealo",
     "brands": "Brands and media outlets that use Clipealo",
     "followers": "followers"

@@ -100,13 +100,4 @@ function SheetTitle({
   )
 }
 
-export {
-  Sheet,
-  SheetTrigger,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  
-  SheetTitle,
-  
-}
+export { Sheet, SheetTrigger, SheetClose, SheetContent, SheetHeader, SheetTitle }

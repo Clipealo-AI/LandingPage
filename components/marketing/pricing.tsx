@@ -217,7 +217,7 @@ function TarjetaPlan({
       <p
         className={cn(
           "mt-1 min-h-4 text-xs text-muted-foreground",
-          cambiado && "m-price"
+          cambiado && plan.id !== "free" && "m-price"
         )}
       >
         {plan.id === "free" ? null : billingNote}

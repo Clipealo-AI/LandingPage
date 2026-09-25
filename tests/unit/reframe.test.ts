@@ -253,8 +253,8 @@ describe("Reframe · cortes de montaje", () => {
 
   it("el rótulo final queda fuera del recorte del marco", () => {
     const { marco, vista } = montarReframe()
-    const listo = vista.getByText("Clip 9:16 listo")
+    const listo = vista.getByText(es.marketing.reframe.ready)
     expect(marco.contains(listo)).toBe(false)
-    expect(marco.contains(vista.getByText("Tu video, tal como lo grabaste"))).toBe(true)
+    expect(marco.contains(vista.getByText(es.marketing.reframe.original))).toBe(true)
   })
 })

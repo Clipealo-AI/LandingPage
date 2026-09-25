@@ -15,7 +15,10 @@ async function esperarHidratacion(page: Page) {
 
 /** Navega y espera a que la página responda de verdad. */
 export async function irA(page: Page, ruta: string) {
-  const respuesta = await page.goto(ruta, { waitUntil: "load" })
+  const localizada = /^\/(?:es|en|pt)(?:\/|\?|$)/.test(ruta)
+    ? ruta
+    : `/es${ruta.startsWith("/") ? ruta : `/${ruta}`}`
+  const respuesta = await page.goto(localizada, { waitUntil: "load" })
   await esperarHidratacion(page)
   return respuesta
 }

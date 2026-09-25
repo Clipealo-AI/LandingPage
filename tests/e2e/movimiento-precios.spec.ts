@@ -372,11 +372,11 @@ for (const modo of MODOS) {
     }) => {
       await irA(page, "/")
       const tarjetas = page.locator("#precios [data-light]")
-      await expect(tarjetas).toHaveCount(3)
+      await expect(tarjetas).toHaveCount(4)
       const enFila = (page.viewportSize()?.width ?? 0) >= 1024
-      const retardos = enFila ? [0, 80, 160] : [0, 0, 0]
+      const retardos = enFila ? [0, 80, 160, 240] : [0, 0, 0, 0]
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         const tarjeta = tarjetas.nth(i)
         await expect(tarjeta).toHaveAttribute("data-light", "claro")
         // Cada tarjeta es su grupo: en una columna, cada una entra al llegar
@@ -396,7 +396,7 @@ for (const modo of MODOS) {
         else expect(NEUTRO_TRANSLATE).not.toContain(aMitad!.translate)
       }
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         await centrar(tarjetas.nth(i))
         await expect(tarjetas.nth(i)).toHaveAttribute("data-motion-state", "play")
       }
@@ -456,9 +456,9 @@ for (const modo of MODOS) {
       expect(await precio.textContent()).not.toBe(antes)
       // El gratuito vale lo mismo en los dos ciclos: no rueda
       await expect(gratis).not.toHaveClass(/\bm-price\b/)
-      // Precio y línea de facturación de las dos tarjetas de pago
-      await expect(seccion.locator(".m-price")).toHaveCount(4)
-      await expect.poll(async () => (await capturadas(page)).length).toBe(4)
+      // Precio y línea de facturación de las tres tarjetas de pago
+      await expect(seccion.locator(".m-price")).toHaveCount(6)
+      await expect.poll(async () => (await capturadas(page)).length).toBe(6)
       for (const c of await capturadas(page)) expect(c.nombre).toBe("rise-in")
 
       const aMitad = await medirCapturada(
@@ -498,17 +498,10 @@ for (const modo of MODOS) {
       const ciclo = seccion.getByRole("switch")
       const selectorAhorro = '#precios label [data-slot="badge"]'
       const ahorro = page.locator(selectorAhorro)
-      await expect(ciclo).toBeChecked()
+      await expect(ciclo).not.toBeChecked()
       await expect(ahorro).not.toHaveClass(/\bm-flash\b/)
 
       await capturar(page, selectorAhorro)
-
-      // A mensual: no destella
-      await ciclo.click()
-      await expect(ciclo).not.toBeChecked()
-      await expect(ahorro).not.toHaveClass(/\bm-flash\b/)
-      await esperarFrames(page)
-      expect(await capturadas(page)).toEqual([])
 
       // A anual: destella
       await ciclo.click()
@@ -656,7 +649,7 @@ for (const modo of MODOS) {
       await expect(page.locator('[data-motion-group="client"]')).toHaveCount(0)
 
       const tarjetas = page.locator("main [data-light]")
-      await expect(tarjetas).toHaveCount(3)
+      await expect(tarjetas).toHaveCount(4)
       for (const tarjeta of await tarjetas.all()) {
         await expect(tarjeta).not.toHaveClass(/\bm-anim\b/)
         await expect(tarjeta).toHaveCSS("opacity", "1")
@@ -674,19 +667,22 @@ for (const modo of MODOS) {
 
       await ciclo.click()
       await expect(precio).toHaveClass(/\bm-price\b/)
-      // La comparativa cambia sus cifras sin rodarlas (decisión documentada en pricing.tsx)
-      await expect(page.locator("table .m-price")).toHaveCount(0)
-
-      await ciclo.click()
       await expect(page.locator('main label [data-slot="badge"]')).toHaveClass(
         /\bm-flash\b/
       )
+      // La comparativa cambia sus cifras sin rodarlas (decisión documentada en pricing.tsx)
+      await expect(page.locator("table .m-price")).toHaveCount(0)
+
       await expect
         .poll(async () =>
           [...new Set((await capturadas(page)).map((c) => c.nombre))].sort()
         )
         .toEqual(["badge-flash", "rise-in"])
       await soltarCapturadas(page)
+      await ciclo.click()
+      await expect(page.locator('main label [data-slot="badge"]')).not.toHaveClass(
+        /\bm-flash\b/
+      )
 
       // Sin PointerLight montado, el atributo de luz no hace nada
       if (test.info().project.name !== "movil") {

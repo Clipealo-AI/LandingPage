@@ -6,7 +6,6 @@ import { UseCaseRoutePage } from "@/components/marketing/use-case-route-page"
 import { alternates } from "@/i18n/metadata"
 import { idiomaDe } from "@/i18n/server"
 import { useCaseNavigation } from "@/lib/marketing/navigation"
-import { useCasePages } from "@/lib/marketing/use-case-pages"
 
 export function generateStaticParams() {
   return useCaseNavigation.map(({ slug }) => ({ slug }))
@@ -18,17 +17,13 @@ export async function generateMetadata({
   const locale = await idiomaDe(params)
   const { slug } = await params
   const route = useCaseNavigation.find((item) => item.slug === slug)
-  const page = useCasePages[slug as keyof typeof useCasePages]
-  if (!route || !page) return {}
+  if (!route) return {}
 
   const t = await getTranslations({ locale, namespace: "marketing.header" })
   const translate = t as unknown as (key: string) => string
   return {
-    title: locale === "es" ? page.hero.title : translate(`menuItems.${route.id}.title`),
-    description:
-      locale === "es"
-        ? page.hero.description
-        : translate(`menuItems.${route.id}.description`),
+    title: translate(`menuItems.${route.id}.title`),
+    description: translate(`menuItems.${route.id}.description`),
     alternates: alternates(`/casos/${slug}`, locale),
   }
 }

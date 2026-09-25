@@ -43,7 +43,10 @@ export default async function LegalPage({ params }: PageProps<"/[locale]/legal/[
   if (!esSlug(slug)) notFound()
   const t = await getTranslations({ locale, namespace: "marketing" })
 
-  const document = await loadLegalDocument(locale, slug === "privacidad" ? "privacy" : "terms")
+  const document = await loadLegalDocument(
+    locale,
+    slug === "privacidad" ? "privacy" : "terms"
+  )
 
   return (
     <LegalDocument

@@ -134,25 +134,28 @@ export function Reframe() {
       </section>
 
       <section
-        className="relative overflow-hidden bg-ink-950 py-20 text-ink-50 md:py-28"
+        className="relative overflow-hidden bg-ink-950 py-20 text-ink-50 [--cut-color:var(--color-brand-500)] md:py-28"
         aria-labelledby="reframe-video-title"
       >
-        <div className="container-page grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
+        <div
+          data-motion-group=""
+          className="container-page grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16"
+        >
           <div className="max-w-xl">
-            <p className="text-sm font-semibold tracking-wide text-brand uppercase">
+            <p className="m-anim m-rise text-sm font-semibold tracking-wide text-brand uppercase">
               {t("videoEyebrow")}
             </p>
             <h3
               id="reframe-video-title"
-              className="mt-4 display text-[clamp(2rem,3vw,3rem)] leading-[1.1]"
+              className="m-anim m-cut mt-4 display text-[clamp(2rem,3vw,3rem)] leading-[1.1] [--i:1]"
             >
               {t("videoTitle")}
             </h3>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-mist/75 sm:text-lg">
+            <p className="m-anim m-rise mt-6 max-w-md text-base leading-relaxed text-mist/75 [--i:2] sm:text-lg">
               {t("videoLead")}
             </p>
           </div>
-          <div className="overflow-hidden rounded-frame border border-white/15 bg-ink-900 shadow-xl">
+          <div className="m-anim m-rise overflow-hidden rounded-frame border border-white/15 bg-ink-900 shadow-xl [--i:3]">
             <video
               className="block aspect-video w-full bg-ink-900 object-contain"
               poster="/media/one-content-many-clips.jpg"

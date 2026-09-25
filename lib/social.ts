@@ -1,5 +1,12 @@
 /** Destinos de publicación soportados por Clipealo. */
-const SOCIAL_IDS = ["tiktok", "instagram", "youtube", "x", "linkedin", "facebook"] as const
+const SOCIAL_IDS = [
+  "tiktok",
+  "instagram",
+  "youtube",
+  "x",
+  "linkedin",
+  "facebook",
+] as const
 
 export type SocialId = (typeof SOCIAL_IDS)[number]
 

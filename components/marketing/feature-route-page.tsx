@@ -1,10 +1,9 @@
+import { ArrowLeft, ArrowRight, Check } from "lucide-react"
 import { getTranslations } from "next-intl/server"
-import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
 import type { Locale } from "@/i18n/routing"
 import { featureNavigation } from "@/lib/marketing/navigation"
-import { featurePages } from "@/lib/marketing/feature-pages"
 import { Button } from "@/components/ui/button"
 import {
   RouteCallToAction,
@@ -12,17 +11,10 @@ import {
   RouteSection,
   WorkflowGrid,
 } from "@/components/marketing/route-page-ui"
-import { RichContent } from "@/components/marketing/rich-content"
 
 type Translator = (key: string) => string
 
-function workflowSteps(t: Translator) {
-  return (["upload", "analyze", "review"] as const).map((step) => ({
-    title: t(`shared.steps.${step}.title`),
-    description: t(`shared.steps.${step}.description`),
-  }))
-}
-
+/** A feature has the same information architecture and localized depth in every language. */
 export async function FeatureRoutePage({
   locale,
   slug,
@@ -30,115 +22,106 @@ export async function FeatureRoutePage({
   locale: Locale
   slug: string
 }) {
-  const feature = featurePages.find((item) => item.slug === slug)
+  const feature = featureNavigation.find((item) => item.slug === slug)
   if (!feature) return null
 
-  const routeT = await getTranslations({ locale, namespace: "routes" })
-  const marketingT = await getTranslations({ locale, namespace: "marketing" })
-  const menuT = await getTranslations({ locale, namespace: "marketing.header" })
-  const copy = menuT as unknown as Translator
-  const labels = routeT as unknown as Translator
-  const marketingText = marketingT as unknown as Translator
-  const menuItem = featureNavigation.find((item) => item.slug === slug)
-  const title = locale === "es" ? feature.h1 : copy(`menuItems.${menuItem?.id}.title`)
-  const lead =
-    locale === "es" ? feature.intro : copy(`menuItems.${menuItem?.id}.description`)
+  const routes = await getTranslations({ locale, namespace: "routes" })
+  const menu = await getTranslations({ locale, namespace: "marketing.header" })
+  const pages = await getTranslations({ locale, namespace: "pages" })
+  const label = routes as unknown as Translator
+  const copy = menu as unknown as Translator
+  const detail = pages as unknown as Translator
+  const Icon = feature.icon
+  const steps = (["upload", "analyze", "review"] as const).map((id) => ({
+    title: label(`shared.steps.${id}.title`),
+    description: label(`shared.steps.${id}.description`),
+  }))
 
   return (
     <>
-      <RouteHero eyebrow={copy("menus.features")} title={title} lead={lead}>
+      <RouteHero
+        eyebrow={copy("menus.features")}
+        title={copy(`menuItems.${feature.id}.title`)}
+        lead={copy(`menuItems.${feature.id}.description`)}
+      >
         <Button variant="brand" asChild>
-          <Link href="/precios">{labels("shared.viewPricing")}</Link>
+          <Link href="/precios">{label("shared.viewPricing")}</Link>
         </Button>
         <Button variant="outline" asChild>
           <Link href="https://app.clipealo-ai.com/">
-            {labels("shared.tryClipealo")} <ArrowRight aria-hidden="true" />
+            {label("shared.tryClipealo")} <ArrowRight aria-hidden="true" />
           </Link>
         </Button>
       </RouteHero>
 
-      <main className="container-page pb-16 md:pb-24">
-        {locale === "es" ? (
-          <div className="mx-auto max-w-4xl divide-y divide-border">
-            {feature.sections.map((section) => (
-              <section key={section.heading} className="py-10 first:pt-4 md:py-12">
-                <h2 className="display text-[clamp(1.5rem,3vw,2.25rem)] leading-tight text-balance">
-                  {section.heading}
-                </h2>
-                <RichContent text={section.content} className="mt-4" />
-              </section>
-            ))}
+      <section className="container-page py-14 md:py-20">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-14">
+          <div>
+            <span className="grid size-12 place-items-center rounded-xl bg-secondary text-primary">
+              <Icon className="size-6" aria-hidden="true" />
+            </span>
+            <h2 className="mt-6 display text-[clamp(1.75rem,4vw,2.75rem)] leading-tight text-balance">
+              {detail(`features.${feature.id}.heading`)}
+            </h2>
+            <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
+              {detail(`features.${feature.id}.body`)}
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              {detail("shared.planNote")}
+            </p>
           </div>
-        ) : (
-          <RouteSection title={labels("shared.howItWorks")}>
-            <WorkflowGrid steps={workflowSteps(labels)} />
-          </RouteSection>
-        )}
-
-        <section className="mx-auto mt-8 max-w-4xl rounded-2xl border border-border bg-muted/50 p-6 sm:p-8">
-          <h2 className="text-xl font-semibold tracking-tight">
-            {labels("shared.faqTitle")}
-          </h2>
-          <div className="mt-5 divide-y divide-border">
-            {[
-              "processing",
-              "fileFormats",
-              "faces",
-              "editCaptions",
-              "afterCancel",
-              "publish",
-            ].map((id) => (
-              <details key={id} className="group py-4 first:pt-0 last:pb-0">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium marker:hidden">
-                  {marketingText(`faq.items.${id}.q`)}
-                  <span
-                    className="text-xl text-primary transition-transform group-open:rotate-45"
-                    aria-hidden="true"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
-                  {marketingText(`faq.items.${id}.a`)}
-                </p>
-              </details>
+          <ul className="grid gap-3" aria-label={label("shared.whatYouCanDo")}>
+            {(["first", "second", "third"] as const).map((point) => (
+              <li
+                key={point}
+                className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 text-sm font-medium shadow-sm"
+              >
+                <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-primary">
+                  <Check className="size-4" aria-hidden="true" />
+                </span>
+                {detail(`features.${feature.id}.points.${point}`)}
+              </li>
             ))}
-          </div>
-        </section>
+          </ul>
+        </div>
+      </section>
 
-        <nav
-          className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-between gap-4 border-t border-border pt-6"
-          aria-label={labels("shared.related")}
+      <RouteSection title={detail("shared.workflowTitle")} className="bg-muted/40">
+        <WorkflowGrid steps={steps} />
+      </RouteSection>
+
+      <nav
+        className="container-page flex flex-wrap items-center justify-between gap-4 py-12"
+        aria-label={label("shared.related")}
+      >
+        <Link
+          href="/funciones"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
         >
-          <Link
-            href="/funciones"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-          >
-            <ArrowLeft className="size-4" aria-hidden="true" />{" "}
-            {labels("shared.backToAllFeatures")}
-          </Link>
-          <div className="flex flex-wrap gap-3">
-            {featureNavigation
-              .filter((item) => item.slug !== slug)
-              .slice(0, 2)
-              .map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/funciones/${item.slug}` as never}
-                  className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-                >
-                  {copy(`menuItems.${item.id}.title`)}
-                </Link>
-              ))}
-          </div>
-        </nav>
-      </main>
+          <ArrowLeft className="size-4" aria-hidden="true" />{" "}
+          {label("shared.backToAllFeatures")}
+        </Link>
+        <div className="flex flex-wrap gap-4">
+          {featureNavigation
+            .filter((item) => item.slug !== slug)
+            .slice(0, 2)
+            .map((item) => (
+              <Link
+                key={item.slug}
+                href={`/funciones/${item.slug}` as never}
+                className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              >
+                {copy(`menuItems.${item.id}.title`)}
+              </Link>
+            ))}
+        </div>
+      </nav>
 
       <RouteCallToAction
-        heading={labels("shared.featureCtaHeading")}
-        lead={labels("shared.featureCtaLead")}
-        pricingLabel={labels("shared.viewPricing")}
-        contactLabel={labels("shared.contactWhatsApp")}
+        heading={label("shared.featureCtaHeading")}
+        lead={label("shared.featureCtaLead")}
+        pricingLabel={label("shared.viewPricing")}
+        contactLabel={label("shared.contactWhatsApp")}
       />
     </>
   )

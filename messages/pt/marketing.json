@@ -25,23 +25,23 @@
     "menuItems": {
       "automaticClips": {
         "title": "Clipes automáticos",
-        "description": "Cole o link de um vídeo e receba clipes prontos para publicar."
+        "description": "Envie um vídeo ou importe um link compatível e revise os clipes sugeridos."
       },
       "latamAi": {
-        "title": "IA treinada com conteúdo latino-americano",
-        "description": "Entende o espanhol latino, as gírias locais e o contexto cultural."
+        "title": "Clipes para conteúdo em espanhol",
+        "description": "Revise sugestões e legendas de conteúdo em espanhol."
       },
       "subtitleEditor": {
         "title": "Editor de legendas",
-        "description": "Personalize fontes, cores, animações e posição."
+        "description": "Revise a transcrição e ajuste o estilo das legendas."
       },
       "verticalExport": {
         "title": "Exportação vertical 9:16",
-        "description": "Prepare clipes verticais com reenquadramento automático."
+        "description": "Prepare clipes verticais e revise o enquadramento antes de exportar."
       },
       "brandTemplates": {
         "title": "Modelos de marca",
-        "description": "Aplique a identidade visual de cada cliente com um clique."
+        "description": "Mantenha um estilo reconhecível para cada projeto."
       },
       "projectManagement": {
         "title": "Gestão de projetos",
@@ -49,7 +49,7 @@
       },
       "batchExport": {
         "title": "Exportação em massa",
-        "description": "Baixe todos os clipes de um projeto de uma só vez."
+        "description": "Organize e baixe os clipes de um projeto."
       },
       "cliperos": {
         "title": "Clippers",
@@ -152,7 +152,7 @@
     "closeDialog": "Fechar"
   },
   "community": {
-    "title": "Criadores com mais de 6,8 milhões de seguidores e equipes de toda a América Hispânica já publicam com o Clipealo.",
+    "title": "Criadores com mais de <b>6,8 milhões</b> de seguidores e equipes de toda a América Hispânica já publicam com o Clipealo.",
     "creators": "Criadores que já confiam no Clipealo",
     "brands": "Marcas e veículos que usam o Clipealo",
     "followers": "seguidores"

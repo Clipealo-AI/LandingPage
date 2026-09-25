@@ -56,6 +56,12 @@ const NEGACIONES = [
 ]
 
 describe("mensajes de los tres idiomas", () => {
+  it("conservan la marca de la cifra animada en Comunidad", () => {
+    for (const mensajes of Object.values(planos)) {
+      expect(mensajes["marketing.community.title"]).toMatch(/<b>[^<]+<\/b>/)
+    }
+  })
+
   it("no vuelven a decir que Clipealo no publica", () => {
     const culpables: string[] = []
     for (const [locale, mensajes] of Object.entries(planos))

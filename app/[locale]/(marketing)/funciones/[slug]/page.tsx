@@ -6,7 +6,6 @@ import { FeatureRoutePage } from "@/components/marketing/feature-route-page"
 import { alternates } from "@/i18n/metadata"
 import { idiomaDe } from "@/i18n/server"
 import { featureNavigation } from "@/lib/marketing/navigation"
-import { featurePages } from "@/lib/marketing/feature-pages"
 
 export function generateStaticParams() {
   return featureNavigation.map(({ slug }) => ({ slug }))
@@ -17,17 +16,8 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/funciones/[slug]">): Promise<Metadata> {
   const locale = await idiomaDe(params)
   const { slug } = await params
-  const page = featurePages.find((item) => item.slug === slug)
   const route = featureNavigation.find((item) => item.slug === slug)
-  if (!page || !route) return {}
-
-  if (locale === "es") {
-    return {
-      title: page.metaTitle,
-      description: page.metaDescription,
-      alternates: alternates(`/funciones/${slug}`, locale),
-    }
-  }
+  if (!route) return {}
 
   const t = await getTranslations({ locale, namespace: "marketing.header" })
   const translate = t as unknown as (key: string) => string

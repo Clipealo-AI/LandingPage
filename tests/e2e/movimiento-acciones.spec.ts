@@ -312,7 +312,7 @@ for (const modo of MODOS) {
       // Se ve entero en los dos modos; con reduce, sin escalar
       expect(encuadre.opacidadMaxima).toBe(1)
       expect(encuadre.desplaza).toBe(modo !== "reduce")
-      expect(new URL(page.url()).pathname).toMatch(/^\/(?:en|pt)?\/?$/)
+      expect(new URL(page.url()).pathname).toMatch(/^\/(?:es|en|pt)\/?$/)
 
       // La tinta es solo del CTA: el botón naranja del hero se encuadra en naranja.
       // Dos «pop» a menos de 60 ms suenan como uno (lib/sound.ts, doble clic): con

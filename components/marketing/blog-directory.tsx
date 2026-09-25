@@ -7,17 +7,12 @@ import { ArrowRight, CalendarDays, Clock3 } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 import type { BlogArticle, BlogCategory } from "@/lib/marketing/blog-articles"
 
-type ArticleCard = Pick<
-  BlogArticle,
-  | "id"
-  | "title"
-  | "category"
-  | "metaDescription"
-  | "readingTime"
-  | "displayDate"
-  | "cover"
-  | "author"
->
+type ArticleCard = Pick<BlogArticle, "id" | "category" | "cover" | "author"> & {
+  title: string
+  metaDescription: string
+  readingTime: string
+  displayDate: string
+}
 type CategoryLabels = Record<BlogCategory, string>
 
 export function BlogDirectory({

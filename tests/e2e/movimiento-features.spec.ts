@@ -314,7 +314,7 @@ for (const modo of MODOS) {
 
       await terminar(vertical)
       const [finalHorizontal] = await estilos(horizontal)
-      expect(Number(finalHorizontal.opacity)).toBeCloseTo(0.4, 2)
+      expect(Number(finalHorizontal.opacity)).toBeCloseTo(0.7, 2)
       for (const esquina of await estilos(esquinas)) {
         expect(esquina.opacity).toBe("1")
         expect(desplaza(esquina.translate)).toBe(false)
@@ -538,7 +538,7 @@ test.describe("Features y Steps sin JavaScript", () => {
       await expect(l.producto.locator("[data-motion-state]")).toHaveCount(0)
       await expect(l.pasos.locator("[data-motion-state]")).toHaveCount(0)
 
-      await expect(l.vertical.locator(".m-dim")).toHaveCSS("opacity", "0.4")
+      await expect(l.vertical.locator(".m-dim")).toHaveCSS("opacity", "0.7")
       await expect(l.producto.locator("h2")).toHaveCSS("clip-path", "none")
       await expect(l.pasos.locator("h2")).toHaveCSS("opacity", "1")
     })

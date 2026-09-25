@@ -1,0 +1,105 @@
+{
+  "shared": {
+    "planNote": "Some features depend on your plan. Check the comparison before you start.",
+    "workflowTitle": "From video to clip"
+  },
+  "features": {
+    "automaticClips": {
+      "heading": "Find moments worth sharing",
+      "body": "Upload a video or import a supported link. Clipealo suggests segments with start and end points so you can review the context before turning them into clips.",
+      "points": {
+        "first": "Review suggested moments",
+        "second": "Adjust the start and end",
+        "third": "Prepare the clip to share"
+      }
+    },
+    "subtitleEditor": {
+      "heading": "Make every word easy to read",
+      "body": "Review the transcript and correct names or phrases before exporting. Adjust subtitle styles using the options in your plan.",
+      "points": {
+        "first": "Correct the transcript",
+        "second": "Choose a readable style",
+        "third": "Check the final result"
+      }
+    },
+    "verticalExport": {
+      "heading": "Prepare a vertical version",
+      "body": "Turn a horizontal recording into a 9:16 clip. Check the framing and adjust it in the editor when needed.",
+      "points": {
+        "first": "Select the segment",
+        "second": "Review who appears in frame",
+        "third": "Export vertically"
+      }
+    },
+    "brandTemplates": {
+      "heading": "Keep your visual identity consistent",
+      "body": "Organize the look of your clips with the brand options included in your plan. Check colors and captions before publishing.",
+      "points": {
+        "first": "Define the style",
+        "second": "Apply it to a project",
+        "third": "Review every delivery"
+      }
+    },
+    "latamAi": {
+      "heading": "Work with Spanish language content",
+      "body": "Review suggested moments and transcripts from Spanish interviews, lessons or streams. Your judgment is still essential when choosing each cut.",
+      "points": {
+        "first": "Import the content",
+        "second": "Review suggestions",
+        "third": "Correct the nuances"
+      }
+    },
+    "batchExport": {
+      "heading": "Prepare several deliveries together",
+      "body": "Select clips from a project and organize their download with the features available in your plan. Check each file before delivery.",
+      "points": {
+        "first": "Select the clips",
+        "second": "Check the style",
+        "third": "Download the delivery"
+      }
+    },
+    "projectManagement": {
+      "heading": "Keep everything in the right project",
+      "body": "Group videos and clips by client, campaign or date. Return to a recording and find its results without losing context.",
+      "points": {
+        "first": "Create a project",
+        "second": "Group videos and clips",
+        "third": "Find what you need"
+      }
+    }
+  },
+  "cases": {
+    "cliperos": {
+      "heading": "More time for creative judgment",
+      "body": "Start with the full video, review suggested moments and spend your editing time on cuts that represent each creator."
+    },
+    "streamers": {
+      "heading": "Your stream lives beyond the broadcast",
+      "body": "Turn moments from your streams into vertical clips you can review, edit and share with your community."
+    },
+    "podcasters": {
+      "heading": "Make every great conversation visible",
+      "body": "Pick ideas from an episode, review the framing and prepare captioned clips for your channels."
+    },
+    "coaches": {
+      "heading": "A lesson can start new conversations",
+      "body": "Bring back clear explanations from classes or sessions and turn them into clips you can review before publishing."
+    },
+    "creators": {
+      "heading": "Get more from what you already recorded",
+      "body": "Start with interviews, streams or long videos and prepare new short pieces in your own style."
+    },
+    "communities": {
+      "heading": "Keep the event moments alive",
+      "body": "Find plays, reactions or conversations from your community and prepare clips to keep sharing them."
+    },
+    "agencies": {
+      "heading": "Every client in context",
+      "body": "Organize material by project, review the cuts and tailor each delivery to the brand using the options in your plan."
+    },
+    "brands": {
+      "heading": "More pieces from one production",
+      "body": "Repurpose interviews, events and campaign videos into clips you can review before sending them to each channel."
+    }
+  }
+}

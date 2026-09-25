@@ -23,13 +23,14 @@ export async function generateMetadata({
 export default async function BlogPage({ params }: PageProps<"/[locale]/blog">) {
   const locale = await idiomaDe(params)
   const t = await getTranslations({ locale, namespace: "routes" })
+  const copy = await getTranslations({ locale, namespace: "articles" })
   const articles = [...blogArticles]
     .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
     .map((article) => ({
       id: article.id,
-      title: article.title,
+      title: copy(`items.${article.id}.title` as never),
       category: article.category,
-      metaDescription: article.metaDescription,
+      metaDescription: copy(`items.${article.id}.description` as never),
       author: article.author,
       cover: article.cover,
       displayDate: new Intl.DateTimeFormat(LOCALE_TAG[locale], {
@@ -37,9 +38,7 @@ export default async function BlogPage({ params }: PageProps<"/[locale]/blog">) 
         month: "long",
         year: "numeric",
       }).format(new Date(article.isoDate)),
-      readingTime: t("blog.readingTime", {
-        minutes: article.readingTime.replace(/\s*min(?:utos?)?/i, ""),
-      }),
+      readingTime: t("blog.readingTime", { minutes: 1 }),
     }))
   const categoryLabels: Record<BlogCategory, string> = {
     "Buenas Prácticas": t("blog.categories.Buenas Prácticas"),

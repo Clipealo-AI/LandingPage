@@ -163,7 +163,7 @@ for (const modo of MODOS) {
         : anchoEsperado(final, 1)
       expect(Math.abs(final.visible - anchoFinal)).toBeLessThanOrEqual(3)
       expect(final.visible).toBeLessThan(inicial.visible * 0.6)
-      await expect(seccion.getByText("Clip 9:16 listo")).toBeVisible()
+      await expect(seccion.getByText("Clip vertical · 9:16")).toBeVisible()
       await expect(seccion.locator(".reframe-ready")).toHaveCSS("opacity", "1")
       await expect(seccion.locator(".reframe-original")).toHaveCSS("opacity", "0")
     })
@@ -233,7 +233,7 @@ for (const modo of MODOS) {
             ),
             `selección en el plano ${plano}: ${seleccion.visible} px de ${seleccion.caja}`
           ).toBeLessThanOrEqual(3)
-          // «Tu video…» solo en el original; «Clip 9:16 listo» solo en el último
+          // El rótulo original solo aparece al inicio; el vertical, al final.
           await expect(original).toHaveCSS("opacity", plano === 0 ? "1" : "0")
           await expect(listo).toHaveCSS("opacity", plano === 3 ? "1" : "0")
         }

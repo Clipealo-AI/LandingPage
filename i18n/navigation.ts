@@ -7,8 +7,7 @@ import { routing } from "@/i18n/routing"
  * y `redirect` de `next/navigation`: añaden el prefijo y traducen la dirección.
  * `usePathname` devuelve la ruta interna, sin prefijo de idioma.
  */
-export const { Link,  usePathname, useRouter, getPathname } =
-  createNavigation(routing)
+export const { Link, usePathname, useRouter, getPathname } = createNavigation(routing)
 
 type Query = Record<string, string>
 

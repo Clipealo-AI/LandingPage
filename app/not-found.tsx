@@ -14,13 +14,13 @@ export default function NotFound() {
         <main>
           <p className="display text-7xl text-brand">404</p>
           <nav className="mt-8 flex justify-center gap-6 text-sm underline underline-offset-4">
-            <a href="/" hrefLang="es">
+            <a href="/es/" hrefLang="es">
               Inicio
             </a>
-            <a href="/en" lang="en" hrefLang="en">
+            <a href="/en/" lang="en" hrefLang="en">
               Home
             </a>
-            <a href="/pt" lang="pt-BR" hrefLang="pt-BR">
+            <a href="/pt/" lang="pt-BR" hrefLang="pt-BR">
               Início
             </a>
           </nav>
