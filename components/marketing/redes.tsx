@@ -1,16 +1,15 @@
 "use client"
 
 import * as React from "react"
-import { Check, Clock } from "lucide-react"
+import Image from "next/image"
+import { Check } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
-import { formatDuration } from "@/lib/format"
 import { EASE_BRAND, prefiereMenosMovimiento } from "@/lib/motion"
 import { ASPECT_RATIOS, FORMATOS_PUBLICACION } from "@/lib/video-formats"
 import { socialList, type SocialId } from "@/lib/social"
 import { useMotionGroup } from "@/hooks/use-motion-group"
-import { Badge } from "@/components/ui/badge"
 import { CropFrame } from "@/components/brand/logo"
 import { SocialBadge } from "@/components/brand/social"
 import { MediaFrame } from "@/components/video/media-frame"
@@ -84,8 +83,7 @@ function reencuadrar(escenario: HTMLElement): Animation[] {
 }
 
 /**
- * Con «reducir movimiento» el formato cambia al instante (app/motion/redes.css)
- * y lo que se ve es el marco fundiéndose, en el mismo fotograma del cambio.
+ * Con «reducir movimiento» el destino cambia al instante y el marco se funde.
  * `ease-out` en 300 ms: con --ease-brand el fundido estaba casi hecho en el
  * primer fotograma y no se leía.
  */
@@ -99,7 +97,7 @@ function fundirMarco(escenario: HTMLElement) {
  * «Un corte, seis destinos».
  *
  * La sección enseña que un mismo clip vertical 9:16 puede prepararse para cada
- * destino. Al elegir una red cambian sus límites de duración y su superficie.
+ * destino. Al elegir una red cambia el destino mostrado.
  *
  * El marco conserva la proporción 9:16 en todos los destinos. El borde y las
  * esquinas usan el gesto de marca al cambiar de red sin desplazar el layout.
@@ -201,31 +199,11 @@ export function Redes() {
                         {tc(`social.surface.${r.id}`)}
                       </span>
                     </span>
-                    <span className="shrink-0 text-[11px] text-muted-foreground tabular-nums">
-                      {FORMATOS_PUBLICACION.join(" · ")}
-                    </span>
                   </button>
                 </li>
               )
             })}
           </ul>
-
-          {/* Dato útil, no adorno: lo que cada red admite */}
-          <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
-            <Badge variant="brand-subtle" className="gap-1">
-              <Clock aria-hidden />{" "}
-              {t("sweetSpot", {
-                min: formatDuration(red.sweetSpot[0]),
-                max: formatDuration(red.sweetSpot[1]),
-              })}
-            </Badge>
-            <span className="text-xs text-muted-foreground">
-              {t("sweetSpotNote", {
-                network: red.name,
-                max: formatDuration(red.maxSeconds),
-              })}
-            </span>
-          </div>
 
           <ul className="mt-5 space-y-1.5 text-sm text-muted-foreground">
             {VENTAJAS.map((id) => (
@@ -235,6 +213,9 @@ export function Redes() {
               </li>
             ))}
           </ul>
+          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
+            {t("planNote")}
+          </p>
         </div>
         {/* Escenario */}
         <div
@@ -275,7 +256,18 @@ export function Redes() {
                 <MediaFrame
                   aspect={aspecto}
                   className="m-redes-media h-full w-full bg-white/8 ring-white/15"
-                />
+                >
+                  <Image
+                    src="/media/podcast-source.webp"
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 150px, 220px"
+                    className="object-cover object-[76%_center]"
+                  />
+                  <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-3 pt-12 pb-4 text-center text-xs font-semibold text-white">
+                    {t("previewClip")}
+                  </span>
+                </MediaFrame>
               </div>
             </CropFrame>
 
@@ -290,7 +282,7 @@ export function Redes() {
               <span key={activa} className="m-swap block">
                 {red.name} · {aspecto}
                 <span className="block text-xs opacity-70">
-                  {tc(`social.surface.${red.id}`)} · {tc(`video.aspect.${aspecto}.label`)}
+                  {tc(`social.surface.${red.id}`)} · {t("previewNote")}
                 </span>
               </span>
             </p>

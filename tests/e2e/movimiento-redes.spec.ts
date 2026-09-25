@@ -530,124 +530,21 @@ for (const modo of MODOS) {
       expect(await page.evaluate(() => window.__clipealoSounds)).toEqual([])
     })
 
-    test("el formato sigue a la red recortando el marco: con transición, o al instante con fundido del marco con reduce", async ({
-      page,
-    }) => {
+    test("el clip conserva 9:16 al elegir otra red", async ({ page }) => {
       await irA(page, "/")
       const grupo = escenario(page)
       await grupo.evaluate((el) =>
         el.scrollIntoView({ block: "center", behavior: "instant" })
       )
-      const media = grupo.locator(".m-redes-media")
-      await expect(media).toHaveCSS("transition-duration", reduce ? "0s" : "0.5s")
-
-      // De TikTok (9:16) a LinkedIn (1:1, que también cabe en móvil), leyendo
-      // justo después del commit de React y antes de que pase un fotograma
-      const medida = await page.evaluate(async () => {
-        const marco = document.querySelector<HTMLElement>("#redes [data-redes-marco]")!
-        const media = marco.querySelector<HTMLElement>(".m-redes-media")!
-        const boton = Array.from(
-          document.querySelectorAll<HTMLButtonElement>("#redes ul[aria-label] button")
-        ).find((b) => b.textContent?.trim().endsWith("1:1"))!
-        /** Ancho que se ve en la línea central (el recorte es `clip-path`: hit-testing). */
-        const visible = () => {
-          const r = media.getBoundingClientRect()
-          const y = r.top + r.height / 2
-          let izquierda = Number.NaN
-          let derecha = Number.NaN
-          for (let x = Math.floor(r.left); x <= Math.ceil(r.right); x++) {
-            const tocado = document.elementFromPoint(x, y)
-            if (tocado && media.contains(tocado)) {
-              if (Number.isNaN(izquierda)) izquierda = x
-              derecha = x
-            }
-          }
-          return Number.isNaN(izquierda) ? 0 : derecha - izquierda + 1
-        }
-        const caja = () => {
-          const r = marco.getBoundingClientRect()
-          return { x: r.left, ancho: r.width }
-        }
-        const alto = marco.getBoundingClientRect().height
-        const cajaAntes = caja()
-        const antes = visible()
-        const pulsado = new Promise<void>((listo) => {
-          const observador = new MutationObserver(() => {
-            if (boton.getAttribute("aria-pressed") !== "true") return
-            observador.disconnect()
-            listo()
-          })
-          observador.observe(boton, {
-            attributes: true,
-            attributeFilter: ["aria-pressed"],
-          })
-        })
-        boton.click()
-        await pulsado
-        return {
-          alto,
-          antes,
-          justo: visible(),
-          cajaAntes,
-          cajaJusto: caja(),
-          transiciones: media.getAnimations().filter((a) => a instanceof CSSTransition)
-            .length,
-        }
-      })
-
-      // La caja no cambia nunca, ni de sitio ni de ancho: no desplaza el layout
-      expect(Math.abs(medida.cajaJusto.x - medida.cajaAntes.x)).toBeLessThanOrEqual(0.5)
-      expect(
-        Math.abs(medida.cajaJusto.ancho - medida.cajaAntes.ancho)
-      ).toBeLessThanOrEqual(0.5)
-      expect(Math.abs(medida.antes - (medida.alto * 9) / 16)).toBeLessThanOrEqual(2)
-
-      const final = medida.alto
-      const fundidos = (await sonda(page)).llamadas.filter((l) => l.quien === "marco")
-      if (reduce) {
-        // Cambio instantáneo, y lo que se ve es el marco fundiéndose desde 0,5
-        expect(Math.abs(medida.justo - final)).toBeLessThanOrEqual(2)
-        expect(medida.transiciones).toBe(0)
-        expect(fundidos).toHaveLength(1)
-        expect(fundidos[0].opacidad).toBe("0.5")
-      } else {
-        expect(medida.transiciones).toBe(1)
-        expect(Math.abs(medida.justo - medida.antes)).toBeLessThanOrEqual(
-          (final - medida.antes) / 4
-        )
-        expect(fundidos).toEqual([])
-      }
-
-      // Al terminar: el formato nuevo, con el borde y las esquinas en su borde visible
-      await esperarAnimaciones(page)
-      const fin = await grupo.evaluate((el) => {
-        const media = el.querySelector<HTMLElement>(".m-redes-media")!
-        const marco = el.querySelector<HTMLElement>("[data-redes-marco]")!
-        const r = marco.getBoundingClientRect()
-        const y = r.top + r.height / 2
-        let izquierda = Number.NaN
-        let derecha = Number.NaN
-        for (let x = Math.floor(r.left); x <= Math.ceil(r.right); x++) {
-          const tocado = document.elementFromPoint(x, y)
-          if (tocado && media.contains(tocado)) {
-            if (Number.isNaN(izquierda)) izquierda = x
-            derecha = x
-          }
-        }
-        const esquina = el
-          .querySelector<HTMLElement>('[data-crop-corner="tl"]')!
-          .getBoundingClientRect()
-        return {
-          visible: derecha - izquierda + 1,
-          recorte: (r.width - r.height) / 2,
-          borde: parseFloat(getComputedStyle(marco, "::before").translate),
-          esquina: esquina.left - r.left,
-        }
-      })
-      expect(Math.abs(fin.visible - final)).toBeLessThanOrEqual(2)
-      expect(Math.abs(fin.borde - fin.recorte)).toBeLessThanOrEqual(1)
-      // La esquina de CropFrame va 6 px por fuera del borde visible, como sin recorte
-      expect(Math.abs(fin.esquina - (fin.recorte - 6))).toBeLessThanOrEqual(1)
+      const marco = grupo.locator("[data-redes-marco]")
+      const antes = await marco.boundingBox()
+      await botones(page).nth(4).click()
+      await expect(grupo.locator("[aria-live]")).toContainText("LinkedIn · 9:16")
+      const despues = await marco.boundingBox()
+      expect(antes).not.toBeNull()
+      expect(despues).not.toBeNull()
+      expect(Math.abs(despues!.width - antes!.width)).toBeLessThanOrEqual(0.5)
+      expect(Math.abs(despues!.x - antes!.x)).toBeLessThanOrEqual(0.5)
     })
 
     test("pasar el ratón por la lista de redes no desplaza el layout (CLS)", async ({
@@ -710,7 +607,7 @@ for (const modo of MODOS) {
       }
 
       const cls = await registro()
-      // El escenario no desplaza nada; en la sección solo cambia el texto de la duración
+      // El escenario conserva sus dimensiones al cambiar de destino
       expect(cls.escenario, cls.fuentes.join("\n")).toBeLessThan(0.001)
       expect(cls.total, cls.fuentes.join("\n")).toBeLessThan(0.02)
     })
@@ -735,9 +632,9 @@ for (const modo of MODOS) {
         await expect(titular).toHaveCSS("clip-path", "none")
         await expect(titular).toHaveCSS("opacity", "1")
 
-        await botones(page).filter({ hasText: "16:9" }).click()
+        await botones(page).nth(3).click()
         const rotulo = page.locator("#redes [aria-live]")
-        await expect(rotulo).toContainText("X · 16:9")
+        await expect(rotulo).toContainText("X · 9:16")
         await expect(rotulo.locator(".m-swap")).toHaveCSS("animation-name", "fade-soft")
         await expect(escenario(page)).toHaveAttribute("data-redes-cambio", "")
       })
@@ -762,14 +659,14 @@ test.describe("movimiento de Redes con la bandera ?movimiento=", () => {
         el.scrollIntoView({ block: "center", behavior: "instant" })
       )
       await expect(grupo).toHaveAttribute("data-motion-state", /^(play|static)$/)
-      // CSS: el formato salta o transiciona según la bandera, no según el sistema
+      // CSS: el marco sigue la preferencia elegida
       await expect(grupo.locator(".m-redes-media")).toHaveCSS(
         "transition-duration",
         reducido ? "0s" : "0.5s"
       )
 
       // JS: el fundido del marco y las esquinas en su sitio, también según la bandera
-      await botones(page).filter({ hasText: "16:9" }).click()
+      await botones(page).nth(4).click()
       await expect
         .poll(
           async () =>

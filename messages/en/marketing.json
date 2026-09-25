@@ -159,75 +159,77 @@
   },
   "reframe": {
     "title": "The same content,<br></br>more possibilities.",
-    "original": "Your video, just as you shot it",
-    "ready": "9:16 clip ready",
-    "caption": "Clip what really matters."
+    "lead": "One long video can become several clips. Choose the moment, adjust the frame and decide where to share it.",
+    "sourceAlt": "Two people talking into microphones in a podcast studio",
+    "original": "Original recording · 16:9",
+    "ready": "Vertical clip · 9:16",
+    "caption": "The frame follows the moment you chose.",
+    "videoEyebrow": "From video to your channels",
+    "videoTitle": "One recording. Many clips.",
+    "videoLead": "See the full journey: pick a moment, prepare it vertically and choose its destinations. You can review every clip before publishing.",
+    "videoLabel": "Animation showing a long video becoming several clips for social channels",
+    "videoFallback": "Your browser cannot play this video."
   },
   "features": {
     "eyebrow": "The product",
-    "title": "Small clips,<br></br>big opportunities.",
-    "lead": "The whole journey—from upload to publishing—in a single tool, without exporting anywhere else.",
+    "title": "AI suggests.<br></br>You decide.",
+    "lead": "Find a moment, shape it to your style and choose how to share it. You stay in control at every step.",
     "ai": {
-      "title": "AI that finds the best moments",
-      "body": "It analyzes the audio, spots attention peaks and suggests the cuts. You save hours of editing and focus on creating."
+      "title": "Suggested moments to review",
+      "body": "AI suggests segments with their start and end points. You review the context and choose which ones become clips.",
+      "visual": "Suggested segment · review the cut before creating it"
     },
     "vertical": {
-      "title": "Vertical from minute one",
-      "body": "Automatic reframe that follows the speaker. No black bars, no cut-off faces."
-    },
-    "quote": {
-      "text": "Ideas are worthless without execution.",
-      "author": "Content creator"
+      "title": "Framing for each clip",
+      "body": "Prepare a vertical 9:16 version and check what the crop shows. Automatic subject tracking depends on your plan."
     },
     "captions": {
-      "title": "Captions people actually read",
-      "body": "Timestamped transcription, proper name correction and translation into nine languages."
+      "title": "Captions you can correct",
+      "body": "Review the transcript, names and visual style before exporting. Translation depends on your plan."
     },
     "allInOne": {
-      "title": "Everything in one tool",
-      "body": "No jumping between five apps to publish a clip."
+      "title": "From cut to channel",
+      "body": "Organize, edit and publish from the same project. Schedule posts when your plan includes it."
     },
     "toolbox": {
-      "trim": "Trim",
-      "edit": "Edit",
-      "share": "Share",
+      "trim": "Select",
+      "edit": "Refine",
+      "share": "Publish",
       "ai": "AI",
       "creators": "Creators",
       "clips": "Clips",
       "captions": "Captions",
       "analytics": "Analytics"
-    },
-    "multiformat": {
-      "title": "One format for every platform",
-      "body": "Prepare vertical 9:16 clips for publishing across your social channels."
     }
   },
   "steps": {
-    "title": "Same content,<br></br>more impact.",
+    "title": "From one long video<br></br>to clips ready to go.",
+    "previewCaption": "One idea, one clip.",
     "full": {
-      "title": "Full content",
-      "body": "Your original video, as it is. Podcast, livestream, class or interview."
+      "title": "Upload the full recording",
+      "body": "Start with a podcast, livestream, class or interview. Upload a file or import a supported link."
     },
     "moment": {
-      "title": "Pick the moment",
-      "body": "Clip what really matters. You decide, or let the AI suggest."
+      "title": "Choose the best moment",
+      "body": "AI suggests segments; you review the context and adjust where each cut starts and ends."
     },
     "ready": {
-      "title": "9:16 clip ready",
-      "body": "The ideal format for Reels, Shorts and TikTok. Captions included."
+      "title": "Refine and share",
+      "body": "Review framing and captions. Then download the clip or publish it to your connected accounts."
     }
   },
   "networks": {
     "eyebrow": "Publishing",
-    "title": "We clip for<br></br>your favorite platforms.",
-    "lead": "Prepare vertical 9:16 clips for every platform. Connect your accounts once and Clipealo publishes now or on your schedule.",
+    "title": "One clip, more<br></br>ways to share it.",
+    "lead": "Choose a channel, review the text and publish the same vertical clip to your connected accounts.",
     "list": "Destination platforms",
-    "sweetSpot": "{min} to {max}",
-    "sweetSpotNote": "is what retains best on {network}; it allows up to {max}",
+    "planNote": "Available channels and scheduling depend on your plan.",
+    "previewClip": "One idea, one clip.",
+    "previewNote": "Illustrative preview",
     "bullets": {
-      "formats": "Exports vertical 9:16 clips for your social channels",
-      "limit": "Warns you if the clip exceeds the platform’s limit",
-      "schedule": "Publish or schedule from your library"
+      "formats": "Prepare one vertical 9:16 clip for your available channels",
+      "limit": "Review the result before publishing",
+      "schedule": "Publish now or schedule when your plan includes it"
     }
   },
   "pricing": {
@@ -274,31 +276,31 @@
   },
   "faq": {
     "title": "Frequently asked<br></br>questions.",
-    "contact": "Not here? <link>Write to us</link>, we reply the same day.",
+    "contact": "Not here? <link>Write to us</link> and we’ll help.",
     "items": {
       "processing": {
         "q": "How long does it take to process a video?",
-        "a": "A one-hour podcast takes 4 to 7 minutes. We start suggesting clips as soon as the transcription is done, so you don’t have to wait for the whole process to finish to review the first cuts."
+        "a": "It depends on the file’s length, size and quality. You can follow progress in your projects and review clips when processing finishes."
       },
       "fileFormats": {
         "q": "Which file formats are supported?",
-        "a": "MP4, MOV, WebM and MKV, up to 8 GB per file. You can also paste a YouTube, Google Drive or Vimeo link and we’ll download it for you."
+        "a": "You can upload common formats such as MP4, MOV, WebM and MKV, or import a supported link. Maximum file size and duration depend on your plan."
       },
       "faces": {
         "q": "Does the vertical reframe cut off faces?",
-        "a": "No. The reframe follows the speaker frame by frame and, when there are two people, switches the framing based on who’s talking. You can always adjust the framing by hand in the editor."
+        "a": "Automatic tracking aims to keep the speaker in frame. Always review the result and adjust the crop in the editor when needed. This feature depends on your plan."
       },
       "editCaptions": {
         "q": "Can I edit the captions?",
-        "a": "Yes. The transcript is editable word by word and your changes show up in the rendered clip. You can add a dictionary of proper names so the same mistake doesn’t happen again."
+        "a": "Yes. You can review and correct the transcript before exporting. Available styles, translation and the name dictionary depend on your plan."
       },
       "afterCancel": {
         "q": "What happens to my videos if I cancel?",
-        "a": "You can download all your material for 30 days after canceling. We don’t use your content to train models or share it with third parties."
+        "a": "If you cancel a paid plan, its features remain available until the current billing period ends. Download anything you need before your plan’s storage period expires."
       },
       "publish": {
         "q": "Does Clipealo publish to my networks for me?",
-        "a": "Yes. Connect your social accounts and choose where to publish each clip. Post scheduling is included with Standard and Premium."
+        "a": "Yes. Connect your accounts and choose where each clip goes. Available channels and scheduling depend on your plan."
       }
     }
   },

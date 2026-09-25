@@ -159,75 +159,77 @@
   },
   "reframe": {
     "title": "Un mismo contenido,<br></br>más posibilidades.",
-    "original": "Tu video, tal como lo grabaste",
-    "ready": "Clip 9:16 listo",
-    "caption": "Recorta lo que realmente importa."
+    "lead": "Un video largo puede dar lugar a varios clips. Elige el momento, ajusta el encuadre y decide dónde compartirlo.",
+    "sourceAlt": "Dos personas conversan frente a micrófonos en un estudio de podcast",
+    "original": "Grabación original · 16:9",
+    "ready": "Clip vertical · 9:16",
+    "caption": "El encuadre sigue al momento que elegiste.",
+    "videoEyebrow": "Del video a tus redes",
+    "videoTitle": "Una grabación. Varios clips.",
+    "videoLead": "Mira el recorrido completo: seleccionas un momento, lo preparas en vertical y eliges los destinos. Puedes revisar cada clip antes de publicarlo.",
+    "videoLabel": "Animación del recorrido de un video largo a varios clips para redes",
+    "videoFallback": "Tu navegador no puede reproducir este video."
   },
   "features": {
     "eyebrow": "El producto",
-    "title": "Pequeños clips,<br></br>grandes oportunidades.",
-    "lead": "Todo el recorrido —de la subida a la publicación— en una sola herramienta, sin exportar a ninguna otra parte.",
+    "title": "La IA propone.<br></br>Tú decides.",
+    "lead": "Encuentra un momento, ajústalo a tu estilo y elige cómo compartirlo. Cada paso queda bajo tu control.",
     "ai": {
-      "title": "IA que encuentra los mejores momentos",
-      "body": "Analiza el audio, detecta los picos de atención y te propone los cortes. Ahorras horas de edición y te enfocas en crear."
+      "title": "Momentos sugeridos para revisar",
+      "body": "La IA propone fragmentos del video con su inicio y final. Tú revisas el contexto y eliges cuáles convertir en clips.",
+      "visual": "Tramo sugerido · revisa el corte antes de crearlo"
     },
     "vertical": {
-      "title": "Vertical desde el minuto uno",
-      "body": "Reencuadre automático que sigue a quien habla. Nada de barras negras ni caras cortadas."
-    },
-    "quote": {
-      "text": "Las ideas no valen nada sin ejecución.",
-      "author": "Creador de contenido"
+      "title": "El encuadre se adapta al clip",
+      "body": "Prepara una versión vertical 9:16 y revisa qué muestra el recorte. El seguimiento automático depende del plan."
     },
     "captions": {
-      "title": "Subtítulos que se leen",
-      "body": "Transcripción con marcas de tiempo, corrección de nombres propios y traducción a nueve idiomas."
+      "title": "Subtítulos que puedes corregir",
+      "body": "Revisa la transcripción, los nombres y el estilo antes de exportar. La traducción depende del plan."
     },
     "allInOne": {
-      "title": "Todo en una sola herramienta",
-      "body": "Sin saltar entre cinco apps para publicar un clip."
+      "title": "Del corte a tus canales",
+      "body": "Organiza, edita y publica desde el mismo proyecto. Programa tus publicaciones cuando tu plan lo incluya."
     },
     "toolbox": {
-      "trim": "Recortar",
-      "edit": "Editar",
-      "share": "Compartir",
+      "trim": "Selecciona",
+      "edit": "Ajusta",
+      "share": "Publica",
       "ai": "IA",
       "creators": "Creadores",
       "clips": "Clips",
       "captions": "Subtítulos",
       "analytics": "Analíticas"
-    },
-    "multiformat": {
-      "title": "Un formato para todas tus redes",
-      "body": "Prepara tus clips en formato vertical 9:16 para publicar en todas tus redes."
     }
   },
   "steps": {
-    "title": "Mismo contenido,<br></br>más impacto.",
+    "title": "De un video largo<br></br>a clips listos.",
+    "previewCaption": "Una idea, un clip.",
     "full": {
-      "title": "Contenido completo",
-      "body": "Tu video original, tal como es. Podcast, directo, clase o entrevista."
+      "title": "Sube el contenido completo",
+      "body": "Parte de un podcast, directo, clase o entrevista. Sube el archivo o importa un enlace compatible."
     },
     "moment": {
-      "title": "Selección del momento",
-      "body": "Recorta lo que realmente importa. Tú decides o dejas que la IA proponga."
+      "title": "Elige el mejor momento",
+      "body": "La IA propone fragmentos; tú revisas el contexto y ajustas dónde empieza y termina cada corte."
     },
     "ready": {
-      "title": "Clip 9:16 listo",
-      "body": "El formato ideal para Reels, Shorts y TikTok. Con subtítulos incluidos."
+      "title": "Ajusta y comparte",
+      "body": "Revisa encuadre y subtítulos. Después descarga el clip o publícalo en tus cuentas conectadas."
     }
   },
   "networks": {
     "eyebrow": "Publicación",
-    "title": "Clipeamos para<br></br>tus redes favoritas.",
-    "lead": "Prepara tus clips en formato vertical 9:16 para cada red. Conectas las cuentas una vez y Clipealo publica ahora o cuando lo programes.",
+    "title": "Un clip, varias<br></br>formas de compartirlo.",
+    "lead": "Elige el canal, revisa el texto y publica el mismo clip vertical en tus cuentas conectadas.",
     "list": "Redes de destino",
-    "sweetSpot": "{min} a {max}",
-    "sweetSpotNote": "es lo que mejor retiene en {network}; admite hasta {max}",
+    "planNote": "Las redes disponibles y la programación dependen de tu plan.",
+    "previewClip": "Una idea, un clip.",
+    "previewNote": "Vista previa ilustrativa",
     "bullets": {
-      "formats": "Exporta en formato vertical 9:16 para tus redes",
-      "limit": "Avisa si el clip no entra en el límite de la red",
-      "schedule": "Publica o programa desde la biblioteca"
+      "formats": "Prepara un clip vertical 9:16 para tus canales disponibles",
+      "limit": "Revisa el resultado antes de publicarlo",
+      "schedule": "Publica ahora o programa cuando tu plan lo incluya"
     }
   },
   "pricing": {
@@ -274,31 +276,31 @@
   },
   "faq": {
     "title": "Preguntas<br></br>frecuentes.",
-    "contact": "¿No está aquí? <link>Escríbenos</link>, contestamos el mismo día.",
+    "contact": "¿No está aquí? <link>Escríbenos</link> y te ayudamos.",
     "items": {
       "processing": {
         "q": "¿Cuánto tarda en procesar un video?",
-        "a": "Un podcast de una hora tarda entre 4 y 7 minutos. Empezamos a proponer clips en cuanto termina la transcripción, así que no hace falta esperar al final del proceso para revisar los primeros cortes."
+        "a": "Depende de la duración, el tamaño y la calidad del archivo. Puedes seguir el avance desde tus proyectos y revisar los clips cuando el procesamiento termine."
       },
       "fileFormats": {
         "q": "¿Qué formatos de archivo acepta?",
-        "a": "MP4, MOV, WebM y MKV, hasta 8 GB por archivo. También puedes pegar un enlace de YouTube, Google Drive o Vimeo y lo descargamos nosotros."
+        "a": "Puedes subir formatos habituales como MP4, MOV, WebM y MKV o importar un enlace compatible. El tamaño y la duración máximos dependen de tu plan."
       },
       "faces": {
         "q": "¿El reencuadre vertical corta las caras?",
-        "a": "No. El reencuadre sigue a quien habla fotograma a fotograma y, cuando hay dos personas, alterna el encuadre según quién tiene el turno. Siempre puedes ajustar el encuadre a mano en el editor."
+        "a": "El seguimiento automático intenta mantener en cuadro a quien habla. Revisa siempre el resultado y ajusta el encuadre en el editor si lo necesitas. Esta función depende de tu plan."
       },
       "editCaptions": {
         "q": "¿Los subtítulos se pueden editar?",
-        "a": "Sí. La transcripción es editable palabra por palabra y los cambios se reflejan en el clip renderizado. Puedes añadir un diccionario de nombres propios para que no se repita el mismo error."
+        "a": "Sí. Puedes revisar y corregir la transcripción antes de exportar. Los estilos, la traducción y el diccionario de nombres disponibles dependen de tu plan."
       },
       "afterCancel": {
         "q": "¿Qué pasa con mis videos si cancelo?",
-        "a": "Puedes descargar todo tu material durante 30 días después de cancelar. No usamos tu contenido para entrenar modelos ni lo compartimos con terceros."
+        "a": "Si cancelas un plan de pago, conservas sus funciones hasta que termine el ciclo contratado. Descarga el material que necesites antes de que venza el periodo de almacenamiento de tu plan."
       },
       "publish": {
         "q": "¿Clipealo publica en mis redes por mí?",
-        "a": "Sí. Conectas tus cuentas sociales y eliges dónde publicar cada clip. La programación de publicaciones está incluida en los planes Estándar y Premium."
+        "a": "Sí. Conecta tus cuentas y elige dónde publicar cada clip. Las redes disponibles y la programación dependen de tu plan."
       }
     }
   },

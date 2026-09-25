@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { useTranslations } from "next-intl"
 
 import { clamp } from "@/lib/format"
@@ -79,46 +80,93 @@ export function Reframe() {
   })
 
   return (
-    <section
-      id="como-funciona"
-      ref={seccion}
-      className="reframe-section relative h-[240vh] scroll-mt-0 bg-ink-950"
-    >
-      <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5">
-        <PatternIsotipos opacity={0.1} fade="edges" />
+    <>
+      <section
+        id="como-funciona"
+        ref={seccion}
+        className="reframe-section relative h-[240vh] scroll-mt-0 bg-ink-950"
+      >
+        <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5">
+          <PatternIsotipos opacity={0.08} fade="edges" />
 
-        <h2 className="relative max-w-xl text-center display text-[clamp(1.75rem,5vw,3rem)] text-ink-50">
-          {t.rich("title", { br: () => <br /> })}
-        </h2>
+          <h2 className="relative max-w-3xl text-center display text-[clamp(1.75rem,4.4vw,3rem)] text-ink-50">
+            {t.rich("title", { br: () => <br /> })}
+          </h2>
+          <p className="relative mt-4 max-w-xl text-center text-sm leading-relaxed text-mist/75 sm:text-base">
+            {t("lead")}
+          </p>
 
-        {/* La caja no cambia de tamaño: el marco de dentro se recorta con
-            `clip-path` (reframe.css). El rótulo final va fuera del recorte
-            para que en móvil estrecho no se corte. */}
-        <div className="reframe-encuadre relative mt-8 h-[42vh] w-full max-w-[56rem] sm:mt-10 sm:h-[46vh]">
-          <div
-            ref={marco}
-            className="reframe-marco absolute inset-0 overflow-hidden rounded-frame border-white/10 bg-white/5"
-          >
-            <PatternIsotipos opacity={0.22} />
-
-            <span className="reframe-label reframe-original absolute inset-0 grid place-items-center px-4 text-center text-xs text-mist/85 sm:text-sm">
-              <span className="rounded-md bg-ink-950/60 px-3 py-1.5 backdrop-blur-sm">
-                {t("original")}
+          {/* El mismo fotograma se desplaza hacia la persona que habla mientras
+              el marco se cierra. El recorte sigue siendo visual, sin CLS. */}
+          <div className="reframe-encuadre relative mt-7 h-[36vh] w-full max-w-[56rem] sm:mt-9 sm:h-[40vh]">
+            <div
+              ref={marco}
+              className="reframe-marco absolute inset-0 overflow-hidden rounded-frame border-white/20 bg-ink-900"
+            >
+              <Image
+                src="/media/podcast-source.webp"
+                alt={t("sourceAlt")}
+                fill
+                sizes="(max-width: 640px) 100vw, 900px"
+                className="reframe-foto object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-ink-950/60 via-transparent to-transparent"
+                aria-hidden
+              />
+              <span className="reframe-label reframe-original absolute inset-0 grid place-items-center px-4 text-center text-xs text-mist sm:text-sm">
+                <span className="rounded-md bg-ink-950/80 px-3 py-1.5 backdrop-blur-sm">
+                  {t("original")}
+                </span>
               </span>
+            </div>
+
+            <span className="reframe-label reframe-ready absolute bottom-4 left-1/2 -translate-x-1/2 rounded-lg bg-brand px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-brand-foreground">
+              {t("ready")}
             </span>
           </div>
 
-          <span className="reframe-label reframe-ready absolute bottom-4 left-1/2 -translate-x-1/2 rounded-lg bg-brand px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-brand-foreground">
-            {t("ready")}
-          </span>
+          <div className="relative mt-7 h-2.5 w-full max-w-2xl overflow-hidden rounded-full bg-white/15 sm:mt-9 sm:h-3">
+            <span className="reframe-seleccion absolute inset-0 rounded-full bg-brand" />
+          </div>
+          <p className="relative mt-4 text-center text-sm text-mist/70">{t("caption")}</p>
         </div>
+      </section>
 
-        {/* Línea del tiempo (módulo 05) */}
-        <div className="relative mt-8 h-2.5 w-full max-w-2xl overflow-hidden rounded-full bg-white/15 sm:mt-10 sm:h-3">
-          <span className="reframe-seleccion absolute inset-0 rounded-full bg-brand" />
+      <section
+        className="relative overflow-hidden bg-ink-950 py-20 text-ink-50 md:py-28"
+        aria-labelledby="reframe-video-title"
+      >
+        <div className="container-page grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
+          <div className="max-w-xl">
+            <p className="text-sm font-semibold tracking-wide text-brand uppercase">
+              {t("videoEyebrow")}
+            </p>
+            <h3
+              id="reframe-video-title"
+              className="mt-4 display text-[clamp(2rem,3vw,3rem)] leading-[1.1]"
+            >
+              {t("videoTitle")}
+            </h3>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-mist/75 sm:text-lg">
+              {t("videoLead")}
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-frame border border-white/15 bg-ink-900 shadow-xl">
+            <video
+              className="block aspect-video w-full bg-ink-900 object-contain"
+              poster="/media/one-content-many-clips.jpg"
+              preload="none"
+              playsInline
+              controls
+              aria-label={t("videoLabel")}
+            >
+              <source src="/media/one-content-many-clips.mp4" type="video/mp4" />
+              {t("videoFallback")}
+            </video>
+          </div>
         </div>
-        <p className="relative mt-4 text-sm text-mist/60">{t("caption")}</p>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

@@ -1,46 +1,25 @@
 import * as React from "react"
-import {
-  BarChart3,
-  Languages,
-  PlaySquare,
-  Scissors,
-  Share2,
-  SlidersHorizontal,
-  Sparkles,
-  Type,
-  Users,
-  Wand2,
-} from "lucide-react"
+import Image from "next/image"
+import { Languages, Scissors, Share2, SlidersHorizontal, Sparkles } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
-import { useFormat } from "@/hooks/use-format"
 import { buildWaveform } from "@/lib/mock-data"
 import { PatternIsotipos } from "@/components/brand/patterns"
 import { CropFrame } from "@/components/brand/logo"
 import { MediaFrame } from "@/components/video/media-frame"
 import { Waveform } from "@/components/video/waveform"
-import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
-import { TypeWords } from "@/components/shared/type-words"
 
 /** Etiquetas: `marketing.features.toolbox.<id>`. */
 const TOOLBOX = [
   { Icon: Scissors, id: "trim" },
   { Icon: SlidersHorizontal, id: "edit" },
   { Icon: Share2, id: "share" },
-  { Icon: Sparkles, id: "ai" },
-  { Icon: Users, id: "creators" },
-  { Icon: PlaySquare, id: "clips" },
-  { Icon: Type, id: "captions" },
-  { Icon: BarChart3, id: "analytics" },
 ] as const
 
-/** Códigos ISO de los subtítulos: no se traducen. */
-const IDIOMAS = ["ES", "EN", "PT", "FR", "IT", "DE", "CA", "EU", "GL"] as const
-
-/** Barra de la tarjeta de IA: el mismo valor pinta la barra, la cifra y su llenado. */
-const PROGRESO_IA = 77
+/** Tres idiomas visibles como muestra; el catálogo de cada plan decide el resto. */
+const IDIOMAS = ["ES", "EN", "PT"] as const
 
 const peaks = buildWaveform(56, 3, [0.3, 0.62])
 
@@ -73,7 +52,6 @@ function Tile({ className, children, ...props }: React.ComponentProps<"article">
 
 export function Features() {
   const t = useTranslations("marketing.features")
-  const f = useFormat()
 
   return (
     <section id="producto" className="container-page scroll-mt-24 py-20 md:py-28">
@@ -82,8 +60,7 @@ export function Features() {
         <p className="m-anim m-rise text-sm font-semibold tracking-wide text-brand uppercase">
           {t("eyebrow")}
         </p>
-        {/* Por debajo de ~400 px «oportunidades.» no cabía en la columna: el titular baja solo
-            ahí; desde 400 px mide como antes (2rem y luego 5vw) */}
+        {/* Tamaño fluido para conservar el titular completo en pantallas estrechas. */}
         <h2 className="m-anim m-cut mt-3 display text-[length:clamp(1.5rem,max(min(calc(9vw_-_0.25rem),2rem),5vw),3.25rem)] [--i:1]">
           {t.rich("title", { br: () => <br /> })}
         </h2>
@@ -93,7 +70,7 @@ export function Features() {
       </div>
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
-        {/* IA · fila 1. Al terminar su entrada, la barra se llena */}
+        {/* IA · fila 1. Una selección concreta, sin porcentaje de progreso ficticio. */}
         <Tile
           data-light="claro"
           className="bg-secondary text-secondary-foreground md:col-span-2"
@@ -108,22 +85,14 @@ export function Features() {
             {t("ai.body")}
           </p>
 
-          <div className="mt-7 rounded-xl bg-background/60 p-4">
+          <div className="mt-7 rounded-xl bg-background/70 p-4">
             <Waveform
               peaks={peaks}
               progress={0.55}
               selection={{ start: 0.24, end: 0.42 }}
               height={44}
             />
-            <div
-              className="m-fill mt-4 flex items-center gap-3"
-              style={{ "--fill": `${PROGRESO_IA}%` } as React.CSSProperties}
-            >
-              <Progress value={PROGRESO_IA} className="h-2 flex-1" />
-              <span className="text-xs font-semibold tabular-nums">
-                {f.percent(PROGRESO_IA)}
-              </span>
-            </div>
+            <p className="mt-3 text-xs font-medium opacity-75">{t("ai.visual")}</p>
           </div>
         </Tile>
 
@@ -141,28 +110,34 @@ export function Features() {
             </p>
 
             <div className="mt-7 flex items-end justify-center gap-3">
-              <div className="m-anim m-dim w-24 opacity-40">
-                <MediaFrame aspect="16:9" className="ring-white/15" />
+              <div className="m-anim m-dim w-32 opacity-70">
+                <MediaFrame aspect="16:9" className="ring-white/15">
+                  <Image
+                    src="/media/podcast-source.webp"
+                    alt=""
+                    fill
+                    sizes="128px"
+                    className="object-cover"
+                  />
+                </MediaFrame>
               </div>
-              <CropFrame size="sm" className="m-crop-corners w-20">
-                <MediaFrame aspect="9:16" className="ring-white/15" />
+              <CropFrame size="sm" className="m-crop-corners w-24">
+                <MediaFrame aspect="9:16" className="ring-white/15">
+                  <Image
+                    src="/media/podcast-source.webp"
+                    alt=""
+                    fill
+                    sizes="96px"
+                    className="object-cover object-[76%_center]"
+                  />
+                </MediaFrame>
               </CropFrame>
             </div>
           </div>
         </Tile>
 
-        {/* Cita · fila 2. Al terminar su entrada, la frase aparece palabra a
-            palabra (E10). Sin luz: sobre naranja no aporta */}
-        <Tile className="bg-brand text-brand-foreground ring-transparent">
-          <span className="display text-5xl leading-none opacity-80">&ldquo;</span>
-          <p className="mt-2 text-[23px] leading-snug font-bold tracking-tight text-balance">
-            <TypeWords text={t("quote.text")} at="var(--m-fin-entrada, 250ms)" />
-          </p>
-          <p className="mt-4 text-sm opacity-75">{t("quote.author")}</p>
-        </Tile>
-
-        {/* Subtitulos · fila 2. Al terminar su entrada, los idiomas se iluminan
-            en secuencia */}
+        {/* Subtítulos · fila 2. La muestra evita atribuir nueve idiomas a todos
+            los planes; la comparativa cuenta qué incluye cada uno. */}
         <Tile data-light="claro" className="bg-card md:[--i:1]">
           <span className="inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
             <Languages className="size-5" aria-hidden />
@@ -187,43 +162,27 @@ export function Features() {
           </div>
         </Tile>
 
-        {/* Herramienta unica · fila 2 */}
-        <Tile data-light="claro" className="bg-card md:[--i:2]">
+        {/* Del corte a la publicación, sin una rejilla de funciones de relleno. */}
+        <Tile data-light="claro" className="bg-card md:col-span-2 md:[--i:2]">
           <h3 className="text-[23px] leading-tight font-bold tracking-tight">
             {t("allInOne.title")}
           </h3>
           <p className="mt-3 text-sm text-muted-foreground">{t("allInOne.body")}</p>
-          <ul className="mt-8 grid grid-cols-4 gap-x-4 gap-y-6">
+          <ul className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6">
             {TOOLBOX.map(({ Icon, id }) => (
-              <li key={id} className="flex flex-col items-center gap-2">
-                <Icon className="size-5 text-foreground" aria-hidden />
-                <span className="text-center text-[11px] text-muted-foreground">
+              <li
+                key={id}
+                className="flex min-w-0 flex-col items-center gap-2 text-center"
+              >
+                <span className="grid size-11 place-items-center rounded-xl bg-secondary">
+                  <Icon className="size-5 text-foreground" aria-hidden />
+                </span>
+                <span className="text-xs font-medium text-muted-foreground">
                   {t(`toolbox.${id}`)}
                 </span>
               </li>
             ))}
           </ul>
-        </Tile>
-
-        {/* Exportación vertical · fila 3 */}
-        <Tile data-light="claro" className="bg-card md:col-span-1">
-          <span className="inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-            <Wand2 className="size-5" aria-hidden />
-          </span>
-          <h3 className="mt-6 text-[23px] leading-tight font-bold tracking-tight">
-            {t("multiformat.title")}
-          </h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            {t("multiformat.body")}
-          </p>
-          <div className="mt-7 flex justify-center">
-            <div className="w-24 text-center">
-              <MediaFrame aspect="9:16" className="rounded-md" />
-              <span className="mt-1.5 block text-[10px] text-muted-foreground tabular-nums">
-                9:16
-              </span>
-            </div>
-          </div>
         </Tile>
       </div>
     </section>

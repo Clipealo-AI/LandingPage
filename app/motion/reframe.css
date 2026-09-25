@@ -93,6 +93,13 @@ html:not(.js) .reframe-section {
   --reframe-recorte: min(calc(33cqw * var(--t-geo)), var(--reframe-tope));
   clip-path: inset(0 var(--reframe-recorte) round var(--radius-frame));
 }
+
+/* El mismo fotograma acompaña el encuadre: la persona de la derecha termina
+   centrada cuando el marco llega a 9:16. Solo transforma píxeles, no layout. */
+.reframe-foto {
+  translate: calc(-22% * var(--t-geo)) 0;
+  scale: 1.03;
+}
 /* Con «reducir», cada plano recorta hasta la proporción de su formato:
    (ancho − alto × proporción) / 2 por lado. Donde la caja no da para la
    proporción (el 16:9 y el 1:1 en un móvil vertical), cada plano recorta al

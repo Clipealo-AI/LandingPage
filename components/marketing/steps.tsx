@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
@@ -48,14 +49,46 @@ export function Steps() {
                 step.cropped && "m-crop-corners [--m-crop-at:600ms]"
               )}
             >
-              {/* Alto fijo para que los tres frames compartan linea base pese al ratio */}
+              {/* Un mismo fotograma en los tres pasos: el cambio de formato se
+                  entiende sin inventar tres capturas distintas del producto. */}
               <div className="flex h-56 items-end justify-center sm:h-64">
-                <div className="m-anim m-rise w-full max-w-[220px]">
+                <div
+                  className={cn(
+                    "m-anim m-rise w-full",
+                    step.id === "ready"
+                      ? "max-w-[145px] sm:max-w-[155px]"
+                      : "max-w-[290px]"
+                  )}
+                >
                   <MediaFrame
                     aspect={step.aspect}
                     cropped={step.cropped}
-                    className="ring-transparent"
-                  />
+                    className="shadow-lg ring-white/15"
+                  >
+                    <Image
+                      src="/media/podcast-source.webp"
+                      alt=""
+                      fill
+                      sizes={
+                        step.id === "ready" ? "155px" : "(max-width: 640px) 290px, 26vw"
+                      }
+                      className={cn(
+                        "object-cover",
+                        step.id === "ready" && "object-[76%_center]"
+                      )}
+                    />
+                    {step.id === "moment" && (
+                      <div
+                        className="absolute inset-0 bg-gradient-to-r from-ink-950/45 via-transparent to-ink-950/15"
+                        aria-hidden
+                      />
+                    )}
+                    {step.id === "ready" && (
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-2.5 pt-14 pb-4 text-center text-xs leading-tight font-semibold text-white">
+                        {t("previewCaption")}
+                      </div>
+                    )}
+                  </MediaFrame>
                 </div>
               </div>
 

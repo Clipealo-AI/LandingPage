@@ -280,12 +280,6 @@
   --m-dur: 480ms;
   --m-ease: ease-in-out;
 }
-.m-word {
-  --m-name: fade-soft;
-  --m-dur: 320ms;
-  --m-ease: var(--ease-brand);
-}
-
 /* Titular cortado a 12 fps (E5): la caja se descubre de izquierda a derecha en
    9 fotogramas y una cuchilla de 3 px marca el corte. */
 .m-cut {

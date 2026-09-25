@@ -7,8 +7,8 @@ import { irA, modoMovimiento } from "./helpers"
 
 /**
  * Movimiento de Features y Steps (Lote 3): titulares cortados a 12 fps (E5),
- * tarjetas que entran por filas y sus gestos (E9), la cita palabra a palabra
- * (E10), la luz bajo el puntero (E11) y los pasos que se encienden en orden
+ * tarjetas que entran por filas y sus gestos (E9), la luz bajo el puntero
+ * (E11) y los pasos que se encienden en orden
  * (E12).
  *
  * Todo corre en los dos modos: el director revisa con las animaciones de Windows
@@ -22,12 +22,12 @@ import { irA, modoMovimiento } from "./helpers"
 
 const MODOS = ["no-preference", "reduce"] as const
 
-const IDIOMAS_SUBTITULOS = ["ES", "EN", "PT", "FR", "IT", "DE", "CA", "EU", "GL"]
+const IDIOMAS_SUBTITULOS = ["ES", "EN", "PT"]
 
 const LOCALES = [
-  { ruta: "/", m: esMarketing, palabras: 7 },
-  { ruta: "/en", m: enMarketing, palabras: 5 },
-  { ruta: "/pt", m: ptMarketing, palabras: 6 },
+  { ruta: "/", m: esMarketing },
+  { ruta: "/en", m: enMarketing },
+  { ruta: "/pt", m: ptMarketing },
 ] as const
 
 /** Ningún gesto de entrada dura más: AGENTS.md, regla 5. */
@@ -150,17 +150,6 @@ function colorDeToken(loc: Locator, token: string) {
   }, token)
 }
 
-/** Parte visible de la barra de progreso de la tarjeta (0 a 1). */
-function llenado(tarjeta: Locator) {
-  return tarjeta.evaluate((el) => {
-    const pista = el.querySelector('[data-slot="progress"]')!.getBoundingClientRect()
-    const barra = el
-      .querySelector('[data-slot="progress-indicator"]')!
-      .getBoundingClientRect()
-    return Math.max(0, Math.min(barra.right, pista.right) - pista.left) / pista.width
-  })
-}
-
 async function llevarAPantalla(grupo: Locator) {
   await grupo.evaluate((el) =>
     el.scrollIntoView({ block: "center", behavior: "instant" })
@@ -182,10 +171,8 @@ function localizar(page: Page, m: typeof esMarketing = esMarketing) {
     cabecera: producto.locator("div[data-motion-group]"),
     ia: tarjeta(m.features.ai.title),
     vertical: tarjeta(m.features.vertical.title),
-    cita: tarjetas.filter({ hasText: m.features.quote.author }),
     subtitulos: tarjeta(m.features.captions.title),
     todo: tarjeta(m.features.allInOne.title),
-    multiformato: tarjeta(m.features.multiformat.title),
     pasos,
     tituloPasos: pasos.locator("h2[data-motion-group]"),
     paso: pasos.locator("li[data-motion-group]"),
@@ -221,7 +208,7 @@ for (const modo of MODOS) {
     }) => {
       await irA(page, "/")
       const l = localizar(page)
-      await expect(l.tarjetas).toHaveCount(6)
+      await expect(l.tarjetas).toHaveCount(4)
       await expect(l.paso).toHaveCount(3)
 
       const grupos = [
@@ -255,8 +242,8 @@ for (const modo of MODOS) {
       await irA(page, "/")
       const l = localizar(page)
       const escritorio = esEscritorio(page)
-      // Orden de la rejilla: IA, Vertical | Cita, Subtítulos, Todo en uno | Multiformato
-      const esperados = escritorio ? [0, 80, 0, 80, 160, 0] : [0, 0, 0, 0, 0, 0]
+      // Orden de la rejilla: IA, Vertical | Subtítulos, Todo en uno
+      const esperados = escritorio ? [0, 80, 80, 160] : [0, 0, 0, 0]
 
       const tarjetas = await l.tarjetas.all()
       for (const [n, tarjeta] of tarjetas.entries()) {
@@ -281,32 +268,6 @@ for (const modo of MODOS) {
         expect(final.opacity).toBe("1")
         expect(desplaza(final.translate)).toBe(false)
       }
-    })
-
-    test("E9 · IA: al terminar su entrada la barra se llena hasta el 77 %", async ({
-      page,
-    }) => {
-      await irA(page, "/")
-      const { ia } = localizar(page)
-      await llevarAPantalla(ia)
-
-      const animaciones = await reproducirCongelado(ia, 0)
-      const entrada = entradaDe(animaciones)
-      const barra = animaciones.find((a) => a.nombre === "progress-fill")
-      expect(barra, "la barra no se llena").toBeDefined()
-      expect(barra!.slot).toBe("progress-indicator")
-      expect(barra!.retardo).toBeGreaterThanOrEqual(finDe(entrada) - 1)
-      expect(barra!.fin).toBeLessThan(GESTO_MAX)
-
-      // Es un indicador: se llena igual con reduce
-      expect(await llenado(ia)).toBeLessThan(0.02)
-      await reproducirCongelado(ia, 0.1)
-      const medio = await llenado(ia)
-      expect(medio).toBeGreaterThan(0.2)
-      expect(medio).toBeLessThan(0.76)
-
-      await terminar(ia)
-      expect(await llenado(ia)).toBeCloseTo(0.77, 1)
     })
 
     test("E9 · Vertical: el 16:9 se apaga y después se cierran las esquinas del 9:16", async ({
@@ -360,7 +321,7 @@ for (const modo of MODOS) {
       }
     })
 
-    test("E9 · Subtítulos: los 9 idiomas se iluminan en orden y acaban antes de 1,5 s", async ({
+    test("E9 · Subtítulos: los 3 idiomas de muestra se iluminan en orden", async ({
       page,
     }) => {
       await irA(page, "/")
@@ -377,7 +338,7 @@ for (const modo of MODOS) {
         .filter((a) => a.nombre === "light-up")
         .sort((a, b) => a.retardo - b.retardo)
 
-      expect(luces).toHaveLength(9)
+      expect(luces).toHaveLength(3)
       expect(luces.map((l) => l.texto)).toEqual(IDIOMAS_SUBTITULOS)
       expect(luces[0].retardo).toBeGreaterThanOrEqual(finDe(entrada) - 1)
       expectEscalonado(luces, 60)
@@ -396,47 +357,6 @@ for (const modo of MODOS) {
       await terminar(subtitulos)
       expect(await estilos(idiomas)).toEqual(naturales)
     })
-
-    for (const { ruta, m, palabras } of LOCALES) {
-      test(`E10 · la cita se escribe palabra a palabra y se lee una vez (${ruta})`, async ({
-        page,
-      }) => {
-        await irA(page, ruta)
-        const { cita } = localizar(page, m)
-        await llevarAPantalla(cita)
-        const texto = m.features.quote.text
-
-        // El lector la lee una sola vez: las palabras animadas van ocultas
-        await expect(cita).toMatchAriaSnapshot(`
-          - article:
-            - paragraph: ${JSON.stringify(texto)}
-        `)
-        const visibles = cita.locator("[aria-hidden] .m-word")
-        await expect(visibles).toHaveCount(palabras)
-        await expect(cita.locator("p [aria-hidden]")).toHaveText(texto)
-
-        const animaciones = await reproducirCongelado(cita, 0)
-        const entrada = entradaDe(animaciones)
-        const fundidos = animaciones
-          .filter((a) => a.nombre === "fade-soft" && a.clase.includes("m-word"))
-          .sort((a, b) => a.retardo - b.retardo)
-
-        expect(fundidos).toHaveLength(palabras)
-        expect(fundidos.map((f) => f.texto).join(" ")).toBe(texto)
-        expect(fundidos[0].retardo).toBeGreaterThanOrEqual(finDe(entrada) - 1)
-        expectEscalonado(fundidos, 70)
-        expect(Math.max(...fundidos.map((f) => f.fin))).toBeLessThan(GESTO_MAX)
-
-        // Solo opacidad: igual con reduce. Al empezar no se ve ninguna palabra
-        for (const palabra of await estilos(visibles)) {
-          expect(palabra.opacity).toBe("0")
-          expect(desplaza(palabra.translate)).toBe(false)
-        }
-
-        await terminar(cita)
-        for (const palabra of await estilos(visibles)) expect(palabra.opacity).toBe("1")
-      })
-    }
 
     for (const { ruta, m } of LOCALES) {
       test(`E5 · los titulares de Features y Steps se cortan a 12 fps, o se funden con reduce (${ruta})`, async ({
@@ -568,7 +488,7 @@ for (const modo of MODOS) {
       }
     })
 
-    test("E11 · luz bajo el puntero en las tarjetas claras y en la de tinta, no en la cita", async ({
+    test("E11 · luz bajo el puntero en las tarjetas claras y en la de tinta", async ({
       page,
     }) => {
       await irA(page, "/")
@@ -576,10 +496,8 @@ for (const modo of MODOS) {
 
       await expect(l.ia).toHaveAttribute("data-light", "claro")
       await expect(l.vertical).toHaveAttribute("data-light", "tinta")
-      await expect(l.cita).not.toHaveAttribute("data-light")
       await expect(l.subtitulos).toHaveAttribute("data-light", "claro")
       await expect(l.todo).toHaveAttribute("data-light", "claro")
-      await expect(l.multiformato).toHaveAttribute("data-light", "claro")
 
       // Solo con ratón: en táctil no hay puntero que seguir
       test.skip(test.info().project.name === "movil", "sin hover en táctil")
@@ -603,11 +521,6 @@ for (const modo of MODOS) {
       await expect(l.vertical).toHaveAttribute("data-lit", "")
       await expect(l.ia).not.toHaveAttribute("data-lit")
       await expect.poll(() => intensidad(l.vertical)).toBe("7%")
-
-      await llevarAPantalla(l.cita)
-      await l.cita.hover()
-      await expect(l.cita).not.toHaveAttribute("data-lit")
-      await expect(l.vertical).not.toHaveAttribute("data-lit")
     })
   })
 }
@@ -625,13 +538,6 @@ test.describe("Features y Steps sin JavaScript", () => {
       await expect(l.producto.locator("[data-motion-state]")).toHaveCount(0)
       await expect(l.pasos.locator("[data-motion-state]")).toHaveCount(0)
 
-      await expect(l.cita).toMatchAriaSnapshot(`
-        - article:
-          - paragraph: ${JSON.stringify(esMarketing.features.quote.text)}
-      `)
-      for (const palabra of await l.cita.locator(".m-word").all()) {
-        await expect(palabra).toHaveCSS("opacity", "1")
-      }
       await expect(l.vertical.locator(".m-dim")).toHaveCSS("opacity", "0.4")
       await expect(l.producto.locator("h2")).toHaveCSS("clip-path", "none")
       await expect(l.pasos.locator("h2")).toHaveCSS("opacity", "1")
