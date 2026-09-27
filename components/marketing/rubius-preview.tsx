@@ -241,7 +241,6 @@ export function RubiusPreview() {
                     <button
                       type="button"
                       className="rubius-clip-card"
-                      aria-label={t("viewClip", { title: clip.displayTitle })}
                       onClick={() => openClip(clip)}
                     >
                       <Image

@@ -8,17 +8,17 @@
     "basic": {
       "name": "Basic",
       "tagline": "For growing creators.",
-      "cta": "Get started"
+      "cta": "Choose Basic"
     },
     "standard": {
       "name": "Standard",
       "tagline": "For professional creators.",
-      "cta": "Get started"
+      "cta": "Choose Standard"
     },
     "premium": {
       "name": "Premium",
       "tagline": "For agencies and teams.",
-      "cta": "Get started"
+      "cta": "Choose Premium"
     }
   },
   "perMonth": "/month",

@@ -35,6 +35,11 @@
   inherits: true;
   initial-value: 0;
 }
+@property --focus-x {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 27%;
+}
 
 .reframe-section {
   --progress: 0;
@@ -59,12 +64,21 @@ html:not(.js) .reframe-section {
 }
 
 .reframe-stage {
-  /* Progreso remapeado al tramo útil [0,12 – 0,72] (planoReframe usa el mismo) */
-  --t: clamp(0, calc((var(--progress) - 0.12) / 0.6), 1);
+  /* 16:9 → 1:1 hasta 0,44; el cuadrado permanece durante 0,18 de scroll;
+     de 0,62 a 0,82 termina en 9:16. No se intercepta la rueda ni el tacto. */
+  --t: calc(
+    0.64 * clamp(0, calc((var(--progress) - 0.12) / 0.32), 1) + 0.36 *
+      clamp(0, calc((var(--progress) - 0.62) / 0.2), 1)
+  );
   /* Geometría del marco y de la selección: 0 = 16:9, 1 = 9:16 */
   --t-geo: var(--t);
-  --reframe-original: calc(1 - clamp(0, calc((var(--progress) - 0.2) / 0.25), 1));
-  --reframe-ready: clamp(0, calc((var(--progress) - 0.55) / 0.2), 1);
+  --reframe-original: calc(1 - clamp(0, calc((var(--progress) - 0.2) / 0.2), 1));
+  /* El rótulo permanece visible mientras el marco está en 1:1. */
+  --reframe-square: min(
+    clamp(0, calc((var(--progress) - 0.4) / 0.04), 1),
+    calc(1 - clamp(0, calc((var(--progress) - 0.62) / 0.06), 1))
+  );
+  --reframe-ready: clamp(0, calc((var(--progress) - 0.68) / 0.14), 1);
 }
 .reframe-stage {
   @variant reduced {
@@ -72,6 +86,7 @@ html:not(.js) .reframe-section {
     --t-geo: calc(var(--plano) / 3);
     /* «Tu video…» se va en el primer corte y «Clip 9:16 listo» llega en el último */
     --reframe-original: calc(1 - min(1, var(--plano)));
+    --reframe-square: calc(clamp(0, var(--plano), 1) - clamp(0, var(--plano) - 1, 1));
     --reframe-ready: max(0, calc(var(--plano) - 2));
   }
 }
@@ -84,50 +99,40 @@ html:not(.js) .reframe-section {
 }
 
 .reframe-marco {
-  /* Sin dejar menos de 9 rem de marco visible. El tope solo actúa por debajo de
-     ~460 px: a 390 px el marco final pasa de 119 a 144 px sin preferencia y
-     «Clipe 9:16 pronto» (unos 122 px) cabe dentro. */
-  --reframe-tope: max(0px, calc(50cqw - 4.5rem));
-  /* Recorte por lado: un tercio del ancho en vertical (como el antiguo
-     `width: calc(100% - 66% * t)`). */
-  --reframe-recorte: min(calc(33cqw * var(--t-geo)), var(--reframe-tope));
+  /* Caja de origen 16:9: al terminar se ven 9/16 de su altura. */
+  --reframe-recorte: calc((100cqw - 100cqh * 9 / 16) * var(--t-geo) / 2);
+  --focus-x: 27%;
   clip-path: inset(0 var(--reframe-recorte) round var(--radius-frame));
+  transition: --focus-x 360ms ease-in-out;
+}
+.reframe-marco[data-speaker="woman"] {
+  --focus-x: -32%;
 }
 
-/* El mismo fotograma acompaña el encuadre: la persona de la derecha termina
-   centrada cuando el marco llega a 9:16. Solo transforma píxeles, no layout. */
+/* El foco sigue al hablante; cuando el marco está abierto no hay desplazamiento. */
 .reframe-foto {
-  translate: calc(-22% * var(--t-geo)) 0;
-  scale: 1.03;
+  transform: translateX(calc(var(--focus-x) * var(--t-geo)));
 }
 /* Con «reducir», cada plano recorta hasta la proporción de su formato:
-   (ancho − alto × proporción) / 2 por lado. Donde la caja no da para la
-   proporción (el 16:9 y el 1:1 en un móvil vertical), cada plano recorta al
-   menos un 3 % del ancho más que el anterior: los cuatro cortes se ven y
-   ninguno parece atascado. Un indicador por plano (1 en el suyo, 0 en los
-   demás) elige el recorte; `--plano` es un entero registrado. */
+   (ancho − alto × proporción) / 2 por lado. Un indicador por plano (1 en el
+   suyo, 0 en los demás) elige el recorte; `--plano` es un entero registrado. */
 .reframe-marco {
   @variant reduced {
     --reframe-r0: max(0px, calc((100cqw - 100cqh * 16 / 9) / 2));
-    --reframe-r1: max(calc(var(--reframe-r0) + 3cqw), calc((100cqw - 100cqh) / 2));
-    --reframe-r2: max(
-      calc(var(--reframe-r1) + 3cqw),
-      calc((100cqw - 100cqh * 4 / 5) / 2)
+    --reframe-r1: calc((100cqw - 100cqh) / 2);
+    --reframe-r2: calc((100cqw - 100cqh * 4 / 5) / 2);
+    --reframe-r3: calc((100cqw - 100cqh * 9 / 16) / 2);
+    --reframe-recorte: calc(
+      var(--reframe-r0) * clamp(0, 1 - var(--plano), 1) + var(--reframe-r1) *
+        (clamp(0, var(--plano), 1) - clamp(0, var(--plano) - 1, 1)) + var(--reframe-r2) *
+        (clamp(0, var(--plano) - 1, 1) - clamp(0, var(--plano) - 2, 1)) +
+        var(--reframe-r3) * clamp(0, var(--plano) - 2, 1)
     );
-    --reframe-r3: max(
-      calc(var(--reframe-r2) + 3cqw),
-      calc((100cqw - 100cqh * 9 / 16) / 2)
-    );
-    --reframe-recorte: min(
-      var(--reframe-tope),
-      calc(
-        var(--reframe-r0) * clamp(0, 1 - var(--plano), 1) + var(--reframe-r1) *
-          (clamp(0, var(--plano), 1) - clamp(0, var(--plano) - 1, 1)) +
-          var(--reframe-r2) *
-          (clamp(0, var(--plano) - 1, 1) - clamp(0, var(--plano) - 2, 1)) +
-          var(--reframe-r3) * clamp(0, var(--plano) - 2, 1)
-      )
-    );
+  }
+}
+.reframe-marco {
+  @variant reduced {
+    transition: none;
   }
 }
 
@@ -167,6 +172,9 @@ html:not(.js) .reframe-section {
    --ease-brand estaba casi hecho en el primer fotograma). */
 .reframe-original {
   opacity: var(--reframe-original);
+}
+.reframe-square {
+  opacity: var(--reframe-square);
 }
 .reframe-ready {
   opacity: var(--reframe-ready);

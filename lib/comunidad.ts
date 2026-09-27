@@ -19,78 +19,48 @@ export const CLIENT_CHANNELS: ClientChannel[] = [
     name: "Turno",
     networks: ["youtube", "instagram", "tiktok", "x"],
     metric: "124 mil suscriptores",
-    photo: "/clients/turno.webp",
+    photo: "/clients/turno.avif",
   },
   {
     name: "EL CHUPAPI L4D",
     networks: ["kick", "tiktok"],
     metric: "200 seguidores",
-    photo: "/clients/chupapi.jpeg",
+    photo: "/clients/chupapi.avif",
   },
   {
     name: "Gatimixx",
     networks: ["twitch"],
     metric: "150 seguidores",
-    photo: "/clients/gatimixx.png",
+    photo: "/clients/gatimixx.avif",
   },
   {
     name: "Skilpe",
     networks: ["tiktok"],
     metric: "+100K vistas",
-    photo: "/clients/skilpe.jpeg",
+    photo: "/clients/skilpe.avif",
   },
   {
     name: "RinNakaVT",
     networks: ["twitch"],
     metric: "400 seguidores",
-    photo: "/clients/rinnakavt.png",
+    photo: "/clients/rinnakavt.avif",
   },
   {
     name: "Evolutive Playbook",
     networks: ["linkedin", "youtube"],
     metric: "Canal de gestión",
-    photo: "/clients/evolutive-playbook.jpg",
+    photo: "/clients/evolutive-playbook.avif",
   },
   {
     name: "Jarod Blade",
     networks: ["tiktok"],
     metric: "850 seguidores",
-    photo: "/clients/jarod-blade.jpeg",
+    photo: "/clients/jarod-blade.avif",
   },
   {
     name: "SirGhostv",
     networks: ["youtube"],
     metric: "1.85K seguidores",
-    photo: "/clients/sirghostv.jpg",
+    photo: "/clients/sirghostv.avif",
   },
-]
-
-export interface BrandProof {
-  name: string
-  icon:
-    | "podcast"
-    | "radio"
-    | "newspaper"
-    | "store"
-    | "graduation"
-    | "headphones"
-    | "tv"
-    | "landmark"
-    | "mic"
-    | "users"
-  style: "heavy" | "caps"
-}
-
-/** Franja de equipos y marcas que acompaña a los canales de la comunidad. */
-export const BRANDS: BrandProof[] = [
-  { name: "Podcast Lima", icon: "podcast", style: "heavy" },
-  { name: "Radio Andina", icon: "radio", style: "caps" },
-  { name: "Kunan Media", icon: "newspaper", style: "heavy" },
-  { name: "Tambo Digital", icon: "store", style: "caps" },
-  { name: "Academia Nómada", icon: "graduation", style: "heavy" },
-  { name: "Pulso FM", icon: "headphones", style: "caps" },
-  { name: "Canal Sur", icon: "tv", style: "heavy" },
-  { name: "Banco del Valle", icon: "landmark", style: "caps" },
-  { name: "Ola Studio", icon: "mic", style: "heavy" },
-  { name: "Creadores Perú", icon: "users", style: "caps" },
 ]

@@ -61,34 +61,32 @@ const medirVisible = (page: Page, selector: string) =>
 
 const medirMarco = (page: Page) => medirVisible(page, ".reframe-marco")
 
-/** Sin dejar menos de 9 rem de marco visible (app/motion/reframe.css). */
-const tope = ({ caja, rem }: Medida) => Math.max(0, caja / 2 - 4.5 * rem)
-
 /**
- * Ancho visible esperado del marco sin preferencia para una geometría `t`
- * (0 = original, 1 = vertical): un tercio de la caja por lado en vertical.
+ * Ancho visible esperado para una geometría `t` (0 = 16:9, 1 = 9:16).
  */
-const anchoEsperado = (m: Medida, t: number) =>
-  m.caja - 2 * Math.min(0.33 * m.caja * t, tope(m))
+const anchoEsperado = (m: Medida, t: number) => m.caja - (m.caja - (m.alto * 9) / 16) * t
+
+const geometriaEsperada = (progreso: number) => {
+  const limitar = (valor: number) => Math.min(1, Math.max(0, valor))
+  return (
+    0.64 * limitar((progreso - 0.12) / 0.32) + 0.36 * limitar((progreso - 0.62) / 0.2)
+  )
+}
 
 /** Proporciones de los cuatro planos de «reducir»: 16:9, 1:1, 4:5 y 9:16. */
 const PROPORCIONES = [16 / 9, 1, 4 / 5, 9 / 16] as const
 
 /**
  * Ancho visible esperado de un plano con «reducir»: la proporción de su formato
- * sobre el alto de la caja; donde la caja no da para ella, al menos un 3 % del
- * ancho más de recorte por lado que el plano anterior (app/motion/reframe.css).
+ * sobre el alto de la caja.
  */
 const anchoDelPlano = (m: Medida, plano: number) => {
   let recorte = 0
   for (let k = 0; k <= plano; k++) {
     const porProporcion = (m.caja - m.alto * PROPORCIONES[k]) / 2
-    recorte =
-      k === 0
-        ? Math.max(0, porProporcion)
-        : Math.max(recorte + 0.03 * m.caja, porProporcion)
+    recorte = Math.max(0, porProporcion)
   }
-  return m.caja - 2 * Math.min(recorte, tope(m))
+  return m.caja - 2 * recorte
 }
 
 const reduceActivo = (modo: (typeof MODOS)[number]) => modo === "reduce"
@@ -163,12 +161,43 @@ for (const modo of MODOS) {
         : anchoEsperado(final, 1)
       expect(Math.abs(final.visible - anchoFinal)).toBeLessThanOrEqual(3)
       expect(final.visible).toBeLessThan(inicial.visible * 0.6)
-      await expect(seccion.getByText("Clip vertical · 9:16")).toBeVisible()
+      await expect(seccion.getByText("Clip · 9:16")).toBeVisible()
       await expect(seccion.locator(".reframe-ready")).toHaveCSS("opacity", "1")
       await expect(seccion.locator(".reframe-original")).toHaveCSS("opacity", "0")
     })
 
     if (modo === "no-preference") {
+      test("la animación carga al entrar, se reproduce sin controles y sigue a cada hablante", async ({
+        page,
+      }) => {
+        await irA(page, "/")
+        const seccion = page.locator("#como-funciona")
+        const video = seccion.locator("video")
+        const marco = seccion.locator(".reframe-marco")
+
+        await expect(video).not.toHaveAttribute("src")
+        await irAProgreso(page, 0.85)
+        await expect(video).toHaveAttribute("src", "/media/podcast-loop.mp4")
+        await expect(video).toHaveJSProperty("paused", false)
+        await expect(video).toHaveJSProperty("controls", false)
+        await expect(video).toHaveJSProperty("muted", true)
+        await expect(video).toHaveJSProperty("loop", true)
+
+        for (const [tiempo, protagonista] of [
+          [3.6, "man"],
+          [3.64, "woman"],
+          [7.88, "woman"],
+          [7.95, "man"],
+        ] as const) {
+          await video.evaluate((el, t) => {
+            const media = el as HTMLVideoElement
+            media.pause()
+            media.currentTime = t
+          }, tiempo)
+          await expect(marco).toHaveAttribute("data-speaker", protagonista)
+        }
+      })
+
       test("sin preferencia sigue al scroll de forma continua, con el alto de siempre", async ({
         page,
       }) => {
@@ -186,12 +215,26 @@ for (const modo of MODOS) {
         const b = await medirMarco(page)
         expect(a.visible - b.visible).toBeGreaterThan(20)
         expect(
-          Math.abs(a.visible - anchoEsperado(a, (0.3 - 0.12) / 0.6))
+          Math.abs(a.visible - anchoEsperado(a, geometriaEsperada(0.3)))
         ).toBeLessThanOrEqual(3)
         const seleccion = await medirVisible(page, ".reframe-seleccion")
         expect(
-          Math.abs(seleccion.visible - seleccionEsperada(seleccion, (0.36 - 0.12) / 0.6))
+          Math.abs(
+            seleccion.visible - seleccionEsperada(seleccion, geometriaEsperada(0.36))
+          )
         ).toBeLessThanOrEqual(3)
+
+        // El siguiente tramo de scroll se consume mostrando el clip cuadrado.
+        await irAProgreso(page, 0.46)
+        const cuadrado = await medirMarco(page)
+        await expect(seccion.locator(".reframe-square")).toHaveCSS("opacity", "1")
+        await irAProgreso(page, 0.6)
+        const pausa = await medirMarco(page)
+        expect(Math.abs(cuadrado.visible - pausa.visible)).toBeLessThanOrEqual(3)
+        expect(pausa.visible / pausa.alto).toBeCloseTo(1, 1)
+        await irAProgreso(page, 0.7)
+        const continua = await medirMarco(page)
+        expect(continua.visible).toBeLessThan(pausa.visible - 20)
       })
     } else {
       test("con reduce se monta en cuatro planos con la proporción de cada formato: 16:9, 1:1, 4:5 y 9:16", async ({
@@ -353,16 +396,13 @@ for (const modo of MODOS) {
     })
 
     for (const ruta of RUTAS) {
-      test(`a 390 px el rótulo final no se recorta y cabe en el marco (${ruta})`, async ({
-        page,
-      }) => {
+      test(`a 390 px el rótulo final no se recorta (${ruta})`, async ({ page }) => {
         await page.setViewportSize({ width: 390, height: 844 })
         await irA(page, ruta)
         await irAProgreso(page, 1)
 
         const listo = page.locator("#como-funciona .reframe-ready")
         await expect(listo).toHaveCSS("opacity", "1")
-        const marco = await medirMarco(page)
 
         const rotulo = await listo.evaluate((el) => {
           const r = el.getBoundingClientRect()
@@ -386,13 +426,11 @@ for (const modo of MODOS) {
           }
         })
 
-        const detalle = `${rotulo.texto}: ${rotulo.izquierda}-${rotulo.derecha} en un marco visible ${marco.izquierda}-${marco.derecha}`
+        const detalle = `${rotulo.texto}: ${rotulo.izquierda}-${rotulo.derecha}`
         expect(rotulo.sobrante, detalle).toBeLessThanOrEqual(0)
         expect(rotulo.bordeIzquierdo, detalle).toBe(true)
         expect(rotulo.bordeDerecho, detalle).toBe(true)
-        // Dentro del marco, con margen para las esquinas redondeadas
-        expect(rotulo.izquierda - marco.izquierda, detalle).toBeGreaterThanOrEqual(3)
-        expect(marco.derecha - rotulo.derecha, detalle).toBeGreaterThanOrEqual(3)
+        // El rótulo queda fuera del recorte 9:16 y dentro de la ventana.
         expect(rotulo.izquierda, detalle).toBeGreaterThanOrEqual(0)
         expect(rotulo.derecha, detalle).toBeLessThanOrEqual(rotulo.anchoVentana)
       })

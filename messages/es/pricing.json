@@ -8,14 +8,18 @@
     "basic": {
       "name": "Básico",
       "tagline": "Creadores en crecimiento.",
-      "cta": "Empezar"
+      "cta": "Elegir Básico"
     },
     "standard": {
       "name": "Estándar",
       "tagline": "Creadores profesionales.",
-      "cta": "Empezar"
+      "cta": "Elegir Estándar"
     },
-    "premium": { "name": "Premium", "tagline": "Agencias y equipos.", "cta": "Empezar" }
+    "premium": {
+      "name": "Premium",
+      "tagline": "Agencias y equipos.",
+      "cta": "Elegir Premium"
+    }
   },
   "perMonth": "/mes",
   "mostPopular": "Más popular",

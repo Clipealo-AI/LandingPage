@@ -1,6 +1,6 @@
 import * as React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
-import { renderHook } from "@testing-library/react"
+import { cleanup, renderHook } from "@testing-library/react"
 import { NextIntlClientProvider } from "next-intl"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
@@ -9,6 +9,7 @@ import {
   PLANOS_REFRAME,
   Reframe,
   planoReframe,
+  protagonistaEn,
 } from "@/components/marketing/reframe"
 import { useScrollProgress } from "@/hooks/use-scroll-progress"
 import es from "@/messages/es"
@@ -63,6 +64,17 @@ describe("planoReframe", () => {
   })
 })
 
+describe("protagonistaEn", () => {
+  it("cambia el foco en los dos cortes pedidos y vuelve al chico al terminar", () => {
+    expect(protagonistaEn(0)).toBe("man")
+    expect(protagonistaEn(3.619)).toBe("man")
+    expect(protagonistaEn(3.62)).toBe("woman")
+    expect(protagonistaEn(7.909)).toBe("woman")
+    expect(protagonistaEn(7.91)).toBe("man")
+    expect(protagonistaEn(10)).toBe("man")
+  })
+})
+
 /** Sección de 2000 px en una ventana de 768 (jsdom): recorrido de 1232 px. */
 const ALTO_SECCION = 2000
 const recorrido = () => ALTO_SECCION - window.innerHeight
@@ -106,9 +118,13 @@ beforeEach(() => {
   })
   vi.stubGlobal("requestAnimationFrame", (cb: FrameRequestCallback) => frames.push(cb))
   vi.stubGlobal("cancelAnimationFrame", () => {})
+  vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => {})
+  vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue()
+  vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {})
 })
 
 afterEach(() => {
+  cleanup()
   vi.restoreAllMocks()
   vi.unstubAllGlobals()
   delete document.documentElement.dataset.motion

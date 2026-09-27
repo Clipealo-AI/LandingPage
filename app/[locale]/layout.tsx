@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { notFound } from "next/navigation"
+import Script from "next/script"
 import { hasLocale } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 
@@ -83,7 +84,9 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
             falla) el contenido se ve igualmente. Despues, la bandera de revision
             `?movimiento=completo|reducido|sistema` (lib/motion.ts): pone
             `data-motion` en <html> para la sesion, sin interfaz visible. */}
-        <script
+        <Script
+          id="clipealo-motion-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.add("js");${SCRIPT_BANDERA_MOVIMIENTO}`,
           }}

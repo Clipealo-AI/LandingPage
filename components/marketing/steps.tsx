@@ -66,27 +66,23 @@ export function Steps() {
                     className="shadow-lg ring-white/15"
                   >
                     <Image
-                      src="/media/podcast-source.webp"
+                      src={
+                        step.id === "ready"
+                          ? "/media/steps-podcast-man-9x16.avif"
+                          : "/media/steps-podcast-16x9.avif"
+                      }
                       alt=""
                       fill
                       sizes={
                         step.id === "ready" ? "155px" : "(max-width: 640px) 290px, 26vw"
                       }
-                      className={cn(
-                        "object-cover",
-                        step.id === "ready" && "object-[76%_center]"
-                      )}
+                      className="object-cover"
                     />
                     {step.id === "moment" && (
                       <div
                         className="absolute inset-0 bg-gradient-to-r from-ink-950/45 via-transparent to-ink-950/15"
                         aria-hidden
                       />
-                    )}
-                    {step.id === "ready" && (
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-2.5 pt-14 pb-4 text-center text-xs leading-tight font-semibold text-white">
-                        {t("previewCaption")}
-                      </div>
                     )}
                   </MediaFrame>
                 </div>

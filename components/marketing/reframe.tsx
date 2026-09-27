@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Image from "next/image"
 import { useTranslations } from "next-intl"
 
 import { clamp } from "@/lib/format"
@@ -20,10 +19,15 @@ export const PLANOS_REFRAME = 4
 /** Fundido del marco en cada corte de montaje, en ms. */
 export const DURACION_CORTE = 300
 
+/** El encuadre acompaña a quien tiene la palabra en el clip de diez segundos. */
+export function protagonistaEn(tiempo: number): "man" | "woman" {
+  return tiempo >= 3.62 && tiempo < 7.91 ? "woman" : "man"
+}
+
 /**
- * Plano del montaje (0 a 3) para un progreso de scroll (0 a 1). Usa el mismo
- * tramo útil que `--t` en CSS ([0,12 – 0,72]): cada plano coincide con el punto
- * del recorrido continuo que representa y los dos intermedios duran lo mismo.
+ * Plano del montaje reducido (0 a 3) para un progreso de scroll (0 a 1).
+ * Los dos planos intermedios duran lo mismo; la pausa 1:1 del modo completo
+ * tiene su propia curva en CSS.
  */
 export function planoReframe(progreso: number): number {
   if (!Number.isFinite(progreso)) return 0
@@ -53,6 +57,7 @@ export function Reframe() {
   const t = useTranslations("marketing.reframe")
   const seccion = React.useRef<HTMLElement>(null)
   const marco = React.useRef<HTMLDivElement>(null)
+  const video = React.useRef<HTMLVideoElement>(null)
   /** Último plano escrito; `null` hasta la primera medida, que nunca funde. */
   const plano = React.useRef<number | null>(null)
   const corte = React.useRef<Animation | null>(null)
@@ -79,6 +84,79 @@ export function Reframe() {
     },
   })
 
+  React.useEffect(() => {
+    const media = video.current
+    const frame = marco.current
+    if (!media || !frame) return
+
+    let visible = false
+    let cargado = false
+    let callback = 0
+    const enfocar = (tiempo: number) => {
+      const persona = protagonistaEn(tiempo)
+      if (frame.dataset.speaker !== persona) frame.dataset.speaker = persona
+    }
+    const alActualizarTiempo = () => enfocar(media.currentTime)
+    const alFotograma: VideoFrameRequestCallback = (_ahora, datos) => {
+      enfocar(datos.mediaTime)
+      callback = media.requestVideoFrameCallback(alFotograma)
+    }
+
+    // El recurso se solicita una sola vez, al acercarse a la sección. El
+    // fotograma de portada ya ocupa exactamente la caja reservada.
+    const sincronizar = () => {
+      if (!visible || prefiereMenosMovimiento()) {
+        media.pause()
+        return
+      }
+      if (!cargado) {
+        media.src = "/media/podcast-loop.mp4"
+        media.load()
+        cargado = true
+      }
+      void Promise.resolve(media.play()).catch(() => {
+        // Si el navegador bloquea la reproducción, permanece la portada.
+      })
+    }
+
+    media.addEventListener("timeupdate", alActualizarTiempo)
+    media.addEventListener("seeked", alActualizarTiempo)
+    if ("requestVideoFrameCallback" in media) {
+      callback = media.requestVideoFrameCallback(alFotograma)
+    }
+
+    const observador =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(
+            (entradas) => {
+              visible = entradas[0]?.isIntersecting ?? false
+              sincronizar()
+            },
+            { rootMargin: "200px 0px" }
+          )
+    if (observador) observador.observe(media)
+    else {
+      visible = true
+      sincronizar()
+    }
+
+    const preferencia = new MutationObserver(sincronizar)
+    preferencia.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-motion"],
+    })
+
+    return () => {
+      observador?.disconnect()
+      preferencia.disconnect()
+      media.removeEventListener("timeupdate", alActualizarTiempo)
+      media.removeEventListener("seeked", alActualizarTiempo)
+      if (callback) media.cancelVideoFrameCallback(callback)
+      media.pause()
+    }
+  }, [])
+
   return (
     <>
       <section
@@ -89,47 +167,56 @@ export function Reframe() {
         <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5">
           <PatternIsotipos opacity={0.08} fade="edges" />
 
-          <h2 className="relative max-w-3xl text-center display text-[clamp(1.75rem,4.4vw,3rem)] text-ink-50">
+          <h2 className="relative mx-auto max-w-3xl text-center display text-[clamp(1.75rem,4.4vw,3rem)] text-ink-50">
             {t.rich("title", { br: () => <br /> })}
           </h2>
-          <p className="relative mt-4 max-w-xl text-center text-sm leading-relaxed text-mist/75 sm:text-base">
+          <p className="relative mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-mist/75 sm:text-base">
             {t("lead")}
           </p>
 
-          {/* El mismo fotograma se desplaza hacia la persona que habla mientras
-              el marco se cierra. El recorte sigue siendo visual, sin CLS. */}
-          <div className="reframe-encuadre relative mt-7 h-[36vh] w-full max-w-[56rem] sm:mt-9 sm:h-[40vh]">
+          {/* Caja 16:9 fija; el recorte y el foco cambian sin mover el layout. */}
+          <div className="reframe-encuadre relative mx-auto mt-7 aspect-video w-[min(100%,56rem,calc(52svh*16/9))] sm:mt-9">
             <div
               ref={marco}
+              data-speaker="man"
               className="reframe-marco absolute inset-0 overflow-hidden rounded-frame border-white/20 bg-ink-900"
             >
-              <Image
-                src="/media/podcast-source.webp"
-                alt={t("sourceAlt")}
-                fill
-                sizes="(max-width: 640px) 100vw, 900px"
-                className="reframe-foto object-cover"
+              <video
+                ref={video}
+                className="reframe-foto absolute inset-0 h-full w-full object-cover"
+                poster="/media/podcast-loop-poster.avif"
+                preload="none"
+                autoPlay
+                muted
+                loop
+                playsInline
+                disablePictureInPicture
+                disableRemotePlayback
+                aria-label={t("sourceAlt")}
               />
               <div
                 className="absolute inset-0 bg-gradient-to-t from-ink-950/60 via-transparent to-transparent"
                 aria-hidden
               />
-              <span className="reframe-label reframe-original absolute inset-0 grid place-items-center px-4 text-center text-xs text-mist sm:text-sm">
-                <span className="rounded-md bg-ink-950/80 px-3 py-1.5 backdrop-blur-sm">
-                  {t("original")}
-                </span>
+              <span className="reframe-label reframe-original absolute bottom-4 left-1/2 -translate-x-1/2 rounded-md bg-ink-950/80 px-3 py-1.5 text-xs whitespace-nowrap text-mist backdrop-blur-sm sm:text-sm">
+                {t("original")}
               </span>
             </div>
 
+            <span className="reframe-label reframe-square absolute bottom-4 left-1/2 -translate-x-1/2 rounded-lg bg-brand px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-brand-foreground">
+              {t("square")}
+            </span>
             <span className="reframe-label reframe-ready absolute bottom-4 left-1/2 -translate-x-1/2 rounded-lg bg-brand px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-brand-foreground">
               {t("ready")}
             </span>
           </div>
 
-          <div className="relative mt-7 h-2.5 w-full max-w-2xl overflow-hidden rounded-full bg-white/15 sm:mt-9 sm:h-3">
+          <div className="relative mx-auto mt-7 h-2.5 w-full max-w-2xl overflow-hidden rounded-full bg-white/15 sm:mt-9 sm:h-3">
             <span className="reframe-seleccion absolute inset-0 rounded-full bg-brand" />
           </div>
-          <p className="relative mt-4 text-center text-sm text-mist/70">{t("caption")}</p>
+          <p className="relative mx-auto mt-4 text-center text-sm text-mist/70">
+            {t("caption")}
+          </p>
         </div>
       </section>
 
@@ -158,7 +245,7 @@ export function Reframe() {
           <div className="m-anim m-rise overflow-hidden rounded-frame border border-white/15 bg-ink-900 shadow-xl [--i:3]">
             <video
               className="block aspect-video w-full bg-ink-900 object-contain"
-              poster="/media/one-content-many-clips.jpg"
+              poster="/media/one-content-many-clips.avif"
               preload="none"
               playsInline
               controls

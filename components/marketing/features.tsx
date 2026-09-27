@@ -113,7 +113,7 @@ export function Features() {
               <div className="m-anim m-dim w-32 opacity-70">
                 <MediaFrame aspect="16:9" className="ring-white/15">
                   <Image
-                    src="/media/podcast-source.webp"
+                    src="/media/feature-podcast-16x9.avif"
                     alt=""
                     fill
                     sizes="128px"
@@ -124,11 +124,11 @@ export function Features() {
               <CropFrame size="sm" className="m-crop-corners w-24">
                 <MediaFrame aspect="9:16" className="ring-white/15">
                   <Image
-                    src="/media/podcast-source.webp"
+                    src="/media/feature-podcast-9x16.avif"
                     alt=""
                     fill
                     sizes="96px"
-                    className="object-cover object-[76%_center]"
+                    className="object-cover"
                   />
                 </MediaFrame>
               </CropFrame>

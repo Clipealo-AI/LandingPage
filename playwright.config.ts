@@ -52,7 +52,8 @@ export default defineConfig({
     // Se prueba el export estático que recibe Firebase Hosting. `next start` no
     // admite proyectos con `output: "export"`.
     command: `npm run build && npx serve --config serve.json --listen ${PORT} --no-clipboard`,
-    url: baseURL,
+    // Todas las páginas tienen prefijo de idioma; `/` no es una página servida.
+    url: `${baseURL}/es/`,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
   },

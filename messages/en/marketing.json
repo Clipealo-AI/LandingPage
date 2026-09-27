@@ -112,7 +112,6 @@
     "seekToMoment": "Jump to moment: {title}",
     "seekPreview": "Seek through the original video",
     "pausePreview": "Pause video",
-    "viewClip": "View clip and transcript: {title}",
     "sourceTime": "From the original video · {start}–{end}",
     "clipVideo": "Clip: {title}",
     "transcript": "Transcript",
@@ -154,7 +153,7 @@
   "community": {
     "title": "Creators with over <b>6.8 million</b> followers and teams across Spanish-speaking Latin America already publish with Clipealo.",
     "creators": "Creators who trust Clipealo",
-    "brands": "Brands and media outlets that use Clipealo",
+    "channels": "Channels that already publish with Clipealo",
     "followers": "followers"
   },
   "reframe": {
@@ -162,7 +161,8 @@
     "lead": "One long video can become several clips. Choose the moment, adjust the frame and decide where to share it.",
     "sourceAlt": "Two people talking into microphones in a podcast studio",
     "original": "Original recording · 16:9",
-    "ready": "Vertical clip · 9:16",
+    "square": "Clip · 1:1",
+    "ready": "Clip · 9:16",
     "caption": "The frame follows the moment you chose.",
     "videoEyebrow": "From video to your channels",
     "videoTitle": "One recording. Many clips.",
@@ -204,7 +204,6 @@
   },
   "steps": {
     "title": "From one long video<br></br>to clips ready to go.",
-    "previewCaption": "One idea, one clip.",
     "full": {
       "title": "Upload the full recording",
       "body": "Start with a podcast, livestream, class or interview. Upload a file or import a supported link."
@@ -221,15 +220,17 @@
   "networks": {
     "eyebrow": "Publishing",
     "title": "One clip, more<br></br>ways to share it.",
-    "lead": "Choose a channel, review the text and publish the same vertical clip to your connected accounts.",
-    "list": "Destination platforms",
+    "lead": "Prepare the same content in different formats, review the text, and publish it to your connected accounts.",
+    "list": "Available channels",
     "planNote": "Available channels and scheduling depend on your plan.",
-    "previewClip": "One idea, one clip.",
-    "previewNote": "Illustrative preview",
+    "hook": "[Viral Hook]",
+    "transcript": "[Transcript]",
+    "blurFormat": "9:16 · blur",
+    "formatsGallery": "Clip formats; scroll horizontally to see them all",
     "bullets": {
-      "formats": "Prepare one vertical 9:16 clip for your available channels",
+      "formats": "Prepare your clips for your available channels",
       "limit": "Review the result before publishing",
-      "schedule": "Publish now or schedule when your plan includes it"
+      "schedule": "Publish now or schedule at custom times"
     }
   },
   "pricing": {

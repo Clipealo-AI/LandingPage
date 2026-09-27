@@ -112,7 +112,6 @@
     "seekToMoment": "Ir para o momento: {title}",
     "seekPreview": "Avançar no vídeo original",
     "pausePreview": "Pausar vídeo",
-    "viewClip": "Ver clipe e transcrição: {title}",
     "sourceTime": "Do vídeo original · {start}–{end}",
     "clipVideo": "Clipe: {title}",
     "transcript": "Transcrição",
@@ -154,7 +153,7 @@
   "community": {
     "title": "Criadores com mais de <b>6,8 milhões</b> de seguidores e equipes de toda a América Hispânica já publicam com o Clipealo.",
     "creators": "Criadores que já confiam no Clipealo",
-    "brands": "Marcas e veículos que usam o Clipealo",
+    "channels": "Canais que já publicam com o Clipealo",
     "followers": "seguidores"
   },
   "reframe": {
@@ -162,7 +161,8 @@
     "lead": "Um vídeo longo pode render vários clipes. Escolha o momento, ajuste o enquadramento e decida onde compartilhar.",
     "sourceAlt": "Duas pessoas conversam diante de microfones em um estúdio de podcast",
     "original": "Gravação original · 16:9",
-    "ready": "Clipe vertical · 9:16",
+    "square": "Clipe · 1:1",
+    "ready": "Clipe · 9:16",
     "caption": "O enquadramento acompanha o momento escolhido.",
     "videoEyebrow": "Do vídeo às suas redes",
     "videoTitle": "Uma gravação. Vários clipes.",
@@ -204,7 +204,6 @@
   },
   "steps": {
     "title": "De um vídeo longo<br></br>a clipes prontos.",
-    "previewCaption": "Uma ideia, um clipe.",
     "full": {
       "title": "Envie o conteúdo completo",
       "body": "Comece com um podcast, live, aula ou entrevista. Envie o arquivo ou importe um link compatível."
@@ -221,15 +220,17 @@
   "networks": {
     "eyebrow": "Publicação",
     "title": "Um clipe, mais<br></br>formas de compartilhar.",
-    "lead": "Escolha o canal, revise o texto e publique o mesmo clipe vertical nas contas conectadas.",
-    "list": "Redes de destino",
+    "lead": "Prepare o mesmo conteúdo em diferentes formatos, revise o texto e publique-o nas contas conectadas.",
+    "list": "Redes disponíveis",
     "planNote": "As redes disponíveis e o agendamento dependem do seu plano.",
-    "previewClip": "Uma ideia, um clipe.",
-    "previewNote": "Prévia ilustrativa",
+    "hook": "[Gancho viral]",
+    "transcript": "[Transcrição]",
+    "blurFormat": "9:16 · desfoque",
+    "formatsGallery": "Formatos de clipe; deslize horizontalmente para ver todos",
     "bullets": {
-      "formats": "Prepare um clipe vertical 9:16 para os canais disponíveis",
+      "formats": "Prepare seus clipes para os canais disponíveis",
       "limit": "Revise o resultado antes de publicar",
-      "schedule": "Publique agora ou agende quando seu plano incluir o recurso"
+      "schedule": "Publique agora ou agende em horários personalizados"
     }
   },
   "pricing": {

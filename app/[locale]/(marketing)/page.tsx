@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { preconnect, preload } from "react-dom"
 
 import { Hero } from "@/components/marketing/hero"
 import { Comunidad } from "@/components/marketing/comunidad"
@@ -13,6 +14,7 @@ import { MotionObserver } from "@/components/marketing/motion-observer"
 import { PointerLight } from "@/components/marketing/pointer-light"
 import { alternates } from "@/i18n/metadata"
 import { idiomaDe } from "@/i18n/server"
+import { RUBIUS_SOURCE } from "@/lib/marketing/rubius-demo"
 
 /** Título y descripción los pone el layout raíz (`common.meta`); aquí, canónica y hreflang. */
 export async function generateMetadata({
@@ -24,6 +26,9 @@ export async function generateMetadata({
 
 export default async function LandingPage({ params }: PageProps<"/[locale]">) {
   await idiomaDe(params)
+  preconnect("https://storage.googleapis.com")
+  preload(RUBIUS_SOURCE.poster, { as: "image", fetchPriority: "high" })
+
   return (
     <>
       <Hero />

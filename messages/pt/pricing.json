@@ -8,17 +8,17 @@
     "basic": {
       "name": "Básico",
       "tagline": "Para criadores em crescimento.",
-      "cta": "Começar"
+      "cta": "Escolher Básico"
     },
     "standard": {
       "name": "Padrão",
       "tagline": "Para criadores profissionais.",
-      "cta": "Começar"
+      "cta": "Escolher Padrão"
     },
     "premium": {
       "name": "Premium",
       "tagline": "Para agências e equipes.",
-      "cta": "Começar"
+      "cta": "Escolher Premium"
     }
   },
   "perMonth": "/mês",
