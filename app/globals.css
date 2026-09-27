@@ -161,6 +161,8 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
+  --color-success-strong: var(--success-strong);
+  --color-success-strong-foreground: var(--success-strong-foreground);
   --color-warning: var(--warning);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -244,6 +246,8 @@
   --destructive: var(--color-danger-600);
   --destructive-foreground: oklch(1 0 0);
   --success: var(--color-success-600);
+  --success-strong: var(--color-success-500);
+  --success-strong-foreground: var(--color-ink-950);
   --warning: var(--color-warning-600);
 
   --border: var(--color-ink-200);
@@ -262,7 +266,7 @@
   --stage-muted: var(--color-ink-400);
   --stage-border: oklch(1 0 0 / 0.1);
 
-  /* Tema categorico: los dos hues de marca + tres armonicos. Orden fijo, nunca
+  /* Tema categorico: los dos hues de marca + cuatro armonicos. Orden fijo, nunca
      ciclado. Validado (banda de luminosidad, croma, separacion CVD y contraste)
      contra superficie #fff. Amarillo y teal quedan bajo 3:1: los graficos que
      los usen llevan etiqueta directa o vista de tabla. */
@@ -275,8 +279,8 @@
 
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: var(--color-ink-800);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
   --sidebar-accent: var(--color-blue-100);
   --sidebar-accent-foreground: var(--color-blue-900);
   --sidebar-border: var(--color-ink-200);
@@ -316,6 +320,9 @@
   --destructive: var(--color-danger-400);
   --destructive-foreground: var(--color-ink-950);
   --success: var(--color-success-500);
+  /* Verde sólido: el mismo par medido en claro y oscuro. */
+  --success-strong: var(--color-success-500);
+  --success-strong-foreground: var(--color-ink-950);
   --warning: var(--color-warning-500);
 
   --border: oklch(1 0 0 / 0.1);
@@ -344,8 +351,6 @@
 
   --sidebar: var(--color-ink-900);
   --sidebar-foreground: var(--color-blue-100);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(1 0 0 / 0.08);
   --sidebar-accent-foreground: var(--color-blue-100);
   --sidebar-border: oklch(1 0 0 / 0.1);
