@@ -115,6 +115,27 @@ export function RouteSection({
   )
 }
 
+export function RouteInfoGrid({
+  items,
+}: {
+  items: { title: string; description: string }[]
+}) {
+  return (
+    <div className="grid gap-4 md:grid-cols-3">
+      {items.map((item) => (
+        <Card key={item.title} className="h-full border-border/80 bg-card">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              {item.description}
+            </p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  )
+}
+
 export function WorkflowGrid({
   steps,
 }: {

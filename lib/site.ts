@@ -26,7 +26,6 @@ export const footerNav = {
   ],
   resources: [
     { id: "blogGuides", href: "/blog" },
-    { id: "faq", href: { pathname: "/", hash: "faq" } },
     { id: "whatsapp", href: WHATSAPP_URL },
   ],
   legal: [

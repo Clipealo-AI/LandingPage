@@ -1,105 +1,319 @@
 {
   "shared": {
     "planNote": "La disponibilidad de algunas funciones depende del plan. Consulta la comparativa antes de empezar.",
-    "workflowTitle": "Del video al clip"
+    "workflowTitle": "Del video al clip",
+    "caseExamplesTitle": "Contenido que puedes aprovechar",
+    "caseExamplesLead": "El formato cambia según tu audiencia, pero el criterio final sigue en tus manos. Estos son algunos materiales que encajan con cada flujo.",
+    "featureExamplesTitle": "Dónde aporta valor esta función",
+    "featureExamplesLead": "Aplica la herramienta a tareas concretas del proceso, desde revisar una grabación hasta preparar una entrega."
   },
   "features": {
     "automaticClips": {
       "heading": "Encuentra momentos que vale la pena compartir",
-      "body": "Sube un video o importa un enlace compatible. Clipealo propone fragmentos con su inicio y final para que revises el contexto antes de convertirlos en clips.",
+      "body": "Parte de una grabación completa para ubicar segmentos con una idea, una reacción o una respuesta reconocible. Revisa el contexto de cada propuesta, ajusta sus límites y decide qué fragmentos merecen convertirse en clips antes de exportarlos.",
       "points": {
         "first": "Revisa los momentos sugeridos",
         "second": "Ajusta el inicio y el final",
         "third": "Prepara el clip para compartir"
+      },
+      "examples": {
+        "first": {
+          "title": "Entrevistas y podcasts",
+          "description": "Revisa respuestas, anécdotas y opiniones sin perder de vista la conversación que las origina."
+        },
+        "second": {
+          "title": "Clases y webinars",
+          "description": "Encuentra explicaciones que puedan convertirse en una pieza breve y comprensible por sí sola."
+        },
+        "third": {
+          "title": "Directos y streams",
+          "description": "Vuelve sobre jugadas, reacciones y conversaciones para seleccionar qué compartir."
+        }
       }
     },
     "subtitleEditor": {
       "heading": "Haz que cada palabra se lea bien",
-      "body": "Revisa la transcripción y corrige nombres o frases antes de exportar. Ajusta el estilo de los subtítulos según las opciones de tu plan.",
+      "body": "La transcripción es un punto de partida que puedes revisar antes de exportar. Corrige nombres, términos o frases, ajusta el estilo visual disponible y comprueba que los subtítulos sean legibles en el encuadre final.",
       "points": {
         "first": "Corrige la transcripción",
         "second": "Elige un estilo legible",
         "third": "Comprueba el resultado final"
+      },
+      "examples": {
+        "first": {
+          "title": "Nombres y términos",
+          "description": "Corrige nombres propios, marcas o vocabulario específico que requiera una revisión humana."
+        },
+        "second": {
+          "title": "Lectura en pantalla",
+          "description": "Comprueba contraste, ubicación y longitud de cada línea en el tamaño del video."
+        },
+        "third": {
+          "title": "Estilo consistente",
+          "description": "Usa las opciones de diseño disponibles para mantener una apariencia coherente entre clips."
+        }
       }
     },
     "verticalExport": {
       "heading": "Prepara una versión vertical",
-      "body": "Pasa de una grabación horizontal a un clip 9:16. Revisa el encuadre y corrígelo en el editor cuando sea necesario.",
+      "body": "Prepara clips verticales 9:16 a partir de una grabación horizontal. Revisa qué aparece dentro del recorte y ajusta el encuadre en el editor cuando sea necesario para mantener visible a la persona o el elemento importante.",
       "points": {
         "first": "Selecciona el fragmento",
         "second": "Revisa a quién muestra el recorte",
         "third": "Exporta en formato vertical"
+      },
+      "examples": {
+        "first": {
+          "title": "Una persona hablando",
+          "description": "Comprueba que el rostro y los subtítulos queden dentro del área visible del formato vertical."
+        },
+        "second": {
+          "title": "Conversaciones",
+          "description": "Revisa el encuadre en escenas con más de una persona y corrige la posición si hace falta."
+        },
+        "third": {
+          "title": "Versiones para redes",
+          "description": "Prepara el formato vertical para los canales que consumen video en pantalla completa."
+        }
       }
     },
     "brandTemplates": {
       "heading": "Mantén una identidad reconocible",
-      "body": "Organiza la apariencia de tus clips con las opciones de marca disponibles en tu plan. Comprueba colores y subtítulos antes de publicar.",
+      "body": "Las opciones de marca ayudan a repetir una presentación visual sin empezar desde cero en cada clip. Define el estilo disponible para tu proyecto, úsalo como referencia al preparar nuevas piezas y revisa cada resultado antes de publicarlo.",
       "points": {
         "first": "Define el estilo",
         "second": "Aplícalo al proyecto",
         "third": "Revisa cada entrega"
+      },
+      "examples": {
+        "first": {
+          "title": "Identidad del canal",
+          "description": "Mantén colores y estilo de subtítulos reconocibles entre videos de un mismo creador."
+        },
+        "second": {
+          "title": "Proyectos de clientes",
+          "description": "Organiza las preferencias visuales de cada proyecto según las herramientas de tu plan."
+        },
+        "third": {
+          "title": "Series recurrentes",
+          "description": "Aplica una presentación consistente a clips que forman parte de una misma serie o campaña."
+        }
       }
     },
     "latamAi": {
       "heading": "Trabaja con contenido en español",
-      "body": "Revisa los momentos sugeridos y la transcripción de entrevistas, clases o directos en español. Tu criterio sigue siendo clave para elegir cada corte.",
+      "body": "Trabaja con entrevistas, clases y directos en español latino teniendo en cuenta expresiones locales. Revisa nombres, modismos y referencias que dependan del contexto: la sugerencia automática ayuda a encontrar cortes, y tu criterio confirma que el sentido se conserve.",
       "points": {
         "first": "Importa el contenido",
         "second": "Revisa las sugerencias",
         "third": "Corrige los matices del mensaje"
+      },
+      "examples": {
+        "first": {
+          "title": "Modismos y expresiones",
+          "description": "Revisa que una frase local conserve su intención al separarse del resto de la conversación."
+        },
+        "second": {
+          "title": "Nombres y referencias",
+          "description": "Comprueba lugares, personas y términos propios antes de compartir la transcripción."
+        },
+        "third": {
+          "title": "Voces conversacionales",
+          "description": "Evalúa entrevistas, clases y directos donde el tono espontáneo importa tanto como las palabras."
+        }
       }
     },
     "batchExport": {
       "heading": "Prepara varias entregas a la vez",
-      "body": "Selecciona los clips de un proyecto y organiza su descarga según las funciones disponibles en tu plan. Revisa cada archivo antes de entregarlo.",
+      "body": "Cuando una selección está lista, puedes preparar la descarga de varios clips del proyecto en un mismo flujo, de acuerdo con las opciones de tu plan. Revisa los archivos y su formato para que la entrega quede ordenada.",
       "points": {
         "first": "Selecciona los clips",
         "second": "Comprueba el estilo",
         "third": "Descarga la entrega"
+      },
+      "examples": {
+        "first": {
+          "title": "Selección aprobada",
+          "description": "Descarga juntos los clips que ya revisaste para una campaña o entrega."
+        },
+        "second": {
+          "title": "Varias piezas",
+          "description": "Reduce pasos repetidos cuando terminas de preparar más de un clip del mismo proyecto."
+        },
+        "third": {
+          "title": "Entrega organizada",
+          "description": "Comprueba nombres y formatos de los archivos antes de compartirlos con tu equipo o cliente."
+        }
       }
     },
     "projectManagement": {
       "heading": "Todo en el proyecto correcto",
-      "body": "Mantén videos y clips agrupados por cliente, campaña o fecha. Así puedes volver a una grabación y encontrar sus resultados sin perder el contexto.",
+      "body": "Agrupa videos y clips por cliente, campaña o tema para mantener cada entrega junto a su fuente. Una estructura clara facilita retomar una grabación, revisar lo producido y encontrar el material adecuado cuando vuelve a hacer falta.",
       "points": {
         "first": "Crea un proyecto",
         "second": "Agrupa videos y clips",
         "third": "Encuentra lo que necesitas"
+      },
+      "examples": {
+        "first": {
+          "title": "Trabajo por cliente",
+          "description": "Mantén los materiales de cada marca en su espacio para evitar mezclar entregas."
+        },
+        "second": {
+          "title": "Campañas y temporadas",
+          "description": "Separa producciones por iniciativa o periodo para seguir el avance del contenido."
+        },
+        "third": {
+          "title": "Volver a una grabación",
+          "description": "Encuentra el video fuente y los clips relacionados cuando quieras actualizar una publicación."
+        }
       }
     }
   },
   "cases": {
     "cliperos": {
       "heading": "Más tiempo para el criterio creativo",
-      "body": "Empieza por el video completo, revisa los momentos propuestos y dedica la edición a los cortes que mejor representan a cada creador."
+      "body": "Cuando atiendes a varios creadores, revisar cada VOD completo consume tiempo que podrías dedicar al criterio, la edición y la comunicación. Clipealo propone momentos de streams, entrevistas o directos; tú decides cuáles representan mejor el tono y contexto de cada canal.",
+      "examples": {
+        "first": {
+          "title": "Streams largos",
+          "description": "Revisa momentos de gaming, Just Chatting, música o IRL sin tener que buscar cada corte desde cero."
+        },
+        "second": {
+          "title": "Canales distintos",
+          "description": "Evalúa las propuestas con la personalidad y el público de cada creador en mente."
+        },
+        "third": {
+          "title": "Entregas con criterio",
+          "description": "Ajusta el inicio y el final, comprueba subtítulos y prepara solo los clips que sí publicarías."
+        }
+      }
     },
     "streamers": {
       "heading": "Tu directo también vive fuera del stream",
-      "body": "Convierte fragmentos de tus transmisiones en clips verticales para revisar, editar y compartir con tu comunidad."
+      "body": "Un directo puede seguir generando contenido después de terminar. Usa la grabación para localizar jugadas, reacciones, respuestas del chat o conversaciones que merezcan otra audiencia, y revisa cada corte antes de compartirlo como clip corto.",
+      "examples": {
+        "first": {
+          "title": "Jugadas y reacciones",
+          "description": "Recupera una partida destacada, una reacción espontánea o un momento inesperado del directo."
+        },
+        "second": {
+          "title": "Conversaciones del chat",
+          "description": "Convierte respuestas y explicaciones en fragmentos que se entiendan fuera del stream completo."
+        },
+        "third": {
+          "title": "Contenido entre directos",
+          "description": "Prepara piezas para mantener activa la conversación con tu comunidad durante la semana."
+        }
+      }
     },
     "podcasters": {
       "heading": "Haz visible cada buena conversación",
-      "body": "Selecciona ideas de un episodio, revisa el encuadre y prepara clips subtitulados para tus canales."
+      "body": "Un episodio reúne ideas, historias y opiniones que no siempre llegan a quienes consumen contenido breve. Revisa propuestas de cortes, conserva la pregunta o frase que les da contexto y adapta cada fragmento al formato en que quieras compartirlo.",
+      "examples": {
+        "first": {
+          "title": "Ideas completas",
+          "description": "Elige respuestas que desarrollen un punto por sí solas, sin perder la pregunta que las origina."
+        },
+        "second": {
+          "title": "Historias y anécdotas",
+          "description": "Busca relatos, humor o desacuerdos que muestren la personalidad de quienes conversan."
+        },
+        "third": {
+          "title": "Series por episodio",
+          "description": "Organiza varios fragmentos de una grabación para dar continuidad a un tema o invitado."
+        }
+      }
     },
     "coaches": {
       "heading": "Una clase puede abrir nuevas conversaciones",
-      "body": "Recupera explicaciones claras de tus clases o sesiones y conviértelas en clips que puedas revisar antes de publicar."
+      "body": "Tus clases y sesiones contienen explicaciones que pueden seguir ayudando después de la transmisión. Selecciona fragmentos con una idea práctica y completa, revisa que el ejemplo conserve sentido y prepara una pieza breve para tus canales.",
+      "examples": {
+        "first": {
+          "title": "Lecciones accionables",
+          "description": "Extrae una explicación o recomendación concreta que la audiencia pueda recordar y aplicar."
+        },
+        "second": {
+          "title": "Preguntas frecuentes",
+          "description": "Convierte una respuesta clara de una sesión en una pieza útil para nuevos alumnos."
+        },
+        "third": {
+          "title": "Invitación a profundizar",
+          "description": "Comparte una idea introductoria que conecte con una clase, curso o conversación posterior."
+        }
+      }
     },
     "creators": {
       "heading": "Aprovecha lo que ya grabaste",
-      "body": "Parte de entrevistas, directos o videos largos y prepara nuevas piezas cortas manteniendo tu estilo."
+      "body": "Tus videos largos ya contienen material para nuevos formatos. Reutiliza entrevistas, tutoriales, vlogs y conversaciones para probar distintos ángulos, manteniendo el contexto de la idea y revisando cada corte con tu voz y estilo.",
+      "examples": {
+        "first": {
+          "title": "Entrevistas",
+          "description": "Recupera respuestas breves que funcionen por sí mismas y despierten interés por la conversación."
+        },
+        "second": {
+          "title": "Tutoriales y vlogs",
+          "description": "Separa una instrucción, descubrimiento o escena que tenga un principio y un cierre claros."
+        },
+        "third": {
+          "title": "Archivo reutilizable",
+          "description": "Vuelve a grabaciones anteriores cuando una idea siga siendo útil para tu audiencia."
+        }
+      }
     },
     "communities": {
       "heading": "Guarda los momentos del evento",
-      "body": "Encuentra jugadas, reacciones o conversaciones de tu comunidad y prepara clips para seguir compartiéndolas."
+      "body": "Los torneos, partidas y encuentros de una comunidad producen momentos que vale la pena conservar. Revisa jugadas y reacciones, incorpora el contexto necesario y prepara un resumen que invite a quienes no estuvieron a participar en la próxima actividad.",
+      "examples": {
+        "first": {
+          "title": "Torneos y partidas",
+          "description": "Selecciona jugadas clave, remontadas y momentos de equipo para resumir una jornada."
+        },
+        "second": {
+          "title": "Reacciones de la comunidad",
+          "description": "Destaca comentarios, celebraciones y voces de participantes con su contexto."
+        },
+        "third": {
+          "title": "Convocatorias y recapitulaciones",
+          "description": "Usa momentos del evento para recordar lo vivido y anunciar el siguiente encuentro."
+        }
+      }
     },
     "agencies": {
       "heading": "Cada cliente, en su contexto",
-      "body": "Organiza el material por proyecto, revisa los cortes y adapta la entrega a la identidad de cada marca según tu plan."
+      "body": "Al trabajar con varias marcas, cada grabación necesita contexto, revisión y una entrega clara. Agrupa el material por cliente o campaña, evalúa los cortes sugeridos con el objetivo de comunicación y adapta el resultado a las pautas de cada proyecto.",
+      "examples": {
+        "first": {
+          "title": "Una campaña por proyecto",
+          "description": "Mantén juntos los videos fuente y sus clips para volver a ellos durante la revisión."
+        },
+        "second": {
+          "title": "Revisión antes de entregar",
+          "description": "Comprueba el mensaje, el encuadre y los subtítulos antes de compartir la selección con el cliente."
+        },
+        "third": {
+          "title": "Formatos por canal",
+          "description": "Prepara las versiones requeridas por cada plataforma según las opciones disponibles en tu plan."
+        }
+      }
     },
     "brands": {
       "heading": "Más piezas a partir de una producción",
-      "body": "Reutiliza entrevistas, eventos y videos de campaña para crear clips revisables antes de llevarlos a cada canal."
+      "body": "Entrevistas, webinars y eventos concentran mensajes que pueden servir en más de un canal. Identifica fragmentos alineados con la campaña, revisa que mantengan el sentido de marca y prepara cada pieza para aprobación antes de publicarla.",
+      "examples": {
+        "first": {
+          "title": "Webinars y eventos",
+          "description": "Recupera ideas de especialistas, anuncios y momentos destacados de una producción."
+        },
+        "second": {
+          "title": "Voces de clientes y equipo",
+          "description": "Selecciona testimonios o explicaciones que aporten contexto y confianza al mensaje."
+        },
+        "third": {
+          "title": "Campañas y cultura",
+          "description": "Reutiliza anuncios, demostraciones y escenas de trabajo en piezas para distintos canales."
+        }
+      }
     }
   }
 }

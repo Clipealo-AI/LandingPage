@@ -75,6 +75,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
   return (
     <html
       lang={LOCALE_TAG[locale]}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${climateCrisis.variable} ${dmSans.variable} h-full`}
     >

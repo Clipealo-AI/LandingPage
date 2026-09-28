@@ -1,105 +1,319 @@
 {
   "shared": {
     "planNote": "Some features depend on your plan. Check the comparison before you start.",
-    "workflowTitle": "From video to clip"
+    "workflowTitle": "From video to clip",
+    "caseExamplesTitle": "Content you can put to work",
+    "caseExamplesLead": "The format depends on your audience, and you make the final call. Here are examples of source material that fits each workflow.",
+    "featureExamplesTitle": "Where this feature helps",
+    "featureExamplesLead": "Use the tool for practical steps in your workflow, from reviewing a recording to preparing a delivery."
   },
   "features": {
     "automaticClips": {
       "heading": "Find moments worth sharing",
-      "body": "Upload a video or import a supported link. Clipealo suggests segments with start and end points so you can review the context before turning them into clips.",
+      "body": "Start with a full recording to find segments built around a clear idea, reaction, or answer. Review the context of each suggestion, adjust its boundaries, and decide which excerpts are ready to become clips before exporting.",
       "points": {
         "first": "Review suggested moments",
         "second": "Adjust the start and end",
         "third": "Prepare the clip to share"
+      },
+      "examples": {
+        "first": {
+          "title": "Interviews and podcasts",
+          "description": "Review answers, stories, and opinions without losing the conversation behind them."
+        },
+        "second": {
+          "title": "Classes and webinars",
+          "description": "Find explanations that can become short pieces people can understand on their own."
+        },
+        "third": {
+          "title": "Livestreams",
+          "description": "Revisit plays, reactions, and conversations to choose what to share."
+        }
       }
     },
     "subtitleEditor": {
       "heading": "Make every word easy to read",
-      "body": "Review the transcript and correct names or phrases before exporting. Adjust subtitle styles using the options in your plan.",
+      "body": "Treat the transcript as a starting point you can review before export. Correct names, terms, or phrases, adjust the available visual style, and check that captions remain readable in the final frame.",
       "points": {
         "first": "Correct the transcript",
         "second": "Choose a readable style",
         "third": "Check the final result"
+      },
+      "examples": {
+        "first": {
+          "title": "Names and terminology",
+          "description": "Correct names, brands, or specialist vocabulary that needs a human review."
+        },
+        "second": {
+          "title": "Readable on screen",
+          "description": "Check contrast, placement, and line length at the video’s final size."
+        },
+        "third": {
+          "title": "Consistent style",
+          "description": "Use the available design options to keep clips visually consistent."
+        }
       }
     },
     "verticalExport": {
       "heading": "Prepare a vertical version",
-      "body": "Turn a horizontal recording into a 9:16 clip. Check the framing and adjust it in the editor when needed.",
+      "body": "Prepare vertical 9:16 clips from a horizontal recording. Review what appears inside the crop and adjust the framing in the editor when needed to keep the speaker or important detail visible.",
       "points": {
         "first": "Select the segment",
         "second": "Review who appears in frame",
         "third": "Export vertically"
+      },
+      "examples": {
+        "first": {
+          "title": "A person speaking",
+          "description": "Check that the face and captions stay within the visible vertical area."
+        },
+        "second": {
+          "title": "Conversations",
+          "description": "Review scenes with more than one person and reposition the frame if needed."
+        },
+        "third": {
+          "title": "Social versions",
+          "description": "Prepare vertical video for channels designed for full-screen viewing."
+        }
       }
     },
     "brandTemplates": {
       "heading": "Keep your visual identity consistent",
-      "body": "Organize the look of your clips with the brand options included in your plan. Check colors and captions before publishing.",
+      "body": "Brand options help you repeat a visual treatment without starting each clip from scratch. Set up the options available for your project, use them as a reference for new pieces, and review every result before publishing.",
       "points": {
         "first": "Define the style",
         "second": "Apply it to a project",
         "third": "Review every delivery"
+      },
+      "examples": {
+        "first": {
+          "title": "Channel identity",
+          "description": "Keep colors and caption style recognizable across one creator’s videos."
+        },
+        "second": {
+          "title": "Client projects",
+          "description": "Organize each project’s visual preferences using the tools in your plan."
+        },
+        "third": {
+          "title": "Recurring series",
+          "description": "Give clips in the same series or campaign a consistent presentation."
+        }
       }
     },
     "latamAi": {
       "heading": "Work with Spanish language content",
-      "body": "Review suggested moments and transcripts from Spanish interviews, lessons or streams. Your judgment is still essential when choosing each cut.",
+      "body": "Work with interviews, classes, and livestreams in Latin American Spanish while accounting for local expressions. Review names, slang, and context-specific references: suggestions can help find cuts, and your judgment confirms the meaning is preserved.",
       "points": {
         "first": "Import the content",
         "second": "Review suggestions",
         "third": "Correct the nuances"
+      },
+      "examples": {
+        "first": {
+          "title": "Slang and expressions",
+          "description": "Check that a local phrase keeps its intent when separated from the conversation."
+        },
+        "second": {
+          "title": "Names and references",
+          "description": "Verify places, people, and specific terms before sharing the transcript."
+        },
+        "third": {
+          "title": "Conversational voices",
+          "description": "Review interviews, classes, and livestreams where delivery matters as much as the words."
+        }
       }
     },
     "batchExport": {
       "heading": "Prepare several deliveries together",
-      "body": "Select clips from a project and organize their download with the features available in your plan. Check each file before delivery.",
+      "body": "Once a selection is ready, prepare downloads for several clips in the same project in one workflow, based on the options in your plan. Review the files and formats so the final delivery stays organized.",
       "points": {
         "first": "Select the clips",
         "second": "Check the style",
         "third": "Download the delivery"
+      },
+      "examples": {
+        "first": {
+          "title": "Approved selection",
+          "description": "Download the clips you have reviewed together for a campaign or delivery."
+        },
+        "second": {
+          "title": "Multiple pieces",
+          "description": "Skip repeated steps when you finish more than one clip in a project."
+        },
+        "third": {
+          "title": "Organized handoff",
+          "description": "Check file names and formats before sharing with your team or client."
+        }
       }
     },
     "projectManagement": {
       "heading": "Keep everything in the right project",
-      "body": "Group videos and clips by client, campaign or date. Return to a recording and find its results without losing context.",
+      "body": "Group videos and clips by client, campaign, or topic so each delivery stays with its source. A clear structure makes it easier to return to a recording, review what has been produced, and find the right material when you need it again.",
       "points": {
         "first": "Create a project",
         "second": "Group videos and clips",
         "third": "Find what you need"
+      },
+      "examples": {
+        "first": {
+          "title": "Client work",
+          "description": "Keep each brand’s materials in its own space to avoid mixing deliveries."
+        },
+        "second": {
+          "title": "Campaigns and seasons",
+          "description": "Separate productions by initiative or period to follow content work over time."
+        },
+        "third": {
+          "title": "Find a recording again",
+          "description": "Locate the source video and related clips when you want to update a post."
+        }
       }
     }
   },
   "cases": {
     "cliperos": {
       "heading": "More time for creative judgment",
-      "body": "Start with the full video, review suggested moments and spend your editing time on cuts that represent each creator."
+      "body": "When you work with several creators, reviewing every full VOD takes time away from editing, creative judgment, and communication. Clipealo suggests moments from streams, interviews, and live videos; you decide which cuts fit each channel’s tone and context.",
+      "examples": {
+        "first": {
+          "title": "Long streams",
+          "description": "Review gaming, Just Chatting, music, or IRL moments without searching for every cut from scratch."
+        },
+        "second": {
+          "title": "Different channels",
+          "description": "Evaluate suggestions with each creator’s personality and audience in mind."
+        },
+        "third": {
+          "title": "Thoughtful delivery",
+          "description": "Adjust the start and end, check captions, and prepare only the clips you would actually publish."
+        }
+      }
     },
     "streamers": {
       "heading": "Your stream lives beyond the broadcast",
-      "body": "Turn moments from your streams into vertical clips you can review, edit and share with your community."
+      "body": "A livestream can keep creating value after it ends. Use the recording to find standout plays, reactions, chat replies, and conversations worth sharing with a wider audience, then review every cut before posting it as a short clip.",
+      "examples": {
+        "first": {
+          "title": "Plays and reactions",
+          "description": "Bring back a standout game, spontaneous reaction, or unexpected moment from a stream."
+        },
+        "second": {
+          "title": "Chat conversations",
+          "description": "Turn replies and explanations into clips that make sense beyond the full livestream."
+        },
+        "third": {
+          "title": "Content between streams",
+          "description": "Prepare posts that keep the conversation with your community going throughout the week."
+        }
+      }
     },
     "podcasters": {
       "heading": "Make every great conversation visible",
-      "body": "Pick ideas from an episode, review the framing and prepare captioned clips for your channels."
+      "body": "An episode brings together ideas, stories, and opinions that may not reach people who prefer short-form content. Review suggested cuts, keep the question or phrase that gives them context, and adapt each excerpt for the channel where you want to share it.",
+      "examples": {
+        "first": {
+          "title": "Complete ideas",
+          "description": "Choose answers that make a clear point on their own while keeping the question that prompted them."
+        },
+        "second": {
+          "title": "Stories and anecdotes",
+          "description": "Find stories, humor, or disagreement that show the personality of the conversation."
+        },
+        "third": {
+          "title": "Episode series",
+          "description": "Organize several excerpts from a recording around one topic or guest."
+        }
+      }
     },
     "coaches": {
       "heading": "A lesson can start new conversations",
-      "body": "Bring back clear explanations from classes or sessions and turn them into clips you can review before publishing."
+      "body": "Your classes and coaching sessions contain explanations that can keep helping people after the live session. Select clips with a practical, complete idea, check that examples still make sense, and prepare a short piece for your channels.",
+      "examples": {
+        "first": {
+          "title": "Actionable lessons",
+          "description": "Share a concrete explanation or recommendation an audience can remember and use."
+        },
+        "second": {
+          "title": "Common questions",
+          "description": "Turn a clear answer from a session into a useful resource for future students."
+        },
+        "third": {
+          "title": "A reason to go deeper",
+          "description": "Share an introductory idea that leads into a class, course, or follow-up conversation."
+        }
+      }
     },
     "creators": {
       "heading": "Get more from what you already recorded",
-      "body": "Start with interviews, streams or long videos and prepare new short pieces in your own style."
+      "body": "Your long videos already contain material for new formats. Reuse interviews, tutorials, vlogs, and conversations to explore different angles while preserving the idea’s context and reviewing every cut against your voice and style.",
+      "examples": {
+        "first": {
+          "title": "Interviews",
+          "description": "Bring back concise answers that stand on their own and spark interest in the full conversation."
+        },
+        "second": {
+          "title": "Tutorials and vlogs",
+          "description": "Separate an instruction, discovery, or scene with a clear beginning and ending."
+        },
+        "third": {
+          "title": "Reusable library",
+          "description": "Return to older recordings when an idea is still useful to your audience."
+        }
+      }
     },
     "communities": {
       "heading": "Keep the event moments alive",
-      "body": "Find plays, reactions or conversations from your community and prepare clips to keep sharing them."
+      "body": "Tournaments, games, and community events create moments worth keeping. Review plays and reactions, add the context people need, and prepare a recap that invites those who missed it to join the next activity.",
+      "examples": {
+        "first": {
+          "title": "Tournaments and games",
+          "description": "Select key plays, comebacks, and team moments to recap an event."
+        },
+        "second": {
+          "title": "Community reactions",
+          "description": "Highlight comments, celebrations, and participant voices with their context."
+        },
+        "third": {
+          "title": "Invites and recaps",
+          "description": "Use event moments to revisit what happened and announce the next gathering."
+        }
+      }
     },
     "agencies": {
       "heading": "Every client in context",
-      "body": "Organize material by project, review the cuts and tailor each delivery to the brand using the options in your plan."
+      "body": "When you work with several brands, every recording needs context, review, and a clear delivery. Group material by client or campaign, assess suggested cuts against the communication goal, and adapt the result to each project’s guidelines.",
+      "examples": {
+        "first": {
+          "title": "One project per campaign",
+          "description": "Keep source videos and their clips together while a delivery is being reviewed."
+        },
+        "second": {
+          "title": "Review before delivery",
+          "description": "Check the message, framing, and captions before sharing a selection with a client."
+        },
+        "third": {
+          "title": "Formats by channel",
+          "description": "Prepare the versions each platform needs using the options in your plan."
+        }
+      }
     },
     "brands": {
       "heading": "More pieces from one production",
-      "body": "Repurpose interviews, events and campaign videos into clips you can review before sending them to each channel."
+      "body": "Interviews, webinars, and events carry messages that can work across more than one channel. Find excerpts that fit the campaign, check that they preserve the brand’s meaning, and prepare each piece for approval before publishing.",
+      "examples": {
+        "first": {
+          "title": "Webinars and events",
+          "description": "Reuse expert insights, announcements, and highlights from a production."
+        },
+        "second": {
+          "title": "Customer and team voices",
+          "description": "Select testimonials or explanations that add context and credibility."
+        },
+        "third": {
+          "title": "Campaigns and culture",
+          "description": "Reuse launches, demos, and workplace moments across different channels."
+        }
+      }
     }
   }
 }
