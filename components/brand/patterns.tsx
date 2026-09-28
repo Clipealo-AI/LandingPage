@@ -36,7 +36,16 @@ export function PatternIsotipos({
   ...props
 }: LayerProps & { opacity?: number }) {
   return (
-    <Layer className={cn("pattern-isotipos", className)} style={{ opacity }} {...props} />
+    <Layer
+      className={cn("pattern-isotipos", className)}
+      style={
+        {
+          "--pattern-opacity": opacity,
+          "--pattern-highlight-opacity": Math.min(opacity * 2, 1),
+        } as React.CSSProperties
+      }
+      {...props}
+    />
   )
 }
 

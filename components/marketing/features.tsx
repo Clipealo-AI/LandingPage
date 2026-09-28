@@ -100,7 +100,7 @@ export function Features() {
             esquinas del 9:16 se cierran: el único gesto de marca de recorte de
             la sección */}
         <Tile data-light="tinta" className="bg-ink-950 text-mist md:[--i:1]">
-          <PatternIsotipos opacity={0.2} />
+          <PatternIsotipos opacity={0.16} />
           <div className="relative">
             <h3 className="text-[23px] leading-tight font-bold tracking-tight text-white">
               {t("vertical.title")}

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { formatTimecode } from "@/lib/format"
 import { ASPECT_RATIOS, type AspectRatioKey } from "@/lib/video-formats"
 import { CropFrame } from "@/components/brand/logo"
+import { PatternIsotipos } from "@/components/brand/patterns"
 
 export interface MediaFrameProps extends React.ComponentProps<"div"> {
   aspect?: AspectRatioKey
@@ -60,7 +61,7 @@ export function MediaFrame({
 
       {!poster && !loading && (
         <div className="absolute inset-0 bg-secondary">
-          <div className="absolute inset-0 pattern-isotipos opacity-[0.12]" aria-hidden />
+          <PatternIsotipos opacity={0.12} />
         </div>
       )}
 

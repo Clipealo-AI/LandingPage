@@ -115,16 +115,33 @@ for (const [locale, text] of Object.entries(TEXTOS)) {
   })
 }
 
-test("el fondo pulsa en naranja cada cuatro segundos y se detiene con movimiento reducido", async ({
+test("solo pulsan los corchetes cada cuatro segundos y se detienen con movimiento reducido", async ({
   page,
 }) => {
   await irA(page, "/es")
   const pattern = page.locator("#redes [data-redes-patron]")
-  const glow = page.locator("#redes [data-redes-glow]")
+  const featurePattern = page
+    .locator("#producto article")
+    .nth(1)
+    .locator(".pattern-isotipos")
+    .first()
   await expect(pattern).toHaveCSS("animation-duration", "4s")
-  await expect(glow).toHaveCSS("animation-duration", "4s")
-  await expect(pattern).toHaveCSS("animation-name", "networks-pattern-pulse")
-  await expect(glow).toHaveCSS("animation-name", "networks-glow-pulse")
+  await expect(featurePattern).toHaveCSS("animation-duration", "4s")
+  await expect(pattern).toHaveCSS("animation-name", "pattern-brackets-pulse")
+  await expect(featurePattern).toHaveCSS("animation-name", "pattern-brackets-pulse")
+  const allPatternsSharePulse = await page
+    .locator(".pattern-isotipos")
+    .evaluateAll((elements) =>
+      elements.every((element) => {
+        const style = getComputedStyle(element)
+        return (
+          style.animationName === "pattern-brackets-pulse" &&
+          style.animationDuration === "4s"
+        )
+      })
+    )
+  expect(allPatternsSharePulse).toBe(true)
+  await expect(page.locator(".stage-glow")).toHaveCount(0)
 
   await page.locator("html").evaluate((root) => {
     root.setAttribute("data-motion", "reduced")
@@ -134,8 +151,11 @@ test("el fondo pulsa en naranja cada cuatro segundos y se detiene con movimiento
     "animation-name",
     "none"
   )
-  await expect(page.locator("#redes [data-redes-glow]")).toHaveCSS(
-    "animation-name",
-    "none"
-  )
+  await expect(featurePattern).toHaveCSS("animation-name", "none")
+  const reducedPatternsStopped = await page
+    .locator(".pattern-isotipos")
+    .evaluateAll((elements) =>
+      elements.every((element) => getComputedStyle(element).animationName === "none")
+    )
+  expect(reducedPatternsStopped).toBe(true)
 })

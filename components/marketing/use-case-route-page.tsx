@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import type { Locale } from "@/i18n/routing"
 import { useCaseNavigation } from "@/lib/marketing/navigation"
+import { PatternIsotipos } from "@/components/brand/patterns"
 import { Button } from "@/components/ui/button"
 import {
   RouteCallToAction,
@@ -63,10 +64,7 @@ export async function UseCaseRoutePage({
           </p>
         </div>
         <div className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-frame border border-white/15 bg-ink-950 text-mist shadow-lg">
-          <div
-            className="absolute inset-0 pattern-isotipos opacity-[0.16]"
-            aria-hidden="true"
-          />
+          <PatternIsotipos opacity={0.16} />
           <div
             className="absolute size-52 rounded-full border border-mist/25 bg-blue-500/10 blur-sm sm:size-64"
             aria-hidden="true"

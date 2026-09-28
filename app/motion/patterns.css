@@ -1,0 +1,12 @@
+/* Cada isotipo en forma de corchete pulsa una vez por ciclo de cuatro segundos.
+   El componente comparte su intensidad base y la de pico con la animación. */
+@keyframes pattern-brackets-pulse {
+  0%,
+  25%,
+  100% {
+    opacity: var(--pattern-opacity, 0.18);
+  }
+  9% {
+    opacity: var(--pattern-highlight-opacity, 0.36);
+  }
+}

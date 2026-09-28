@@ -3,6 +3,7 @@ import { Check } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { socialList } from "@/lib/social"
+import { PatternIsotipos } from "@/components/brand/patterns"
 import { SocialBadge } from "@/components/brand/social"
 import { MediaFrame } from "@/components/video/media-frame"
 
@@ -76,16 +77,7 @@ export function Redes() {
           data-motion-group=""
           className="relative w-full max-w-[860px] justify-self-center overflow-hidden rounded-frame bg-stage p-4 sm:p-5 xl:p-6"
         >
-          <div
-            aria-hidden
-            data-redes-patron
-            className="networks-stage-pattern pointer-events-none absolute inset-0 pattern-isotipos"
-          />
-          <div
-            aria-hidden
-            data-redes-glow
-            className="networks-stage-glow pointer-events-none absolute inset-0"
-          />
+          <PatternIsotipos opacity={0.16} data-redes-patron />
           <div
             role="region"
             aria-label={t("formatsGallery")}
