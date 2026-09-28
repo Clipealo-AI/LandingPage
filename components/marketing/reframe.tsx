@@ -290,7 +290,7 @@ export function Reframe() {
             <video
               ref={videoFlujo}
               className="block aspect-video w-full bg-ink-900 object-cover"
-              poster="/media/workflow-social-clips-poster.avif"
+              poster="/media/workflow-social-clips-poster-frame-000.avif"
               preload="none"
               autoPlay
               muted

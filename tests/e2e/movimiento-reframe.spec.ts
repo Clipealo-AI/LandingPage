@@ -208,7 +208,7 @@ for (const modo of MODOS) {
         await expect(video).toHaveAttribute("preload", "none")
         await expect(video).toHaveAttribute(
           "poster",
-          "/media/workflow-social-clips-poster.avif"
+          "/media/workflow-social-clips-poster-frame-000.avif"
         )
         await expect(video).toHaveJSProperty("muted", true)
         await expect(video).toHaveJSProperty("loop", true)
