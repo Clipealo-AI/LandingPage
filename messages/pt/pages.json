@@ -5,7 +5,8 @@
     "caseExamplesTitle": "Conteúdos que você pode aproveitar",
     "caseExamplesLead": "O formato depende do público, e a decisão final continua sendo sua. Estes são alguns materiais que combinam com cada fluxo.",
     "featureExamplesTitle": "Onde este recurso ajuda",
-    "featureExamplesLead": "Use a ferramenta em etapas concretas do processo, desde revisar uma gravação até preparar uma entrega."
+    "featureExamplesLead": "Use a ferramenta em etapas concretas do processo, desde revisar uma gravação até preparar uma entrega.",
+    "subtitleExample": "Cada palavra importa."
   },
   "features": {
     "automaticClips": {
@@ -29,7 +30,8 @@
           "title": "Lives e streams",
           "description": "Volte a jogadas, reações e conversas para escolher o que compartilhar."
         }
-      }
+      },
+      "imageAlt": "Editor revisando um trecho selecionado de uma entrevista no monitor."
     },
     "subtitleEditor": {
       "heading": "Deixe cada palavra fácil de ler",
@@ -52,7 +54,8 @@
           "title": "Estilo consistente",
           "description": "Use as opções de design disponíveis para manter uma aparência coerente entre clipes."
         }
-      }
+      },
+      "imageAlt": "Criador falando para a câmera em um vídeo vertical."
     },
     "verticalExport": {
       "heading": "Prepare uma versão vertical",
@@ -75,7 +78,8 @@
           "title": "Versões para redes",
           "description": "Prepare o formato vertical para canais que usam vídeo em tela cheia."
         }
-      }
+      },
+      "imageAlt": "Entrevista horizontal em um estúdio com iluminação azul."
     },
     "brandTemplates": {
       "heading": "Mantenha uma identidade visual consistente",
@@ -98,7 +102,8 @@
           "title": "Séries recorrentes",
           "description": "Dê uma apresentação consistente aos clipes de uma mesma série ou campanha."
         }
-      }
+      },
+      "imageAlt": "Três versões de uma apresentadora com identidade visual consistente."
     },
     "latamAi": {
       "heading": "Trabalhe com conteúdo em espanhol",
@@ -121,7 +126,8 @@
           "title": "Conversas espontâneas",
           "description": "Avalie entrevistas, aulas e lives em que a maneira de falar importa tanto quanto as palavras."
         }
-      }
+      },
+      "imageAlt": "Conversa entre duas pessoas em um estúdio de podcast."
     },
     "batchExport": {
       "heading": "Prepare várias entregas de uma vez",
@@ -144,7 +150,8 @@
           "title": "Entrega organizada",
           "description": "Confira nomes e formatos dos arquivos antes de compartilhá-los com sua equipe ou cliente."
         }
-      }
+      },
+      "imageAlt": "Uma transmissão de e-sports transformada em vários clipes verticais."
     },
     "projectManagement": {
       "heading": "Tudo no projeto certo",
@@ -167,7 +174,8 @@
           "title": "Voltar a uma gravação",
           "description": "Encontre o vídeo original e os clipes relacionados para atualizar uma publicação."
         }
-      }
+      },
+      "imageAlt": "Produtora revisando uma biblioteca de projetos de vídeo."
     }
   },
   "cases": {
@@ -187,7 +195,8 @@
           "title": "Entregas com critério",
           "description": "Ajuste início e fim, confira as legendas e prepare apenas os clipes que publicaria."
         }
-      }
+      },
+      "imageAlt": "Editor de clipes trabalhando com um celular ao lado do monitor."
     },
     "streamers": {
       "heading": "Sua live continua após a transmissão",
@@ -205,7 +214,8 @@
           "title": "Conteúdo entre lives",
           "description": "Prepare publicações para manter a conversa com a comunidade durante a semana."
         }
-      }
+      },
+      "imageAlt": "Streamer ao lado de uma coleção de clipes verticais de suas reações."
     },
     "podcasters": {
       "heading": "Dê visibilidade a cada boa conversa",
@@ -223,7 +233,8 @@
           "title": "Séries por episódio",
           "description": "Organize vários trechos de uma gravação em torno de um tema ou convidado."
         }
-      }
+      },
+      "imageAlt": "Duas pessoas gravando um podcast com microfones e câmeras."
     },
     "coaches": {
       "heading": "Uma aula pode abrir novas conversas",
@@ -241,7 +252,8 @@
           "title": "Convite para aprofundar",
           "description": "Apresente uma ideia inicial que leve a uma aula, curso ou conversa posterior."
         }
-      }
+      },
+      "imageAlt": "Educador dando uma aula por videochamada em sua mesa."
     },
     "creators": {
       "heading": "Aproveite o que você já gravou",
@@ -259,7 +271,8 @@
           "title": "Biblioteca reutilizável",
           "description": "Volte a gravações antigas quando uma ideia ainda for útil para seu público."
         }
-      }
+      },
+      "imageAlt": "Criadora gravando com um celular e um aro de luz."
     },
     "communities": {
       "heading": "Guarde os momentos do evento",
@@ -277,7 +290,8 @@
           "title": "Convites e retrospectivas",
           "description": "Relembre o que aconteceu e anuncie o próximo encontro usando momentos do evento."
         }
-      }
+      },
+      "imageAlt": "Equipe de e-sports e uma seleção de clipes de seus integrantes."
     },
     "agencies": {
       "heading": "Cada cliente em seu contexto",
@@ -295,7 +309,8 @@
           "title": "Formatos por canal",
           "description": "Prepare as versões necessárias para cada plataforma conforme as opções do seu plano."
         }
-      }
+      },
+      "imageAlt": "Coleções de vídeos de clientes organizadas por tema."
     },
     "brands": {
       "heading": "Mais peças a partir de uma produção",
@@ -313,7 +328,8 @@
           "title": "Campanhas e cultura",
           "description": "Reutilize lançamentos, demonstrações e cenas de trabalho em diferentes canais."
         }
-      }
+      },
+      "imageAlt": "Entrevista de marca acompanhada de clipes de conversas e eventos."
     }
   }
 }

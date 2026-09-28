@@ -57,7 +57,11 @@ const relanzarHero = (page: Page) =>
     flush()
 
     for (const a of seccion.getAnimations({ subtree: true })) {
-      if (a instanceof CSSAnimation) a.pause()
+      if (
+        a instanceof CSSAnimation &&
+        Number.isFinite(a.effect?.getComputedTiming().endTime)
+      )
+        a.pause()
     }
   })
 
@@ -76,7 +80,11 @@ const animacionesHero = (page: Page) =>
     }
     return seccion
       .getAnimations({ subtree: true })
-      .filter((a): a is CSSAnimation => a instanceof CSSAnimation)
+      .filter(
+        (a): a is CSSAnimation =>
+          a instanceof CSSAnimation &&
+          Number.isFinite(a.effect?.getComputedTiming().endTime)
+      )
       .map((a): Animacion => {
         const efecto = a.effect as KeyframeEffect
         const t = efecto.getComputedTiming()

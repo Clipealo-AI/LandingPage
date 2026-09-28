@@ -4,7 +4,8 @@ import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import type { Locale } from "@/i18n/routing"
 import { useCaseNavigation } from "@/lib/marketing/navigation"
-import { PatternIsotipos } from "@/components/brand/patterns"
+import { RouteMedia } from "@/components/marketing/route-media"
+import { useCaseMedia } from "@/lib/marketing/route-media"
 import { Button } from "@/components/ui/button"
 import {
   RouteCallToAction,
@@ -33,7 +34,6 @@ export async function UseCaseRoutePage({
   const label = routes as unknown as Translator
   const copy = menu as unknown as Translator
   const detail = pages as unknown as Translator
-  const Icon = useCase.icon
   const steps = (["upload", "analyze", "review"] as const).map((id) => ({
     title: label(`shared.steps.${id}.title`),
     description: label(`shared.steps.${id}.description`),
@@ -52,8 +52,8 @@ export async function UseCaseRoutePage({
       </RouteHero>
 
       <section className="container-page grid items-center gap-8 py-14 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-14">
-        <div className="max-w-2xl">
-          <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] leading-tight text-balance">
+        <div className="max-w-2xl min-w-0">
+          <h2 className="display text-[clamp(1.5rem,4vw,2.75rem)] leading-tight text-balance [overflow-wrap:anywhere]">
             {detail(`cases.${useCase.id}.heading`)}
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
@@ -63,20 +63,10 @@ export async function UseCaseRoutePage({
             {detail("shared.planNote")}
           </p>
         </div>
-        <div className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-frame border border-white/15 bg-ink-950 text-mist shadow-lg">
-          <PatternIsotipos opacity={0.16} />
-          <div
-            className="absolute size-52 rounded-full border border-mist/25 bg-blue-500/10 blur-sm sm:size-64"
-            aria-hidden="true"
-          />
-          <div className="relative grid size-28 place-items-center rounded-3xl border border-mist/30 bg-ink-900 shadow-[0_24px_70px_rgba(20,114,253,0.22)] sm:size-36">
-            <Icon
-              className="size-14 text-brand sm:size-18"
-              strokeWidth={1.5}
-              aria-hidden="true"
-            />
-          </div>
-        </div>
+        <RouteMedia
+          asset={useCaseMedia[useCase.id]}
+          alt={detail(`cases.${useCase.id}.imageAlt`)}
+        />
       </section>
 
       <RouteSection

@@ -5,7 +5,8 @@
     "caseExamplesTitle": "Content you can put to work",
     "caseExamplesLead": "The format depends on your audience, and you make the final call. Here are examples of source material that fits each workflow.",
     "featureExamplesTitle": "Where this feature helps",
-    "featureExamplesLead": "Use the tool for practical steps in your workflow, from reviewing a recording to preparing a delivery."
+    "featureExamplesLead": "Use the tool for practical steps in your workflow, from reviewing a recording to preparing a delivery.",
+    "subtitleExample": "Every word matters."
   },
   "features": {
     "automaticClips": {
@@ -29,7 +30,8 @@
           "title": "Livestreams",
           "description": "Revisit plays, reactions, and conversations to choose what to share."
         }
-      }
+      },
+      "imageAlt": "Editor reviewing a selected interview segment on a monitor."
     },
     "subtitleEditor": {
       "heading": "Make every word easy to read",
@@ -52,7 +54,8 @@
           "title": "Consistent style",
           "description": "Use the available design options to keep clips visually consistent."
         }
-      }
+      },
+      "imageAlt": "Creator speaking to camera in a vertical video."
     },
     "verticalExport": {
       "heading": "Prepare a vertical version",
@@ -75,7 +78,8 @@
           "title": "Social versions",
           "description": "Prepare vertical video for channels designed for full-screen viewing."
         }
-      }
+      },
+      "imageAlt": "Widescreen interview in a blue-lit studio."
     },
     "brandTemplates": {
       "heading": "Keep your visual identity consistent",
@@ -98,7 +102,8 @@
           "title": "Recurring series",
           "description": "Give clips in the same series or campaign a consistent presentation."
         }
-      }
+      },
+      "imageAlt": "Three presenter previews with a consistent visual identity."
     },
     "latamAi": {
       "heading": "Work with Spanish language content",
@@ -121,7 +126,8 @@
           "title": "Conversational voices",
           "description": "Review interviews, classes, and livestreams where delivery matters as much as the words."
         }
-      }
+      },
+      "imageAlt": "Two people having a conversation in a podcast studio."
     },
     "batchExport": {
       "heading": "Prepare several deliveries together",
@@ -144,7 +150,8 @@
           "title": "Organized handoff",
           "description": "Check file names and formats before sharing with your team or client."
         }
-      }
+      },
+      "imageAlt": "An esports livestream turned into several vertical clips."
     },
     "projectManagement": {
       "heading": "Keep everything in the right project",
@@ -167,7 +174,8 @@
           "title": "Find a recording again",
           "description": "Locate the source video and related clips when you want to update a post."
         }
-      }
+      },
+      "imageAlt": "Producer reviewing a library of video projects."
     }
   },
   "cases": {
@@ -187,7 +195,8 @@
           "title": "Thoughtful delivery",
           "description": "Adjust the start and end, check captions, and prepare only the clips you would actually publish."
         }
-      }
+      },
+      "imageAlt": "Clip editor working with a phone beside the monitor."
     },
     "streamers": {
       "heading": "Your stream lives beyond the broadcast",
@@ -205,7 +214,8 @@
           "title": "Content between streams",
           "description": "Prepare posts that keep the conversation with your community going throughout the week."
         }
-      }
+      },
+      "imageAlt": "Streamer alongside a collection of vertical reaction clips."
     },
     "podcasters": {
       "heading": "Make every great conversation visible",
@@ -223,7 +233,8 @@
           "title": "Episode series",
           "description": "Organize several excerpts from a recording around one topic or guest."
         }
-      }
+      },
+      "imageAlt": "Two people recording a podcast with microphones and cameras."
     },
     "coaches": {
       "heading": "A lesson can start new conversations",
@@ -241,7 +252,8 @@
           "title": "A reason to go deeper",
           "description": "Share an introductory idea that leads into a class, course, or follow-up conversation."
         }
-      }
+      },
+      "imageAlt": "Educator teaching a video call lesson from his desk."
     },
     "creators": {
       "heading": "Get more from what you already recorded",
@@ -259,7 +271,8 @@
           "title": "Reusable library",
           "description": "Return to older recordings when an idea is still useful to your audience."
         }
-      }
+      },
+      "imageAlt": "Creator recording with a phone and ring light."
     },
     "communities": {
       "heading": "Keep the event moments alive",
@@ -277,7 +290,8 @@
           "title": "Invites and recaps",
           "description": "Use event moments to revisit what happened and announce the next gathering."
         }
-      }
+      },
+      "imageAlt": "Esports team and a selection of clips featuring its members."
     },
     "agencies": {
       "heading": "Every client in context",
@@ -295,7 +309,8 @@
           "title": "Formats by channel",
           "description": "Prepare the versions each platform needs using the options in your plan."
         }
-      }
+      },
+      "imageAlt": "Client video collections organized by subject."
     },
     "brands": {
       "heading": "More pieces from one production",
@@ -313,7 +328,8 @@
           "title": "Campaigns and culture",
           "description": "Reuse launches, demos, and workplace moments across different channels."
         }
-      }
+      },
+      "imageAlt": "Brand interview alongside conversation and event clips."
     }
   }
 }

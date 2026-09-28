@@ -7,7 +7,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/brand/whatsapp-icon"
 import { WHATSAPP_URL } from "@/lib/contact"
 
+import { RouteMedia } from "@/components/marketing/route-media"
+import type { RouteMediaAsset } from "@/lib/marketing/route-media"
+
 type RouteLink = {
+  media?: RouteMediaAsset
   href: string
   title: string
   description: string
@@ -20,10 +24,12 @@ export function RouteHero({
   title,
   lead,
   children,
+  visual,
 }: {
   eyebrow: string
   title: string
   lead: string
+  visual?: React.ReactNode
   children?: React.ReactNode
 }) {
   return (
@@ -32,12 +38,16 @@ export function RouteHero({
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_85%_10%,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_38%)]"
       />
-      <div className="container-page py-24 md:py-32">
-        <div className="max-w-4xl">
+      <div
+        className={`container-page ${visual ? "grid items-center gap-10 py-20 md:py-24 lg:grid-cols-2 lg:gap-14" : "py-24 md:py-32"}`}
+      >
+        <div className="max-w-4xl min-w-0">
           <p className="text-sm font-semibold tracking-[0.16em] text-primary uppercase">
             {eyebrow}
           </p>
-          <h1 className="mt-4 display text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.04] text-balance">
+          <h1
+            className={`mt-4 display leading-[1.04] text-balance [overflow-wrap:anywhere] ${visual ? "text-[clamp(2.25rem,5vw,4.5rem)] max-[340px]:text-[1.875rem]" : "text-[clamp(2.25rem,6vw,4.5rem)]"}`}
+          >
             {title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-pretty text-muted-foreground md:text-xl">
@@ -47,6 +57,7 @@ export function RouteHero({
             <div className="mt-8 flex flex-wrap items-center gap-3">{children}</div>
           )}
         </div>
+        {visual && <div className="min-w-0">{visual}</div>}
       </div>
     </section>
   )
@@ -55,7 +66,7 @@ export function RouteHero({
 export function RouteCardGrid({ items }: { items: RouteLink[] }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-      {items.map(({ href, title, description, icon: Icon, actionLabel }) => (
+      {items.map(({ href, title, description, icon: Icon, actionLabel, media }) => (
         <Link
           key={href}
           href={href as never}
@@ -63,6 +74,11 @@ export function RouteCardGrid({ items }: { items: RouteLink[] }) {
         >
           <Card className="h-full border-border/80 bg-card transition-[border-color,box-shadow,translate] duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:shadow-md">
             <CardContent className="flex h-full flex-col p-6">
+              {media && (
+                <div className="mb-5">
+                  <RouteMedia asset={media} alt="" compact />
+                </div>
+              )}
               <span className="flex size-11 items-center justify-center rounded-xl bg-secondary text-primary">
                 <Icon className="size-5" aria-hidden="true" />
               </span>

@@ -8,6 +8,8 @@ import {
 import type { Locale } from "@/i18n/routing"
 import { featureNavigation, useCaseNavigation } from "@/lib/marketing/navigation"
 
+import { featureMedia, useCaseMedia } from "@/lib/marketing/route-media"
+
 type Translator = (key: string) => string
 
 export async function FeatureDirectory({ locale }: { locale: Locale }) {
@@ -26,6 +28,7 @@ export async function FeatureDirectory({ locale }: { locale: Locale }) {
         <RouteCardGrid
           items={featureNavigation.map(({ id, slug, icon }) => ({
             href: `/funciones/${slug}`,
+            media: featureMedia[id],
             title: copy(`menuItems.${id}.title`),
             description: copy(`menuItems.${id}.description`),
             icon,
@@ -53,6 +56,7 @@ export async function UseCaseDirectory({ locale }: { locale: Locale }) {
         <RouteCardGrid
           items={useCaseNavigation.map(({ id, slug, icon }) => ({
             href: `/casos/${slug}`,
+            media: useCaseMedia[id],
             title: copy(`menuItems.${id}.title`),
             description: copy(`menuItems.${id}.description`),
             icon,

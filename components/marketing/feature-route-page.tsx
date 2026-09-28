@@ -13,6 +13,8 @@ import {
   WorkflowGrid,
 } from "@/components/marketing/route-page-ui"
 
+import { FeatureRouteVisual } from "@/components/marketing/feature-route-visual"
+
 type Translator = (key: string) => string
 
 /** A feature has the same information architecture and localized depth in every language. */
@@ -41,6 +43,13 @@ export async function FeatureRoutePage({
   return (
     <>
       <RouteHero
+        visual={
+          <FeatureRouteVisual
+            id={feature.id}
+            alt={detail(`features.${feature.id}.imageAlt`)}
+            subtitle={detail("shared.subtitleExample")}
+          />
+        }
         eyebrow={copy("menus.features")}
         title={copy(`menuItems.${feature.id}.title`)}
         lead={copy(`menuItems.${feature.id}.description`)}

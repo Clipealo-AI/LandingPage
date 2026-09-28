@@ -85,7 +85,11 @@ function reproducirCongelado(grupo: Locator, fraccion: number) {
     el.dataset.motionState = "play"
     return el
       .getAnimations({ subtree: true })
-      .filter((a): a is CSSAnimation => a instanceof CSSAnimation)
+      .filter(
+        (a): a is CSSAnimation =>
+          a instanceof CSSAnimation &&
+          Number.isFinite(a.effect?.getComputedTiming().endTime)
+      )
       .map((a) => {
         const efecto = a.effect as KeyframeEffect
         const tiempo = efecto.getComputedTiming()
@@ -113,7 +117,9 @@ function reproducirCongelado(grupo: Locator, fraccion: number) {
 /** Lleva al final todas las animaciones del grupo: queda el estado natural. */
 function terminar(grupo: Locator) {
   return grupo.evaluate((el) => {
-    for (const a of el.getAnimations({ subtree: true })) a.finish()
+    for (const a of el.getAnimations({ subtree: true })) {
+      if (Number.isFinite(a.effect?.getComputedTiming().endTime)) a.finish()
+    }
   })
 }
 
