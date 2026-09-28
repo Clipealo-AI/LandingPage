@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import {
   RouteCallToAction,
   RouteHero,
+  RouteInfoGrid,
   RouteSection,
   WorkflowGrid,
 } from "@/components/marketing/route-page-ui"
@@ -85,6 +86,18 @@ export async function FeatureRoutePage({
           </ul>
         </div>
       </section>
+
+      <RouteSection
+        title={detail("shared.featureExamplesTitle")}
+        lead={detail("shared.featureExamplesLead")}
+      >
+        <RouteInfoGrid
+          items={(["first", "second", "third"] as const).map((item) => ({
+            title: detail(`features.${feature.id}.examples.${item}.title`),
+            description: detail(`features.${feature.id}.examples.${item}.description`),
+          }))}
+        />
+      </RouteSection>
 
       <RouteSection title={detail("shared.workflowTitle")} className="bg-muted/40">
         <WorkflowGrid steps={steps} />

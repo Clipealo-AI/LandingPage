@@ -2,6 +2,7 @@ import { idiomaDe } from "@/i18n/server"
 import { IntlZone } from "@/i18n/zone"
 import { SiteHeader } from "@/components/marketing/site-header"
 import { SiteFooter } from "@/components/marketing/cta"
+import { RouteScrollRestorer } from "@/components/marketing/route-scroll-restorer"
 
 export default async function MarketingLayout({
   children,
@@ -13,6 +14,7 @@ export default async function MarketingLayout({
       {/* data-marketing acota los pre-encuadres de los botones (app/motion/acciones.css) */}
       <div data-marketing className="flex min-h-svh flex-col">
         <SiteHeader />
+        <RouteScrollRestorer />
         <main id="contenido" className="flex-1">
           {children}
         </main>

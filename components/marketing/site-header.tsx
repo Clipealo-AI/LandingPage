@@ -173,6 +173,8 @@ export function SiteHeader() {
       <div className="container-page flex h-16 items-center justify-between gap-2 sm:gap-4">
         <Link
           href="/"
+          scroll={false}
+          onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
           aria-label={t("header.home")}
           className={cn(
             "rounded-md transition-colors",

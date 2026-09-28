@@ -2,7 +2,6 @@ import {
   BookOpenText,
   Building2,
   Captions,
-  CircleHelp,
   Download,
   FolderKanban,
   Gamepad2,
@@ -45,6 +44,5 @@ export const useCaseNavigation = [
 /** Discord stays in the header shortcut; it is intentionally absent here. */
 export const resourceNavigation = [
   { id: "blog", href: "/blog", icon: BookOpenText },
-  { id: "faq", href: "/#faq", icon: CircleHelp },
   { id: "contact", href: WHATSAPP_URL, icon: WhatsAppIcon, external: true },
 ] as const
