@@ -21,7 +21,6 @@ interface FaqItem {
 const QUESTIONS = [
   "processing",
   "fileFormats",
-  "faces",
   "editCaptions",
   "afterCancel",
   "publish",

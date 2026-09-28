@@ -8,13 +8,12 @@ export type PricingCurrency = (typeof PRICING_CURRENCIES)[number]
 export const MONEDA = "US$"
 
 export function formatPrecio(amount: number, currency: PricingCurrency, locale: Locale) {
-  const fractionDigits = Number.isInteger(amount) ? 0 : 2
+  const fractionDigits = Number.isInteger(amount) ? 0 : Number.isInteger(amount * 2) ? 1 : 2
   const value = new Intl.NumberFormat(LOCALE_TAG[locale], {
     minimumFractionDigits: fractionDigits,
     maximumFractionDigits: 2,
   }).format(amount)
   if (currency === "PEN") return `S/${value}`
-  if (locale === "es") return `${value} US$`
   if (locale === "pt") return `US$ ${value}`
   return `US$${value}`
 }
@@ -29,142 +28,62 @@ export interface PricingPlan {
   id: PricingPlanId
   monthly: Prices
   yearly: Prices
-  /** Créditos incluidos al mes en el nivel inicial del plan. */
-  includedCredits: number
-  /** Opciones de créditos mensuales disponibles en el selector de la tarjeta. */
-  creditOptions: readonly number[]
-  /** Precio mensual de cada 100 créditos adicionales. No recibe el descuento anual. */
-  addonPer100: Prices
+  /** Minutos de vídeo incluidos por mes en la BD. */
+  includedMinutes: number
   featured?: boolean
 }
 
-const creditStepsFrom = (base: number, second: number, count: number) => [
-  base,
-  second,
-  ...Array.from({ length: count }, (_, index) => second + 400 * (index + 1)),
-]
-
 /**
- * Catálogo público verificado en dev. Los precios anuales muestran su
- * equivalente mensual; el pago se factura por año. Los créditos extra se
- * cobran al precio mensual publicado, incluso en el ciclo anual.
+ * Soles según plans.monthly_price / plans.yearly_price (el anual se muestra por mes).
+ * USD fijados con la venta SBS de S/3,425 por US$1 (25/09/2026),
+ * redondeados al múltiplo de US$0,50 más cercano.
  */
 export const PLANS: readonly PricingPlan[] = [
   {
     id: "free",
     monthly: { PEN: 0, USD: 0 },
     yearly: { PEN: 0, USD: 0 },
-    includedCredits: 30,
-    creditOptions: [30],
-    addonPer100: { PEN: 9, USD: 2.5 },
+    includedMinutes: 30,
   },
   {
     id: "basic",
-    monthly: { PEN: 45, USD: 12.5 },
-    yearly: { PEN: 36, USD: 10 },
-    includedCredits: 300,
-    creditOptions: creditStepsFrom(300, 400, 14),
-    addonPer100: { PEN: 9, USD: 2.5 },
+    monthly: { PEN: 45, USD: 13 },
+    yearly: { PEN: 36, USD: 10.5 },
+    includedMinutes: 300,
   },
   {
     id: "standard",
-    monthly: { PEN: 90, USD: 25 },
-    yearly: { PEN: 72, USD: 20 },
-    includedCredits: 600,
-    creditOptions: creditStepsFrom(600, 800, 13),
-    addonPer100: { PEN: 9, USD: 2.5 },
+    monthly: { PEN: 90, USD: 26.5 },
+    yearly: { PEN: 72, USD: 21 },
+    includedMinutes: 600,
     featured: true,
   },
   {
     id: "premium",
-    monthly: { PEN: 180, USD: 50 },
-    yearly: { PEN: 144, USD: 40 },
-    includedCredits: 1_200,
-    creditOptions: [
-      1_200,
-      ...Array.from({ length: 12 }, (_, index) => 1_600 + 400 * index),
-    ],
-    addonPer100: { PEN: 9, USD: 2.5 },
+    monthly: { PEN: 180, USD: 52.5 },
+    yearly: { PEN: 144, USD: 42 },
+    includedMinutes: 1200,
   },
 ]
 
-export function planPrice(
-  plan: PricingPlan,
-  credits: number,
-  yearly: boolean,
-  currency: PricingCurrency
-) {
-  const base = (yearly ? plan.yearly : plan.monthly)[currency]
-  const extraHundreds = Math.max(0, credits - plan.includedCredits) / 100
-  return base + extraHundreds * plan.addonPer100[currency]
+export function planPrice(plan: PricingPlan, yearly: boolean, currency: PricingCurrency) {
+  return (yearly ? plan.yearly : plan.monthly)[currency]
 }
 
-export const CREDIT_PACKS = [
-  { id: "hour", credits: 60, hours: 1, PEN: 5.5, USD: 1.5 },
-  { id: "threeHours", credits: 180, hours: 3, PEN: 16.5, USD: 4.6 },
-  { id: "fiveHours", credits: 300, hours: 5, PEN: 27.5, USD: 7.65, popular: true },
-] as const
+/** Tarifas públicas fijas por hora extra. */
+export const EXTRA_HOUR_PRICE_PEN = 5
+export const EXTRA_HOUR_PRICE_USD = 1.5
+/** Límites del checkout de recargas: horas enteras de 1 a 100. */
+export const EXTRA_HOUR_MIN = 1
+export const EXTRA_HOUR_MAX = 100
 
-export const CARD_SECTIONS = ["vod", "editor", "social", "analytics"] as const
-export type CardSectionId = (typeof CARD_SECTIONS)[number]
-export type CardFeatureId =
-  | "process30"
-  | "youtube"
-  | "process5h"
-  | "process10h"
-  | "process20h"
-  | "manualUpload"
-  | "zoomRecordings"
-  | "quality720"
-  | "quality1080"
-  | "quality4k"
-  | "clips5"
-  | "clips30"
-  | "clips100"
-  | "clipsUnlimited"
-  | "watermark"
-  | "noWatermark"
-  | "storage500"
-  | "storage5gb30d"
-  | "storage20gb90d"
-  | "storage100gb90d"
-  | "brandKit"
-  | "posts3"
-  | "posts15"
-  | "posts50Schedule"
-  | "postsUnlimitedSchedule"
-  | "tiktokOnly"
-  | "allNetworks"
-  | "audienceByNetwork"
-  | "tiktokAnalytics"
-
-export const CARD_FEATURES: Record<
-  PricingPlanId,
-  Partial<Record<CardSectionId, readonly CardFeatureId[]>>
-> = {
-  free: {
-    vod: ["process30", "youtube"],
-    editor: ["quality720", "clips5", "watermark", "storage500"],
-    social: ["posts3", "tiktokOnly"],
-  },
-  basic: {
-    vod: ["process5h", "manualUpload"],
-    editor: ["quality1080", "clips30", "noWatermark", "storage5gb30d"],
-    social: ["posts15", "allNetworks"],
-  },
-  standard: {
-    vod: ["process10h", "manualUpload"],
-    editor: ["quality1080", "clips100", "noWatermark", "brandKit", "storage20gb90d"],
-    social: ["posts50Schedule", "audienceByNetwork"],
-    analytics: ["tiktokAnalytics"],
-  },
-  premium: {
-    vod: ["process20h", "zoomRecordings", "manualUpload"],
-    editor: ["quality4k", "clipsUnlimited", "noWatermark", "brandKit", "storage100gb90d"],
-    social: ["postsUnlimitedSchedule", "audienceByNetwork"],
-    analytics: ["tiktokAnalytics"],
-  },
-}
+/** Resumen visible de cada plan, en el orden de sus diferencias principales. */
+export const CARD_HIGHLIGHTS = {
+  free: ["time", "export", "storage", "watermark", "youtubeLocal"],
+  basic: ["time", "export", "noWatermark", "storage", "social", "youtubeKickTwitchLocal"],
+  standard: ["previous", "time", "storage", "facebook"],
+  premium: ["previous", "time", "export", "storage", "driveZoom"],
+} as const satisfies Record<PricingPlanId, readonly string[]>
 
 /** La publicación en redes comparte límites con el catálogo actual de dev. */
 export const NETWORKS_BY_PLAN: Record<PricingPlanId, SocialId[]> = {
@@ -174,14 +93,25 @@ export const NETWORKS_BY_PLAN: Record<PricingPlanId, SocialId[]> = {
   premium: ["tiktok", "instagram", "youtube", "x", "linkedin", "facebook"],
 }
 
-type FeatureValueTextId =
-  | "unlimited"
-  | "tiktokOnly"
-  | "allNetworks"
-  | `storage.${PricingPlanId}`
-  | `videoSources.${PricingPlanId}`
+export type VideoSourceId = "youtube" | "kick" | "twitch" | "facebook" | "drive" | "zoom"
 
-export type FeatureValue = boolean | number | string | { text: FeatureValueTextId }
+/** Orígenes que devuelve plans.available_platforms en la BD actual. */
+export const VIDEO_SOURCES_BY_PLAN: Record<PricingPlanId, readonly VideoSourceId[]> = {
+  free: ["youtube"],
+  basic: ["youtube", "kick", "twitch"],
+  standard: ["youtube", "kick", "twitch", "facebook"],
+  premium: ["youtube", "kick", "twitch", "facebook", "drive", "zoom"],
+}
+
+type FeatureValueTextId =
+  "unlimited" | "tiktokOnly" | "allNetworks" | `storage.${PricingPlanId}`
+
+export type FeatureValue =
+  | boolean
+  | number
+  | string
+  | { text: FeatureValueTextId }
+  | { sources: readonly VideoSourceId[] }
 
 interface FeatureRow {
   id: string
@@ -199,20 +129,16 @@ export const FEATURE_GROUPS = [
     id: "ia",
     rows: [
       {
-        id: "monthlyCredits",
-        values: { free: 30, basic: 300, standard: 600, premium: 1_200 },
-      },
-      {
         id: "videoHours",
         values: { free: "30 min", basic: "5 h", standard: "10 h", premium: "20 h" },
       },
       {
         id: "videoSources",
         values: {
-          free: { text: "videoSources.free" },
-          basic: { text: "videoSources.basic" },
-          standard: { text: "videoSources.standard" },
-          premium: { text: "videoSources.premium" },
+          free: { sources: VIDEO_SOURCES_BY_PLAN.free },
+          basic: { sources: VIDEO_SOURCES_BY_PLAN.basic },
+          standard: { sources: VIDEO_SOURCES_BY_PLAN.standard },
+          premium: { sources: VIDEO_SOURCES_BY_PLAN.premium },
         },
       },
     ],
@@ -230,16 +156,7 @@ export const FEATURE_GROUPS = [
           free: "720p",
           basic: "1080p",
           standard: "1080p",
-          premium: "1080p + 4K",
-        },
-      },
-      {
-        id: "downloadableClips",
-        values: {
-          free: "5",
-          basic: "30",
-          standard: "100",
-          premium: { text: "unlimited" },
+          premium: "4K",
         },
       },
       {
@@ -254,10 +171,10 @@ export const FEATURE_GROUPS = [
       {
         id: "exportFormats",
         values: {
-          free: "9:16",
-          basic: "9:16",
-          standard: "9:16",
-          premium: "9:16",
+          free: "9:16 · 16:9",
+          basic: "9:16 · 16:9",
+          standard: "9:16 · 16:9",
+          premium: "9:16 · 16:9",
         },
       },
       {
@@ -316,22 +233,10 @@ export const FEATURE_GROUPS = [
   },
 ] as const satisfies readonly FeatureGroup[]
 
-export const ENTERPRISE_INCLUDED = [
-  "everythingPremium",
-  "creditsByVolume",
-  "multiUserChannels",
-  "multiBranding",
-  "processingSla",
-  "dedicatedClipper",
-] as const
-
-export const ENTERPRISE_EXTRAS = ["approvalFlow", "whiteLabel", "creditPackages"] as const
-
 export const PRICING_FAQ = [
-  "credit",
-  "adjustCredits",
+  "includedTime",
+  "extraHours",
   "annualBilling",
   "cancel",
   "currencies",
-  "creditPacks",
 ] as const

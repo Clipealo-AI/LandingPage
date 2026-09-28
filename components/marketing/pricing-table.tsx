@@ -18,6 +18,7 @@ import { PLANES_SEMILLA, planesVisibles } from "@/lib/planes"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { WhatsAppIcon } from "@/components/brand/whatsapp-icon"
+import { VideoSourceIcons } from "@/components/marketing/video-source-icons"
 
 /** Tabla semántica con desplazamiento horizontal en pantallas estrechas. */
 export function PricingTable({
@@ -48,7 +49,7 @@ export function PricingTable({
               </span>
             </th>
             {planes.map((plan) => {
-              const price = planPrice(plan, plan.includedCredits, yearly, currency)
+              const price = planPrice(plan, yearly, currency)
               return (
                 <th
                   key={plan.id}
@@ -152,6 +153,9 @@ function Celda({ value }: { value: FeatureValue }) {
         <span className="sr-only">{t("notIncluded")}</span>
       </span>
     )
+  }
+  if (typeof value === "object" && "sources" in value) {
+    return <VideoSourceIcons sources={value.sources} />
   }
   if (typeof value === "number") {
     return <span className="tabular-nums">{f.grouped(value)}</span>

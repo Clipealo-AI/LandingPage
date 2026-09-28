@@ -237,8 +237,7 @@
     "eyebrow": "Preços",
     "title": "Preços simples,<br></br>sem surpresas.",
     "lead": "Escolha o plano que se adapta ao seu volume. Cancele quando quiser.",
-    "compare": "Compare os planos e tudo o que eles incluem",
-    "footnote": "1 crédito equivale a 1 minuto de vídeo. Ajuste os créditos mensais nos planos Básico, Padrão e Premium."
+    "compare": "Compare os planos e tudo o que eles incluem"
   },
   "pricingTable": {
     "caption": "Comparação dos planos Free, Básico, Padrão e Premium",
@@ -246,32 +245,17 @@
     "included": "Incluído",
     "notIncluded": "Não incluído"
   },
-  "pricingNetworks": {
-    "allPlans": "Todos os planos",
-    "fromPlan": "A partir do {plan}",
-    "formats": "Formatos",
-    "maxDuration": "Duração máxima",
-    "bestRetention": "Melhor retenção",
-    "included": "incluído",
-    "notIncluded": "não incluído"
-  },
   "pricingPage": {
     "meta": {
       "title": "Preços do Clipealo",
-      "description": "Planos Free, Básico, Padrão e Premium. A partir de S/45 por mês, com créditos ajustáveis, edição de vídeo e publicação nas redes."
+      "description": "Planos Free, Básico, Padrão e Premium. A partir de S/45 por mês, com edição de vídeo e publicação nas redes."
     },
     "eyebrow": "Preços",
     "title": "Preços simples,<br></br>sem surpresas.",
-    "lead": "Escolha o plano que se adapta ao seu volume. 1 crédito equivale a 1 minuto de vídeo. Cancele quando quiser.",
+    "lead": "Escolha o plano que se adapta ao seu volume. Cancele quando quiser.",
     "compare": {
       "title": "Compare os planos.",
-      "lead": "Créditos, processamento de vídeo, edição, publicação nas redes e suporte, lado a lado.",
-      "networksLink": "Redes por plano"
-    },
-    "networks": {
-      "eyebrow": "Publicação",
-      "title": "As redes de cada plano.",
-      "lead": "O Clipealo prepara clipes verticais 9:16 para suas redes sociais. A duração máxima e recomendada varia conforme o destino."
+      "lead": "Horas de vídeo, processamento de vídeo, edição, publicação nas redes e suporte, lado a lado."
     },
     "faqTitle": "Perguntas<br></br>sobre planos e pagamentos."
   },
@@ -281,23 +265,19 @@
     "items": {
       "processing": {
         "q": "Quanto tempo leva para processar um vídeo?",
-        "a": "Depende da duração, do tamanho e da qualidade do arquivo. Acompanhe o progresso nos projetos e revise os clipes quando o processamento terminar."
+        "a": "O processamento normalmente termina em menos de 3 minutos. O tempo pode variar conforme a duração e a qualidade do vídeo e a carga do serviço; acompanhe o progresso em seus projetos."
       },
       "fileFormats": {
         "q": "Quais formatos de arquivo são aceitos?",
-        "a": "Você pode enviar formatos comuns como MP4, MOV, WebM e MKV ou importar um link compatível. Os limites de tamanho e duração dependem do seu plano."
-      },
-      "faces": {
-        "q": "O reenquadramento vertical corta os rostos?",
-        "a": "O acompanhamento automático tenta manter quem fala dentro do quadro. Revise sempre o resultado e ajuste o recorte no editor quando precisar. Esse recurso depende do seu plano."
+        "a": "Você pode enviar arquivos MP4, MOV, WebM e MKV ou importar um link compatível. Os formatos de exportação 9:16 e 16:9 estão disponíveis em todos os planos."
       },
       "editCaptions": {
-        "q": "Dá para editar as legendas?",
-        "a": "Sim. Você pode revisar e corrigir a transcrição antes de exportar. Os estilos, a tradução e o dicionário de nomes disponíveis dependem do seu plano."
+        "q": "É possível editar o hook e as legendas?",
+        "a": "Sim. No editor você pode mudar o texto do hook, corrigir as legendas e ajustar o estilo antes de exportar."
       },
       "afterCancel": {
-        "q": "O que acontece com meus vídeos se eu cancelar?",
-        "a": "Se cancelar um plano pago, os recursos continuam disponíveis até o fim do ciclo contratado. Baixe o que precisar antes de vencer o período de armazenamento do seu plano."
+        "q": "O que acontece com meus vídeos se eu cancelar meu plano?",
+        "a": "Os recursos do plano continuam disponíveis até o fim do período pago. Depois, seus vídeos seguem o prazo de armazenamento do plano vigente; baixe o que precisar antes do vencimento."
       },
       "publish": {
         "q": "O Clipealo publica nas minhas redes por mim?",

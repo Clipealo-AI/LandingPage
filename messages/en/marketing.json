@@ -237,8 +237,7 @@
     "eyebrow": "Pricing",
     "title": "Simple pricing,<br></br>no surprises.",
     "lead": "Choose the plan that fits your volume. Cancel anytime.",
-    "compare": "Compare plans and everything they include",
-    "footnote": "1 credit equals 1 minute of video. Adjust monthly credits on Basic, Standard and Premium."
+    "compare": "Compare plans and everything they include"
   },
   "pricingTable": {
     "caption": "Comparison of the Free, Basic, Standard and Premium plans",
@@ -246,32 +245,17 @@
     "included": "Included",
     "notIncluded": "Not included"
   },
-  "pricingNetworks": {
-    "allPlans": "All plans",
-    "fromPlan": "From {plan}",
-    "formats": "Formats",
-    "maxDuration": "Max length",
-    "bestRetention": "Best retention",
-    "included": "included",
-    "notIncluded": "not included"
-  },
   "pricingPage": {
     "meta": {
       "title": "Clipealo pricing",
-      "description": "Free, Basic, Standard and Premium plans. From $12.50 per month, with adjustable credits, video editing and social publishing."
+      "description": "Free, Basic, Standard and Premium plans. From US$13 per month, with video editing and social publishing."
     },
     "eyebrow": "Pricing",
     "title": "Simple pricing,<br></br>no surprises.",
-    "lead": "Choose the plan that fits your volume. 1 credit equals 1 minute of video. Cancel anytime.",
+    "lead": "Choose the plan that fits your volume. Cancel anytime.",
     "compare": {
       "title": "Compare the plans.",
-      "lead": "Credits, video processing, editing, social publishing and support, side by side.",
-      "networksLink": "Networks by plan"
-    },
-    "networks": {
-      "eyebrow": "Publishing",
-      "title": "Each plan’s platforms.",
-      "lead": "Clipealo prepares vertical 9:16 clips for your social channels. Maximum and recommended duration varies by destination."
+      "lead": "Video hours, video processing, editing, social publishing and support, side by side."
     },
     "faqTitle": "Questions<br></br>about plans and billing."
   },
@@ -281,23 +265,19 @@
     "items": {
       "processing": {
         "q": "How long does it take to process a video?",
-        "a": "It depends on the file’s length, size and quality. You can follow progress in your projects and review clips when processing finishes."
+        "a": "Processing normally finishes in under 3 minutes. The time can vary with video length, quality and service load; you can track progress in your projects."
       },
       "fileFormats": {
         "q": "Which file formats are supported?",
-        "a": "You can upload common formats such as MP4, MOV, WebM and MKV, or import a supported link. Maximum file size and duration depend on your plan."
-      },
-      "faces": {
-        "q": "Does the vertical reframe cut off faces?",
-        "a": "Automatic tracking aims to keep the speaker in frame. Always review the result and adjust the crop in the editor when needed. This feature depends on your plan."
+        "a": "You can upload MP4, MOV, WebM and MKV files or import a supported link. The 9:16 and 16:9 export formats are available on every plan."
       },
       "editCaptions": {
-        "q": "Can I edit the captions?",
-        "a": "Yes. You can review and correct the transcript before exporting. Available styles, translation and the name dictionary depend on your plan."
+        "q": "Can I edit the hook and captions?",
+        "a": "Yes. In the editor you can change the hook text, correct captions and adjust their style before exporting."
       },
       "afterCancel": {
-        "q": "What happens to my videos if I cancel?",
-        "a": "If you cancel a paid plan, its features remain available until the current billing period ends. Download anything you need before your plan’s storage period expires."
+        "q": "What happens to my videos if I cancel my plan?",
+        "a": "Your plan features remain available until the paid period ends. After that, your videos follow the storage period of your current plan; download anything you need before it expires."
       },
       "publish": {
         "q": "Does Clipealo publish to my networks for me?",

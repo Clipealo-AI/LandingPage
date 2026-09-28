@@ -63,6 +63,19 @@ html:not(.js) .reframe-section {
   }
 }
 
+/* En escritorio, el espacio reservado a la cabecera depende de la altura real
+   de la ventana. El vídeo cede altura en pantallas bajas para que el título
+   y la línea de tiempo sigan visibles dentro del escenario sticky. */
+@media (min-width: 640px) {
+  .reframe-stage {
+    padding-block-start: max(1rem, calc((1080px - 100svh) / 2));
+  }
+
+  .reframe-encuadre {
+    max-width: calc((100svh - 400px) * 16 / 9);
+  }
+}
+
 .reframe-stage {
   /* Las pausas 1:1 y 9:16 duran 75,6vh cada una: 50 % más que las 50,4vh
      anteriores. Los tramos de cambio conservan su duración; no se intercepta

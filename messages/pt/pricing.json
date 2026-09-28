@@ -3,22 +3,46 @@
     "free": {
       "name": "Free",
       "tagline": "Experimente o Clipealo.",
-      "cta": "Começar grátis"
+      "cta": "Começar grátis",
+      "highlights": {
+        "export": "Exportação em 720p",
+        "storage": "Armazenamento por 1 semana",
+        "watermark": "Seus clipes são exportados com a marca d’água da Clipealo",
+        "youtubeLocal": "Importação de vídeos do YouTube e de arquivos locais"
+      }
     },
     "basic": {
       "name": "Básico",
       "tagline": "Para criadores em crescimento.",
-      "cta": "Escolher Básico"
+      "cta": "Escolher Básico",
+      "highlights": {
+        "export": "Exportação em 1080p",
+        "noWatermark": "Clipes sem marca d’água",
+        "storage": "Armazenamento por 3 meses",
+        "social": "Publicação nas redes sociais",
+        "youtubeKickTwitchLocal": "Importação de vídeos do YouTube, Kick, Twitch e arquivos locais"
+      }
     },
     "standard": {
       "name": "Padrão",
       "tagline": "Para criadores profissionais.",
-      "cta": "Escolher Padrão"
+      "cta": "Escolher Padrão",
+      "highlights": {
+        "previous": "Tudo do plano Básico",
+        "storage": "Armazenamento por 6 meses",
+        "facebook": "Importação adicional do Facebook"
+      }
     },
     "premium": {
       "name": "Premium",
       "tagline": "Para agências e equipes.",
-      "cta": "Escolher Premium"
+      "cta": "Escolher Premium",
+      "highlights": {
+        "previous": "Tudo do plano Padrão",
+        "export": "Exportação em 4K",
+        "storage": "Armazenamento ilimitado",
+        "driveZoom": "Importação adicional do Google Drive e do Zoom"
+      }
     }
   },
   "perMonth": "/mês",
@@ -30,53 +54,11 @@
     "yearlyLabel": "Cobrança anual",
     "billedMonthly": "Cobrado mensalmente",
     "billedYearly": "Cobrado anualmente",
-    "withExtraCredits": "{billing} · base {base} + {credits} créditos",
     "currencyLabel": "Moeda",
     "soles": "🇵🇪 Soles",
     "dollars": "🇺🇸 Dólares americanos",
     "currencyNamePEN": "soles peruanos",
     "currencyNameUSD": "dólares americanos"
-  },
-  "creditDefinition": "1 crédito = 1 minuto de vídeo",
-  "creditSelector": "Créditos mensais para {plan}",
-  "creditOption": "{credits} créditos / mês · ≈ {hours} h",
-  "creditOptionFree": "{credits} créditos / mês · ≈ 30 min",
-  "cardSections": {
-    "vod": "VOD",
-    "editor": "Editor",
-    "social": "Publicação nas redes",
-    "analytics": "Análises"
-  },
-  "cardFeatures": {
-    "process30": "30 min de processamento",
-    "youtube": "Importação do YouTube",
-    "process5h": "5 h de processamento",
-    "process10h": "10 h de processamento",
-    "process20h": "20 h de processamento",
-    "manualUpload": "+ Envio manual de vídeo",
-    "zoomRecordings": "Clipes de gravações do Zoom",
-    "quality720": "Exportação em 720p",
-    "quality1080": "Exportação em 1080p",
-    "quality4k": "Exportação em 4K",
-    "clips5": "5 clipes para baixar por mês",
-    "clips30": "30 clipes para baixar por mês",
-    "clips100": "100 clipes para baixar por mês",
-    "clipsUnlimited": "Clipes ilimitados para baixar",
-    "watermark": "Com marca d’água",
-    "noWatermark": "Sem marca d’água",
-    "storage500": "500 MB de armazenamento",
-    "storage5gb30d": "5 GB de armazenamento · 30 dias",
-    "storage20gb90d": "20 GB de armazenamento · 90 dias",
-    "storage100gb90d": "100 GB de armazenamento · 90 dias",
-    "brandKit": "Kit de marca",
-    "posts3": "3 publicações/mês · TikTok",
-    "posts15": "15 publicações/mês · todas as redes",
-    "posts50Schedule": "50 publicações/mês + agendamento",
-    "postsUnlimitedSchedule": "Publicações ilimitadas + agendamento",
-    "tiktokOnly": "Publicação no TikTok",
-    "allNetworks": "Publicação em todas as redes",
-    "audienceByNetwork": "Defina o público por rede",
-    "tiktokAnalytics": "Análises do TikTok incluídas"
   },
   "groups": {
     "ia": "Geração de clipes com IA",
@@ -85,12 +67,10 @@
     "support": "Suporte"
   },
   "features": {
-    "monthlyCredits": "Créditos mensais",
     "videoHours": "Tempo de vídeo processável",
     "videoSources": "Importe vídeos de",
     "noWatermark": "Sem marca d’água",
     "downloadQuality": "Qualidade do download",
-    "downloadableClips": "Clipes para baixar / mês",
     "storage": "Armazenamento",
     "exportFormats": "Formatos de exportação",
     "brandTemplate": "Modelo de marca próprio",
@@ -107,75 +87,48 @@
     "tiktokOnly": "Só TikTok",
     "allNetworks": "Todas as redes",
     "storage": {
-      "free": "500 MB",
-      "basic": "5 GB · 30 dias",
-      "standard": "20 GB · 90 dias",
-      "premium": "100 GB · 90 dias"
+      "free": "1 semana",
+      "basic": "3 meses",
+      "standard": "6 meses",
+      "premium": "Ilimitado"
     },
-    "videoSources": {
-      "free": "YouTube",
-      "basic": "YouTube, Kick e Twitch + envio manual",
-      "standard": "YouTube, Kick, Twitch e Facebook + envio manual",
-      "premium": "YouTube, Kick, Twitch, Facebook, Google Drive e Zoom + envio manual"
-    }
-  },
-  "enterprise": {
-    "eyebrow": "EMPRESARIAL",
-    "title": "Empresarial",
-    "lead": "Agências, publishers e marcas",
-    "price": "Sob consulta",
-    "turnaround": "Proposta personalizada em 24 horas.",
-    "contact": "Fale conosco",
-    "includesTitle": "Inclui",
-    "extrasTitle": "Extras",
-    "included": {
-      "everythingPremium": "Tudo do plano Premium",
-      "creditsByVolume": "Créditos conforme o volume negociado",
-      "multiUserChannels": "Multiusuário e multicanal",
-      "multiBranding": "Branding completo para várias marcas",
-      "processingSla": "SLA de processamento garantido",
-      "dedicatedClipper": "Clipero dedicado por segmento"
-    },
-    "extras": {
-      "approvalFlow": "Fluxo de aprovação de clipes",
-      "whiteLabel": "White label disponível",
-      "creditPackages": "Pacotes de créditos"
-    }
+    "localUpload": "Envio local"
   },
   "topups": {
-    "title": "Recarregue créditos quando precisar.",
-    "lead": "{credits} créditos = {hours} hora de vídeo.",
-    "popular": "Popular",
-    "creditsLabel": "créditos",
-    "hours": "≈ {count, plural, one {# hora} other {# horas}}",
-    "buy": "Comprar",
-    "footer": "Todos os planos podem ser cancelados a qualquer momento · Pagamento seguro · Cobrança em {currency}"
+    "title": "ADICIONE HORAS EXTRAS AO SEU PLANO",
+    "description": "Escolha quantas horas de vídeo deseja adicionar ao seu plano e veja o custo estimado.",
+    "quantityLabel": "Horas extras",
+    "soles": "Soles",
+    "dollars": "Dólares",
+    "decrease": "Remover uma hora",
+    "increase": "Adicionar uma hora",
+    "estimateTitle": "Sua cotação",
+    "goToPlan": "Adicionar horas no aplicativo"
   },
   "faq": {
-    "credit": {
-      "q": "O que é um crédito?",
-      "a": "Um crédito equivale a um minuto de vídeo processável. Por exemplo, 60 créditos equivalem a uma hora de vídeo."
+    "includedTime": {
+      "q": "Quanto tempo de vídeo cada plano inclui?",
+      "a": "Por mês, Free inclui 30 minutos; Básico, 5 horas; Padrão, 10 horas; e Premium, 20 horas."
     },
-    "adjustCredits": {
-      "q": "Posso ajustar meus créditos mensais?",
-      "a": "Sim. Nos planos Básico, Padrão e Premium, você escolhe o volume mensal de créditos de que precisa, do mínimo do plano até 6.000."
+    "extraHours": {
+      "q": "Como funcionam as horas extras?",
+      "a": "Você pode adicionar de 1 a 100 horas a um plano pago. Cada hora custa S/5; também é possível consultar a cotação em dólares por US$1,50 por hora."
     },
     "annualBilling": {
       "q": "Como funciona a cobrança anual?",
-      "a": "A opção anual dá 20% de desconto no preço base do plano. O preço exibido é o equivalente mensal e é cobrado anualmente. Créditos adicionais são cobrados à parte."
+      "a": "Você paga o ano antecipadamente com 20% de desconto em relação ao preço mensal. Os cartões mostram o equivalente por mês."
     },
     "cancel": {
       "q": "Posso cancelar quando quiser?",
-      "a": "Sim. Você pode cancelar seu plano a qualquer momento."
+      "a": "Sim. Você pode cancelar seu plano a qualquer momento e manter o acesso até o fim do período pago."
     },
     "currencies": {
       "q": "Em quais moedas posso ver os preços?",
-      "a": "Use o seletor de moeda na página para alternar entre soles peruanos e dólares americanos."
-    },
-    "creditPacks": {
-      "q": "Posso comprar créditos extras?",
-      "a": "Sim. Você pode recarregar pacotes de 60, 180 ou 300 créditos quando precisar."
+      "a": "Você pode consultar planos e horas extras em soles ou dólares. As horas extras compradas no aplicativo são cobradas atualmente em soles."
     }
   },
-  "gate": { "cta": "Ver os planos" }
+  "gate": {
+    "cta": "Ver os planos"
+  },
+  "includedTime": "{minutes, plural, =30 {30 min de vídeo por mês} other {{hours} h de vídeo por mês}}"
 }

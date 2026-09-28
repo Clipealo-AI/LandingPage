@@ -22,7 +22,7 @@ export async function generateMetadata({
 
 /**
  * Página dedicada de precios: los cuatro planes, la comparativa, las redes,
- * la propuesta Empresarial, las recargas y las preguntas de facturación.
+ * las recargas de horas y las preguntas de facturación.
  */
 export default async function PreciosPage({ params }: PageProps<"/[locale]/precios">) {
   const locale = await idiomaDe(params)

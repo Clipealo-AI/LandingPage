@@ -1,18 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { ArrowRight, Check, ChevronDown } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { usePrecio } from "@/components/planes/precio"
 import { useNombrePlan } from "@/components/planes/nombre-plan"
 import { Link } from "@/i18n/navigation"
-import { useFormat } from "@/hooks/use-format"
 import { useMotionGroup } from "@/hooks/use-motion-group"
 import { cn } from "@/lib/utils"
 import {
-  CARD_FEATURES,
-  CARD_SECTIONS,
+  CARD_HIGHLIGHTS,
   DESCUENTO_ANUAL_PCT,
   planPrice,
   PRICING_CURRENCIES,
@@ -107,12 +105,10 @@ const ESCALONADO_TARJETAS = [
 export function PlanCards({
   yearly,
   currency,
-  compact = false,
   entrada = false,
 }: {
   yearly: boolean
   currency: PricingCurrency
-  compact?: boolean
   entrada?: boolean
 }) {
   const cambiado = useHaCambiado(yearly)
@@ -126,7 +122,6 @@ export function PlanCards({
           plan={plan}
           yearly={yearly}
           currency={currency}
-          compact={compact}
           cambiado={cambiado}
           entrada={entrada}
           escalonado={ESCALONADO_TARJETAS[indice]}
@@ -140,7 +135,6 @@ function TarjetaPlan({
   plan,
   yearly,
   currency,
-  compact,
   cambiado,
   entrada,
   escalonado,
@@ -148,32 +142,19 @@ function TarjetaPlan({
   plan: PlanCatalogo
   yearly: boolean
   currency: PricingCurrency
-  compact: boolean
   cambiado: boolean
   entrada: boolean
   escalonado: string
 }) {
   const t = useTranslations("pricing")
-  const f = useFormat()
   const formatoPrecio = usePrecio(currency)
   const nombrePlan = useNombrePlan()
   const tarjeta = React.useRef<HTMLDivElement>(null)
-  const [credits, setCredits] = React.useState(plan.includedCredits)
   useMotionGroup(tarjeta)
 
   const featured = plan.featured
-  const price = planPrice(plan, credits, yearly, currency)
-  const basePrice = (yearly ? plan.yearly : plan.monthly)[currency]
-  const extraCredits = credits - plan.includedCredits
-  const billingLabel = t(yearly ? "billing.billedYearly" : "billing.billedMonthly")
-  const billingNote =
-    extraCredits > 0
-      ? t("billing.withExtraCredits", {
-          billing: billingLabel,
-          base: formatoPrecio(basePrice),
-          credits: f.grouped(extraCredits),
-        })
-      : billingLabel
+  const price = planPrice(plan, yearly, currency)
+  const billingNote = t(yearly ? "billing.billedYearly" : "billing.billedMonthly")
 
   return (
     <div
@@ -204,7 +185,7 @@ function TarjetaPlan({
 
       <p className="mt-6 flex flex-wrap items-baseline gap-x-1.5">
         <span
-          key={`${plan.id}-${yearly}-${currency}-${credits}`}
+          key={`${plan.id}-${yearly}-${currency}`}
           className={cn(
             "display text-[clamp(1.75rem,9vw,2.25rem)] tabular-nums",
             cambiado && plan.monthly[currency] !== plan.yearly[currency] && "m-price"
@@ -223,42 +204,6 @@ function TarjetaPlan({
         {plan.id === "free" ? null : billingNote}
       </p>
 
-      <div className="mt-5">
-        <p className="mb-1.5 text-[11px] text-muted-foreground">
-          {t("creditDefinition")}
-        </p>
-        {plan.creditOptions.length > 1 ? (
-          <div className="relative">
-            <Label className="sr-only" htmlFor={`credits-${plan.id}`}>
-              {t("creditSelector", { plan: nombrePlan(plan) })}
-            </Label>
-            <select
-              id={`credits-${plan.id}`}
-              value={credits}
-              onChange={(event) => setCredits(Number(event.currentTarget.value))}
-              className="hover:border-border-hover w-full appearance-none rounded-lg border border-border bg-background px-3 py-2.5 pr-9 text-sm font-medium text-foreground focus:border-primary focus:outline-none"
-            >
-              {plan.creditOptions.map((amount) => (
-                <option key={amount} value={amount}>
-                  {t("creditOption", {
-                    credits: f.grouped(amount),
-                    hours: f.number(Number((amount / 60).toFixed(1))),
-                  })}
-                </option>
-              ))}
-            </select>
-            <ChevronDown
-              className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground"
-              aria-hidden
-            />
-          </div>
-        ) : (
-          <p className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm font-medium">
-            {t("creditOptionFree", { credits: f.grouped(plan.includedCredits) })}
-          </p>
-        )}
-      </div>
-
       <Button
         variant={featured ? "brand" : "outline"}
         size="lg"
@@ -268,37 +213,27 @@ function TarjetaPlan({
         <Link href="https://app.clipealo-ai.com/">{t(`plans.${plan.id}.cta`)}</Link>
       </Button>
 
-      {!compact && (
-        <div className="mt-7 space-y-5 text-sm">
-          {CARD_SECTIONS.map((section) => {
-            const features = CARD_FEATURES[plan.id][section]
-            if (!features?.length) return null
-            return (
-              <section key={section}>
-                <h4 className="mb-2.5 text-[10px] font-semibold tracking-[0.15em] text-muted-foreground/70 uppercase">
-                  {t(`cardSections.${section}`)}
-                </h4>
-                <ul className="space-y-2">
-                  {features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5">
-                      <Check
-                        className={cn(
-                          "mt-0.5 size-4 shrink-0",
-                          featured ? "text-brand" : "text-primary"
-                        )}
-                        aria-hidden
-                      />
-                      <span className="text-muted-foreground">
-                        {t(`cardFeatures.${feature}`)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            )
-          })}
-        </div>
-      )}
+      <ul className="mt-7 space-y-3 text-sm">
+        {CARD_HIGHLIGHTS[plan.id].map((highlight) => (
+          <li key={highlight} className="flex items-start gap-2.5">
+            <Check
+              className={cn(
+                "mt-0.5 size-4 shrink-0",
+                featured ? "text-brand" : "text-primary"
+              )}
+              aria-hidden
+            />
+            <span className="text-muted-foreground">
+              {highlight === "time"
+                ? t("includedTime", {
+                    minutes: plan.includedMinutes,
+                    hours: plan.includedMinutes / 60,
+                  })
+                : t(`plans.${plan.id}.highlights.${highlight}` as Parameters<typeof t>[0])}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
@@ -306,7 +241,7 @@ function TarjetaPlan({
 /** Resumen de los planes en la landing; la comparativa completa vive en /precios. */
 export function Pricing() {
   const t = useTranslations("marketing.pricing")
-  const [yearly, setYearly] = React.useState(false)
+  const [yearly, setYearly] = React.useState(true)
   const [currency, setCurrency] = React.useState<PricingCurrency>("PEN")
   const encabezado = React.useRef<HTMLDivElement>(null)
   useMotionGroup(encabezado)
@@ -338,7 +273,7 @@ export function Pricing() {
       </div>
 
       <div className="mt-14">
-        <PlanCards yearly={yearly} currency={currency} compact entrada />
+        <PlanCards yearly={yearly} currency={currency} entrada />
       </div>
 
       <div className="mt-10 flex flex-col items-center gap-3 text-center">
@@ -352,9 +287,6 @@ export function Pricing() {
             {t("compare")} <ArrowRight />
           </Link>
         </Button>
-        <p className="max-w-2xl text-xs text-balance text-muted-foreground">
-          {t("footnote")}
-        </p>
       </div>
     </section>
   )

@@ -209,7 +209,7 @@ export function Reframe() {
         ref={seccion}
         className="reframe-section relative h-[340.8vh] scroll-mt-0 bg-ink-950"
       >
-        <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5">
+        <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5 pt-24 pb-6">
           <PatternIsotipos opacity={0.08} fade="edges" />
 
           <h2 className="relative mx-auto max-w-3xl text-center display text-[clamp(1.75rem,4.4vw,3rem)] text-ink-50">

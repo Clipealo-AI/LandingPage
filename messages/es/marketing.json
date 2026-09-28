@@ -237,8 +237,7 @@
     "eyebrow": "Precios",
     "title": "Precios simples,<br></br>sin sorpresas.",
     "lead": "Elige el plan que se adapta a tu volumen. Cancela cuando quieras.",
-    "compare": "Comparar planes y ver todo lo que incluyen",
-    "footnote": "1 crédito equivale a 1 minuto de video. Ajusta los créditos mensuales en Básico, Estándar y Premium."
+    "compare": "Comparar planes y ver todo lo que incluyen"
   },
   "pricingTable": {
     "caption": "Comparativa de los planes Free, Básico, Estándar y Premium",
@@ -246,32 +245,17 @@
     "included": "Incluido",
     "notIncluded": "No incluido"
   },
-  "pricingNetworks": {
-    "allPlans": "Todos los planes",
-    "fromPlan": "Desde {plan}",
-    "formats": "Formatos",
-    "maxDuration": "Duración máxima",
-    "bestRetention": "Lo que mejor retiene",
-    "included": "incluido",
-    "notIncluded": "no incluido"
-  },
   "pricingPage": {
     "meta": {
       "title": "Precios de Clipealo",
-      "description": "Planes Free, Básico, Estándar y Premium. Desde S/45 al mes, con créditos ajustables, editor de video y publicación en redes."
+      "description": "Planes Free, Básico, Estándar y Premium. Desde S/45 al mes, con editor de video y publicación en redes."
     },
     "eyebrow": "Precios",
     "title": "Precios simples,<br></br>sin sorpresas.",
-    "lead": "Elige el plan que se adapta a tu volumen. 1 crédito equivale a 1 minuto de video. Cancela cuando quieras.",
+    "lead": "Elige el plan que se adapta a tu volumen. Cancela cuando quieras.",
     "compare": {
       "title": "Compara los planes.",
-      "lead": "Créditos, procesamiento de video, edición, publicación en redes y soporte, lado a lado.",
-      "networksLink": "Redes por plan"
-    },
-    "networks": {
-      "eyebrow": "Publicación",
-      "title": "Las redes de cada plan.",
-      "lead": "Clipealo prepara tus clips en formato vertical 9:16 para publicar en tus redes. La duración máxima y recomendada varía según el destino."
+      "lead": "Horas de video, procesamiento de video, edición, publicación en redes y soporte, lado a lado."
     },
     "faqTitle": "Preguntas<br></br>sobre planes y pago."
   },
@@ -281,23 +265,19 @@
     "items": {
       "processing": {
         "q": "¿Cuánto tarda en procesar un video?",
-        "a": "Depende de la duración, el tamaño y la calidad del archivo. Puedes seguir el avance desde tus proyectos y revisar los clips cuando el procesamiento termine."
+        "a": "Normalmente el procesamiento termina en menos de 3 minutos. El tiempo puede variar según la duración del video, su calidad y la carga del servicio; puedes seguir el avance desde tus proyectos."
       },
       "fileFormats": {
         "q": "¿Qué formatos de archivo acepta?",
-        "a": "Puedes subir formatos habituales como MP4, MOV, WebM y MKV o importar un enlace compatible. El tamaño y la duración máximos dependen de tu plan."
-      },
-      "faces": {
-        "q": "¿El reencuadre vertical corta las caras?",
-        "a": "El seguimiento automático intenta mantener en cuadro a quien habla. Revisa siempre el resultado y ajusta el encuadre en el editor si lo necesitas. Esta función depende de tu plan."
+        "a": "Puedes subir archivos MP4, MOV, WebM y MKV o importar un enlace compatible. Los formatos de exportación 9:16 y 16:9 están disponibles en todos los planes."
       },
       "editCaptions": {
-        "q": "¿Los subtítulos se pueden editar?",
-        "a": "Sí. Puedes revisar y corregir la transcripción antes de exportar. Los estilos, la traducción y el diccionario de nombres disponibles dependen de tu plan."
+        "q": "¿Se pueden editar el hook y los subtítulos?",
+        "a": "Sí. En el editor puedes cambiar el texto del hook, corregir los subtítulos y ajustar su estilo antes de exportar."
       },
       "afterCancel": {
-        "q": "¿Qué pasa con mis videos si cancelo?",
-        "a": "Si cancelas un plan de pago, conservas sus funciones hasta que termine el ciclo contratado. Descarga el material que necesites antes de que venza el periodo de almacenamiento de tu plan."
+        "q": "¿Qué pasa con mis videos si cancelo mi plan?",
+        "a": "Conservas las funciones de tu plan hasta que termine el periodo pagado. Después, tus videos quedan sujetos al plazo de almacenamiento del plan vigente; descarga los que necesites antes de que venza."
       },
       "publish": {
         "q": "¿Clipealo publica en mis redes por mí?",

@@ -3,22 +3,46 @@
     "free": {
       "name": "Free",
       "tagline": "Give Clipealo a try.",
-      "cta": "Start for free"
+      "cta": "Start for free",
+      "highlights": {
+        "export": "720p export",
+        "storage": "Storage for 1 week",
+        "watermark": "Your clips are exported with the Clipealo watermark",
+        "youtubeLocal": "Import videos from YouTube and local files"
+      }
     },
     "basic": {
       "name": "Basic",
       "tagline": "For growing creators.",
-      "cta": "Choose Basic"
+      "cta": "Choose Basic",
+      "highlights": {
+        "export": "1080p export",
+        "noWatermark": "Clips without a watermark",
+        "storage": "Storage for 3 months",
+        "social": "Social media publishing",
+        "youtubeKickTwitchLocal": "Import videos from YouTube, Kick, Twitch and local files"
+      }
     },
     "standard": {
       "name": "Standard",
       "tagline": "For professional creators.",
-      "cta": "Choose Standard"
+      "cta": "Choose Standard",
+      "highlights": {
+        "previous": "Everything in Basic",
+        "storage": "Storage for 6 months",
+        "facebook": "Import videos from Facebook too"
+      }
     },
     "premium": {
       "name": "Premium",
       "tagline": "For agencies and teams.",
-      "cta": "Choose Premium"
+      "cta": "Choose Premium",
+      "highlights": {
+        "previous": "Everything in Standard",
+        "export": "4K export",
+        "storage": "Unlimited storage",
+        "driveZoom": "Import videos from Google Drive and Zoom too"
+      }
     }
   },
   "perMonth": "/month",
@@ -30,53 +54,11 @@
     "yearlyLabel": "Annual billing",
     "billedMonthly": "Billed monthly",
     "billedYearly": "Billed annually",
-    "withExtraCredits": "{billing} · base {base} + {credits} credits",
     "currencyLabel": "Currency",
     "soles": "🇵🇪 Soles",
     "dollars": "🇺🇸 US dollars",
     "currencyNamePEN": "Peruvian soles",
     "currencyNameUSD": "US dollars"
-  },
-  "creditDefinition": "1 credit = 1 minute of video",
-  "creditSelector": "Monthly credits for {plan}",
-  "creditOption": "{credits} credits / month · ≈ {hours} h",
-  "creditOptionFree": "{credits} credits / month · ≈ 30 min",
-  "cardSections": {
-    "vod": "VOD",
-    "editor": "Editor",
-    "social": "Social posting",
-    "analytics": "Analytics"
-  },
-  "cardFeatures": {
-    "process30": "30 min processing",
-    "youtube": "Import from YouTube",
-    "process5h": "5 h processing",
-    "process10h": "10 h processing",
-    "process20h": "20 h processing",
-    "manualUpload": "+ Manual video upload",
-    "zoomRecordings": "Clips from Zoom recordings",
-    "quality720": "720p export",
-    "quality1080": "1080p export",
-    "quality4k": "4K export",
-    "clips5": "5 downloadable clips per month",
-    "clips30": "30 downloadable clips per month",
-    "clips100": "100 downloadable clips per month",
-    "clipsUnlimited": "Unlimited downloadable clips",
-    "watermark": "With watermark",
-    "noWatermark": "No watermark",
-    "storage500": "500 MB storage",
-    "storage5gb30d": "5 GB storage · 30 days",
-    "storage20gb90d": "20 GB storage · 90 days",
-    "storage100gb90d": "100 GB storage · 90 days",
-    "brandKit": "Brand kit",
-    "posts3": "3 posts/month · TikTok",
-    "posts15": "15 posts/month · all networks",
-    "posts50Schedule": "50 posts/month + scheduling",
-    "postsUnlimitedSchedule": "Unlimited posts + scheduling",
-    "tiktokOnly": "Publish to TikTok",
-    "allNetworks": "Publish to all networks",
-    "audienceByNetwork": "Set an audience for each network",
-    "tiktokAnalytics": "TikTok analytics included"
   },
   "groups": {
     "ia": "AI clip generation",
@@ -85,12 +67,10 @@
     "support": "Support"
   },
   "features": {
-    "monthlyCredits": "Monthly credits",
     "videoHours": "Processable video time",
     "videoSources": "Import videos from",
     "noWatermark": "No watermark",
     "downloadQuality": "Download quality",
-    "downloadableClips": "Downloadable clips / month",
     "storage": "Storage",
     "exportFormats": "Export formats",
     "brandTemplate": "Custom brand template",
@@ -107,75 +87,48 @@
     "tiktokOnly": "TikTok only",
     "allNetworks": "All networks",
     "storage": {
-      "free": "500 MB",
-      "basic": "5 GB · 30 days",
-      "standard": "20 GB · 90 days",
-      "premium": "100 GB · 90 days"
+      "free": "1 week",
+      "basic": "3 months",
+      "standard": "6 months",
+      "premium": "Unlimited"
     },
-    "videoSources": {
-      "free": "YouTube",
-      "basic": "YouTube, Kick and Twitch + manual upload",
-      "standard": "YouTube, Kick, Twitch and Facebook + manual upload",
-      "premium": "YouTube, Kick, Twitch, Facebook, Google Drive and Zoom + manual upload"
-    }
-  },
-  "enterprise": {
-    "eyebrow": "ENTERPRISE",
-    "title": "Enterprise",
-    "lead": "Agencies, publishers and brands",
-    "price": "Contact us",
-    "turnaround": "A tailored proposal within 24 hours.",
-    "contact": "Contact us",
-    "includesTitle": "Includes",
-    "extrasTitle": "Extras",
-    "included": {
-      "everythingPremium": "Everything in Premium",
-      "creditsByVolume": "Credits based on agreed volume",
-      "multiUserChannels": "Multiple users and channels",
-      "multiBranding": "Full multi-branding",
-      "processingSla": "Guaranteed processing SLA",
-      "dedicatedClipper": "A dedicated clipper for each vertical"
-    },
-    "extras": {
-      "approvalFlow": "Clip approval workflow",
-      "whiteLabel": "White label available",
-      "creditPackages": "Credit packages"
-    }
+    "localUpload": "Local upload"
   },
   "topups": {
-    "title": "Top up credits whenever you need them.",
-    "lead": "{credits} credits = {hours} hour of video.",
-    "popular": "Popular",
-    "creditsLabel": "credits",
-    "hours": "≈ {count, plural, one {# hour} other {# hours}}",
-    "buy": "Buy",
-    "footer": "All plans can be canceled anytime · Secure payment · Billed in {currency}"
+    "title": "ADD EXTRA HOURS TO YOUR PLAN",
+    "description": "Choose how many video hours to add to your plan and see the estimated cost.",
+    "quantityLabel": "Extra hours",
+    "soles": "Soles",
+    "dollars": "US dollars",
+    "decrease": "Remove one hour",
+    "increase": "Add one hour",
+    "estimateTitle": "Your quote",
+    "goToPlan": "Add hours in the app"
   },
   "faq": {
-    "credit": {
-      "q": "What is a credit?",
-      "a": "One credit equals one minute of processable video. For example, 60 credits equal one hour of video."
+    "includedTime": {
+      "q": "How much video time does each plan include?",
+      "a": "Each month, Free includes 30 minutes; Basic, 5 hours; Standard, 10 hours; and Premium, 20 hours."
     },
-    "adjustCredits": {
-      "q": "Can I adjust my monthly credits?",
-      "a": "Yes. On Basic, Standard and Premium, you can choose the monthly credit volume you need, from the plan minimum up to 6,000."
+    "extraHours": {
+      "q": "How do extra hours work?",
+      "a": "You can add 1 to 100 hours to a paid plan. Each hour costs S/5; you can also view a US dollar quote at US$1.50 per hour."
     },
     "annualBilling": {
       "q": "How does annual billing work?",
-      "a": "Annual billing gives you 20% off the plan base price. The displayed price is the monthly equivalent and is billed annually. Additional credits are charged separately."
+      "a": "You pay for the year upfront with 20% off the monthly price. Plan cards show the monthly equivalent."
     },
     "cancel": {
       "q": "Can I cancel anytime?",
-      "a": "Yes. You can cancel your plan at any time."
+      "a": "Yes. You can cancel your plan anytime and keep access until the end of your paid period."
     },
     "currencies": {
       "q": "Which currencies can I view prices in?",
-      "a": "Use the currency selector on the page to switch between Peruvian soles and US dollars."
-    },
-    "creditPacks": {
-      "q": "Can I buy extra credits?",
-      "a": "Yes. You can top up with 60, 180 or 300 credits whenever you need them."
+      "a": "You can view plans and extra hours in soles or US dollars. Extra hours purchased in the app are currently charged in soles."
     }
   },
-  "gate": { "cta": "See the plans" }
+  "gate": {
+    "cta": "See the plans"
+  },
+  "includedTime": "{minutes, plural, =30 {30 min of video per month} other {{hours} h of video per month}}"
 }
