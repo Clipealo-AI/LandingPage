@@ -215,7 +215,7 @@ export function Reframe() {
           <h2 className="relative mx-auto max-w-3xl text-center display text-[clamp(1.75rem,4.4vw,3rem)] text-ink-50">
             {t.rich("title", { br: () => <br /> })}
           </h2>
-          <p className="relative mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-mist/75 sm:text-base">
+          <p className="reframe-lead relative mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-mist/75 sm:text-base">
             {t("lead")}
           </p>
 
@@ -259,7 +259,7 @@ export function Reframe() {
           <div className="relative mx-auto mt-7 h-2.5 w-full max-w-2xl overflow-hidden rounded-full bg-white/15 sm:mt-9 sm:h-3">
             <span className="reframe-seleccion absolute inset-0 rounded-full bg-brand" />
           </div>
-          <p className="relative mx-auto mt-4 text-center text-sm text-mist/70">
+          <p className="reframe-caption relative mx-auto mt-4 text-center text-sm text-mist/70">
             {t("caption")}
           </p>
         </div>

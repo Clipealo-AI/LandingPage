@@ -2889,14 +2889,14 @@
           },
           {
             "type": "subsection",
-            "title": "3.2 Papel Limitado do Clipealo",
+            "title": "3.2 Escopo da plataforma",
             "blocks": [
               {
                 "type": "paragraph",
                 "content": [
                   {
                     "type": "text",
-                    "value": "Clipealo atua apenas como provedor de tecnologia. NÃO participamos da criação, edição, distribuição ou publicação de conteúdo."
+                    "value": "O Clipealo oferece ferramentas para analisar vídeos, sugerir trechos e preparar clipes. O usuário decide qual conteúdo editar, exportar ou publicar, inclusive por meio das contas que conectar."
                   }
                 ]
               }

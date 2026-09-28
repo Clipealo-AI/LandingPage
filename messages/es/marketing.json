@@ -105,7 +105,7 @@
     "suggestedClips": "Clips propuestos",
     "withCaptions": "con subtítulos",
     "withoutCaptions": "sin subtítulos",
-    "description": "Sube el video completo. La IA encuentra los momentos que la gente ve hasta el final y te los devuelve en 9:16, con subtítulos.",
+    "description": "Sube un video o importa un enlace compatible. La IA propone momentos; tú eliges cuáles convertir en clips y revisas el encuadre y los subtítulos antes de compartirlos.",
     "videoPreview": "Fragmento del unboxing de Rubius",
     "playPreview": "Reproducir video original",
     "sourceLabel": "Rubius Z · fragmento del unboxing",
@@ -151,10 +151,9 @@
     "closeDialog": "Cerrar"
   },
   "community": {
-    "title": "Creadores con más de <b>6,8 millones</b> de seguidores y equipos de toda Hispanoamérica ya publican con Clipealo.",
-    "creators": "Creadores que ya confían en Clipealo",
-    "channels": "Canales que ya publican con Clipealo",
-    "followers": "seguidores"
+    "title": "Creadores de distintas comunidades <b>ya publican clips</b> con Clipealo.",
+    "creators": "Creadores que publican con Clipealo",
+    "channels": "Canales que publican con Clipealo"
   },
   "reframe": {
     "title": "Un mismo contenido,<br></br>más posibilidades.",
@@ -189,7 +188,7 @@
     },
     "allInOne": {
       "title": "Del corte a tus canales",
-      "body": "Organiza, edita y publica desde el mismo proyecto. Programa tus publicaciones cuando tu plan lo incluya."
+      "body": "Organiza, edita y publica desde el mismo proyecto. Conecta tus cuentas y elige dónde compartir cada clip."
     },
     "toolbox": {
       "trim": "Selecciona",
@@ -222,7 +221,7 @@
     "title": "Un clip, varias<br></br>formas de compartirlo.",
     "lead": "Prepara el mismo contenido en distintos formatos, revisa el texto y publícalo en tus cuentas conectadas.",
     "list": "Redes disponibles",
-    "planNote": "Las redes disponibles y la programación dependen de tu plan.",
+    "planNote": "Las redes disponibles para publicar dependen de tu plan.",
     "hook": "[Hook Viral]",
     "transcript": "[Transcripción]",
     "blurFormat": "9:16 · desenfoque",
@@ -248,14 +247,14 @@
   "pricingPage": {
     "meta": {
       "title": "Precios de Clipealo",
-      "description": "Planes Free, Básico, Estándar y Premium. Desde S/45 al mes, con editor de video y publicación en redes."
+      "description": "Compara los planes Free, Básico, Estándar y Premium: minutos de video al mes, calidad de exportación, almacenamiento y fuentes de importación."
     },
     "eyebrow": "Precios",
     "title": "Precios simples,<br></br>sin sorpresas.",
     "lead": "Elige el plan que se adapta a tu volumen. Cancela cuando quieras.",
     "compare": {
       "title": "Compara los planes.",
-      "lead": "Horas de video, procesamiento de video, edición, publicación en redes y soporte, lado a lado."
+      "lead": "Compara el tiempo de video, las fuentes de importación, el almacenamiento y las opciones de publicación de cada plan."
     },
     "faqTitle": "Preguntas<br></br>sobre planes y pago."
   },
@@ -265,19 +264,19 @@
     "items": {
       "processing": {
         "q": "¿Cuánto tarda en procesar un video?",
-        "a": "Normalmente el procesamiento termina en menos de 3 minutos. El tiempo puede variar según la duración del video, su calidad y la carga del servicio; puedes seguir el avance desde tus proyectos."
+        "a": "Como referencia, procesar un video de 1 h 30 puede tardar alrededor de 3 minutos. El tiempo real depende de la fuente y de la carga del servicio; puedes seguir el avance desde Proyectos."
       },
       "fileFormats": {
-        "q": "¿Qué formatos de archivo acepta?",
-        "a": "Puedes subir archivos MP4, MOV, WebM y MKV o importar un enlace compatible. Los formatos de exportación 9:16 y 16:9 están disponibles en todos los planes."
+        "q": "¿En qué formatos puedo exportar mis clips?",
+        "a": "Puedes exportar clips en formato vertical 9:16 y horizontal 16:9 con cualquiera de los planes."
       },
       "editCaptions": {
         "q": "¿Se pueden editar el hook y los subtítulos?",
-        "a": "Sí. En el editor puedes cambiar el texto del hook, corregir los subtítulos y ajustar su estilo antes de exportar."
+        "a": "Sí. Puedes editar el texto del hook, corregir los subtítulos y ajustar su estilo en el editor antes de exportar."
       },
       "afterCancel": {
         "q": "¿Qué pasa con mis videos si cancelo mi plan?",
-        "a": "Conservas las funciones de tu plan hasta que termine el periodo pagado. Después, tus videos quedan sujetos al plazo de almacenamiento del plan vigente; descarga los que necesites antes de que venza."
+        "a": "Conservas las funciones de tu plan hasta que termine el periodo pagado. Después, tu cuenta pasa a Free y tus archivos se conservan hasta 7 días según el plazo de almacenamiento de ese plan. Descarga lo que necesites antes de que venza."
       },
       "publish": {
         "q": "¿Clipealo publica en mis redes por mí?",
@@ -299,7 +298,6 @@
       "automaticClips": "Clips automáticos",
       "pricing": "Precios",
       "blogGuides": "Blog y guías",
-      "faq": "Preguntas frecuentes",
       "contact": "Contacto",
       "whatsapp": "+51 923 783 155"
     },

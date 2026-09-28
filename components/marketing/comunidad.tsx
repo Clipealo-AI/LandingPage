@@ -42,7 +42,7 @@ function ChannelNetworks({ networks }: { networks: readonly ClientNetwork[] }) {
 }
 
 /**
- * Prueba social: quién publica con Clipealo.
+ * Prueba social: canales que publican con Clipealo.
  *
  * Tiene el único bucle de la landing (AGENTS.md, regla 5): dos filas en
  * carrusel continuo en sentidos opuestos. Ambas franjas usan los mismos canales
@@ -52,12 +52,12 @@ function ChannelNetworks({ networks }: { networks: readonly ClientNetwork[] }) {
  * sistema (decisión de producto). Sin botón de pausa, también por decisión de
  * producto; pasar el ratón por encima detiene la fila.
  *
- * Su único gesto de marca: la cifra de la audiencia se encuadra una vez con la
+ * Su único gesto de marca: la frase destacada se encuadra una vez con la
  * marca de recorte (`data-crop-mark`, `app/motion/comunidad.css`). Si ya se ve
  * al cargar, espera a que terminen las esquinas del hero (`data-motion-after`);
  * si no, se lanza al entrar en pantalla. Parte invisible, así que no oculta
  * nada. Con «reducir» la marca aparece y se va en su sitio, sin escalar. La
- * cifra no se parte (`whitespace-nowrap`): partida en dos líneas no se lee.
+ * frase destacada no se parte (`whitespace-nowrap`): en dos líneas pierde énfasis.
  */
 export function Comunidad() {
   const t = useTranslations("marketing.community")
@@ -79,7 +79,7 @@ export function Comunidad() {
             b: (chunks) => (
               <span
                 data-crop-mark
-                className="m-audiencia font-semibold whitespace-nowrap text-ink-50 tabular-nums"
+                className="m-frase-comunidad font-semibold whitespace-nowrap text-ink-50"
               >
                 {chunks}
               </span>
@@ -112,7 +112,6 @@ export function Comunidad() {
               <span className="block truncate text-sm font-semibold text-ink-50">
                 {c.name}
               </span>
-              <span className="block text-xs text-mist/60 tabular-nums">{c.metric}</span>
             </span>
           </li>
         ))}

@@ -18,7 +18,7 @@
       "highlights": {
         "export": "Exportação em 1080p",
         "noWatermark": "Clipes sem marca d’água",
-        "storage": "Armazenamento por 3 meses",
+        "storage": "Armazenamento por 1 mês",
         "social": "Publicação nas redes sociais",
         "youtubeKickTwitchLocal": "Importação de vídeos do YouTube, Kick, Twitch e arquivos locais"
       }
@@ -29,7 +29,7 @@
       "cta": "Escolher Padrão",
       "highlights": {
         "previous": "Tudo do plano Básico",
-        "storage": "Armazenamento por 6 meses",
+        "storage": "Armazenamento por 3 meses",
         "facebook": "Importação adicional do Facebook"
       }
     },
@@ -40,7 +40,7 @@
       "highlights": {
         "previous": "Tudo do plano Padrão",
         "export": "Exportação em 4K",
-        "storage": "Armazenamento ilimitado",
+        "storage": "Armazenamento por 3 meses",
         "driveZoom": "Importação adicional do Google Drive e do Zoom"
       }
     }
@@ -55,16 +55,15 @@
     "billedMonthly": "Cobrado mensalmente",
     "billedYearly": "Cobrado anualmente",
     "currencyLabel": "Moeda",
-    "soles": "🇵🇪 Soles",
-    "dollars": "🇺🇸 Dólares americanos",
+    "soles": "Soles",
+    "dollars": "Dólares americanos",
     "currencyNamePEN": "soles peruanos",
     "currencyNameUSD": "dólares americanos"
   },
   "groups": {
     "ia": "Geração de clipes com IA",
     "editor": "Editor de vídeo",
-    "social": "Publicação nas redes sociais",
-    "support": "Suporte"
+    "social": "Publicação nas redes sociais"
   },
   "features": {
     "videoHours": "Tempo de vídeo processável",
@@ -73,24 +72,16 @@
     "downloadQuality": "Qualidade do download",
     "storage": "Armazenamento",
     "exportFormats": "Formatos de exportação",
-    "brandTemplate": "Modelo de marca próprio",
-    "monthlyPosts": "Publicações / mês",
-    "publishNetworks": "Publique em",
-    "scheduling": "Agende suas publicações",
-    "audienceByNetwork": "Defina seu público por rede social",
-    "discord": "Comunidade do Discord",
-    "whatsappSupport": "Suporte",
-    "priorityWhatsapp": "Atendimento prioritário"
+    "publishNetworks": "Publique em"
   },
   "values": {
-    "unlimited": "Ilimitado",
     "tiktokOnly": "Só TikTok",
     "allNetworks": "Todas as redes",
     "storage": {
       "free": "1 semana",
-      "basic": "3 meses",
-      "standard": "6 meses",
-      "premium": "Ilimitado"
+      "basic": "1 mês",
+      "standard": "3 meses",
+      "premium": "3 meses"
     },
     "localUpload": "Envio local"
   },
@@ -98,8 +89,6 @@
     "title": "ADICIONE HORAS EXTRAS AO SEU PLANO",
     "description": "Escolha quantas horas de vídeo deseja adicionar ao seu plano e veja o custo estimado.",
     "quantityLabel": "Horas extras",
-    "soles": "Soles",
-    "dollars": "Dólares",
     "decrease": "Remover uma hora",
     "increase": "Adicionar uma hora",
     "estimateTitle": "Sua cotação",
@@ -112,11 +101,11 @@
     },
     "extraHours": {
       "q": "Como funcionam as horas extras?",
-      "a": "Você pode adicionar de 1 a 100 horas a um plano pago. Cada hora custa S/5; também é possível consultar a cotação em dólares por US$1,50 por hora."
+      "a": "Em um plano pago, você pode adicionar de 1 a 100 horas. Cada hora custa S/5; a calculadora também mostra uma cotação arredondada de US$1,50."
     },
     "annualBilling": {
       "q": "Como funciona a cobrança anual?",
-      "a": "Você paga o ano antecipadamente com 20% de desconto em relação ao preço mensal. Os cartões mostram o equivalente por mês."
+      "a": "A assinatura anual é paga antecipadamente. Os cartões mostram o equivalente mensal; em soles, a cobrança anual representa 20% de desconto em relação a 12 pagamentos mensais. Os valores em dólares são arredondados."
     },
     "cancel": {
       "q": "Posso cancelar quando quiser?",
@@ -124,7 +113,7 @@
     },
     "currencies": {
       "q": "Em quais moedas posso ver os preços?",
-      "a": "Você pode consultar planos e horas extras em soles ou dólares. As horas extras compradas no aplicativo são cobradas atualmente em soles."
+      "a": "A landing mostra preços em soles e cotações arredondadas em dólares. O checkout atual do aplicativo, pelo Mercado Pago, processa os pagamentos em soles."
     }
   },
   "gate": {

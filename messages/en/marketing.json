@@ -105,7 +105,7 @@
     "suggestedClips": "Suggested clips",
     "withCaptions": "with captions",
     "withoutCaptions": "no captions",
-    "description": "Upload the full video. AI finds the moments people watch to the end and gives them back as subtitled 9:16 clips.",
+    "description": "Upload a video or import a supported link. AI suggests moments; you choose which ones to turn into clips and review the framing and captions before sharing.",
     "videoPreview": "Excerpt from Rubius’s unboxing",
     "playPreview": "Play original video",
     "sourceLabel": "Rubius Z · unboxing excerpt",
@@ -151,10 +151,9 @@
     "closeDialog": "Close"
   },
   "community": {
-    "title": "Creators with over <b>6.8 million</b> followers and teams across Spanish-speaking Latin America already publish with Clipealo.",
-    "creators": "Creators who trust Clipealo",
-    "channels": "Channels that already publish with Clipealo",
-    "followers": "followers"
+    "title": "Creators from different communities <b>already publish clips</b> with Clipealo.",
+    "creators": "Creators who publish with Clipealo",
+    "channels": "Channels publishing with Clipealo"
   },
   "reframe": {
     "title": "The same content,<br></br>more possibilities.",
@@ -189,7 +188,7 @@
     },
     "allInOne": {
       "title": "From cut to channel",
-      "body": "Organize, edit and publish from the same project. Schedule posts when your plan includes it."
+      "body": "Organize, edit and publish from the same project. Connect your accounts and choose where to share each clip."
     },
     "toolbox": {
       "trim": "Select",
@@ -222,7 +221,7 @@
     "title": "One clip, more<br></br>ways to share it.",
     "lead": "Prepare the same content in different formats, review the text, and publish it to your connected accounts.",
     "list": "Available channels",
-    "planNote": "Available channels and scheduling depend on your plan.",
+    "planNote": "Available publishing networks depend on your plan.",
     "hook": "[Viral Hook]",
     "transcript": "[Transcript]",
     "blurFormat": "9:16 · blur",
@@ -248,14 +247,14 @@
   "pricingPage": {
     "meta": {
       "title": "Clipealo pricing",
-      "description": "Free, Basic, Standard and Premium plans. From US$13 per month, with video editing and social publishing."
+      "description": "Compare Free, Basic, Standard and Premium: monthly video time, export quality, storage and supported import sources."
     },
     "eyebrow": "Pricing",
     "title": "Simple pricing,<br></br>no surprises.",
     "lead": "Choose the plan that fits your volume. Cancel anytime.",
     "compare": {
       "title": "Compare the plans.",
-      "lead": "Video hours, video processing, editing, social publishing and support, side by side."
+      "lead": "Compare each plan’s video time, import sources, storage and publishing options."
     },
     "faqTitle": "Questions<br></br>about plans and billing."
   },
@@ -265,19 +264,19 @@
     "items": {
       "processing": {
         "q": "How long does it take to process a video?",
-        "a": "Processing normally finishes in under 3 minutes. The time can vary with video length, quality and service load; you can track progress in your projects."
+        "a": "As a reference, processing a 90-minute video may take around 3 minutes. Actual time depends on the source and service load; you can track progress in Projects."
       },
       "fileFormats": {
-        "q": "Which file formats are supported?",
-        "a": "You can upload MP4, MOV, WebM and MKV files or import a supported link. The 9:16 and 16:9 export formats are available on every plan."
+        "q": "Which formats can I export my clips in?",
+        "a": "Every plan supports vertical 9:16 and horizontal 16:9 clip exports."
       },
       "editCaptions": {
         "q": "Can I edit the hook and captions?",
-        "a": "Yes. In the editor you can change the hook text, correct captions and adjust their style before exporting."
+        "a": "Yes. You can edit the hook text, correct captions and adjust their style in the editor before exporting."
       },
       "afterCancel": {
         "q": "What happens to my videos if I cancel my plan?",
-        "a": "Your plan features remain available until the paid period ends. After that, your videos follow the storage period of your current plan; download anything you need before it expires."
+        "a": "Your plan features remain available until the paid period ends. Your account then moves to Free, and your files are kept for up to 7 days under that plan’s storage period. Download anything you need before it expires."
       },
       "publish": {
         "q": "Does Clipealo publish to my networks for me?",
@@ -299,7 +298,6 @@
       "automaticClips": "Automatic clips",
       "pricing": "Pricing",
       "blogGuides": "Blog & guides",
-      "faq": "Frequently asked questions",
       "contact": "Contact",
       "whatsapp": "+51 923 783 155"
     },

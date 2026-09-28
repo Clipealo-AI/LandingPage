@@ -18,7 +18,7 @@
       "highlights": {
         "export": "1080p export",
         "noWatermark": "Clips without a watermark",
-        "storage": "Storage for 3 months",
+        "storage": "Storage for 1 month",
         "social": "Social media publishing",
         "youtubeKickTwitchLocal": "Import videos from YouTube, Kick, Twitch and local files"
       }
@@ -29,7 +29,7 @@
       "cta": "Choose Standard",
       "highlights": {
         "previous": "Everything in Basic",
-        "storage": "Storage for 6 months",
+        "storage": "Storage for 3 months",
         "facebook": "Import videos from Facebook too"
       }
     },
@@ -40,7 +40,7 @@
       "highlights": {
         "previous": "Everything in Standard",
         "export": "4K export",
-        "storage": "Unlimited storage",
+        "storage": "Storage for 3 months",
         "driveZoom": "Import videos from Google Drive and Zoom too"
       }
     }
@@ -55,16 +55,15 @@
     "billedMonthly": "Billed monthly",
     "billedYearly": "Billed annually",
     "currencyLabel": "Currency",
-    "soles": "🇵🇪 Soles",
-    "dollars": "🇺🇸 US dollars",
+    "soles": "Soles",
+    "dollars": "US dollars",
     "currencyNamePEN": "Peruvian soles",
     "currencyNameUSD": "US dollars"
   },
   "groups": {
     "ia": "AI clip generation",
     "editor": "Video editor",
-    "social": "Social publishing",
-    "support": "Support"
+    "social": "Social publishing"
   },
   "features": {
     "videoHours": "Processable video time",
@@ -73,24 +72,16 @@
     "downloadQuality": "Download quality",
     "storage": "Storage",
     "exportFormats": "Export formats",
-    "brandTemplate": "Custom brand template",
-    "monthlyPosts": "Posts / month",
-    "publishNetworks": "Publish to",
-    "scheduling": "Schedule your posts",
-    "audienceByNetwork": "Set your audience per social network",
-    "discord": "Discord community",
-    "whatsappSupport": "Support",
-    "priorityWhatsapp": "Priority support"
+    "publishNetworks": "Publish to"
   },
   "values": {
-    "unlimited": "Unlimited",
     "tiktokOnly": "TikTok only",
     "allNetworks": "All networks",
     "storage": {
       "free": "1 week",
-      "basic": "3 months",
-      "standard": "6 months",
-      "premium": "Unlimited"
+      "basic": "1 month",
+      "standard": "3 months",
+      "premium": "3 months"
     },
     "localUpload": "Local upload"
   },
@@ -98,8 +89,6 @@
     "title": "ADD EXTRA HOURS TO YOUR PLAN",
     "description": "Choose how many video hours to add to your plan and see the estimated cost.",
     "quantityLabel": "Extra hours",
-    "soles": "Soles",
-    "dollars": "US dollars",
     "decrease": "Remove one hour",
     "increase": "Add one hour",
     "estimateTitle": "Your quote",
@@ -112,11 +101,11 @@
     },
     "extraHours": {
       "q": "How do extra hours work?",
-      "a": "You can add 1 to 100 hours to a paid plan. Each hour costs S/5; you can also view a US dollar quote at US$1.50 per hour."
+      "a": "Paid plans can add 1 to 100 hours. Each hour costs S/5; the calculator also shows a rounded US$1.50 estimate."
     },
     "annualBilling": {
       "q": "How does annual billing work?",
-      "a": "You pay for the year upfront with 20% off the monthly price. Plan cards show the monthly equivalent."
+      "a": "Annual subscriptions are paid upfront. Plan cards show the monthly equivalent; in soles, annual billing is 20% less than 12 monthly payments. US dollar amounts are rounded."
     },
     "cancel": {
       "q": "Can I cancel anytime?",
@@ -124,7 +113,7 @@
     },
     "currencies": {
       "q": "Which currencies can I view prices in?",
-      "a": "You can view plans and extra hours in soles or US dollars. Extra hours purchased in the app are currently charged in soles."
+      "a": "The landing shows prices in soles and rounded US dollar estimates. The app’s current Mercado Pago checkout processes payments in soles."
     }
   },
   "gate": {

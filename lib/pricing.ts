@@ -7,7 +7,11 @@ export type PricingCurrency = (typeof PRICING_CURRENCIES)[number]
 export const MONEDA = "US$"
 
 export function formatPrecio(amount: number, currency: PricingCurrency, locale: Locale) {
-  const fractionDigits = Number.isInteger(amount) ? 0 : Number.isInteger(amount * 2) ? 1 : 2
+  const fractionDigits = Number.isInteger(amount)
+    ? 0
+    : Number.isInteger(amount * 2)
+      ? 1
+      : 2
   const value = new Intl.NumberFormat(LOCALE_TAG[locale], {
     minimumFractionDigits: fractionDigits,
     maximumFractionDigits: 2,
@@ -94,8 +98,7 @@ const VIDEO_SOURCES_BY_PLAN: Record<PricingPlanId, readonly VideoSourceId[]> = {
   premium: ["youtube", "kick", "twitch", "facebook", "drive", "zoom"],
 }
 
-type FeatureValueTextId =
-  "unlimited" | "tiktokOnly" | "allNetworks" | `storage.${PricingPlanId}`
+type FeatureValueTextId = "tiktokOnly" | "allNetworks" | `storage.${PricingPlanId}`
 
 export type FeatureValue =
   | boolean
@@ -168,24 +171,11 @@ export const FEATURE_GROUPS = [
           premium: "9:16 · 16:9",
         },
       },
-      {
-        id: "brandTemplate",
-        values: { free: false, basic: false, standard: true, premium: true },
-      },
     ],
   },
   {
     id: "social",
     rows: [
-      {
-        id: "monthlyPosts",
-        values: {
-          free: "3",
-          basic: "15",
-          standard: "50",
-          premium: { text: "unlimited" },
-        },
-      },
       {
         id: "publishNetworks",
         values: {
@@ -194,31 +184,6 @@ export const FEATURE_GROUPS = [
           standard: { text: "allNetworks" },
           premium: { text: "allNetworks" },
         },
-      },
-      {
-        id: "scheduling",
-        values: { free: false, basic: false, standard: true, premium: true },
-      },
-      {
-        id: "audienceByNetwork",
-        values: { free: false, basic: false, standard: true, premium: true },
-      },
-    ],
-  },
-  {
-    id: "support",
-    rows: [
-      {
-        id: "discord",
-        values: { free: true, basic: true, standard: true, premium: true },
-      },
-      {
-        id: "whatsappSupport",
-        values: { free: false, basic: true, standard: true, premium: true },
-      },
-      {
-        id: "priorityWhatsapp",
-        values: { free: false, basic: false, standard: false, premium: true },
       },
     ],
   },

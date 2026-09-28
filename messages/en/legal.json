@@ -2889,14 +2889,14 @@
           },
           {
             "type": "subsection",
-            "title": "3.2 Limited Role of Clipealo",
+            "title": "3.2 Scope of the platform",
             "blocks": [
               {
                 "type": "paragraph",
                 "content": [
                   {
                     "type": "text",
-                    "value": "Clipealo acts solely as a technology provider. We do NOT participate in creation, editing, distribution, or publication of content."
+                    "value": "Clipealo provides tools to analyze videos, suggest segments and prepare clips. Users decide which content to edit, export or publish, including through connected accounts."
                   }
                 ]
               }

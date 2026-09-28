@@ -18,7 +18,7 @@
       "highlights": {
         "export": "Exportación en 1080p",
         "noWatermark": "Clips sin marca de agua",
-        "storage": "Almacenamiento durante 3 meses",
+        "storage": "Almacenamiento durante 1 mes",
         "social": "Publicación en redes sociales",
         "youtubeKickTwitchLocal": "Importación de videos desde YouTube, Kick, Twitch y carga local"
       }
@@ -29,7 +29,7 @@
       "cta": "Elegir Estándar",
       "highlights": {
         "previous": "Todo lo del plan Básico",
-        "storage": "Almacenamiento durante 6 meses",
+        "storage": "Almacenamiento durante 3 meses",
         "facebook": "Importación adicional desde Facebook"
       }
     },
@@ -40,7 +40,7 @@
       "highlights": {
         "previous": "Todo lo del plan Estándar",
         "export": "Exportación en 4K",
-        "storage": "Almacenamiento ilimitado",
+        "storage": "Almacenamiento durante 3 meses",
         "driveZoom": "Importación adicional desde Google Drive y Zoom"
       }
     }
@@ -55,16 +55,15 @@
     "billedMonthly": "Facturado mensualmente",
     "billedYearly": "Facturado anualmente",
     "currencyLabel": "Moneda",
-    "soles": "🇵🇪 Soles",
-    "dollars": "🇺🇸 Dólares",
+    "soles": "Soles",
+    "dollars": "Dólares",
     "currencyNamePEN": "soles peruanos",
     "currencyNameUSD": "dólares estadounidenses"
   },
   "groups": {
     "ia": "Generación de clips con IA",
     "editor": "Editor de video",
-    "social": "Publicación en redes sociales",
-    "support": "Soporte"
+    "social": "Publicación en redes sociales"
   },
   "features": {
     "videoHours": "Horas de video procesables",
@@ -73,24 +72,16 @@
     "downloadQuality": "Calidad de descarga",
     "storage": "Almacenamiento",
     "exportFormats": "Formatos de exportación",
-    "brandTemplate": "Plantilla de marca propia",
-    "monthlyPosts": "Publicaciones / mes",
-    "publishNetworks": "Publica en",
-    "scheduling": "Programa tus publicaciones",
-    "audienceByNetwork": "Define tu audiencia por red social",
-    "discord": "Comunidad de Discord",
-    "whatsappSupport": "Soporte",
-    "priorityWhatsapp": "Atención prioritaria"
+    "publishNetworks": "Publica en"
   },
   "values": {
-    "unlimited": "Ilimitado",
     "tiktokOnly": "Solo TikTok",
     "allNetworks": "Todas las redes",
     "storage": {
       "free": "1 semana",
-      "basic": "3 meses",
-      "standard": "6 meses",
-      "premium": "Ilimitado"
+      "basic": "1 mes",
+      "standard": "3 meses",
+      "premium": "3 meses"
     },
     "localUpload": "Carga local"
   },
@@ -98,8 +89,6 @@
     "title": "AÑADE HORAS EXTRA A TU PLAN",
     "description": "Elige cuántas horas de video quieres añadir a tu plan y conoce el costo estimado.",
     "quantityLabel": "Horas extra",
-    "soles": "Soles",
-    "dollars": "Dólares",
     "decrease": "Quitar una hora",
     "increase": "Añadir una hora",
     "estimateTitle": "Tu cotización",
@@ -112,11 +101,11 @@
     },
     "extraHours": {
       "q": "¿Cómo funcionan las horas extra?",
-      "a": "Puedes añadir de 1 a 100 horas a un plan de pago. Cada hora cuesta S/5; también puedes consultar su cotización en dólares a US$1,50 por hora."
+      "a": "Con un plan de pago puedes añadir de 1 a 100 horas. Cada hora cuesta S/5; el calculador también muestra su equivalente redondeado de US$1,50."
     },
     "annualBilling": {
       "q": "¿Cómo funciona la facturación anual?",
-      "a": "Pagas el año por adelantado con un 20 % de descuento frente al precio mensual. En las tarjetas mostramos el equivalente por mes."
+      "a": "La suscripción anual se paga por adelantado. Las tarjetas muestran el equivalente mensual; en soles, el precio anual equivale a un 20 % de descuento frente a 12 pagos mensuales. Los importes en dólares están redondeados."
     },
     "cancel": {
       "q": "¿Puedo cancelar cuando quiera?",
@@ -124,7 +113,7 @@
     },
     "currencies": {
       "q": "¿En qué monedas puedo ver los precios?",
-      "a": "Puedes consultar los planes y las horas extra en soles o dólares. La compra de horas extra en la app se cobra actualmente en soles."
+      "a": "La landing muestra precios en soles y una cotización redondeada en dólares. El checkout actual de la app, con Mercado Pago, procesa los pagos en soles."
     }
   },
   "gate": {

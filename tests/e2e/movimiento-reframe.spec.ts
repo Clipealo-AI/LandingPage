@@ -15,7 +15,7 @@ import { forzarGrupos, irA, modoMovimiento } from "./helpers"
  *   y los rótulos que cambian.
  * - En los dos: el marco se recorta con `clip-path` (no suma CLS) y el rótulo
  *   final no se corta en móvil. Sin JS se ve terminado.
- * - Comunidad: la cifra recibe la marca de recorte una vez; con reduce aparece y
+ * - Comunidad: la frase destacada recibe la marca de recorte una vez; con reduce aparece y
  *   se va en su sitio, sin escalar.
  */
 
@@ -469,7 +469,7 @@ for (const modo of MODOS) {
     }
   })
 
-  test.describe(`comunidad: la cifra encuadrada (reduced-motion: ${modo})`, () => {
+  test.describe(`comunidad: la frase destacada encuadrada (reduced-motion: ${modo})`, () => {
     test.beforeEach(async ({ page }) => {
       await modoMovimiento(page, modo)
     })
@@ -481,7 +481,7 @@ for (const modo of MODOS) {
         test.info().project.name === "movil",
         "la vista de 2560 px es de escritorio"
       )
-      // El hero con su vista previa mide más que 1440 px: la cifra no se ve al cargar
+      // El hero con su vista previa mide más que 1440 px: la frase no se ve al cargar
       await page.setViewportSize({ width: 2560, height: 1440 })
       await irA(page, "/")
 
@@ -510,7 +510,7 @@ for (const modo of MODOS) {
         test.info().project.name === "movil",
         "la vista de 2560 px es de escritorio"
       )
-      // Una ventana alta en la que la cifra queda por encima del 88 % al hidratar
+      // Una ventana alta en la que la frase queda por encima del 88 % al hidratar
       await page.setViewportSize({ width: 2560, height: 2200 })
       await irA(page, "/")
 
@@ -524,13 +524,13 @@ for (const modo of MODOS) {
       expect(espera).toMatch(/^\d+ms$/)
       expect(parseInt(espera)).toBeLessThanOrEqual(1400)
 
-      const cifra = titular.locator("[data-crop-mark]")
-      await expect(cifra).toHaveCount(1)
-      await expect(cifra).toHaveCSS("white-space", "nowrap")
+      const frase = titular.locator("[data-crop-mark]")
+      await expect(frase).toHaveCount(1)
+      await expect(frase).toHaveCSS("white-space", "nowrap")
 
       // Se relanza desde cero para mirar fotogramas sin depender del reloj
       await forzarGrupos(page)
-      const fotogramas = await cifra.evaluate((el) => {
+      const fotogramas = await frase.evaluate((el) => {
         const marca = el
           .getAnimations({ subtree: true })
           .find(
@@ -552,7 +552,7 @@ for (const modo of MODOS) {
         return { duracion, inicio: en(0.03), medio: en(0.5), fin: en(0.99) }
       })
 
-      expect(fotogramas, "la cifra no tiene la marca de recorte").not.toBeNull()
+      expect(fotogramas, "la frase no tiene la marca de recorte").not.toBeNull()
       expect(fotogramas!.duracion).toBe(1400)
       // Se sostiene entera a mitad
       expect(fotogramas!.medio.opacidad).toBe(1)
@@ -573,18 +573,18 @@ for (const modo of MODOS) {
 }
 
 for (const ruta of RUTAS) {
-  test(`a 320 px la cifra de la comunidad no se parte en dos líneas (${ruta})`, async ({
+  test(`a 320 px la frase destacada de Comunidad cabe en una línea (${ruta})`, async ({
     page,
   }) => {
     await page.setViewportSize({ width: 320, height: 800 })
     await irA(page, ruta)
-    const cifra = page.locator("#comunidad [data-crop-mark]")
-    await expect(cifra).toHaveCSS("white-space", "nowrap")
-    expect(await cifra.evaluate((el) => el.getClientRects().length)).toBe(1)
-    // Sin partirse, la cifra y su titular caben en la ventana. Se mide la cifra y
+    const frase = page.locator("#comunidad [data-crop-mark]")
+    await expect(frase).toHaveCSS("white-space", "nowrap")
+    expect(await frase.evaluate((el) => el.getClientRects().length)).toBe(1)
+    // Sin partirse, la frase y su titular caben en la ventana. Se mide la frase y
     // no la página: a 320 px otras secciones ya desbordaban antes del movimiento
     // (un titular largo de Funciones y un botón de Precios).
-    const caja = await cifra.evaluate((el) => {
+    const caja = await frase.evaluate((el) => {
       const r = el.getBoundingClientRect()
       const titular = el.closest("h2")!
       return {

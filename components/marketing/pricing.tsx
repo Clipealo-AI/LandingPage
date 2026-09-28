@@ -13,7 +13,6 @@ import {
   CARD_HIGHLIGHTS,
   DESCUENTO_ANUAL_PCT,
   planPrice,
-  PRICING_CURRENCIES,
   type PricingCurrency,
 } from "@/lib/pricing"
 import { PLANES_SEMILLA, planesVisibles, type PlanCatalogo } from "@/lib/planes"
@@ -21,6 +20,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
+import { CurrencyToggle } from "@/components/marketing/currency-toggle"
 
 function useHaCambiado<T>(valor: T) {
   const [inicial] = React.useState(valor)
@@ -69,28 +69,7 @@ export function BillingToggle({
         </Label>
       </div>
 
-      <div
-        role="group"
-        aria-label={t("currencyLabel")}
-        className="flex items-center gap-1 rounded-full bg-muted p-1"
-      >
-        {PRICING_CURRENCIES.map((value) => (
-          <button
-            key={value}
-            type="button"
-            aria-pressed={currency === value}
-            onClick={() => onCurrencyChange(value)}
-            className={cn(
-              "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
-              currency === value
-                ? "bg-foreground text-background"
-                : "text-muted-foreground hover:text-foreground"
-            )}
-          >
-            {t(value === "PEN" ? "soles" : "dollars")}
-          </button>
-        ))}
-      </div>
+      <CurrencyToggle value={currency} onChange={onCurrencyChange} />
     </div>
   )
 }
@@ -229,7 +208,9 @@ function TarjetaPlan({
                     minutes: plan.includedMinutes,
                     hours: plan.includedMinutes / 60,
                   })
-                : t(`plans.${plan.id}.highlights.${highlight}` as Parameters<typeof t>[0])}
+                : t(
+                    `plans.${plan.id}.highlights.${highlight}` as Parameters<typeof t>[0]
+                  )}
             </span>
           </li>
         ))}
@@ -241,7 +222,7 @@ function TarjetaPlan({
 /** Resumen de los planes en la landing; la comparativa completa vive en /precios. */
 export function Pricing() {
   const t = useTranslations("marketing.pricing")
-  const [yearly, setYearly] = React.useState(true)
+  const [yearly, setYearly] = React.useState(false)
   const [currency, setCurrency] = React.useState<PricingCurrency>("PEN")
   const encabezado = React.useRef<HTMLDivElement>(null)
   useMotionGroup(encabezado)

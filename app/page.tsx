@@ -3,8 +3,12 @@ import Link from "next/link"
 export default function Home() {
   return (
     <html lang="es">
-      <head><meta httpEquiv="refresh" content="0;url=/es/" /></head>
-      <body><Link href="/es/">Ir a Clipealo</Link></body>
+      <head>
+        <meta httpEquiv="refresh" content="0;url=/es/" />
+      </head>
+      <body>
+        <Link href="/es/">Ir a Clipealo</Link>
+      </body>
     </html>
   )
 }

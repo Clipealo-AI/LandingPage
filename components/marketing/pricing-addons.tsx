@@ -5,6 +5,7 @@ import { Minus, Plus } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { usePrecio } from "@/components/planes/precio"
+import { CurrencyToggle } from "@/components/marketing/currency-toggle"
 import { Link } from "@/i18n/navigation"
 import {
   EXTRA_HOUR_MAX,
@@ -14,7 +15,6 @@ import {
   type PricingCurrency,
 } from "@/lib/pricing"
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 
 const RECHARGE_URL = "https://app.clipealo-ai.com/plan/recharge"
 
@@ -26,7 +26,6 @@ export function PricingAddons({
   onCurrencyChange: (currency: PricingCurrency) => void
 }) {
   const t = useTranslations("pricing.topups")
-  const billing = useTranslations("pricing.billing")
   const formatPrice = usePrecio(currency)
   const [enteredHours, setEnteredHours] = React.useState("1")
   const hours = Number(enteredHours)
@@ -73,31 +72,7 @@ export function PricingAddons({
             >
               {t("quantityLabel")}
             </label>
-            <div
-              role="group"
-              aria-label={billing("currencyLabel")}
-              className="flex w-fit items-center gap-1 rounded-full bg-muted p-1"
-            >
-              {(["PEN", "USD"] as const).map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  aria-pressed={currency === value}
-                  onClick={() => onCurrencyChange(value)}
-                  className={cn(
-                    "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
-                    currency === value
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  <span className="mr-1 text-[10px] font-bold opacity-75">
-                    {value === "PEN" ? "PE" : "US"}
-                  </span>{" "}
-                  {t(value === "PEN" ? "soles" : "dollars")}
-                </button>
-              ))}
-            </div>
+            <CurrencyToggle value={currency} onChange={onCurrencyChange} />
           </div>
 
           <div className="mt-4 flex max-w-sm items-center gap-2">

@@ -14,7 +14,7 @@ import type { PricingCurrency } from "@/lib/pricing"
  */
 export function PricingPage() {
   const t = useTranslations("marketing.pricingPage")
-  const [yearly, setYearly] = React.useState(true)
+  const [yearly, setYearly] = React.useState(false)
   const [currency, setCurrency] = React.useState<PricingCurrency>("PEN")
 
   return (

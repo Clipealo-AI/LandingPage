@@ -17,7 +17,6 @@ import {
 import { PLANES_SEMILLA, planesVisibles } from "@/lib/planes"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { WhatsAppIcon } from "@/components/brand/whatsapp-icon"
 import { VideoSourceIcons } from "@/components/marketing/video-source-icons"
 
 /** Tabla semántica con desplazamiento horizontal en pantallas estrechas. */
@@ -106,12 +105,7 @@ export function PricingTable({
                   scope="row"
                   className="sticky left-0 z-10 border-b bg-card p-4 text-left font-medium group-hover/row:bg-muted/30 sm:p-5"
                 >
-                  <span className="inline-flex items-center gap-1.5">
-                    {tp(`features.${row.id}`)}
-                    {(row.id === "whatsappSupport" || row.id === "priorityWhatsapp") && (
-                      <WhatsAppIcon className="size-4" />
-                    )}
-                  </span>
+                  {tp(`features.${row.id}`)}
                 </th>
                 {planes.map((plan) => (
                   <td

@@ -72,7 +72,23 @@ html:not(.js) .reframe-section {
   }
 
   .reframe-encuadre {
-    max-width: calc((100svh - 400px) * 16 / 9);
+    /* Reserva espacio para el título, la descripción y la línea de tiempo.
+       Así la caja conserva 16:9 también cuando la ventana tiene poca altura. */
+    max-width: min(100%, 56rem, calc(max(6rem, 150svh - 837px) * 16 / 9));
+    flex: none;
+  }
+}
+
+@media (min-width: 640px) and (max-height: 640px) {
+  .reframe-stage {
+    padding-block-start: 1rem;
+  }
+}
+
+@media (min-width: 640px) and (max-height: 420px) {
+  .reframe-lead,
+  .reframe-caption {
+    display: none;
   }
 }
 

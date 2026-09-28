@@ -56,9 +56,12 @@ const NEGACIONES = [
 ]
 
 describe("mensajes de los tres idiomas", () => {
-  it("conservan la marca de la cifra animada en Comunidad", () => {
+  it("resaltan una frase en Comunidad sin inventar un alcance agregado", () => {
     for (const mensajes of Object.values(planos)) {
       expect(mensajes["marketing.community.title"]).toMatch(/<b>[^<]+<\/b>/)
+      expect(mensajes["marketing.community.title"]).not.toMatch(
+        /6[.,]8\s*(million|millones|milhões)/i
+      )
     }
   })
 
