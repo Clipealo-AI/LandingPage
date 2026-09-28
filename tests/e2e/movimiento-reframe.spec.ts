@@ -69,7 +69,8 @@ const anchoEsperado = (m: Medida, t: number) => m.caja - (m.caja - (m.alto * 9) 
 const geometriaEsperada = (progreso: number) => {
   const limitar = (valor: number) => Math.min(1, Math.max(0, valor))
   return (
-    0.64 * limitar((progreso - 0.12) / 0.32) + 0.36 * limitar((progreso - 0.62) / 0.2)
+    0.64 * limitar((progreso - 0.088235) / 0.235294) +
+    0.36 * limitar((progreso - 0.588235) / 0.147059)
   )
 }
 
@@ -198,7 +199,32 @@ for (const modo of MODOS) {
         }
       })
 
-      test("sin preferencia sigue al scroll de forma continua, con el alto de siempre", async ({
+      test("la vista del flujo carga cerca de pantalla y se reproduce en bucle sin controles", async ({
+        page,
+      }) => {
+        await irA(page, "/")
+        const video = page.locator('section[aria-labelledby="reframe-video-title"] video')
+
+        await expect(video).toHaveAttribute("preload", "none")
+        await expect(video).toHaveAttribute(
+          "poster",
+          "/media/workflow-social-clips-poster.avif"
+        )
+        await expect(video).toHaveJSProperty("muted", true)
+        await expect(video).toHaveJSProperty("loop", true)
+        await expect(video).toHaveJSProperty("controls", false)
+
+        await video.scrollIntoViewIfNeeded()
+        await expect(video).toHaveAttribute(
+          "src",
+          "/media/workflow-social-clips-720p.mp4"
+        )
+        await expect
+          .poll(() => video.evaluate((el) => (el as HTMLVideoElement).currentTime))
+          .toBeGreaterThan(0.25)
+      })
+
+      test("sin preferencia mantiene las pausas dobles y sigue el scroll de forma continua", async ({
         page,
       }) => {
         await irA(page, "/")
@@ -206,7 +232,7 @@ for (const modo of MODOS) {
         const alto = await seccion.evaluate(
           (el) => el.getBoundingClientRect().height / window.innerHeight
         )
-        expect(alto).toBeCloseTo(2.4, 1)
+        expect(alto).toBeCloseTo(2.904, 1)
 
         // Dos puntos del mismo plano de «reducir» miden distinto: no hay saltos
         await irAProgreso(page, 0.3)
@@ -225,16 +251,22 @@ for (const modo of MODOS) {
         ).toBeLessThanOrEqual(3)
 
         // El siguiente tramo de scroll se consume mostrando el clip cuadrado.
-        await irAProgreso(page, 0.46)
+        await irAProgreso(page, 0.36)
         const cuadrado = await medirMarco(page)
         await expect(seccion.locator(".reframe-square")).toHaveCSS("opacity", "1")
-        await irAProgreso(page, 0.6)
+        await irAProgreso(page, 0.56)
         const pausa = await medirMarco(page)
         expect(Math.abs(cuadrado.visible - pausa.visible)).toBeLessThanOrEqual(3)
         expect(pausa.visible / pausa.alto).toBeCloseTo(1, 1)
-        await irAProgreso(page, 0.7)
+        await irAProgreso(page, 0.64)
         const continua = await medirMarco(page)
         expect(continua.visible).toBeLessThan(pausa.visible - 20)
+        await irAProgreso(page, 0.78)
+        const vertical = await medirMarco(page)
+        await irAProgreso(page, 0.95)
+        const pausaVertical = await medirMarco(page)
+        expect(Math.abs(vertical.visible - pausaVertical.visible)).toBeLessThanOrEqual(3)
+        expect(pausaVertical.visible / pausaVertical.alto).toBeCloseTo(9 / 16, 1)
       })
     } else {
       test("con reduce se monta en cuatro planos con la proporción de cada formato: 16:9, 1:1, 4:5 y 9:16", async ({
@@ -249,13 +281,13 @@ for (const modo of MODOS) {
         const alto = await seccion.evaluate(
           (el) => el.getBoundingClientRect().height / window.innerHeight
         )
-        expect(alto).toBeCloseTo(2, 1)
+        expect(alto).toBeCloseTo(2.58, 1)
 
-        // Valores centrales de cada plano (los cortes caen en 0,22 · 0,42 · 0,62)
+        // Valores centrales con las pausas ampliadas en 1:1 y 9:16.
         const planos = [
           { progreso: 0.08, plano: 0 },
-          { progreso: 0.32, plano: 1 },
-          { progreso: 0.52, plano: 2 },
+          { progreso: 0.26, plano: 1 },
+          { progreso: 0.45, plano: 2 },
           { progreso: 0.85, plano: 3 },
         ]
         const anchos: Medida[] = []
@@ -303,9 +335,9 @@ for (const modo of MODOS) {
         }
 
         // Dos puntos del mismo plano miden igual: el marco va a saltos
-        await irAProgreso(page, 0.26)
+        await irAProgreso(page, 0.2)
         const a = await medirMarco(page)
-        await irAProgreso(page, 0.38)
+        await irAProgreso(page, 0.36)
         const b = await medirMarco(page)
         expect(Math.abs(a.visible - b.visible)).toBeLessThanOrEqual(1)
       })
@@ -321,9 +353,9 @@ for (const modo of MODOS) {
         await irAProgreso(page, 0.08)
         expect(await cortes(page)).toEqual([])
 
-        for (const progreso of [0.32, 0.52, 0.85]) await irAProgreso(page, progreso)
+        for (const progreso of [0.26, 0.45, 0.85]) await irAProgreso(page, progreso)
         // Volver atrás también es un corte
-        await irAProgreso(page, 0.52)
+        await irAProgreso(page, 0.45)
 
         const registro = await cortes(page)
         if (modo === "no-preference") {

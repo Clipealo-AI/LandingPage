@@ -20,13 +20,12 @@ describe("planoReframe", () => {
     expect(PLANOS_REFRAME).toBe(4)
   })
 
-  // Valores centrales de cada plano, lejos de los bordes del redondeo
-  // (0,22 · 0,42 · 0,62), para no depender de los flotantes
+  // Valores centrales de cada plano, lejos de los cortes (0,139 · 0,392 · 0,519).
   it("da el plano de cada tramo del recorrido", () => {
     expect(planoReframe(0)).toBe(0)
-    expect(planoReframe(0.1)).toBe(0)
-    expect(planoReframe(0.32)).toBe(1)
-    expect(planoReframe(0.52)).toBe(2)
+    expect(planoReframe(0.08)).toBe(0)
+    expect(planoReframe(0.26)).toBe(1)
+    expect(planoReframe(0.45)).toBe(2)
     expect(planoReframe(0.85)).toBe(3)
     expect(planoReframe(1)).toBe(3)
   })
@@ -50,17 +49,16 @@ describe("planoReframe", () => {
     expect(vistos).toEqual([0, 1, 2, 3])
   })
 
-  it("los dos planos intermedios duran lo mismo: ninguno parece atascado", () => {
+  it("duplica la pausa de 1:1 y 9:16 y conserva los tramos restantes", () => {
     const tramo = (plano: number) => {
       let n = 0
       for (let i = 0; i <= 10000; i++) if (planoReframe(i / 10000) === plano) n++
       return n / 10000
     }
-    expect(tramo(1)).toBeCloseTo(0.2, 2)
-    expect(tramo(2)).toBeCloseTo(0.2, 2)
-    // El primero y el último incluyen la entrada y la salida de la sección
-    expect(tramo(0)).toBeCloseTo(0.22, 2)
-    expect(tramo(3)).toBeCloseTo(0.38, 2)
+    expect(tramo(1)).toBeCloseTo(0.253, 2)
+    expect(tramo(2)).toBeCloseTo(0.127, 2)
+    expect(tramo(0)).toBeCloseTo(0.139, 2)
+    expect(tramo(3)).toBeCloseTo(0.481, 2)
   })
 })
 
@@ -228,7 +226,7 @@ describe("Reframe · cortes de montaje", () => {
     desplazarA(0.38)
     expect(animar).toHaveBeenCalledTimes(1)
 
-    desplazarA(0.52)
+    desplazarA(0.45)
     desplazarA(0.85)
     expect(seccion.style.getPropertyValue("--plano")).toBe("3")
     expect(animar).toHaveBeenCalledTimes(3)
@@ -237,7 +235,7 @@ describe("Reframe · cortes de montaje", () => {
   it("sin preferencia el plano se escribe pero no hay fundido: el marco sigue al scroll", () => {
     document.documentElement.dataset.motion = "full"
     const { seccion } = montarReframe()
-    desplazarA(0.52)
+    desplazarA(0.45)
     expect(seccion.style.getPropertyValue("--plano")).toBe("2")
     expect(animar).not.toHaveBeenCalled()
   })

@@ -26,13 +26,16 @@ export function protagonistaEn(tiempo: number): "man" | "woman" {
 
 /**
  * Plano del montaje reducido (0 a 3) para un progreso de scroll (0 a 1).
- * Los dos planos intermedios duran lo mismo; la pausa 1:1 del modo completo
- * tiene su propia curva en CSS.
+ * El plano 1:1 y el final 9:16 duran el doble que antes; la curva completa
+ * está definida en CSS y aquí se conserva la misma pausa en modo reducido.
  */
 export function planoReframe(progreso: number): number {
   if (!Number.isFinite(progreso)) return 0
-  const t = clamp((progreso - 0.12) / 0.6, 0, 1)
-  return Math.round(t * (PLANOS_REFRAME - 1))
+  const t = clamp(progreso, 0, 1)
+  if (t < 0.13924) return 0
+  if (t < 0.392405) return 1
+  if (t < 0.518987) return 2
+  return 3
 }
 
 /**
@@ -58,6 +61,7 @@ export function Reframe() {
   const seccion = React.useRef<HTMLElement>(null)
   const marco = React.useRef<HTMLDivElement>(null)
   const video = React.useRef<HTMLVideoElement>(null)
+  const videoFlujo = React.useRef<HTMLVideoElement>(null)
   /** Último plano escrito; `null` hasta la primera medida, que nunca funde. */
   const plano = React.useRef<number | null>(null)
   const corte = React.useRef<Animation | null>(null)
@@ -157,12 +161,52 @@ export function Reframe() {
     }
   }, [])
 
+  React.useEffect(() => {
+    const media = videoFlujo.current
+    if (!media) return
+
+    let cargado = false
+    const reproducir = () => {
+      if (!cargado) {
+        media.src = "/media/workflow-social-clips-720p.mp4"
+        media.load()
+        cargado = true
+      }
+      void media.play().catch(() => {
+        // El póster queda visible si el navegador o el dispositivo bloquea autoplay.
+      })
+    }
+    const pausar = () => media.pause()
+    const observador =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(
+            ([entrada]) => {
+              if (entrada?.isIntersecting) reproducir()
+              else pausar()
+            },
+            { rootMargin: "180px 0px" }
+          )
+
+    if (observador) observador.observe(media)
+    else reproducir()
+
+    return () => {
+      observador?.disconnect()
+      media.pause()
+      if (cargado) {
+        media.removeAttribute("src")
+        media.load()
+      }
+    }
+  }, [])
+
   return (
     <>
       <section
         id="como-funciona"
         ref={seccion}
-        className="reframe-section relative h-[240vh] scroll-mt-0 bg-ink-950"
+        className="reframe-section relative h-[290.4vh] scroll-mt-0 bg-ink-950"
       >
         <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5">
           <PatternIsotipos opacity={0.08} fade="edges" />
@@ -244,14 +288,18 @@ export function Reframe() {
           </div>
           <div className="m-anim m-rise overflow-hidden rounded-frame border border-white/15 bg-ink-900 shadow-xl [--i:3]">
             <video
-              className="block aspect-video w-full bg-ink-900 object-contain"
-              poster="/media/one-content-many-clips.avif"
+              ref={videoFlujo}
+              className="block aspect-video w-full bg-ink-900 object-cover"
+              poster="/media/workflow-social-clips-poster.avif"
               preload="none"
+              autoPlay
+              muted
+              loop
               playsInline
-              controls
+              disablePictureInPicture
+              disableRemotePlayback
               aria-label={t("videoLabel")}
             >
-              <source src="/media/one-content-many-clips.mp4" type="video/mp4" />
               {t("videoFallback")}
             </video>
           </div>
