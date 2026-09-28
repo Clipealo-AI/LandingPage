@@ -55,32 +55,33 @@ html:not(.js) .reframe-section {
     --plano: 3 !important;
   }
 }
-/* En modo reducido se alargan al doble las pausas en 1:1 y 9:16, conservando
-   los tramos de entrada y el plano intermedio 4:5. */
+/* Las pausas destacadas en 1:1 y 9:16 duran lo mismo (75,6vh), también con
+   movimiento reducido; se mantienen los tramos de entrada y el plano 4:5. */
 .reframe-section {
   @variant reduced {
-    height: 258vh;
+    height: 293.2vh;
   }
 }
 
 .reframe-stage {
-  /* Los tramos de cambio mantienen su duración; las pausas 1:1 y 9:16 pasan
-     de 25,2 a 50,4vh de scroll cada una. No se intercepta rueda ni tacto. */
+  /* Las pausas 1:1 y 9:16 duran 75,6vh cada una: 50 % más que las 50,4vh
+     anteriores. Los tramos de cambio conservan su duración; no se intercepta
+     rueda ni tacto. */
   --t: calc(
-    0.64 * clamp(0, calc((var(--progress) - 0.088235) / 0.235294), 1) + 0.36 *
-      clamp(0, calc((var(--progress) - 0.588235) / 0.147059), 1)
+    0.64 * clamp(0, calc((var(--progress) - 0.069767) / 0.186047), 1) + 0.36 *
+      clamp(0, calc((var(--progress) - 0.569767) / 0.116279), 1)
   );
   /* Geometría del marco y de la selección: 0 = 16:9, 1 = 9:16 */
   --t-geo: var(--t);
   --reframe-original: calc(
-    1 - clamp(0, calc((var(--progress) - 0.147059) / 0.147059), 1)
+    1 - clamp(0, calc((var(--progress) - 0.116279) / 0.116279), 1)
   );
   /* El rótulo permanece visible mientras el marco está en 1:1. */
   --reframe-square: min(
-    clamp(0, calc((var(--progress) - 0.294118) / 0.029412), 1),
-    calc(1 - clamp(0, calc((var(--progress) - 0.588235) / 0.044118), 1))
+    clamp(0, calc((var(--progress) - 0.232558) / 0.023256), 1),
+    calc(1 - clamp(0, calc((var(--progress) - 0.569767) / 0.034884), 1))
   );
-  --reframe-ready: clamp(0, calc((var(--progress) - 0.632353) / 0.102941), 1);
+  --reframe-ready: clamp(0, calc((var(--progress) - 0.604651) / 0.081395), 1);
 }
 .reframe-stage {
   @variant reduced {

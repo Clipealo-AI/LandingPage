@@ -69,8 +69,8 @@ const anchoEsperado = (m: Medida, t: number) => m.caja - (m.caja - (m.alto * 9) 
 const geometriaEsperada = (progreso: number) => {
   const limitar = (valor: number) => Math.min(1, Math.max(0, valor))
   return (
-    0.64 * limitar((progreso - 0.088235) / 0.235294) +
-    0.36 * limitar((progreso - 0.588235) / 0.147059)
+    0.64 * limitar((progreso - 0.069767) / 0.186047) +
+    0.36 * limitar((progreso - 0.569767) / 0.116279)
   )
 }
 
@@ -224,7 +224,7 @@ for (const modo of MODOS) {
           .toBeGreaterThan(0.25)
       })
 
-      test("sin preferencia mantiene las pausas dobles y sigue el scroll de forma continua", async ({
+      test("sin preferencia mantiene las pausas 50 % más largas y sigue el scroll de forma continua", async ({
         page,
       }) => {
         await irA(page, "/")
@@ -232,26 +232,26 @@ for (const modo of MODOS) {
         const alto = await seccion.evaluate(
           (el) => el.getBoundingClientRect().height / window.innerHeight
         )
-        expect(alto).toBeCloseTo(2.904, 1)
+        expect(alto).toBeCloseTo(3.408, 1)
 
         // Dos puntos del mismo plano de «reducir» miden distinto: no hay saltos
-        await irAProgreso(page, 0.3)
+        await irAProgreso(page, 0.15)
         const a = await medirMarco(page)
-        await irAProgreso(page, 0.36)
+        await irAProgreso(page, 0.24)
         const b = await medirMarco(page)
         expect(a.visible - b.visible).toBeGreaterThan(20)
         expect(
-          Math.abs(a.visible - anchoEsperado(a, geometriaEsperada(0.3)))
+          Math.abs(a.visible - anchoEsperado(a, geometriaEsperada(0.15)))
         ).toBeLessThanOrEqual(3)
         const seleccion = await medirVisible(page, ".reframe-seleccion")
         expect(
           Math.abs(
-            seleccion.visible - seleccionEsperada(seleccion, geometriaEsperada(0.36))
+            seleccion.visible - seleccionEsperada(seleccion, geometriaEsperada(0.24))
           )
         ).toBeLessThanOrEqual(3)
 
         // El siguiente tramo de scroll se consume mostrando el clip cuadrado.
-        await irAProgreso(page, 0.36)
+        await irAProgreso(page, 0.3)
         const cuadrado = await medirMarco(page)
         await expect(seccion.locator(".reframe-square")).toHaveCSS("opacity", "1")
         await irAProgreso(page, 0.56)
@@ -281,13 +281,13 @@ for (const modo of MODOS) {
         const alto = await seccion.evaluate(
           (el) => el.getBoundingClientRect().height / window.innerHeight
         )
-        expect(alto).toBeCloseTo(2.58, 1)
+        expect(alto).toBeCloseTo(2.932, 1)
 
-        // Valores centrales con las pausas ampliadas en 1:1 y 9:16.
+        // Valores centrales con pausas iguales, un 50 % más largas, en 1:1 y 9:16.
         const planos = [
-          { progreso: 0.08, plano: 0 },
-          { progreso: 0.26, plano: 1 },
-          { progreso: 0.45, plano: 2 },
+          { progreso: 0.05, plano: 0 },
+          { progreso: 0.3, plano: 1 },
+          { progreso: 0.56, plano: 2 },
           { progreso: 0.85, plano: 3 },
         ]
         const anchos: Medida[] = []
@@ -335,9 +335,9 @@ for (const modo of MODOS) {
         }
 
         // Dos puntos del mismo plano miden igual: el marco va a saltos
-        await irAProgreso(page, 0.2)
+        await irAProgreso(page, 0.3)
         const a = await medirMarco(page)
-        await irAProgreso(page, 0.36)
+        await irAProgreso(page, 0.4)
         const b = await medirMarco(page)
         expect(Math.abs(a.visible - b.visible)).toBeLessThanOrEqual(1)
       })
@@ -350,12 +350,12 @@ for (const modo of MODOS) {
       async ({ page }) => {
         await registrarCortes(page)
         await irA(page, "/")
-        await irAProgreso(page, 0.08)
+        await irAProgreso(page, 0.05)
         expect(await cortes(page)).toEqual([])
 
-        for (const progreso of [0.26, 0.45, 0.85]) await irAProgreso(page, progreso)
+        for (const progreso of [0.3, 0.56, 0.85]) await irAProgreso(page, progreso)
         // Volver atrás también es un corte
-        await irAProgreso(page, 0.45)
+        await irAProgreso(page, 0.56)
 
         const registro = await cortes(page)
         if (modo === "no-preference") {

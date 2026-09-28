@@ -26,15 +26,16 @@ export function protagonistaEn(tiempo: number): "man" | "woman" {
 
 /**
  * Plano del montaje reducido (0 a 3) para un progreso de scroll (0 a 1).
- * El plano 1:1 y el final 9:16 duran el doble que antes; la curva completa
- * está definida en CSS y aquí se conserva la misma pausa en modo reducido.
+ * Las pausas 1:1 y 9:16 duran lo mismo (75,6vh de recorrido), un 50 % más que
+ * antes. La curva completa está definida en CSS; aquí se usan las mismas
+ * proporciones para el montaje con movimiento reducido.
  */
 export function planoReframe(progreso: number): number {
   if (!Number.isFinite(progreso)) return 0
   const t = clamp(progreso, 0, 1)
-  if (t < 0.13924) return 0
-  if (t < 0.392405) return 1
-  if (t < 0.518987) return 2
+  if (t < 0.113872) return 0
+  if (t < 0.505176) return 1
+  if (t < 0.608696) return 2
   return 3
 }
 
@@ -206,7 +207,7 @@ export function Reframe() {
       <section
         id="como-funciona"
         ref={seccion}
-        className="reframe-section relative h-[290.4vh] scroll-mt-0 bg-ink-950"
+        className="reframe-section relative h-[340.8vh] scroll-mt-0 bg-ink-950"
       >
         <div className="reframe-stage sticky top-0 flex h-svh flex-col items-center justify-center overflow-hidden px-5">
           <PatternIsotipos opacity={0.08} fade="edges" />
