@@ -1,4 +1,3 @@
-import type { SocialId } from "@/lib/social"
 import { LOCALE_TAG, type Locale } from "@/i18n/routing"
 
 /** Divisas que ofrece el catálogo de precios público. */
@@ -85,18 +84,10 @@ export const CARD_HIGHLIGHTS = {
   premium: ["previous", "time", "export", "storage", "driveZoom"],
 } as const satisfies Record<PricingPlanId, readonly string[]>
 
-/** La publicación en redes comparte límites con el catálogo actual de dev. */
-export const NETWORKS_BY_PLAN: Record<PricingPlanId, SocialId[]> = {
-  free: ["tiktok"],
-  basic: ["tiktok", "instagram", "youtube", "x", "linkedin", "facebook"],
-  standard: ["tiktok", "instagram", "youtube", "x", "linkedin", "facebook"],
-  premium: ["tiktok", "instagram", "youtube", "x", "linkedin", "facebook"],
-}
-
 export type VideoSourceId = "youtube" | "kick" | "twitch" | "facebook" | "drive" | "zoom"
 
 /** Orígenes que devuelve plans.available_platforms en la BD actual. */
-export const VIDEO_SOURCES_BY_PLAN: Record<PricingPlanId, readonly VideoSourceId[]> = {
+const VIDEO_SOURCES_BY_PLAN: Record<PricingPlanId, readonly VideoSourceId[]> = {
   free: ["youtube"],
   basic: ["youtube", "kick", "twitch"],
   standard: ["youtube", "kick", "twitch", "facebook"],
