@@ -1,0 +1,9 @@
+#!include:.gitignore
+.git/
+.firebase/
+.vercel/
+coverage/
+docs/
+tests/
+playwright-report/
+test-results/

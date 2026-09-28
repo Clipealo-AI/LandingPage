@@ -1,0 +1,3349 @@
+{
+  "privacy": {
+    "title": "Política de Privacidad",
+    "updated": "Fecha de entrada en vigor: 8 de febrero de 2026 · Versión 1.1",
+    "sections": [
+      {
+        "type": "section",
+        "title": "1. INTRODUCCIÓN",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": " Esta es la Política de Privacidad de "
+              },
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", una plataforma de generación automatizada de clips para streamers operada en Perú. Esta política explica cómo recopilamos, usamos, almacenamos y protegemos sus datos personales cuando utiliza nuestros servicios. "
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": " Al utilizar Clipealo, usted acepta las prácticas descritas en esta Política de Privacidad. Si no está de acuerdo, no utilice nuestros servicios. "
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "1.1 Marco Legal",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Esta Política de Privacidad cumple con:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Ley N° 29733 - Ley de Protección de Datos Personales del Perú"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Decreto Supremo N° 003-2013-JUS (Reglamento de la Ley N° 29733)"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Directivas de la Autoridad Nacional de Protección de Datos Personales"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "1.2 Relación con los Términos de Servicio",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": " Esta Política de Privacidad es parte integral de nuestros Términos y Condiciones de Servicio. Los términos utilizados aquí tienen el mismo significado que en los Términos de Servicio, salvo que se indique lo contrario. "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "1.3 Proveedor del Servicio",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Responsable del Tratamiento:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " Clipealo, plataforma operada en Perú."
+                  },
+                  {
+                    "type": "break"
+                  },
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Contacto:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " +51 923 783 155"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "1.4 Modificaciones",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos modificar esta Política de Privacidad ocasionalmente. Le notificaremos mediante:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Aviso en la plataforma"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Correo electrónico a su dirección registrada"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Actualización de la fecha de vigencia"
+                    }
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "El uso continuado de los servicios después de las modificaciones constituye su aceptación de los cambios."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "2. ALCANCE DE ESTA POLÍTICA",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "2.1 Qué Cubre",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Esta política describe cómo tratamos los datos personales que recopilamos cuando:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Crea una cuenta en Clipealo"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Utiliza nuestros servicios de generación de clips"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Navega por nuestra plataforma"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Se comunica con nosotros"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "2.2 Definición de Datos Personales",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "\"Datos Personales\" significa cualquier información que identifica o hace identificable a una persona natural, incluyendo:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Nombre y apellidos"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Correo electrónico"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Número de teléfono"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Dirección IP"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Información de dispositivos"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Cualquier otra información que permita identificarlo"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "2.3 Qué No Cubre",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Esta política NO cubre:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Prácticas de sitios web o servicios de terceros"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Plataformas de streaming (Twitch, YouTube, etc.)"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Servicios de pago de terceros"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Enlaces externos"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "3. DATOS PERSONALES QUE RECOPILAMOS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "3.1 Datos que Usted Proporciona Directamente",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "a) Información de Cuenta:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " nombre y apellidos, correo electrónico, contraseña (encriptada), nombre de usuario, número de teléfono (si lo proporciona)."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "b) Información de Pago:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " procesada por terceros (Stripe u otros). No almacenamos datos completos de tarjetas. Conservamos únicamente registros de transacciones necesarios."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "c) Credenciales de Plataformas de Streaming:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " tokens de acceso a Twitch, YouTube, Facebook Gaming, etc.; nombres de usuario; datos necesarios para la integración autorizada."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "d) Contenido que Procesa:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " URLs de transmisiones, clips generados, configuraciones de edición, preferencias de procesamiento."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "e) Comunicaciones:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " mensajes a soporte, retroalimentación, reportes de problemas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "3.2 Datos que Recopilamos Automáticamente",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "a) Información Técnica:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " IP, navegador, sistema operativo, tipo de dispositivo, resolución, idioma."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "b) Datos de Uso:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " páginas visitadas, tiempo de permanencia, funcionalidades utilizadas, frecuencia, patrones de navegación, errores."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "c) Cookies y Tecnologías Similares:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " cookies de sesión, preferencias, analíticas, identificadores únicos."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "d) Datos de Geolocalización:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " ubicación aproximada por IP, zona horaria."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "3.3 Datos de Plataformas de Terceros",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Cuando autoriza la integración con plataformas de streaming: información pública del perfil, lista de transmisiones, estadísticas públicas, metadatos."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Importante:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " Solo accedemos a datos que usted autoriza expresamente mediante OAuth de cada plataforma."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "3.4 Datos que NO Recopilamos Intencionalmente",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Datos de menores de 18 años sin consentimiento parental"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Categorías especiales de datos (origen racial, étnico, opiniones políticas, religiosas, salud, orientación sexual, biométricos)"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Números completos de tarjetas de crédito o débito"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Contraseñas de plataformas de terceros"
+                    }
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Si inadvertidamente recibimos estos datos, los eliminamos inmediatamente."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "4. FINALIDADES DEL TRATAMIENTO DE DATOS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "4.1 Prestación del Servicio",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Crear y gestionar su cuenta"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Autenticar su identidad al iniciar sesión"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Procesar sus transmisiones con nuestra IA"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Generar clips automáticamente"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Almacenar y gestionar su contenido"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Proporcionar funcionalidades de edición"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Facilitar la distribución de clips"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Procesar pagos y suscripciones"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.2 Comunicación con el Usuario",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Confirmaciones de cuenta"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Estado de procesamiento"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Soporte y respuestas a consultas"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Cambios en el servicio"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Actualizaciones de seguridad"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.3 Mejora del Servicio",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Analizar patrones de uso"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Identificar y corregir errores técnicos"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Mejorar algoritmos de IA"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Desarrollar nuevas funcionalidades"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Realizar pruebas y análisis internos"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.4 Seguridad y Prevención de Fraude",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Detectar actividades sospechosas"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Prevenir accesos no autorizados"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Identificar intentos de fraude"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Proteger la integridad de la plataforma"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Cumplir con obligaciones de seguridad"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.5 Marketing (Con Su Consentimiento)",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Newsletters sobre actualizaciones"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Nuevas funcionalidades"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Contenido educativo para streamers"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Ofertas promocionales"
+                    }
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Puede darse de baja en cualquier momento."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.6 Cumplimiento Legal",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Cumplir obligaciones legales y regulatorias"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Responder a requerimientos de autoridades"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Defender nuestros derechos legales"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Hacer cumplir nuestros Términos de Servicio"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.7 Base Legal (Ley N° 29733)",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Consentimiento:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " al crear su cuenta y aceptar esta política"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Ejecución contractual:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " para prestar los servicios contratados"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Interés legítimo:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " mejorar el servicio y garantizar seguridad"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Obligación legal:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " cumplir normativa aplicable"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "5. CÓMO COMPARTIMOS SUS DATOS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "5.1 Principio General",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "No vendemos sus datos personales a terceros."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " Solo compartimos información en las circunstancias específicas descritas a continuación."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.2 Proveedores de Servicios",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Compartimos datos con proveedores que nos ayudan a operar:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Infraestructura y Hosting:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " servidores en la nube, almacenamiento, procesamiento de IA"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Procesamiento de Pagos:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " Stripe u otros procesadores autorizados"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Comunicación:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " proveedores de correo transaccional, notificaciones"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Análisis y Monitoreo:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " Google Analytics u herramientas similares"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Soporte Técnico:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " plataformas de atención al cliente, sistemas de tickets"
+                    }
+                  ]
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Todos los proveedores están obligados contractualmente a proteger sus datos, solo pueden usarlos para los fines autorizados y cumplen con estándares de seguridad adecuados."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.3 Plataformas de Streaming",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Cuando autoriza la integración accedemos a sus datos mediante APIs oficiales, solo en el alcance autorizado, y podemos publicar clips en su nombre si lo permite, sujeto a los términos de cada plataforma."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.4 Requisitos Legales",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos divulgar datos cuando lo exija una orden judicial, autoridad competente (Fiscalía, Policía), para defender derechos legales, prevenir fraude o proteger la seguridad de usuarios o terceros."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.5 Transferencias Empresariales",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "En caso de fusión, adquisición o venta de activos, sus datos pueden transferirse al adquirente. Le notificaremos con anticipación y podrá eliminar su cuenta antes de la transferencia."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.6 Con Su Consentimiento",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos compartir datos con terceros adicionales cuando usted nos autorice expresamente, configure integraciones específicas o utilice funcionalidades que lo requieran."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.7 Datos Agregados y Anonimizados",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos compartir información agregada o anonimizada que no identifique a individuos para estadísticas o investigación."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "6. COOKIES Y TECNOLOGÍAS SIMILARES",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "6.1 Qué son las Cookies",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestra plataforma. Nos ayudan a reconocer su navegador y recordar preferencias."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "6.2 Tipos de Cookies que Utilizamos",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "a) Esenciales (siempre activas):"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " sesión, configuración de cuenta, funcionalidades básicas."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "b) Funcionalidad:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " idioma, zona horaria, configuraciones personalizadas."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "c) Analíticas:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " uso de la plataforma, problemas técnicos, generalmente vía Google Analytics."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "d) Marketing (requieren consentimiento):"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " efectividad de campañas, personalización, conversiones."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "6.3 Gestión de Cookies",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Puede controlar las cookies desde la configuración de su navegador o desde el panel de configuración de cookies de la plataforma. Bloquear cookies esenciales puede impedir el funcionamiento correcto del servicio."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "6.4 Tecnologías Similares",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "También utilizamos web beacons, local storage e identificadores de dispositivo."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "6.5 Cookies de Terceros",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Algunas cookies son colocadas por Google Analytics, procesadores de pago o redes publicitarias. Estos terceros tienen sus propias políticas de privacidad."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "7. RETENCIÓN DE DATOS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "7.1 Criterios de Retención",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Conservamos sus datos mientras mantenga una cuenta activa, sea necesario para prestar los servicios, lo requieran obligaciones legales o existan reclamaciones legales pendientes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "7.2 Períodos Específicos",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Datos de cuenta:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " durante la vigencia + 30 días tras eliminación"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Transacciones:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " 5 años (normativa tributaria peruana)"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Comunicaciones:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " 2 años desde la última interacción"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Datos técnicos (logs, IP):"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " 12 meses"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Contenido procesado:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " mientras la cuenta esté activa + 30 días"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Cookies:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " de sesión hasta 24 meses"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "7.3 Eliminación Segura",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Utilizamos procesos de borrado seguro. Los respaldos se eliminan en ciclos regulares. Conservamos únicamente datos anonimizados para estadísticas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "7.4 Excepciones",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos conservar datos por más tiempo cuando lo exija una orden judicial, sea necesario para procedimientos legales o auditorías regulatorias."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "8. SEGURIDAD DE LA INFORMACIÓN",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "8.1 Compromiso con la Seguridad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Implementamos medidas técnicas, organizativas y administrativas para proteger sus datos contra acceso no autorizado, pérdida, destrucción, divulgación indebida o uso no autorizado."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "8.2 Medidas Técnicas",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Encriptación:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " HTTPS/TLS, hashing con salt para contraseñas, encriptación de datos sensibles en reposo."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Control de Acceso:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " 2FA cuando esté disponible, gestión de permisos por roles, logs de auditoría."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Protección de Infraestructura:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " firewalls, IDS, actualizaciones regulares, monitoreo continuo, respaldos."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Seguridad en el Desarrollo:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " revisión de código, pruebas de seguridad, gestión de vulnerabilidades."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "8.3 Medidas Organizativas",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Políticas de seguridad de la información"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Capacitación del personal"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Acuerdos de confidencialidad"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Procedimientos de respuesta a incidentes"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "8.4 Sus Responsabilidades",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Elija contraseñas seguras y únicas"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "No comparta sus credenciales"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Cierre sesión en dispositivos compartidos"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Mantenga actualizado su software"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Reporte actividad sospechosa inmediatamente"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "8.5 Limitaciones",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Ningún sistema es 100% seguro. Si detectamos una brecha que afecte sus datos, le notificaremos conforme a la ley peruana."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "9. SUS DERECHOS BAJO LA LEY PERUANA",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "9.1 Derechos Reconocidos (Ley N° 29733)",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Acceso:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " conocer qué datos conservamos y cómo los usamos"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Rectificación:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " corregir datos inexactos o desactualizados"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Cancelación:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " solicitar eliminación de sus datos"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Oposición:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " oponerse al tratamiento, en especial para marketing"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Información:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " conocer finalidades y destinatarios"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Retirar consentimiento:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " en cualquier momento, sin efecto retroactivo"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "No ser objeto de decisiones automatizadas:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " con efectos jurídicos o similares"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "9.2 Cómo Ejercer Sus Derechos",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Paso 1:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " envíe su solicitud por WhatsApp al +51 923 783 155 incluyendo derecho a ejercer, datos de contacto, copia de DNI y descripción específica."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Paso 2:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " verificación de identidad."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Paso 3:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " respondemos en 10 días hábiles para información y 20 días hábiles para acceso, rectificación, cancelación u oposición. Plazo extensible 10 días adicionales."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Paso 4:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " resolución. No cobramos por ejercer sus derechos."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "9.3 Limitaciones y Excepciones",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos denegar o limitar derechos cuando exista obligación legal, sea necesario para contratos, defensa legal o afecte derechos de terceros. Le informaremos del motivo."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "9.4 Recurso ante la Autoridad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": " Puede presentar queja ante la "
+                  },
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Autoridad Nacional de Protección de Datos Personales"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": ", Ministerio de Justicia y Derechos Humanos."
+                  },
+                  {
+                    "type": "break"
+                  },
+                  {
+                    "type": "text",
+                    "value": " Correo: protecciondedatos@minjus.gob.pe — Web: www.minjus.gob.pe "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "10. PRIVACIDAD DE MENORES",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "10.1 Edad Mínima",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Nuestros servicios están dirigidos a personas mayores de 18 años. No recopilamos intencionalmente datos de menores sin consentimiento parental."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "10.2 Consentimiento Parental",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Si un menor desea usar los servicios requiere autorización expresa de padres o tutores, quienes son responsables del uso y deben supervisar la actividad."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "10.3 Descubrimiento de Datos de Menores",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Si descubrimos que hemos recopilado datos de un menor sin consentimiento apropiado, los eliminaremos inmediatamente, suspenderemos la cuenta y notificaremos si es posible."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "10.4 Aviso a Padres y Tutores",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Si cree que un menor ha proporcionado datos sin autorización, contáctenos por WhatsApp al +51 923 783 155."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "11. TRANSFERENCIAS INTERNACIONALES DE DATOS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "11.1 Ubicación de Servidores",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Nuestros servidores pueden estar ubicados en Estados Unidos u otros países fuera de Perú."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "11.2 Protección en Transferencias",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Utilizamos proveedores con medidas adecuadas, cláusulas contractuales de protección y verificamos nivel adecuado de protección en el país destino, conforme a la Ley N° 29733."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "11.3 Proveedores en el Extranjero",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Servicios como Google Cloud, AWS, Stripe o Google Analytics pueden tener servidores internacionales y cumplen sus propios estándares de seguridad y privacidad."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "11.4 Su Consentimiento",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Al aceptar esta Política, consiente expresamente la transferencia internacional de sus datos bajo las condiciones descritas."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "12. COMUNICACIONES DE MARKETING",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "12.1 Tipos de Comunicaciones",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Newsletters sobre el servicio"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Actualizaciones de producto"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Consejos para streamers"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Ofertas promocionales"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Encuestas de satisfacción"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "12.2 Base Legal",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Solo enviamos marketing cuando ha dado su consentimiento o tiene relación contractual con nosotros (servicios relacionados)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "12.3 Cómo Darse de Baja",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Puede cancelar la suscripción haciendo clic en \"darse de baja\" en cualquier correo, desde la configuración de su cuenta o por WhatsApp al +51 923 783 155. Seguirá recibiendo comunicaciones transaccionales y avisos de seguridad."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "13. INTEGRACIONES CON PLATAFORMAS DE TERCEROS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "13.1 Conexión con Plataformas de Streaming y Redes Sociales",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Autorización OAuth:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " nos conectamos a Twitch, YouTube, Kick, TikTok, Instagram y Facebook mediante los flujos OAuth oficiales de cada plataforma. Solo accedemos al alcance (\"scopes\") que usted aprueba expresamente y puede revocar el acceso en cualquier momento."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Datos accedidos:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " identificadores públicos del perfil, nombre para mostrar, avatar y los permisos mínimos necesarios para leer transmisiones/videos y publicar el contenido que usted apruebe."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Credenciales:"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " los tokens de acceso y refresco se almacenan cifrados. "
+                  },
+                  {
+                    "type": "strong",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Nunca"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " solicitamos ni almacenamos contraseñas de plataformas de terceros."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "13.2 Publicación Autorizada",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Si autoriza que publiquemos clips en su nombre, lo haremos únicamente cuando usted confirme cada publicación en la interfaz de Clipealo, mediante las APIs oficiales de cada plataforma, y podrá revocar el permiso cuando lo desee."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "13.3 Responsabilidad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Cada plataforma tiene sus propias políticas. Revise los términos de Twitch, YouTube, TikTok, Instagram y Facebook. No somos responsables de las prácticas de privacidad de estas plataformas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "13.4 Desconexión",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Puede desconectar cualquier integración desde la configuración de su cuenta en Clipealo o desde la plataforma original. Al desconectar, dejamos de acceder a esos datos y eliminamos los tokens asociados en un plazo máximo de 7 días."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "14. CAMBIOS A ESTA POLÍTICA",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "14.1 Derecho a Modificar",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Podemos modificar esta Política para cumplir nuevas regulaciones, reflejar cambios en servicios, mejorar la protección de datos o actualizar prácticas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "14.2 Notificación de Cambios",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Notificaremos cambios significativos mediante aviso destacado en la plataforma, correo electrónico y actualización de la fecha de vigencia."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "14.3 Aceptación de Cambios",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Tiene 30 días para revisar los cambios. Puede rechazarlos cancelando su cuenta. El uso continuado implica aceptación."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "14.4 Cambios Menores",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Para correcciones o clarificaciones, actualizaremos la política directamente e indicaremos la nueva fecha de vigencia."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "15. DATOS DE CONTACTO",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "15.1 Consultas Generales",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Contacto: "
+                  },
+                  {
+                    "type": "link",
+                    "href": "https://wa.me/51923783155",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "+51 923 783 155"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " · Incluya en el mensaje: \"Privacidad - [breve descripción]\"."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "15.2 Ejercicio de Derechos",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "WhatsApp: +51 923 783 155. Indique el derecho que desea ejercer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "15.3 Reportar Incidentes de Seguridad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "WhatsApp: +51 923 783 155. Para reportar un incidente de seguridad, indíquelo en su mensaje."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "15.4 Quejas y Reclamos",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Primera instancia por WhatsApp: +51 923 783 155. Autoridad competente: Autoridad Nacional de Protección de Datos Personales — protecciondedatos@minjus.gob.pe"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "15.5 Tiempos de Respuesta",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Consultas generales: 5 días hábiles"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Solicitudes de derechos: 10-20 días hábiles"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Incidentes de seguridad: inmediato"
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "16. DISPOSICIONES FINALES",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "16.1 Idioma",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Esta Política está redactada en español. Es la única versión válida."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "16.2 Divisibilidad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Si alguna disposición es inválida, las demás permanecen vigentes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "16.3 Ley Aplicable",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Se rige por las leyes de la República del Perú: Ley N° 29733, D.S. N° 003-2013-JUS y Código Civil Peruano."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "16.4 Jurisdicción",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Tribunales de Lima, Perú. Posibilidad de conciliación extrajudicial previa. Acceso a la Autoridad Nacional de Protección de Datos Personales."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "16.5 Relación con Términos de Servicio",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Esta Política complementa nuestros Términos y Condiciones. En caso de conflicto sobre temas de privacidad, prevalece esta política."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "CONSENTIMIENTO INFORMADO",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": "Al crear una cuenta y utilizar los servicios de Clipealo, usted declara que:"
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              [
+                {
+                  "type": "text",
+                  "value": "Ha leído y comprendido esta Política de Privacidad"
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "value": "Consiente el tratamiento de sus datos personales según lo descrito"
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "value": "Entiende sus derechos y cómo ejercerlos"
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "value": "Acepta la transferencia internacional de datos cuando sea necesaria"
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "value": "Autoriza el uso de cookies según lo indicado"
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "value": "Comprende que puede retirar su consentimiento en cualquier momento"
+                }
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": " Última actualización: 8 de febrero de 2026 · Versión 1.1"
+              },
+              {
+                "type": "break"
+              },
+              {
+                "type": "text",
+                "value": " Clipealo - Comprometidos con la protección de su privacidad"
+              },
+              {
+                "type": "break"
+              },
+              {
+                "type": "text",
+                "value": " Para consultas por WhatsApp: +51 923 783 155 "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "GLOSARIO",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Datos Personales:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " información que identifica o hace identificable a una persona."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Tratamiento:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " cualquier operación sobre datos personales."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Titular:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " persona a quien pertenecen los datos personales."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Responsable del Tratamiento:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " Clipealo, quien decide sobre el uso de los datos."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Encargado del Tratamiento:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " terceros que procesan datos por cuenta de Clipealo."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Consentimiento:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " autorización libre, informada, expresa e inequívoca."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Cookies:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " pequeños archivos de texto almacenados en su dispositivo."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "API:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " interfaz que permite conexión entre plataformas."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "OAuth:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " protocolo de autorización segura."
+                }
+              ],
+              [
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Anonimización:"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " proceso que hace imposible identificar a una persona."
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Términos y Condiciones de Servicio",
+    "updated": "Fecha de entrada en vigor: 8 de febrero de 2026 · Versión 1.1",
+    "sections": [
+      {
+        "type": "section",
+        "title": "1. INTRODUCCIÓN",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": " Bienvenido a "
+              },
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ". Al acceder o utilizar nuestra plataforma de generación automática de clips para streamers, usted acepta obligarse por estos Términos y Condiciones. Si no está de acuerdo con alguna disposición, no utilice el servicio. "
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "1.1 Información de Contacto",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Contacto: "
+                  },
+                  {
+                    "type": "link",
+                    "href": "https://wa.me/51923783155",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "+51 923 783 155"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "break"
+                  },
+                  {
+                    "type": "text",
+                    "value": "Soporte técnico por WhatsApp: +51 923 783 155"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "1.2 Proveedor del Servicio",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo es un servicio operado en Perú. La información de registro corporativo se actualizará cuando esté disponible."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "2. ELEGIBILIDAD Y CAPACIDAD",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "2.1 Requisitos de Edad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Para utilizar los Servicios debe ser mayor de 18 años. Los menores de 18 años solo podrán acceder con el consentimiento expreso y supervisión de sus padres o tutores legales."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "2.2 Capacidad Legal",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Usted declara y garantiza que posee plena capacidad legal para contratar conforme al Código Civil Peruano y demás normativa aplicable."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "3. NATURALEZA DEL SERVICIO",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "3.1 Clipealo como Herramienta Tecnológica",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo es exclusivamente una herramienta tecnológica que proporciona:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Algoritmos de inteligencia artificial para analizar transmisiones"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Capacidad automatizada de generar clips de video"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Infraestructura de almacenamiento temporal"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Interfaz para gestión de contenido"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "3.2 Rol Limitado de Clipealo",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo actúa únicamente como proveedor de tecnología. NO participa en la creación, edición, distribución o publicación de contenido."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "4. CUENTA DE USUARIO",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "4.1 Registro y Obligaciones",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Al crear una cuenta, usted se compromete a proporcionar información veraz, exacta, actual y completa, mantener la confidencialidad de sus credenciales de acceso, y notificar inmediatamente cualquier uso no autorizado."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "4.2 Responsabilidad por el Uso de la Cuenta",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Usted es el único responsable de todas las actividades que se realicen bajo su cuenta."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "5. RESPONSABILIDAD EXCLUSIVA DEL USUARIO",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "5.1 Principio Fundamental",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo es una herramienta. El usuario es responsable de cómo la usa."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.2 Exoneración Total de Responsabilidad",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo NO es responsable de:"
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Contenido que los usuarios transmiten, procesan o generan"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Infracciones a derechos de autor, marcas o propiedad intelectual"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Violaciones a derechos de imagen, voz, privacidad o publicidad"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Contenido ilegal, difamatorio u obsceno generado por usuarios"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Reclamaciones, demandas o acciones legales de terceros"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Daños y perjuicios causados por contenido de usuarios"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "5.3 Obligación de Indemnizar",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "El usuario se obliga a defender a Clipealo ante reclamaciones relacionadas con su contenido, indemnizar todos los gastos, daños y perjuicios, y mantener indemne a Clipealo, sus directores, empleados y representantes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "6. PROPIEDAD INTELECTUAL",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "6.1 Derechos del Usuario",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "El usuario retiene todos los derechos de propiedad intelectual sobre sus transmisiones, contenido original, clips generados y creaciones derivadas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "6.2 Derechos de Clipealo",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo es titular exclusivo de la plataforma, código fuente, algoritmos de IA, modelos de aprendizaje automático, marca, logos y diseños, protegidos por el Decreto Legislativo Nº 822."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "7. PLANES, PRECIOS Y FACTURACIÓN",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "7.1 Modalidades de Servicio",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Plan Gratuito:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " acceso limitado a funcionalidades básicas"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Planes de Pago:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " acceso completo según el plan contratado"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "7.2 Estructura de Precios",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "type": "text",
+                      "value": "Precios en Soles Peruanos (PEN) o Dólares Americanos (USD)"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Los precios publicados NO incluyen IGV (18%)"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "text",
+                      "value": "Clipealo puede modificar precios con 30 días de anticipación"
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "7.3 Suscripciones",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Al contratar una suscripción autoriza cargos recurrentes. La renovación es automática. Puede cancelarla desde su cuenta y surte efecto al final del período vigente."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "8. POLÍTICA DE REEMBOLSOS",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "8.1 Derecho de Retracto",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Reembolso disponible solo si: han transcurrido 7 días o menos desde la contratación Y el usuario no ha hecho uso alguno del servicio."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "8.2 Procedimiento",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Solicite reembolso escribiendo por WhatsApp al +51 923 783 155."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "9. LIMITACIÓN DE RESPONSABILIDAD",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "9.1 Exoneración Total",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "En el máximo permitido por la ley peruana, Clipealo no asume responsabilidad alguna por contenido de usuarios, plataformas de terceros, daños indirectos, interrupciones o acciones de terceros."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "9.2 Servicio 'TAL CUAL'",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo proporciona el servicio \"AS IS\" sin garantías expresas o implícitas de comerciabilidad, idoneidad o funcionamiento ininterrumpido."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "10. TERMINACIÓN",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "10.1 Terminación por el Usuario",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Puede cancelar su cuenta desde la configuración o por WhatsApp al +51 923 783 155."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "10.2 Terminación por Clipealo",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Clipealo puede suspender o terminar una cuenta por violación de estos Términos, actividad fraudulenta, falta de pago, o uso que comprometa seguridad."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "11. LEY APLICABLE",
+        "blocks": [
+          {
+            "type": "subsection",
+            "title": "11.1 Legislación",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Estos Términos se rigen por las leyes de la República del Perú: Código Civil Peruano, Código de Protección y Defensa del Consumidor, Ley de Protección de Datos Personales, y Decreto Legislativo Nº 822."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "11.2 Resolución de Disputas",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "Las partes intentarán resolver controversias mediante negociación directa. Consumidores pueden reclamar ante INDECOPI, juzgados de su domicilio o arbitraje de consumo."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "ACEPTACIÓN",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": "Al crear una cuenta o utilizar los Servicios de Clipealo, usted declara y acepta expresamente que ha leído íntegramente estos Términos, comprende que Clipealo es una herramienta tecnológica, acepta ser el único responsable de su contenido, reconoce que Clipealo no tiene responsabilidad por su contenido, y acepta defender e indemnizar a Clipealo ante cualquier reclamación."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "value": " Contacto por WhatsApp: +51 923 783 155"
+              },
+              {
+                "type": "break"
+              },
+              {
+                "type": "text",
+                "value": " Última actualización: 8 de febrero de 2026 · Versión 1.1"
+              },
+              {
+                "type": "break"
+              },
+              {
+                "type": "text",
+                "value": " Clipealo - Herramienta de generación automatizada de clips "
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

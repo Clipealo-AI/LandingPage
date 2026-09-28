@@ -1,0 +1,152 @@
+{
+  "shared": {
+    "guideTitle": "Puntos para ponerlo en práctica",
+    "closing": "Usa estas ideas como punto de partida. Revisa cada clip con el contexto y la audiencia en mente."
+  },
+  "items": {
+    "regla-3-segundos": {
+      "title": "Cómo abrir un clip para captar atención",
+      "description": "Los primeros segundos ayudan a explicar de qué trata un clip. Un inicio claro permite que la persona decida si quiere seguir viendo.",
+      "tips": {
+        "first": "Empieza por la acción o la idea central, sin una introducción larga.",
+        "second": "Usa un primer fotograma que se entienda incluso sin sonido.",
+        "third": "Revisa el ritmo y el contexto antes de publicar."
+      }
+    },
+    "convertir-4h-stream-clips": {
+      "title": "De un stream largo a clips revisables",
+      "description": "Un directo reúne muchas conversaciones y reacciones. Seleccionar momentos concretos facilita compartirlos después del evento.",
+      "tips": {
+        "first": "Divide el video por temas o cambios de escena.",
+        "second": "Revisa cada fragmento sugerido antes de recortarlo.",
+        "third": "Ajusta el inicio y el final para que el clip tenga sentido por sí mismo."
+      }
+    },
+    "83-streamers-abandona": {
+      "title": "Por qué guardar los mejores momentos de un stream",
+      "description": "Un directo termina, pero una buena jugada o conversación puede seguir circulando en clips cortos.",
+      "tips": {
+        "first": "Marca las reacciones que tu comunidad recuerda.",
+        "second": "Da suficiente contexto para entender cada momento.",
+        "third": "Publica con una descripción que invite a volver al contenido completo."
+      }
+    },
+    "7-momentos-virales": {
+      "title": "Qué momentos conviene convertir en clips",
+      "description": "No todos los fragmentos necesitan el mismo tratamiento. Una idea completa suele funcionar mejor que un corte elegido solo por intensidad.",
+      "tips": {
+        "first": "Busca explicaciones, reacciones o cambios de tema claros.",
+        "second": "Comprueba que el clip tenga comienzo y cierre.",
+        "third": "Evita prometer un resultado viral: revisa lo que aporta a tu audiencia."
+      }
+    },
+    "de-2-a-10-clientes": {
+      "title": "Cómo organizar clips de varios clientes",
+      "description": "Cuando trabajas con distintas marcas, un flujo ordenado evita confundir archivos, estilos y aprobaciones.",
+      "tips": {
+        "first": "Separa el material por proyecto o cliente.",
+        "second": "Nombra los videos y clips de forma reconocible.",
+        "third": "Revisa identidad visual y texto antes de cada entrega."
+      }
+    },
+    "clip-economy-latam": {
+      "title": "Contenido corto para audiencias de LATAM",
+      "description": "Los creadores y equipos de la región pueden reutilizar conversaciones, clases y transmisiones para llegar a nuevas audiencias.",
+      "tips": {
+        "first": "Conserva las expresiones que dan identidad al creador.",
+        "second": "Añade subtítulos legibles cuando el audio sea importante.",
+        "third": "Adapta el contexto de cada clip al canal donde se publicará."
+      }
+    },
+    "kick-vs-twitch": {
+      "title": "Preparar clips de directos en distintas plataformas",
+      "description": "La plataforma donde se emite un directo cambia la forma de obtener el archivo, pero la revisión editorial del clip sigue siendo necesaria.",
+      "tips": {
+        "first": "Confirma que tienes permiso para usar la grabación.",
+        "second": "Importa un enlace compatible o sube el archivo.",
+        "third": "Comprueba encuadre, duración y audio antes de publicar."
+      }
+    },
+    "titulos-10x-clicks": {
+      "title": "Escribir títulos claros para tus clips",
+      "description": "Un título útil describe la idea del video sin exagerar lo que ocurre dentro.",
+      "tips": {
+        "first": "Nombra el tema o la pregunta que responde el clip.",
+        "second": "Evita cifras o promesas que el video no pueda sostener.",
+        "third": "Revisa cómo se ve el título en cada canal."
+      }
+    },
+    "flujo-perfecto-clipero": {
+      "title": "Un flujo práctico para revisar y entregar clips",
+      "description": "Un proceso repetible ayuda a pasar de la grabación a la entrega sin perder de vista la calidad.",
+      "tips": {
+        "first": "Organiza el video fuente en su proyecto.",
+        "second": "Revisa las sugerencias de la IA y corrige los cortes.",
+        "third": "Comprueba subtítulos, encuadre y archivo final."
+      }
+    },
+    "streamers-clips-crecen-5x": {
+      "title": "Clips que conectan un stream con nuevas personas",
+      "description": "Los clips pueden presentar una transmisión a alguien que no vio el directo completo.",
+      "tips": {
+        "first": "Elige momentos que se entiendan sin conocer el canal.",
+        "second": "Incluye una referencia al stream original cuando aporte contexto.",
+        "third": "Observa la respuesta de tu comunidad para aprender qué compartir después."
+      }
+    },
+    "subtitulos-animados-retienen": {
+      "title": "Subtítulos legibles para video corto",
+      "description": "Los subtítulos permiten seguir una idea cuando el audio no está disponible. Su claridad importa más que llenar la pantalla de efectos.",
+      "tips": {
+        "first": "Corrige nombres, cifras y palabras mal transcritas.",
+        "second": "Mantén buen contraste y tamaño en formato vertical.",
+        "third": "Comprueba que el texto no tape rostros ni controles de la plataforma."
+      }
+    },
+    "latam-lidera-crecimiento": {
+      "title": "Crear clips pensando en públicos de LATAM",
+      "description": "Una traducción literal no siempre conserva el contexto de una conversación. Revisar referencias y modismos ayuda a comunicar mejor.",
+      "tips": {
+        "first": "Conserva el sentido de expresiones locales.",
+        "second": "Añade contexto breve cuando una referencia no sea conocida.",
+        "third": "Revisa el resultado con alguien que conozca a la audiencia."
+      }
+    },
+    "como-convertir-entrevistas-en-clips-el-mismo-dia": {
+      "title": "Convertir una entrevista en clips útiles",
+      "description": "Una entrevista suele contener varias ideas independientes. Separarlas ayuda a compartir respuestas completas.",
+      "tips": {
+        "first": "Identifica preguntas con respuestas claras.",
+        "second": "Mantén el inicio de la respuesta cuando sea necesario para entenderla.",
+        "third": "Revisa los nombres y el encuadre de quien habla."
+      }
+    },
+    "como-reducir-tiempo-edicion-clips-equipo": {
+      "title": "Reducir tareas repetidas en un equipo de clips",
+      "description": "Un equipo gana claridad cuando separa selección, edición y aprobación de los clips.",
+      "tips": {
+        "first": "Define quién revisa cada etapa del proyecto.",
+        "second": "Usa un criterio común para nombrar archivos y versiones.",
+        "third": "Agrupa las correcciones antes de exportar."
+      }
+    },
+    "como-reutilizar-webinars-linkedin-tiktok": {
+      "title": "Reutilizar un webinar en varios canales",
+      "description": "Una charla larga puede dar lugar a clips con enfoques distintos según el público y el canal.",
+      "tips": {
+        "first": "Selecciona una explicación que funcione por sí sola.",
+        "second": "Adapta el texto de publicación a cada plataforma.",
+        "third": "Revisa duración, subtítulos y proporción antes de compartir."
+      }
+    },
+    "herramienta-clips-automaticos-para-agencias": {
+      "title": "Elegir un flujo de clips para una agencia",
+      "description": "Antes de incorporar una herramienta, conviene revisar cómo encaja con los proyectos y las revisiones de cada cliente.",
+      "tips": {
+        "first": "Comprueba las funciones disponibles en el plan elegido.",
+        "second": "Prueba el flujo con un video real del equipo.",
+        "third": "Revisa cómo se entregan archivos y se mantienen los estilos."
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "shared": {
+    "guideTitle": "Coloque em prática",
+    "closing": "Use estas ideias como ponto de partida. Revise cada clipe pensando no contexto e no público."
+  },
+  "items": {
+    "regla-3-segundos": {
+      "title": "Como abrir um clipe e prender a atenção",
+      "description": "Os primeiros segundos ajudam a explicar do que trata um clipe. Um começo claro permite que a pessoa decida se quer continuar assistindo.",
+      "tips": {
+        "first": "Comece pela ação ou ideia central, sem uma introdução longa.",
+        "second": "Use um primeiro quadro compreensível mesmo sem som.",
+        "third": "Revise o ritmo e o contexto antes de publicar."
+      }
+    },
+    "convertir-4h-stream-clips": {
+      "title": "De uma live longa a clipes para revisar",
+      "description": "Uma transmissão reúne muitas conversas e reações. Selecionar momentos específicos facilita compartilhá-los depois.",
+      "tips": {
+        "first": "Divida o vídeo por temas ou mudanças de cena.",
+        "second": "Revise cada trecho sugerido antes de cortá-lo.",
+        "third": "Ajuste o início e o fim para que o clipe faça sentido sozinho."
+      }
+    },
+    "83-streamers-abandona": {
+      "title": "Por que guardar os melhores momentos de uma live",
+      "description": "Uma transmissão termina, mas uma boa jogada ou conversa pode continuar circulando em clipes curtos.",
+      "tips": {
+        "first": "Marque as reações que sua comunidade lembra.",
+        "second": "Dê contexto suficiente para entender cada momento.",
+        "third": "Escreva uma descrição que leve ao conteúdo completo."
+      }
+    },
+    "7-momentos-virales": {
+      "title": "Quais momentos vale transformar em clipes",
+      "description": "Nem todo trecho precisa do mesmo tratamento. Uma ideia completa costuma funcionar melhor que um corte escolhido só pela intensidade.",
+      "tips": {
+        "first": "Procure explicações, reações ou mudanças de tema claras.",
+        "second": "Confira se o clipe tem começo e fim.",
+        "third": "Evite prometer viralidade: pense no valor para seu público."
+      }
+    },
+    "de-2-a-10-clientes": {
+      "title": "Como organizar clipes de vários clientes",
+      "description": "Ao trabalhar com marcas diferentes, um fluxo claro evita confundir arquivos, estilos e aprovações.",
+      "tips": {
+        "first": "Separe o material por projeto ou cliente.",
+        "second": "Dê nomes fáceis de encontrar aos vídeos e clipes.",
+        "third": "Revise identidade visual e texto antes de cada entrega."
+      }
+    },
+    "clip-economy-latam": {
+      "title": "Vídeo curto para públicos da América Latina",
+      "description": "Criadores e equipes da região podem reaproveitar conversas, aulas e lives para alcançar novas pessoas.",
+      "tips": {
+        "first": "Preserve as expressões que dão identidade ao criador.",
+        "second": "Adicione legendas legíveis quando o áudio for importante.",
+        "third": "Adapte o contexto de cada clipe ao canal de publicação."
+      }
+    },
+    "kick-vs-twitch": {
+      "title": "Preparar clipes de diferentes plataformas de live",
+      "description": "A plataforma usada na transmissão muda a forma de obter a gravação, mas a revisão editorial continua essencial.",
+      "tips": {
+        "first": "Confirme que você pode usar a gravação.",
+        "second": "Importe um link compatível ou envie o arquivo.",
+        "third": "Confira enquadramento, duração e áudio antes de publicar."
+      }
+    },
+    "titulos-10x-clicks": {
+      "title": "Escrever títulos claros para seus clipes",
+      "description": "Um título útil descreve a ideia do vídeo sem exagerar o que acontece nele.",
+      "tips": {
+        "first": "Diga qual tema ou pergunta o clipe responde.",
+        "second": "Evite números ou promessas que o vídeo não sustenta.",
+        "third": "Confira como o título aparece em cada canal."
+      }
+    },
+    "flujo-perfecto-clipero": {
+      "title": "Um fluxo prático para revisar e entregar clipes",
+      "description": "Um processo repetível ajuda a ir da gravação à entrega sem perder qualidade.",
+      "tips": {
+        "first": "Organize o vídeo original no projeto.",
+        "second": "Revise sugestões da IA e corrija os cortes.",
+        "third": "Confira legendas, enquadramento e arquivo final."
+      }
+    },
+    "streamers-clips-crecen-5x": {
+      "title": "Clipes que apresentam uma live a novas pessoas",
+      "description": "Um clipe pode mostrar uma transmissão a quem não assistiu à live completa.",
+      "tips": {
+        "first": "Escolha momentos que façam sentido sem conhecer o canal.",
+        "second": "Aponte para a live original quando o contexto ajudar.",
+        "third": "Observe a resposta da comunidade para decidir o que compartilhar depois."
+      }
+    },
+    "subtitulos-animados-retienen": {
+      "title": "Legendas legíveis para vídeo curto",
+      "description": "Legendas ajudam a acompanhar uma ideia quando o áudio não está disponível. Clareza importa mais do que encher a tela de efeitos.",
+      "tips": {
+        "first": "Corrija nomes, números e palavras transcritas incorretamente.",
+        "second": "Mantenha contraste e tamanho adequados no formato vertical.",
+        "third": "Confira se o texto não cobre rostos ou controles da plataforma."
+      }
+    },
+    "latam-lidera-crecimiento": {
+      "title": "Criar clipes para públicos da América Latina",
+      "description": "Uma tradução literal pode perder o contexto de uma conversa. Revisar referências e expressões locais ajuda a comunicar melhor.",
+      "tips": {
+        "first": "Preserve o sentido das expressões regionais.",
+        "second": "Adicione contexto breve quando uma referência não for conhecida.",
+        "third": "Revise o resultado com alguém que conhece o público."
+      }
+    },
+    "como-convertir-entrevistas-en-clips-el-mismo-dia": {
+      "title": "Transformar uma entrevista em clipes úteis",
+      "description": "Uma entrevista costuma reunir várias ideias independentes. Separá-las ajuda a compartilhar respostas completas.",
+      "tips": {
+        "first": "Encontre perguntas com respostas claras.",
+        "second": "Mantenha o começo da resposta quando o contexto exigir.",
+        "third": "Revise nomes e o enquadramento de quem fala."
+      }
+    },
+    "como-reducir-tiempo-edicion-clips-equipo": {
+      "title": "Reduzir tarefas repetidas em uma equipe de clipes",
+      "description": "Uma equipe trabalha melhor quando seleção, edição e aprovação dos clipes são etapas separadas.",
+      "tips": {
+        "first": "Defina quem revisa cada etapa do projeto.",
+        "second": "Use regras comuns para nomear arquivos e versões.",
+        "third": "Agrupe as correções antes de exportar."
+      }
+    },
+    "como-reutilizar-webinars-linkedin-tiktok": {
+      "title": "Reaproveitar um webinar em vários canais",
+      "description": "Uma palestra longa pode render clipes com enfoques diferentes para cada público e canal.",
+      "tips": {
+        "first": "Selecione uma explicação que funcione sozinha.",
+        "second": "Adapte o texto da publicação a cada plataforma.",
+        "third": "Revise duração, legendas e proporção antes de compartilhar."
+      }
+    },
+    "herramienta-clips-automaticos-para-agencias": {
+      "title": "Escolher um fluxo de clipes para sua agência",
+      "description": "Antes de adotar uma ferramenta, veja como ela se encaixa nos projetos e aprovações dos clientes.",
+      "tips": {
+        "first": "Confira os recursos incluídos no plano escolhido.",
+        "second": "Teste o fluxo com um vídeo real da equipe.",
+        "third": "Revise a entrega dos arquivos e a consistência visual."
+      }
+    }
+  }
+}

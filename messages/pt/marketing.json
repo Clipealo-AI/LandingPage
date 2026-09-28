@@ -1,0 +1,330 @@
+{
+  "claim": "Corte . Edite . Compartilhe . Cresça",
+  "legalNav": {
+    "privacy": "Privacidade",
+    "terms": "Termos"
+  },
+  "actions": {
+    "upload": "Enviar um vídeo",
+    "backHome": "Voltar ao início"
+  },
+  "header": {
+    "home": "Clipealo, início",
+    "mainNav": "Principal",
+    "mobileNav": "Principal (celular)",
+    "login": "Entrar",
+    "discord": "Discord",
+    "openMenu": "Abrir menu",
+    "menu": "Menu",
+    "menus": {
+      "features": "Funcionalidades",
+      "useCases": "Casos de uso",
+      "resources": "Recursos",
+      "allFeatures": "Todas as funcionalidades"
+    },
+    "menuItems": {
+      "automaticClips": {
+        "title": "Clipes automáticos",
+        "description": "Envie um vídeo ou importe um link compatível e revise os clipes sugeridos."
+      },
+      "latamAi": {
+        "title": "Clipes para conteúdo em espanhol",
+        "description": "Revise sugestões e legendas de conteúdo em espanhol."
+      },
+      "subtitleEditor": {
+        "title": "Editor de legendas",
+        "description": "Revise a transcrição e ajuste o estilo das legendas."
+      },
+      "verticalExport": {
+        "title": "Exportação vertical 9:16",
+        "description": "Prepare clipes verticais e revise o enquadramento antes de exportar."
+      },
+      "brandTemplates": {
+        "title": "Modelos de marca",
+        "description": "Mantenha um estilo reconhecível para cada projeto."
+      },
+      "projectManagement": {
+        "title": "Gestão de projetos",
+        "description": "Organize vídeos e clipes por cliente, campanha ou data."
+      },
+      "batchExport": {
+        "title": "Exportação em massa",
+        "description": "Organize e baixe os clipes de um projeto."
+      },
+      "cliperos": {
+        "title": "Clippers",
+        "description": "Produza mais clipes para cada criador."
+      },
+      "streamers": {
+        "title": "Streamers",
+        "description": "Transforme suas transmissões em clipes para as redes."
+      },
+      "podcasters": {
+        "title": "Podcasters",
+        "description": "Leve os melhores momentos de cada episódio para as redes."
+      },
+      "coaches": {
+        "title": "Coaches e educadores",
+        "description": "Transforme aulas e sessões em conteúdo curto."
+      },
+      "creators": {
+        "title": "Criadores de conteúdo",
+        "description": "Reaproveite seus vídeos longos em todas as suas redes."
+      },
+      "communities": {
+        "title": "Comunidades e esports",
+        "description": "Crie destaques de torneios e eventos."
+      },
+      "agencies": {
+        "title": "Agências audiovisuais",
+        "description": "Gerencie clipes de vários clientes em um só lugar."
+      },
+      "brands": {
+        "title": "Marcas",
+        "description": "Crie conteúdo para campanhas e patrocínios."
+      },
+      "blog": {
+        "title": "Blog e guias",
+        "description": "Ideias e dicas para criar clipes melhores."
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "description": "Tire suas dúvidas sobre o Clipealo."
+      },
+      "contact": {
+        "title": "Contato",
+        "description": "Fale com a gente se precisar de ajuda."
+      }
+    }
+  },
+  "hero": {
+    "badge": "Reenquadramento automático que acompanha quem fala",
+    "title": "De vídeos longos<br></br>a grandes clipes.",
+    "howItWorks": "Veja como funciona",
+    "detectedMoments": "Momentos detectados",
+    "suggestedClips": "Clipes sugeridos",
+    "withCaptions": "com legendas",
+    "withoutCaptions": "sem legendas",
+    "description": "Envie o vídeo completo. A IA encontra os momentos que as pessoas assistem até o fim e entrega clipes 9:16 com legendas.",
+    "videoPreview": "Trecho do unboxing de Rubius",
+    "playPreview": "Reproduzir vídeo original",
+    "sourceLabel": "Rubius Z · trecho do unboxing",
+    "seekToMoment": "Ir para o momento: {title}",
+    "seekPreview": "Avançar no vídeo original",
+    "pausePreview": "Pausar vídeo",
+    "sourceTime": "Do vídeo original · {start}–{end}",
+    "clipVideo": "Clipe: {title}",
+    "transcript": "Transcrição",
+    "unmuteVideo": "Ativar áudio",
+    "muteVideo": "Silenciar vídeo",
+    "seekClip": "Avançar no clipe",
+    "playClip": "Reproduzir clipe",
+    "pauseClip": "Pausar clipe",
+    "fullscreen": "Tela cheia",
+    "clipInfo": "Informações do clipe",
+    "clipTitle": "Título",
+    "clipDescription": "Descrição",
+    "clipReason": "Por que este momento",
+    "originalTime": "origem {start}–{end}",
+    "videoFormat": "Formato do vídeo",
+    "publishClip": "Publicar",
+    "publishDraft": "Publicar como rascunho",
+    "editClip": "Editar clipe",
+    "downloadClip": "Baixar",
+    "clipDescriptions": {
+      "patos": "Rubius abre teclas em forma de pato e descobre que também podem ser usadas como chaveiros.",
+      "teclado": "Ele conecta o teclado amarelo, testa as teclas e apresenta a “legião dos patos”.",
+      "indiana-jones": "Ele abre a edição de Indiana Jones e descobre o código do jogo gravado em uma peça.",
+      "puzle": "Ele explora o quebra-cabeça físico da edição de colecionador e tenta descobrir como abri-lo.",
+      "premios": "Rubius mostra as placas da Twitch por 5, 50 e 250 milhões de horas assistidas.",
+      "pokemon": "Ele mostra como um expositor muda a apresentação das cartas de Umbreon, Charizard e Pikachu."
+    },
+    "clipReasons": {
+      "patos": "A revelação de um objeto inesperado torna a cena fácil de reconhecer e compartilhar.",
+      "teclado": "O resultado visual e a reação de Rubius completam a história iniciada ao abrir a caixa.",
+      "indiana-jones": "O código escondido muda a história e provoca uma reação espontânea.",
+      "puzle": "O desafio visual mantém a curiosidade sobre o funcionamento da peça.",
+      "premios": "A sequência de prêmios e os números surpreendentes criam um gancho visual imediato.",
+      "pokemon": "O antes e depois de um objeto conhecido oferece um resultado visual fácil de entender."
+    },
+    "videoLoadError": "Não foi possível carregar o vídeo. Tente novamente.",
+    "closeDialog": "Fechar"
+  },
+  "community": {
+    "title": "Criadores com mais de <b>6,8 milhões</b> de seguidores e equipes de toda a América Hispânica já publicam com o Clipealo.",
+    "creators": "Criadores que já confiam no Clipealo",
+    "channels": "Canais que já publicam com o Clipealo",
+    "followers": "seguidores"
+  },
+  "reframe": {
+    "title": "O mesmo conteúdo,<br></br>mais possibilidades.",
+    "lead": "Um vídeo longo pode render vários clipes. Escolha o momento, ajuste o enquadramento e decida onde compartilhar.",
+    "sourceAlt": "Duas pessoas conversam diante de microfones em um estúdio de podcast",
+    "original": "Gravação original · 16:9",
+    "square": "Clipe · 1:1",
+    "ready": "Clipe · 9:16",
+    "caption": "O enquadramento acompanha o momento escolhido.",
+    "videoEyebrow": "Do vídeo às suas redes",
+    "videoTitle": "Uma gravação. Vários clipes.",
+    "videoLead": "Veja o caminho completo: escolha um momento, prepare-o na vertical e selecione os destinos. Você pode revisar cada clipe antes de publicar.",
+    "videoLabel": "Animação mostrando um vídeo longo virar vários clipes para as redes",
+    "videoFallback": "Seu navegador não consegue reproduzir este vídeo."
+  },
+  "features": {
+    "eyebrow": "O produto",
+    "title": "A IA sugere.<br></br>Você decide.",
+    "lead": "Encontre um momento, ajuste ao seu estilo e escolha como compartilhar. Cada etapa fica sob seu controle.",
+    "ai": {
+      "title": "Momentos sugeridos para revisar",
+      "body": "A IA sugere trechos com começo e fim. Você revisa o contexto e escolhe quais vão virar clipes.",
+      "visual": "Trecho sugerido · revise o corte antes de criá-lo"
+    },
+    "vertical": {
+      "title": "Enquadramento para cada clipe",
+      "body": "Prepare uma versão vertical 9:16 e confira o que aparece no recorte. O acompanhamento automático depende do plano."
+    },
+    "captions": {
+      "title": "Legendas que você pode corrigir",
+      "body": "Revise a transcrição, os nomes e o estilo antes de exportar. A tradução depende do plano."
+    },
+    "allInOne": {
+      "title": "Do corte aos seus canais",
+      "body": "Organize, edite e publique no mesmo projeto. Agende publicações quando seu plano incluir esse recurso."
+    },
+    "toolbox": {
+      "trim": "Selecione",
+      "edit": "Ajuste",
+      "share": "Publique",
+      "ai": "IA",
+      "creators": "Criadores",
+      "clips": "Clipes",
+      "captions": "Legendas",
+      "analytics": "Análises"
+    }
+  },
+  "steps": {
+    "title": "De um vídeo longo<br></br>a clipes prontos.",
+    "full": {
+      "title": "Envie o conteúdo completo",
+      "body": "Comece com um podcast, live, aula ou entrevista. Envie o arquivo ou importe um link compatível."
+    },
+    "moment": {
+      "title": "Escolha o melhor momento",
+      "body": "A IA sugere trechos; você revisa o contexto e ajusta onde cada corte começa e termina."
+    },
+    "ready": {
+      "title": "Ajuste e compartilhe",
+      "body": "Revise o enquadramento e as legendas. Depois baixe o clipe ou publique nas contas conectadas."
+    }
+  },
+  "networks": {
+    "eyebrow": "Publicação",
+    "title": "Um clipe, mais<br></br>formas de compartilhar.",
+    "lead": "Prepare o mesmo conteúdo em diferentes formatos, revise o texto e publique-o nas contas conectadas.",
+    "list": "Redes disponíveis",
+    "planNote": "As redes disponíveis e o agendamento dependem do seu plano.",
+    "hook": "[Gancho viral]",
+    "transcript": "[Transcrição]",
+    "blurFormat": "9:16 · desfoque",
+    "formatsGallery": "Formatos de clipe; deslize horizontalmente para ver todos",
+    "bullets": {
+      "formats": "Prepare seus clipes para os canais disponíveis",
+      "limit": "Revise o resultado antes de publicar",
+      "schedule": "Publique agora ou agende em horários personalizados"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Preços",
+    "title": "Preços simples,<br></br>sem surpresas.",
+    "lead": "Escolha o plano que se adapta ao seu volume. Cancele quando quiser.",
+    "compare": "Compare os planos e tudo o que eles incluem"
+  },
+  "pricingTable": {
+    "caption": "Comparação dos planos Free, Básico, Padrão e Premium",
+    "feature": "Recurso",
+    "included": "Incluído",
+    "notIncluded": "Não incluído"
+  },
+  "pricingPage": {
+    "meta": {
+      "title": "Preços do Clipealo",
+      "description": "Planos Free, Básico, Padrão e Premium. A partir de S/45 por mês, com edição de vídeo e publicação nas redes."
+    },
+    "eyebrow": "Preços",
+    "title": "Preços simples,<br></br>sem surpresas.",
+    "lead": "Escolha o plano que se adapta ao seu volume. Cancele quando quiser.",
+    "compare": {
+      "title": "Compare os planos.",
+      "lead": "Horas de vídeo, processamento de vídeo, edição, publicação nas redes e suporte, lado a lado."
+    },
+    "faqTitle": "Perguntas<br></br>sobre planos e pagamentos."
+  },
+  "faq": {
+    "title": "Perguntas<br></br>frequentes.",
+    "contact": "Não encontrou? <link>Escreva para a gente</link> e ajudaremos você.",
+    "items": {
+      "processing": {
+        "q": "Quanto tempo leva para processar um vídeo?",
+        "a": "O processamento normalmente termina em menos de 3 minutos. O tempo pode variar conforme a duração e a qualidade do vídeo e a carga do serviço; acompanhe o progresso em seus projetos."
+      },
+      "fileFormats": {
+        "q": "Quais formatos de arquivo são aceitos?",
+        "a": "Você pode enviar arquivos MP4, MOV, WebM e MKV ou importar um link compatível. Os formatos de exportação 9:16 e 16:9 estão disponíveis em todos os planos."
+      },
+      "editCaptions": {
+        "q": "É possível editar o hook e as legendas?",
+        "a": "Sim. No editor você pode mudar o texto do hook, corrigir as legendas e ajustar o estilo antes de exportar."
+      },
+      "afterCancel": {
+        "q": "O que acontece com meus vídeos se eu cancelar meu plano?",
+        "a": "Os recursos do plano continuam disponíveis até o fim do período pago. Depois, seus vídeos seguem o prazo de armazenamento do plano vigente; baixe o que precisar antes do vencimento."
+      },
+      "publish": {
+        "q": "O Clipealo publica nas minhas redes por mim?",
+        "a": "Sim. Conecte suas contas e escolha onde publicar cada clipe. As redes disponíveis e o agendamento dependem do seu plano."
+      }
+    }
+  },
+  "cta": {
+    "title": "Comece com um vídeo.",
+    "lead": "Envie um que você já tenha e veja quais clipes saem. Não precisa de cartão."
+  },
+  "footer": {
+    "product": "Produto",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "contact": "Contato",
+    "links": {
+      "allFeatures": "Todas as funcionalidades",
+      "automaticClips": "Clipes automáticos",
+      "pricing": "Preços",
+      "blogGuides": "Blog e guias",
+      "faq": "Perguntas frequentes",
+      "contact": "Contato",
+      "whatsapp": "+51 923 783 155"
+    },
+    "copyright": "© {year} {name}. Feito no Peru para a América Latina."
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "pages": {
+      "privacidad": {
+        "title": "Política de Privacidade",
+        "lead": "O que fazemos com seus vídeos e seus dados.",
+        "description": "Quais dados usamos, por que precisamos deles e como os protegemos."
+      },
+      "terminos": {
+        "title": "Termos e Condições de Serviço",
+        "lead": "As condições de uso da plataforma.",
+        "description": "As condições de acesso e uso dos serviços do Clipealo."
+      }
+    }
+  },
+  "og": {
+    "titleTop": "De vídeos longos",
+    "titleBottom": "a grandes clipes."
+  },
+  "nav": {
+    "pricing": "Preços"
+  }
+}

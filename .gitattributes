@@ -1,0 +1,6 @@
+# Finales de línea LF en el repositorio, en cualquier sistema (Prettier y los diffs lo esperan)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary

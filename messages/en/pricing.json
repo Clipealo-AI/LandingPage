@@ -1,0 +1,134 @@
+{
+  "plans": {
+    "free": {
+      "name": "Free",
+      "tagline": "Give Clipealo a try.",
+      "cta": "Start for free",
+      "highlights": {
+        "export": "720p export",
+        "storage": "Storage for 1 week",
+        "watermark": "Your clips are exported with the Clipealo watermark",
+        "youtubeLocal": "Import videos from YouTube and local files"
+      }
+    },
+    "basic": {
+      "name": "Basic",
+      "tagline": "For growing creators.",
+      "cta": "Choose Basic",
+      "highlights": {
+        "export": "1080p export",
+        "noWatermark": "Clips without a watermark",
+        "storage": "Storage for 3 months",
+        "social": "Social media publishing",
+        "youtubeKickTwitchLocal": "Import videos from YouTube, Kick, Twitch and local files"
+      }
+    },
+    "standard": {
+      "name": "Standard",
+      "tagline": "For professional creators.",
+      "cta": "Choose Standard",
+      "highlights": {
+        "previous": "Everything in Basic",
+        "storage": "Storage for 6 months",
+        "facebook": "Import videos from Facebook too"
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "For agencies and teams.",
+      "cta": "Choose Premium",
+      "highlights": {
+        "previous": "Everything in Standard",
+        "export": "4K export",
+        "storage": "Unlimited storage",
+        "driveZoom": "Import videos from Google Drive and Zoom too"
+      }
+    }
+  },
+  "perMonth": "/month",
+  "mostPopular": "Most popular",
+  "mostPopularShort": "Popular",
+  "billing": {
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlyLabel": "Annual billing",
+    "billedMonthly": "Billed monthly",
+    "billedYearly": "Billed annually",
+    "currencyLabel": "Currency",
+    "soles": "🇵🇪 Soles",
+    "dollars": "🇺🇸 US dollars",
+    "currencyNamePEN": "Peruvian soles",
+    "currencyNameUSD": "US dollars"
+  },
+  "groups": {
+    "ia": "AI clip generation",
+    "editor": "Video editor",
+    "social": "Social publishing",
+    "support": "Support"
+  },
+  "features": {
+    "videoHours": "Processable video time",
+    "videoSources": "Import videos from",
+    "noWatermark": "No watermark",
+    "downloadQuality": "Download quality",
+    "storage": "Storage",
+    "exportFormats": "Export formats",
+    "brandTemplate": "Custom brand template",
+    "monthlyPosts": "Posts / month",
+    "publishNetworks": "Publish to",
+    "scheduling": "Schedule your posts",
+    "audienceByNetwork": "Set your audience per social network",
+    "discord": "Discord community",
+    "whatsappSupport": "Support",
+    "priorityWhatsapp": "Priority support"
+  },
+  "values": {
+    "unlimited": "Unlimited",
+    "tiktokOnly": "TikTok only",
+    "allNetworks": "All networks",
+    "storage": {
+      "free": "1 week",
+      "basic": "3 months",
+      "standard": "6 months",
+      "premium": "Unlimited"
+    },
+    "localUpload": "Local upload"
+  },
+  "topups": {
+    "title": "ADD EXTRA HOURS TO YOUR PLAN",
+    "description": "Choose how many video hours to add to your plan and see the estimated cost.",
+    "quantityLabel": "Extra hours",
+    "soles": "Soles",
+    "dollars": "US dollars",
+    "decrease": "Remove one hour",
+    "increase": "Add one hour",
+    "estimateTitle": "Your quote",
+    "goToPlan": "Add hours in the app"
+  },
+  "faq": {
+    "includedTime": {
+      "q": "How much video time does each plan include?",
+      "a": "Each month, Free includes 30 minutes; Basic, 5 hours; Standard, 10 hours; and Premium, 20 hours."
+    },
+    "extraHours": {
+      "q": "How do extra hours work?",
+      "a": "You can add 1 to 100 hours to a paid plan. Each hour costs S/5; you can also view a US dollar quote at US$1.50 per hour."
+    },
+    "annualBilling": {
+      "q": "How does annual billing work?",
+      "a": "You pay for the year upfront with 20% off the monthly price. Plan cards show the monthly equivalent."
+    },
+    "cancel": {
+      "q": "Can I cancel anytime?",
+      "a": "Yes. You can cancel your plan anytime and keep access until the end of your paid period."
+    },
+    "currencies": {
+      "q": "Which currencies can I view prices in?",
+      "a": "You can view plans and extra hours in soles or US dollars. Extra hours purchased in the app are currently charged in soles."
+    }
+  },
+  "gate": {
+    "cta": "See the plans"
+  },
+  "includedTime": "{minutes, plural, =30 {30 min of video per month} other {{hours} h of video per month}}"
+}

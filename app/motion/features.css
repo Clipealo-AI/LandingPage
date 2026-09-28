@@ -1,0 +1,57 @@
+/* ==========================================================================
+   MOVIMIENTO · FEATURES (Lote 3)
+   Tarjetas por filas, esquinas y muestras de idiomas (E9).
+
+   Sin @layer, como base.css. Las variables, clases (.m-anim, .m-rise…) y
+   keyframes compartidos viven en base.css y no se redefinen aquí; lo propio
+   de «reducir movimiento» se escribe con `@variant reduced`.
+
+   Coreografía de cada tarjeta (grupo propio; `i` = su --i desde md, 0 en
+   móvil), en ms desde que entra en pantalla:
+   - Entrada: sube con fundido de i×80 a E = 520 + i×80 (`--m-fin-entrada`).
+   - Vertical (i 1): el 16:9 se apaga de E a E + 600; las esquinas del 9:16
+     se cierran desde E + 120, una cada 60 ms → última a E + 750 (1.350).
+   - Subtítulos (i 1): tres muestras, una cada 60 ms desde E.
+   Todos los gestos empiezan al terminar la entrada y acaban antes de 1,5 s.
+
+   Con «reducir»: la entrada y las esquinas pasan a fundido en su sitio por las
+   variables --motion-*; el apagado del 16:9 y los idiomas conservan su efecto.
+   ========================================================================== */
+
+/* Fin de la entrada de la tarjeta. Se resuelve en la tarjeta (con su --i y el
+   --stagger de 80 ms) y los hijos lo heredan ya calculado, aunque redefinan
+   --i o --stagger para sus propios escalonados. */
+.m-tarjeta {
+  --m-fin-entrada: calc(var(--duration-enter) + var(--i, 0) * var(--stagger));
+}
+
+/* Vertical: el 16:9 pasa de 1 a su opacidad propia (0,4). El keyframe parte de
+   opacidad 1, así que en «idle» no se oculta: solo espera. */
+.m-dim {
+  --m-name: dim-in;
+  --m-dur: 600ms;
+  --m-ease: var(--ease-brand);
+  --m-at: var(--m-fin-entrada, 0ms);
+  --i: 0;
+}
+@keyframes dim-in {
+  from {
+    opacity: 1;
+  }
+}
+
+/* Vertical: las esquinas del 9:16 se cierran después (crop-close de base.css,
+   que suma --i × --stagger y 60 ms por esquina). */
+.m-tarjeta .m-crop-corners {
+  --m-crop-at: calc(var(--m-fin-entrada, 0ms) + 120ms);
+  --i: 0;
+}
+
+/* Subtítulos: tres muestras se iluminan en orden. */
+.m-karaoke {
+  --m-at: var(--m-fin-entrada, 0ms);
+  --stagger: 60ms;
+}
+.m-karaoke .m-light {
+  --m-dur: 400ms;
+}
