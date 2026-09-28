@@ -1,10 +1,4 @@
-import {
-  NETWORKS_BY_PLAN,
-  PLANS,
-  type PricingPlan,
-  type PricingPlanId,
-} from "@/lib/pricing"
-import type { SocialId } from "@/lib/social"
+import { PLANS, type PricingPlan, type PricingPlanId } from "@/lib/pricing"
 
 /** Presentación estática y tipada del catálogo comercial. */
 export type PlanId = PricingPlanId
@@ -29,6 +23,3 @@ export function planDe(
 }
 
 export const planesVisibles = (catalogo: readonly PlanCatalogo[]) => [...catalogo]
-
-export const redesDe = (plan: PlanCatalogo): readonly SocialId[] =>
-  NETWORKS_BY_PLAN[plan.base]
