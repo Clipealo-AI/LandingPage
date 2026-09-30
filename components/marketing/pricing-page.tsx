@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl"
 import { BillingToggle, PlanCards } from "@/components/marketing/pricing"
 import { PricingTable } from "@/components/marketing/pricing-table"
 import { PricingAddons } from "@/components/marketing/pricing-addons"
+import { PointerLight } from "@/components/marketing/pointer-light"
 import type { PricingCurrency } from "@/lib/pricing"
 
 /**
@@ -19,6 +20,7 @@ export function PricingPage() {
 
   return (
     <>
+      <PointerLight />
       <section className="container-page pt-32 pb-12 sm:pt-40 md:pb-16">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="mt-3 display text-[clamp(2.25rem,6vw,4rem)]">

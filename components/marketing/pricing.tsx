@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 import {
   CARD_HIGHLIGHTS,
   DESCUENTO_ANUAL_PCT,
+  VIDEO_SOURCES_BY_PLAN,
   planPrice,
   type PricingCurrency,
 } from "@/lib/pricing"
@@ -21,6 +22,7 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { CurrencyToggle } from "@/components/marketing/currency-toggle"
+import { VideoSourceIcons } from "@/components/marketing/video-source-icons"
 
 function useHaCambiado<T>(valor: T) {
   const [inicial] = React.useState(valor)
@@ -94,7 +96,7 @@ export function PlanCards({
   const planes = planesVisibles(PLANES_SEMILLA)
 
   return (
-    <div className="grid items-start gap-5 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid items-start gap-5 pt-3 md:grid-cols-2 xl:grid-cols-4">
       {planes.map((plan, indice) => (
         <TarjetaPlan
           key={plan.id}
@@ -144,7 +146,7 @@ function TarjetaPlan({
         "relative flex flex-col rounded-frame p-6 sm:p-8",
         entrada && ["m-anim m-rise", escalonado],
         featured
-          ? "bg-card shadow-lg ring-2 ring-brand lg:-my-4 lg:py-12"
+          ? "bg-card shadow-lg ring-2 ring-brand lg:py-12"
           : "bg-card ring-1 ring-border"
       )}
     >
@@ -215,6 +217,12 @@ function TarjetaPlan({
           </li>
         ))}
       </ul>
+      <div className="mt-5 border-t border-border pt-4">
+        <p className="mb-2 text-xs font-semibold text-muted-foreground">
+          {t("features.videoSources")}:
+        </p>
+        <VideoSourceIcons sources={VIDEO_SOURCES_BY_PLAN[plan.id]} />
+      </div>
     </div>
   )
 }

@@ -82,16 +82,16 @@ export const EXTRA_HOUR_MAX = 100
 
 /** Resumen visible de cada plan, en el orden de sus diferencias principales. */
 export const CARD_HIGHLIGHTS = {
-  free: ["time", "export", "storage", "watermark", "youtubeLocal"],
-  basic: ["time", "export", "noWatermark", "storage", "social", "youtubeKickTwitchLocal"],
-  standard: ["previous", "time", "storage", "facebook"],
-  premium: ["previous", "time", "export", "storage", "driveZoom"],
+  free: ["time", "export", "storage", "watermark"],
+  basic: ["time", "export", "noWatermark", "storage", "social"],
+  standard: ["previous", "time", "storage"],
+  premium: ["previous", "time", "export", "storage"],
 } as const satisfies Record<PricingPlanId, readonly string[]>
 
 export type VideoSourceId = "youtube" | "kick" | "twitch" | "facebook" | "drive" | "zoom"
 
 /** Orígenes que devuelve plans.available_platforms en la BD actual. */
-const VIDEO_SOURCES_BY_PLAN: Record<PricingPlanId, readonly VideoSourceId[]> = {
+export const VIDEO_SOURCES_BY_PLAN: Record<PricingPlanId, readonly VideoSourceId[]> = {
   free: ["youtube"],
   basic: ["youtube", "kick", "twitch"],
   standard: ["youtube", "kick", "twitch", "facebook"],
